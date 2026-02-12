@@ -3,7 +3,7 @@ import GlassPanel from '../GlassPanel';
 const weNeed = [
   'Audio links, clean metadata, and posting handles',
   'Any brand safety rules or hard "no" topics',
-  'A clear primary goal per campaign (streaming, awareness, ticketing, etc.)',
+  'A clear primary goal per campaign',
 ];
 
 const dontExpect = [
