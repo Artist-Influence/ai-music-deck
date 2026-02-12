@@ -45,7 +45,7 @@ const AdditionalServicesSlide = () => (
         {services.map((s, i) => (
           <GlassPanel key={i} className="p-6 hover:bg-white/[0.06] transition-colors flex flex-col">
             <div className="text-2xl mb-4 block flex items-center justify-start">{s.icon}</div>
-            <p className="text-xl font-semibold text-foreground mb-2">{s.name}</p>
+            <p className="text-xl font-semibold text-foreground mb-2">{s.name}:</p>
             <p className="text-sm text-muted-foreground leading-relaxed mb-3 flex-grow">{s.desc}</p>
             <p className={`text-xs font-medium ${s.time ? 'text-primary' : 'invisible'}`}>
               Timeframe: {s.time || '—'}

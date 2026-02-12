@@ -16,7 +16,7 @@ const CoverSlide = () => (
           Turning songs into momentum across short-form, streaming, and culture.
         </p>
         <p className="text-lg text-muted-foreground mt-4">
-          Built for teams that want outcomes, not "ideas."
+          Built for teams that want outcomes, not &ldquo;ideas.&rdquo;
         </p>
       </GlassPanel>
     </div>
