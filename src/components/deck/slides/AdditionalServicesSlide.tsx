@@ -21,16 +21,16 @@ const SpotifyIcon = ({ size = 24 }: { size?: number }) => (
 
 const SoundCloudIcon = ({ size = 24 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className="text-primary">
-    <path d="M1.5 14.25l.5-2.5.5 2.5-.5 2-.5-2zm2-1l.5-3.5.5 3.5-.5 2.5-.5-2.5zm2-.75l.5-4 .5 4-.5 3-.5-3zm2 .25l.5-5 .5 5-.5 2.5-.5-2.5zm2-1.5l.5-4.5.5 4.5-.5 4-.5-4zM11.5 9l.5-4 .5 4-.5 7.5-.5-7.5zm2.5-.5c-.3 0-.5.1-.7.2l-.3-1.2c.3-.1.6-.2 1-.2 2.8 0 5 2.2 5 5s-2.2 5-5 5H11l.5-7.5-.5-4c.6-.8 1.5-1.3 2.5-1.3z" fill="currentColor"/>
+    <path d="M11.56 8.87V17h8.76c1.85 0 3.35-1.61 3.35-3.61 0-2-1.5-3.61-3.35-3.61-.34 0-.68.05-1 .14C19.04 7.15 16.81 5 14.11 5c-.93 0-1.8.28-2.55.76v3.11zM8.56 17h1.5V9.6c-.47-.2-.97-.32-1.5-.36V17zm-3 0h1.5v-6.5c-.24.07-.47.17-.69.3l-.04.02c-.27.16-.52.36-.77.58V17zm-3 0h1.5v-4.21c-.46.68-.79 1.43-.99 2.22-.15.58-.26 1.19-.31 1.8L3.56 17z" fill="currentColor"/>
   </svg>
 );
 
 const services = [
   { icon: <MetaTikTokIcon />, name: 'Meta & TikTok Ads', desc: 'We turn proven native posts into ads to convert streams, sales, touring, and more. Optimized daily, weekly reporting, clean exports.', time: '2–3 weeks' },
-  { icon: <SpotifyIcon size={24} />, name: 'Spotify Playlisting (Organic)', desc: 'Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup. Weekly reporting, stream goals guaranteed.', time: '90 days' },
+  { icon: <SpotifyIcon size={24} />, name: 'Spotify Playlisting (Organic)', desc: 'Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup. Weekly reporting, stream goals guaranteed.', time: '12 weeks' },
   { icon: <Youtube size={24} className="text-primary" />, name: 'YouTube Advertising', desc: 'International targeting + optimization to maximize reach while protecting engagement ratios. Built for subscribers, long-form engagement.', time: '1–3 weeks' },
-  { icon: <SoundCloudIcon size={24} />, name: 'SoundCloud Reposts', desc: 'Verified repost network across genre communities with transparent tracking and real engagement intent.' },
-  { icon: <Instagram size={24} className="text-primary" />, name: 'Instagram Seeding', desc: 'Genre-aligned page placements with tracking via live dashboard. Built for relevance and cost efficiency.' },
+  { icon: <SoundCloudIcon size={24} />, name: 'SoundCloud Reposts', desc: 'Verified repost network across genre communities with transparent tracking and real engagement intent.', time: '2–8 weeks' },
+  { icon: <Instagram size={24} className="text-primary" />, name: 'Instagram Seeding', desc: 'Genre-aligned page placements with tracking via live dashboard. Built for relevance and cost efficiency.', time: '1–3 weeks' },
 ];
 
 const AdditionalServicesSlide = () => (
