@@ -2,10 +2,12 @@ import { useState, useEffect, useCallback } from 'react';
 import cloutedLogo from '@/assets/CLOUTED-white.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { useIsMobile } from '@/hooks/use-mobile';
 import ScaledSlide from './ScaledSlide';
 import { slides } from './slides';
 
 const DeckViewer = () => {
+  const isMobile = useIsMobile();
   const [current, setCurrent] = useState(0);
   const [sidebar, setSidebar] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
@@ -25,6 +27,10 @@ const DeckViewer = () => {
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
   }, [next, prev]);
+
+  useEffect(() => {
+    if (isMobile) setSidebar(false);
+  }, [isMobile]);
 
   useEffect(() => {
     const h = () => setFullscreen(!!document.fullscreenElement);
@@ -62,7 +68,7 @@ const DeckViewer = () => {
 
   return (
     <div className="h-screen flex bg-background overflow-hidden">
-      {sidebar && !fullscreen && (
+      {sidebar && !fullscreen && !isMobile && (
         <div className="w-48 border-r border-border flex flex-col bg-card/50 backdrop-blur-sm shrink-0">
           <div className="p-3 border-b border-border flex items-center justify-between">
             <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-[0.15em]">Slides</span>
@@ -86,7 +92,7 @@ const DeckViewer = () => {
         {!fullscreen && (
           <div className="flex items-center justify-between px-4 h-12 border-b border-border shrink-0">
             <div className="flex items-center gap-3">
-              {!sidebar && (
+              {!sidebar && !isMobile && (
                 <button onClick={() => setSidebar(true)} className="text-muted-foreground hover:text-foreground transition">
                   <PanelLeft className="w-4 h-4" />
                 </button>
