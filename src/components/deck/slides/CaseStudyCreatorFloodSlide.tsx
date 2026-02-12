@@ -75,13 +75,13 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-2xl font-bold text-foreground">{majorLazer.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-2">{majorLazer.track}</p>
           <p className="text-sm text-muted-foreground mb-3">{majorLazer.overview}</p>
-          <div className="grid grid-cols-[1fr_1.2fr] gap-3 mb-3 flex-1 min-h-0">
+          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-3 flex-1 min-h-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
               <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-cover" />
             </div>
             {/* Right: 3 horizontal images stacked, matching left height */}
-            <div className="flex flex-col gap-3 h-full">
+            <div className="flex flex-col gap-2 h-full">
               {[mlFacebook, mlTiktok, mlIg].map((src, i) => (
                 <div key={i} className="flex-1 rounded-lg border border-white/[0.08] overflow-hidden min-h-0">
                   <img src={src} alt={majorLazerScreenshots[i + 1]?.alt} className="w-full h-full object-cover" />
