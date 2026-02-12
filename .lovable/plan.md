@@ -1,20 +1,38 @@
 
 
-# Fix Service Card Heights on Slide 9
+# Updates to Pricing Slide, and Case Study Slide
 
-## Problem
-The 5 service cards in the "Additional services" slide have inconsistent heights. Cards with a "Timeframe" line are taller than those without, and varying description lengths cause further unevenness.
+## Changes
 
-## Solution
-Make all cards uniform by:
-1. Adding `flex flex-col` to each `GlassPanel` so they stretch to fill the grid row height equally
-2. Adding `flex-grow` to the description text so it pushes the timeframe (or bottom of the card) down consistently
-3. Always rendering the timeframe area (even if empty) so the vertical structure is identical across all cards
+### 1. Pricing Slide -- Update link and service units
+- Update the "View full pricing sheet" link href from `#` to `https://clouted-pricing.lovable.app`
+- Change Clipping unit from "50-200+ clips" to "CPM"
+- Change Fanpages unit from "Weekly / Monthly" to "Monthly"
 
-## Technical Details
+### 2. Case Study Slide -- Fill in first case study with Subtronics data
+Based on the screenshot, populate Case Study 1 with real data:
+- **Artist**: Subtronics
+- **Goal**: Scale Subtronics' fandom beyond bass music through themed fan accounts in line with his Coachella debut + Fibonacci multi-genre album
+- **Services**: Fan Page Management
+- **Metrics**: 5,000,000+ views, 150,000+ likes, 15,000+ followers, 600+ clips
+- **Strategy/What mattered**: Live tour set highlights, K-Pop-style slice of life content, snippets from interviews and production livestreams, news about upcoming releases and events
+- Include 3 image placeholders for sample clips (you can swap in real images later)
+- Keep Case Studies 2 and 3 as placeholders for now
 
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`
-- Add `flex flex-col` to the `GlassPanel` className so cards stretch to equal height within each grid row
-- Wrap the description `<p>` with `flex-grow` so it fills remaining space
-- Replace the conditional `{s.time && ...}` with an always-rendered element that shows the timeframe text or an invisible placeholder, keeping card bottoms aligned
+### Technical Details
+
+#### File: `src/components/deck/slides/PricingSlide.tsx`
+- Line 4: Change Clipping unit to `'CPM'`
+- Line 5: Change Fanpages unit to `'Monthly'`
+- Line 43: Update href from `"#"` to `"https://clouted-pricing.lovable.app"`
+
+#### File: `src/components/deck/slides/CaseStudySlide.tsx`
+- Update the first entry in the `cases` array with Subtronics data
+- Restructure the case study card layout for the first card to include:
+  - Artist name + client info (Red Light Management)
+  - Goal description
+  - Strategy list (numbered)
+  - Sample clips area with 3 image placeholders
+  - Performance metrics panel (views, likes, followers, clips)
+- Keep cards 2 and 3 as bracket placeholders
 
