@@ -1,8 +1,8 @@
 import GlassPanel from '../GlassPanel';
 
 const services = [
-  { name: 'Clipping', unit: '50–200+ clips', note: 'Per campaign' },
-  { name: 'Fanpages', unit: 'Weekly / Monthly', note: 'Ongoing placement' },
+  { name: 'Clipping', unit: 'CPM', note: 'Per campaign' },
+  { name: 'Fanpages', unit: 'Monthly', note: 'Ongoing placement' },
   { name: 'UGC Growth (Creator Flood, Top 50 Trending)', unit: 'Per activation', note: 'Volume-based' },
   { name: 'Spark Ads', unit: 'Ad spend + mgmt fee', note: 'Managed amplification' },
   { name: 'Spotify Playlisting', unit: 'Per campaign', note: 'Editorial & algorithmic' },
@@ -40,7 +40,7 @@ const PricingSlide = () => (
         </table>
       </GlassPanel>
 
-      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 text-lg font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
+      <a href="https://clouted-pricing.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 text-lg font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
         View full pricing sheet →
       </a>
       <p className="text-sm text-muted-foreground/50 mt-4">Bundles can be built around your release schedule and goals.</p>
