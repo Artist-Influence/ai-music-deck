@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import rbJumpy from '@/assets/rich-brian-jumpy-creates.png';
+
 import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
 import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
 import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
@@ -54,8 +54,10 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-3xl font-bold text-foreground">{richBrian.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-4">{richBrian.track}</p>
           <p className="text-sm text-muted-foreground mb-5">{richBrian.overview}</p>
-          <div className="mb-5 aspect-video rounded-lg overflow-hidden border border-white/[0.08]">
-            <img src={rbJumpy} alt="Rich Brian Jumpy creates" className="w-full h-full object-cover object-top" />
+          <div className="mb-5">
+            <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
+              <span className="text-[9px] text-muted-foreground/40">Campaign Screenshot</span>
+            </div>
           </div>
           <div className="grid grid-cols-2 gap-3 mt-auto">
             {richBrian.metrics.map((m) => (
