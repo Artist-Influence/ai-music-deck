@@ -11,7 +11,7 @@ const TheShiftSlide = () => (
       <div className="flex-1 max-w-[800px]">
         <h1 className="text-7xl font-bold text-foreground mb-10 leading-tight">Music discovery<br />has changed.</h1>
         <GlassPanel className="mb-12">
-          <p className="text-2xl text-foreground/80 leading-relaxed mb-2">
+          <p className="text-2xl text-foreground leading-relaxed mb-2">
             People don't "find" songs anymore. Songs find people.
           </p>
           <p className="text-xl text-muted-foreground leading-relaxed">
@@ -28,7 +28,7 @@ const TheShiftSlide = () => (
             'Smart amplification that boosts the right signals',
           ].map((item, i) => (
             <GlassPanel key={i} variant="subtle" className="p-5">
-              <p className="text-base text-foreground/70">{item}</p>
+              <p className="text-base text-foreground">{item}</p>
             </GlassPanel>
           ))}
         </div>
