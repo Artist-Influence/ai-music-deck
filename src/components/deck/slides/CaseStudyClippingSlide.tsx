@@ -16,7 +16,10 @@ const cases = [
       { val: '13.65%', label: 'Engagement' },
       { val: '133K+', label: 'Likes' },
     ],
-    clips: ['Watch Clip 1', 'Watch Clip 2'],
+    clips: [
+      { label: 'Watch Clip 1', url: 'https://www.tiktok.com/@chestercorneliusthethird/video/7567109238930050317' },
+      { label: 'Watch Clip 2', url: 'https://www.tiktok.com/@chestercorneliusthethird/video/7568640706928069902' },
+    ],
   },
   {
     artist: 'Gorgon City',
@@ -29,7 +32,10 @@ const cases = [
       { val: '102K+', label: 'Likes' },
       { val: '3.64%', label: 'Engagement' },
     ],
-    clips: ['Watch Clip 1', 'Watch Clip 2'],
+    clips: [
+      { label: 'Watch Clip 1', url: 'https://www.instagram.com/p/DQmP6-JkvLS' },
+      { label: 'Watch Clip 2', url: 'https://www.instagram.com/p/DQkQTC_D1kJ' },
+    ],
   },
   {
     artist: 'Nash Rly',
@@ -42,7 +48,7 @@ const cases = [
       { val: '48K+', label: 'Likes' },
       { val: '3.78%', label: 'Engagement' },
     ],
-    clips: ['Watch Clip 1'],
+    clips: [],
   },
 ];
 
@@ -77,18 +83,22 @@ const CaseStudyClippingSlide = () => (
             </div>
 
             {/* Clip links */}
-            <div className="flex gap-2 mt-auto">
-              {c.clips.map((label) => (
-                <a
-                  key={label}
-                  href="#"
-                  className="inline-flex items-center gap-1.5 text-xs text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
-                >
-                  <ExternalLink className="w-3 h-3" />
-                  {label}
-                </a>
-              ))}
-            </div>
+            {c.clips.length > 0 && (
+              <div className="flex gap-2 mt-auto">
+                {c.clips.map((clip) => (
+                  <a
+                    key={clip.url}
+                    href={clip.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1.5 text-xs text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
+                  >
+                    <ExternalLink className="w-3 h-3" />
+                    {clip.label}
+                  </a>
+                ))}
+              </div>
+            )}
           </GlassPanel>
         ))}
       </div>
