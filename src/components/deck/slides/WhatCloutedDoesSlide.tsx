@@ -1,11 +1,94 @@
+import { useEffect, useRef } from 'react';
 import GlassPanel from '../GlassPanel';
+
+const HubDiagram = () => {
+  const orbitRef = useRef<SVGGElement>(null);
+  const textRefs = useRef<(SVGGElement | null)[]>([]);
+
+  const nodes = [
+    { cx: 250, cy: 250 },  // center
+    { cx: 250, cy: 70 },   // short-form
+    { cx: 105, cy: 400 },  // communities
+    { cx: 395, cy: 400 },  // streaming
+  ];
+
+  useEffect(() => {
+    let raf: number;
+    const start = performance.now();
+    const duration = 60000; // 60s per revolution
+
+    const tick = (now: number) => {
+      const elapsed = now - start;
+      const angle = (elapsed / duration) * 360 % 360;
+
+      if (orbitRef.current) {
+        orbitRef.current.setAttribute('transform', `rotate(${angle}, 250, 250)`);
+      }
+
+      textRefs.current.forEach((el, i) => {
+        if (el) {
+          const n = nodes[i];
+          el.setAttribute('transform', `rotate(${-angle}, ${n.cx}, ${n.cy})`);
+        }
+      });
+
+      raf = requestAnimationFrame(tick);
+    };
+
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  return (
+    <svg viewBox="0 0 500 500" className="w-[480px] h-[480px]">
+      <g ref={orbitRef}>
+        {/* Rings */}
+        <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" fill="none" opacity="0.15" />
+        <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.3" fill="none" opacity="0.1" />
+
+        {/* Connection lines */}
+        <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+        <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1" opacity="0.25" />
+        <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+
+        {/* Center node */}
+        <circle cx="250" cy="250" r="50" fill="hsl(195, 90%, 60%)" opacity="0.12" />
+        <circle cx="250" cy="250" r="50" stroke="hsl(195, 90%, 60%)" strokeWidth="1" fill="none" opacity="0.3" />
+        <g ref={el => { textRefs.current[0] = el; }}>
+          <text x="250" y="246" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Your</text>
+          <text x="250" y="263" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Song</text>
+        </g>
+
+        {/* Short-form node */}
+        <circle cx="250" cy="70" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
+        <g ref={el => { textRefs.current[1] = el; }}>
+          <text x="250" y="68" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Short-form</text>
+          <text x="250" y="82" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Content</text>
+        </g>
+
+        {/* Communities node */}
+        <circle cx="105" cy="400" r="35" fill="hsl(180, 70%, 48%)" opacity="0.08" stroke="hsl(180, 70%, 48%)" strokeWidth="0.5" />
+        <g ref={el => { textRefs.current[2] = el; }}>
+          <text x="105" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Communities</text>
+          <text x="105" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">& Culture</text>
+        </g>
+
+        {/* Streaming node */}
+        <circle cx="395" cy="400" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
+        <g ref={el => { textRefs.current[3] = el; }}>
+          <text x="395" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Streaming</text>
+          <text x="395" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Platforms</text>
+        </g>
+      </g>
+    </svg>
+  );
+};
 
 const WhatCloutedDoesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex items-center">
     <div className="absolute top-[15%] left-[40%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[150px] animate-float" />
 
     <div className="relative z-10 flex gap-16 items-center w-full">
-      {/* Text side */}
       <div className="flex-1 max-w-[700px]">
         <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
           We run the growth layer between your song and the algorithms.
@@ -28,68 +111,8 @@ const WhatCloutedDoesSlide = () => (
         </div>
       </div>
 
-      {/* Hub diagram */}
       <div className="flex-1 flex items-center justify-center">
-        <svg viewBox="0 0 500 500" className="w-[480px] h-[480px]">
-          <defs>
-            <style>{`
-              @keyframes hub-spin {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(360deg); }
-              }
-              @keyframes hub-counter-spin {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(-360deg); }
-              }
-              .hub-orbit { animation: hub-spin 60s linear infinite; transform-origin: 250px 250px; }
-              .counter-spin-center { animation: hub-counter-spin 60s linear infinite; transform-origin: 250px 250px; }
-              .counter-spin-sf { animation: hub-counter-spin 60s linear infinite; transform-origin: 250px 70px; }
-              .counter-spin-comm { animation: hub-counter-spin 60s linear infinite; transform-origin: 105px 400px; }
-              .counter-spin-stream { animation: hub-counter-spin 60s linear infinite; transform-origin: 395px 400px; }
-            `}</style>
-          </defs>
-
-          {/* Everything orbits together */}
-          <g className="hub-orbit">
-            {/* Rings */}
-            <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" fill="none" opacity="0.15" />
-            <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.3" fill="none" opacity="0.1" />
-
-            {/* Connection lines */}
-            <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
-            <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1" opacity="0.25" />
-            <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
-
-            {/* Center node — circle orbits, text counter-rotates */}
-            <circle cx="250" cy="250" r="50" fill="hsl(195, 90%, 60%)" opacity="0.12" />
-            <circle cx="250" cy="250" r="50" stroke="hsl(195, 90%, 60%)" strokeWidth="1" fill="none" opacity="0.3" />
-            <g className="counter-spin-center">
-              <text x="250" y="246" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Your</text>
-              <text x="250" y="263" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Song</text>
-            </g>
-
-            {/* Short-form node */}
-            <circle cx="250" cy="70" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
-            <g className="counter-spin-sf">
-              <text x="250" y="68" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Short-form</text>
-              <text x="250" y="82" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Content</text>
-            </g>
-
-            {/* Communities node */}
-            <circle cx="105" cy="400" r="35" fill="hsl(180, 70%, 48%)" opacity="0.08" stroke="hsl(180, 70%, 48%)" strokeWidth="0.5" />
-            <g className="counter-spin-comm">
-              <text x="105" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Communities</text>
-              <text x="105" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">& Culture</text>
-            </g>
-
-            {/* Streaming node */}
-            <circle cx="395" cy="400" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
-            <g className="counter-spin-stream">
-              <text x="395" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Streaming</text>
-              <text x="395" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Platforms</text>
-            </g>
-          </g>
-        </svg>
+        <HubDiagram />
       </div>
     </div>
   </div>
