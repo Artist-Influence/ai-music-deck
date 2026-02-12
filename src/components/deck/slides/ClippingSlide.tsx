@@ -1,17 +1,19 @@
 import GlassPanel from '../GlassPanel';
+import ClippingVisualizer from '../ClippingVisualizer';
 
 const ClippingSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
     <div className="absolute top-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float" />
 
-    <div className="relative z-10 max-w-[1400px]">
-      <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
-      <h1 className="text-7xl font-bold text-foreground mb-6">Clipping</h1>
-      <p className="text-2xl text-muted-foreground mb-12 max-w-[800px]">
-        A curated short-form network that turns your track into native TikToks, Reels, and Shorts at scale.
-      </p>
+    <div className="relative z-10 flex gap-12 items-start">
+      <div className="flex-1 max-w-[900px]">
+        <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
+        <h1 className="text-7xl font-bold text-foreground mb-6">Clipping</h1>
+        <p className="text-2xl text-muted-foreground mb-12 max-w-[800px]">
+          A curated short-form network that turns your track into native TikToks, Reels, and Shorts at scale.
+        </p>
 
-      <div className="grid grid-cols-3 gap-6">
+        <div className="grid grid-cols-3 gap-6">
         <GlassPanel className="p-6">
           <p className="text-lg font-semibold text-primary mb-4">What it is</p>
           <p className="text-base text-muted-foreground leading-relaxed">
@@ -70,6 +72,11 @@ const ClippingSlide = () => (
             <p className="text-sm text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
           </div>
         </GlassPanel>
+        </div>
+      </div>
+
+      <div className="flex-1 flex items-center justify-center max-w-[500px] pt-8">
+        <ClippingVisualizer />
       </div>
     </div>
   </div>
