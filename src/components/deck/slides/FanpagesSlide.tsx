@@ -12,7 +12,7 @@ const FanpagesSlide = () => (
       </p>
 
       <div className="flex gap-10">
-        <div className="flex-1 space-y-6">
+        <div className="flex-1 space-y-6 max-w-[900px]">
           <GlassPanel className="p-6">
             <p className="text-lg font-semibold text-primary mb-3">What it is</p>
             <p className="text-base text-muted-foreground leading-relaxed">
@@ -56,16 +56,11 @@ const FanpagesSlide = () => (
           </GlassPanel>
         </div>
 
-        {/* Placeholder grid for page screenshots */}
-        <div className="flex-1 grid grid-cols-3 gap-3">
-          {Array.from({ length: 6 }).map((_, i) => (
-            <GlassPanel key={i} variant="subtle" className="p-4 flex flex-col items-center justify-center aspect-[3/4]">
-              <div className="w-10 h-10 rounded-full bg-primary/10 mb-3" />
-              <div className="w-full h-2 rounded bg-white/[0.06] mb-1.5" />
-              <div className="w-3/4 h-2 rounded bg-white/[0.04]" />
-              <p className="text-[10px] text-muted-foreground/40 mt-auto">Page {i + 1}</p>
-            </GlassPanel>
-          ))}
+        {/* Visualizer placeholder */}
+        <div className="flex-1 flex items-center justify-center">
+          <div className="w-full h-[80%] rounded-2xl border border-white/[0.06] bg-white/[0.02] flex items-center justify-center">
+            <p className="text-sm text-muted-foreground/30 italic">Visualizer</p>
+          </div>
         </div>
       </div>
     </div>
