@@ -1,38 +1,64 @@
 
 
-# Updates to Pricing Slide, and Case Study Slide
+# Add Case Study Slides
 
-## Changes
+## Overview
+Create 4 new case study slides and keep the existing Subtronics slide (slide 13) as-is. The new slides will use a multi-card format (2-3 case studies per slide) for broader performance highlights.
 
-### 1. Pricing Slide -- Update link and service units
-- Update the "View full pricing sheet" link href from `#` to `https://clouted-pricing.lovable.app`
-- Change Clipping unit from "50-200+ clips" to "CPM"
-- Change Fanpages unit from "Weekly / Monthly" to "Monthly"
+## Slide Breakdown
 
-### 2. Case Study Slide -- Fill in first case study with Subtronics data
-Based on the screenshot, populate Case Study 1 with real data:
-- **Artist**: Subtronics
-- **Goal**: Scale Subtronics' fandom beyond bass music through themed fan accounts in line with his Coachella debut + Fibonacci multi-genre album
-- **Services**: Fan Page Management
-- **Metrics**: 5,000,000+ views, 150,000+ likes, 15,000+ followers, 600+ clips
-- **Strategy/What mattered**: Live tour set highlights, K-Pop-style slice of life content, snippets from interviews and production livestreams, news about upcoming releases and events
-- Include 3 image placeholders for sample clips (you can swap in real images later)
-- Keep Case Studies 2 and 3 as placeholders for now
+### Slide 13 -- Subtronics Fanpage Growth (existing, no changes)
+Keep as the single detailed case study.
 
-### Technical Details
+### Slide 14 (NEW) -- Creator Flood + Top 50 Trending
+Two cards side by side:
+- **Rich Brian -- Jumpy** (Creator Flood): 10K+ initial posts, 23K+ total creates
+- **Major Lazer -- MINI SKIRT** (Top 50 Trending): 5K+ YT creates, 14.9K IG Reels creates, trended across US/Canada
 
-#### File: `src/components/deck/slides/PricingSlide.tsx`
-- Line 4: Change Clipping unit to `'CPM'`
-- Line 5: Change Fanpages unit to `'Monthly'`
-- Line 43: Update href from `"#"` to `"https://clouted-pricing.lovable.app"`
+### Slide 15 (NEW) -- Skrillex Fanpage Growth
+Single detailed card (similar to Subtronics format):
+- **Skrillex -- FUS Album** (Fanpages): 2.1M+ views, 1,557 posts, 6.84% engagement, 42% of album UGC in month one, top post 1.3M+ views
 
-#### File: `src/components/deck/slides/CaseStudySlide.tsx`
-- Update the first entry in the `cases` array with Subtronics data
-- Restructure the case study card layout for the first card to include:
-  - Artist name + client info (Red Light Management)
-  - Goal description
-  - Strategy list (numbered)
-  - Sample clips area with 3 image placeholders
-  - Performance metrics panel (views, likes, followers, clips)
-- Keep cards 2 and 3 as bracket placeholders
+### Slide 16 (NEW) -- YouTube / SoundCloud / Spotify
+Three cards:
+- **Jason Derulo & Michael Buble -- Spicy Margarita** (YouTube Ads): 11M views, 6.5M unique viewers, 1.1M+ hours watch time
+- **Dack Janiels -- Shock Therapy** (Spotify Playlisting): 185.7K streams, 9,950 playlist adds, 3.6% save rate
+- **Francis Mercier -- Sauti** (Instagram EDM Seeding): 16.4M views, $0.03 CPM, 89.2K saves
+
+### Slide 17 (NEW) -- Clipping Campaigns
+Three cards:
+- **Aries -- In The Flesh**: $0.50 CPM, 1.1M+ views, 13.65% engagement
+- **Gorgon City -- Mitsubishi**: $0.60 CPM, 3.08M+ views, 102K+ likes
+- **Nash Rly -- U & Me**: $0.49 CPM, 1.55M+ views, 48K+ likes
+
+Then Pricing and Next Steps follow as slides 18 and 19.
+
+## Card Design
+Each multi-card slide will use a consistent format:
+- Slide title + subtitle at top
+- Cards in a grid (2-col for 2 cards, 3-col for 3 cards)
+- Each card: GlassPanel with artist name, service badge, brief overview sentence, and a metrics grid showing 3-4 key numbers
+
+## Technical Details
+
+### New Files
+1. `src/components/deck/slides/CaseStudyCreatorFloodSlide.tsx` -- Rich Brian + Major Lazer (2-col grid)
+2. `src/components/deck/slides/CaseStudySkrillexSlide.tsx` -- Skrillex single detailed layout
+3. `src/components/deck/slides/CaseStudyPlatformSlide.tsx` -- YouTube/Spotify/Seeding (3-col grid)
+4. `src/components/deck/slides/CaseStudyClippingSlide.tsx` -- 3 clipping campaigns (3-col grid)
+
+### Modified Files
+5. `src/components/deck/slides/index.tsx` -- Import and insert the 4 new slides after CaseStudySlide, before PricingSlide
+
+### Layout Pattern for Multi-Card Slides
+Each slide follows this structure:
+- Full-height container with `p-24`, ambient glow background
+- Title area: bold heading + muted subtitle
+- Card grid using `GlassPanel variant="bright"`
+- Each card: service tag (mono, primary), artist name (bold), one-line overview, then a metrics grid with 3-4 stat boxes
+
+### Layout for Skrillex (Single Card)
+- Two-column layout similar to existing Subtronics slide
+- Left: details (goal, strategy list)
+- Right: metrics panel + clip placeholders
 
