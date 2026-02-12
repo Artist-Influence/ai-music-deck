@@ -52,11 +52,11 @@ const CaseStudyPlatformSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[130px] animate-float" />
 
-    <div className="relative z-10 w-full max-w-[1400px]">
+    <div className="relative z-10 w-full max-w-[1400px] text-center">
       <h1 className="text-6xl font-bold text-foreground mb-4">Platform-native results.</h1>
       <p className="text-xl text-muted-foreground mb-12">YouTube · Spotify · Instagram</p>
 
-      <div className="grid grid-cols-3 gap-6 max-w-[1200px]">
+      <div className="grid grid-cols-3 gap-6 max-w-[1200px] mx-auto">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-5 flex flex-col h-full">
             <p className="text-sm text-primary font-mono mb-2 tracking-widest">{c.tag}</p>
