@@ -5,7 +5,7 @@ const FanpagesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[10%] right-[15%] w-[450px] h-[450px] rounded-full bg-accent/[0.05] blur-[130px] animate-float-slow" />
 
-    <div className="relative z-10 w-full max-w-[1600px]">
+    <div className="relative z-10 w-full max-w-[1600px] mx-auto">
       <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
       <h1 className="text-7xl font-bold text-foreground mb-6">Fanpages</h1>
       <p className="text-2xl text-muted-foreground mb-12 max-w-[800px]">

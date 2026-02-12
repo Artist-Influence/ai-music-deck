@@ -5,7 +5,7 @@ const ClippingSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float" />
 
-    <div className="relative z-10 flex gap-12 items-start w-full max-w-[1600px]">
+    <div className="relative z-10 flex gap-12 items-start w-full max-w-[1600px] mx-auto">
       <div className="flex-1 max-w-[900px]">
         <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
         <h1 className="text-7xl font-bold text-foreground mb-6">Clipping</h1>

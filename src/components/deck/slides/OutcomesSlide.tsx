@@ -13,7 +13,7 @@ const OutcomesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[5%] left-[20%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float-slow" />
 
-    <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px]">
+    <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px] mx-auto">
       <div className="flex-1 max-w-[900px]">
         <h1 className="text-7xl font-bold text-foreground mb-4">What "good" looks like</h1>
         <p className="text-2xl text-muted-foreground mb-6">Outcomes we aim for</p>

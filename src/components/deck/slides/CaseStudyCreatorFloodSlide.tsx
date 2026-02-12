@@ -48,7 +48,7 @@ const CaseStudyCreatorFloodSlide = () => (
       <h1 className="text-4xl font-bold text-foreground mb-2">Scale on impact.</h1>
       <p className="text-lg text-muted-foreground mb-4">Creator Flood &amp; Trending Campaigns</p>
 
-      <div className="grid grid-cols-2 gap-6 max-w-[1400px] flex-1 min-h-0">
+      <div className="grid grid-cols-2 gap-6 max-w-[1400px] mx-auto flex-1 min-h-0">
         {/* Rich Brian */}
         <GlassPanel variant="bright" className="p-4 flex flex-col h-full">
           <p className="text-sm text-primary font-mono mb-2 tracking-widest">{richBrian.tag}</p>
