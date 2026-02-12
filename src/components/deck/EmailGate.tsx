@@ -54,7 +54,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
         </div>
 
         <div className="mb-8">
-          <h2 className="text-lg font-semibold text-foreground mb-2">View the Proposal</h2>
+          <h2 className="text-lg font-semibold text-foreground mb-2">View our Deck</h2>
           <p className="text-muted-foreground text-sm">Enter your email to access our growth system deck.</p>
         </div>
 
@@ -75,7 +75,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
             disabled={loading}
             className="w-full h-12 rounded-xl bg-primary text-primary-foreground font-semibold text-sm hover:bg-primary/90 transition-all disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {loading ? 'Loading...' : 'View Proposal'}
+            {loading ? 'Loading...' : 'View our Deck'}
           </button>
         </form>
 
