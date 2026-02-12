@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import ServicesVisualizer from '../ServicesVisualizer';
 
 const services = [
   { icon: '📢', name: 'Meta & TikTok Ads', desc: 'We turn proven native posts into ads to convert streams, sales, touring, and more. Optimized daily, weekly reporting, clean exports.', time: '2–3 weeks' },
@@ -27,6 +28,9 @@ const AdditionalServicesSlide = () => (
             </p>
           </GlassPanel>
         ))}
+        <GlassPanel className="p-6 flex items-center justify-center">
+          <ServicesVisualizer />
+        </GlassPanel>
       </div>
     </div>
   </div>
