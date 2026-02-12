@@ -1,35 +1,27 @@
 
 
-# Fix Metric Overlap and Add Rich Brian Screenshot
+# Fix Major Lazer Metrics Overlap
 
 ## Problem
-1. The Major Lazer metrics row overlaps the screenshot grid because the fixed `h-[280px]` on the image container doesn't leave enough room, and the `flex flex-col` parent doesn't properly account for it.
-2. The Rich Brian card still has a placeholder instead of a real screenshot.
+The metrics row (5,000+ YT Creates, 14,900+ IG Reels, etc.) is overlapping on top of the screenshot images. The `max-h-[260px]` on the image grid container isn't effectively constraining the content because the grid children (images) expand beyond it, and the flex column layout doesn't properly allocate remaining space to the metrics.
 
 ## Solution
-
-### 1. Fix Major Lazer sizing overlap
-- Remove the fixed `h-[280px]` from the image grid container
-- Instead, use a max-height with `overflow-hidden` and let the flex column handle spacing naturally
-- Change to `max-h-[260px]` so the images are constrained but the metrics aren't pushed under them
-- Ensure the GlassPanel has `overflow-hidden` to prevent any content from spilling out
-
-### 2. Add Rich Brian screenshot
-- Copy uploaded screenshot to `src/assets/rich-brian-jumpy-creates.png`
-- Import it in the component
-- Replace the placeholder div with the actual image using `object-cover object-top` to show the top portion (title and video grid)
+Give the image grid a fixed height with `overflow-hidden` and ensure the GlassPanel itself also clips overflow. The key fix is changing the image container from `max-h-[260px]` to a smaller fixed height like `h-[220px]` and ensuring `overflow-hidden` is on the container so the images are properly clipped. Additionally, add `overflow-hidden` to the GlassPanel wrapper.
 
 ## Technical Details
 
 **File: `src/components/deck/slides/CaseStudyCreatorFloodSlide.tsx`**
 
-1. Add import: `import rbJumpy from '@/assets/rich-brian-jumpy-creates.png';`
+1. **Line 73** - Add `overflow-hidden` to the Major Lazer GlassPanel:
+   - Change: `className="p-8 flex flex-col"`
+   - To: `className="p-8 flex flex-col overflow-hidden"`
 
-2. Replace Rich Brian placeholder (lines 56-60):
-   - Remove the `aspect-video` placeholder div
-   - Add an image container with `aspect-video rounded-lg overflow-hidden` and the imported screenshot with `object-cover object-top`
+2. **Line 78** - Fix the image grid container sizing:
+   - Change: `className="grid grid-cols-[1fr_1.2fr] gap-2 mb-5 max-h-[260px]"`
+   - To: `className="grid grid-cols-[1fr_1.2fr] gap-2 mb-5 h-[220px] overflow-hidden flex-shrink-0"`
+   - `h-[220px]` gives a definite height instead of a max that children can ignore
+   - `overflow-hidden` clips any image overflow
+   - `flex-shrink-0` prevents the flex parent from compressing this container
 
-3. Fix Major Lazer image grid (line 77):
-   - Change `h-[280px]` to `max-h-[260px]` to prevent overflow while still constraining the images
-   - This ensures the metrics row below has enough space and doesn't overlap
+These two changes ensure the images stay within their bounds and the metrics row renders cleanly below them.
 
