@@ -1,4 +1,8 @@
 import GlassPanel from '../GlassPanel';
+import subClip1 from '@/assets/subtronics-clip1.jpg';
+import subClip2 from '@/assets/subtronics-clip2.jpg';
+
+const clipImages = [subClip1, subClip2, null];
 
 const CaseStudySlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
@@ -38,9 +42,13 @@ const CaseStudySlide = () => (
           <div>
             <p className="text-sm text-primary font-medium mb-3">Sample clips</p>
             <div className="grid grid-cols-3 gap-3">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className="aspect-[9/16] rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground/40">Clip {n}</span>
+              {clipImages.map((img, i) => (
+                <div key={i} className="aspect-[9/16] rounded-xl bg-white/[0.06] border border-white/[0.08] overflow-hidden flex items-center justify-center">
+                  {img ? (
+                    <img src={img} alt={`Subtronics clip ${i + 1}`} className="w-full h-full object-cover" />
+                  ) : (
+                    <span className="text-xs text-muted-foreground/40">Clip {i + 1}</span>
+                  )}
                 </div>
               ))}
             </div>
