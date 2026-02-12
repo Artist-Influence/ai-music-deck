@@ -31,30 +31,43 @@ const WhatCloutedDoesSlide = () => (
       {/* Hub diagram */}
       <div className="flex-1 flex items-center justify-center">
         <svg viewBox="0 0 500 500" className="w-[480px] h-[480px]">
-          {/* Outer glow ring */}
-          <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" fill="none" opacity="0.15" />
-          <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.3" fill="none" opacity="0.1" />
+          <defs>
+            <style>{`
+              @keyframes hub-spin {
+                from { transform: rotate(0deg); }
+                to { transform: rotate(360deg); }
+              }
+              .hub-orbit { animation: hub-spin 60s linear infinite; transform-origin: 250px 250px; }
+            `}</style>
+          </defs>
 
-          {/* Center */}
+          {/* Spinning layer — rings and connection lines */}
+          <g className="hub-orbit">
+            <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" fill="none" opacity="0.15" />
+            <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.3" fill="none" opacity="0.1" />
+            {/* Connection lines */}
+            <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+            <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1" opacity="0.25" />
+            <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+          </g>
+
+          {/* Static layer — center node */}
           <circle cx="250" cy="250" r="50" fill="hsl(195, 90%, 60%)" opacity="0.12" />
           <circle cx="250" cy="250" r="50" stroke="hsl(195, 90%, 60%)" strokeWidth="1" fill="none" opacity="0.3" />
           <text x="250" y="246" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Your</text>
           <text x="250" y="263" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Song</text>
 
-          {/* Short-form */}
-          <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+          {/* Static layer — Short-form node */}
           <circle cx="250" cy="70" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
           <text x="250" y="68" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Short-form</text>
           <text x="250" y="82" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Content</text>
 
-          {/* Communities */}
-          <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1" opacity="0.25" />
+          {/* Static layer — Communities node */}
           <circle cx="105" cy="400" r="35" fill="hsl(180, 70%, 48%)" opacity="0.08" stroke="hsl(180, 70%, 48%)" strokeWidth="0.5" />
           <text x="105" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Communities</text>
           <text x="105" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">& Culture</text>
 
-          {/* Streaming */}
-          <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+          {/* Static layer — Streaming node */}
           <circle cx="395" cy="400" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
           <text x="395" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Streaming</text>
           <text x="395" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Platforms</text>
