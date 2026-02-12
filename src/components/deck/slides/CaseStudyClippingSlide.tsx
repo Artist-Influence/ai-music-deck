@@ -1,10 +1,14 @@
 import GlassPanel from '../GlassPanel';
 import { ExternalLink } from 'lucide-react';
+import ariesCover from '@/assets/aries-in-the-flesh.jpg';
+import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
+import nashRlyCover from '@/assets/nash-rly-u-and-me.jpg';
 
 const cases = [
   {
     artist: 'Aries',
     track: 'In The Flesh',
+    coverArt: ariesCover,
     overview: 'Meme-forward creative tied to culturally relevant humor for high-volume engagement.',
     metrics: [
       { val: '$0.50', label: 'CPM' },
@@ -17,6 +21,7 @@ const cases = [
   {
     artist: 'Gorgon City',
     track: 'Mitsubishi',
+    coverArt: gorgonCityCover,
     overview: 'Car culture and rave footage distributed through genre-native clipper accounts.',
     metrics: [
       { val: '$0.60', label: 'CPM' },
@@ -29,6 +34,7 @@ const cases = [
   {
     artist: 'Nash Rly',
     track: 'U & Me',
+    coverArt: nashRlyCover,
     overview: 'High-volume EDM memes and rave footage driving repeat exposure across communities.',
     metrics: [
       { val: '$0.49', label: 'CPM' },
@@ -51,9 +57,9 @@ const CaseStudyClippingSlide = () => (
       <div className="grid grid-cols-3 gap-6 max-w-[1200px]">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-6 flex flex-col">
-            {/* Cover art placeholder */}
-            <div className="aspect-square rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-4">
-              <span className="text-[9px] text-muted-foreground/40">Cover Art</span>
+            {/* Cover art */}
+            <div className="aspect-square rounded-xl overflow-hidden border border-white/[0.08] flex items-center justify-center mb-4">
+              <img src={c.coverArt} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
             </div>
 
             <p className="text-sm text-primary font-mono mb-3 tracking-widest">CLIPPING</p>
