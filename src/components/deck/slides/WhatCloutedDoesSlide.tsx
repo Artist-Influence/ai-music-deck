@@ -10,9 +10,10 @@ const WhatCloutedDoesSlide = () => (
         <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
           We run the growth layer between your song and the algorithms.
         </h1>
-        <p className="text-xl text-muted-foreground mb-10 leading-relaxed">
+        <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
           Clouted coordinates distribution across short-form, culture, and streaming so your release builds momentum like a system, not a gamble.
         </p>
+        <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">We do three things well</p>
         <div className="space-y-3">
           {[
             ['Velocity', 'Create velocity with short-form at scale'],
