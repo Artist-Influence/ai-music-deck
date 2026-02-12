@@ -1,4 +1,4 @@
-const OutcomesVisualizer = () => {
+const OutcomesVisualizer = ({ className = '' }: { className?: string }) => {
   // Upward-trending bars with staggered animation
   const bars = [
     { x: 20, h: 30 },
@@ -15,7 +15,7 @@ const OutcomesVisualizer = () => {
   const linePoints = bars.map(b => `${b.x + 8},${170 - b.h}`).join(' ');
 
   return (
-    <svg viewBox="0 0 210 200" className="w-[320px] h-[300px]">
+    <svg viewBox="0 0 210 200" className={`w-[220px] h-[210px] ${className}`}>
       {/* Grid lines */}
       {[40, 80, 120, 160].map(y => (
         <line key={y} x1="15" y1={y} x2="195" y2={y}
