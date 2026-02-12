@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import FanpageVisualizer from '../FanpageVisualizer';
 
 const FanpagesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
@@ -56,11 +57,8 @@ const FanpagesSlide = () => (
           </GlassPanel>
         </div>
 
-        {/* Visualizer placeholder */}
         <div className="flex-1 flex items-center justify-center">
-          <div className="w-full h-[80%] rounded-2xl border border-white/[0.06] bg-white/[0.02] flex items-center justify-center">
-            <p className="text-sm text-muted-foreground/30 italic">Visualizer</p>
-          </div>
+          <FanpageVisualizer />
         </div>
       </div>
     </div>
