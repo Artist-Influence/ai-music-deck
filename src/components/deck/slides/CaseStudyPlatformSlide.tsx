@@ -1,6 +1,7 @@
 import GlassPanel from '../GlassPanel';
 import spicyMargaritaImg from '@/assets/jason-derulo-spicy-margarita-views.png';
 import dackJanielsImg from '@/assets/dack-janiels-streams.png';
+import francisMercierImg from '@/assets/francis-mercier-sauti.png';
 
 const cases = [
   {
@@ -36,8 +37,8 @@ const cases = [
     artist: 'Francis Mercier',
     track: 'Sauti',
     overview: 'Global audio seeding across Afro House audiences and LATAM markets.',
-    screenshot: null,
-    imgClass: '',
+    screenshot: francisMercierImg,
+    imgClass: 'object-cover object-top',
     metrics: [
       { val: '16.4M', label: 'Views' },
       { val: '$0.03', label: 'CPM' },
