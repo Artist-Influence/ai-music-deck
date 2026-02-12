@@ -48,17 +48,15 @@ const CaseStudyCreatorFloodSlide = () => (
       <h1 className="text-4xl font-bold text-foreground mb-2">Scale on impact.</h1>
       <p className="text-lg text-muted-foreground mb-4">Creator Flood &amp; Trending Campaigns</p>
 
-      <div className="grid grid-cols-2 gap-6 max-w-[1400px] items-start flex-1 min-h-0">
+      <div className="grid grid-cols-2 gap-6 max-w-[1400px] flex-1 min-h-0">
         {/* Rich Brian */}
-        <GlassPanel variant="bright" className="p-4 flex flex-col">
+        <GlassPanel variant="bright" className="p-4 flex flex-col h-full">
           <p className="text-sm text-primary font-mono mb-2 tracking-widest">{richBrian.tag}</p>
           <p className="text-2xl font-bold text-foreground">{richBrian.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-2">{richBrian.track}</p>
           <p className="text-sm text-muted-foreground mb-3">{richBrian.overview}</p>
-          <div className="mb-3">
-            <div className="aspect-video rounded-lg border border-white/[0.08] overflow-hidden">
-              <img src={richBrianImg} alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover" />
-            </div>
+          <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
+            <img src={richBrianImg} alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover object-top" />
           </div>
           <div className="grid grid-cols-2 gap-2 mt-auto">
             {richBrian.metrics.map((m) => (
@@ -71,7 +69,7 @@ const CaseStudyCreatorFloodSlide = () => (
         </GlassPanel>
 
         {/* Major Lazer */}
-        <GlassPanel variant="bright" className="p-4 flex flex-col">
+        <GlassPanel variant="bright" className="p-4 flex flex-col h-full">
           <p className="text-sm text-primary font-mono mb-2 tracking-widest">{majorLazer.tag}</p>
           <p className="text-2xl font-bold text-foreground">{majorLazer.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-2">{majorLazer.track}</p>
