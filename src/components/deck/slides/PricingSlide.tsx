@@ -33,7 +33,7 @@ const PricingSlide = () => (
               <tr key={i} className="border-b border-white/[0.04] last:border-0 hover:bg-white/[0.02] transition-colors">
                 <td className="p-4 text-base text-foreground font-medium">{s.name}</td>
                 <td className="p-4 text-sm text-muted-foreground">{s.unit}</td>
-                <td className="p-4 text-sm text-muted-foreground/60">{s.note}</td>
+                <td className="p-4 text-sm text-foreground">{s.note}</td>
               </tr>
             ))}
           </tbody>
@@ -43,7 +43,7 @@ const PricingSlide = () => (
       <a href="https://clouted-pricing.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 text-lg font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
         View full pricing sheet →
       </a>
-      <p className="text-sm text-muted-foreground/50 mt-4">Bundles can be built around your release schedule and goals.</p>
+      <p className="text-sm text-foreground mt-4">Bundles can be built around your release schedule and goals.</p>
     </div>
   </div>
 );

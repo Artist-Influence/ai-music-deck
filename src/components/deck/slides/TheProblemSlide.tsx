@@ -23,7 +23,7 @@ const TheProblemSlide = () => (
             'Reporting is late, unclear, or missing',
             'You spend money without knowing what actually moved the needle',
           ].map((item, i) => (
-            <p key={i} className="text-base text-muted-foreground py-2 border-b border-white/[0.04] last:border-0">{item}</p>
+            <p key={i} className="text-base text-foreground py-2 border-b border-white/[0.04] last:border-0">{item}</p>
           ))}
         </GlassPanel>
       </div>
