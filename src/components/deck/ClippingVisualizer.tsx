@@ -1,32 +1,34 @@
 const ClippingVisualizer = () => {
-  // Central waveform bars — the original track
-  const waveBars = Array.from({ length: 24 }, (_, i) => ({
-    x: 120 + i * 7,
-    height: 8 + Math.sin(i * 0.8) * 18 + Math.cos(i * 1.3) * 12,
+  const cy = 200;
+
+  // Film strip frames — the original video being clipped
+  const frames = Array.from({ length: 8 }, (_, i) => ({
+    x: 115 + i * 22,
+    fill: 0.3 + Math.sin(i * 0.9) * 0.15,
   }));
 
-  // Fragment groups — clips flying outward from the waveform
-  const fragments = [
-    { bars: [0, 1, 2, 3], tx: -70, ty: -90, rot: -25, delay: 0, scale: 0.6 },
-    { bars: [4, 5, 6], tx: -40, ty: -120, rot: -10, delay: 0.5, scale: 0.55 },
-    { bars: [7, 8, 9, 10], tx: 20, ty: -130, rot: 5, delay: 1.0, scale: 0.5 },
-    { bars: [11, 12, 13], tx: 80, ty: -110, rot: 20, delay: 0.7, scale: 0.55 },
-    { bars: [14, 15, 16, 17], tx: 110, ty: -80, rot: 30, delay: 1.3, scale: 0.6 },
-    { bars: [18, 19, 20], tx: -60, ty: 100, rot: 15, delay: 0.3, scale: 0.55 },
-    { bars: [21, 22, 23], tx: 90, ty: 95, rot: -15, delay: 0.9, scale: 0.5 },
-    { bars: [2, 6, 10], tx: -100, ty: 20, rot: -35, delay: 1.5, scale: 0.45 },
-    { bars: [13, 17, 21], tx: 130, ty: 10, rot: 25, delay: 1.1, scale: 0.45 },
-    { bars: [5, 9, 15], tx: 0, ty: 120, rot: 0, delay: 1.7, scale: 0.5 },
+  // Scattered clip fragments flying outward
+  const clips = [
+    { tx: -85, ty: -100, rot: -20, delay: 0, w: 28, h: 18 },
+    { tx: -35, ty: -130, rot: -8, delay: 0.5, w: 24, h: 16 },
+    { tx: 30, ty: -125, rot: 12, delay: 0.9, w: 26, h: 17 },
+    { tx: 90, ty: -95, rot: 25, delay: 0.4, w: 22, h: 15 },
+    { tx: 120, ty: -40, rot: 35, delay: 1.2, w: 24, h: 16 },
+    { tx: -100, ty: 30, rot: -30, delay: 1.0, w: 22, h: 15 },
+    { tx: -70, ty: 105, rot: 18, delay: 0.7, w: 26, h: 17 },
+    { tx: -10, ty: 130, rot: -5, delay: 1.4, w: 28, h: 18 },
+    { tx: 70, ty: 110, rot: -18, delay: 0.3, w: 24, h: 16 },
+    { tx: 115, ty: 50, rot: 22, delay: 1.6, w: 22, h: 15 },
+    { tx: -110, ty: -40, rot: -15, delay: 1.8, w: 20, h: 14 },
+    { tx: 50, ty: -60, rot: 8, delay: 2.0, w: 20, h: 14 },
   ];
-
-  const cy = 200;
 
   return (
     <div className="w-full h-full flex items-center justify-center">
       <svg viewBox="0 0 400 400" className="w-full h-full max-w-[420px] max-h-[420px]">
         <defs>
           <filter id="clipGlow">
-            <feGaussianBlur stdDeviation="3" result="blur" />
+            <feGaussianBlur stdDeviation="2.5" result="blur" />
             <feMerge>
               <feMergeNode in="blur" />
               <feMergeNode in="SourceGraphic" />
@@ -34,80 +36,88 @@ const ClippingVisualizer = () => {
           </filter>
         </defs>
 
-        {/* Scattered fragment clips — smaller waveform snippets drifting outward */}
-        {fragments.map((frag, fi) => (
-          <g key={`frag-${fi}`}
-            transform={`translate(${200 + frag.tx}, ${cy + frag.ty}) rotate(${frag.rot}) scale(${frag.scale})`}
-            opacity="0">
-            {/* Mini clip container */}
-            <rect x="-4" y="-22" width={frag.bars.length * 7 + 8} height="44"
-              rx="4" fill="hsl(195, 90%, 60%)" opacity="0.06"
-              stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" strokeOpacity="0.15" />
-            {/* Mini waveform bars */}
-            {frag.bars.map((barIdx, bi) => {
-              const bar = waveBars[barIdx];
-              const h = bar.height * 0.8;
-              return (
-                <rect key={`fb-${fi}-${bi}`}
-                  x={bi * 7} y={-h / 2}
-                  width="3" height={h}
-                  rx="1.5" fill="hsl(195, 90%, 60%)" opacity="0.6" />
-              );
-            })}
-            {/* Fade in + slight drift */}
-            <animate attributeName="opacity" from="0" to="0.7"
-              dur="1s" begin={`${frag.delay}s`} fill="freeze" />
-            <animateTransform attributeName="transform" type="translate"
-              additive="sum"
-              values="0,0; 0,0"
-              dur="0.01s" begin={`${frag.delay}s`} fill="freeze" />
-          </g>
-        ))}
-
-        {/* Pulse lines radiating from center — representing distribution */}
-        {[0, 1, 2, 3, 4, 5].map((i) => {
-          const angle = (i * 60 - 90) * Math.PI / 180;
-          const x2 = 200 + Math.cos(angle) * 160;
-          const y2 = cy + Math.sin(angle) * 160;
+        {/* Radial distribution lines */}
+        {clips.map((clip, i) => {
+          const x2 = 200 + clip.tx;
+          const y2 = cy + clip.ty;
           return (
             <line key={`ray-${i}`} x1="200" y1={cy} x2={x2} y2={y2}
               stroke="hsl(195, 90%, 60%)" strokeWidth="0.4"
-              strokeDasharray="3 8" opacity="0">
-              <animate attributeName="opacity" values="0;0.15;0" dur={`${3 + i * 0.5}s`}
-                begin={`${i * 0.4}s`} repeatCount="indefinite" />
+              strokeDasharray="2 6" opacity="0">
+              <animate attributeName="opacity" values="0;0.12;0" dur={`${3 + i * 0.3}s`}
+                begin={`${clip.delay}s`} repeatCount="indefinite" />
             </line>
           );
         })}
 
-        {/* Central waveform — the original track */}
-        <g opacity="0.9">
-          {waveBars.map((bar, i) => (
-            <g key={`wave-${i}`}>
-              <rect
-                x={bar.x} y={cy - bar.height / 2}
-                width="3.5" height={bar.height}
-                rx="1.75" fill="hsl(195, 90%, 60%)" opacity="0.8">
-                <animate attributeName="height"
-                  values={`${bar.height};${bar.height * 1.3};${bar.height}`}
-                  dur={`${2 + (i % 4) * 0.3}s`} begin={`${i * 0.1}s`}
-                  repeatCount="indefinite" />
-                <animate attributeName="y"
-                  values={`${cy - bar.height / 2};${cy - bar.height * 1.3 / 2};${cy - bar.height / 2}`}
-                  dur={`${2 + (i % 4) * 0.3}s`} begin={`${i * 0.1}s`}
-                  repeatCount="indefinite" />
-              </rect>
-            </g>
+        {/* Scattered video clip thumbnails */}
+        {clips.map((clip, i) => (
+          <g key={`clip-${i}`}
+            transform={`translate(${200 + clip.tx}, ${cy + clip.ty}) rotate(${clip.rot})`}
+            opacity="0">
+            {/* Clip frame */}
+            <rect x={-clip.w / 2} y={-clip.h / 2} width={clip.w} height={clip.h}
+              rx="2.5" fill="hsl(222, 47%, 10%)"
+              stroke="hsl(195, 90%, 60%)" strokeWidth="0.7" strokeOpacity="0.35" />
+            {/* "Video content" inside */}
+            <rect x={-clip.w / 2 + 2} y={-clip.h / 2 + 2} width={clip.w - 4} height={clip.h - 4}
+              rx="1.5" fill="hsl(195, 90%, 60%)" opacity="0.12" />
+            {/* Play triangle */}
+            <polygon
+              points={`${-2},${-3} ${-2},${3} ${3},${0}`}
+              fill="hsl(195, 90%, 60%)" opacity="0.5" />
+            {/* Fade in */}
+            <animate attributeName="opacity" from="0" to="0.8"
+              dur="0.8s" begin={`${clip.delay}s`} fill="freeze" />
+            {/* Subtle float */}
+            <animateTransform attributeName="transform" type="translate"
+              additive="sum"
+              values={`0,0; ${i % 2 === 0 ? 2 : -2},${i % 3 === 0 ? -2 : 2}; 0,0`}
+              dur={`${5 + i % 3}s`} begin={`${clip.delay}s`} repeatCount="indefinite" />
+          </g>
+        ))}
+
+        {/* Central film strip — the source video */}
+        <g>
+          {/* Strip background */}
+          <rect x="110" y={cy - 18} width="180" height="36" rx="4"
+            fill="hsl(222, 47%, 8%)" stroke="hsl(195, 90%, 60%)" strokeWidth="1"
+            strokeOpacity="0.4" />
+          {/* Sprocket holes top */}
+          {frames.map((f, i) => (
+            <rect key={`st-${i}`} x={f.x + 3} y={cy - 16} width="4" height="3"
+              rx="0.5" fill="hsl(195, 90%, 60%)" opacity="0.25" />
           ))}
-          {/* Glow beneath waveform */}
-          <rect x="115" y={cy - 2} width="178" height="4" rx="2"
-            fill="hsl(195, 90%, 60%)" opacity="0.15" filter="url(#clipGlow)" />
+          {/* Sprocket holes bottom */}
+          {frames.map((f, i) => (
+            <rect key={`sb-${i}`} x={f.x + 3} y={cy + 13} width="4" height="3"
+              rx="0.5" fill="hsl(195, 90%, 60%)" opacity="0.25" />
+          ))}
+          {/* Individual frames */}
+          {frames.map((f, i) => (
+            <rect key={`frame-${i}`} x={f.x} y={cy - 10} width="16" height="20"
+              rx="1.5" fill="hsl(195, 90%, 60%)" opacity={f.fill}>
+              <animate attributeName="opacity"
+                values={`${f.fill};${f.fill + 0.15};${f.fill}`}
+                dur={`${1.8 + (i % 3) * 0.4}s`} begin={`${i * 0.15}s`}
+                repeatCount="indefinite" />
+            </rect>
+          ))}
+          {/* Glow */}
+          <rect x="115" y={cy - 1} width="170" height="2" rx="1"
+            fill="hsl(195, 90%, 60%)" opacity="0.2" filter="url(#clipGlow)" />
         </g>
 
-        {/* Multiplier text */}
-        <text x="200" y="370" fontSize="10" fill="hsl(195, 90%, 60%)"
-          opacity="0.35" textAnchor="middle" fontFamily="monospace">
-          1 track → 10,000+ clips
-        </text>
+        {/* Scissor cut marks at edges of film strip */}
+        {[108, 292].map((x, i) => (
+          <g key={`cut-${i}`}>
+            <line x1={x} y1={cy - 22} x2={x} y2={cy + 22}
+              stroke="hsl(195, 90%, 60%)" strokeWidth="1" strokeDasharray="3 3" opacity="0">
+              <animate attributeName="opacity" values="0;0.4;0" dur="2s"
+                begin={`${i * 1}s`} repeatCount="indefinite" />
+            </line>
+          </g>
+        ))}
       </svg>
     </div>
   );
