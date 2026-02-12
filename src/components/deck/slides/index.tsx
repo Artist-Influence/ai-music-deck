@@ -12,6 +12,10 @@ import OutcomesSlide from './OutcomesSlide';
 import ReportingSlide from './ReportingSlide';
 import ExpectationsSlide from './ExpectationsSlide';
 import CaseStudySlide from './CaseStudySlide';
+import CaseStudyCreatorFloodSlide from './CaseStudyCreatorFloodSlide';
+import CaseStudySkrillexSlide from './CaseStudySkrillexSlide';
+import CaseStudyPlatformSlide from './CaseStudyPlatformSlide';
+import CaseStudyClippingSlide from './CaseStudyClippingSlide';
 import PricingSlide from './PricingSlide';
 import NextStepsSlide from './NextStepsSlide';
 
@@ -29,6 +33,10 @@ export const slides: FC[] = [
   ReportingSlide,
   ExpectationsSlide,
   CaseStudySlide,
+  CaseStudyCreatorFloodSlide,
+  CaseStudySkrillexSlide,
+  CaseStudyPlatformSlide,
+  CaseStudyClippingSlide,
   PricingSlide,
   NextStepsSlide,
 ];
