@@ -75,7 +75,7 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-3xl font-bold text-foreground">{majorLazer.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-3">{majorLazer.track}</p>
           <p className="text-sm text-muted-foreground mb-4">{majorLazer.overview}</p>
-          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-4 h-[440px] overflow-hidden flex-shrink-0">
+          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-4 h-[540px] flex-shrink-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
               <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-contain" />
