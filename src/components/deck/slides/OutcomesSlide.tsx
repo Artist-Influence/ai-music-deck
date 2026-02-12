@@ -13,11 +13,11 @@ const OutcomesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[5%] left-[20%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float-slow" />
 
-    <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px] mx-auto justify-between">
-      <div className="flex-1 max-w-[800px]">
+    <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px] mx-auto justify-center">
+      <div className="flex-1 max-w-[700px]">
         <h1 className="text-7xl font-bold text-foreground mb-4">What "good" looks like</h1>
         <p className="text-2xl text-muted-foreground mb-6">Outcomes we aim for</p>
-        <p className="text-xl text-muted-foreground/80 mb-16 max-w-[800px]">
+        <p className="text-xl text-muted-foreground/80 mb-16 max-w-[700px]">
           We don't promise magic. We promise strong execution, real distribution, and momentum-building that you can see.
         </p>
 
@@ -34,7 +34,9 @@ const OutcomesSlide = () => (
           ))}
         </div>
       </div>
-      <OutcomesVisualizer />
+      <div className="flex-1 flex items-center justify-center">
+        <OutcomesVisualizer />
+      </div>
     </div>
   </div>
 );
