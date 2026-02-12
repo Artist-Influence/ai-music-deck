@@ -18,18 +18,18 @@ const CaseStudySkrillexSlide = () => (
       <div className="grid grid-cols-2 gap-8 max-w-[1200px] mx-auto">
         {/* Left — details */}
         <GlassPanel variant="bright" className="p-8 flex flex-col">
-          <p className="text-sm text-primary font-mono mb-4 tracking-widest">FANPAGES</p>
-          <p className="text-3xl font-bold text-foreground">Skrillex</p>
-          <p className="text-sm text-muted-foreground/60 mb-6">FUS Album</p>
+          <p className="text-base text-primary font-mono mb-4 tracking-widest">FANPAGES</p>
+          <p className="text-4xl font-bold text-foreground">Skrillex</p>
+          <p className="text-base text-muted-foreground mb-6">FUS Album</p>
 
           <div className="space-y-3 mb-6">
-            <p className="text-sm text-muted-foreground">
+            <p className="text-lg text-muted-foreground">
               <span className="text-primary font-medium">Goal:</span> Maintain consistent visibility around the FUS album and Ultra set moments across bass and rave audiences.
             </p>
           </div>
 
-          <p className="text-sm text-primary font-medium mb-2">Strategy</p>
-          <ol className="list-decimal list-inside space-y-1.5 text-sm text-muted-foreground">
+          <p className="text-base text-primary font-medium mb-3">Strategy</p>
+          <ol className="list-decimal list-inside space-y-2 text-lg text-muted-foreground">
             <li>Distributed micro-moments across fan and scene pages</li>
             <li>Leveraged rave, bass, and festival audiences</li>
             <li>Iterated formats based on engagement patterns</li>
@@ -50,8 +50,8 @@ const CaseStudySkrillexSlide = () => (
           </div>
 
           <GlassPanel variant="bright" className="p-6">
-            <p className="text-sm text-primary font-medium mb-4">Results</p>
-            <div className="grid grid-cols-2 gap-3">
+            <p className="text-base text-primary font-medium mb-4">Results</p>
+            <div className="grid grid-cols-2 gap-4">
               {[
                 { val: '2,100,000+', label: 'Views' },
                 { val: '1,557', label: 'Posts' },
@@ -60,9 +60,9 @@ const CaseStudySkrillexSlide = () => (
                 { val: '1,300,000+', label: 'Top Post Views' },
                 { val: '10,000+', label: 'Followers (1 mo)' },
               ].map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                  <p className="text-lg font-bold text-foreground">{m.val}</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+                  <p className="text-xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
               ))}
             </div>
