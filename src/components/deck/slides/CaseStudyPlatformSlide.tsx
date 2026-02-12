@@ -1,4 +1,6 @@
 import GlassPanel from '../GlassPanel';
+import spicyMargaritaImg from '@/assets/jason-derulo-spicy-margarita-views.png';
+import dackJanielsImg from '@/assets/dack-janiels-streams.png';
 
 const cases = [
   {
@@ -6,6 +8,7 @@ const cases = [
     artist: 'Jason Derulo & Michael Bublé',
     track: 'Spicy Margarita',
     overview: 'Rapid global view acceleration maximizing watch time and engagement.',
+    screenshot: spicyMargaritaImg,
     metrics: [
       { val: '11M', label: 'Views' },
       { val: '6.5M', label: 'Unique Viewers' },
@@ -18,6 +21,7 @@ const cases = [
     artist: 'Dack Janiels',
     track: 'Shock Therapy',
     overview: 'Organic playlist campaign focused on dubstep tastemakers and algorithmic lift.',
+    screenshot: dackJanielsImg,
     metrics: [
       { val: '185,700', label: 'Streams' },
       { val: '9,950', label: 'Playlist Adds' },
@@ -30,6 +34,7 @@ const cases = [
     artist: 'Francis Mercier',
     track: 'Sauti',
     overview: 'Global audio seeding across Afro House audiences and LATAM markets.',
+    screenshot: null,
     metrics: [
       { val: '16.4M', label: 'Views' },
       { val: '$0.03', label: 'CPM' },
@@ -56,9 +61,15 @@ const CaseStudyPlatformSlide = () => (
             <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{c.overview}</p>
 
             {/* Screenshot placeholder */}
-            <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-4">
-              <span className="text-[9px] text-muted-foreground/40">Screenshot</span>
-            </div>
+            {c.screenshot ? (
+              <div className="aspect-video rounded-lg border border-white/[0.08] overflow-hidden mb-4">
+                <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} className="w-full h-full object-cover object-top" />
+              </div>
+            ) : (
+              <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-4">
+                <span className="text-[9px] text-muted-foreground/40">Screenshot</span>
+              </div>
+            )}
 
             <div className="grid grid-cols-2 gap-2 mt-auto">
               {c.metrics.map((m) => (
