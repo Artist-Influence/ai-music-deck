@@ -1,8 +1,9 @@
 import GlassPanel from '../GlassPanel';
 import subClip1 from '@/assets/subtronics-clip1.jpg';
 import subClip2 from '@/assets/subtronics-clip2.jpg';
+import subClip3 from '@/assets/subtronics-clip3.jpg';
 
-const clipImages = [subClip1, subClip2, null];
+const clipImages = [subClip1, subClip2, subClip3];
 
 const CaseStudySlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
