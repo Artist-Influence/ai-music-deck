@@ -14,7 +14,27 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      deck_leads: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          sent_in_digest: boolean
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          sent_in_digest?: boolean
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          sent_in_digest?: boolean
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
