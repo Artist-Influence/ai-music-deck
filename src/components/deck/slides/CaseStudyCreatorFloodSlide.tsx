@@ -70,12 +70,12 @@ const CaseStudyCreatorFloodSlide = () => (
         </GlassPanel>
 
         {/* Major Lazer */}
-        <GlassPanel variant="bright" className="p-8 flex flex-col">
+        <GlassPanel variant="bright" className="p-8 flex flex-col overflow-hidden">
           <p className="text-sm text-primary font-mono mb-3 tracking-widest">{majorLazer.tag}</p>
           <p className="text-3xl font-bold text-foreground">{majorLazer.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-4">{majorLazer.track}</p>
           <p className="text-sm text-muted-foreground mb-5">{majorLazer.overview}</p>
-          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-5 max-h-[260px]">
+          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-5 h-[220px] overflow-hidden flex-shrink-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
               <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-cover" />
