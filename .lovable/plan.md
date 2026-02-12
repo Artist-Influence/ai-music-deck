@@ -1,29 +1,32 @@
 
 
-# Fix Major Lazer Screenshot Layout
+# Fix Major Lazer Card - Show All Screenshots
 
 ## Problem
-The screenshots in the Major Lazer card are cut off -- the vertical screenshot on the left is cropped, and only 2 of the 3 horizontal screenshots on the right are visible. The fixed `h-[280px]` on the image grid isn't tall enough to show all 4 images properly.
+The two-column CSS grid forces both cards to the same height. Since the Rich Brian card is shorter, the Major Lazer card gets constrained, cutting off the third horizontal screenshot (Instagram) and cropping the vertical Shorts image.
 
 ## Solution
-Make the Major Lazer card taller and give the image grid more room by:
+Two key changes:
 
-1. **Remove the fixed grid height** -- instead of `h-[280px]`, use `h-[340px]` to give the 4 screenshots enough space to display fully
-2. **Use `object-contain` instead of `object-cover`** on the vertical (left) image so it shows the full screenshot without cropping
-3. **Increase the overall grid max-width** from `max-w-[1200px]` to `max-w-[1400px]` so both cards have more horizontal room, which also helps the right-column images fit better
-4. **Reduce outer padding** from `p-16` to `p-12` to reclaim more vertical space for the cards
-5. **Reduce the title size** from `text-6xl` to `text-5xl` and subtitle margin from `mb-8` to `mb-6` to free up header space
-
-These changes together give the Major Lazer card roughly 100px more vertical space and wider horizontal space, allowing all 4 screenshots to display with the stats clearly underneath.
+1. **Allow cards to have independent heights** by adding `items-start` to the grid container. This lets the Major Lazer card grow taller than the Rich Brian card.
+2. **Increase image grid height** from `h-[340px]` to `h-[440px]` so all 4 screenshots have enough room.
+3. **Remove `justify-center`** from the outer slide div and replace with `pt-8` to start content near the top, giving maximum vertical space for the taller card.
+4. **Reduce outer padding** from `p-12` to `p-8` to squeeze out more room.
 
 ## Technical Details
 
 **File: `src/components/deck/slides/CaseStudyCreatorFloodSlide.tsx`**
 
-1. **Line 43** -- Reduce outer padding: `p-16` to `p-12`
-2. **Line 47** -- Reduce title: `text-6xl` to `text-5xl`
-3. **Line 48** -- Reduce subtitle margin: `mb-8` to `mb-6`
-4. **Line 50** -- Widen grid: `max-w-[1200px]` to `max-w-[1400px]`
-5. **Line 78** -- Increase image grid height: `h-[280px]` to `h-[340px]`
-6. **Line 81** -- Change vertical image: `object-cover` to `object-contain` so the full YouTube Shorts screenshot is visible without cropping
+1. **Line 43** -- Change outer div: remove `justify-center`, reduce padding from `p-12` to `p-8`, add `pt-10` for top spacing
+   - From: `p-12 flex flex-col justify-center`
+   - To: `p-8 flex flex-col`
 
+2. **Line 50** -- Add `items-start` to the grid so cards are independently sized:
+   - From: `grid grid-cols-2 gap-8 max-w-[1400px]`
+   - To: `grid grid-cols-2 gap-8 max-w-[1400px] items-start`
+
+3. **Line 78** -- Increase image grid height:
+   - From: `h-[340px]`
+   - To: `h-[440px]`
+
+These changes let the Major Lazer card extend below the Rich Brian card, giving the screenshot grid 440px of height -- enough for all 4 images to display fully with the stats underneath.
