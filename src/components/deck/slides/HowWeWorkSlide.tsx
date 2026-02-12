@@ -46,7 +46,7 @@ const HowWeWorkSlide = () => (
           <div key={i} className="flex items-center flex-1">
             <GlassPanel variant="bright" className={`flex-1 p-6 text-center step-card step-card-${i}`}>
               <p className="text-primary text-sm font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
-              <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}</p>
+              <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}:</p>
               <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
             </GlassPanel>
             {i < steps.length - 1 && (
