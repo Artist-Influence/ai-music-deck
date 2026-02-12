@@ -21,11 +21,10 @@ const ClippingSlide = () => (
 
         <GlassPanel className="p-6">
           <p className="text-lg font-semibold text-primary mb-4">How it works</p>
-          <div className="space-y-2">
+          <div className="space-y-2 mb-4">
             {[
               'Campaigns launch in 24 hours',
               'Runs 7 to 14 days',
-              'Guaranteed views at $1.50 per 1,000 — often beating that with organic lift',
               'Every post uses the official sound, tags the artist, and follows basic brand direction',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
@@ -33,6 +32,23 @@ const ClippingSlide = () => (
                 <p className="text-sm text-muted-foreground">{item}</p>
               </div>
             ))}
+          </div>
+          <div className="pt-3 border-t border-white/[0.06]">
+            <p className="text-sm font-medium text-primary mb-2">Guaranteed views per 1,000</p>
+            <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+              {[
+                { niche: 'Music', price: '$2' },
+                { niche: 'Podcast', price: '$2' },
+                { niche: 'Sports', price: '$2' },
+                { niche: 'TV/Film', price: '$3' },
+                { niche: 'Politics', price: '$4' },
+              ].map((item, i) => (
+                <div key={i} className="flex justify-between">
+                  <span className="text-sm text-muted-foreground">{item.niche}</span>
+                  <span className="text-sm text-foreground font-medium">{item.price}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </GlassPanel>
 
