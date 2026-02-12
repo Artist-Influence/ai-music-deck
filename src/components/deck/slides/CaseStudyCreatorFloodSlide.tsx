@@ -40,48 +40,48 @@ const majorLazer = {
 };
 
 const CaseStudyCreatorFloodSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-8 flex flex-col">
+  <div className="w-full h-full bg-background relative overflow-hidden px-8 pt-6 pb-4 flex flex-col">
     <div className="absolute top-[20%] left-[15%] w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[130px] animate-float" />
 
-    <div className="relative z-10">
-      <h1 className="text-5xl font-bold text-foreground mb-4">Scale on impact.</h1>
-      <p className="text-xl text-muted-foreground mb-6">Creator Flood &amp; Trending Campaigns</p>
+    <div className="relative z-10 flex flex-col h-full">
+      <h1 className="text-4xl font-bold text-foreground mb-2">Scale on impact.</h1>
+      <p className="text-lg text-muted-foreground mb-4">Creator Flood &amp; Trending Campaigns</p>
 
-      <div className="grid grid-cols-2 gap-8 max-w-[1400px] items-start">
+      <div className="grid grid-cols-2 gap-6 max-w-[1400px] items-start flex-1 min-h-0">
         {/* Rich Brian */}
-        <GlassPanel variant="bright" className="p-6 flex flex-col">
-          <p className="text-sm text-primary font-mono mb-3 tracking-widest">{richBrian.tag}</p>
-          <p className="text-3xl font-bold text-foreground">{richBrian.artist}</p>
-          <p className="text-sm text-muted-foreground/60 mb-3">{richBrian.track}</p>
-          <p className="text-sm text-muted-foreground mb-4">{richBrian.overview}</p>
-          <div className="mb-4">
+        <GlassPanel variant="bright" className="p-4 flex flex-col">
+          <p className="text-sm text-primary font-mono mb-2 tracking-widest">{richBrian.tag}</p>
+          <p className="text-2xl font-bold text-foreground">{richBrian.artist}</p>
+          <p className="text-sm text-muted-foreground/60 mb-2">{richBrian.track}</p>
+          <p className="text-sm text-muted-foreground mb-3">{richBrian.overview}</p>
+          <div className="mb-3">
             <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
               <span className="text-[9px] text-muted-foreground/40">Campaign Screenshot</span>
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 mt-auto">
+          <div className="grid grid-cols-2 gap-2 mt-auto">
             {richBrian.metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-lg font-bold text-foreground">{m.val}</p>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
+                <p className="text-base font-bold text-foreground">{m.val}</p>
+                <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>
         </GlassPanel>
 
         {/* Major Lazer */}
-        <GlassPanel variant="bright" className="p-6 flex flex-col overflow-hidden">
-          <p className="text-sm text-primary font-mono mb-3 tracking-widest">{majorLazer.tag}</p>
-          <p className="text-3xl font-bold text-foreground">{majorLazer.artist}</p>
-          <p className="text-sm text-muted-foreground/60 mb-3">{majorLazer.track}</p>
-          <p className="text-sm text-muted-foreground mb-4">{majorLazer.overview}</p>
-          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-4 h-[540px] flex-shrink-0">
+        <GlassPanel variant="bright" className="p-4 flex flex-col">
+          <p className="text-sm text-primary font-mono mb-2 tracking-widest">{majorLazer.tag}</p>
+          <p className="text-2xl font-bold text-foreground">{majorLazer.artist}</p>
+          <p className="text-sm text-muted-foreground/60 mb-2">{majorLazer.track}</p>
+          <p className="text-sm text-muted-foreground mb-3">{majorLazer.overview}</p>
+          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-3 flex-1 min-h-0">
             {/* Left: vertical image */}
-            <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
+            <div className="rounded-lg border border-white/[0.08] overflow-hidden">
               <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-contain" />
             </div>
             {/* Right: 3 horizontal images stacked */}
-            <div className="flex flex-col gap-2 h-full">
+            <div className="flex flex-col gap-2">
               {[mlFacebook, mlTiktok, mlIg].map((src, i) => (
                 <div key={i} className="flex-1 rounded-lg border border-white/[0.08] overflow-hidden min-h-0">
                   <img src={src} alt={majorLazerScreenshots[i + 1]?.alt} className="w-full h-full object-cover" />
@@ -89,11 +89,11 @@ const CaseStudyCreatorFloodSlide = () => (
               ))}
             </div>
           </div>
-          <div className="grid grid-cols-2 gap-3 mt-auto">
+          <div className="grid grid-cols-2 gap-2">
             {majorLazer.metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-lg font-bold text-foreground">{m.val}</p>
-                <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
+                <p className="text-base font-bold text-foreground">{m.val}</p>
+                <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>
@@ -102,5 +102,4 @@ const CaseStudyCreatorFloodSlide = () => (
     </div>
   </div>
 );
-
 export default CaseStudyCreatorFloodSlide;
