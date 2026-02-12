@@ -13,11 +13,11 @@ const AdditionalServicesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
 
-    <div className="relative z-10 w-full max-w-[1600px]">
+    <div className="relative z-10 w-full max-w-[1600px] mx-auto text-center">
       <h1 className="text-6xl font-bold text-foreground mb-4">Additional services</h1>
       <p className="text-2xl text-muted-foreground mb-16">we can bundle as needed</p>
 
-      <div className="grid grid-cols-3 gap-5 max-w-[1400px]">
+      <div className="grid grid-cols-3 gap-5 max-w-[1400px] mx-auto">
         {services.map((s, i) => (
           <GlassPanel key={i} className="p-6 hover:bg-white/[0.06] transition-colors flex flex-col">
             <span className="text-3xl mb-4 block">{s.icon}</span>

@@ -5,7 +5,7 @@ const UGCHacksSlide = () => (
     <div className="absolute top-[5%] left-[20%] w-[600px] h-[600px] rounded-full bg-primary/[0.08] blur-[160px] animate-float" />
     <div className="absolute bottom-[5%] right-[10%] w-[400px] h-[400px] rounded-full bg-accent/[0.06] blur-[120px] animate-float-slow" />
 
-    <div className="relative z-10 w-full max-w-[1400px]">
+    <div className="relative z-10 w-full max-w-[1400px] mx-auto">
       <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
       <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
         UGC Growth: Creator Flood<br />+ Top 50 Trending
@@ -14,7 +14,7 @@ const UGCHacksSlide = () => (
         These are blunt-force tools. They are not "premium creative." They are designed to trigger visibility through volume.
       </p>
 
-      <div className="grid grid-cols-2 gap-8 max-w-[1200px] mb-8">
+      <div className="grid grid-cols-2 gap-8 max-w-[1200px] mx-auto mb-8">
         <GlassPanel variant="bright" className="p-6">
           <p className="text-xl font-semibold text-foreground mb-3">TikTok Creator Flood</p>
           <p className="text-sm text-primary font-medium mb-3">What it is</p>
@@ -46,7 +46,7 @@ const UGCHacksSlide = () => (
         </GlassPanel>
       </div>
 
-      <GlassPanel variant="subtle" className="max-w-[1200px] p-6">
+      <GlassPanel variant="subtle" className="max-w-[1200px] mx-auto p-6">
         <p className="text-lg font-semibold text-foreground mb-3">When to use these</p>
         <div className="grid grid-cols-3 gap-4">
           {[
