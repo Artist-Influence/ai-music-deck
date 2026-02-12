@@ -51,6 +51,7 @@ const CaseStudySkrillexSlide = () => (
                 { val: '6.84%', label: 'Engagement' },
                 { val: '~42%', label: 'Album UGC Month 1' },
                 { val: '1,300,000+', label: 'Top Post Views' },
+                { val: '10,000+', label: 'Followers (1 mo)' },
               ].map((m) => (
                 <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                   <p className="text-lg font-bold text-foreground">{m.val}</p>

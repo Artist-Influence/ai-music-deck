@@ -53,7 +53,12 @@ const CaseStudyPlatformSlide = () => (
             <p className="text-sm text-primary font-mono mb-3 tracking-widest">{c.tag}</p>
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
             <p className="text-sm text-muted-foreground/60 mb-3">{c.track}</p>
-            <p className="text-xs text-muted-foreground mb-5 leading-relaxed">{c.overview}</p>
+            <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{c.overview}</p>
+
+            {/* Screenshot placeholder */}
+            <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-4">
+              <span className="text-[9px] text-muted-foreground/40">Screenshot</span>
+            </div>
 
             <div className="grid grid-cols-2 gap-2 mt-auto">
               {c.metrics.map((m) => (

@@ -7,10 +7,11 @@ const cases = [
     track: 'Jumpy (feat. Ski Mask The Slump God)',
     overview:
       'Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.',
+    screenshots: { type: 'horizontal' as const, count: 1 },
     metrics: [
       { val: '10,000+', label: 'Initial Posts' },
-      { val: '23,000+', label: 'Total Creates' },
-      { val: 'Sustained', label: 'Organic Reuse' },
+      { val: '23,000+', label: 'Posts Driven' },
+      { val: '29,900+', label: 'Total Creates' },
     ],
   },
   {
@@ -19,6 +20,7 @@ const cases = [
     track: 'MINI SKIRT',
     overview:
       'Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.',
+    screenshots: { type: 'vertical' as const, count: 3 },
     metrics: [
       { val: '5,000+', label: 'YT Creates' },
       { val: '14,900+', label: 'IG Reels Creates' },
@@ -42,7 +44,27 @@ const CaseStudyCreatorFloodSlide = () => (
             <p className="text-sm text-primary font-mono mb-3 tracking-widest">{c.tag}</p>
             <p className="text-3xl font-bold text-foreground">{c.artist}</p>
             <p className="text-sm text-muted-foreground/60 mb-4">{c.track}</p>
-            <p className="text-sm text-muted-foreground mb-6">{c.overview}</p>
+            <p className="text-sm text-muted-foreground mb-5">{c.overview}</p>
+
+            {/* Screenshot placeholders */}
+            {c.screenshots.type === 'vertical' ? (
+              <div className="grid grid-cols-3 gap-2 mb-5">
+                {Array.from({ length: c.screenshots.count }).map((_, i) => (
+                  <div
+                    key={i}
+                    className="aspect-[9/16] rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center"
+                  >
+                    <span className="text-[9px] text-muted-foreground/40">Screenshot {i + 1}</span>
+                  </div>
+                ))}
+              </div>
+            ) : (
+              <div className="mb-5">
+                <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
+                  <span className="text-[9px] text-muted-foreground/40">Campaign Screenshot</span>
+                </div>
+              </div>
+            )}
 
             <div className="grid grid-cols-2 gap-3 mt-auto">
               {c.metrics.map((m) => (
