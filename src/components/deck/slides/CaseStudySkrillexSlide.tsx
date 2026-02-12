@@ -1,4 +1,9 @@
 import GlassPanel from '../GlassPanel';
+import skrillClip1 from '@/assets/skrillex-clip1.png';
+import skrillClip2 from '@/assets/skrillex-clip2.jpeg';
+import skrillClip3 from '@/assets/skrillex-clip3.jpeg';
+
+const clipImages = [skrillClip1, skrillClip2, skrillClip3];
 
 const CaseStudySkrillexSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
@@ -34,9 +39,9 @@ const CaseStudySkrillexSlide = () => (
           <div>
             <p className="text-sm text-primary font-medium mb-3">Sample clips</p>
             <div className="grid grid-cols-3 gap-3">
-              {[1, 2, 3].map((n) => (
-                <div key={n} className="aspect-[9/16] rounded-xl bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <span className="text-xs text-muted-foreground/40">Clip {n}</span>
+              {clipImages.map((img, i) => (
+                <div key={i} className="aspect-[9/16] rounded-xl bg-white/[0.06] border border-white/[0.08] overflow-hidden flex items-center justify-center">
+                  <img src={img} alt={`Skrillex clip ${i + 1}`} className="w-full h-full object-cover" />
                 </div>
               ))}
             </div>
