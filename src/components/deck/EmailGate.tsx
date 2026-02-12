@@ -28,6 +28,14 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
     setLoading(true);
     try {
       await supabase.from('deck_leads').insert({ email: result.data });
+      // Send instant notification to Jared
+      supabase.functions.invoke('send-email', {
+        body: {
+          to: 'jared@clouted.com',
+          subject: `New Deck Lead: ${result.data}`,
+          html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Clouted deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
+        },
+      }).catch(() => {}); // fire-and-forget, don't block access
       localStorage.setItem('clouted_deck_email', result.data);
       onAccess();
     } catch {
