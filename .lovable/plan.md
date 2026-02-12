@@ -1,47 +1,44 @@
 
 
-# Case Study Slide Updates
+# Update Clipping Links, Platform Screenshots, and Nash Rly Clips
 
-## 1. Rich Brian metric fix (Slide 15 -- Creator Flood)
-- Change "Total Creates" from `23,000+` to `23,000+` (this is correct as our posts driven)
-- Add a new metric: `29,900+` / `Total Sound Creates` to show the full picture -- we drove 23K posts, song has 29.9K total creates
+## Changes
 
-## 2. Creator Flood slide -- add screenshot placeholders
-- Add a row of image placeholders below each card:
-  - **Major Lazer**: 2-3 vertical screenshot placeholders for trending proof (e.g. Popular Tab, Shorts trending)
-  - **Rich Brian**: 1 horizontal/landscape screenshot placeholder for campaign results
-- These sit between the overview text and the metrics grid within each card
+### 1. Clipping Slide (Slide 17) -- Update clip links with real URLs
+- **Aries**: Set Clip 1 to TikTok link, Clip 2 to second TikTok link
+- **Gorgon City**: Set Clip 1 to Instagram link, Clip 2 to second Instagram link
+- **Nash Rly**: Remove the clips array entirely (no clip links shown)
+- Update the data structure to store actual URLs alongside labels
 
-## 3. Reorder Skrillex to slide 14
-- Move `CaseStudySkrillexSlide` to right after `CaseStudySlide` (Subtronics) in `index.tsx`
-- New order: Subtronics (13) -> Skrillex (14) -> Creator Flood (15) -> Platform (16) -> Clipping (17)
-- Add `10K+` / `Followers (1 month)` metric to the Skrillex results grid
+### 2. Platform Slide (Slide 16) -- Add real screenshots
+- Copy the 3 uploaded screenshots into `src/assets/`:
+  - `francis-mercier-sauti-audio.png` (Instagram official audio page)
+  - `dack-janiels-shock-therapy-stats.png` (Spotify streaming chart)
+  - `jason-derulo-spicy-margarita-views.png` (YouTube view growth chart)
+- Import them in `CaseStudyPlatformSlide.tsx` and replace the placeholder divs with `<img>` tags
+- Use `object-cover` with `object-top` so the images crop from the top as requested, fitting into the existing `aspect-video` container
 
-## 4. Platform slide -- add screenshot placeholders
-- Add an image placeholder area within each of the 3 cards (YouTube, Spotify, Instagram) for future screenshots
-- Small landscape placeholder below the overview text in each card, same consistent size
+### Technical Details
 
-## 5. Clipping slide -- add cover art + clip links
-- Add a square cover art placeholder at the top of each card (album/single artwork area)
-- Add 1-2 clip link placeholders below the metrics in each card (styled as small link buttons labeled "Watch Clip 1", "Watch Clip 2")
+**File: `src/components/deck/slides/CaseStudyClippingSlide.tsx`**
+- Change `clips` from `string[]` to `{ label: string; url: string }[]` (or empty array for Nash Rly)
+- Aries clips:
+  - `{ label: 'Watch Clip 1', url: 'https://www.tiktok.com/@chestercorneliusthethird/video/7567109238930050317' }`
+  - `{ label: 'Watch Clip 2', url: 'https://www.tiktok.com/@chestercorneliusthethird/video/7568640706928069902' }`
+- Gorgon City clips:
+  - `{ label: 'Watch Clip 1', url: 'https://www.instagram.com/p/DQmP6-JkvLS' }`
+  - `{ label: 'Watch Clip 2', url: 'https://www.instagram.com/p/DQkQTC_D1kJ' }`
+- Nash Rly: `clips: []` (empty, no links rendered)
+- Update the render to use `clip.url` for `href` and `clip.label` for text, add `target="_blank" rel="noopener noreferrer"`
 
-## Technical Details
+**New assets (copy from uploads):**
+- `src/assets/francis-mercier-sauti-audio.png`
+- `src/assets/dack-janiels-shock-therapy-stats.png`
+- `src/assets/jason-derulo-spicy-margarita-views.png`
 
-### File: `src/components/deck/slides/index.tsx`
-- Swap line positions: move `CaseStudySkrillexSlide` from after `CaseStudyCreatorFloodSlide` to right after `CaseStudySlide`
+**File: `src/components/deck/slides/CaseStudyPlatformSlide.tsx`**
+- Import the 3 screenshot images
+- Add a `screenshot` field to each case in the data array
+- Replace the placeholder `<div>` with `<img src={c.screenshot} className="w-full h-full object-cover object-top" />` inside the existing `aspect-video` container
+- Add `overflow-hidden` to the container so the top-crop works cleanly
 
-### File: `src/components/deck/slides/CaseStudyCreatorFloodSlide.tsx`
-- Update Rich Brian metrics: change `'23,000+'` label to `'Posts Driven'`, add `{ val: '29,900+', label: 'Total Creates' }`
-- Add screenshot placeholder areas inside each card:
-  - Major Lazer: 3 vertical placeholders in a row (aspect-[9/16]) for trending screenshots
-  - Rich Brian: 1 horizontal placeholder (aspect-video) for campaign screenshot
-
-### File: `src/components/deck/slides/CaseStudySkrillexSlide.tsx`
-- Add metric `{ val: '10,000+', label: 'Followers (1 mo)' }` to the results grid
-
-### File: `src/components/deck/slides/CaseStudyPlatformSlide.tsx`
-- Add a landscape image placeholder (aspect-video, same glass styling) inside each card between overview and metrics
-
-### File: `src/components/deck/slides/CaseStudyClippingSlide.tsx`
-- Add a square cover art placeholder at top of each card (aspect-square, rounded, glass border)
-- Add 1-2 link placeholders below the metrics grid in each card, styled as small outlined buttons ("Watch Clip 1", "Watch Clip 2")
