@@ -18,8 +18,8 @@ const DeckViewer = () => {
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
-      if (e.key === 'ArrowRight' || e.key === ' ') { e.preventDefault(); next(); }
-      else if (e.key === 'ArrowLeft') { e.preventDefault(); prev(); }
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); next(); }
+      else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') { e.preventDefault(); prev(); }
       else if (e.key === 'f') toggleFs();
       else if (e.key === 'g') setGrid(v => !v);
       else if (e.key === 'Escape') { setGrid(false); if (document.fullscreenElement) document.exitFullscreen(); }
