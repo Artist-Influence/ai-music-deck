@@ -1,50 +1,31 @@
 
 
-# Email Gate + Weekly Digest
+# Replace "CLOUTED" Text with Logo Image
 
-## What We'll Build
+## Overview
+Copy the uploaded white logo (`CLOUTED-white.png`) into the project and replace all text-based "CLOUTED" branding with the logo image.
 
-1. **Email gate screen** -- A branded glassmorphism page that matches the deck's aesthetic, asking visitors for their email before they can view the proposal. The email is saved to localStorage so returning visitors skip the gate.
+## Changes
 
-2. **Backend (Lovable Cloud)** -- A Supabase database table to store collected emails, plus an edge function that sends a weekly digest of new emails to jared@clouted.com.
+### 1. Copy the logo file
+- Copy `user-uploads://CLOUTED-white.png` to `src/assets/CLOUTED-white.png`
 
----
+### 2. Update files (4 files)
 
-## Part 1: Email Gate
+**`src/components/deck/EmailGate.tsx`**
+- Replace the `<h1>CLOUTED</h1>` text with an `<img>` tag using the logo, sized appropriately (~160px wide) for the gate screen
 
-- Create an `EmailGate` component with the Clouted branding, a glass panel, and a single email input + "View Proposal" button
-- Wrap the `DeckViewer` in `Index.tsx` with this gate -- if no email in state/localStorage, show the gate; otherwise show the deck
-- Validate email format client-side with zod before submission
-- On submit, save to localStorage (for repeat visits) and POST to the Supabase `deck_leads` table
+**`src/components/deck/DeckViewer.tsx`**
+- Replace the `<span>CLOUTED</span>` in the top-left toolbar with a small logo image (~80px wide)
 
-## Part 2: Database
+**`src/components/deck/slides/CoverSlide.tsx`**
+- Replace the large `<h1>Clouted</h1>` title with the logo image, scaled up (~400px wide) as the hero element
 
-- Create a `deck_leads` table with columns: `id`, `email`, `created_at`, `sent_in_digest` (boolean, default false)
-- Enable RLS with an insert-only policy for anonymous users (no read/update/delete from client)
+**`src/components/deck/slides/NextStepsSlide.tsx`**
+- Replace the `<p>CLOUTED</p>` footer branding with the logo image (~200px wide)
 
-## Part 3: Weekly Digest Edge Function
-
-- Create a `weekly-lead-digest` edge function that:
-  - Queries all rows where `sent_in_digest = false`
-  - Formats them into a simple HTML email
-  - Sends to jared@clouted.com using Supabase's built-in Resend integration (or a simple SMTP call)
-  - Marks those rows as `sent_in_digest = true`
-- Set up a pg_cron job to call this function once per week (every Monday at 9am)
-
----
-
-## Technical Details
-
-**New files:**
-- `src/components/deck/EmailGate.tsx` -- gate UI component
-- `supabase/functions/weekly-lead-digest/index.ts` -- digest edge function
-
-**Modified files:**
-- `src/pages/Index.tsx` -- wrap DeckViewer with EmailGate logic
-
-**Database migration:**
-- Create `deck_leads` table with RLS policies
-
-**Cron schedule:**
-- Weekly cron via pg_cron calling the edge function
+### Technical Notes
+- The logo will be imported as an ES6 module (`import logo from "@/assets/CLOUTED-white.png"`) in each file
+- Since it's a white logo on a dark background, no filter adjustments are needed given the existing dark theme
+- Each instance will use appropriate sizing via Tailwind classes (`h-` or `w-` constraints) to match the visual hierarchy of its context
 
