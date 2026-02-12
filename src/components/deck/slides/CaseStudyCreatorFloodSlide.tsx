@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
 import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
 import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
@@ -55,8 +56,8 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-sm text-muted-foreground/60 mb-2">{richBrian.track}</p>
           <p className="text-sm text-muted-foreground mb-3">{richBrian.overview}</p>
           <div className="mb-3">
-            <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-              <span className="text-[9px] text-muted-foreground/40">Campaign Screenshot</span>
+            <div className="aspect-video rounded-lg border border-white/[0.08] overflow-hidden">
+              <img src={richBrianImg} alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover" />
             </div>
           </div>
           <div className="grid grid-cols-2 gap-2 mt-auto">
