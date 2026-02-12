@@ -51,10 +51,10 @@ const CaseStudyCreatorFloodSlide = () => (
       <div className="grid grid-cols-2 gap-6 max-w-[1400px] mx-auto flex-1 min-h-0">
         {/* Rich Brian */}
         <GlassPanel variant="bright" className="p-4 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">{richBrian.tag}</p>
-          <p className="text-2xl font-bold text-foreground">{richBrian.artist}</p>
-          <p className="text-sm text-muted-foreground/60 mb-2">{richBrian.track}</p>
-          <p className="text-sm text-muted-foreground mb-3">{richBrian.overview}</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">{richBrian.tag}</p>
+          <p className="text-3xl font-bold text-foreground">{richBrian.artist}</p>
+          <p className="text-sm text-muted-foreground mb-3">{richBrian.track}</p>
+          <p className="text-base text-muted-foreground mb-3">{richBrian.overview}</p>
           <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
             <img src={richBrianImg} alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover object-top" />
           </div>
@@ -70,10 +70,10 @@ const CaseStudyCreatorFloodSlide = () => (
 
         {/* Major Lazer */}
         <GlassPanel variant="bright" className="p-4 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">{majorLazer.tag}</p>
-          <p className="text-2xl font-bold text-foreground">{majorLazer.artist}</p>
-          <p className="text-sm text-muted-foreground/60 mb-2">{majorLazer.track}</p>
-          <p className="text-sm text-muted-foreground mb-3">{majorLazer.overview}</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">{majorLazer.tag}</p>
+          <p className="text-3xl font-bold text-foreground">{majorLazer.artist}</p>
+          <p className="text-sm text-muted-foreground mb-3">{majorLazer.track}</p>
+          <p className="text-base text-muted-foreground mb-3">{majorLazer.overview}</p>
           <div className="grid grid-cols-2 gap-2 mb-3 flex-1 min-h-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
