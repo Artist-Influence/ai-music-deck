@@ -26,9 +26,6 @@ const CaseStudySlide = () => (
             <p className="text-sm text-muted-foreground">
               <span className="text-primary font-medium">Goal:</span> Scale Subtronics' fandom beyond bass music through themed fan accounts in line with his Coachella debut + Fibonacci multi-genre album
             </p>
-            <p className="text-sm text-muted-foreground">
-              <span className="text-primary font-medium">Services:</span> Fan Page Management
-            </p>
           </div>
 
           <p className="text-sm text-primary font-medium mb-2">Strategy</p>
