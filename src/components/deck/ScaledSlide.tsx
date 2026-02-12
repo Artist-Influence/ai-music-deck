@@ -31,9 +31,7 @@ const ScaledSlide = ({ children, className }: ScaledSlideProps) => {
           height: 1080,
           left: '50%',
           top: '50%',
-          marginLeft: -960,
-          marginTop: -540,
-          transform: `scale(${scale})`,
+          transform: `translate(-50%, -50%) scale(${scale})`,
           transformOrigin: 'center center',
         }}
       >
