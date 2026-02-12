@@ -3,8 +3,7 @@ import GlassPanel from '../GlassPanel';
 const services = [
   { name: 'Clipping', unit: '50–200+ clips', note: 'Per campaign' },
   { name: 'Fanpages', unit: 'Weekly / Monthly', note: 'Ongoing placement' },
-  { name: 'UGC Hacks (Creator Flood, Top 50 Trending)', unit: 'Per activation', note: 'Volume-based' },
-  { name: 'Culture Edits', unit: 'Per edit', note: 'Cinematic content' },
+  { name: 'UGC Growth (Creator Flood, Top 50 Trending)', unit: 'Per activation', note: 'Volume-based' },
   { name: 'Spark Ads', unit: 'Ad spend + mgmt fee', note: 'Managed amplification' },
   { name: 'Spotify Playlisting', unit: 'Per campaign', note: 'Editorial & algorithmic' },
   { name: 'YouTube Ads', unit: 'Ad spend + mgmt fee', note: 'Discovery campaigns' },
@@ -27,7 +26,6 @@ const PricingSlide = () => (
               <th className="text-left p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Service</th>
               <th className="text-left p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Unit</th>
               <th className="text-left p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Note</th>
-              <th className="text-right p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Price</th>
             </tr>
           </thead>
           <tbody>
@@ -36,14 +34,16 @@ const PricingSlide = () => (
                 <td className="p-4 text-base text-foreground font-medium">{s.name}</td>
                 <td className="p-4 text-sm text-muted-foreground">{s.unit}</td>
                 <td className="p-4 text-sm text-muted-foreground/60">{s.note}</td>
-                <td className="p-4 text-sm text-primary text-right font-medium">Contact</td>
               </tr>
             ))}
           </tbody>
         </table>
       </GlassPanel>
 
-      <p className="text-sm text-muted-foreground/50 mt-6">Bundles can be built around your release schedule and goals.</p>
+      <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 text-lg font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
+        View full pricing sheet →
+      </a>
+      <p className="text-sm text-muted-foreground/50 mt-4">Bundles can be built around your release schedule and goals.</p>
     </div>
   </div>
 );
