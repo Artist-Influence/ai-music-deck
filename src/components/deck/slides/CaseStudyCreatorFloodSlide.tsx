@@ -83,7 +83,7 @@ const CaseStudyCreatorFloodSlide = () => (
             {/* Right: 3 horizontal images stacked */}
             <div className="flex flex-col gap-2">
               {[mlFacebook, mlTiktok, mlIg].map((src, i) => (
-                <div key={i} className="flex-1 rounded-lg border border-white/[0.08] overflow-hidden min-h-0">
+                <div key={i} className="h-24 rounded-lg border border-white/[0.08] overflow-hidden">
                   <img src={src} alt={majorLazerScreenshots[i + 1]?.alt} className="w-full h-full object-cover" />
                 </div>
               ))}
