@@ -1,81 +1,89 @@
+import { useEffect, useRef } from 'react';
+
 const OutcomesVisualizer = () => {
-  const baseline = 540;
-  const topY = 20;
-  const bars = [
-    { h: 60 },
-    { h: 100 },
-    { h: 85 },
-    { h: 150 },
-    { h: 135 },
-    { h: 220 },
-    { h: 300 },
-    { h: 370 },
-    { h: 340 },
-    { h: 420 },
-    { h: 480 },
-    { h: 510 },
+  const ref = useRef<SVGSVGElement>(null);
+
+  useEffect(() => {
+    // Animate particles rising using requestAnimationFrame
+    const svg = ref.current;
+    if (!svg) return;
+    const particles = svg.querySelectorAll<SVGCircleElement>('.rising-particle');
+    let raf: number;
+    const start = performance.now();
+
+    const tick = (now: number) => {
+      const elapsed = (now - start) / 1000;
+      particles.forEach((p) => {
+        const speed = parseFloat(p.dataset.speed || '40');
+        const startY = parseFloat(p.dataset.startY || '500');
+        const range = 520;
+        const y = ((startY - elapsed * speed) % range + range) % range + 10;
+        p.setAttribute('cy', String(y));
+        // Fade near edges
+        const opacity = y < 60 ? y / 60 : y > 470 ? (530 - y) / 60 : 1;
+        p.setAttribute('opacity', String(Math.max(0, Math.min(opacity * parseFloat(p.dataset.maxOpacity || '0.5'), 1))));
+      });
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, []);
+
+  // Generate streams of particles in vertical lanes
+  const lanes = [
+    { cx: 30, count: 8, speed: 35, r: 3, opacity: 0.3 },
+    { cx: 55, count: 10, speed: 50, r: 4, opacity: 0.5 },
+    { cx: 80, count: 12, speed: 65, r: 5, opacity: 0.7 },
+    { cx: 105, count: 10, speed: 55, r: 4, opacity: 0.5 },
+    { cx: 130, count: 7, speed: 40, r: 3, opacity: 0.35 },
   ];
-  const barW = 16;
-  const gap = 6;
-  const totalW = bars.length * (barW + gap) - gap;
-  const startX = (totalW > 240) ? 10 : (260 - totalW) / 2;
 
-  const barData = bars.map((b, i) => ({
-    x: startX + i * (barW + gap),
-    h: b.h,
-  }));
-
-  const linePoints = barData.map(b => `${b.x + barW / 2},${baseline - b.h}`).join(' ');
+  const particles = lanes.flatMap((lane, li) =>
+    Array.from({ length: lane.count }, (_, i) => ({
+      cx: lane.cx + (Math.sin(i * 2.3) * 8),
+      startY: (i * (520 / lane.count)) + (li * 13) % 40,
+      speed: lane.speed + (i % 3) * 5,
+      r: lane.r - (i % 2) * 0.8,
+      maxOpacity: lane.opacity,
+      key: `${li}-${i}`,
+    }))
+  );
 
   return (
-    <svg viewBox={`0 0 ${totalW + 20} 560`} className="h-full w-auto max-h-[600px]" preserveAspectRatio="xMidYMid meet">
-      {/* Subtle grid lines */}
-      {[100, 200, 300, 400, 500].map(y => (
-        <line key={y} x1="5" y1={y} x2={totalW + 15} y2={y}
-          stroke="hsl(195, 90%, 60%)" strokeWidth="0.4" opacity="0.08" />
+    <svg ref={ref} viewBox="0 0 160 530" className="h-full w-auto max-h-[580px]" preserveAspectRatio="xMidYMid meet">
+      {/* Vertical guide lines */}
+      {lanes.map((lane, i) => (
+        <line key={`guide-${i}`} x1={lane.cx} y1="0" x2={lane.cx} y2="530"
+          stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" opacity="0.06" />
       ))}
 
-      {/* Bars */}
-      {barData.map((bar, i) => (
-        <rect key={i} x={bar.x} y={baseline} width={barW} height="0" rx="3"
-          fill="hsl(195, 50%, 40%)" opacity="0.3">
-          <animate attributeName="height" from="0" to={bar.h}
-            dur="0.9s" begin={`${i * 0.1}s`} fill="freeze" />
-          <animate attributeName="y" from={baseline} to={baseline - bar.h}
-            dur="0.9s" begin={`${i * 0.1}s`} fill="freeze" />
-          <animate attributeName="opacity" from="0" to="0.3"
-            dur="0.6s" begin={`${i * 0.1}s`} fill="freeze" />
-        </rect>
+      {/* Rising connector arcs between lanes */}
+      {[0, 1, 2, 3].map(i => (
+        <path key={`arc-${i}`}
+          d={`M${lanes[i].cx},${200 + i * 60} Q${(lanes[i].cx + lanes[i + 1].cx) / 2},${180 + i * 60} ${lanes[i + 1].cx},${190 + i * 60}`}
+          fill="none" stroke="hsl(195, 90%, 60%)" strokeWidth="0.6" opacity="0">
+          <animate attributeName="opacity" values="0;0.2;0" dur="3s"
+            begin={`${i * 0.5}s`} repeatCount="indefinite" />
+        </path>
       ))}
 
-      {/* Trend line */}
-      <polyline points={linePoints} fill="none"
-        stroke="hsl(195, 90%, 60%)" strokeWidth="2" strokeLinecap="round"
-        strokeLinejoin="round" opacity="0" strokeDasharray="800" strokeDashoffset="800">
-        <animate attributeName="opacity" from="0" to="0.9"
-          dur="0.4s" begin="1s" fill="freeze" />
-        <animate attributeName="stroke-dashoffset" from="800" to="0"
-          dur="2s" begin="1s" fill="freeze" />
-      </polyline>
-
-      {/* Dots on trend line */}
-      {barData.map((bar, i) => (
-        <circle key={`dot-${i}`} cx={bar.x + barW / 2} cy={baseline - bar.h} r="3"
-          fill="hsl(195, 90%, 60%)" opacity="0">
-          <animate attributeName="opacity" values="0;0.8;0.4"
-            dur="2.5s" begin={`${1 + i * 0.1}s`} repeatCount="indefinite" />
-          <animate attributeName="r" values="2.5;4;2.5"
-            dur="2.5s" begin={`${1 + i * 0.1}s`} repeatCount="indefinite" />
-        </circle>
+      {/* Particles */}
+      {particles.map(p => (
+        <circle key={p.key} className="rising-particle"
+          cx={p.cx} cy={p.startY} r={p.r}
+          fill="hsl(195, 90%, 60%)" opacity="0"
+          data-speed={p.speed} data-start-y={p.startY} data-max-opacity={p.maxOpacity}
+        />
       ))}
 
-      {/* Arrow at top of trend */}
-      <polygon
-        points={`${barData[barData.length - 1].x + barW / 2 - 5},${baseline - barData[barData.length - 1].h - 8} ${barData[barData.length - 1].x + barW / 2 + 5},${baseline - barData[barData.length - 1].h - 8} ${barData[barData.length - 1].x + barW / 2},${baseline - barData[barData.length - 1].h - 18}`}
-        fill="hsl(195, 90%, 60%)" opacity="0">
-        <animate attributeName="opacity" from="0" to="0.6"
-          dur="0.4s" begin="2.5s" fill="freeze" />
-      </polygon>
+      {/* Glow at top — destination */}
+      <ellipse cx="80" cy="25" rx="50" ry="15" fill="hsl(195, 90%, 60%)" opacity="0.06">
+        <animate attributeName="opacity" values="0.04;0.1;0.04" dur="3s" repeatCount="indefinite" />
+      </ellipse>
+      <circle cx="80" cy="25" r="5" fill="hsl(195, 90%, 60%)" opacity="0.4">
+        <animate attributeName="r" values="4;7;4" dur="2s" repeatCount="indefinite" />
+        <animate attributeName="opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" />
+      </circle>
     </svg>
   );
 };
