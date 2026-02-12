@@ -5,12 +5,12 @@ const UGCHacksSlide = () => (
     <div className="absolute top-[5%] left-[20%] w-[600px] h-[600px] rounded-full bg-primary/[0.08] blur-[160px] animate-float" />
     <div className="absolute bottom-[5%] right-[10%] w-[400px] h-[400px] rounded-full bg-accent/[0.06] blur-[120px] animate-float-slow" />
 
-    <div className="relative z-10 w-full max-w-[1400px] mx-auto">
+    <div className="relative z-10 w-full max-w-[1400px] mx-auto text-center">
       <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
       <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
         UGC Growth: Creator Flood<br />+ Top 50 Trending
       </h1>
-      <p className="text-xl text-muted-foreground mb-10 max-w-[800px]">
+      <p className="text-xl text-muted-foreground mb-10 max-w-[800px] mx-auto">
         These are blunt-force tools. They are not "premium creative." They are designed to trigger visibility through volume.
       </p>
 
