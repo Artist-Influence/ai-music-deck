@@ -76,8 +76,8 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-sm text-muted-foreground mb-5">{majorLazer.overview}</p>
           <div className="grid grid-cols-2 gap-2 mb-5">
             {majorLazerScreenshots.map((s, i) => (
-              <div key={i} className="aspect-[3/4] rounded-lg border border-white/[0.08] overflow-hidden">
-                <img src={s.src} alt={s.alt} className="w-full h-full object-cover object-top" />
+              <div key={i} className="rounded-lg border border-white/[0.08] overflow-hidden">
+                <img src={s.src} alt={s.alt} className="w-full h-auto" />
               </div>
             ))}
           </div>
