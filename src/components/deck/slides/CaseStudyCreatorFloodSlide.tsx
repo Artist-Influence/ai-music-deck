@@ -1,34 +1,42 @@
 import GlassPanel from '../GlassPanel';
+import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
+import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
+import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
+import mlIg from '@/assets/major-lazer-ig-trending.jpeg';
 
-const cases = [
-  {
-    tag: 'CREATOR FLOOD',
-    artist: 'Rich Brian',
-    track: 'Jumpy (feat. Ski Mask The Slump God)',
-    overview:
-      'Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.',
-    screenshots: { type: 'horizontal' as const, count: 1 },
-    metrics: [
-      { val: '10,000+', label: 'Initial Posts' },
-      { val: '23,000+', label: 'Posts Driven' },
-      { val: '29,900+', label: 'Total Creates' },
-    ],
-  },
-  {
-    tag: 'TOP 50 TRENDING',
-    artist: 'Major Lazer',
-    track: 'MINI SKIRT',
-    overview:
-      'Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.',
-    screenshots: { type: 'vertical' as const, count: 3 },
-    metrics: [
-      { val: '5,000+', label: 'YT Creates' },
-      { val: '14,900+', label: 'IG Reels Creates' },
-      { val: '2,000+', label: 'TikTok Creates' },
-      { val: 'US / CA', label: 'Trending Regions' },
-    ],
-  },
+const majorLazerScreenshots = [
+  { src: mlShorts, alt: 'YouTube Shorts — #11 Canada Daily Top Songs' },
+  { src: mlFacebook, alt: 'Facebook — For You audio listing' },
+  { src: mlTiktok, alt: 'TikTok — Popular tab, 1739 videos' },
+  { src: mlIg, alt: 'Instagram — #4 Trending, 15K reels' },
 ];
+
+const richBrian = {
+  tag: 'CREATOR FLOOD',
+  artist: 'Rich Brian',
+  track: 'Jumpy (feat. Ski Mask The Slump God)',
+  overview:
+    'Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.',
+  metrics: [
+    { val: '10,000+', label: 'Initial Posts' },
+    { val: '23,000+', label: 'Posts Driven' },
+    { val: '29,900+', label: 'Total Creates' },
+  ],
+};
+
+const majorLazer = {
+  tag: 'TOP 50 TRENDING',
+  artist: 'Major Lazer',
+  track: 'MINI SKIRT',
+  overview:
+    'Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.',
+  metrics: [
+    { val: '5,000+', label: 'YT Creates' },
+    { val: '14,900+', label: 'IG Reels Creates' },
+    { val: '2,000+', label: 'TikTok Creates' },
+    { val: 'US / CA', label: 'Trending Regions' },
+  ],
+};
 
 const CaseStudyCreatorFloodSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
@@ -39,43 +47,49 @@ const CaseStudyCreatorFloodSlide = () => (
       <p className="text-xl text-muted-foreground mb-12">Creator Flood &amp; Trending Campaigns</p>
 
       <div className="grid grid-cols-2 gap-8 max-w-[1200px]">
-        {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-8 flex flex-col">
-            <p className="text-sm text-primary font-mono mb-3 tracking-widest">{c.tag}</p>
-            <p className="text-3xl font-bold text-foreground">{c.artist}</p>
-            <p className="text-sm text-muted-foreground/60 mb-4">{c.track}</p>
-            <p className="text-sm text-muted-foreground mb-5">{c.overview}</p>
-
-            {/* Screenshot placeholders */}
-            {c.screenshots.type === 'vertical' ? (
-              <div className="grid grid-cols-3 gap-2 mb-5">
-                {Array.from({ length: c.screenshots.count }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="aspect-[9/16] rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center"
-                  >
-                    <span className="text-[9px] text-muted-foreground/40">Screenshot {i + 1}</span>
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="mb-5">
-                <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
-                  <span className="text-[9px] text-muted-foreground/40">Campaign Screenshot</span>
-                </div>
-              </div>
-            )}
-
-            <div className="grid grid-cols-2 gap-3 mt-auto">
-              {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                  <p className="text-lg font-bold text-foreground">{m.val}</p>
-                  <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
-                </div>
-              ))}
+        {/* Rich Brian */}
+        <GlassPanel variant="bright" className="p-8 flex flex-col">
+          <p className="text-sm text-primary font-mono mb-3 tracking-widest">{richBrian.tag}</p>
+          <p className="text-3xl font-bold text-foreground">{richBrian.artist}</p>
+          <p className="text-sm text-muted-foreground/60 mb-4">{richBrian.track}</p>
+          <p className="text-sm text-muted-foreground mb-5">{richBrian.overview}</p>
+          <div className="mb-5">
+            <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center">
+              <span className="text-[9px] text-muted-foreground/40">Campaign Screenshot</span>
             </div>
-          </GlassPanel>
-        ))}
+          </div>
+          <div className="grid grid-cols-2 gap-3 mt-auto">
+            {richBrian.metrics.map((m) => (
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                <p className="text-lg font-bold text-foreground">{m.val}</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
+
+        {/* Major Lazer */}
+        <GlassPanel variant="bright" className="p-8 flex flex-col">
+          <p className="text-sm text-primary font-mono mb-3 tracking-widest">{majorLazer.tag}</p>
+          <p className="text-3xl font-bold text-foreground">{majorLazer.artist}</p>
+          <p className="text-sm text-muted-foreground/60 mb-4">{majorLazer.track}</p>
+          <p className="text-sm text-muted-foreground mb-5">{majorLazer.overview}</p>
+          <div className="grid grid-cols-2 gap-2 mb-5">
+            {majorLazerScreenshots.map((s, i) => (
+              <div key={i} className="aspect-[3/4] rounded-lg border border-white/[0.08] overflow-hidden">
+                <img src={s.src} alt={s.alt} className="w-full h-full object-cover object-top" />
+              </div>
+            ))}
+          </div>
+          <div className="grid grid-cols-2 gap-3 mt-auto">
+            {majorLazer.metrics.map((m) => (
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                <p className="text-lg font-bold text-foreground">{m.val}</p>
+                <p className="text-[10px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
       </div>
     </div>
   </div>
