@@ -40,14 +40,14 @@ const majorLazer = {
 };
 
 const CaseStudyCreatorFloodSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-8 flex flex-col">
     <div className="absolute top-[20%] left-[15%] w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[130px] animate-float" />
 
     <div className="relative z-10">
       <h1 className="text-5xl font-bold text-foreground mb-4">Scale on impact.</h1>
       <p className="text-xl text-muted-foreground mb-6">Creator Flood &amp; Trending Campaigns</p>
 
-      <div className="grid grid-cols-2 gap-8 max-w-[1400px]">
+      <div className="grid grid-cols-2 gap-8 max-w-[1400px] items-start">
         {/* Rich Brian */}
         <GlassPanel variant="bright" className="p-6 flex flex-col">
           <p className="text-sm text-primary font-mono mb-3 tracking-widest">{richBrian.tag}</p>
@@ -75,7 +75,7 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-3xl font-bold text-foreground">{majorLazer.artist}</p>
           <p className="text-sm text-muted-foreground/60 mb-3">{majorLazer.track}</p>
           <p className="text-sm text-muted-foreground mb-4">{majorLazer.overview}</p>
-          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-4 h-[340px] overflow-hidden flex-shrink-0">
+          <div className="grid grid-cols-[1fr_1.2fr] gap-2 mb-4 h-[440px] overflow-hidden flex-shrink-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
               <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-contain" />
