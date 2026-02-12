@@ -3,11 +3,11 @@ import NetworkVisual from '../NetworkVisual';
 import DiscoveryVisualizer from '../DiscoveryVisualizer';
 
 const TheShiftSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[5%] right-[5%] w-[600px] h-[600px] rounded-full bg-primary/[0.07] blur-[150px] animate-float" />
     <NetworkVisual className="opacity-10" nodeCount={60} seed={2} />
 
-    <div className="relative z-10 flex gap-12 items-center">
+    <div className="relative z-10 flex gap-12 items-center w-full max-w-[1600px]">
       <div className="flex-1 max-w-[800px]">
         <h1 className="text-7xl font-bold text-foreground mb-10 leading-tight">Music discovery<br />has changed.</h1>
         <GlassPanel className="mb-12">

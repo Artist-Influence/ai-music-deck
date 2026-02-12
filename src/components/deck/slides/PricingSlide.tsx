@@ -12,10 +12,10 @@ const services = [
 ];
 
 const PricingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[10%] left-[15%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
 
-    <div className="relative z-10">
+    <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-6xl font-bold text-foreground mb-4">A-la-carte pricing</h1>
       <p className="text-xl text-muted-foreground mb-12">Choose a single service, or build a bundle.</p>
 

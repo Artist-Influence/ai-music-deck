@@ -6,10 +6,10 @@ import skrillClip3 from '@/assets/skrillex-clip3.jpeg';
 const clipImages = [skrillClip1, skrillClip2, skrillClip3];
 
 const CaseStudySkrillexSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[15%] right-[10%] w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[130px] animate-float" />
 
-    <div className="relative z-10">
+    <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-6xl font-bold text-foreground mb-4">Community-driven reach.</h1>
       <p className="text-xl text-muted-foreground mb-12">Case study — Fan Page Growth</p>
 

@@ -85,10 +85,10 @@ const HubDiagram = () => {
 };
 
 const WhatCloutedDoesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex items-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex items-center justify-center">
     <div className="absolute top-[15%] left-[40%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[150px] animate-float" />
 
-    <div className="relative z-10 flex gap-16 items-center w-full">
+    <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px]">
       <div className="flex-1 max-w-[700px]">
         <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
           We run the growth layer between your song and the algorithms.

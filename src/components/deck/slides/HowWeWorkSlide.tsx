@@ -8,7 +8,7 @@ const steps = [
 ];
 
 const HowWeWorkSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <style>{`
       @keyframes glow-sweep {
         0% { opacity: 0; left: -100%; }
@@ -37,7 +37,7 @@ const HowWeWorkSlide = () => (
     `}</style>
     <div className="absolute top-[20%] left-[30%] w-[600px] h-[400px] rounded-full bg-primary/[0.05] blur-[150px] animate-float-slow" />
 
-    <div className="relative z-10">
+    <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-7xl font-bold text-foreground mb-4">Simple process.</h1>
       <p className="text-3xl text-muted-foreground mb-20">No mystery.</p>
 
