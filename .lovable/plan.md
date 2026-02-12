@@ -1,15 +1,32 @@
 
 
-## Fix iPhone Viewport Cutoff in DeckViewer
+## Fan Page Network Visualizer
 
-**Problem:** On iPhones, `h-screen` (100vh) includes the area behind Safari's address bar and bottom home indicator, so the top header and slide navigation controls get clipped.
+**Concept:** An animated SVG visualizer showing a central hub (the artist) surrounded by orbiting fan page nodes that pulse and radiate engagement ripples outward. This represents the "always-on" distribution layer where theme pages continuously seed content into audiences.
 
-**Solution:** Replace `h-screen` with `h-dvh` (dynamic viewport height) which Tailwind supports and correctly accounts for mobile browser chrome. This affects both the main viewer and the grid view.
+### Visual Design
+- A central glowing node (the artist/track)
+- 5-7 orbiting "fan page" nodes at varying distances, slowly rotating
+- Each fan page node periodically emits expanding ripple circles (representing posts reaching audiences)
+- Faint connecting lines between the hub and pages (the distribution network)
+- Small particle dots drifting outward from pages (representing reach/impressions)
+- Uses the existing brand cyan/primary color palette with varying opacity
+- Smooth CSS animations for rotation, pulsing, and ripple expansion
 
-**File:** `src/components/deck/DeckViewer.tsx`
+### Technical Details
 
-- **Line 50 (grid view):** Change `h-screen` to `h-dvh`
-- **Line 70 (main view):** Change `h-screen` to `h-dvh`
+**New file: `src/components/deck/FanpageVisualizer.tsx`**
+- Self-contained SVG component with CSS keyframe animations
+- No external dependencies needed
+- Uses `primary` color (cyan) with varying opacities
+- Animated via CSS `@keyframes` for performance (no JS animation loop)
+- Elements: central node, orbiting page nodes on circular paths, expanding ripple rings, drift particles
 
-`dvh` is supported on all modern iPhones (Safari 15.4+) and dynamically adjusts as the browser chrome shows/hides, ensuring the header and bottom nav are always visible.
+**Edit: `src/components/deck/slides/FanpagesSlide.tsx`**
+- Replace the placeholder `div` on the right with the new `FanpageVisualizer` component
 
+### Animation Details
+- Orbit rotation: 60-90s per revolution (slow, ambient)
+- Ripple expansion: 3-4s cycles, staggered per node
+- Central node: gentle pulse (scale 1.0 to 1.1)
+- Particles: fade-out drift using opacity animation
