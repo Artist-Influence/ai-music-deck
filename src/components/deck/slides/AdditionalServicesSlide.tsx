@@ -1,12 +1,12 @@
 import GlassPanel from '../GlassPanel';
 
 const services = [
-  { icon: '🎬', name: 'Culture Edits', desc: 'Cinematic, trend-driven content that lives beyond music feeds' },
-  { icon: '⚡', name: 'Spark Ads', desc: 'Paid amplification on proven creative — managed end to end' },
-  { icon: '🎵', name: 'Spotify', desc: 'Playlist pitching and editorial strategy for streaming growth' },
-  { icon: '▶️', name: 'YouTube Ads', desc: 'Targeted video ad campaigns for discovery and subscriber growth' },
-  { icon: '🔁', name: 'SoundCloud Reposts', desc: 'Repost network activation for SoundCloud-native audiences' },
-  { icon: '📱', name: 'Instagram Seeding', desc: 'Clustered posting across curated IG accounts for maximum reach' },
+  { icon: '🎬', name: 'Culture Edits', desc: 'Placements into cinematic and sports edits across established pages with real audiences.', time: '2–3 weeks' },
+  { icon: '📢', name: 'Meta & TikTok Ads', desc: 'We turn proven native posts into ads to convert streams, sales, touring, and more. Optimized daily, weekly reporting, clean exports.', time: '2–3 weeks' },
+  { icon: '🎵', name: 'Spotify Playlisting (Organic)', desc: 'Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup. Weekly reporting, stream goals guaranteed.', time: '90 days' },
+  { icon: '▶️', name: 'YouTube Advertising', desc: 'International targeting + optimization to maximize reach while protecting engagement ratios. Built for subscribers, long-form engagement.', time: '1–3 weeks' },
+  { icon: '🔁', name: 'SoundCloud Reposts', desc: 'Verified repost network across genre communities with transparent tracking and real engagement intent.' },
+  { icon: '📱', name: 'Instagram Seeding', desc: 'Genre-aligned page placements with tracking via live dashboard. Built for relevance and cost efficiency.' },
 ];
 
 const AdditionalServicesSlide = () => (
@@ -22,7 +22,10 @@ const AdditionalServicesSlide = () => (
           <GlassPanel key={i} className="p-6 hover:bg-white/[0.06] transition-colors">
             <span className="text-3xl mb-4 block">{s.icon}</span>
             <p className="text-xl font-semibold text-foreground mb-2">{s.name}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">{s.desc}</p>
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
+            {s.time && (
+              <p className="text-xs text-primary font-medium">Timeframe: {s.time}</p>
+            )}
           </GlassPanel>
         ))}
       </div>

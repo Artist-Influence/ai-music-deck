@@ -13,7 +13,7 @@ const TheShiftSlide = () => (
           People don't "find" songs anymore. Songs find people.
         </p>
         <p className="text-xl text-muted-foreground leading-relaxed">
-          Discovery happens when your track shows up repeatedly — across platforms, across communities, across formats — until the algorithm can't ignore it.
+          Discovery now happens when your track shows up repeatedly, across platforms, across communities, across formats, until the algorithm can't ignore it.
         </p>
       </GlassPanel>
 

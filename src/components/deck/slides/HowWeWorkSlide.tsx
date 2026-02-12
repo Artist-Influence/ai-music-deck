@@ -1,10 +1,10 @@
 import GlassPanel from '../GlassPanel';
 
 const steps = [
-  { num: '01', title: 'Setup', desc: 'Onboarding, asset collection, strategy alignment' },
-  { num: '02', title: 'Launch', desc: 'Content creation begins, distribution network activated' },
-  { num: '03', title: 'Optimize', desc: 'Performance review, creative iteration, spend reallocation' },
-  { num: '04', title: 'Report', desc: 'Clear reporting, learnings documented, next steps' },
+  { num: '01', title: 'Setup', desc: 'We align on goals, audience, assets, and guardrails. Then we build the distribution plan.' },
+  { num: '02', title: 'Launch', desc: 'We activate the chosen services with tight execution and clear timelines.' },
+  { num: '03', title: 'Optimize', desc: 'We double down on what\'s working, cut what isn\'t, and keep results moving.' },
+  { num: '04', title: 'Report', desc: 'Weekly updates, final recap, and reusable learnings for the next drop.' },
 ];
 
 const HowWeWorkSlide = () => (

@@ -3,8 +3,7 @@ import GlassPanel from '../GlassPanel';
 const services = [
   { name: 'Clipping', unit: '50–200+ clips', note: 'Per campaign' },
   { name: 'Fanpages', unit: 'Weekly / Monthly', note: 'Ongoing placement' },
-  { name: 'Creator Flood', unit: '200–1,000+ creators', note: 'Per activation' },
-  { name: 'Top 50 Trending', unit: 'Per sound', note: 'TikTok trending push' },
+  { name: 'UGC Hacks (Creator Flood, Top 50 Trending)', unit: 'Per activation', note: 'Volume-based' },
   { name: 'Culture Edits', unit: 'Per edit', note: 'Cinematic content' },
   { name: 'Spark Ads', unit: 'Ad spend + mgmt fee', note: 'Managed amplification' },
   { name: 'Spotify Playlisting', unit: 'Per campaign', note: 'Editorial & algorithmic' },
@@ -19,7 +18,7 @@ const PricingSlide = () => (
 
     <div className="relative z-10">
       <h1 className="text-6xl font-bold text-foreground mb-4">A-la-carte pricing</h1>
-      <p className="text-xl text-muted-foreground mb-12">Mix and match services to build the right campaign for your release.</p>
+      <p className="text-xl text-muted-foreground mb-12">Choose a single service, or build a bundle.</p>
 
       <GlassPanel className="max-w-[1300px] p-0 overflow-hidden">
         <table className="w-full">
@@ -43,6 +42,8 @@ const PricingSlide = () => (
           </tbody>
         </table>
       </GlassPanel>
+
+      <p className="text-sm text-muted-foreground/50 mt-6">Bundles can be built around your release schedule and goals.</p>
     </div>
   </div>
 );

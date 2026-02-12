@@ -4,33 +4,56 @@ const ClippingSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
     <div className="absolute top-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float" />
 
-    {/* Abstract content tiles flowing upward */}
-    <div className="absolute right-24 top-24 bottom-24 w-[300px] flex flex-col gap-2 opacity-[0.12]">
-      {Array.from({ length: 12 }).map((_, i) => (
-        <div key={i} className="h-14 rounded-lg bg-primary/30 border border-primary/20"
-          style={{ width: `${60 + (i * 17) % 40}%`, marginLeft: `${(i * 23) % 30}%` }} />
-      ))}
-    </div>
-
-    <div className="relative z-10 max-w-[1100px]">
+    <div className="relative z-10 max-w-[1400px]">
       <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
-      <h1 className="text-7xl font-bold text-foreground mb-10">Clipping</h1>
+      <h1 className="text-7xl font-bold text-foreground mb-6">Clipping</h1>
+      <p className="text-2xl text-muted-foreground mb-12 max-w-[800px]">
+        A curated short-form network that turns your track into native TikToks, Reels, and Shorts at scale.
+      </p>
 
-      <GlassPanel className="max-w-[800px] mb-10">
-        <p className="text-2xl text-foreground/80 leading-relaxed mb-6">
-          We turn your best records into an engine of short-form content. 50–200+ clips per campaign — designed for velocity across TikTok, Reels, and Shorts.
-        </p>
-        <p className="text-lg text-muted-foreground leading-relaxed">
-          Every clip is built to stop the scroll.
-        </p>
-      </GlassPanel>
+      <div className="grid grid-cols-3 gap-6">
+        <GlassPanel className="p-6">
+          <p className="text-lg font-semibold text-primary mb-4">What it is</p>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            A distribution engine powered by 10,000+ clippers producing platform-native videos using your track.
+          </p>
+        </GlassPanel>
 
-      <div className="grid grid-cols-4 gap-4 max-w-[800px]">
-        {['Lyrics-synced edits', 'Trending format adaptation', 'Platform-native formatting', 'Algorithmic distribution'].map((item, i) => (
-          <GlassPanel key={i} variant="subtle" className="p-4 text-center">
-            <p className="text-sm text-foreground/70">{item}</p>
-          </GlassPanel>
-        ))}
+        <GlassPanel className="p-6">
+          <p className="text-lg font-semibold text-primary mb-4">How it works</p>
+          <div className="space-y-2">
+            {[
+              'Campaigns launch in 24 hours',
+              'Runs 7 to 14 days',
+              'Guaranteed views at $1.50 per 1,000 — often beating that with organic lift',
+              'Every post uses the official sound, tags the artist, and follows basic brand direction',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
+                <p className="text-sm text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
+
+        <GlassPanel className="p-6">
+          <p className="text-lg font-semibold text-primary mb-4">What you get</p>
+          <div className="space-y-2 mb-6">
+            {[
+              'Fast velocity and format variety',
+              'Clear reporting',
+              'UGC reuse rights for paid and owned channels',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
+                <p className="text-sm text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+          <div className="pt-4 border-t border-white/[0.06]">
+            <p className="text-sm text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+          </div>
+        </GlassPanel>
       </div>
     </div>
   </div>
