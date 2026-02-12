@@ -23,7 +23,7 @@ const cases = [
     track: 'Shock Therapy',
     overview: 'Organic playlist campaign focused on dubstep tastemakers and algorithmic lift.',
     screenshot: dackJanielsImg,
-    imgClass: 'object-cover object-right',
+    imgClass: 'object-cover object-left',
     metrics: [
       { val: '185,700', label: 'Streams' },
       { val: '9,950', label: 'Playlist Adds' },
