@@ -1,33 +1,48 @@
 
 
-## Fix Thumbnail Centering in Sidebar and Grid
+## Center All Slides Horizontally
 
 ### Problem
-The `ScaledSlide` component uses fixed pixel margins (`marginLeft: -960`, `marginTop: -540`) combined with `left: 50%` / `top: 50%` for centering. While mathematically correct, at very small thumbnail scales (~0.09), sub-pixel rounding and the fixed-margin approach can cause slight visual drift. Using CSS `translate(-50%, -50%)` combined with the scale transform is more reliable across all sizes.
+Most slides only use `justify-center` (vertical centering) on their outer container but lack `items-center` (horizontal centering). The inner content blocks sit against the left padding edge, making everything appear left-heavy -- especially noticeable in thumbnails.
 
 ### Solution
-Update `ScaledSlide.tsx` to use `translate(-50%, -50%)` instead of fixed negative margins for centering. This combines the centering and scaling into a single `transform` property, which browsers handle more precisely at extreme scale values.
+Add `items-center` to each slide's outer flex-column container and ensure the inner content wrapper has `w-full` so it can be properly centered. For slides with side-by-side layouts (text + visualizer), the inner flex row will also get `w-full` and `max-w-[1600px] mx-auto` to center the pair as a unit.
 
-### Changes
+### Changes (19 slides)
 
-**File: `src/components/deck/ScaledSlide.tsx`**
+Already centered (no changes needed):
+- **CoverSlide** -- already has `items-center justify-center text-center`
+- **NextStepsSlide** -- already has `items-center justify-center text-center`
 
-Replace the inner div's positioning from:
-```
-left: '50%', top: '50%',
-marginLeft: -960, marginTop: -540,
-transform: `scale(${scale})`,
-transformOrigin: 'center center',
-```
+Slides to update (add `items-center` to outer div, add `w-full` / centering to inner content):
 
-To:
-```
-left: '50%', top: '50%',
-transform: `translate(-50%, -50%) scale(${scale})`,
-transformOrigin: 'center center',
-```
+| Slide | Layout Type | Change |
+|-------|------------|--------|
+| TheShiftSlide | Text + Visualizer | Add `items-center` to outer; add `w-full max-w-[1600px]` to inner flex row |
+| TheProblemSlide | Text + Visualizer | Same pattern |
+| WhatCloutedDoesSlide | Text + Visualizer | Add `justify-center` to outer; add `max-w-[1600px]` to inner flex row |
+| HowWeWorkSlide | Single column | Add `items-center` to outer; add `w-full max-w-[1400px]` to inner |
+| ClippingSlide | Text + Visualizer | Add `items-center` to outer; add `w-full max-w-[1600px]` to inner flex row |
+| FanpagesSlide | Text + Visualizer | Add `items-center` to outer; add `w-full max-w-[1600px]` to inner |
+| UGCHacksSlide | Single column | Add `items-center` to outer; center inner block with `mx-auto` |
+| AdditionalServicesSlide | Single column | Add `items-center` to outer; center inner block |
+| OutcomesSlide | Text + Visualizer | Add `items-center` to outer; add `w-full max-w-[1600px]` to inner flex row |
+| ReportingSlide | Single column | Add `items-center` to outer; center inner block |
+| ExpectationsSlide | Single column | Add `items-center` to outer; center inner block |
+| CaseStudySlide | Two-column grid | Add `items-center` to outer; center inner block |
+| CaseStudySkrillexSlide | Two-column grid | Add `items-center` to outer; center inner block |
+| CaseStudyCreatorFloodSlide | Two-column grid | Add `items-center` to outer; center inner block |
+| CaseStudyPlatformSlide | Three-column grid | Add `items-center` to outer; center inner block |
+| CaseStudyClippingSlide | Three-column grid | Add `items-center` to outer; center inner block |
+| PricingSlide | Single column | Add `items-center` to outer; center inner block |
 
-Remove the `marginLeft` and `marginTop` properties entirely. The `translate(-50%, -50%)` achieves the same centering but is calculated by the browser's compositor, avoiding sub-pixel rounding issues at small scales.
+### Technical Details
 
-This is a single-file, one-line change that affects all thumbnail and main slide rendering consistently.
+The pattern for each slide is:
+
+1. Outer div: add `items-center` to the existing flex classes
+2. Inner `z-10` div: add `w-full max-w-[1600px]` (or appropriate max-width) so content is constrained and centered
+3. For slides with side-by-side text + visualizer: ensure the flex row itself is `w-full` so both halves distribute evenly within the centered container
+
+This preserves all existing padding, visualizer positions, background glows, and animations while simply centering the content block within each 1920x1080 canvas.
 
