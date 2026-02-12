@@ -18,13 +18,13 @@ const AdditionalServicesSlide = () => (
 
       <div className="grid grid-cols-3 gap-5 max-w-[1400px]">
         {services.map((s, i) => (
-          <GlassPanel key={i} className="p-6 hover:bg-white/[0.06] transition-colors">
+          <GlassPanel key={i} className="p-6 hover:bg-white/[0.06] transition-colors flex flex-col">
             <span className="text-3xl mb-4 block">{s.icon}</span>
             <p className="text-xl font-semibold text-foreground mb-2">{s.name}</p>
-            <p className="text-sm text-muted-foreground leading-relaxed mb-3">{s.desc}</p>
-            {s.time && (
-              <p className="text-xs text-primary font-medium">Timeframe: {s.time}</p>
-            )}
+            <p className="text-sm text-muted-foreground leading-relaxed mb-3 flex-grow">{s.desc}</p>
+            <p className={`text-xs font-medium ${s.time ? 'text-primary' : 'invisible'}`}>
+              Timeframe: {s.time || '—'}
+            </p>
           </GlassPanel>
         ))}
       </div>
