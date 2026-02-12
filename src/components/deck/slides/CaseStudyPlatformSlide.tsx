@@ -54,26 +54,25 @@ const CaseStudyPlatformSlide = () => (
 
       <div className="grid grid-cols-3 gap-6 max-w-[1200px]">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-6 flex flex-col">
-            <p className="text-sm text-primary font-mono mb-3 tracking-widest">{c.tag}</p>
+          <GlassPanel key={c.artist} variant="bright" className="p-5 flex flex-col h-full">
+            <p className="text-sm text-primary font-mono mb-2 tracking-widest">{c.tag}</p>
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
-            <p className="text-sm text-muted-foreground/60 mb-3">{c.track}</p>
-            <p className="text-xs text-muted-foreground mb-4 leading-relaxed">{c.overview}</p>
+            <p className="text-sm text-muted-foreground/60 mb-2">{c.track}</p>
+            <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{c.overview}</p>
 
-            {/* Screenshot placeholder */}
             {c.screenshot ? (
-              <div className="aspect-video rounded-lg border border-white/[0.08] overflow-hidden mb-4">
-                <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} className="w-full h-full object-cover object-top" />
+              <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
+                <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} className="w-full h-full object-contain" />
               </div>
             ) : (
-              <div className="aspect-video rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-4">
+              <div className="flex-1 min-h-0 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-3">
                 <span className="text-[9px] text-muted-foreground/40">Screenshot</span>
               </div>
             )}
 
-            <div className="grid grid-cols-2 gap-2 mt-auto">
+            <div className="grid grid-cols-2 gap-2">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
                   <p className="text-base font-bold text-foreground">{m.val}</p>
                   <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
