@@ -9,6 +9,7 @@ const cases = [
     track: 'Spicy Margarita',
     overview: 'Rapid global view acceleration maximizing watch time and engagement.',
     screenshot: spicyMargaritaImg,
+    imgClass: 'object-contain',
     metrics: [
       { val: '11M', label: 'Views' },
       { val: '6.5M', label: 'Unique Viewers' },
@@ -22,6 +23,7 @@ const cases = [
     track: 'Shock Therapy',
     overview: 'Organic playlist campaign focused on dubstep tastemakers and algorithmic lift.',
     screenshot: dackJanielsImg,
+    imgClass: 'object-cover object-right',
     metrics: [
       { val: '185,700', label: 'Streams' },
       { val: '9,950', label: 'Playlist Adds' },
@@ -35,6 +37,7 @@ const cases = [
     track: 'Sauti',
     overview: 'Global audio seeding across Afro House audiences and LATAM markets.',
     screenshot: null,
+    imgClass: '',
     metrics: [
       { val: '16.4M', label: 'Views' },
       { val: '$0.03', label: 'CPM' },
@@ -62,7 +65,7 @@ const CaseStudyPlatformSlide = () => (
 
             {c.screenshot ? (
               <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
-                <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} className="w-full h-full object-contain" />
+                <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} className={`w-full h-full ${c.imgClass}`} />
               </div>
             ) : (
               <div className="flex-1 min-h-0 rounded-lg bg-white/[0.06] border border-white/[0.08] flex items-center justify-center mb-3">
