@@ -10,10 +10,10 @@ const services = [
 ];
 
 const AdditionalServicesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
 
-    <div className="relative z-10">
+    <div className="relative z-10 w-full max-w-[1600px]">
       <h1 className="text-6xl font-bold text-foreground mb-4">Additional services</h1>
       <p className="text-2xl text-muted-foreground mb-16">we can bundle as needed</p>
 

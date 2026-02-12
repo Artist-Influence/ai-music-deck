@@ -13,10 +13,10 @@ const dontExpect = [
 ];
 
 const ExpectationsSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[20%] right-[30%] w-[400px] h-[400px] rounded-full bg-primary/[0.04] blur-[120px]" />
 
-    <div className="relative z-10">
+    <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-6xl font-bold text-foreground mb-4">We move fast, but<br />we don't do chaos.</h1>
       <p className="text-xl text-muted-foreground mb-16">To keep campaigns clean and effective, we align on a few basics upfront.</p>
 

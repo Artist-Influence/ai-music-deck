@@ -1,11 +1,11 @@
 import GlassPanel from '../GlassPanel';
 
 const UGCHacksSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[5%] left-[20%] w-[600px] h-[600px] rounded-full bg-primary/[0.08] blur-[160px] animate-float" />
     <div className="absolute bottom-[5%] right-[10%] w-[400px] h-[400px] rounded-full bg-accent/[0.06] blur-[120px] animate-float-slow" />
 
-    <div className="relative z-10 max-w-[1400px]">
+    <div className="relative z-10 w-full max-w-[1400px]">
       <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
       <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
         UGC Growth: Creator Flood<br />+ Top 50 Trending

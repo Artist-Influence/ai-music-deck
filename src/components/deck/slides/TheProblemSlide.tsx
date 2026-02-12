@@ -2,11 +2,11 @@ import GlassPanel from '../GlassPanel';
 import BrokenSystemVisualizer from '../BrokenSystemVisualizer';
 
 const TheProblemSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] rounded-full bg-destructive/[0.04] blur-[120px]" />
     <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-primary/[0.05] blur-[100px]" />
 
-    <div className="relative z-10 flex gap-12 items-center">
+    <div className="relative z-10 flex gap-12 items-center w-full max-w-[1600px]">
       <div className="flex-1 max-w-[800px]">
         <h1 className="text-6xl font-bold text-foreground mb-10 leading-tight">
           Most music growth is still<br />stitched together by hand.

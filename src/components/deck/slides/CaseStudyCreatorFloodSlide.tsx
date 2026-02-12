@@ -41,10 +41,10 @@ const majorLazer = {
 };
 
 const CaseStudyCreatorFloodSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden px-8 pt-6 pb-4 flex flex-col">
+  <div className="w-full h-full bg-background relative overflow-hidden px-8 pt-6 pb-4 flex flex-col items-center">
     <div className="absolute top-[20%] left-[15%] w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[130px] animate-float" />
 
-    <div className="relative z-10 flex flex-col h-full">
+    <div className="relative z-10 flex flex-col h-full w-full max-w-[1400px]">
       <h1 className="text-4xl font-bold text-foreground mb-2">Scale on impact.</h1>
       <p className="text-lg text-muted-foreground mb-4">Creator Flood &amp; Trending Campaigns</p>
 

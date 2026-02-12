@@ -15,10 +15,10 @@ const finalItems = [
 ];
 
 const ReportingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute top-[10%] left-[50%] w-[500px] h-[400px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
-    <div className="relative z-10">
+    <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-6xl font-bold text-foreground mb-4">You'll never wonder<br />what's happening.</h1>
       <p className="text-xl text-muted-foreground mb-16">Reporting and transparency</p>
 
