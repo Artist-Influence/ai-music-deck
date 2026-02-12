@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import OutcomesVisualizer from '../OutcomesVisualizer';
 
 const outcomes = [
   'More short-form creation volume and velocity',
@@ -12,25 +13,28 @@ const OutcomesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col justify-center">
     <div className="absolute bottom-[5%] left-[20%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float-slow" />
 
-    <div className="relative z-10 max-w-[1000px]">
-      <h1 className="text-7xl font-bold text-foreground mb-4">What "good" looks like</h1>
-      <p className="text-2xl text-muted-foreground mb-6">Outcomes we aim for</p>
-      <p className="text-xl text-muted-foreground/80 mb-16 max-w-[800px]">
-        We don't promise magic. We promise strong execution, real distribution, and momentum-building that you can see.
-      </p>
+    <div className="relative z-10 flex gap-16 items-center">
+      <div className="flex-1 max-w-[900px]">
+        <h1 className="text-7xl font-bold text-foreground mb-4">What "good" looks like</h1>
+        <p className="text-2xl text-muted-foreground mb-6">Outcomes we aim for</p>
+        <p className="text-xl text-muted-foreground/80 mb-16 max-w-[800px]">
+          We don't promise magic. We promise strong execution, real distribution, and momentum-building that you can see.
+        </p>
 
-      <p className="text-lg text-primary font-medium mb-6 tracking-wider uppercase">
-        Depending on the service mix, a good campaign produces:
-      </p>
+        <p className="text-lg text-primary font-medium mb-6 tracking-wider uppercase">
+          Depending on the service mix, a good campaign produces:
+        </p>
 
-      <div className="space-y-4">
-        {outcomes.map((item, i) => (
-          <GlassPanel key={i} variant="bright" className="p-5 flex items-center gap-4">
-            <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0" />
-            <p className="text-lg text-foreground/80">{item}</p>
-          </GlassPanel>
-        ))}
+        <div className="space-y-4">
+          {outcomes.map((item, i) => (
+            <GlassPanel key={i} variant="bright" className="p-5 flex items-center gap-4">
+              <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0" />
+              <p className="text-lg text-foreground/80">{item}</p>
+            </GlassPanel>
+          ))}
+        </div>
       </div>
+      <OutcomesVisualizer />
     </div>
   </div>
 );
