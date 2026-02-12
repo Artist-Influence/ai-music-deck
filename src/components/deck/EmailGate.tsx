@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import cloutedLogo from '@/assets/CLOUTED-white.png';
 import { z } from 'zod';
 import GlassPanel from './GlassPanel';
 import { supabase } from '@/integrations/supabase/client';
@@ -48,7 +49,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
 
       <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-10 text-center">
         <div className="mb-8">
-          <h1 className="text-2xl font-bold tracking-[0.25em] text-foreground mb-2">CLOUTED</h1>
+          <img src={cloutedLogo} alt="CLOUTED" className="w-40 mx-auto mb-2" />
           <p className="text-muted-foreground text-sm">The growth system for modern music</p>
         </div>
 
