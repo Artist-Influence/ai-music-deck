@@ -47,7 +47,7 @@ const DeckViewer = () => {
 
   if (grid) {
     return (
-      <div className="h-screen bg-background p-8 overflow-auto">
+      <div className="h-dvh bg-background p-8 overflow-auto">
         <div className="flex items-center justify-between mb-8">
           <h2 className="text-foreground text-xl font-semibold">All Slides</h2>
           <button onClick={() => setGrid(false)} className="text-sm text-muted-foreground hover:text-foreground transition">Close</button>
@@ -67,7 +67,7 @@ const DeckViewer = () => {
   }
 
   return (
-    <div className="h-screen flex bg-background overflow-hidden">
+    <div className="h-dvh flex bg-background overflow-hidden">
       {sidebar && !fullscreen && !isMobile && (
         <div className="w-48 border-r border-border flex flex-col bg-card/50 backdrop-blur-sm shrink-0">
           <div className="p-3 border-b border-border flex items-center justify-between">
