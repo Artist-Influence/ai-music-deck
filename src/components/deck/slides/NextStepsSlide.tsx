@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import cloutedLogo from '@/assets/CLOUTED-white.png';
 import NetworkVisual from '../NetworkVisual';
 
 const steps = [
@@ -26,7 +27,7 @@ const NextStepsSlide = () => (
         ))}
       </div>
 
-      <p className="text-4xl font-bold text-foreground tracking-[0.15em] mb-6">CLOUTED</p>
+      <img src={cloutedLogo} alt="CLOUTED" className="w-52 mx-auto mb-6" />
       <p className="text-lg text-muted-foreground">The growth system for modern music</p>
     </div>
   </div>

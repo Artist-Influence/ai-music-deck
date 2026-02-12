@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+import cloutedLogo from '@/assets/CLOUTED-white.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import ScaledSlide from './ScaledSlide';
@@ -90,7 +91,7 @@ const DeckViewer = () => {
                   <PanelLeft className="w-4 h-4" />
                 </button>
               )}
-              <span className="text-sm font-bold tracking-[0.2em] text-foreground">CLOUTED</span>
+              <img src={cloutedLogo} alt="CLOUTED" className="h-5" />
             </div>
             <div className="flex items-center gap-1">
               <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">

@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import cloutedLogo from '@/assets/CLOUTED-white.png';
 import NetworkVisual from '../NetworkVisual';
 
 const CoverSlide = () => (
@@ -8,7 +9,7 @@ const CoverSlide = () => (
     <NetworkVisual className="opacity-15" nodeCount={50} />
 
     <div className="relative z-10 text-center">
-      <h1 className="text-[120px] font-extrabold text-foreground tracking-tight leading-none mb-6">Clouted</h1>
+      <img src={cloutedLogo} alt="Clouted" className="w-[400px] mb-6" />
       <p className="text-4xl font-light text-primary mb-16 tracking-wide">The growth system for modern music</p>
       <GlassPanel className="max-w-[700px] mx-auto">
         <p className="text-2xl text-foreground/80 leading-relaxed">
