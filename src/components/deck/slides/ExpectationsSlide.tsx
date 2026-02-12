@@ -26,7 +26,7 @@ const ExpectationsSlide = () => (
           {weNeed.map((item, i) => (
             <div key={i} className="flex items-center gap-4 py-3 border-b border-white/[0.06] last:border-0">
               <div className="w-2 h-2 rounded-full bg-primary/60" />
-              <p className="text-lg text-foreground/80">{item}</p>
+              <p className="text-lg text-foreground">{item}</p>
             </div>
           ))}
         </GlassPanel>
