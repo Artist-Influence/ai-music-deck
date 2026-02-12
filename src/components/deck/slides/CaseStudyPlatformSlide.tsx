@@ -59,10 +59,10 @@ const CaseStudyPlatformSlide = () => (
       <div className="grid grid-cols-3 gap-6 max-w-[1200px] mx-auto">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-5 flex flex-col h-full">
-            <p className="text-sm text-primary font-mono mb-2 tracking-widest">{c.tag}</p>
-            <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
-            <p className="text-sm text-muted-foreground/60 mb-2">{c.track}</p>
-            <p className="text-xs text-muted-foreground mb-3 leading-relaxed">{c.overview}</p>
+            <p className="text-base text-primary font-mono mb-2 tracking-widest">{c.tag}</p>
+            <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
+            <p className="text-sm text-muted-foreground mb-2">{c.track}</p>
+            <p className="text-sm text-muted-foreground mb-3 leading-relaxed">{c.overview}</p>
 
             {c.screenshot ? (
               <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">

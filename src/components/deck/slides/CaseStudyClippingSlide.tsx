@@ -68,10 +68,10 @@ const CaseStudyClippingSlide = () => (
               <img src={c.coverArt} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
             </div>
 
-            <p className="text-sm text-primary font-mono mb-3 tracking-widest">CLIPPING</p>
-            <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
-            <p className="text-sm text-muted-foreground/60 mb-3">{c.track}</p>
-            <p className="text-xs text-muted-foreground mb-5 leading-relaxed">{c.overview}</p>
+            <p className="text-base text-primary font-mono mb-3 tracking-widest">CLIPPING</p>
+            <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
+            <p className="text-sm text-muted-foreground mb-3">{c.track}</p>
+            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{c.overview}</p>
 
             <div className="grid grid-cols-2 gap-2 mb-4">
               {c.metrics.map((m) => (
