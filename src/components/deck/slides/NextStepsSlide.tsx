@@ -11,6 +11,28 @@ const steps = [
 
 const NextStepsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center text-center">
+    <style>{`
+      @keyframes next-glow-sweep {
+        0% { opacity: 0; left: -100%; }
+        30% { opacity: 1; }
+        100% { opacity: 0; left: 100%; }
+      }
+      .next-step-card { position: relative; overflow: hidden; }
+      .next-step-card::before {
+        content: '';
+        position: absolute;
+        top: 0; left: -100%;
+        width: 100%; height: 100%;
+        background: linear-gradient(90deg, transparent, hsl(var(--primary) / 0.15), hsl(var(--primary) / 0.3), hsl(var(--primary) / 0.15), transparent);
+        z-index: 1;
+        pointer-events: none;
+      }
+      ${steps.map((_, i) => `
+        .next-step-card-${i}::before {
+          animation: next-glow-sweep 3s ease-in-out ${i * 0.7}s infinite;
+        }
+      `).join('')}
+    `}</style>
     <div className="absolute top-[10%] left-[30%] w-[600px] h-[500px] rounded-full bg-primary/[0.06] blur-[160px] animate-float-slow" />
     <NetworkVisual className="opacity-[0.06]" nodeCount={30} seed={5} />
 
@@ -20,10 +42,10 @@ const NextStepsSlide = () => (
 
       <div className="flex gap-5 mb-16">
         {steps.map((s, i) => (
-          <GlassPanel key={i} variant="bright" className="flex-1 p-5 text-left">
-            <p className="text-primary text-sm font-mono mb-2 tracking-widest">{s.num}</p>
-            <p className="text-lg font-semibold text-foreground mb-1">{s.title}</p>
-            <p className="text-sm text-muted-foreground">{s.desc}</p>
+          <GlassPanel key={i} variant="bright" className={`flex-1 p-5 text-left next-step-card next-step-card-${i}`}>
+            <p className="text-primary text-sm font-mono mb-2 tracking-widest relative z-10">{s.num}</p>
+            <p className="text-lg font-semibold text-foreground mb-1 relative z-10">{s.title}</p>
+            <p className="text-sm text-muted-foreground relative z-10">{s.desc}</p>
           </GlassPanel>
         ))}
       </div>
