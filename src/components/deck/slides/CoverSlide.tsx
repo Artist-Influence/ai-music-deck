@@ -9,7 +9,7 @@ const CoverSlide = () => (
     <NetworkVisual className="opacity-15" nodeCount={50} />
 
     <div className="relative z-10 text-center">
-      <img src={cloutedLogo} alt="Clouted" className="w-[400px] mb-6" />
+      <img src={cloutedLogo} alt="Clouted" className="w-[400px] mx-auto mb-6" />
       <p className="text-4xl font-light text-primary mb-16 tracking-wide">The growth system for modern music</p>
       <GlassPanel className="max-w-[700px] mx-auto">
         <p className="text-2xl text-foreground/80 leading-relaxed">
