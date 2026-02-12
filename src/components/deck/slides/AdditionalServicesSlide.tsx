@@ -1,7 +1,6 @@
 import GlassPanel from '../GlassPanel';
 
 const services = [
-  { icon: '🎬', name: 'Culture Edits', desc: 'Placements into cinematic and sports edits across established pages with real audiences.', time: '2–3 weeks' },
   { icon: '📢', name: 'Meta & TikTok Ads', desc: 'We turn proven native posts into ads to convert streams, sales, touring, and more. Optimized daily, weekly reporting, clean exports.', time: '2–3 weeks' },
   { icon: '🎵', name: 'Spotify Playlisting (Organic)', desc: 'Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup. Weekly reporting, stream goals guaranteed.', time: '90 days' },
   { icon: '▶️', name: 'YouTube Advertising', desc: 'International targeting + optimization to maximize reach while protecting engagement ratios. Built for subscribers, long-form engagement.', time: '1–3 weeks' },

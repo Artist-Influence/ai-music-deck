@@ -29,9 +29,10 @@ const NextStepsSlide = () => (
       </div>
 
       <GlassPanel variant="subtle" className="mb-12 p-6 max-w-[600px] mx-auto">
-        <p className="text-base text-muted-foreground mb-2">[Name] · [Email] · [Phone]</p>
-        <p className="text-sm text-muted-foreground/60">[Clouted website]</p>
-        <p className="text-sm text-primary mt-3 italic">"We can turn around a recommended plan within 24 hours."</p>
+        <p className="text-base text-foreground font-medium mb-1">Jared Rapoza</p>
+        <p className="text-sm text-muted-foreground mb-1">jared@clouted.com · 617-875-3248</p>
+        <p className="text-sm text-muted-foreground/60 mb-3">www.clouted.com</p>
+        <p className="text-sm text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
 
       <img src={cloutedLogo} alt="CLOUTED" className="w-44 mx-auto mb-4" />
