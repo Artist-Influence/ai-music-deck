@@ -42,23 +42,23 @@ const NextStepsSlide = () => (
 
       <div className="flex gap-5 mb-16">
         {steps.map((s, i) => (
-          <GlassPanel key={i} variant="bright" className={`flex-1 p-5 text-left next-step-card next-step-card-${i}`}>
-            <p className="text-primary text-sm font-mono mb-2 tracking-widest relative z-10">{s.num}</p>
-            <p className="text-lg font-semibold text-foreground mb-1 relative z-10">{s.title}</p>
-            <p className="text-sm text-muted-foreground relative z-10">{s.desc}</p>
+          <GlassPanel key={i} variant="bright" className={`flex-1 p-6 text-left next-step-card next-step-card-${i}`}>
+            <p className="text-primary text-base font-mono mb-3 tracking-widest relative z-10">{s.num}</p>
+            <p className="text-xl font-semibold text-foreground mb-2 relative z-10">{s.title}</p>
+            <p className="text-base text-muted-foreground relative z-10">{s.desc}</p>
           </GlassPanel>
         ))}
       </div>
 
-      <GlassPanel variant="subtle" className="mb-12 p-6 max-w-[600px] mx-auto">
-        <p className="text-base text-foreground font-medium mb-1">Jared Rapoza</p>
-        <p className="text-sm text-muted-foreground mb-1">jared@clouted.com · 617-875-3248</p>
-        <p className="text-sm text-muted-foreground/60 mb-3">www.clouted.com</p>
-        <p className="text-sm text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
+      <GlassPanel variant="subtle" className="mb-12 p-7 max-w-[600px] mx-auto">
+        <p className="text-lg text-foreground font-medium mb-2">Jared Rapoza</p>
+        <p className="text-base text-muted-foreground mb-1">jared@clouted.com · 617-875-3248</p>
+        <p className="text-base text-muted-foreground mb-3">www.clouted.com</p>
+        <p className="text-base text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
 
-      <img src={cloutedLogo} alt="CLOUTED" className="w-44 mx-auto mb-4" />
-      <p className="text-lg text-muted-foreground">The growth system for modern music</p>
+      <img src={cloutedLogo} alt="CLOUTED" className="w-56 mx-auto mb-4" />
+      <p className="text-xl text-muted-foreground">The growth system for modern music</p>
     </div>
   </div>
 );
