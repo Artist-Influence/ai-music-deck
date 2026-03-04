@@ -17,18 +17,21 @@ export type Database = {
       deck_leads: {
         Row: {
           created_at: string
+          deck_type: string
           email: string
           id: string
           sent_in_digest: boolean
         }
         Insert: {
           created_at?: string
+          deck_type: string
           email: string
           id?: string
           sent_in_digest?: boolean
         }
         Update: {
           created_at?: string
+          deck_type?: string
           email?: string
           id?: string
           sent_in_digest?: boolean
