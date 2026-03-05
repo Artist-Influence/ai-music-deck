@@ -10,13 +10,10 @@ const CoverSlide = () => (
 
     <div className="relative z-10 text-center">
       <img src={cloutedLogo} alt="Clouted" className="w-[400px] mx-auto mb-6" />
-      <p className="text-4xl font-light text-primary mb-16 tracking-wide">The growth system for modern music</p>
+      <p className="text-4xl font-light text-primary mb-16 tracking-wide">The growth system for modern music and artists</p>
       <GlassPanel className="max-w-[700px] mx-auto">
         <p className="text-2xl text-foreground/80 leading-relaxed">
-          Turning songs into momentum across short-form, streaming, and culture.
-        </p>
-        <p className="text-lg text-muted-foreground mt-4">
-          Built for teams that want outcomes, not &ldquo;ideas.&rdquo;
+          Driving momentum across short-form, streaming, and culture.
         </p>
       </GlassPanel>
     </div>
