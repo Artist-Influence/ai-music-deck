@@ -18,7 +18,7 @@ Deno.serve(async (req) => {
 
     const { data: leads, error: fetchError } = await supabase
       .from("deck_leads")
-      .select("id, email, created_at, deck_type")
+      .select("id, email, created_at")
       .eq("sent_in_digest", false)
       .order("created_at", { ascending: true });
 
@@ -39,8 +39,8 @@ Deno.serve(async (req) => {
 
     const rows = leads
       .map(
-        (l) =>
-          `<tr><td style="padding:8px 12px;border-bottom:1px solid #eee">${l.email}</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${DECK_LABELS[l.deck_type] ?? l.deck_type}</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${new Date(l.created_at).toLocaleDateString()}</td></tr>`
+        (l: any) =>
+          `<tr><td style="padding:8px 12px;border-bottom:1px solid #eee">${l.email}</td><td style="padding:8px 12px;border-bottom:1px solid #eee">${new Date(l.created_at).toLocaleDateString()}</td></tr>`
       )
       .join("");
 
@@ -49,7 +49,7 @@ Deno.serve(async (req) => {
         <h2 style="color:#0ea5e9">Clouted Deck — New Leads</h2>
         <p>${leads.length} new lead${leads.length > 1 ? "s" : ""} this week:</p>
         <table style="width:100%;border-collapse:collapse">
-          <thead><tr><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Email</th><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Deck</th><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Date</th></tr></thead>
+          <thead><tr><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Email</th><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Date</th></tr></thead>
           <tbody>${rows}</tbody>
         </table>
       </div>
@@ -85,9 +85,9 @@ Deno.serve(async (req) => {
       }),
       { headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
-  } catch (error) {
+  } catch (error: unknown) {
     return new Response(
-      JSON.stringify({ error: error.message }),
+      JSON.stringify({ error: error instanceof Error ? error.message : "Unknown error" }),
       { status: 500, headers: { ...corsHeaders, "Content-Type": "application/json" } }
     );
   }

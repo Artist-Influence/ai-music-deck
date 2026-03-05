@@ -27,7 +27,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
 
     setLoading(true);
     try {
-      await supabase.from('deck_leads').insert({ email: result.data, deck_type: 'music' });
+      await supabase.from('deck_leads').insert({ email: result.data });
       supabase.functions.invoke('send-email', {
         body: {
           to: 'jared@clouted.com',
