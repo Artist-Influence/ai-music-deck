@@ -91,16 +91,13 @@ const WhatCloutedDoesSlide = () => (
     <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px]">
       <div className="flex-1 max-w-[700px]">
         <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
-          We run the growth layer between your song and the algorithms.
+          Coordinated distribution so your music and artists build momentum like a system, not a gamble.
         </h1>
-        <p className="text-xl text-muted-foreground mb-4 leading-relaxed">
-          Clouted coordinates distribution across short-form, culture, and streaming so your release builds momentum like a system, not a gamble.
-        </p>
-        <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">We do three things well</p>
+        <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
         <div className="space-y-3">
           {[
-            ['Velocity', 'Create velocity with short-form at scale'],
-            ['Placement', 'Place records into real communities that already have attention'],
+            ['Volume', 'Flood social platforms with high-velocity short-form content'],
+            ['Curation', 'Target real communities with reach within your niche'],
             ['Amplification', 'Amplify winners with paid spend once the creative proves itself'],
           ].map(([label, desc], i) => (
             <GlassPanel key={i} variant="subtle" className="p-5 flex items-start gap-4">
