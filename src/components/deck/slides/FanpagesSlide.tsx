@@ -66,3 +66,4 @@ const FanpagesSlide = () => (
 );
 
 export default FanpagesSlide;
+
