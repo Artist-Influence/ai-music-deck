@@ -1,39 +1,44 @@
 
-# Grammar Fixes Across Slides
 
-Three small text edits across three files:
+## Slide 6 and Slide 7 Updates
 
-## Changes
+### Slide 6 — Clipping Distribution (`ClippingSlide.tsx`)
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+Restructure into a **side-by-side layout**: left side has 3 stacked GlassPanel cards, right side has a visualizer.
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+**Left column** — 3 cards, each with a bold title and bullet points:
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+1. **Pros**
+   - Target viral trends with a strategic campaign brief
+   - Fast velocity and clear reporting
+   - UGC reuse rights for paid and owned channels
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+2. **How it works**
+   - Campaigns launch in 24 hours
+   - Runs 7 to 14 days
+   - Every post attributes the official sound and follows campaign brief exactly
 
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+3. **Why We Are Different**
+   - Strategy driven by actual music industry professionals
+   - Automatic content moderation to ensure campaign compliance
+   - Bot detection algorithms to ensure payment is only for genuine views
+   - Fully white glove service with professional reporting decks
 
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+Timeframe line goes at the bottom of the third card.
 
-### Final Plan
+**Right column** — empty placeholder `div` for a future visualizer (no visualizer imported on this slide anymore).
 
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+Layout: `flex gap-10` with left side `flex-1 max-w-[900px]` and right side `flex-1 flex items-center justify-center`. Text sizes stay at `text-xl` headers and `text-base` bullets.
 
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+---
 
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+### Slide 7 — Fanpages (`FanpagesSlide.tsx`)
 
-## Technical Details
+Two changes:
 
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+1. **Update subtitle** to: "We operate and scale multiple theme pages that consistently target and unify your fan base around your project"
 
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+2. **Swap visualizer**: Replace `FanpageVisualizer` import with `ClippingVisualizer` import. The right-side column renders `<ClippingVisualizer />` instead.
 
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
+The existing left-side 3-panel layout stays as-is.
+
