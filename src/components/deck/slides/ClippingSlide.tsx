@@ -45,14 +45,14 @@ const ClippingSlide = () => (
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06]">
-              <p className="text-sm font-medium text-primary mb-2">Guaranteed views per 1,000</p>
+              <p className="text-sm font-medium text-primary mb-2">CPMs</p>
               <div className="grid grid-cols-2 gap-x-4 gap-y-1">
                 {[
-                  { niche: 'Music', price: '$2' },
-                  { niche: 'Podcast', price: '$2' },
-                  { niche: 'Sports', price: '$2' },
-                  { niche: 'TV/Film', price: '$3' },
-                  { niche: 'Politics', price: '$4' },
+                  { niche: 'Music', price: '$2 CPM' },
+                  { niche: 'Podcast', price: '$2 CPM' },
+                  { niche: 'Sports', price: '$2 CPM' },
+                  { niche: 'TV/Film', price: '$3 CPM' },
+                  { niche: 'Politics', price: '$4 CPM' },
                 ].map((item, i) => (
                   <div key={i} className="flex justify-between">
                     <span className="text-sm text-muted-foreground">{item.niche}</span>
