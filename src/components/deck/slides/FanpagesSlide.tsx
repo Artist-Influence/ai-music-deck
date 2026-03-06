@@ -58,7 +58,7 @@ const FanpagesSlide = () => (
         </div>
 
         <div className="flex-1 flex items-center justify-center">
-          <FanpageVisualizer />
+          <ClippingVisualizer />
         </div>
       </div>
     </div>
