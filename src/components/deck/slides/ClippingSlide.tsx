@@ -11,39 +11,42 @@ const ClippingSlide = () => (
         A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and Youtube.
       </p>
 
-      <div className="grid grid-cols-2 gap-8">
-        <GlassPanel className="p-8">
-          <p className="text-xl font-semibold text-primary mb-4">Pros</p>
-          <div className="space-y-3">
-            {[
-              'Target viral trends with a strategic campaign brief',
-              'Fast velocity and clear reporting',
-              'UGC reuse rights for paid and owned channels',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                <p className="text-base text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
+      <div className="flex gap-10">
+        <div className="flex-1 space-y-6 max-w-[900px]">
+          <GlassPanel className="p-8">
+            <p className="text-xl font-semibold text-primary mb-4">Pros</p>
+            <div className="space-y-3">
+              {[
+                'Target viral trends with a strategic campaign brief',
+                'Fast velocity and clear reporting',
+                'UGC reuse rights for paid and owned channels',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                  <p className="text-base text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
 
-        <GlassPanel className="p-8">
-          <p className="text-xl font-semibold text-primary mb-4">How it works</p>
-          <div className="space-y-3 mb-4">
-            {[
-              'Campaigns launch in 24 hours',
-              'Runs 7 to 14 days',
-              'Every post attributes the official sound and follows campaign brief exactly',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-3">
-                <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                <p className="text-base text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-          <div className="pt-4 border-t border-white/[0.06]">
-            <p className="text-xl font-semibold text-primary mb-3">Why We Are Different</p>
+          <GlassPanel className="p-8">
+            <p className="text-xl font-semibold text-primary mb-4">How it works</p>
+            <div className="space-y-3">
+              {[
+                'Campaigns launch in 24 hours',
+                'Runs 7 to 14 days',
+                'Every post attributes the official sound and follows campaign brief exactly',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-3">
+                  <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                  <p className="text-base text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+
+          <GlassPanel className="p-8">
+            <p className="text-xl font-semibold text-primary mb-4">Why We Are Different</p>
             <div className="space-y-3">
               {[
                 'Strategy driven by actual music industry professionals',
@@ -57,11 +60,15 @@ const ClippingSlide = () => (
                 </div>
               ))}
             </div>
-          </div>
-          <div className="pt-4 border-t border-white/[0.06] mt-4">
-            <p className="text-base text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
-          </div>
-        </GlassPanel>
+            <div className="pt-4 border-t border-white/[0.06] mt-4">
+              <p className="text-base text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+            </div>
+          </GlassPanel>
+        </div>
+
+        <div className="flex-1 flex items-center justify-center">
+          {/* Visualizer placeholder */}
+        </div>
       </div>
     </div>
   </div>

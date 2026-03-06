@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import FanpageVisualizer from '../FanpageVisualizer';
+import ClippingVisualizer from '../ClippingVisualizer';
 
 const FanpagesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
