@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import FanpageVisualizer from '../FanpageVisualizer';
+import ClippingVisualizer from '../ClippingVisualizer';
 
 const FanpagesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
@@ -9,7 +9,7 @@ const FanpagesSlide = () => (
       <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
       <h1 className="text-7xl font-bold text-foreground mb-6">Fanpages</h1>
       <p className="text-2xl text-muted-foreground mb-12 max-w-[800px]">
-        We operate and scale theme pages that consistently seed your music into real audiences.
+        We operate and scale multiple theme pages that consistently target and unify your fan base around your project.
       </p>
 
       <div className="flex gap-10">
@@ -58,7 +58,7 @@ const FanpagesSlide = () => (
         </div>
 
         <div className="flex-1 flex items-center justify-center">
-          <FanpageVisualizer />
+          <ClippingVisualizer />
         </div>
       </div>
     </div>
