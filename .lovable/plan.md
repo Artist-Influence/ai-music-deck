@@ -1,29 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Slide 1 (Cover) Refresh
+Three small text edits across three files:
 
-### What the user wants
-1. **Single line** for the subtitle — currently "Driving momentum across short-form, streaming, and culture." sits inside a GlassPanel and wraps. Make it a single line without the GlassPanel wrapper.
-2. **More readable** — bump font sizes for both tagline and subtitle.
-3. **Brighten the theme** — increase the glow orbs' opacity/size and boost the NetworkVisual's opacity so the background feels more vibrant.
-4. **Less empty** — add more visual elements: additional glow orbs with varied colors, increase network node count, and add subtle animated gradient rings or arcs behind the logo to create branded depth.
+## Changes
 
-### Changes (all in `CoverSlide.tsx`)
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-1. **Remove GlassPanel wrapper** around the subtitle. Render it as a standalone `<p>` with `text-3xl text-foreground` — ensures single line at 1920px and pure white text.
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-2. **Increase tagline size** from `text-4xl` to `text-5xl`.
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-3. **Brighten background glows**:
-   - Increase existing orbs' opacity (`bg-primary/10` → `bg-primary/20`, `bg-accent/[0.06]` → `bg-accent/[0.12]`).
-   - Add a third glow orb (top-left, different hue using accent color).
-   - Make orbs larger (600px+).
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-4. **Boost NetworkVisual** opacity from `opacity-15` to `opacity-25` and increase `nodeCount` from 50 to 80 for a denser, more branded feel.
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-5. **Add decorative ring/arc** — a large subtle animated SVG ring (border-only circle) behind the logo area using primary color at low opacity, giving a tech-product branded feel without being distracting.
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
-6. **Increase logo size** from `w-[400px]` to `w-[480px]`.
+### Final Plan
 
-All changes scoped to `src/components/deck/slides/CoverSlide.tsx` only.
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
 
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
