@@ -36,7 +36,7 @@ const ClippingSlide = () => (
               {[
                 'Campaigns launch in 24 hours',
                 'Runs 7 to 14 days',
-                'Every post uses the official sound, tags the artist, and follows basic brand direction',
+                'Every post attributes the official sound and follows campaign brief exactly',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
@@ -45,18 +45,17 @@ const ClippingSlide = () => (
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06]">
-              <p className="text-sm font-medium text-primary mb-2">CPMs</p>
-              <div className="grid grid-cols-2 gap-x-4 gap-y-1">
+              <p className="text-lg font-semibold text-primary mb-2">Why We Are Different</p>
+              <div className="space-y-2">
                 {[
-                  { niche: 'Music', price: '$2 CPM' },
-                  { niche: 'Podcast', price: '$2 CPM' },
-                  { niche: 'Sports', price: '$2 CPM' },
-                  { niche: 'TV/Film', price: '$3 CPM' },
-                  { niche: 'Politics', price: '$4 CPM' },
+                  'Strategy driven by actual music industry professionals',
+                  'Automatic content moderation to ensure campaign compliance',
+                  'Bot detection algorithms to ensure payment is only for genuine views',
+                  'Fully white glove service with professional reporting decks',
                 ].map((item, i) => (
-                  <div key={i} className="flex justify-between">
-                    <span className="text-sm text-muted-foreground">{item.niche}</span>
-                    <span className="text-sm text-foreground font-medium">{item.price}</span>
+                  <div key={i} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
+                    <p className="text-sm text-muted-foreground">{item}</p>
                   </div>
                 ))}
               </div>
