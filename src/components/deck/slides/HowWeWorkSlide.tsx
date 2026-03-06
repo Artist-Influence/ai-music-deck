@@ -1,10 +1,11 @@
+import { FileText, Rocket, TrendingUp, BarChart3 } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 
 const steps = [
-  { num: '01', title: 'Setup', desc: 'We align on goals, audience, assets, and guardrails. Then we build the distribution plan.' },
-  { num: '02', title: 'Launch', desc: 'We activate the chosen services with tight execution and clear timelines.' },
-  { num: '03', title: 'Optimize', desc: 'We double down on what\'s working, cut what isn\'t, and keep results moving.' },
-  { num: '04', title: 'Report', desc: 'Weekly updates, final recap, and reusable learnings for the next drop.' },
+  { num: '01', title: 'Proposal', icon: FileText, desc: 'We send over a proposal to align on goals, audience, assets, and guardrails.' },
+  { num: '02', title: 'Launch', icon: Rocket, desc: 'We activate the chosen services with tight execution and clear timelines.' },
+  { num: '03', title: 'Optimize', icon: TrendingUp, desc: "We analyze what's working, cut what isn't, and keep results growing." },
+  { num: '04', title: 'Report', icon: BarChart3, desc: 'Weekly updates, final recap, and reusable learnings for the next campaign.' },
 ];
 
 const HowWeWorkSlide = () => (
@@ -38,25 +39,29 @@ const HowWeWorkSlide = () => (
     <div className="absolute top-[20%] left-[30%] w-[600px] h-[400px] rounded-full bg-primary/[0.05] blur-[150px] animate-float-slow" />
 
     <div className="relative z-10 w-full max-w-[1400px]">
-      <h1 className="text-7xl font-bold text-foreground mb-4">Simple process.</h1>
-      <p className="text-3xl text-muted-foreground mb-20">No mystery.</p>
+      <h1 className="text-7xl font-bold text-foreground mb-4">Our End-to-End Process</h1>
+      <p className="text-xl text-muted-foreground mb-20">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
       <div className="flex items-center gap-0">
-        {steps.map((step, i) => (
-          <div key={i} className="flex items-center flex-1">
-            <GlassPanel variant="bright" className={`flex-1 p-6 text-center step-card step-card-${i}`}>
-              <p className="text-primary text-sm font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
-              <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}:</p>
-              <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
-            </GlassPanel>
-            {i < steps.length - 1 && (
-              <div
-                className="w-12 h-[2px] shrink-0 bg-gradient-to-r from-primary/40 to-primary/20"
-                style={{ animation: `connector-pulse 3s ease-in-out ${i * 0.7 + 0.35}s infinite` }}
-              />
-            )}
-          </div>
-        ))}
+        {steps.map((step, i) => {
+          const Icon = step.icon;
+          return (
+            <div key={i} className="flex items-center flex-1">
+              <GlassPanel variant="bright" className={`flex-1 p-6 text-center step-card step-card-${i}`}>
+                <Icon className="w-8 h-8 text-primary mx-auto mb-3 relative z-10" />
+                <p className="text-primary text-sm font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
+                <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}</p>
+                <p className="text-sm text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
+              </GlassPanel>
+              {i < steps.length - 1 && (
+                <div
+                  className="w-12 h-[2px] shrink-0 bg-gradient-to-r from-primary/40 to-primary/20"
+                  style={{ animation: `connector-pulse 3s ease-in-out ${i * 0.7 + 0.35}s infinite` }}
+                />
+              )}
+            </div>
+          );
+        })}
       </div>
     </div>
   </div>
