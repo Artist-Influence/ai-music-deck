@@ -1,39 +1,31 @@
 
-# Grammar Fixes Across Slides
 
-Three small text edits across three files:
+## Update Clipping Slide Case Studies
 
-## Changes
+### Changes
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+**1. Copy cover art asset**
+- Copy `user-uploads://image.png` to `src/assets/yeat-bnyx-im-yeat.jpg`
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+**2. Rewrite `ClippingSlide.tsx`**
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+Replace Nash Rly with Yeat case study:
+- Artist: "Yeat, BNYX"
+- Track: "I'M YEAT"
+- Cover art: new uploaded image
+- Metrics (from screenshot): `$0.43` CPM, `9.97M+` Views, `12.25%` Engagement, `1.17M+` Likes, `64` Posts
+- Since we're adding Posts count, use a 5-metric grid (`grid-cols-5`) for Yeat
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+Add video counts to Aries and Gorgon City:
+- Aries: add `164` Videos metric (5 metrics total)
+- Gorgon City: add `232` Videos metric (5 metrics total)
 
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+All three cards get `grid-cols-5` metrics grids for consistency.
 
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+**3. Even out spacing**
+- Change the right column from `space-y-4` to `flex flex-col justify-between` so the 3 cards stretch to match the full height of the left column's 3 GlassPanels.
 
-### Final Plan
+### Files
+- **Copy:** uploaded cover art → `src/assets/yeat-bnyx-im-yeat.jpg`
+- **Edit:** `src/components/deck/slides/ClippingSlide.tsx`
 
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
-
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
-
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
-
-## Technical Details
-
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
-
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
-
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
