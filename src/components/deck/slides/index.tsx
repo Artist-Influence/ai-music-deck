@@ -6,7 +6,8 @@ import WhatCloutedDoesSlide from './WhatCloutedDoesSlide';
 import HowWeWorkSlide from './HowWeWorkSlide';
 import ClippingSlide from './ClippingSlide';
 import FanpagesSlide from './FanpagesSlide';
-import UGCHacksSlide from './UGCHacksSlide';
+import CreatorFloodSlide from './CreatorFloodSlide';
+import Top50TrendingSlide from './Top50TrendingSlide';
 import YouTubeAdsSlide from './YouTubeAdsSlide';
 import SpotifyPlaylistingSlide from './SpotifyPlaylistingSlide';
 import SoundCloudRepostsSlide from './SoundCloudRepostsSlide';
@@ -25,7 +26,8 @@ export const slides: FC[] = [
   HowWeWorkSlide,
   ClippingSlide,
   FanpagesSlide,
-  UGCHacksSlide,
+  CreatorFloodSlide,
+  Top50TrendingSlide,
   YouTubeAdsSlide,
   SpotifyPlaylistingSlide,
   SoundCloudRepostsSlide,
