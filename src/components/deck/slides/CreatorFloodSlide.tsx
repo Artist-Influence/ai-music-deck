@@ -51,7 +51,7 @@ const CreatorFloodSlide = () => (
 
       {/* Right — Case Study */}
       <div className="flex-1 flex flex-col justify-center">
-        <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
+        <GlassPanel variant="bright" className="p-6 flex flex-col">
           <p className="text-sm text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Rich Brian</p>
           <p className="text-base text-muted-foreground mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
@@ -59,11 +59,11 @@ const CreatorFloodSlide = () => (
             Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.
           </p>
 
-          <div className="flex-1 min-h-0 mb-4 rounded-lg border border-white/[0.08] overflow-hidden">
+          <div className="max-h-[420px] mb-4 rounded-lg border border-white/[0.08] overflow-hidden">
             <img
               src={richBrianImg}
               alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos"
-              className="w-full h-full object-cover object-top"
+              className="w-full h-full object-cover object-[0%_12%]"
             />
           </div>
 
