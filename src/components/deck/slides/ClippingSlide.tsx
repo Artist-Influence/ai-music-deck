@@ -1,3 +1,4 @@
+import { Scissors } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import ariesCover from '@/assets/aries-in-the-flesh.jpg';
 import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
@@ -50,7 +51,10 @@ const ClippingSlide = () => (
     <div className="absolute top-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float" />
 
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
-      <p className="text-lg text-primary font-medium mb-3 tracking-wider uppercase">Service</p>
+      <div className="flex items-center gap-3 mb-3">
+        <Scissors size={28} className="text-primary" />
+        <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+      </div>
       <h1 className="text-6xl font-bold text-foreground mb-4">Clipping Distribution</h1>
       <p className="text-xl text-muted-foreground mb-8 max-w-[900px]">
         A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and Youtube.
