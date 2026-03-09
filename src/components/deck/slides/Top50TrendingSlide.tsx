@@ -1,3 +1,4 @@
+import { TrendingUp } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
 import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
