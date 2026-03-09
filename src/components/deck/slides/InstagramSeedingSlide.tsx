@@ -13,39 +13,39 @@ const InstagramSeedingSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[5%] right-[20%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px]" />
 
-    <div className="relative z-10 flex gap-10 items-start w-full max-w-[1600px] mx-auto">
+    <div className="relative z-10 flex gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 flex flex-col justify-between">
         <div className="flex items-center gap-3 mb-4">
           <Instagram size={28} className="text-primary" />
           <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
         </div>
         <h1 className="text-5xl font-bold text-foreground mb-3 leading-tight">Instagram Seeding</h1>
-        <p className="text-xl text-muted-foreground mb-10 max-w-[600px]">
+        <p className="text-2xl text-muted-foreground mb-10 max-w-[600px]">
           Genre-aligned page placements across EDM pages and meme accounts with tracking via live dashboard.
         </p>
 
         <div className="space-y-5">
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+          <GlassPanel variant="bright" className="p-6">
+            <p className="text-2xl font-semibold text-foreground mb-2">What it is:</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
               We seed your audio and video content across a curated network of Instagram
               theme pages — EDM community pages and meme accounts that drive real
               engagement within your target audience.
             </p>
           </GlassPanel>
 
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+          <GlassPanel variant="bright" className="p-6">
+            <p className="text-2xl font-semibold text-foreground mb-2">Why it works:</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Theme pages and meme accounts have built-in audiences that actively engage.
               Seeding here drives saves, shares, and audio uses at a fraction of the cost
               of paid ads — built for relevance and cost efficiency.
             </p>
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 1–3 weeks</p>
+          <GlassPanel variant="subtle" className="p-5">
+            <p className="text-lg text-primary font-medium">Timeframe: 1–3 weeks</p>
           </GlassPanel>
         </div>
       </div>
