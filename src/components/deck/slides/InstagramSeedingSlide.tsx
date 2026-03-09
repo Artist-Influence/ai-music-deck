@@ -15,7 +15,7 @@ const InstagramSeedingSlide = () => (
 
     <div className="relative z-10 flex gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0">
+      <div className="flex-1 min-w-0 flex flex-col justify-between">
         <div className="flex items-center gap-3 mb-4">
           <Instagram size={28} className="text-primary" />
           <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
