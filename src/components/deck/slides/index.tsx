@@ -7,15 +7,13 @@ import HowWeWorkSlide from './HowWeWorkSlide';
 import ClippingSlide from './ClippingSlide';
 import FanpagesSlide from './FanpagesSlide';
 import UGCHacksSlide from './UGCHacksSlide';
+import YouTubeAdsSlide from './YouTubeAdsSlide';
+import SpotifyPlaylistingSlide from './SpotifyPlaylistingSlide';
+import SoundCloudRepostsSlide from './SoundCloudRepostsSlide';
+import InstagramSeedingSlide from './InstagramSeedingSlide';
 import AdditionalServicesSlide from './AdditionalServicesSlide';
-import OutcomesSlide from './OutcomesSlide';
 import ReportingSlide from './ReportingSlide';
 import ExpectationsSlide from './ExpectationsSlide';
-import CaseStudySlide from './CaseStudySlide';
-import CaseStudyCreatorFloodSlide from './CaseStudyCreatorFloodSlide';
-import CaseStudySkrillexSlide from './CaseStudySkrillexSlide';
-import CaseStudyPlatformSlide from './CaseStudyPlatformSlide';
-import CaseStudyClippingSlide from './CaseStudyClippingSlide';
 import PricingSlide from './PricingSlide';
 import NextStepsSlide from './NextStepsSlide';
 
@@ -28,15 +26,13 @@ export const slides: FC[] = [
   ClippingSlide,
   FanpagesSlide,
   UGCHacksSlide,
+  YouTubeAdsSlide,
+  SpotifyPlaylistingSlide,
+  SoundCloudRepostsSlide,
+  InstagramSeedingSlide,
   AdditionalServicesSlide,
-  OutcomesSlide,
   ReportingSlide,
   ExpectationsSlide,
-  CaseStudySlide,
-  CaseStudySkrillexSlide,
-  CaseStudyCreatorFloodSlide,
-  CaseStudyPlatformSlide,
-  CaseStudyClippingSlide,
   PricingSlide,
   NextStepsSlide,
 ];
