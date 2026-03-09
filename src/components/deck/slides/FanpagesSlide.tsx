@@ -40,9 +40,9 @@ const FanpagesSlide = () => (
         We operate and scale multiple theme pages that consistently target and unify your fan base around your project.
       </p>
 
-      <div className="flex gap-8">
+      <div className="flex gap-10">
         {/* Left — service info */}
-        <div className="flex-1 space-y-4 max-w-[750px]">
+        <div className="flex-1 min-w-0 space-y-4">
           <GlassPanel className="p-6">
             <p className="text-lg font-semibold text-primary mb-3">What it is</p>
             <p className="text-sm text-muted-foreground leading-relaxed">
