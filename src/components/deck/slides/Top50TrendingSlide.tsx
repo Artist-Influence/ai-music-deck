@@ -27,7 +27,10 @@ const Top50TrendingSlide = () => (
     <div className="relative z-10 w-full max-w-[1600px] flex gap-10">
       {/* Left — Service Info */}
       <div className="flex-1 flex flex-col justify-between">
-        <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
+        <div className="flex items-center gap-3 mb-4">
+          <TrendingUp size={28} className="text-primary" />
+          <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+        </div>
         <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
           Top 50 Trending<br />& Popular Tab
         </h1>
