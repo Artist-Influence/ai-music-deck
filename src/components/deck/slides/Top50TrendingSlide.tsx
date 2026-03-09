@@ -61,8 +61,8 @@ const Top50TrendingSlide = () => (
       </div>
 
       {/* Right — Case Study */}
-      <div className="flex-1 flex flex-col justify-center">
-        <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <GlassPanel variant="bright" className="p-6 flex flex-col">
           <p className="text-sm text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Major Lazer</p>
           <p className="text-base text-muted-foreground mb-3">MINI SKIRT</p>
