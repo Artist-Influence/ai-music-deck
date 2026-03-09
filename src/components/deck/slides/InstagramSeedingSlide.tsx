@@ -51,16 +51,16 @@ const InstagramSeedingSlide = () => (
       </div>
 
       {/* Right — Case Study */}
-      <div className="flex-1 min-w-0">
-        <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
-          <p className="text-2xl font-bold text-foreground leading-tight">Francis Mercier</p>
-          <p className="text-lg text-muted-foreground mb-2">Sauti</p>
-          <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+      <div className="flex-1 min-w-0 flex items-center justify-center">
+        <GlassPanel variant="bright" className="p-6 flex flex-col">
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
+          <p className="text-3xl font-bold text-foreground leading-tight">Francis Mercier</p>
+          <p className="text-xl text-muted-foreground mb-2">Sauti</p>
+          <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
             Global audio seeding across Afro House audiences and LATAM markets.
           </p>
 
-          <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-4 bg-black/30 flex items-center justify-center">
+          <div className="max-h-[380px] rounded-lg border border-white/[0.08] overflow-hidden mb-4 bg-black/30 flex items-center justify-center">
             <img
               src={francisMercierImg}
               alt="Francis Mercier — Sauti"
@@ -71,8 +71,8 @@ const InstagramSeedingSlide = () => (
           <div className="grid grid-cols-2 gap-3">
             {metrics.map((m) => (
               <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-xl font-bold text-foreground">{m.val}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>
