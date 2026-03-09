@@ -1,21 +1,17 @@
 import GlassPanel from '../GlassPanel';
 import subtronicsClip1 from '@/assets/subtronics-clip1.jpg';
-import subtronicsClip2 from '@/assets/subtronics-clip2.jpg';
-import subtronicsClip3 from '@/assets/subtronics-clip3.jpg';
 import skrillexClip1 from '@/assets/skrillex-clip1.png';
-import skrillexClip2 from '@/assets/skrillex-clip2.jpeg';
-import skrillexClip3 from '@/assets/skrillex-clip3.jpeg';
 
 const caseStudies = [
   {
     artist: 'Subtronics',
     project: 'Fan Page Network',
     goal: 'Sustained visibility across bass music communities.',
-    clips: [subtronicsClip1, subtronicsClip2, subtronicsClip3],
+    clip: subtronicsClip1,
     metrics: [
       { val: '5M+', label: 'Views' },
       { val: '150K+', label: 'Likes' },
-      { val: '15K+', label: 'Followers' },
+      { val: '15.9K', label: 'Followers Driven' },
       { val: '600+', label: 'Clips' },
     ],
   },
@@ -23,12 +19,12 @@ const caseStudies = [
     artist: 'Skrillex',
     project: 'FUS Album',
     goal: 'Consistent visibility around the FUS album and Ultra set.',
-    clips: [skrillexClip1, skrillexClip2, skrillexClip3],
+    clip: skrillexClip1,
     metrics: [
       { val: '2.1M+', label: 'Views' },
-      { val: '1,557', label: 'Posts' },
+      { val: '9.5K', label: 'Followers Driven' },
       { val: '6.84%', label: 'Engagement' },
-      { val: '1.3M+', label: 'Top Post' },
+      { val: '1,557', label: 'Posts' },
     ],
   },
 ];
@@ -91,30 +87,34 @@ const FanpagesSlide = () => (
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 flex flex-col justify-between">
           {caseStudies.map((c) => (
             <GlassPanel key={c.artist} variant="bright" className="p-5">
-              <div className="mb-3">
-                <p className="text-xs text-primary font-mono tracking-widest mb-1">FANPAGES</p>
-                <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-                <p className="text-xs text-muted-foreground">{c.project} — {c.goal}</p>
-              </div>
-
-              <div className="grid grid-cols-3 gap-2 mb-3">
-                {c.clips.map((img, i) => (
-                  <div key={i} className="aspect-[9/16] rounded-lg overflow-hidden border border-white/[0.08]" style={{ maxHeight: '100px' }}>
-                    <img src={img} alt={`${c.artist} clip ${i + 1}`} className="w-full h-full object-cover object-top" />
+              <div className="flex gap-5">
+                {/* Hero thumbnail */}
+                <div className="w-[140px] shrink-0">
+                  <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1]">
+                    <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
                   </div>
-                ))}
-              </div>
+                </div>
 
-              <div className="grid grid-cols-4 gap-2">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
-                    <p className="text-sm font-bold text-foreground">{m.val}</p>
-                    <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                {/* Info + metrics */}
+                <div className="flex-1 flex flex-col justify-between min-w-0">
+                  <div className="mb-3">
+                    <p className="text-xs text-primary font-mono tracking-widest mb-1">FANPAGES</p>
+                    <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
+                    <p className="text-xs text-muted-foreground">{c.project} — {c.goal}</p>
                   </div>
-                ))}
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {c.metrics.map((m) => (
+                      <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
+                        <p className="text-base font-bold text-foreground">{m.val}</p>
+                        <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
             </GlassPanel>
           ))}
