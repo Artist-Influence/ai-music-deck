@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ScaledSlide from './ScaledSlide';
 import { slides } from './slides';
+import ExportPdfButton from './ExportPdfButton';
 
 const DeckViewer = () => {
   const isMobile = useIsMobile();
