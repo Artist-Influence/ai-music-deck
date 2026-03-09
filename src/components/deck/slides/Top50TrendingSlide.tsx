@@ -25,7 +25,7 @@ const Top50TrendingSlide = () => (
 
     <div className="relative z-10 w-full max-w-[1600px] flex gap-10">
       {/* Left — Service Info */}
-      <div className="flex-1 flex flex-col justify-center">
+      <div className="flex-1 flex flex-col justify-between">
         <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
         <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
           Top 50 Trending<br />& Popular Tab
@@ -61,8 +61,8 @@ const Top50TrendingSlide = () => (
       </div>
 
       {/* Right — Case Study */}
-      <div className="flex-1 flex flex-col justify-center">
-        <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
+      <div className="flex-1 flex flex-col items-center justify-center">
+        <GlassPanel variant="bright" className="p-6 flex flex-col">
           <p className="text-sm text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Major Lazer</p>
           <p className="text-base text-muted-foreground mb-3">MINI SKIRT</p>
@@ -70,7 +70,7 @@ const Top50TrendingSlide = () => (
             Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
           </p>
 
-          <div className="grid grid-cols-2 gap-2 mb-4 flex-1 min-h-0">
+          <div className="grid grid-cols-2 gap-2 mb-4 max-h-[340px] overflow-hidden">
             {screenshots.map((s, i) => (
               <div key={i} className="rounded-lg border border-white/[0.08] overflow-hidden">
                 <img src={s.src} alt={s.alt} className="w-full h-full object-cover" />
