@@ -23,7 +23,7 @@ const CoverSlide = () => (
     </div>
 
     <p className="absolute bottom-16 text-sm text-muted-foreground/40 tracking-[0.3em] uppercase">
-      Confidential · February 2026
+      Confidential · 2026
     </p>
   </div>
 );
