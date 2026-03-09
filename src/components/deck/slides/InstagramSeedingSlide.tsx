@@ -26,9 +26,9 @@ const InstagramSeedingSlide = () => (
         </p>
 
         <div className="space-y-5">
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+          <GlassPanel variant="bright" className="p-6">
+            <p className="text-2xl font-semibold text-foreground mb-2">What it is:</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
               We seed your audio and video content across a curated network of Instagram
               theme pages — EDM community pages and meme accounts that drive real
               engagement within your target audience.
