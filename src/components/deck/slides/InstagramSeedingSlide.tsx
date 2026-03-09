@@ -44,8 +44,8 @@ const InstagramSeedingSlide = () => (
             </p>
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 1–3 weeks</p>
+          <GlassPanel variant="subtle" className="p-5">
+            <p className="text-lg text-primary font-medium">Timeframe: 1–3 weeks</p>
           </GlassPanel>
         </div>
       </div>
