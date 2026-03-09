@@ -50,7 +50,7 @@ const FanpagesSlide = () => (
             </p>
           </GlassPanel>
 
-          <GlassPanel className="p-6">
+          <GlassPanel className="p-6 flex-1">
             <p className="text-lg font-semibold text-primary mb-3">What this is great for</p>
             <div className="space-y-2">
               {[
