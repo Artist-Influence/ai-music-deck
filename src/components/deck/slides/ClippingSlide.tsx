@@ -1,73 +1,141 @@
 import GlassPanel from '../GlassPanel';
+import ariesCover from '@/assets/aries-in-the-flesh.jpg';
+import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
+import nashRlyCover from '@/assets/nash-rly-u-and-me.jpg';
+
+const cases = [
+  {
+    artist: 'Aries',
+    track: 'In The Flesh',
+    img: ariesCover,
+    overview: 'Meme-forward creative tied to culturally relevant humor.',
+    metrics: [
+      { val: '$0.50', label: 'CPM' },
+      { val: '1.1M+', label: 'Views' },
+      { val: '13.65%', label: 'Engagement' },
+      { val: '133K+', label: 'Likes' },
+    ],
+  },
+  {
+    artist: 'Gorgon City',
+    track: 'Mitsubishi',
+    img: gorgonCityCover,
+    overview: 'Car culture and rave footage via genre-native clippers.',
+    metrics: [
+      { val: '$0.60', label: 'CPM' },
+      { val: '3.08M+', label: 'Views' },
+      { val: '3.64%', label: 'Engagement' },
+      { val: '102K+', label: 'Likes' },
+    ],
+  },
+  {
+    artist: 'Nash Rly',
+    track: 'U & Me',
+    img: nashRlyCover,
+    overview: 'High-volume EDM memes driving repeat exposure.',
+    metrics: [
+      { val: '$0.49', label: 'CPM' },
+      { val: '1.55M+', label: 'Views' },
+      { val: '3.78%', label: 'Engagement' },
+      { val: '48K+', label: 'Likes' },
+    ],
+  },
+];
 
 const ClippingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-16 flex flex-col items-center justify-center">
     <div className="absolute top-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float" />
 
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
-      <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
-      <h1 className="text-7xl font-bold text-foreground mb-6">Clipping Distribution</h1>
-      <p className="text-2xl text-muted-foreground mb-12 max-w-[900px]">
+      <p className="text-lg text-primary font-medium mb-3 tracking-wider uppercase">Service</p>
+      <h1 className="text-6xl font-bold text-foreground mb-4">Clipping Distribution</h1>
+      <p className="text-xl text-muted-foreground mb-8 max-w-[900px]">
         A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and Youtube.
       </p>
 
-      <div className="flex gap-10">
-        <div className="flex-1 space-y-6 max-w-[900px]">
-          <GlassPanel className="p-8">
-            <p className="text-xl font-semibold text-primary mb-4">Pros</p>
-            <div className="space-y-3">
+      <div className="flex gap-8">
+        {/* Left — service info */}
+        <div className="flex-1 space-y-4 max-w-[750px]">
+          <GlassPanel className="p-6">
+            <p className="text-lg font-semibold text-primary mb-3">Pros</p>
+            <div className="space-y-2">
               {[
                 'Target viral trends with a strategic campaign brief',
                 'Fast velocity and clear reporting',
                 'UGC reuse rights for paid and owned channels',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                  <p className="text-base text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
+                  <p className="text-sm text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-8">
-            <p className="text-xl font-semibold text-primary mb-4">How it works</p>
-            <div className="space-y-3">
+          <GlassPanel className="p-6">
+            <p className="text-lg font-semibold text-primary mb-3">How it works</p>
+            <div className="space-y-2">
               {[
                 'Campaigns launch in 24 hours',
                 'Runs 7 to 14 days',
-                'Every post attributes the official sound and follows campaign brief exactly',
+                'Every post attributes the official sound and follows brief',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                  <p className="text-base text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
+                  <p className="text-sm text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-8">
-            <p className="text-xl font-semibold text-primary mb-4">Why We Are Different</p>
-            <div className="space-y-3">
+          <GlassPanel className="p-6">
+            <p className="text-lg font-semibold text-primary mb-3">Why We Are Different</p>
+            <div className="space-y-2">
               {[
-                'Strategy driven by actual music industry professionals',
-                'Automatic content moderation to ensure campaign compliance',
-                'Bot detection algorithms to ensure payment is only for genuine views',
-                'Fully white glove service with professional reporting decks',
+                'Strategy driven by music industry professionals',
+                'Automatic content moderation for compliance',
+                'Bot detection — payment only for genuine views',
+                'White glove service with professional reporting',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-3">
-                  <div className="w-2 h-2 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                  <p className="text-base text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
+                  <p className="text-sm text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="pt-4 border-t border-white/[0.06] mt-4">
-              <p className="text-base text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+            <div className="pt-3 border-t border-white/[0.06] mt-3">
+              <p className="text-sm text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
             </div>
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex items-center justify-center">
-          {/* Visualizer placeholder */}
+        {/* Right — case studies */}
+        <div className="flex-1 space-y-4">
+          {cases.map((c) => (
+            <GlassPanel key={c.artist} variant="bright" className="p-4">
+              <div className="flex gap-4">
+                <img
+                  src={c.img}
+                  alt={`${c.artist} - ${c.track}`}
+                  className="w-20 h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
+                />
+                <div className="flex-1 min-w-0">
+                  <p className="text-xs text-primary font-mono tracking-widest mb-1">CLIPPING</p>
+                  <p className="text-base font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-xs text-muted-foreground mb-1">{c.track}</p>
+                  <p className="text-xs text-muted-foreground leading-relaxed">{c.overview}</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-4 gap-2 mt-3">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
+                    <p className="text-sm font-bold text-foreground">{m.val}</p>
+                    <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
+          ))}
         </div>
       </div>
     </div>

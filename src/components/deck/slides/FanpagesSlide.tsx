@@ -1,22 +1,55 @@
 import GlassPanel from '../GlassPanel';
-import ClippingVisualizer from '../ClippingVisualizer';
+import subtronicsClip1 from '@/assets/subtronics-clip1.jpg';
+import subtronicsClip2 from '@/assets/subtronics-clip2.jpg';
+import subtronicsClip3 from '@/assets/subtronics-clip3.jpg';
+import skrillexClip1 from '@/assets/skrillex-clip1.png';
+import skrillexClip2 from '@/assets/skrillex-clip2.jpeg';
+import skrillexClip3 from '@/assets/skrillex-clip3.jpeg';
+
+const caseStudies = [
+  {
+    artist: 'Subtronics',
+    project: 'Fan Page Network',
+    goal: 'Sustained visibility across bass music communities.',
+    clips: [subtronicsClip1, subtronicsClip2, subtronicsClip3],
+    metrics: [
+      { val: '5M+', label: 'Views' },
+      { val: '150K+', label: 'Likes' },
+      { val: '15K+', label: 'Followers' },
+      { val: '600+', label: 'Clips' },
+    ],
+  },
+  {
+    artist: 'Skrillex',
+    project: 'FUS Album',
+    goal: 'Consistent visibility around the FUS album and Ultra set.',
+    clips: [skrillexClip1, skrillexClip2, skrillexClip3],
+    metrics: [
+      { val: '2.1M+', label: 'Views' },
+      { val: '1,557', label: 'Posts' },
+      { val: '6.84%', label: 'Engagement' },
+      { val: '1.3M+', label: 'Top Post' },
+    ],
+  },
+];
 
 const FanpagesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-16 flex flex-col items-center justify-center">
     <div className="absolute bottom-[10%] right-[15%] w-[450px] h-[450px] rounded-full bg-accent/[0.05] blur-[130px] animate-float-slow" />
 
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
-      <p className="text-lg text-primary font-medium mb-4 tracking-wider uppercase">Service</p>
-      <h1 className="text-7xl font-bold text-foreground mb-6">Fanpages</h1>
-      <p className="text-2xl text-muted-foreground mb-12 max-w-[800px]">
+      <p className="text-lg text-primary font-medium mb-3 tracking-wider uppercase">Service</p>
+      <h1 className="text-6xl font-bold text-foreground mb-4">Fanpages</h1>
+      <p className="text-xl text-muted-foreground mb-8 max-w-[800px]">
         We operate and scale multiple theme pages that consistently target and unify your fan base around your project.
       </p>
 
-      <div className="flex gap-10">
-        <div className="flex-1 space-y-6 max-w-[900px]">
+      <div className="flex gap-8">
+        {/* Left — service info */}
+        <div className="flex-1 space-y-4 max-w-[750px]">
           <GlassPanel className="p-6">
             <p className="text-lg font-semibold text-primary mb-3">What it is</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-sm text-muted-foreground leading-relaxed">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
             </p>
           </GlassPanel>
@@ -39,7 +72,7 @@ const FanpagesSlide = () => (
 
           <GlassPanel className="p-6">
             <p className="text-lg font-semibold text-primary mb-3">What you can expect</p>
-            <div className="space-y-2 mb-4">
+            <div className="space-y-2 mb-3">
               {[
                 'Consistent posting cadence',
                 'Multiple content angles and formats',
@@ -52,13 +85,39 @@ const FanpagesSlide = () => (
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06]">
-              <p className="text-sm text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks of consistency</p>
+              <p className="text-sm text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
             </div>
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex items-center justify-center">
-          <ClippingVisualizer />
+        {/* Right — case studies */}
+        <div className="flex-1 space-y-4">
+          {caseStudies.map((c) => (
+            <GlassPanel key={c.artist} variant="bright" className="p-5">
+              <div className="mb-3">
+                <p className="text-xs text-primary font-mono tracking-widest mb-1">FANPAGES</p>
+                <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-xs text-muted-foreground">{c.project} — {c.goal}</p>
+              </div>
+
+              <div className="grid grid-cols-3 gap-2 mb-3">
+                {c.clips.map((img, i) => (
+                  <div key={i} className="aspect-[9/16] rounded-lg overflow-hidden border border-white/[0.08]" style={{ maxHeight: '100px' }}>
+                    <img src={img} alt={`${c.artist} clip ${i + 1}`} className="w-full h-full object-cover object-top" />
+                  </div>
+                ))}
+              </div>
+
+              <div className="grid grid-cols-4 gap-2">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
+                    <p className="text-sm font-bold text-foreground">{m.val}</p>
+                    <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
+          ))}
         </div>
       </div>
     </div>
@@ -66,4 +125,3 @@ const FanpagesSlide = () => (
 );
 
 export default FanpagesSlide;
-
