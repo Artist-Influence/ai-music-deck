@@ -13,7 +13,7 @@ const InstagramSeedingSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
     <div className="absolute bottom-[5%] right-[20%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px]" />
 
-    <div className="relative z-10 flex gap-10 items-start w-full max-w-[1600px] mx-auto">
+    <div className="relative z-10 flex gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
       <div className="flex-1 min-w-0">
         <div className="flex items-center gap-3 mb-4">
