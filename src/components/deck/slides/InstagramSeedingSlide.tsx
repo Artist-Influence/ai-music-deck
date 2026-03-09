@@ -35,9 +35,9 @@ const InstagramSeedingSlide = () => (
             </p>
           </GlassPanel>
 
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+          <GlassPanel variant="bright" className="p-6">
+            <p className="text-2xl font-semibold text-foreground mb-2">Why it works:</p>
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Theme pages and meme accounts have built-in audiences that actively engage.
               Seeding here drives saves, shares, and audio uses at a fraction of the cost
               of paid ads — built for relevance and cost efficiency.
