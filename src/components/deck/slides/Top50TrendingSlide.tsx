@@ -70,7 +70,7 @@ const Top50TrendingSlide = () => (
             Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
           </p>
 
-          <div className="grid grid-cols-2 gap-2 mb-4 flex-1 min-h-0">
+          <div className="grid grid-cols-2 gap-2 mb-4 max-h-[340px] overflow-hidden">
             {screenshots.map((s, i) => (
               <div key={i} className="rounded-lg border border-white/[0.08] overflow-hidden">
                 <img src={s.src} alt={s.alt} className="w-full h-full object-cover" />
