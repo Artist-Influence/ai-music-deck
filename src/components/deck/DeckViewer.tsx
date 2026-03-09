@@ -5,6 +5,7 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
 import ScaledSlide from './ScaledSlide';
 import { slides } from './slides';
+import ExportPdfButton from './ExportPdfButton';
 
 const DeckViewer = () => {
   const isMobile = useIsMobile();
@@ -100,6 +101,7 @@ const DeckViewer = () => {
               <img src={cloutedLogo} alt="CLOUTED" className="h-5" />
             </div>
             <div className="flex items-center gap-1">
+              <ExportPdfButton />
               <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
                 <LayoutGrid className="w-4 h-4 text-muted-foreground" />
               </button>
