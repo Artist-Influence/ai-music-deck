@@ -1,7 +1,7 @@
 import GlassPanel from '../GlassPanel';
 import ariesCover from '@/assets/aries-in-the-flesh.jpg';
 import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
-import nashRlyCover from '@/assets/nash-rly-u-and-me.jpg';
+import yeatCover from '@/assets/yeat-bnyx-im-yeat.jpg';
 
 const cases = [
   {
@@ -14,6 +14,7 @@ const cases = [
       { val: '1.1M+', label: 'Views' },
       { val: '13.65%', label: 'Engagement' },
       { val: '133K+', label: 'Likes' },
+      { val: '164', label: 'Videos' },
     ],
   },
   {
@@ -26,18 +27,20 @@ const cases = [
       { val: '3.08M+', label: 'Views' },
       { val: '3.64%', label: 'Engagement' },
       { val: '102K+', label: 'Likes' },
+      { val: '232', label: 'Videos' },
     ],
   },
   {
-    artist: 'Nash Rly',
-    track: 'U & Me',
-    img: nashRlyCover,
-    overview: 'High-volume EDM memes driving repeat exposure.',
+    artist: 'Yeat, BNYX',
+    track: "I'M YEAT",
+    img: yeatCover,
+    overview: 'High-velocity distribution driving massive engagement at sub-$0.50 CPM.',
     metrics: [
-      { val: '$0.49', label: 'CPM' },
-      { val: '1.55M+', label: 'Views' },
-      { val: '3.78%', label: 'Engagement' },
-      { val: '48K+', label: 'Likes' },
+      { val: '$0.43', label: 'CPM' },
+      { val: '9.97M+', label: 'Views' },
+      { val: '12.25%', label: 'Engagement' },
+      { val: '1.17M+', label: 'Likes' },
+      { val: '64', label: 'Posts' },
     ],
   },
 ];
@@ -55,7 +58,7 @@ const ClippingSlide = () => (
 
       <div className="flex gap-8">
         {/* Left — service info */}
-        <div className="flex-1 space-y-4 max-w-[750px]">
+        <div className="flex-1 flex flex-col gap-4 max-w-[750px]">
           <GlassPanel className="p-6">
             <p className="text-lg font-semibold text-primary mb-3">Pros</p>
             <div className="space-y-2">
@@ -110,7 +113,7 @@ const ClippingSlide = () => (
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 space-y-4">
+        <div className="flex-1 flex flex-col justify-between">
           {cases.map((c) => (
             <GlassPanel key={c.artist} variant="bright" className="p-4">
               <div className="flex gap-4">
@@ -126,7 +129,7 @@ const ClippingSlide = () => (
                   <p className="text-xs text-muted-foreground leading-relaxed">{c.overview}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-4 gap-2 mt-3">
+              <div className="grid grid-cols-5 gap-2 mt-3">
                 {c.metrics.map((m) => (
                   <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
                     <p className="text-sm font-bold text-foreground">{m.val}</p>
