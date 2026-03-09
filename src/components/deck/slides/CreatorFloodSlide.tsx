@@ -1,3 +1,4 @@
+import { Zap } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
