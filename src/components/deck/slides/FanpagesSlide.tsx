@@ -1,3 +1,4 @@
+import { Users } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import subtronicsClip1 from '@/assets/subtronics-clip1.jpg';
 import skrillexClip1 from '@/assets/skrillex-clip1.png';
