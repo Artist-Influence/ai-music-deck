@@ -1,55 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Split Additional Services into Dedicated Slides + Case Studies
+Three small text edits across three files:
 
-### Current State
-`AdditionalServicesSlide` has 5 services in a 3-column grid. `CaseStudyPlatformSlide` has case studies for YouTube (Jason Derulo), Spotify (Dack Janiels), and Instagram (Francis Mercier). These need to be merged into individual service slides.
+## Changes
 
-### New Slides
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-**1. `YouTubeAdsSlide.tsx`** (new file)
-- Two-column layout: left = service description (what it is, how it works, timeframe 1-3 weeks), right = Jason Derulo case study card with screenshot + 4 metrics (11M views, 6.5M unique viewers, 1.1M+ hrs watch time, 76.4% avg viewed)
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-**2. `SpotifyPlaylistingSlide.tsx`** (new file)
-- Two-column layout: left = service description (organic playlisting, algorithmic pickup, 12-week timeframe), right = Dack Janiels case study card with screenshot + 4 metrics (185K streams, 9,950 playlist adds, 3.6% save rate, 42K algo streams)
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-**3. `SoundCloudRepostsSlide.tsx`** (new file)
-- Two-column layout: left = service description (verified repost network, genre communities, 2-8 week timeframe), right = placeholder for case study (no existing case study data)
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-**4. `InstagramSeedingSlide.tsx`** (new file)
-- Two-column layout: left = service description (EDM pages and memes, genre-aligned placements, 1-3 week timeframe), right = Francis Mercier case study card with screenshot + 4 metrics (16.4M views, $0.03 CPM, 89.2K saves, 7.16% engagement)
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-**5. `AdditionalServicesSlide.tsx`** (rewrite)
-- Simplified to only Meta & TikTok Ads. Single-service layout with description, timeframe, and the ServicesVisualizer.
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
-### Slide Order Update (`index.tsx`)
+### Final Plan
 
-Remove: `CaseStudyPlatformSlide`, `OutcomesSlide`, standalone case study slides (per previous plan)
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
 
-New order after Creator Flood and Top 50 Trending:
-```
-...
-CreatorFloodSlide,
-Top50TrendingSlide,
-YouTubeAdsSlide,
-SpotifyPlaylistingSlide,
-SoundCloudRepostsSlide,
-InstagramSeedingSlide,
-AdditionalServicesSlide,   ← now just Meta & TikTok Ads
-Reporting,
-Expectations,
-Pricing,
-NextSteps
-```
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
 
-### Layout Pattern (consistent across all 4 new slides)
-- Full slide with `p-24`, `max-w-[1600px]`
-- `flex gap-10` two-column
-- Left: title, subtitle, 2-3 GlassPanels with `text-xl` headers, `text-base` bullets
-- Right: GlassPanel with case study screenshot, artist/track info, 2x2 metrics grid
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
 
-### Files
-- **New:** `YouTubeAdsSlide.tsx`, `SpotifyPlaylistingSlide.tsx`, `SoundCloudRepostsSlide.tsx`, `InstagramSeedingSlide.tsx`
-- **Rewrite:** `AdditionalServicesSlide.tsx` (Meta & TikTok only)
-- **Update:** `slides/index.tsx` (new order)
+## Technical Details
 
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
