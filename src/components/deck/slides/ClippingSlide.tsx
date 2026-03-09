@@ -1,3 +1,4 @@
+import { Scissors } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import ariesCover from '@/assets/aries-in-the-flesh.jpg';
 import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
