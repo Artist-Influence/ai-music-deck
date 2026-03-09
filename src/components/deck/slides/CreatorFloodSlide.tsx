@@ -59,7 +59,7 @@ const CreatorFloodSlide = () => (
             Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.
           </p>
 
-          <div className="flex-1 min-h-0 mb-4 rounded-lg border border-white/[0.08] overflow-hidden">
+          <div className="max-h-[420px] mb-4 rounded-lg border border-white/[0.08] overflow-hidden">
             <img
               src={richBrianImg}
               alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos"
