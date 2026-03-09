@@ -60,7 +60,7 @@ const InstagramSeedingSlide = () => (
             Global audio seeding across Afro House audiences and LATAM markets.
           </p>
 
-          <div className="max-h-[380px] rounded-lg border border-white/[0.08] overflow-hidden mb-4 bg-black/30 flex items-center justify-center">
+          <div className="max-h-[380px] rounded-lg border border-white/[0.08] overflow-hidden mb-4 bg-black/30">
             <img
               src={francisMercierImg}
               alt="Francis Mercier — Sauti"
