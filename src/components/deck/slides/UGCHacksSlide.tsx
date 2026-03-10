@@ -33,16 +33,16 @@ const UGCHacksSlide = () => (
 
         <GlassPanel variant="bright" className="p-6">
           <p className="text-xl font-semibold text-foreground mb-3">Top 50 Trending & Popular Tab</p>
-          <p className="text-sm text-primary font-medium mb-3">What it is</p>
-          <p className="text-base text-muted-foreground leading-relaxed mb-4">
+          <p className="text-base text-primary font-medium mb-3">What it is</p>
+          <p className="text-lg text-muted-foreground leading-relaxed mb-4">
             We guarantee your track appears on Top 50 trending charts across YouTube Shorts, Instagram Reels, and Facebook Reels, and enters the Popular Tab on TikTok.
           </p>
-          <p className="text-sm text-primary font-medium mb-2">How it's done (honest version)</p>
-          <p className="text-base text-muted-foreground mb-4">
+          <p className="text-base text-primary font-medium mb-2">How it's done (honest version)</p>
+          <p className="text-lg text-muted-foreground mb-4">
             A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.
           </p>
           <div className="pt-3 border-t border-white/[0.06]">
-            <p className="text-sm text-primary font-medium">Timeframe: 2 to 3 weeks</p>
+            <p className="text-base text-primary font-medium">Timeframe: 2 to 3 weeks</p>
           </div>
         </GlassPanel>
       </div>
