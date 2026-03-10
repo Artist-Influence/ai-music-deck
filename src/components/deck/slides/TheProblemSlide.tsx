@@ -12,21 +12,21 @@ const TheProblemSlide = () => (
     <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] rounded-full bg-destructive/[0.04] blur-[120px]" />
     <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-primary/[0.05] blur-[100px]" />
 
-    <div className="relative z-10 flex gap-12 items-center w-full max-w-[1600px] mx-auto">
-      <div className="flex-1 max-w-[800px]">
+    <div className="relative z-10 flex gap-8 items-center w-full max-w-[1700px] mx-auto">
+      <div className="flex-[1.3] min-w-0">
         <h1 className="text-6xl font-bold text-foreground mb-10 leading-tight">
           Problem: Music marketing is mostly manual.
         </h1>
 
-        <p className="text-lg text-primary font-medium mb-6 tracking-wider uppercase">Why this is an issue:</p>
+        <p className="text-xl text-primary font-medium mb-6 tracking-wider uppercase">Why this is an issue:</p>
 
         <div className="space-y-4">
           {problems.map((item) => (
-            <GlassPanel key={item.num} variant="subtle" className="p-5">
-              <div className="flex items-center gap-4">
-                <span className="text-2xl font-bold text-primary shrink-0">{item.num}.</span>
-                <p className="text-lg text-foreground flex-1">{item.text}</p>
-                <item.icon size={24} className="text-primary shrink-0" />
+            <GlassPanel key={item.num} variant="subtle" className="p-6">
+              <div className="flex items-center gap-5">
+                <span className="text-3xl font-bold text-primary shrink-0">{item.num}.</span>
+                <p className="text-2xl text-foreground flex-1 whitespace-nowrap">{item.text}</p>
+                <item.icon size={32} className="text-primary shrink-0" />
               </div>
             </GlassPanel>
           ))}
