@@ -40,7 +40,7 @@ const AdditionalServicesSlide = () => (
 
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">How it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Optimized daily with weekly reporting and clean data exports.
               We target by genre, geography, and behavior — focused on
               streams, ticket sales, merch, and fanbase growth.
