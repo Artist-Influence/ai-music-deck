@@ -1,39 +1,41 @@
 import GlassPanel from '../GlassPanel';
 import { Instagram } from 'lucide-react';
-import francisMercierImg from '@/assets/francis-mercier-sauti.png';
+import gordoImg from '@/assets/gordo-gordos-dilemma.jpg';
+import mauPImg from '@/assets/mau-p-the-less-i-know-the-better.jpg';
+import francisMercierImg from '@/assets/francis-mercier-sauti-artwork.jpg';
 
 const cases = [
+  {
+    artist: 'Gordo',
+    track: "Gordo's Dilemma",
+    artwork: gordoImg,
+    metrics: [
+      { val: '$700', label: 'Budget' },
+      { val: '5.4M', label: 'Views' },
+      { val: '136.7K', label: 'Likes' },
+      { val: '$0.00013', label: 'CPV' },
+    ],
+  },
+  {
+    artist: 'Mau P',
+    track: 'The Less I Know The Better',
+    artwork: mauPImg,
+    metrics: [
+      { val: '$2,800', label: 'Budget' },
+      { val: '3.9M', label: 'Views' },
+      { val: '138.7K', label: 'Likes' },
+      { val: '$0.00071', label: 'CPV' },
+    ],
+  },
   {
     artist: 'Francis Mercier',
     track: 'Sauti',
     artwork: francisMercierImg,
     metrics: [
-      { val: '16.4M', label: 'Views' },
-      { val: '$0.03', label: 'CPM' },
-      { val: '89.2K', label: 'Saves' },
-      { val: '7.16%', label: 'Engagement' },
-    ],
-  },
-  {
-    artist: 'Artist Name',
-    track: 'Track Title',
-    artwork: null,
-    metrics: [
-      { val: '—', label: 'Views' },
-      { val: '—', label: 'CPM' },
-      { val: '—', label: 'Saves' },
-      { val: '—', label: 'Engagement' },
-    ],
-  },
-  {
-    artist: 'Artist Name',
-    track: 'Track Title',
-    artwork: null,
-    metrics: [
-      { val: '—', label: 'Views' },
-      { val: '—', label: 'CPM' },
-      { val: '—', label: 'Saves' },
-      { val: '—', label: 'Engagement' },
+      { val: '$700', label: 'Budget' },
+      { val: '16.8M', label: 'Views' },
+      { val: '1.18M', label: 'Likes' },
+      { val: '$0.000042', label: 'CPV' },
     ],
   },
 ];
@@ -85,11 +87,7 @@ const InstagramSeedingSlide = () => (
           <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
             <div className="flex gap-4 mb-3">
               <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
-                {c.artwork ? (
-                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
-                ) : (
-                  <Instagram size={32} className="text-primary" />
-                )}
+                <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-lg text-primary font-mono tracking-widest mb-1">SEEDING</p>

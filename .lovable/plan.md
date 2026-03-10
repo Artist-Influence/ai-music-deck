@@ -1,34 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Update Instagram Seeding Slide with Real Case Studies
+Three small text edits across three files:
 
-### What changes
-**File: `src/components/deck/slides/InstagramSeedingSlide.tsx`**
+## Changes
 
-Replace the 3 placeholder/partial case studies with the real data provided. Copy the 2 uploaded artwork images into `src/assets/` and import them alongside the existing Francis Mercier image.
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-### Assets to copy
-1. `user-uploads://gordo_-_gordo_s_dilemma.jpg` → `src/assets/gordo-gordos-dilemma.jpg`
-2. `user-uploads://mau_p_-_the_less_i_know_the_better.jpg` → `src/assets/mau-p-the-less-i-know-the-better.jpg`
-3. `user-uploads://francis_mercier_-_sauti.jpg` → `src/assets/francis-mercier-sauti-artwork.jpg` (the existing `francis-mercier-sauti.png` is a screenshot — this is the actual album art)
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-### Updated case study data
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-Update the `cases` array with real metrics. Adjust metric labels to match the provided data (Budget, Views, Likes, CPV instead of the current Views/CPM/Saves/Engagement):
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-```
-Case 1: Gordo — Gordo's Dilemma
-  Budget: $700 | Views: 5.4M | Likes: 136.7K | CPV: $0.00013
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-Case 2: Mau P — The Less I Know The Better
-  Budget: $2,800 | Views: 3.9M | Likes: 138.7K | CPV: $0.00071
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
-Case 3: Francis Mercier — Sauti
-  Budget: $700 | Views: 16.8M | Likes: 1.18M | CPV: $0.000042
-```
+### Final Plan
 
-Each card will use 4 metrics in the grid: **Budget**, **Views**, **Likes**, **CPV** — consistent across all 3 cards. All 3 cards get their uploaded album artwork as the thumbnail image.
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
 
-### No layout changes needed
-The existing 3-card right column structure and sizing stays the same — only data and images change.
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
 
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
