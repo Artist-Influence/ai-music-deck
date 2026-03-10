@@ -33,11 +33,11 @@ const ReportingSlide = () => (
           ))}
         </GlassPanel>
 
-        <GlassPanel variant="subtle" className="p-14">
+        <GlassPanel variant="subtle" className="p-14 text-left">
           <p className="text-3xl font-semibold text-muted-foreground mb-8">Final recap includes</p>
           {finalItems.map((item, i) => (
             <div key={i} className="flex items-center gap-4 py-4 border-b border-white/[0.06] last:border-0">
-              <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30" />
+              <div className="w-2.5 h-2.5 rounded-full bg-muted-foreground/30 shrink-0" />
               <p className="text-3xl text-muted-foreground">{item}</p>
             </div>
           ))}
