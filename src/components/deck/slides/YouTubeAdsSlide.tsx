@@ -55,7 +55,7 @@ const YouTubeAdsSlide = () => (
           <p className="text-3xl font-bold text-foreground leading-tight">Jason Derulo & Michael Bublé</p>
           <p className="text-2xl text-muted-foreground mb-2">Spicy Margarita</p>
 
-          <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
+          <div className="max-h-[220px] rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
             <img
               src={spicyMargaritaImg}
               alt="Jason Derulo — Spicy Margarita"
