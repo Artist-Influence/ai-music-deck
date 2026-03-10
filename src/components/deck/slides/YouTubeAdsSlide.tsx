@@ -83,14 +83,14 @@ const YouTubeAdsSlide = () => (
             <p className="text-lg text-muted-foreground/40 italic">Screenshot placeholder</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2">
             {[
               { val: '—', label: 'Metric 1' },
               { val: '—', label: 'Metric 2' },
               { val: '—', label: 'Metric 3' },
               { val: '—', label: 'Metric 4' },
             ].map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                 <p className="text-2xl font-bold text-foreground">{m.val}</p>
                 <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
