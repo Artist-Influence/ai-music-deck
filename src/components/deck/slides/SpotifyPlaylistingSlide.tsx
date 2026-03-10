@@ -32,8 +32,8 @@ const cases = [
     track: 'Shock Therapy',
     artwork: dackJanielsImg,
     metrics: [
-      { val: '185,700', label: 'Streams' },
-      { val: '9,950', label: 'Playlist Adds' },
+      { val: '185.7K', label: 'Streams' },
+      { val: '9.6K', label: 'Playlist Adds' },
       { val: '3.6%', label: 'Save Rate' },
       { val: '42K', label: 'Algo Streams' },
     ],
