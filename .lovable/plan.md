@@ -1,30 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Fix YouTube Ads Slide — Content Overflow
+Three small text edits across three files:
 
-### Problem
-The slide content overflows the 1080px height. The title is cut off at the top, and both case study cards and the "How it works" panel are cut off at the bottom. The `aspect-video` thumbnails are too tall when the cards share the right column.
+## Changes
 
-### Solution — `src/components/deck/slides/YouTubeAdsSlide.tsx`
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-Reduce sizes across the board to fit everything within 1080px:
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-1. **Outer padding**: `p-12` → `p-8` (saves 32px vertical)
-2. **Left column**:
-   - Title: `text-6xl` → `text-5xl`, reduce `mb-4` → `mb-2`
-   - Subtitle: `text-2xl` → `text-xl`, reduce `mb-6` → `mb-3`
-   - Panel body text: `text-2xl` → `text-lg`
-   - Panel headers: `text-2xl` → `text-xl`
-   - Panel padding: `p-6` → `p-5`
-   - Column gap: `gap-4` → `gap-3`
-   - Service label `mb-4` → `mb-2`
-   - Timeframe: `text-2xl` → `text-xl`
-3. **Right column**:
-   - Replace `aspect-video` with fixed `h-[180px]` on thumbnail containers — aspect-video at ~350px width produces ~197px height per thumb; two of those plus headers+metrics overflows. Fixed 180px keeps thumbs large but controlled.
-   - Keep `object-cover` for edge-to-edge fill
-   - Metric values: `text-xl` → `text-lg`
-   - Gap between cards: `gap-3` → `gap-2`
-4. **Flex container**: `gap-10` → `gap-8`
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-**Height estimate**: Right column: 2 × (header ~50px + thumb 180px + metrics ~80px + padding 24px) + 8px gap = ~676px. Left column similar. With `p-8` (64px top+bottom), total ≈ 740px — well within 1080px.
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`

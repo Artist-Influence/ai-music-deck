@@ -33,52 +33,52 @@ const cases = [
 ];
 
 const YouTubeAdsSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-8 flex items-center justify-center">
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
-    <div className="relative z-10 flex gap-10 w-full max-w-[1600px] mx-auto items-stretch">
+    <div className="relative z-10 flex gap-8 w-full max-w-[1600px] mx-auto items-stretch">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 flex flex-col gap-4">
+      <div className="flex-1 min-w-0 flex flex-col gap-3">
         <div>
-          <div className="flex items-center gap-3 mb-4">
+          <div className="flex items-center gap-3 mb-2">
             <Youtube size={28} className="text-primary" />
             <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
           </div>
-          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">YouTube Advertising</h1>
-          <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
+          <h1 className="text-5xl font-bold text-foreground mb-2 leading-tight">YouTube Advertising</h1>
+          <p className="text-xl text-muted-foreground mb-3 max-w-[700px]">
             International targeting + optimization to maximize reach while protecting engagement ratios.
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-6 flex-1">
-          <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
+        <GlassPanel variant="bright" className="p-5 flex-1">
+          <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
             Paid YouTube campaigns built for subscribers and long-form engagement.
             We optimize daily with transparent weekly reporting and clean data exports.
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-6 flex-1">
-          <p className="text-2xl font-semibold text-foreground mb-3">How it works:</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
+        <GlassPanel variant="bright" className="p-5 flex-1">
+          <p className="text-xl font-semibold text-foreground mb-2">How it works:</p>
+          <p className="text-lg text-muted-foreground leading-relaxed">
             We target international audiences aligned with your genre, optimizing for
             watch time and subscriber conversion. Engagement ratios are monitored and
             protected throughout the campaign.
           </p>
         </GlassPanel>
 
-        <p className="text-2xl text-primary font-medium">Timeframe: 1–3 weeks</p>
+        <p className="text-xl text-primary font-medium">Timeframe: 1–3 weeks</p>
       </div>
 
       {/* Right — Two Stacked Case Studies */}
-      <div className="flex-1 min-w-0 flex flex-col gap-3">
+      <div className="flex-1 min-w-0 flex flex-col gap-2">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-3 flex flex-col">
             <p className="text-xs text-primary font-mono mb-0.5 tracking-widest">CASE STUDY</p>
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
             <p className="text-lg text-muted-foreground mb-1.5">{c.track}</p>
 
-            <div className="aspect-video rounded-lg border border-white/[0.08] overflow-hidden mb-2">
+            <div className="h-[180px] rounded-lg border border-white/[0.08] overflow-hidden mb-2">
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
@@ -89,7 +89,7 @@ const YouTubeAdsSlide = () => (
             <div className="grid grid-cols-3 gap-1.5">
               {c.metrics.map((m) => (
                 <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
-                  <p className="text-xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-lg font-bold text-foreground">{m.val}</p>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
               ))}
