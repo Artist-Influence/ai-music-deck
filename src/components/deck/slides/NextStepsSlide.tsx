@@ -37,7 +37,7 @@ const NextStepsSlide = () => (
     <NetworkVisual className="opacity-[0.06]" nodeCount={30} seed={5} />
 
     <div className="relative z-10 max-w-[1000px]">
-      <h1 className="text-6xl font-bold text-foreground mb-4">If this makes sense,<br />here's how we start.</h1>
+      <h1 className="text-6xl font-bold text-foreground mb-4">If this makes sense, here's how we start.</h1>
       <p className="text-xl text-muted-foreground mb-16">No friction.</p>
 
       <div className="flex gap-5 mb-16">
