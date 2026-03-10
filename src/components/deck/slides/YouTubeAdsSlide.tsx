@@ -44,7 +44,7 @@ const YouTubeAdsSlide = () => (
           </GlassPanel>
 
           <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 1–3 weeks</p>
+            <p className="text-lg text-primary font-medium">Timeframe: 1–3 weeks</p>
           </GlassPanel>
         </div>
       </div>
