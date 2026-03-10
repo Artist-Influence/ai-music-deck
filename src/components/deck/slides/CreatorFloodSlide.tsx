@@ -29,7 +29,7 @@ const CreatorFloodSlide = () => (
 
         <GlassPanel variant="bright" className="p-6 mb-6">
           <p className="text-xl font-semibold text-foreground mb-3">Why it works</p>
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             It builds massive volume and algorithmic lift through real accounts, not bots. The sheer quantity of real usage signals tells TikTok the sound is trending organically.
           </p>
         </GlassPanel>
