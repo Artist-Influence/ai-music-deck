@@ -12,8 +12,8 @@ const TheProblemSlide = () => (
     <div className="absolute bottom-[10%] left-[5%] w-[400px] h-[400px] rounded-full bg-destructive/[0.04] blur-[120px]" />
     <div className="absolute top-[10%] right-[10%] w-[350px] h-[350px] rounded-full bg-primary/[0.05] blur-[100px]" />
 
-    <div className="relative z-10 flex gap-8 items-center w-full max-w-[1700px] mx-auto">
-      <div className="flex-[1.3] min-w-0">
+    <div className="relative z-10 flex gap-8 items-center w-full max-w-[1500px] mx-auto">
+      <div className="flex-1 min-w-0">
         <h1 className="text-6xl font-bold text-foreground mb-10 leading-tight">
           Problem: Music marketing is mostly manual.
         </h1>
@@ -34,7 +34,7 @@ const TheProblemSlide = () => (
       </div>
 
       {/* Visual: tangled workflow representing manual chaos */}
-      <div className="flex-[0.7] flex items-center justify-end max-w-[400px]">
+      <div className="flex-[0.9] flex items-center justify-center">
         <svg viewBox="0 0 400 400" className="w-full h-full max-w-[420px] max-h-[420px]">
           <defs>
             <filter id="chaosGlow">
