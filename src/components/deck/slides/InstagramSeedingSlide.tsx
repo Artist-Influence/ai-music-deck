@@ -13,7 +13,7 @@ const cases = [
       { val: '$700', label: 'Budget' },
       { val: '5.4M', label: 'Views' },
       { val: '136.7K', label: 'Likes' },
-      { val: '$0.00013', label: 'CPV' },
+      { val: '$0.13', label: 'CPM' },
     ],
   },
   {
@@ -24,7 +24,7 @@ const cases = [
       { val: '$2,800', label: 'Budget' },
       { val: '3.9M', label: 'Views' },
       { val: '138.7K', label: 'Likes' },
-      { val: '$0.00071', label: 'CPV' },
+      { val: '$0.71', label: 'CPM' },
     ],
   },
   {
@@ -35,7 +35,7 @@ const cases = [
       { val: '$700', label: 'Budget' },
       { val: '16.8M', label: 'Views' },
       { val: '1.18M', label: 'Likes' },
-      { val: '$0.000042', label: 'CPV' },
+      { val: '$0.042', label: 'CPM' },
     ],
   },
 ];
