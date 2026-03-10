@@ -1,19 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Scale Up Slide 9 (Top 50 Trending) — Match Slides 7 & 8
+Three small text edits across three files:
 
-Apply the same text sizing, padding, and layout improvements from slides 7/8 to slide 9.
+## Changes
 
-### Changes to `Top50TrendingSlide.tsx`:
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-1. **Reduce outer padding** from `p-24` to `p-12`
-2. **Title** from `text-5xl` to `text-6xl`
-3. **Subtitle** from `text-xl` to `text-2xl`, margin from `mb-8` to `mb-6`
-4. **"How it's done" heading** from `text-xl` to `text-2xl`, body from `text-lg` to `text-2xl`
-5. **"When to use" heading** from `text-lg` to `text-2xl`, bullets from `text-lg` to `text-2xl`, bullet dot `mt-2` to `mt-3`, `space-y-2` to `space-y-2.5`
-6. **Timeframe** from `text-base` to `text-2xl`
-7. **GlassPanel padding** from `p-6` to `p-8`, add `flex-1 flex flex-col justify-center` to both panels
-8. **Left column** change from `justify-between` to `gap-4` so boxes stretch naturally
-9. **Case study text**: track name and description from `text-lg` to `text-2xl`
-10. **Metric values** from `text-xl` to `text-2xl`, labels from `text-sm` to `text-lg`, padding from `p-3` to `p-4`
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`

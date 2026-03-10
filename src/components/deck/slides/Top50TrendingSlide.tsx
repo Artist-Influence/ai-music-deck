@@ -20,57 +20,59 @@ const metrics = [
 ];
 
 const Top50TrendingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.08] blur-[140px] animate-float" />
     <div className="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] rounded-full bg-accent/[0.06] blur-[120px] animate-float-slow" />
 
     <div className="relative z-10 w-full max-w-[1600px] flex gap-10">
       {/* Left — Service Info */}
-      <div className="flex-1 flex flex-col justify-between">
-        <div className="flex items-center gap-3 mb-4">
-          <TrendingUp size={28} className="text-primary" />
-          <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+      <div className="flex-1 flex flex-col gap-4">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <TrendingUp size={28} className="text-primary" />
+            <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+          </div>
+          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">
+            Top 50 Trending<br />& Popular Tab
+          </h1>
+          <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
+            We guarantee your track appears on Top 50 trending charts across YouTube Shorts, Instagram Reels, and Facebook Reels, and enters the Popular Tab on TikTok.
+          </p>
         </div>
-        <h1 className="text-5xl font-bold text-foreground mb-4 leading-tight">
-          Top 50 Trending<br />& Popular Tab
-        </h1>
-        <p className="text-xl text-muted-foreground mb-8 max-w-[700px]">
-          We guarantee your track appears on Top 50 trending charts across YouTube Shorts, Instagram Reels, and Facebook Reels, and enters the Popular Tab on TikTok.
-        </p>
 
-        <GlassPanel variant="bright" className="p-6 mb-6">
-          <p className="text-xl font-semibold text-foreground mb-3">How it's done (honest version)</p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+        <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col justify-center">
+          <p className="text-2xl font-semibold text-foreground mb-3">How it's done (honest version)</p>
+          <p className="text-2xl text-muted-foreground leading-relaxed">
             A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="subtle" className="p-6 mb-6">
-          <p className="text-lg font-semibold text-foreground mb-3">When to use</p>
-          <div className="space-y-2">
+        <GlassPanel variant="subtle" className="p-8 flex-1 flex flex-col justify-center">
+          <p className="text-2xl font-semibold text-foreground mb-3">When to use</p>
+          <div className="space-y-2.5">
             {[
               'When the goal is chart presence and algorithm discovery signals',
               'When you want cross-platform trending visibility fast',
               'When you need verified proof of traction for PR or label conversations',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                <p className="text-lg text-muted-foreground">{item}</p>
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                <p className="text-2xl text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
         </GlassPanel>
 
-        <p className="text-base text-primary font-medium">Timeframe: 2 to 3 weeks</p>
+        <p className="text-2xl text-primary font-medium">Timeframe: 2 to 3 weeks</p>
       </div>
 
       {/* Right — Case Study */}
       <div className="flex-1 flex flex-col items-center justify-center">
-        <GlassPanel variant="bright" className="p-6 flex flex-col">
+        <GlassPanel variant="bright" className="p-8 flex flex-col">
           <p className="text-base text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Major Lazer</p>
-          <p className="text-lg text-muted-foreground mb-3">MINI SKIRT</p>
-          <p className="text-lg text-muted-foreground mb-4">
+          <p className="text-2xl text-muted-foreground mb-3">MINI SKIRT</p>
+          <p className="text-2xl text-muted-foreground mb-4">
             Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
           </p>
 
@@ -84,9 +86,9 @@ const Top50TrendingSlide = () => (
 
           <div className="grid grid-cols-2 gap-3">
             {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-xl font-bold text-foreground">{m.val}</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+                <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>
