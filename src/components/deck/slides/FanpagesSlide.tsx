@@ -91,12 +91,12 @@ const FanpagesSlide = () => (
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 flex flex-col justify-between gap-6">
+        <div className="flex-1 flex flex-col justify-between gap-4">
           {caseStudies.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-6">
-              <div className="flex gap-6">
+            <GlassPanel key={c.artist} variant="bright" className="p-8 flex-1">
+              <div className="flex gap-8 h-full">
                 {/* Hero thumbnail */}
-                <div className="w-[170px] shrink-0">
+                <div className="w-[220px] shrink-0">
                   <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1]">
                     <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
                   </div>
@@ -105,16 +105,16 @@ const FanpagesSlide = () => (
                 {/* Info + metrics */}
                 <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div className="mb-4">
-                    <p className="text-xl text-primary font-mono tracking-widest mb-1">FANPAGES</p>
-                    <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-                    <p className="text-xl text-muted-foreground leading-relaxed">{c.project} — {c.goal}</p>
+                    <p className="text-2xl text-primary font-mono tracking-widest mb-1">FANPAGES</p>
+                    <p className="text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
+                    <p className="text-2xl text-muted-foreground leading-relaxed">{c.project} — {c.goal}</p>
                   </div>
 
-                  <div className="grid grid-cols-2 gap-3">
+                  <div className="grid grid-cols-2 gap-4">
                     {c.metrics.map((m) => (
-                      <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                        <p className="text-xl font-bold text-foreground">{m.val}</p>
-                        <p className="text-base text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+                        <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                        <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
                       </div>
                     ))}
                   </div>
