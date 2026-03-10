@@ -50,7 +50,7 @@ const CreatorFloodSlide = () => (
           </div>
         </GlassPanel>
 
-        <p className="text-sm text-primary font-medium">Timeframe: 3 to 4 weeks</p>
+        <p className="text-base text-primary font-medium">Timeframe: 3 to 4 weeks</p>
       </div>
 
       {/* Right — Case Study */}
