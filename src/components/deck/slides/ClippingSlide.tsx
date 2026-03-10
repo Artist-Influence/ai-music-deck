@@ -127,17 +127,17 @@ const ClippingSlide = () => (
                   className="w-20 h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-primary font-mono tracking-widest mb-1">CLIPPING</p>
-                  <p className="text-base font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-xs text-muted-foreground mb-1">{c.track}</p>
-                  <p className="text-xs text-muted-foreground leading-relaxed">{c.overview}</p>
+                  <p className="text-sm text-primary font-mono tracking-widest mb-1">CLIPPING</p>
+                  <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-sm text-muted-foreground mb-1">{c.track}</p>
+                  <p className="text-sm text-muted-foreground leading-relaxed">{c.overview}</p>
                 </div>
               </div>
               <div className="grid grid-cols-5 gap-2 mt-3">
                 {c.metrics.map((m) => (
                   <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
-                    <p className="text-sm font-bold text-foreground">{m.val}</p>
-                    <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                    <p className="text-base font-bold text-foreground">{m.val}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
                   </div>
                 ))}
               </div>

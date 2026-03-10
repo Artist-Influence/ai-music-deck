@@ -105,16 +105,16 @@ const FanpagesSlide = () => (
                 {/* Info + metrics */}
                 <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div className="mb-3">
-                    <p className="text-xs text-primary font-mono tracking-widest mb-1">FANPAGES</p>
+                    <p className="text-sm text-primary font-mono tracking-widest mb-1">FANPAGES</p>
                     <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-                    <p className="text-xs text-muted-foreground">{c.project} — {c.goal}</p>
+                    <p className="text-sm text-muted-foreground">{c.project} — {c.goal}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
                     {c.metrics.map((m) => (
                       <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
                         <p className="text-base font-bold text-foreground">{m.val}</p>
-                        <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
                       </div>
                     ))}
                   </div>
