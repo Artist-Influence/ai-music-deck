@@ -1,12 +1,35 @@
 import GlassPanel from '../GlassPanel';
 import { Youtube } from 'lucide-react';
-import spicyMargaritaImg from '@/assets/jason-derulo-spicy-margarita-views.png';
+import spicyMargaritaThumb from '@/assets/jason-derulo-spicy-margarita-thumb.jpg';
+import markTuanThumb from '@/assets/mark-tuan-sunsets-cigarettes-thumb.jpg';
 
-const metrics = [
-  { val: '11M', label: 'Views' },
-  { val: '6.5M', label: 'Unique Viewers' },
-  { val: '1.1M+ hrs', label: 'Watch Time' },
-  { val: '76.4%', label: 'Avg % Viewed' },
+const cases = [
+  {
+    artist: 'Jason Derulo & Michael Bublé',
+    track: 'Spicy Margarita',
+    thumb: spicyMargaritaThumb,
+    metrics: [
+      { val: '11M', label: 'Views' },
+      { val: '6.5M', label: 'Unique Viewers' },
+      { val: '1.1M+ hrs', label: 'Watch Time' },
+      { val: '76.4%', label: 'Avg % Viewed' },
+      { val: '207K', label: 'Likes' },
+      { val: '7.9K', label: 'Comments' },
+    ],
+  },
+  {
+    artist: 'Mark Tuan',
+    track: 'Sunsets & Cigarettes',
+    thumb: markTuanThumb,
+    metrics: [
+      { val: '10M', label: 'Views' },
+      { val: '5.5M', label: 'Unique Viewers' },
+      { val: '1.4M hrs', label: 'Watch Time' },
+      { val: '81.2%', label: 'Avg % Viewed' },
+      { val: '135K', label: 'Likes' },
+      { val: '6.3K', label: 'Comments' },
+    ],
+  },
 ];
 
 const YouTubeAdsSlide = () => (
@@ -49,54 +72,30 @@ const YouTubeAdsSlide = () => (
 
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-4">
-        {/* Case Study 1 — Jason Derulo */}
-        <GlassPanel variant="bright" className="p-5 flex flex-col">
-          <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
-          <p className="text-3xl font-bold text-foreground leading-tight">Jason Derulo & Michael Bublé</p>
-          <p className="text-2xl text-muted-foreground mb-2">Spicy Margarita</p>
+        {cases.map((c) => (
+          <GlassPanel key={c.artist} variant="bright" className="p-5 flex flex-col">
+            <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
+            <p className="text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
+            <p className="text-2xl text-muted-foreground mb-2">{c.track}</p>
 
-          <div className="max-h-[220px] rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
-            <img
-              src={spicyMargaritaImg}
-              alt="Jason Derulo — Spicy Margarita"
-              className="w-full h-full object-contain"
-            />
-          </div>
+            <div className="aspect-video max-h-[180px] rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
+              <img
+                src={c.thumb}
+                alt={`${c.artist} — ${c.track}`}
+                className="w-full h-full object-cover"
+              />
+            </div>
 
-          <div className="grid grid-cols-2 gap-2">
-            {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
-
-        {/* Case Study 2 — Placeholder */}
-        <GlassPanel variant="bright" className="p-5 flex flex-col">
-          <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
-          <p className="text-3xl font-bold text-foreground leading-tight">Artist Name</p>
-          <p className="text-2xl text-muted-foreground mb-2">Track Title</p>
-
-          <div className="max-h-[220px] rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
-            <p className="text-lg text-muted-foreground/40 italic">Screenshot placeholder</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-2">
-            {[
-              { val: '—', label: 'Metric 1' },
-              { val: '—', label: 'Metric 2' },
-              { val: '—', label: 'Metric 3' },
-              { val: '—', label: 'Metric 4' },
-            ].map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
+            <div className="grid grid-cols-3 gap-2">
+              {c.metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+        ))}
       </div>
     </div>
   </div>
