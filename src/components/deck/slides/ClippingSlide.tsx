@@ -73,7 +73,7 @@ const ClippingSlide = () => (
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-sm text-muted-foreground">{item}</p>
+                  <p className="text-base text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
@@ -89,7 +89,7 @@ const ClippingSlide = () => (
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-sm text-muted-foreground">{item}</p>
+                  <p className="text-base text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
@@ -106,12 +106,12 @@ const ClippingSlide = () => (
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-sm text-muted-foreground">{item}</p>
+                  <p className="text-base text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-sm text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+              <p className="text-base text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
             </div>
           </GlassPanel>
         </div>
