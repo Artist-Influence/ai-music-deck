@@ -1,6 +1,8 @@
 import GlassPanel from '../GlassPanel';
 import { ExternalLink } from 'lucide-react';
-import dackJanielsImg from '@/assets/dack-janiels-streams.png';
+import ero808Img from '@/assets/ero808-genie.jpg';
+import dackJanielsImg from '@/assets/dack-janiels-shock-therapy.jpg';
+import allAmericanRejectsImg from '@/assets/all-american-rejects-get-this.jpg';
 
 const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -9,6 +11,22 @@ const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
 );
 
 const cases = [
+  {
+    artist: 'ero808',
+    track: 'Genie',
+    artwork: ero808Img,
+    metrics: [
+      { val: '1.55M', label: 'Streams' },
+      { val: '66.7K', label: 'Playlist Adds' },
+      { val: '50.1K', label: 'Saves' },
+      { val: '802K', label: 'Algo Streams' },
+    ],
+    playlists: [
+      { label: 'Playlist 1', url: 'https://open.spotify.com/playlist/5quud9tyyGwkmk2vgLK1Vd' },
+      { label: 'Playlist 2', url: 'https://open.spotify.com/playlist/3MnaeVYyif6bTqO2PO8wVU' },
+      { label: 'Playlist 3', url: 'https://open.spotify.com/playlist/3iqatiD4ZWUZ8g51izTEOd' },
+    ],
+  },
   {
     artist: 'Dack Janiels',
     track: 'Shock Therapy',
@@ -20,41 +38,25 @@ const cases = [
       { val: '42K', label: 'Algo Streams' },
     ],
     playlists: [
-      { label: 'Playlist 1', url: '#' },
-      { label: 'Playlist 2', url: '#' },
-      { label: 'Playlist 3', url: '#' },
+      { label: 'Playlist 1', url: 'https://open.spotify.com/playlist/4YZNKPS9bM3xv1UF4WZil0' },
+      { label: 'Playlist 2', url: 'https://open.spotify.com/playlist/2hQNYVaZJIIyKT2Ix1F744' },
+      { label: 'Playlist 3', url: 'https://open.spotify.com/playlist/1Wxvomhs0nygDitcESDWY8' },
     ],
   },
   {
-    artist: 'Artist Name',
-    track: 'Track Title',
-    artwork: null,
+    artist: 'The All-American Rejects',
+    track: 'Get This',
+    artwork: allAmericanRejectsImg,
     metrics: [
-      { val: '—', label: 'Streams' },
-      { val: '—', label: 'Playlist Adds' },
-      { val: '—', label: 'Save Rate' },
-      { val: '—', label: 'Algo Streams' },
+      { val: '3.4M', label: 'Streams' },
+      { val: '112.5K', label: 'Playlist Adds' },
+      { val: '266K', label: 'Saves' },
+      { val: '457K', label: 'Algo Streams' },
     ],
     playlists: [
-      { label: 'Playlist 1', url: '#' },
-      { label: 'Playlist 2', url: '#' },
-      { label: 'Playlist 3', url: '#' },
-    ],
-  },
-  {
-    artist: 'Artist Name',
-    track: 'Track Title',
-    artwork: null,
-    metrics: [
-      { val: '—', label: 'Streams' },
-      { val: '—', label: 'Playlist Adds' },
-      { val: '—', label: 'Save Rate' },
-      { val: '—', label: 'Algo Streams' },
-    ],
-    playlists: [
-      { label: 'Playlist 1', url: '#' },
-      { label: 'Playlist 2', url: '#' },
-      { label: 'Playlist 3', url: '#' },
+      { label: 'Playlist 1', url: 'https://open.spotify.com/playlist/26MY3qVKQFBSqNMBshJZs8' },
+      { label: 'Playlist 2', url: 'https://open.spotify.com/playlist/76iQv4c5qSM4AgvXph4rJu' },
+      { label: 'Playlist 3', url: 'https://open.spotify.com/playlist/3CdfoioAm3TCoieKyYPPys' },
     ],
   },
 ];
