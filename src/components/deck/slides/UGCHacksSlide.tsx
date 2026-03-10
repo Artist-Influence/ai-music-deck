@@ -19,6 +19,7 @@ const UGCHacksSlide = () => (
           <p className="text-xl font-semibold text-foreground mb-3">TikTok Creator Flood</p>
           <p className="text-sm text-primary font-medium mb-3">What it is</p>
           <p className="text-base text-muted-foreground leading-relaxed mb-4">
+
             Mass-posting your track across 10,000+ real TikTok UGC videos, primarily from international nano-creators, with some macro creators mixed in when it makes sense.
           </p>
           <p className="text-sm text-primary font-medium mb-2">Why it works</p>
