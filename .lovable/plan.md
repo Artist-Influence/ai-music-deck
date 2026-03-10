@@ -1,31 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Fix Thumbnail Frame Proportions — YouTube Ads Slide
+Three small text edits across three files:
 
-### Problem
-The thumbnail container is `h-[160px]` at full column width (~50% of 1600px = ~750px), creating a very wide, short frame. The YouTube thumbnail images are roughly 16:9, so at 750px wide they'd need ~422px tall to fill. At 160px tall, `object-contain` shrinks the image to fit the height, leaving large empty side gaps.
+## Changes
 
-### Solution — `src/components/deck/slides/YouTubeAdsSlide.tsx`
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-**Center the thumbnail with a constrained-width wrapper** so the 160px-tall frame matches the image's natural aspect ratio instead of stretching to the full column width.
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-1. **Line 81**: Wrap the thumbnail container with `mx-auto` and `max-w-[285px]` (160px × 16/9 ≈ 284px) so the frame matches the image aspect ratio at 160px height. This eliminates side gaps while keeping the same height.
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-2. **Line 85**: Switch back from `object-contain` to `object-cover` — since the frame now matches the image ratio, cover will fill edge-to-edge without aggressive cropping.
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-Alternatively, a simpler approach: increase height to `h-[200px]` and use `object-cover` with the full width. This fills the frame but may crop slightly.
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-**Recommended approach**: Use `aspect-video` (16:9) with a max height constraint instead of a fixed height. This makes the container match the thumbnail ratio naturally:
-- Replace `h-[160px]` with `aspect-video max-h-[180px]` and `w-fit mx-auto`
-- Use `object-cover` since the aspect ratio now matches
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
-Actually, the cleanest fix: keep `h-[160px]`, add `aspect-video w-auto mx-auto` to the container so it sizes its width from the height × 16:9 ratio (~284px), centered in the card. The image fills edge-to-edge.
+### Final Plan
 
-### Changes to line 81
-```
-h-[160px] → h-[160px] w-auto aspect-video mx-auto
-object-contain → object-cover
-```
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
 
-This makes the thumbnail frame 284×160px (16:9), centered in the card, with the image filling it completely. No side gaps, no aggressive cropping, no layout changes.
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
 
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
