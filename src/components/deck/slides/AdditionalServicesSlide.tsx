@@ -31,7 +31,7 @@ const AdditionalServicesSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Paid social campaigns across Meta (Facebook + Instagram) and TikTok.
               We take content that's already performing organically and amplify it
               with targeted paid distribution to convert real outcomes.
