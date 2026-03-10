@@ -40,52 +40,52 @@ const FanpagesSlide = () => (
         <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
       </div>
       <h1 className="text-6xl font-bold text-foreground mb-4">Fanpages</h1>
-      <p className="text-xl text-muted-foreground mb-8 max-w-[800px]">
+      <p className="text-2xl text-muted-foreground mb-8 max-w-[800px]">
         We operate and scale multiple theme pages that consistently target and unify your fan base around your project.
       </p>
 
       <div className="flex gap-10">
         {/* Left — service info */}
         <div className="flex-1 min-w-0 flex flex-col justify-between gap-4">
-          <GlassPanel className="p-6 flex-1">
-            <p className="text-lg font-semibold text-primary mb-3">What it is</p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+          <GlassPanel className="p-7 flex-1">
+            <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
+            <p className="text-2xl text-muted-foreground leading-relaxed">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
             </p>
           </GlassPanel>
 
-          <GlassPanel className="p-6 flex-1">
-            <p className="text-lg font-semibold text-primary mb-3">What this is great for</p>
-            <div className="space-y-2">
+          <GlassPanel className="p-7 flex-1">
+            <p className="text-2xl font-semibold text-primary mb-3">What this is great for</p>
+            <div className="space-y-2.5">
               {[
                 'Building repeat exposure without relying on one-off influencer posts',
                 'Creating "always-on" visibility while a song ramps',
                 'Supporting a full rollout, not just a single moment',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-lg text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-6 flex-1">
-            <p className="text-lg font-semibold text-primary mb-3">What you can expect</p>
-            <div className="space-y-2 mb-3">
+          <GlassPanel className="p-7 flex-1">
+            <p className="text-2xl font-semibold text-primary mb-3">What you can expect</p>
+            <div className="space-y-2.5 mb-3">
               {[
                 'Consistent posting cadence',
                 'Multiple content angles and formats',
                 'Iteration based on what the audience responds to',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-lg text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="pt-3 border-t border-white/[0.06]">
-              <p className="text-lg text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
+            <div className="pt-4 border-t border-white/[0.06]">
+              <p className="text-2xl text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
             </div>
           </GlassPanel>
         </div>
@@ -105,9 +105,9 @@ const FanpagesSlide = () => (
                 {/* Info + metrics */}
                 <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div className="mb-3">
-                    <p className="text-base text-primary font-mono tracking-widest mb-1">FANPAGES</p>
-                    <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-                    <p className="text-base text-muted-foreground">{c.project} — {c.goal}</p>
+                    <p className="text-lg text-primary font-mono tracking-widest mb-1">FANPAGES</p>
+                    <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                    <p className="text-lg text-muted-foreground">{c.project} — {c.goal}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
