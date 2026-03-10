@@ -62,7 +62,7 @@ const ClippingSlide = () => (
 
       <div className="flex gap-8">
         {/* Left — service info */}
-        <div className="flex-1 flex flex-col gap-4 max-w-[750px]">
+        <div className="flex-1 flex flex-col gap-4">
           <GlassPanel className="p-6">
             <p className="text-lg font-semibold text-primary mb-3">Pros</p>
             <div className="space-y-2">
