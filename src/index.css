@@ -46,3 +46,7 @@
     font-family: 'Inter', system-ui, -apple-system, sans-serif;
   }
 }
+
+.slide-content {
+  font-size: 112.5%;
+}

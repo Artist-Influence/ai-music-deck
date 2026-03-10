@@ -25,7 +25,7 @@ const ScaledSlide = ({ children, className }: ScaledSlideProps) => {
   return (
     <div ref={containerRef} className={cn('relative w-full h-full overflow-hidden', className)}>
       <div
-        className="absolute"
+        className="absolute slide-content"
         style={{
           width: 1920,
           height: 1080,
