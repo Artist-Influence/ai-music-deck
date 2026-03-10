@@ -56,62 +56,62 @@ const ClippingSlide = () => (
         <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
       </div>
       <h1 className="text-6xl font-bold text-foreground mb-4">Clipping Distribution</h1>
-      <p className="text-xl text-muted-foreground mb-8 max-w-[900px]">
+      <p className="text-2xl text-muted-foreground mb-8 max-w-[900px]">
         A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and Youtube.
       </p>
 
       <div className="flex gap-8">
         {/* Left — service info */}
         <div className="flex-1 flex flex-col gap-4">
-          <GlassPanel className="p-6">
-            <p className="text-xl font-semibold text-primary mb-3">Pros</p>
-            <div className="space-y-2">
+          <GlassPanel className="p-7">
+            <p className="text-2xl font-semibold text-primary mb-3">Pros</p>
+            <div className="space-y-2.5">
               {[
                 'Target viral trends with a strategic campaign brief',
                 'Fast velocity and clear reporting',
                 'UGC reuse rights for paid and owned channels',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                  <p className="text-xl text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-6">
-            <p className="text-xl font-semibold text-primary mb-3">How it works</p>
-            <div className="space-y-2">
+          <GlassPanel className="p-7">
+            <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
+            <div className="space-y-2.5">
               {[
                 'Campaigns launch in 24 hours',
                 'Runs 7 to 14 days',
                 'Every post attributes the official sound and follows brief',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                  <p className="text-xl text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-6">
-            <p className="text-xl font-semibold text-primary mb-3">Why We Are Different</p>
-            <div className="space-y-2">
+          <GlassPanel className="p-7">
+            <p className="text-2xl font-semibold text-primary mb-3">Why We Are Different</p>
+            <div className="space-y-2.5">
               {[
                 'Strategy driven by music industry professionals',
                 'Automatic content moderation for compliance',
                 'Bot detection — payment only for genuine views',
                 'White glove service with professional reporting',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                  <p className="text-xl text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-xl text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+            <div className="pt-4 border-t border-white/[0.06] mt-4">
+              <p className="text-2xl text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
             </div>
           </GlassPanel>
         </div>
