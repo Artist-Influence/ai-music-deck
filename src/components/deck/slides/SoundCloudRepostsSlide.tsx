@@ -6,58 +6,106 @@ const SoundCloudIcon = ({ size = 28 }: { size?: number }) => (
   </svg>
 );
 
+const cases = [
+  {
+    artist: 'Artist Name',
+    track: 'Track Title',
+    metrics: [
+      { val: '—', label: 'Reposts' },
+      { val: '—', label: 'Plays' },
+      { val: '—', label: 'Likes' },
+      { val: '—', label: 'Followers' },
+    ],
+  },
+  {
+    artist: 'Artist Name',
+    track: 'Track Title',
+    metrics: [
+      { val: '—', label: 'Reposts' },
+      { val: '—', label: 'Plays' },
+      { val: '—', label: 'Likes' },
+      { val: '—', label: 'Followers' },
+    ],
+  },
+  {
+    artist: 'Artist Name',
+    track: 'Track Title',
+    metrics: [
+      { val: '—', label: 'Reposts' },
+      { val: '—', label: 'Plays' },
+      { val: '—', label: 'Likes' },
+      { val: '—', label: 'Followers' },
+    ],
+  },
+];
+
 const SoundCloudRepostsSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[15%] left-[25%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[130px] animate-float" />
 
-    <div className="relative z-10 flex gap-10 items-start w-full max-w-[1600px] mx-auto">
+    <div className="relative z-10 flex gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-3 mb-4">
-          <SoundCloudIcon />
-          <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+      <div className="flex-1 min-w-0 flex flex-col gap-4">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <SoundCloudIcon />
+            <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+          </div>
+          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">SoundCloud Reposts</h1>
+          <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
+            Verified repost network across genre communities with transparent tracking and real engagement intent.
+          </p>
         </div>
-        <h1 className="text-5xl font-bold text-foreground mb-3 leading-tight">SoundCloud Reposts</h1>
-        <p className="text-xl text-muted-foreground mb-10 max-w-[600px]">
-          Verified repost network across genre communities with transparent tracking and real engagement intent.
-        </p>
 
-        <div className="space-y-5">
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+        <div className="flex flex-col gap-4 flex-1">
+          <GlassPanel variant="bright" className="p-8">
+            <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
+            <p className="text-2xl text-muted-foreground leading-relaxed">
               We distribute your tracks through a verified network of SoundCloud accounts
               with real followers in your genre. Each repost is tracked and reported so
               you see exactly where your music lands.
             </p>
           </GlassPanel>
 
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
+          <GlassPanel variant="bright" className="p-8 flex-1">
+            <p className="text-2xl font-semibold text-foreground mb-3">Why it works:</p>
+            <p className="text-2xl text-muted-foreground leading-relaxed">
               SoundCloud's algorithm rewards early engagement signals. Reposts from
               established accounts in your scene drive organic plays, likes, and follows
               that compound over time. It's still the discovery engine for underground and
               electronic music.
             </p>
           </GlassPanel>
-
-          <GlassPanel variant="subtle" className="p-4">
-            <p className="text-lg text-primary font-medium">Timeframe: 2–8 weeks</p>
-          </GlassPanel>
         </div>
+
+        <p className="text-2xl text-primary font-medium mt-2">Timeframe: 2–8 weeks</p>
       </div>
 
-      {/* Right — Proof / Coming Soon */}
-      <div className="flex-1 min-w-0 flex items-center justify-center">
-        <GlassPanel variant="default" className="p-10 text-center w-full">
-          <SoundCloudIcon size={48} />
-          <p className="text-2xl font-bold text-foreground mt-6 mb-3">Case study coming soon</p>
-          <p className="text-lg text-muted-foreground leading-relaxed max-w-[400px] mx-auto">
-            We're compiling results from recent SoundCloud repost campaigns.
-            Ask us for live examples during the call.
-          </p>
-        </GlassPanel>
+      {/* Right — 3 Case Study Placeholders */}
+      <div className="flex-1 min-w-0 flex flex-col gap-3">
+        {cases.map((c, idx) => (
+          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
+            <div className="flex gap-4 mb-3">
+              <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
+                <SoundCloudIcon size={32} />
+              </div>
+              <div className="flex-1 min-w-0">
+                <p className="text-lg text-primary font-mono tracking-widest mb-1">REPOSTS</p>
+                <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-lg text-muted-foreground">{c.track}</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-4 gap-2">
+              {c.metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+        ))}
       </div>
     </div>
   </div>
