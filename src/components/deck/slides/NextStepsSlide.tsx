@@ -54,7 +54,7 @@ const NextStepsSlide = () => (
         <p className="text-lg text-foreground font-medium mb-2">Jared Rapoza</p>
         <p className="text-lg text-muted-foreground mb-1">jared@clouted.com · 617-875-3248</p>
         <p className="text-lg text-muted-foreground mb-3">www.clouted.com</p>
-        <p className="text-base text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
+        <p className="text-lg text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
 
       <img src={cloutedLogo} alt="CLOUTED" className="w-56 mx-auto mb-4" />
