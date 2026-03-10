@@ -50,7 +50,7 @@ const YouTubeAdsSlide = () => (
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-4">
         {/* Case Study 1 — Jason Derulo */}
-        <GlassPanel variant="bright" className="p-6 flex flex-col flex-1">
+        <GlassPanel variant="bright" className="p-5 flex flex-col">
           <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
           <p className="text-3xl font-bold text-foreground leading-tight">Jason Derulo & Michael Bublé</p>
           <p className="text-2xl text-muted-foreground mb-2">Spicy Margarita</p>
