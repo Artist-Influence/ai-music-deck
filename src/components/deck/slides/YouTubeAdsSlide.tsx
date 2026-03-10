@@ -73,16 +73,16 @@ const YouTubeAdsSlide = () => (
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-2">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-3 flex flex-col">
+          <GlassPanel key={c.artist} variant="bright" className="p-3 flex flex-col flex-1">
             <p className="text-xs text-primary font-mono mb-0.5 tracking-widest">CASE STUDY</p>
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
             <p className="text-lg text-muted-foreground mb-1.5">{c.track}</p>
 
-            <div className="h-[180px] rounded-lg border border-white/[0.08] overflow-hidden mb-2">
+            <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-2 bg-black/30">
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
