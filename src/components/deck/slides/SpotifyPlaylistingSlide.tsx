@@ -101,7 +101,7 @@ const SpotifyPlaylistingSlide = () => (
       {/* Right — 3 Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
         {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-4">
+          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
             <div className="flex gap-4 mb-3">
               <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
                 {c.artwork ? (
@@ -112,16 +112,16 @@ const SpotifyPlaylistingSlide = () => (
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-lg text-primary font-mono tracking-widest mb-1">PLAYLISTING</p>
-                <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                 <p className="text-lg text-muted-foreground">{c.track}</p>
               </div>
             </div>
 
             <div className="grid grid-cols-4 gap-2 mb-3">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
-                  <p className="text-xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                  <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
               ))}
             </div>
@@ -133,7 +133,7 @@ const SpotifyPlaylistingSlide = () => (
                   href={pl.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-xs text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
+                  className="inline-flex items-center gap-1.5 text-sm text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
                 >
                   <ExternalLink className="w-3 h-3" />
                   {pl.label}
