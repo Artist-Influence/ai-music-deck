@@ -52,10 +52,10 @@ const YouTubeAdsSlide = () => (
       {/* Right — Case Study */}
       <div className="flex-1 min-w-0">
         <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
           <p className="text-2xl font-bold text-foreground leading-tight">Jason Derulo & Michael Bublé</p>
           <p className="text-lg text-muted-foreground mb-2">Spicy Margarita</p>
-          <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
             Rapid global view acceleration maximizing watch time and engagement.
           </p>
 
