@@ -61,7 +61,7 @@ const Top50TrendingSlide = () => (
           </div>
         </GlassPanel>
 
-        <p className="text-sm text-primary font-medium">Timeframe: 2 to 3 weeks</p>
+        <p className="text-base text-primary font-medium">Timeframe: 2 to 3 weeks</p>
       </div>
 
       {/* Right — Case Study */}
