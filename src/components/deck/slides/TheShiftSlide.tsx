@@ -26,10 +26,10 @@ const TheShiftSlide = () => (
         <p className="text-lg text-primary font-medium mb-6 tracking-wider uppercase">What wins today</p>
         <div className="grid grid-cols-2 gap-4">
           {winItems.map((item, i) => (
-            <GlassPanel key={i} variant="subtle" className="p-5">
-              <div className="flex items-center gap-3">
-                <item.icon size={20} className="text-primary shrink-0" />
-                <p className="text-base text-foreground">{item.text}</p>
+            <GlassPanel key={i} variant="subtle" className="p-6">
+              <div className="flex items-center gap-4">
+                <item.icon size={26} className="text-primary shrink-0" />
+                <p className="text-xl text-foreground">{item.text}</p>
               </div>
             </GlassPanel>
           ))}
