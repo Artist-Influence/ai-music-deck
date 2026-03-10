@@ -62,9 +62,9 @@ const ClippingSlide = () => (
 
       <div className="flex gap-8">
         {/* Left — service info */}
-        <div className="flex-1 flex flex-col gap-4 max-w-[750px]">
+        <div className="flex-1 flex flex-col gap-4">
           <GlassPanel className="p-6">
-            <p className="text-lg font-semibold text-primary mb-3">Pros</p>
+            <p className="text-xl font-semibold text-primary mb-3">Pros</p>
             <div className="space-y-2">
               {[
                 'Target viral trends with a strategic campaign brief',
@@ -72,15 +72,15 @@ const ClippingSlide = () => (
                 'UGC reuse rights for paid and owned channels',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-lg text-muted-foreground">{item}</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                  <p className="text-xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
           <GlassPanel className="p-6">
-            <p className="text-lg font-semibold text-primary mb-3">How it works</p>
+            <p className="text-xl font-semibold text-primary mb-3">How it works</p>
             <div className="space-y-2">
               {[
                 'Campaigns launch in 24 hours',
@@ -88,15 +88,15 @@ const ClippingSlide = () => (
                 'Every post attributes the official sound and follows brief',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-lg text-muted-foreground">{item}</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                  <p className="text-xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
           <GlassPanel className="p-6">
-            <p className="text-lg font-semibold text-primary mb-3">Why We Are Different</p>
+            <p className="text-xl font-semibold text-primary mb-3">Why We Are Different</p>
             <div className="space-y-2">
               {[
                 'Strategy driven by music industry professionals',
@@ -105,13 +105,13 @@ const ClippingSlide = () => (
                 'White glove service with professional reporting',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-lg text-muted-foreground">{item}</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                  <p className="text-xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-lg text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+              <p className="text-xl text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
             </div>
           </GlassPanel>
         </div>
@@ -127,10 +127,10 @@ const ClippingSlide = () => (
                   className="w-20 h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-base text-primary font-mono tracking-widest mb-1">CLIPPING</p>
-                  <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-base text-muted-foreground mb-1">{c.track}</p>
-                  <p className="text-base text-muted-foreground leading-relaxed">{c.overview}</p>
+                  <p className="text-lg text-primary font-mono tracking-widest mb-1">CLIPPING</p>
+                  <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-lg text-muted-foreground mb-1">{c.track}</p>
+                  <p className="text-lg text-muted-foreground leading-relaxed">{c.overview}</p>
                 </div>
               </div>
               <div className="grid grid-cols-5 gap-2 mt-3">
