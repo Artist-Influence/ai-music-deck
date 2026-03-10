@@ -58,10 +58,10 @@ const SpotifyPlaylistingSlide = () => (
       {/* Right — Case Study */}
       <div className="flex-1 min-w-0">
         <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
           <p className="text-2xl font-bold text-foreground leading-tight">Dack Janiels</p>
           <p className="text-lg text-muted-foreground mb-2">Shock Therapy</p>
-          <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
             Organic playlist campaign focused on dubstep tastemakers and algorithmic lift.
           </p>
 
