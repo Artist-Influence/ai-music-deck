@@ -86,7 +86,7 @@ const YouTubeAdsSlide = () => (
               />
             </div>
 
-            <div className="grid grid-cols-3 gap-1.5">
+            <div className="grid grid-cols-2 gap-1">
               {c.metrics.map((m) => (
                 <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
                   <p className="text-lg font-bold text-foreground">{m.val}</p>
