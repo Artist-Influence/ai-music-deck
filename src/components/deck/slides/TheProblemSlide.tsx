@@ -53,58 +53,58 @@ const TheProblemSlide = () => (
             'M 200,50 C 100,150 300,200 180,360',
           ].map((d, i) => (
             <path key={`tangle-${i}`} d={d} fill="none"
-              stroke="hsl(0, 60%, 55%)" strokeWidth="1" strokeOpacity="0.12"
+              stroke="hsl(0, 60%, 55%)" strokeWidth="1.5" strokeOpacity="0.3"
               strokeDasharray="6 4">
-              <animate attributeName="strokeOpacity" values="0.08;0.2;0.08"
+              <animate attributeName="strokeOpacity" values="0.2;0.45;0.2"
                 dur={`${3 + i * 0.5}s`} begin={`${i * 0.3}s`} repeatCount="indefinite" />
             </path>
           ))}
 
           {/* Scattered platform-like shapes */}
           {/* Spreadsheet grid */}
-          <g opacity="0.25" transform="translate(60, 80)">
-            <rect width="60" height="50" rx="4" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.8" />
-            <line x1="20" y1="0" x2="20" y2="50" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.5" />
-            <line x1="40" y1="0" x2="40" y2="50" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.5" />
-            <line x1="0" y1="17" x2="60" y2="17" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.5" />
-            <line x1="0" y1="34" x2="60" y2="34" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.5" />
+          <g opacity="0.5" transform="translate(60, 80)">
+            <rect width="60" height="50" rx="4" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" />
+            <line x1="20" y1="0" x2="20" y2="50" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.7" />
+            <line x1="40" y1="0" x2="40" y2="50" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.7" />
+            <line x1="0" y1="17" x2="60" y2="17" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.7" />
+            <line x1="0" y1="34" x2="60" y2="34" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.7" />
           </g>
 
           {/* Email envelope */}
-          <g opacity="0.2" transform="translate(280, 90)">
-            <rect width="50" height="35" rx="3" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.8" />
-            <polyline points="0,0 25,18 50,0" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.6" />
+          <g opacity="0.45" transform="translate(280, 90)">
+            <rect width="50" height="35" rx="3" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" />
+            <polyline points="0,0 25,18 50,0" fill="none" stroke="hsl(var(--primary))" strokeWidth="1" />
           </g>
 
           {/* Chat bubble */}
-          <g opacity="0.2" transform="translate(290, 270)">
-            <rect width="55" height="35" rx="8" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.8" />
-            <polygon points="12,35 18,48 24,35" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.6" />
-            <line x1="12" y1="14" x2="43" y2="14" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.4" />
-            <line x1="12" y1="22" x2="35" y2="22" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.3" />
+          <g opacity="0.45" transform="translate(290, 270)">
+            <rect width="55" height="35" rx="8" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" />
+            <polygon points="12,35 18,48 24,35" fill="none" stroke="hsl(var(--primary))" strokeWidth="1" />
+            <line x1="12" y1="14" x2="43" y2="14" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.6" />
+            <line x1="12" y1="22" x2="35" y2="22" stroke="hsl(var(--primary))" strokeWidth="0.8" opacity="0.5" />
           </g>
 
           {/* Dollar sign */}
-          <g opacity="0.2" transform="translate(70, 280)">
-            <circle cx="20" cy="20" r="20" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.8" />
-            <text x="13" y="27" fontSize="20" fill="hsl(var(--primary))" fillOpacity="0.4" fontWeight="bold">$</text>
+          <g opacity="0.45" transform="translate(70, 280)">
+            <circle cx="20" cy="20" r="20" fill="none" stroke="hsl(var(--primary))" strokeWidth="1.2" />
+            <text x="13" y="27" fontSize="20" fill="hsl(var(--primary))" fillOpacity="0.7" fontWeight="bold">$</text>
           </g>
 
           {/* Chart bars */}
-          <g opacity="0.2" transform="translate(160, 260)">
-            <rect x="0" y="25" width="10" height="20" rx="2" fill="hsl(var(--primary))" fillOpacity="0.3" />
-            <rect x="14" y="15" width="10" height="30" rx="2" fill="hsl(var(--primary))" fillOpacity="0.25" />
-            <rect x="28" y="30" width="10" height="15" rx="2" fill="hsl(var(--primary))" fillOpacity="0.2" />
-            <rect x="42" y="20" width="10" height="25" rx="2" fill="hsl(var(--primary))" fillOpacity="0.15" />
+          <g opacity="0.45" transform="translate(160, 260)">
+            <rect x="0" y="25" width="10" height="20" rx="2" fill="hsl(var(--primary))" fillOpacity="0.5" />
+            <rect x="14" y="15" width="10" height="30" rx="2" fill="hsl(var(--primary))" fillOpacity="0.45" />
+            <rect x="28" y="30" width="10" height="15" rx="2" fill="hsl(var(--primary))" fillOpacity="0.4" />
+            <rect x="42" y="20" width="10" height="25" rx="2" fill="hsl(var(--primary))" fillOpacity="0.35" />
           </g>
 
           {/* Central warning/question — the confusion */}
           <g filter="url(#chaosGlow)">
-            <circle cx="200" cy="200" r="30" fill="hsl(0, 60%, 55%)" fillOpacity="0.06"
-              stroke="hsl(0, 60%, 55%)" strokeWidth="1" strokeOpacity="0.2">
-              <animate attributeName="fillOpacity" values="0.04;0.1;0.04" dur="3s" repeatCount="indefinite" />
+            <circle cx="200" cy="200" r="30" fill="hsl(0, 60%, 55%)" fillOpacity="0.12"
+              stroke="hsl(0, 60%, 55%)" strokeWidth="1.5" strokeOpacity="0.4">
+              <animate attributeName="fillOpacity" values="0.08;0.18;0.08" dur="3s" repeatCount="indefinite" />
             </circle>
-            <text x="188" y="215" fontSize="32" fill="hsl(0, 60%, 55%)" fillOpacity="0.4" fontWeight="bold">?</text>
+            <text x="188" y="215" fontSize="32" fill="hsl(0, 60%, 55%)" fillOpacity="0.7" fontWeight="bold">?</text>
           </g>
 
           {/* Scattered warning dots */}
@@ -112,9 +112,9 @@ const TheProblemSlide = () => (
             { x: 140, y: 140 }, { x: 260, y: 160 }, { x: 170, y: 310 },
             { x: 240, y: 230 }, { x: 130, y: 230 },
           ].map((dot, i) => (
-            <circle key={`warn-${i}`} cx={dot.x} cy={dot.y} r="3"
+            <circle key={`warn-${i}`} cx={dot.x} cy={dot.y} r="4"
               fill="hsl(0, 60%, 55%)" opacity="0">
-              <animate attributeName="opacity" values="0;0.4;0;0;0.25;0"
+              <animate attributeName="opacity" values="0;0.6;0;0;0.4;0"
                 dur={`${2.5 + i * 0.6}s`} begin={`${i * 0.8}s`} repeatCount="indefinite" />
             </circle>
           ))}
