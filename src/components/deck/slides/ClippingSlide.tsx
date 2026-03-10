@@ -127,10 +127,10 @@ const ClippingSlide = () => (
                   className="w-20 h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-sm text-primary font-mono tracking-widest mb-1">CLIPPING</p>
+                  <p className="text-base text-primary font-mono tracking-widest mb-1">CLIPPING</p>
                   <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-sm text-muted-foreground mb-1">{c.track}</p>
-                  <p className="text-sm text-muted-foreground leading-relaxed">{c.overview}</p>
+                  <p className="text-base text-muted-foreground mb-1">{c.track}</p>
+                  <p className="text-base text-muted-foreground leading-relaxed">{c.overview}</p>
                 </div>
               </div>
               <div className="grid grid-cols-5 gap-2 mt-3">
