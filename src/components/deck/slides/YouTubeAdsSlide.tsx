@@ -13,7 +13,7 @@ const YouTubeAdsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
-    <div className="relative z-10 flex gap-10 w-full max-w-[1600px] mx-auto">
+    <div className="relative z-10 flex gap-10 w-full max-w-[1600px] mx-auto items-stretch">
       {/* Left — Service Info */}
       <div className="flex-1 min-w-0 flex flex-col gap-4">
         <div>
@@ -50,12 +50,12 @@ const YouTubeAdsSlide = () => (
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-4">
         {/* Case Study 1 — Jason Derulo */}
-        <GlassPanel variant="bright" className="p-6 flex flex-col flex-1">
+        <GlassPanel variant="bright" className="p-5 flex flex-col">
           <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
           <p className="text-3xl font-bold text-foreground leading-tight">Jason Derulo & Michael Bublé</p>
           <p className="text-2xl text-muted-foreground mb-2">Spicy Margarita</p>
 
-          <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
+          <div className="max-h-[220px] rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
             <img
               src={spicyMargaritaImg}
               alt="Jason Derulo — Spicy Margarita"
@@ -63,9 +63,9 @@ const YouTubeAdsSlide = () => (
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2">
             {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                 <p className="text-2xl font-bold text-foreground">{m.val}</p>
                 <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
@@ -74,23 +74,23 @@ const YouTubeAdsSlide = () => (
         </GlassPanel>
 
         {/* Case Study 2 — Placeholder */}
-        <GlassPanel variant="bright" className="p-6 flex flex-col flex-1">
+        <GlassPanel variant="bright" className="p-5 flex flex-col">
           <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
           <p className="text-3xl font-bold text-foreground leading-tight">Artist Name</p>
           <p className="text-2xl text-muted-foreground mb-2">Track Title</p>
 
-          <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
+          <div className="max-h-[220px] rounded-lg border border-white/[0.08] overflow-hidden mb-3 bg-black/30 flex items-center justify-center">
             <p className="text-lg text-muted-foreground/40 italic">Screenshot placeholder</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3">
+          <div className="grid grid-cols-2 gap-2">
             {[
               { val: '—', label: 'Metric 1' },
               { val: '—', label: 'Metric 2' },
               { val: '—', label: 'Metric 3' },
               { val: '—', label: 'Metric 4' },
             ].map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                 <p className="text-2xl font-bold text-foreground">{m.val}</p>
                 <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
