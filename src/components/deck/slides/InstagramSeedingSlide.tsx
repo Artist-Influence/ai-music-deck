@@ -87,11 +87,7 @@ const InstagramSeedingSlide = () => (
           <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
             <div className="flex gap-4 mb-3">
               <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
-                {c.artwork ? (
-                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
-                ) : (
-                  <Instagram size={32} className="text-primary" />
-                )}
+                <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-lg text-primary font-mono tracking-widest mb-1">SEEDING</p>
