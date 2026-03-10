@@ -142,7 +142,6 @@ const SpotifyPlaylistingSlide = () => (
             </div>
           </GlassPanel>
         ))}
-        <p className="text-2xl text-primary font-medium mt-2">Timeframe: 12 weeks</p>
       </div>
     </div>
   </div>
