@@ -1,22 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## YouTube Ads Slide — Add Thumbnails & Updated Stats
+Three small text edits across three files:
 
-### Changes to `src/components/deck/slides/YouTubeAdsSlide.tsx`
+## Changes
 
-1. **Copy uploaded images** to `src/assets/`:
-   - `jason_derulo_michael_buble_-_spicy_margarita.jpg` → for the Jason Derulo thumbnail
-   - `mark_tuan_-_sunsets_and_cigarrettes.jpg` → for the Mark Tuan thumbnail
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-2. **Replace the screenshot image** for Jason Derulo case study with the new YouTube thumbnail, and **add 2 more metrics** (Likes: 207K, Comments: 7.9K) — expanding the grid to 3 columns with 6 metrics total.
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-3. **Replace the placeholder case study** with Mark Tuan:
-   - Artist: "Mark Tuan"
-   - Track: "Sunsets & Cigarettes"
-   - Thumbnail: the uploaded image
-   - Metrics (6 total): 10M Views, 5.5M Unique Viewers, 1.4M hrs Watch Time, 81.2% Avg % Viewed, 135K Likes, 6.3K Comments
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-4. **Thumbnail sizing**: Both uploaded images are 16:9 YouTube thumbnails. Change the image container from `max-h-[220px]` to `aspect-video max-h-[180px]` with `object-cover` to match the natural thumbnail dimensions and keep both cards compact enough to stack.
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-5. **Metrics grid**: Change from `grid-cols-2` to `grid-cols-3` for both case studies to fit all 6 KPIs.
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
