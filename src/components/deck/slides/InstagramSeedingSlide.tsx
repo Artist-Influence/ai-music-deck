@@ -30,7 +30,6 @@ const cases = [
     track: 'Sauti',
     artwork: francisMercierImg,
     metrics: [
-      { val: '$700', label: 'Budget' },
       { val: '16.8M', label: 'Views' },
       { val: '1.18M', label: 'Likes' },
       { val: '$0.042', label: 'CPM' },
