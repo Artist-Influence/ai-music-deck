@@ -34,7 +34,7 @@ const TheProblemSlide = () => (
       </div>
 
       {/* Visual: tangled workflow representing manual chaos */}
-      <div className="flex-1 flex items-center justify-center max-w-[500px]">
+      <div className="flex-[0.7] flex items-center justify-end max-w-[400px]">
         <svg viewBox="0 0 400 400" className="w-full h-full max-w-[420px] max-h-[420px]">
           <defs>
             <filter id="chaosGlow">
