@@ -45,7 +45,7 @@ const NextStepsSlide = () => (
           <GlassPanel key={i} variant="bright" className={`flex-1 p-6 text-left next-step-card next-step-card-${i}`}>
             <p className="text-primary text-base font-mono mb-3 tracking-widest relative z-10">{s.num}</p>
             <p className="text-xl font-semibold text-foreground mb-2 relative z-10">{s.title}</p>
-            <p className="text-base text-muted-foreground relative z-10">{s.desc}</p>
+            <p className="text-lg text-muted-foreground relative z-10">{s.desc}</p>
           </GlassPanel>
         ))}
       </div>
