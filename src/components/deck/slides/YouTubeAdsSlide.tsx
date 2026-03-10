@@ -36,9 +36,9 @@ const YouTubeAdsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-8 flex items-center justify-center">
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
-    <div className="relative z-10 flex gap-8 w-full max-w-[1600px] mx-auto items-stretch">
+    <div className="relative z-10 flex gap-8 w-full max-w-[1600px] mx-auto items-center">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 flex flex-col gap-3">
+      <div className="flex-1 min-w-0 flex flex-col gap-2">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <Youtube size={28} className="text-primary" />
@@ -50,17 +50,17 @@ const YouTubeAdsSlide = () => (
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-5 flex-1">
-          <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+        <GlassPanel variant="bright" className="p-4">
+          <p className="text-2xl font-semibold text-foreground mb-2">What it is:</p>
+          <p className="text-xl text-muted-foreground leading-relaxed">
             Paid YouTube campaigns built for subscribers and long-form engagement.
             We optimize daily with transparent weekly reporting and clean data exports.
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-5 flex-1">
-          <p className="text-xl font-semibold text-foreground mb-2">How it works:</p>
-          <p className="text-lg text-muted-foreground leading-relaxed">
+        <GlassPanel variant="bright" className="p-4">
+          <p className="text-2xl font-semibold text-foreground mb-2">How it works:</p>
+          <p className="text-xl text-muted-foreground leading-relaxed">
             We target international audiences aligned with your genre, optimizing for
             watch time and subscriber conversion. Engagement ratios are monitored and
             protected throughout the campaign.
@@ -73,12 +73,12 @@ const YouTubeAdsSlide = () => (
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-2">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-3 flex flex-col flex-1">
+          <GlassPanel key={c.artist} variant="bright" className="p-3 flex flex-col">
             <p className="text-xs text-primary font-mono mb-0.5 tracking-widest">CASE STUDY</p>
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
             <p className="text-lg text-muted-foreground mb-1.5">{c.track}</p>
 
-            <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-2 bg-black/30">
+            <div className="h-[160px] rounded-lg border border-white/[0.08] overflow-hidden mb-2 bg-black/30">
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
