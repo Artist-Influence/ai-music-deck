@@ -20,7 +20,6 @@ const cases = [
     track: 'The Less I Know The Better',
     artwork: mauPImg,
     metrics: [
-      { val: '$2,800', label: 'Budget' },
       { val: '3.9M', label: 'Views' },
       { val: '138.7K', label: 'Likes' },
       { val: '$0.71', label: 'CPM' },
