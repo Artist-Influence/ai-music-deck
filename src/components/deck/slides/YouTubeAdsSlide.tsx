@@ -74,7 +74,7 @@ const YouTubeAdsSlide = () => (
       <div className="w-[480px] shrink-0 flex flex-col gap-2">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-2 flex flex-col flex-1 justify-center">
-            <div className="max-w-[340px] mx-auto w-full">
+            <div className="max-w-[400px] mx-auto w-full">
               <p className="text-xs text-primary font-mono mb-0.5 tracking-widest">CASE STUDY</p>
               <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
               <p className="text-lg text-muted-foreground mb-1">{c.track}</p>
