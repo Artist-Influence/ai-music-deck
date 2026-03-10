@@ -32,7 +32,7 @@ const CreatorFloodSlide = () => (
         <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col">
           <p className="text-2xl font-semibold text-foreground mb-3">Why it works</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
-            It builds massive volume and algorithmic lift through real accounts, not bots. The sheer quantity of real usage signals tells TikTok the sound is trending organically.
+            It builds massive volume and algorithmic lift through real accounts, not bots. The sheer quantity of real usage signals tells TikTok the sound is trending organically. We also mix in macro-influencers for added reach, and actively track over-indexing videos — when a clip takes off, we recommend running Spark Ads pointed to Spotify to convert that momentum into streaming numbers.
           </p>
         </GlassPanel>
 
