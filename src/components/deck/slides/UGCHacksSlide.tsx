@@ -38,7 +38,7 @@ const UGCHacksSlide = () => (
             We guarantee your track appears on Top 50 trending charts across YouTube Shorts, Instagram Reels, and Facebook Reels, and enters the Popular Tab on TikTok.
           </p>
           <p className="text-sm text-primary font-medium mb-2">How it's done (honest version)</p>
-          <p className="text-sm text-muted-foreground mb-4">
+          <p className="text-base text-muted-foreground mb-4">
             A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.
           </p>
           <div className="pt-3 border-t border-white/[0.06]">
