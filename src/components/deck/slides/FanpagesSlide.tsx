@@ -91,7 +91,7 @@ const FanpagesSlide = () => (
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 flex flex-col justify-between gap-4">
+        <div className="flex-1 flex flex-col justify-between gap-3">
           {caseStudies.map((c) => (
             <GlassPanel key={c.artist} variant="bright" className="p-8 flex-1">
               <div className="flex gap-8 h-full">
