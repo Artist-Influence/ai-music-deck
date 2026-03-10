@@ -96,3 +96,6 @@ const Top50TrendingSlide = () => (
       </div>
     </div>
   </div>
+);
+
+export default Top50TrendingSlide;
