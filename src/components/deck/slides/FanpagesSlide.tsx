@@ -85,7 +85,7 @@ const FanpagesSlide = () => (
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06]">
-              <p className="text-sm text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
+              <p className="text-base text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
             </div>
           </GlassPanel>
         </div>
