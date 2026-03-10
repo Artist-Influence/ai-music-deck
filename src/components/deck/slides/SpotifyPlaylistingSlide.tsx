@@ -33,7 +33,7 @@ const SpotifyPlaylistingSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               We place your tracks on curated playlists run by real tastemakers in your genre.
               These aren't pay-for-play lists — they're community-driven playlists with
               active listeners who save and share.
@@ -42,7 +42,7 @@ const SpotifyPlaylistingSlide = () => (
 
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Organic playlist streams generate saves, follows, and algorithmic signals.
               When Spotify sees real listener engagement, it pushes your track into
               Discover Weekly, Release Radar, and Radio. Stream goals guaranteed.
@@ -50,7 +50,7 @@ const SpotifyPlaylistingSlide = () => (
           </GlassPanel>
 
           <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 12 weeks</p>
+            <p className="text-lg text-primary font-medium">Timeframe: 12 weeks</p>
           </GlassPanel>
         </div>
       </div>
@@ -58,10 +58,10 @@ const SpotifyPlaylistingSlide = () => (
       {/* Right — Case Study */}
       <div className="flex-1 min-w-0">
         <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
           <p className="text-2xl font-bold text-foreground leading-tight">Dack Janiels</p>
           <p className="text-lg text-muted-foreground mb-2">Shock Therapy</p>
-          <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
             Organic playlist campaign focused on dubstep tastemakers and algorithmic lift.
           </p>
 
@@ -77,7 +77,7 @@ const SpotifyPlaylistingSlide = () => (
             {metrics.map((m) => (
               <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                 <p className="text-xl font-bold text-foreground">{m.val}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>

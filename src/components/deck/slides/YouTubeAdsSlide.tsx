@@ -28,7 +28,7 @@ const YouTubeAdsSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Paid YouTube campaigns built for subscribers and long-form engagement.
               We optimize daily with transparent weekly reporting and clean data exports.
             </p>
@@ -36,7 +36,7 @@ const YouTubeAdsSlide = () => (
 
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">How it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               We target international audiences aligned with your genre, optimizing for
               watch time and subscriber conversion. Engagement ratios are monitored and
               protected throughout the campaign.
@@ -44,7 +44,7 @@ const YouTubeAdsSlide = () => (
           </GlassPanel>
 
           <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 1–3 weeks</p>
+            <p className="text-lg text-primary font-medium">Timeframe: 1–3 weeks</p>
           </GlassPanel>
         </div>
       </div>
@@ -52,10 +52,10 @@ const YouTubeAdsSlide = () => (
       {/* Right — Case Study */}
       <div className="flex-1 min-w-0">
         <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
           <p className="text-2xl font-bold text-foreground leading-tight">Jason Derulo & Michael Bublé</p>
           <p className="text-lg text-muted-foreground mb-2">Spicy Margarita</p>
-          <p className="text-base text-muted-foreground mb-4 leading-relaxed">
+          <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
             Rapid global view acceleration maximizing watch time and engagement.
           </p>
 
@@ -71,7 +71,7 @@ const YouTubeAdsSlide = () => (
             {metrics.map((m) => (
               <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                 <p className="text-xl font-bold text-foreground">{m.val}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>

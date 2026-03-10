@@ -25,7 +25,7 @@ const TheProblemSlide = () => (
             <GlassPanel key={item.num} variant="subtle" className="p-5">
               <div className="flex items-center gap-4">
                 <span className="text-2xl font-bold text-primary shrink-0">{item.num}.</span>
-                <p className="text-base text-foreground flex-1">{item.text}</p>
+                <p className="text-lg text-foreground flex-1">{item.text}</p>
                 <item.icon size={24} className="text-primary shrink-0" />
               </div>
             </GlassPanel>

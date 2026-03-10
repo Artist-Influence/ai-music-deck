@@ -31,7 +31,7 @@ const AdditionalServicesSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Paid social campaigns across Meta (Facebook + Instagram) and TikTok.
               We take content that's already performing organically and amplify it
               with targeted paid distribution to convert real outcomes.
@@ -40,7 +40,7 @@ const AdditionalServicesSlide = () => (
 
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">How it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Optimized daily with weekly reporting and clean data exports.
               We target by genre, geography, and behavior — focused on
               streams, ticket sales, merch, and fanbase growth.
@@ -48,7 +48,7 @@ const AdditionalServicesSlide = () => (
           </GlassPanel>
 
           <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 2–3 weeks</p>
+            <p className="text-lg text-primary font-medium">Timeframe: 2–3 weeks</p>
           </GlassPanel>
         </div>
       </div>
@@ -57,7 +57,7 @@ const AdditionalServicesSlide = () => (
       <div className="flex-1 min-w-0 flex items-center justify-center">
         <GlassPanel variant="default" className="p-10 w-full flex flex-col items-center">
           <ServicesVisualizer />
-          <p className="text-base text-muted-foreground mt-6 text-center max-w-[400px]">
+          <p className="text-lg text-muted-foreground mt-6 text-center max-w-[400px]">
             Ads are built from your best-performing organic content — not created from scratch.
             This ensures higher relevance scores and lower CPMs.
           </p>

@@ -29,7 +29,7 @@ const CreatorFloodSlide = () => (
 
         <GlassPanel variant="bright" className="p-6 mb-6">
           <p className="text-xl font-semibold text-foreground mb-3">Why it works</p>
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             It builds massive volume and algorithmic lift through real accounts, not bots. The sheer quantity of real usage signals tells TikTok the sound is trending organically.
           </p>
         </GlassPanel>
@@ -44,22 +44,22 @@ const CreatorFloodSlide = () => (
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                <p className="text-base text-muted-foreground">{item}</p>
+                <p className="text-lg text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
         </GlassPanel>
 
-        <p className="text-sm text-primary font-medium">Timeframe: 3 to 4 weeks</p>
+        <p className="text-base text-primary font-medium">Timeframe: 3 to 4 weeks</p>
       </div>
 
       {/* Right — Case Study */}
       <div className="flex-1 flex flex-col justify-center">
         <GlassPanel variant="bright" className="p-6 flex flex-col">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Rich Brian</p>
-          <p className="text-base text-muted-foreground mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
-          <p className="text-base text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
+          <p className="text-lg text-muted-foreground mb-4">
             Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.
           </p>
 
@@ -75,7 +75,7 @@ const CreatorFloodSlide = () => (
             {metrics.map((m) => (
               <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                 <p className="text-xl font-bold text-foreground">{m.val}</p>
-                <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>

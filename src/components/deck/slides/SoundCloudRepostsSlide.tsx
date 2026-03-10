@@ -25,7 +25,7 @@ const SoundCloudRepostsSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               We distribute your tracks through a verified network of SoundCloud accounts
               with real followers in your genre. Each repost is tracked and reported so
               you see exactly where your music lands.
@@ -34,7 +34,7 @@ const SoundCloudRepostsSlide = () => (
 
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               SoundCloud's algorithm rewards early engagement signals. Reposts from
               established accounts in your scene drive organic plays, likes, and follows
               that compound over time. It's still the discovery engine for underground and
@@ -43,7 +43,7 @@ const SoundCloudRepostsSlide = () => (
           </GlassPanel>
 
           <GlassPanel variant="subtle" className="p-4">
-            <p className="text-base text-primary font-medium">Timeframe: 2–8 weeks</p>
+            <p className="text-lg text-primary font-medium">Timeframe: 2–8 weeks</p>
           </GlassPanel>
         </div>
       </div>
@@ -53,7 +53,7 @@ const SoundCloudRepostsSlide = () => (
         <GlassPanel variant="default" className="p-10 text-center w-full">
           <SoundCloudIcon size={48} />
           <p className="text-2xl font-bold text-foreground mt-6 mb-3">Case study coming soon</p>
-          <p className="text-base text-muted-foreground leading-relaxed max-w-[400px] mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-[400px] mx-auto">
             We're compiling results from recent SoundCloud repost campaigns.
             Ask us for live examples during the call.
           </p>
