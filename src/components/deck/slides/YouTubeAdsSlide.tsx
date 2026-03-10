@@ -82,7 +82,7 @@ const YouTubeAdsSlide = () => (
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
 
