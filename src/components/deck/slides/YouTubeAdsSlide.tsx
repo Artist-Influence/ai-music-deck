@@ -28,7 +28,7 @@ const YouTubeAdsSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Paid YouTube campaigns built for subscribers and long-form engagement.
               We optimize daily with transparent weekly reporting and clean data exports.
             </p>
