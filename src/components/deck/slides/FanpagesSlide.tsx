@@ -47,7 +47,7 @@ const FanpagesSlide = () => (
       <div className="flex gap-10">
         {/* Left — service info */}
         <div className="flex-1 min-w-0 flex flex-col justify-between gap-4">
-          <GlassPanel className="p-7 flex-1">
+          <GlassPanel className="p-6 flex-1">
             <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
             <p className="text-2xl text-muted-foreground leading-relaxed">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
