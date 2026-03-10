@@ -1,39 +1,41 @@
 import GlassPanel from '../GlassPanel';
 import { Instagram } from 'lucide-react';
-import francisMercierImg from '@/assets/francis-mercier-sauti.png';
+import gordoImg from '@/assets/gordo-gordos-dilemma.jpg';
+import mauPImg from '@/assets/mau-p-the-less-i-know-the-better.jpg';
+import francisMercierImg from '@/assets/francis-mercier-sauti-artwork.jpg';
 
 const cases = [
+  {
+    artist: 'Gordo',
+    track: "Gordo's Dilemma",
+    artwork: gordoImg,
+    metrics: [
+      { val: '$700', label: 'Budget' },
+      { val: '5.4M', label: 'Views' },
+      { val: '136.7K', label: 'Likes' },
+      { val: '$0.00013', label: 'CPV' },
+    ],
+  },
+  {
+    artist: 'Mau P',
+    track: 'The Less I Know The Better',
+    artwork: mauPImg,
+    metrics: [
+      { val: '$2,800', label: 'Budget' },
+      { val: '3.9M', label: 'Views' },
+      { val: '138.7K', label: 'Likes' },
+      { val: '$0.00071', label: 'CPV' },
+    ],
+  },
   {
     artist: 'Francis Mercier',
     track: 'Sauti',
     artwork: francisMercierImg,
     metrics: [
-      { val: '16.4M', label: 'Views' },
-      { val: '$0.03', label: 'CPM' },
-      { val: '89.2K', label: 'Saves' },
-      { val: '7.16%', label: 'Engagement' },
-    ],
-  },
-  {
-    artist: 'Artist Name',
-    track: 'Track Title',
-    artwork: null,
-    metrics: [
-      { val: '—', label: 'Views' },
-      { val: '—', label: 'CPM' },
-      { val: '—', label: 'Saves' },
-      { val: '—', label: 'Engagement' },
-    ],
-  },
-  {
-    artist: 'Artist Name',
-    track: 'Track Title',
-    artwork: null,
-    metrics: [
-      { val: '—', label: 'Views' },
-      { val: '—', label: 'CPM' },
-      { val: '—', label: 'Saves' },
-      { val: '—', label: 'Engagement' },
+      { val: '$700', label: 'Budget' },
+      { val: '16.8M', label: 'Views' },
+      { val: '1.18M', label: 'Likes' },
+      { val: '$0.000042', label: 'CPV' },
     ],
   },
 ];
