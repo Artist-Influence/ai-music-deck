@@ -49,7 +49,7 @@ const FanpagesSlide = () => (
         <div className="flex-1 min-w-0 flex flex-col justify-between gap-4">
           <GlassPanel className="p-6 flex-1">
             <p className="text-lg font-semibold text-primary mb-3">What it is</p>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <p className="text-base text-muted-foreground leading-relaxed">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
             </p>
           </GlassPanel>
@@ -64,7 +64,7 @@ const FanpagesSlide = () => (
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-sm text-muted-foreground">{item}</p>
+                  <p className="text-base text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
@@ -80,12 +80,12 @@ const FanpagesSlide = () => (
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-                  <p className="text-sm text-muted-foreground">{item}</p>
+                  <p className="text-base text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06]">
-              <p className="text-sm text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
+              <p className="text-base text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
             </div>
           </GlassPanel>
         </div>
@@ -105,16 +105,16 @@ const FanpagesSlide = () => (
                 {/* Info + metrics */}
                 <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div className="mb-3">
-                    <p className="text-xs text-primary font-mono tracking-widest mb-1">FANPAGES</p>
+                    <p className="text-sm text-primary font-mono tracking-widest mb-1">FANPAGES</p>
                     <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-                    <p className="text-xs text-muted-foreground">{c.project} — {c.goal}</p>
+                    <p className="text-sm text-muted-foreground">{c.project} — {c.goal}</p>
                   </div>
 
                   <div className="grid grid-cols-2 gap-2">
                     {c.metrics.map((m) => (
                       <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
                         <p className="text-base font-bold text-foreground">{m.val}</p>
-                        <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                        <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
                       </div>
                     ))}
                   </div>

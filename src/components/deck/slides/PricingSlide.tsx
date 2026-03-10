@@ -32,8 +32,8 @@ const PricingSlide = () => (
             {services.map((s, i) => (
               <tr key={i} className="border-b border-white/[0.04] last:border-0 hover:bg-white/[0.02] transition-colors">
                 <td className="p-4 text-base text-foreground font-medium">{s.name}</td>
-                <td className="p-4 text-sm text-muted-foreground">{s.unit}</td>
-                <td className="p-4 text-sm text-foreground">{s.note}</td>
+                <td className="p-4 text-base text-muted-foreground">{s.unit}</td>
+                <td className="p-4 text-base text-foreground">{s.note}</td>
               </tr>
             ))}
           </tbody>

@@ -1,53 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Maximize Text Readability Across All Slides
+Three small text edits across three files:
 
-### Analysis
+## Changes
 
-Current global scale is `112.5%`. After reviewing all 18 slides, here's the situation:
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-- **Worst offenders** (tiny text that's hard to read on calls):
-  - **Slide 6 (Clipping)**: bullet text is `text-sm`, metric labels are `text-[9px]`, case study text uses `text-xs`
-  - **Slide 7 (Fanpages)**: same pattern — `text-sm` bullets, `text-[9px]` metric labels, `text-xs` labels
-  - **Slide 5 (How We Work)**: step descriptions are `text-sm`
-  - **UGC Hacks slide**: `text-sm` and `text-xs` throughout
-  - **Pricing slide**: table text is `text-sm`/`text-base`
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-- **Already decent** (text-base or larger): Slides 2, 3, 4, 8, 9, 10, 11, 12, 13, 15, 16, 17 (Outcomes, Reporting, Expectations)
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-### Plan
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-**1. Bump global CSS from 112.5% → 125%** (`index.css`)
-This gives ~11% more size to every slide for free.
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-**2. Fix Slide 6 (Clipping)** — the densest slide with most room:
-- Bullet text: `text-sm` → `text-base`
-- Case study labels: `text-xs` → `text-sm`
-- Case study titles: `text-base` → `text-lg`
-- Metric values: `text-sm` → `text-base`
-- Metric labels: `text-[9px]` → `text-xs`
-- Timeframe: `text-sm` → `text-base`
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
-**3. Fix Slide 7 (Fanpages)**:
-- Bullet text: `text-sm` → `text-base`
-- Metric labels: `text-[9px]` → `text-xs`
-- Case study sub-labels: `text-xs` → `text-sm`
+### Final Plan
 
-**4. Fix Slide 5 (How We Work)**:
-- Step descriptions: `text-sm` → `text-base`
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
 
-**5. Fix UGC Hacks slide**:
-- `text-sm` → `text-base` for bullets and body text
-- `text-xs` labels stay as-is (they're category labels, not body copy)
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
 
-**6. Fix Pricing slide**:
-- Table cell text: `text-sm` → `text-base`
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
 
-### Files to edit
-- `src/index.css` — bump global scale
-- `src/components/deck/slides/ClippingSlide.tsx`
-- `src/components/deck/slides/FanpagesSlide.tsx`
-- `src/components/deck/slides/HowWeWorkSlide.tsx`
-- `src/components/deck/slides/UGCHacksSlide.tsx`
-- `src/components/deck/slides/PricingSlide.tsx`
+## Technical Details
 
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`

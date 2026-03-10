@@ -19,10 +19,11 @@ const UGCHacksSlide = () => (
           <p className="text-xl font-semibold text-foreground mb-3">TikTok Creator Flood</p>
           <p className="text-sm text-primary font-medium mb-3">What it is</p>
           <p className="text-base text-muted-foreground leading-relaxed mb-4">
+
             Mass-posting your track across 10,000+ real TikTok UGC videos, primarily from international nano-creators, with some macro creators mixed in when it makes sense.
           </p>
           <p className="text-sm text-primary font-medium mb-2">Why it works</p>
-          <p className="text-sm text-muted-foreground mb-4">
+          <p className="text-base text-muted-foreground mb-4">
             It builds massive volume and algorithmic lift through real accounts, not bots.
           </p>
           <div className="pt-3 border-t border-white/[0.06]">
@@ -37,7 +38,7 @@ const UGCHacksSlide = () => (
             We guarantee your track appears on Top 50 trending charts across YouTube Shorts, Instagram Reels, and Facebook Reels, and enters the Popular Tab on TikTok.
           </p>
           <p className="text-sm text-primary font-medium mb-2">How it's done (honest version)</p>
-          <p className="text-sm text-muted-foreground mb-4">
+          <p className="text-base text-muted-foreground mb-4">
             A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.
           </p>
           <div className="pt-3 border-t border-white/[0.06]">
@@ -56,7 +57,7 @@ const UGCHacksSlide = () => (
           ].map((item, i) => (
             <div key={i} className="flex items-start gap-2">
               <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2" />
-              <p className="text-sm text-muted-foreground">{item}</p>
+              <p className="text-base text-muted-foreground">{item}</p>
             </div>
           ))}
         </div>
