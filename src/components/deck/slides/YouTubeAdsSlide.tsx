@@ -74,7 +74,7 @@ const YouTubeAdsSlide = () => (
         </GlassPanel>
 
         {/* Case Study 2 — Placeholder */}
-        <GlassPanel variant="bright" className="p-6 flex flex-col flex-1">
+        <GlassPanel variant="bright" className="p-5 flex flex-col">
           <p className="text-base text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
           <p className="text-3xl font-bold text-foreground leading-tight">Artist Name</p>
           <p className="text-2xl text-muted-foreground mb-2">Track Title</p>
