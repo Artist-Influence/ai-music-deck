@@ -53,7 +53,7 @@ const SoundCloudRepostsSlide = () => (
         <GlassPanel variant="default" className="p-10 text-center w-full">
           <SoundCloudIcon size={48} />
           <p className="text-2xl font-bold text-foreground mt-6 mb-3">Case study coming soon</p>
-          <p className="text-base text-muted-foreground leading-relaxed max-w-[400px] mx-auto">
+          <p className="text-lg text-muted-foreground leading-relaxed max-w-[400px] mx-auto">
             We're compiling results from recent SoundCloud repost campaigns.
             Ask us for live examples during the call.
           </p>

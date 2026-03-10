@@ -22,7 +22,7 @@ const CoverSlide = () => (
       <p className="text-3xl text-foreground">Driving momentum across short-form, streaming, and culture.</p>
     </div>
 
-    <p className="absolute bottom-16 text-sm text-muted-foreground/40 tracking-[0.3em] uppercase">
+    <p className="absolute bottom-16 text-base text-muted-foreground/40 tracking-[0.3em] uppercase">
       Confidential · 2026
     </p>
   </div>

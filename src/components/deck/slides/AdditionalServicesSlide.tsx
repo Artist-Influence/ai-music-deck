@@ -57,7 +57,7 @@ const AdditionalServicesSlide = () => (
       <div className="flex-1 min-w-0 flex items-center justify-center">
         <GlassPanel variant="default" className="p-10 w-full flex flex-col items-center">
           <ServicesVisualizer />
-          <p className="text-base text-muted-foreground mt-6 text-center max-w-[400px]">
+          <p className="text-lg text-muted-foreground mt-6 text-center max-w-[400px]">
             Ads are built from your best-performing organic content — not created from scratch.
             This ensures higher relevance scores and lower CPMs.
           </p>

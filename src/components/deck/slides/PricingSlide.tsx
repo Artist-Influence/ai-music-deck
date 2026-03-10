@@ -43,7 +43,7 @@ const PricingSlide = () => (
       <a href="https://clouted-pricing.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block mt-8 text-lg font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
         View full pricing sheet →
       </a>
-      <p className="text-sm text-foreground mt-4">Bundles can be built around your release schedule and goals.</p>
+      <p className="text-base text-foreground mt-4">Bundles can be built around your release schedule and goals.</p>
     </div>
   </div>
 );
