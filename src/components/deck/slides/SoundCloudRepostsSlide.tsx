@@ -25,7 +25,7 @@ const SoundCloudRepostsSlide = () => (
         <div className="space-y-5">
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               We distribute your tracks through a verified network of SoundCloud accounts
               with real followers in your genre. Each repost is tracked and reported so
               you see exactly where your music lands.
