@@ -10,7 +10,6 @@ const cases = [
     track: "Gordo's Dilemma",
     artwork: gordoImg,
     metrics: [
-      { val: '$700', label: 'Budget' },
       { val: '5.4M', label: 'Views' },
       { val: '136.7K', label: 'Likes' },
       { val: '$0.13', label: 'CPM' },
@@ -21,7 +20,6 @@ const cases = [
     track: 'The Less I Know The Better',
     artwork: mauPImg,
     metrics: [
-      { val: '$2,800', label: 'Budget' },
       { val: '3.9M', label: 'Views' },
       { val: '138.7K', label: 'Likes' },
       { val: '$0.71', label: 'CPM' },
@@ -32,7 +30,6 @@ const cases = [
     track: 'Sauti',
     artwork: francisMercierImg,
     metrics: [
-      { val: '$700', label: 'Budget' },
       { val: '16.8M', label: 'Views' },
       { val: '1.18M', label: 'Likes' },
       { val: '$0.042', label: 'CPM' },
@@ -96,7 +93,7 @@ const InstagramSeedingSlide = () => (
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               {c.metrics.map((m) => (
                 <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                   <p className="text-2xl font-bold text-foreground">{m.val}</p>
