@@ -23,9 +23,9 @@ const PricingSlide = () => (
         <table className="w-full">
           <thead>
             <tr className="border-b border-white/[0.08]">
-              <th className="text-left p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Service</th>
-              <th className="text-left p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Unit</th>
-              <th className="text-left p-5 text-sm text-muted-foreground font-medium uppercase tracking-wider">Note</th>
+              <th className="text-left p-5 text-base text-muted-foreground font-medium uppercase tracking-wider">Service</th>
+              <th className="text-left p-5 text-base text-muted-foreground font-medium uppercase tracking-wider">Unit</th>
+              <th className="text-left p-5 text-base text-muted-foreground font-medium uppercase tracking-wider">Note</th>
             </tr>
           </thead>
           <tbody>
