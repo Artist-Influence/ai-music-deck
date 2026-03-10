@@ -10,7 +10,7 @@ const steps = [
 ];
 
 const NextStepsSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center text-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex flex-col items-center justify-center text-center">
     <style>{`
       @keyframes next-glow-sweep {
         0% { opacity: 0; left: -100%; }
@@ -36,29 +36,29 @@ const NextStepsSlide = () => (
     <div className="absolute top-[10%] left-[30%] w-[600px] h-[500px] rounded-full bg-primary/[0.06] blur-[160px] animate-float-slow" />
     <NetworkVisual className="opacity-[0.06]" nodeCount={30} seed={5} />
 
-    <div className="relative z-10 max-w-[1000px]">
-      <h1 className="text-6xl font-bold text-foreground mb-4">If this makes sense, here's how we start.</h1>
-      <p className="text-xl text-muted-foreground mb-16">No friction.</p>
+    <div className="relative z-10 max-w-[1400px]">
+      <h1 className="text-7xl font-bold text-foreground mb-4">If this makes sense, here's how we start.</h1>
+      <p className="text-2xl text-muted-foreground mb-16">No friction.</p>
 
-      <div className="flex gap-5 mb-16">
+      <div className="flex gap-6 mb-16">
         {steps.map((s, i) => (
-          <GlassPanel key={i} variant="bright" className={`flex-1 p-6 text-left next-step-card next-step-card-${i}`}>
-            <p className="text-primary text-lg font-mono mb-3 tracking-widest relative z-10">{s.num}</p>
-            <p className="text-xl font-semibold text-foreground mb-2 relative z-10">{s.title}</p>
-            <p className="text-lg text-muted-foreground relative z-10">{s.desc}</p>
+          <GlassPanel key={i} variant="bright" className={`flex-1 p-8 text-left next-step-card next-step-card-${i}`}>
+            <p className="text-primary text-xl font-mono mb-3 tracking-widest relative z-10">{s.num}</p>
+            <p className="text-2xl font-semibold text-foreground mb-2 relative z-10">{s.title}</p>
+            <p className="text-xl text-muted-foreground relative z-10">{s.desc}</p>
           </GlassPanel>
         ))}
       </div>
 
-      <GlassPanel variant="subtle" className="mb-12 p-7 max-w-[600px] mx-auto">
-        <p className="text-lg text-foreground font-medium mb-2">Jared Rapoza</p>
-        <p className="text-lg text-muted-foreground mb-1">jared@clouted.com · 617-875-3248</p>
-        <p className="text-lg text-muted-foreground mb-3">www.clouted.com</p>
-        <p className="text-lg text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
+      <GlassPanel variant="subtle" className="mb-12 p-8 max-w-[700px] mx-auto">
+        <p className="text-xl text-foreground font-medium mb-2">Jared Rapoza</p>
+        <p className="text-xl text-muted-foreground mb-1">jared@clouted.com · 617-875-3248</p>
+        <p className="text-xl text-muted-foreground mb-3">www.clouted.com</p>
+        <p className="text-xl text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
 
       <img src={cloutedLogo} alt="CLOUTED" className="w-56 mx-auto mb-4" />
-      <p className="text-xl text-muted-foreground">The growth system for modern music</p>
+      <p className="text-2xl text-muted-foreground">The growth system for modern music</p>
     </div>
   </div>
 );
