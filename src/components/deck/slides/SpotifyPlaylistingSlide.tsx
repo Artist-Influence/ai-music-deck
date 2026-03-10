@@ -101,7 +101,7 @@ const SpotifyPlaylistingSlide = () => (
       {/* Right — 3 Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
         {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-4">
+          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
             <div className="flex gap-4 mb-3">
               <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
                 {c.artwork ? (
