@@ -23,11 +23,11 @@ const ReportingSlide = () => (
       <p className="text-3xl text-muted-foreground mb-16">Reporting and transparency</p>
 
       <div className="grid grid-cols-2 gap-8 max-w-[1400px] mx-auto">
-        <GlassPanel variant="bright" className="p-14">
+        <GlassPanel variant="bright" className="p-14 text-left">
           <p className="text-3xl font-semibold text-primary mb-8">Weekly updates include</p>
           {weeklyItems.map((item, i) => (
             <div key={i} className="flex items-center gap-4 py-4 border-b border-white/[0.06] last:border-0">
-              <div className="w-2.5 h-2.5 rounded-full bg-primary/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-primary/60 shrink-0" />
               <p className="text-3xl text-foreground/80">{item}</p>
             </div>
           ))}
