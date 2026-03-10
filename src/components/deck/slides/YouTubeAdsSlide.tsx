@@ -73,23 +73,23 @@ const YouTubeAdsSlide = () => (
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="flex-1 p-3 flex flex-col">
+          <GlassPanel key={c.artist} variant="bright" className="p-3 flex flex-col">
             <p className="text-xs text-primary font-mono mb-0.5 tracking-widest">CASE STUDY</p>
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
             <p className="text-lg text-muted-foreground mb-1.5">{c.track}</p>
 
-            <div className="h-[160px] rounded-lg border border-white/[0.08] overflow-hidden mb-2 bg-black/30">
+            <div className="aspect-video rounded-lg border border-white/[0.08] overflow-hidden mb-2">
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
-                className="w-full h-full object-contain"
+                className="w-full h-full object-cover"
               />
             </div>
 
             <div className="grid grid-cols-3 gap-1.5">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-1.5 text-center">
-                  <p className="text-lg font-bold text-foreground">{m.val}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
+                  <p className="text-xl font-bold text-foreground">{m.val}</p>
                   <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
               ))}
