@@ -46,7 +46,7 @@ const FanpagesSlide = () => (
 
       <div className="flex gap-10">
         {/* Left — service info */}
-        <div className="flex-1 min-w-0 flex flex-col justify-between gap-4">
+        <div className="flex-1 min-w-0 flex flex-col justify-between gap-3">
           <GlassPanel className="p-6 flex-1">
             <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
             <p className="text-2xl text-muted-foreground leading-relaxed">
