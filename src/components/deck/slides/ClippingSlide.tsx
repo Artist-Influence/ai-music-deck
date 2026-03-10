@@ -111,7 +111,7 @@ const ClippingSlide = () => (
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-base text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+              <p className="text-lg text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
             </div>
           </GlassPanel>
         </div>
