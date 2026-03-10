@@ -36,7 +36,7 @@ const CreatorFloodSlide = () => (
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="subtle" className="p-8 flex-1">
+        <GlassPanel variant="subtle" className="p-8 flex-1 flex flex-col justify-center">
           <p className="text-2xl font-semibold text-foreground mb-3">When to use</p>
           <div className="space-y-2.5">
             {[
