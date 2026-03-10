@@ -79,7 +79,7 @@ const YouTubeAdsSlide = () => (
               <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
               <p className="text-lg text-muted-foreground mb-1">{c.track}</p>
 
-              <div className="h-[160px] w-auto aspect-video mx-auto rounded-lg border border-white/[0.08] overflow-hidden mb-1 bg-black/30">
+              <div className="h-[160px] w-full rounded-lg border border-white/[0.08] overflow-hidden mb-1 bg-black/30">
                 <img
                   src={c.thumb}
                   alt={`${c.artist} — ${c.track}`}
