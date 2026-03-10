@@ -34,7 +34,7 @@ const cases = [
     metrics: [
       { val: '185.7K', label: 'Streams' },
       { val: '9.6K', label: 'Playlist Adds' },
-      { val: '3.6%', label: 'Save Rate' },
+      { val: '8K', label: 'Saves' },
       { val: '42K', label: 'Algo Streams' },
     ],
     playlists: [
