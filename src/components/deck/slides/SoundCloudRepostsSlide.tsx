@@ -1,4 +1,7 @@
 import GlassPanel from '../GlassPanel';
+import sidepieceImg from '@/assets/sidepiece-cash-out.jpg';
+import johnSummitImg from '@/assets/john-summit-gorgon-city-is-everybody-having-fun.jpg';
+import sonnyFoderaImg from '@/assets/sonny-fodera-all-this-time.jpg';
 
 const SoundCloudIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -8,33 +11,33 @@ const SoundCloudIcon = ({ size = 28 }: { size?: number }) => (
 
 const cases = [
   {
-    artist: 'Artist Name',
-    track: 'Track Title',
+    artist: 'SIDEPIECE',
+    track: 'Cash Out',
+    artwork: sidepieceImg,
     metrics: [
-      { val: '—', label: 'Reposts' },
-      { val: '—', label: 'Plays' },
-      { val: '—', label: 'Likes' },
-      { val: '—', label: 'Followers' },
+      { val: '563K', label: 'Plays' },
+      { val: '18.1K', label: 'Likes' },
+      { val: '407', label: 'Reposts' },
     ],
   },
   {
-    artist: 'Artist Name',
-    track: 'Track Title',
+    artist: 'John Summit & Gorgon City',
+    track: 'Is Everybody Having Fun?',
+    artwork: johnSummitImg,
     metrics: [
-      { val: '—', label: 'Reposts' },
-      { val: '—', label: 'Plays' },
-      { val: '—', label: 'Likes' },
-      { val: '—', label: 'Followers' },
+      { val: '537K', label: 'Plays' },
+      { val: '15.3K', label: 'Likes' },
+      { val: '420', label: 'Reposts' },
     ],
   },
   {
-    artist: 'Artist Name',
-    track: 'Track Title',
+    artist: 'Sonny Fodera',
+    track: 'All This Time',
+    artwork: sonnyFoderaImg,
     metrics: [
-      { val: '—', label: 'Reposts' },
-      { val: '—', label: 'Plays' },
-      { val: '—', label: 'Likes' },
-      { val: '—', label: 'Followers' },
+      { val: '667K', label: 'Plays' },
+      { val: '12.6K', label: 'Likes' },
+      { val: '239', label: 'Reposts' },
     ],
   },
 ];
@@ -81,13 +84,13 @@ const SoundCloudRepostsSlide = () => (
         <p className="text-2xl text-primary font-medium mt-2">Timeframe: 2–8 weeks</p>
       </div>
 
-      {/* Right — 3 Case Study Placeholders */}
+      {/* Right — 3 Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
         {cases.map((c, idx) => (
           <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
             <div className="flex gap-4 mb-3">
               <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
-                <SoundCloudIcon size={32} />
+                <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-lg text-primary font-mono tracking-widest mb-1">REPOSTS</p>
@@ -96,7 +99,7 @@ const SoundCloudRepostsSlide = () => (
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-2">
+            <div className="grid grid-cols-3 gap-2">
               {c.metrics.map((m) => (
                 <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                   <p className="text-2xl font-bold text-foreground">{m.val}</p>
