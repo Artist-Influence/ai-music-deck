@@ -56,10 +56,10 @@ const CreatorFloodSlide = () => (
       {/* Right — Case Study */}
       <div className="flex-1 flex flex-col justify-center">
         <GlassPanel variant="bright" className="p-6 flex flex-col">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Rich Brian</p>
-          <p className="text-base text-muted-foreground mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
-          <p className="text-base text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
+          <p className="text-lg text-muted-foreground mb-4">
             Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.
           </p>
 
