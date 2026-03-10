@@ -40,44 +40,44 @@ const HubDiagram = () => {
   }, []);
 
   return (
-    <svg viewBox="0 0 500 500" className="w-[480px] h-[480px]">
+    <svg viewBox="0 0 500 500" className="w-[560px] h-[560px]">
       <g ref={orbitRef}>
         {/* Rings */}
-        <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" fill="none" opacity="0.15" />
-        <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.3" fill="none" opacity="0.1" />
+        <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="1" fill="none" opacity="0.2" />
+        <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.6" fill="none" opacity="0.15" />
 
         {/* Connection lines */}
-        <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
-        <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1" opacity="0.25" />
-        <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1" opacity="0.25" />
+        <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1.5" opacity="0.35" />
+        <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1.5" opacity="0.35" />
+        <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1.5" opacity="0.35" />
 
         {/* Center node */}
-        <circle cx="250" cy="250" r="50" fill="hsl(195, 90%, 60%)" opacity="0.12" />
-        <circle cx="250" cy="250" r="50" stroke="hsl(195, 90%, 60%)" strokeWidth="1" fill="none" opacity="0.3" />
+        <circle cx="250" cy="250" r="65" fill="hsl(195, 90%, 60%)" opacity="0.15" />
+        <circle cx="250" cy="250" r="65" stroke="hsl(195, 90%, 60%)" strokeWidth="1.5" fill="none" opacity="0.4" />
         <g ref={el => { textRefs.current[0] = el; }}>
-          <text x="250" y="246" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Your</text>
-          <text x="250" y="263" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="13" fontWeight="600">Song</text>
+          <text x="250" y="244" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="20" fontWeight="600">Your</text>
+          <text x="250" y="268" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="20" fontWeight="600">Song</text>
         </g>
 
         {/* Short-form node */}
-        <circle cx="250" cy="70" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
+        <circle cx="250" cy="70" r="48" fill="hsl(195, 90%, 60%)" opacity="0.1" stroke="hsl(195, 90%, 60%)" strokeWidth="0.8" />
         <g ref={el => { textRefs.current[1] = el; }}>
-          <text x="250" y="68" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Short-form</text>
-          <text x="250" y="82" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Content</text>
+          <text x="250" y="66" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="16" fontWeight="500">Short-form</text>
+          <text x="250" y="84" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14" opacity="0.6">Content</text>
         </g>
 
         {/* Communities node */}
-        <circle cx="105" cy="400" r="35" fill="hsl(180, 70%, 48%)" opacity="0.08" stroke="hsl(180, 70%, 48%)" strokeWidth="0.5" />
+        <circle cx="105" cy="400" r="48" fill="hsl(180, 70%, 48%)" opacity="0.1" stroke="hsl(180, 70%, 48%)" strokeWidth="0.8" />
         <g ref={el => { textRefs.current[2] = el; }}>
-          <text x="105" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Communities</text>
-          <text x="105" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">& Culture</text>
+          <text x="105" y="396" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="15" fontWeight="500">Communities</text>
+          <text x="105" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14" opacity="0.6">& Culture</text>
         </g>
 
         {/* Streaming node */}
-        <circle cx="395" cy="400" r="35" fill="hsl(195, 90%, 60%)" opacity="0.08" stroke="hsl(195, 90%, 60%)" strokeWidth="0.5" />
+        <circle cx="395" cy="400" r="48" fill="hsl(195, 90%, 60%)" opacity="0.1" stroke="hsl(195, 90%, 60%)" strokeWidth="0.8" />
         <g ref={el => { textRefs.current[3] = el; }}>
-          <text x="395" y="398" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="11" fontWeight="500">Streaming</text>
-          <text x="395" y="412" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="10" opacity="0.6">Platforms</text>
+          <text x="395" y="396" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="16" fontWeight="500">Streaming</text>
+          <text x="395" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14" opacity="0.6">Platforms</text>
         </g>
       </g>
     </svg>
