@@ -3,9 +3,9 @@ import cloutedLogo from '@/assets/CLOUTED-white.png';
 import NetworkVisual from '../NetworkVisual';
 
 const steps = [
-  { num: '01', title: 'Quick kickoff call', desc: '20 minutes' },
-  { num: '02', title: 'Confirm scope', desc: 'We confirm goals, services, and timeline' },
-  { num: '03', title: 'You send assets', desc: 'Audio, metadata, handles' },
+  { num: '01', title: 'Quick Kickoff Call', desc: '20 minutes' },
+  { num: '02', title: 'Confirm Scope', desc: 'We confirm goals, services, and timeline' },
+  { num: '03', title: 'You Send Assets', desc: 'Audio, metadata, handles' },
   { num: '04', title: 'Launch', desc: 'Within 24 to 72 hours depending on services' },
 ];
 
