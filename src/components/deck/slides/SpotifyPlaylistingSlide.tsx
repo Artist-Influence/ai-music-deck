@@ -77,7 +77,7 @@ const SpotifyPlaylistingSlide = () => (
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-8 flex-1">
+        <GlassPanel variant="bright" className="p-8">
           <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             We place your tracks on curated playlists run by real tastemakers in your genre.
