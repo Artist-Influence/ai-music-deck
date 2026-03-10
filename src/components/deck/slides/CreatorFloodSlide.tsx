@@ -15,7 +15,7 @@ const CreatorFloodSlide = () => (
 
     <div className="relative z-10 w-full max-w-[1600px] flex gap-10">
       {/* Left — Service Info */}
-      <div className="flex-1 flex flex-col justify-between">
+      <div className="flex-1 flex flex-col gap-4">
         <div>
           <div className="flex items-center gap-3 mb-4">
             <Zap size={28} className="text-primary" />
@@ -29,14 +29,14 @@ const CreatorFloodSlide = () => (
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-6 mb-3">
+        <GlassPanel variant="bright" className="p-8 flex-1">
           <p className="text-2xl font-semibold text-foreground mb-3">Why it works</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             It builds massive volume and algorithmic lift through real accounts, not bots. The sheer quantity of real usage signals tells TikTok the sound is trending organically.
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="subtle" className="p-6 mb-3">
+        <GlassPanel variant="subtle" className="p-8 flex-1">
           <p className="text-2xl font-semibold text-foreground mb-3">When to use</p>
           <div className="space-y-2.5">
             {[
