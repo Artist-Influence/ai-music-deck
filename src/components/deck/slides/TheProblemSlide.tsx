@@ -14,7 +14,7 @@ const TheProblemSlide = () => (
 
     <div className="relative z-10 flex gap-8 items-start w-full max-w-[1500px] mx-auto">
       <div className="flex-1 min-w-0">
-        <h1 className="text-6xl font-bold text-foreground mb-10 leading-tight">
+        <h1 className="text-5xl font-bold text-foreground mb-10 leading-tight whitespace-nowrap">
           Problem: Music marketing is mostly manual.
         </h1>
 
