@@ -42,7 +42,7 @@ const SpotifyPlaylistingSlide = () => (
 
           <GlassPanel variant="bright" className="p-5">
             <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-base text-muted-foreground leading-relaxed">
+            <p className="text-lg text-muted-foreground leading-relaxed">
               Organic playlist streams generate saves, follows, and algorithmic signals.
               When Spotify sees real listener engagement, it pushes your track into
               Discover Weekly, Release Radar, and Radio. Stream goals guaranteed.
