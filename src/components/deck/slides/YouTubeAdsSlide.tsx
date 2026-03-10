@@ -78,21 +78,23 @@ const YouTubeAdsSlide = () => (
             <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
             <p className="text-lg text-muted-foreground mb-1.5">{c.track}</p>
 
-            <div className="h-[180px] w-auto aspect-video mx-auto rounded-lg border border-white/[0.08] overflow-hidden mb-2 bg-black/30">
-              <img
-                src={c.thumb}
-                alt={`${c.artist} — ${c.track}`}
-                className="w-full h-full object-cover"
-              />
-            </div>
+            <div className="max-w-[340px] mx-auto w-full">
+              <div className="h-[180px] w-auto aspect-video mx-auto rounded-lg border border-white/[0.08] overflow-hidden mb-1 bg-black/30">
+                <img
+                  src={c.thumb}
+                  alt={`${c.artist} — ${c.track}`}
+                  className="w-full h-full object-cover"
+                />
+              </div>
 
-            <div className="grid grid-cols-2 gap-1">
-              {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg py-1.5 px-2 text-center">
-                  <p className="text-lg font-bold text-foreground">{m.val}</p>
-                  <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
-                </div>
-              ))}
+              <div className="grid grid-cols-2 gap-1">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white/[0.04] rounded-lg py-2 px-2 text-center">
+                    <p className="text-lg font-bold text-foreground">{m.val}</p>
+                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </GlassPanel>
         ))}
