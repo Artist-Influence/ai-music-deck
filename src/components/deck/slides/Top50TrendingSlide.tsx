@@ -67,10 +67,10 @@ const Top50TrendingSlide = () => (
       {/* Right — Case Study */}
       <div className="flex-1 flex flex-col items-center justify-center">
         <GlassPanel variant="bright" className="p-6 flex flex-col">
-          <p className="text-sm text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
+          <p className="text-base text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
           <p className="text-3xl font-bold text-foreground">Major Lazer</p>
-          <p className="text-base text-muted-foreground mb-3">MINI SKIRT</p>
-          <p className="text-base text-muted-foreground mb-4">
+          <p className="text-lg text-muted-foreground mb-3">MINI SKIRT</p>
+          <p className="text-lg text-muted-foreground mb-4">
             Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
           </p>
 
