@@ -38,7 +38,7 @@ const YouTubeAdsSlide = () => (
 
     <div className="relative z-10 flex gap-8 w-full max-w-[1600px] mx-auto items-center">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 flex flex-col gap-2">
+      <div className="flex-1 min-w-0 max-w-[600px] flex flex-col gap-2">
         <div>
           <div className="flex items-center gap-3 mb-2">
             <Youtube size={28} className="text-primary" />
