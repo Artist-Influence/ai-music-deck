@@ -18,6 +18,7 @@ const cases = [
       { val: '563K', label: 'Plays' },
       { val: '18.1K', label: 'Likes' },
       { val: '407', label: 'Reposts' },
+      { val: '166', label: 'Comments' },
     ],
   },
   {
@@ -28,6 +29,7 @@ const cases = [
       { val: '537K', label: 'Plays' },
       { val: '15.3K', label: 'Likes' },
       { val: '420', label: 'Reposts' },
+      { val: '187', label: 'Comments' },
     ],
   },
   {
@@ -38,6 +40,7 @@ const cases = [
       { val: '667K', label: 'Plays' },
       { val: '12.6K', label: 'Likes' },
       { val: '239', label: 'Reposts' },
+      { val: '76', label: 'Comments' },
     ],
   },
 ];
