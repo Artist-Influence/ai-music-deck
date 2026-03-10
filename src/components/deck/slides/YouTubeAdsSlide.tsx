@@ -50,7 +50,7 @@ const YouTubeAdsSlide = () => (
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-8 flex-1">
+        <GlassPanel variant="bright" className="p-6 flex-1">
           <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             Paid YouTube campaigns built for subscribers and long-form engagement.
@@ -58,7 +58,7 @@ const YouTubeAdsSlide = () => (
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-8 flex-1">
+        <GlassPanel variant="bright" className="p-6 flex-1">
           <p className="text-2xl font-semibold text-foreground mb-3">How it works:</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             We target international audiences aligned with your genre, optimizing for
