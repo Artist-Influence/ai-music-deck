@@ -1,61 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Rescale Slide 11 (Spotify Playlisting) — Match YouTube Ads Layout + 3 Compact Case Studies
+Three small text edits across three files:
 
-### Changes to `SpotifyPlaylistingSlide.tsx`:
+## Changes
 
-**Left column — rescale to match slides 7-10:**
-- Outer padding `p-24` → `p-12`
-- Wrapper: `items-start` → `items-stretch`, add `flex-col gap-4` to left column
-- Title `text-5xl` → `text-6xl`
-- Subtitle `text-xl` → `text-2xl`, margin `mb-10` → `mb-6`
-- Panel headings `text-xl` → `text-2xl`, body `text-lg` → `text-2xl`
-- Panel padding `p-5` → `p-8`, add `flex-1` to both panels
-- Timeframe `text-lg` → `text-2xl`
-- Replace `space-y-5` wrapper with flex `gap-4`
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-**Right column — 3 stacked case study cards (no screenshots):**
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-Each card is a compact `GlassPanel` containing:
-1. Small album artwork placeholder (square, ~80x80px) floated left or inline-flex beside the artist/track text
-2. Artist name (`text-xl font-bold`) + track name (`text-lg`)
-3. 4-metric grid (streams, playlist adds, save rate, algo streams) — `text-xl` values, `text-sm` labels, `p-2` padding
-4. Row of 3 hyperlinked playlist references using `ExternalLink` icon (same style as clipping slide links)
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-**Case study data structure:**
-```ts
-const cases = [
-  {
-    artist: 'Dack Janiels',
-    track: 'Shock Therapy',
-    artwork: dackJanielsImg, // reuse existing
-    metrics: [
-      { val: '185,700', label: 'Streams' },
-      { val: '9,950', label: 'Playlist Adds' },
-      { val: '3.6%', label: 'Save Rate' },
-      { val: '42K', label: 'Algo Streams' },
-    ],
-    playlists: [
-      { label: 'Playlist 1', url: '#' },
-      { label: 'Playlist 2', url: '#' },
-      { label: 'Playlist 3', url: '#' },
-    ],
-  },
-  // Case 2 & 3: placeholder data with same structure
-];
-```
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-**Layout per card:**
-```
-┌──────────────────────────────────┐
-│ [artwork] Artist Name            │
-│           Track Title            │
-│                                  │
-│  Streams | Adds | Save | Algo    │
-│                                  │
-│  🔗 Playlist 1  🔗 2  🔗 3      │
-└──────────────────────────────────┘
-```
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-Three cards stacked with `gap-3` between them — no `flex-1` so they size to content and stay within 1080px. Import `ExternalLink` from lucide-react for playlist links.
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`

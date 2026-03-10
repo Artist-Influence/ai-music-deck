@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import { ExternalLink } from 'lucide-react';
 import dackJanielsImg from '@/assets/dack-janiels-streams.png';
 
 const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
@@ -7,81 +8,140 @@ const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
   </svg>
 );
 
-const metrics = [
-  { val: '185,700', label: 'Streams' },
-  { val: '9,950', label: 'Playlist Adds' },
-  { val: '3.6%', label: 'Save Rate' },
-  { val: '42K', label: 'Algo Streams' },
+const cases = [
+  {
+    artist: 'Dack Janiels',
+    track: 'Shock Therapy',
+    artwork: dackJanielsImg,
+    metrics: [
+      { val: '185,700', label: 'Streams' },
+      { val: '9,950', label: 'Playlist Adds' },
+      { val: '3.6%', label: 'Save Rate' },
+      { val: '42K', label: 'Algo Streams' },
+    ],
+    playlists: [
+      { label: 'Playlist 1', url: '#' },
+      { label: 'Playlist 2', url: '#' },
+      { label: 'Playlist 3', url: '#' },
+    ],
+  },
+  {
+    artist: 'Artist Name',
+    track: 'Track Title',
+    artwork: null,
+    metrics: [
+      { val: '—', label: 'Streams' },
+      { val: '—', label: 'Playlist Adds' },
+      { val: '—', label: 'Save Rate' },
+      { val: '—', label: 'Algo Streams' },
+    ],
+    playlists: [
+      { label: 'Playlist 1', url: '#' },
+      { label: 'Playlist 2', url: '#' },
+      { label: 'Playlist 3', url: '#' },
+    ],
+  },
+  {
+    artist: 'Artist Name',
+    track: 'Track Title',
+    artwork: null,
+    metrics: [
+      { val: '—', label: 'Streams' },
+      { val: '—', label: 'Playlist Adds' },
+      { val: '—', label: 'Save Rate' },
+      { val: '—', label: 'Algo Streams' },
+    ],
+    playlists: [
+      { label: 'Playlist 1', url: '#' },
+      { label: 'Playlist 2', url: '#' },
+      { label: 'Playlist 3', url: '#' },
+    ],
+  },
 ];
 
 const SpotifyPlaylistingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute bottom-[10%] left-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float-slow" />
 
-    <div className="relative z-10 flex gap-10 items-start w-full max-w-[1600px] mx-auto">
+    <div className="relative z-10 flex gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0">
-        <div className="flex items-center gap-3 mb-4">
-          <SpotifyIcon />
-          <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+      <div className="flex-1 min-w-0 flex flex-col gap-4">
+        <div>
+          <div className="flex items-center gap-3 mb-4">
+            <SpotifyIcon />
+            <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+          </div>
+          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">Spotify Playlisting<br />(Organic)</h1>
+          <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
+            Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup.
+          </p>
         </div>
-        <h1 className="text-5xl font-bold text-foreground mb-3 leading-tight">Spotify Playlisting<br />(Organic)</h1>
-        <p className="text-xl text-muted-foreground mb-10 max-w-[600px]">
-          Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup.
-        </p>
 
-        <div className="space-y-5">
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">What it is:</p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              We place your tracks on curated playlists run by real tastemakers in your genre.
-              These aren't pay-for-play lists — they're community-driven playlists with
-              active listeners who save and share.
-            </p>
-          </GlassPanel>
+        <GlassPanel variant="bright" className="p-8 flex-1">
+          <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
+          <p className="text-2xl text-muted-foreground leading-relaxed">
+            We place your tracks on curated playlists run by real tastemakers in your genre.
+            These aren't pay-for-play lists — they're community-driven playlists with
+            active listeners who save and share.
+          </p>
+        </GlassPanel>
 
-          <GlassPanel variant="bright" className="p-5">
-            <p className="text-xl font-semibold text-foreground mb-2">Why it works:</p>
-            <p className="text-lg text-muted-foreground leading-relaxed">
-              Organic playlist streams generate saves, follows, and algorithmic signals.
-              When Spotify sees real listener engagement, it pushes your track into
-              Discover Weekly, Release Radar, and Radio. Stream goals guaranteed.
-            </p>
-          </GlassPanel>
+        <GlassPanel variant="bright" className="p-8 flex-1">
+          <p className="text-2xl font-semibold text-foreground mb-3">Why it works:</p>
+          <p className="text-2xl text-muted-foreground leading-relaxed">
+            Organic playlist streams generate saves, follows, and algorithmic signals.
+            When Spotify sees real listener engagement, it pushes your track into
+            Discover Weekly, Release Radar, and Radio. Stream goals guaranteed.
+          </p>
+        </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-4">
-            <p className="text-lg text-primary font-medium">Timeframe: 12 weeks</p>
-          </GlassPanel>
-        </div>
+        <p className="text-2xl text-primary font-medium">Timeframe: 12 weeks</p>
       </div>
 
-      {/* Right — Case Study */}
-      <div className="flex-1 min-w-0">
-        <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-base text-primary font-mono mb-2 tracking-widest">CASE STUDY</p>
-          <p className="text-2xl font-bold text-foreground leading-tight">Dack Janiels</p>
-          <p className="text-lg text-muted-foreground mb-2">Shock Therapy</p>
-          <p className="text-lg text-muted-foreground mb-4 leading-relaxed">
-            Organic playlist campaign focused on dubstep tastemakers and algorithmic lift.
-          </p>
-
-          <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-4 bg-black/30 flex items-center justify-center">
-            <img
-              src={dackJanielsImg}
-              alt="Dack Janiels — Shock Therapy"
-              className="w-full h-full object-cover object-left"
-            />
-          </div>
-
-          <div className="grid grid-cols-2 gap-3">
-            {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                <p className="text-xl font-bold text-foreground">{m.val}</p>
-                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+      {/* Right — 3 Case Studies */}
+      <div className="flex-1 min-w-0 flex flex-col gap-3">
+        {cases.map((c, idx) => (
+          <GlassPanel key={idx} variant="bright" className="p-4">
+            <div className="flex gap-4 mb-3">
+              <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
+                {c.artwork ? (
+                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
+                ) : (
+                  <p className="text-xs text-muted-foreground/40 italic">Artwork</p>
+                )}
               </div>
-            ))}
-          </div>
-        </GlassPanel>
+              <div className="flex-1 min-w-0">
+                <p className="text-lg text-primary font-mono tracking-widest mb-1">PLAYLISTING</p>
+                <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-lg text-muted-foreground">{c.track}</p>
+              </div>
+            </div>
+
+            <div className="grid grid-cols-4 gap-2 mb-3">
+              {c.metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
+                  <p className="text-xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
+            </div>
+
+            <div className="flex gap-2">
+              {c.playlists.map((pl) => (
+                <a
+                  key={pl.label}
+                  href={pl.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-1.5 text-xs text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
+                >
+                  <ExternalLink className="w-3 h-3" />
+                  {pl.label}
+                </a>
+              ))}
+            </div>
+          </GlassPanel>
+        ))}
       </div>
     </div>
   </div>
