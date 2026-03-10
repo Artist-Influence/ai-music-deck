@@ -21,11 +21,11 @@ const ExpectationsSlide = () => (
       <p className="text-3xl text-muted-foreground mb-16">To keep campaigns clean and effective, we align on a few basics upfront.</p>
 
       <div className="grid grid-cols-2 gap-8 max-w-[1400px] mx-auto">
-        <GlassPanel variant="bright" className="p-14">
+        <GlassPanel variant="bright" className="p-14 text-left">
           <p className="text-3xl font-semibold text-primary mb-8">We need from you</p>
           {weNeed.map((item, i) => (
             <div key={i} className="flex items-center gap-4 py-4 border-b border-white/[0.06] last:border-0">
-              <div className="w-2.5 h-2.5 rounded-full bg-primary/60" />
+              <div className="w-2.5 h-2.5 rounded-full bg-primary/60 shrink-0" />
               <p className="text-3xl text-foreground">{item}</p>
             </div>
           ))}
