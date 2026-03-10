@@ -112,7 +112,7 @@ const SpotifyPlaylistingSlide = () => (
               </div>
               <div className="flex-1 min-w-0">
                 <p className="text-lg text-primary font-mono tracking-widest mb-1">PLAYLISTING</p>
-                <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                 <p className="text-lg text-muted-foreground">{c.track}</p>
               </div>
             </div>
