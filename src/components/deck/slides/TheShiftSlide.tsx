@@ -37,7 +37,7 @@ const TheShiftSlide = () => (
       </div>
 
       {/* Visual: stylized phone screens showing algorithmic music discovery */}
-      <div className="flex-1 flex items-center justify-center max-w-[500px]">
+      <div className="flex-1 flex items-center justify-center max-w-[500px] mt-20">
         <svg viewBox="0 0 400 420" className="w-full h-full max-w-[420px] max-h-[420px]">
           <defs>
             <linearGradient id="phoneGrad" x1="0" y1="0" x2="0" y2="1">
