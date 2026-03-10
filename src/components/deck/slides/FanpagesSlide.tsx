@@ -93,10 +93,10 @@ const FanpagesSlide = () => (
         {/* Right — case studies */}
         <div className="flex-1 flex flex-col justify-between gap-3">
           {caseStudies.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-8 flex-1">
-              <div className="flex gap-8 h-full">
+            <GlassPanel key={c.artist} variant="bright" className="p-6 flex-1">
+              <div className="flex gap-6 h-full">
                 {/* Hero thumbnail */}
-                <div className="w-[220px] shrink-0">
+                <div className="w-[180px] shrink-0">
                   <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1]">
                     <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
                   </div>
