@@ -40,7 +40,7 @@ const Top50TrendingSlide = () => (
 
         <GlassPanel variant="bright" className="p-6 mb-6">
           <p className="text-xl font-semibold text-foreground mb-3">How it's done (honest version)</p>
-          <p className="text-base text-muted-foreground leading-relaxed">
+          <p className="text-lg text-muted-foreground leading-relaxed">
             A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.
           </p>
         </GlassPanel>
