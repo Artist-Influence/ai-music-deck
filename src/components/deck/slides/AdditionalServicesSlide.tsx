@@ -1,4 +1,6 @@
 import GlassPanel from '../GlassPanel';
+import gordoImg from '@/assets/gordo-meta-tiktok.png';
+import zedsDeadImg from '@/assets/zeds-dead-logo.png';
 
 const TikTokIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -22,26 +24,30 @@ const MetaTikTokIcon = () => (
 const cases = [
   {
     platform: 'TIKTOK ADS',
-    artist: 'Artist Name',
-    track: 'Track Title',
+    artist: 'Gordo (@gordoszn)',
+    track: 'Brand Awareness Campaign',
+    description: '24-hour brand awareness campaign focused purely on views.',
+    thumb: gordoImg,
     icon: TikTokIcon,
     metrics: [
-      { val: '—', label: 'Impressions' },
-      { val: '—', label: 'Clicks' },
-      { val: '—', label: 'CTR' },
-      { val: '—', label: 'CPM' },
+      { val: '1.4M', label: 'Impressions' },
+      { val: '$0.31', label: 'CPM' },
+      { val: '500.7K', label: '6-Sec Views' },
+      { val: '34.7%', label: 'View Rate' },
     ],
   },
   {
     platform: 'META ADS',
-    artist: 'Artist Name',
-    track: 'Track Title',
+    artist: 'Zeds Dead',
+    track: 'NA Tour — 6 campaigns, 1 per city',
+    description: 'Multi-layered campaign collecting SMS signups via Laylo. 100+ creatives across 6 simultaneous city-targeted campaigns.',
+    thumb: zedsDeadImg,
     icon: FacebookIcon,
     metrics: [
-      { val: '—', label: 'Impressions' },
-      { val: '—', label: 'Clicks' },
-      { val: '—', label: 'CTR' },
-      { val: '—', label: 'CPM' },
+      { val: '1.3M', label: 'Impressions' },
+      { val: '6,754', label: 'Laylo Signups' },
+      { val: '$1.40', label: 'CPR' },
+      { val: '25.4K', label: 'Link Clicks' },
     ],
   },
 ];
@@ -89,32 +95,35 @@ const AdditionalServicesSlide = () => (
 
       {/* Right — 2 Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
-        {cases.map((c, idx) => {
-          const IconComponent = c.icon;
-          return (
-            <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
-              <div className="flex gap-4 mb-3">
-                <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
-                  <IconComponent size={32} />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-lg text-primary font-mono tracking-widest mb-1">{c.platform}</p>
-                  <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-lg text-muted-foreground">{c.track}</p>
-                </div>
+        {cases.map((c, idx) => (
+          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col">
+            <div className="flex flex-row gap-5 mb-3">
+              <div className="w-[240px] h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
+                <img
+                  src={c.thumb}
+                  alt={`${c.artist}`}
+                  className="w-full h-full object-cover rounded-xl"
+                />
               </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <p className="text-base text-primary font-mono mb-1 tracking-widest uppercase">{c.platform}</p>
+                <p className="text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-xl text-muted-foreground">{c.track}</p>
+              </div>
+            </div>
 
-              <div className="grid grid-cols-4 gap-2">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                    <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                    <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
-                  </div>
-                ))}
-              </div>
-            </GlassPanel>
-          );
-        })}
+            <p className="text-lg text-muted-foreground italic mb-3">{c.description}</p>
+
+            <div className="grid grid-cols-4 gap-2 flex-1 auto-rows-fr">
+              {c.metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center flex flex-col items-center justify-center">
+                  <p className="text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+        ))}
       </div>
     </div>
   </div>
