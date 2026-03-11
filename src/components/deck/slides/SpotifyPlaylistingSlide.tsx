@@ -85,7 +85,7 @@ const SpotifyPlaylistingSlide = () => (
             {[
               'Placements on curated playlists run by real tastemakers in your genre',
               'Community-driven playlists with active listeners who save and share',
-              'Not pay-for-play — organic, genre-aligned discovery',
+              'No bots; organic, genre-aligned playlists',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />

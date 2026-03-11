@@ -40,7 +40,7 @@ const cases = [
   {
     platform: 'META ADS',
     artist: 'Zeds Dead',
-    track: 'NA Tour — 6 campaigns, 1 per city',
+    track: 'NA Tour, 6 campaigns, 1 per city',
     description: 'Multi-layered campaign collecting SMS signups via Laylo. 100+ creatives across 6 simultaneous city-targeted campaigns.',
     thumb: zedsDeadImg,
     icon: FacebookIcon,
@@ -77,8 +77,8 @@ const AdditionalServicesSlide = () => (
             <div className="space-y-2.5">
               {[
                 'Paid social campaigns across Meta (Facebook + Instagram) and TikTok',
-              "Content that's already performing organically gets amplified with targeted paid distribution",
-              'Focused on converting real outcomes — not just impressions',
+                "Content that's already performing organically gets amplified with targeted paid distribution",
+                'Focused on converting real outcomes, not just impressions',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
@@ -103,7 +103,7 @@ const AdditionalServicesSlide = () => (
               ))}
             </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
-              <p className="text-2xl text-primary font-medium">Timeframe: 2–3 weeks</p>
+              <p className="text-2xl text-primary font-medium">Timeframe: 2 to 3 weeks</p>
             </div>
           </GlassPanel>
         </div>

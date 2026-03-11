@@ -5,7 +5,7 @@ import mlShorts from '@/assets/major-lazer-canada-shorts-2.jpeg';
 const metrics = [
   { val: '5,000+', label: 'YouTube Shorts Creates' },
   { val: '14,900+', label: 'Instagram Reels Creates' },
-  { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
+  { val: '2,000+', label: 'TikTok Creates, Popular Tab' },
   { val: '3,000+', label: 'Facebook Reels Creates' },
   { val: 'US, CA, UK, KR', label: 'YouTube Shorts Audio Trending' },
   { val: 'US / CA', label: 'Instagram Reels Audio Trending' },
@@ -66,11 +66,11 @@ const Top50TrendingSlide = () => (
           <p className="text-2xl font-bold text-foreground">Major Lazer</p>
           <p className="text-xl text-muted-foreground mb-2">MINI SKIRT</p>
           <p className="text-xl text-muted-foreground mb-4">
-            Pushed official audio into trending environments across YouTube Shorts, Instagram Reels, and Facebook Reels for rapid visibility.
+            Pushed official audio into trending environments across YouTube Shorts, Instagram Reels, TikTok, and Facebook Reels for rapid visibility.
           </p>
 
             <div className="flex gap-6 flex-1">
-            {/* Left: KPIs stacked — half width */}
+            {/* Left: KPIs stacked */}
             <div className="flex-1 flex flex-col justify-start gap-4">
               {metrics.map((m) => (
                 <div key={m.label} className="flex-1 bg-white/[0.04] rounded-xl p-5 border border-white/[0.06] flex flex-col items-center justify-center text-center">
@@ -80,9 +80,9 @@ const Top50TrendingSlide = () => (
               ))}
             </div>
 
-            {/* Right: YouTube Shorts screenshot — half width */}
+            {/* Right: YouTube Shorts screenshot */}
             <div className="flex-1 flex items-center">
-              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full rounded-lg" />
+              <img src={mlShorts} alt="YouTube Shorts, Canada Trending" className="w-full rounded-lg" />
             </div>
           </div>
         </GlassPanel>

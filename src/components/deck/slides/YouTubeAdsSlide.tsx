@@ -52,7 +52,7 @@ const YouTubeAdsSlide = () => (
         </div>
 
         <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col justify-center">
-          <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
+          <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             Paid YouTube campaigns built for subscribers and long-form engagement.
             We optimize daily with transparent weekly reporting and clean data exports.
@@ -60,19 +60,18 @@ const YouTubeAdsSlide = () => (
         </GlassPanel>
 
         <GlassPanel variant="subtle" className="p-8 flex-1 flex flex-col justify-center">
-          <p className="text-2xl font-semibold text-foreground mb-3">How it works:</p>
+          <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             We target international audiences aligned with your genre, optimizing for
             watch time and subscriber conversion. Engagement ratios are monitored and
             protected throughout the campaign.
           </p>
           <div className="pt-4 border-t border-white/[0.06] mt-4">
-            <p className="text-2xl text-primary font-medium">Timeframe: 1–3 weeks</p>
+            <p className="text-2xl text-primary font-medium">Timeframe: 1 to 3 weeks</p>
           </div>
         </GlassPanel>
       </div>
 
-      {/* Right — Two Stacked Case Studies */}
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 flex flex-col justify-center gap-4">
         {cases.map((c) => (
@@ -81,7 +80,7 @@ const YouTubeAdsSlide = () => (
               <div className="w-[240px] h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
                 <img
                   src={c.thumb}
-                  alt={`${c.artist} — ${c.track}`}
+                  alt={`${c.artist}, ${c.track}`}
                   className="w-full h-full object-cover rounded-xl"
                 />
               </div>

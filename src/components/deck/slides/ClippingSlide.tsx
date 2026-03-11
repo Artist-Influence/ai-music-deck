@@ -100,7 +100,7 @@ const ClippingSlide = () => (
               {[
                 'Strategy driven by music industry professionals',
                 'Automatic content moderation for compliance',
-                'Bot detection — payment only for genuine views',
+                'Bot detection: payment only for genuine views',
                 'White glove service with professional reporting',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">

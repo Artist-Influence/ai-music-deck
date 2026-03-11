@@ -64,15 +64,16 @@ const HowWeWorkSlide = () => (
         })}
       </div>
 
-      {/* Reporting & Expectations */}
-      <div className="grid grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 gap-6">
         <GlassPanel variant="subtle" className="p-5">
-          <p className="text-lg font-semibold text-primary mb-3">Weekly updates include</p>
+          <p className="text-lg font-semibold text-primary mb-3">Reporting includes</p>
           <div className="space-y-2">
             {[
               "What launched, what's live, what's next",
-              "Top creatives and patterns we're seeing",
+              'Top creatives and patterns worth doubling down on',
               'Platform metrics that matter (not vanity noise)',
+              'Results by service with best-performing angles',
+              'Recommendations for the next release',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
@@ -97,26 +98,10 @@ const HowWeWorkSlide = () => (
             ))}
           </div>
         </GlassPanel>
-
-        <GlassPanel variant="subtle" className="p-5">
-          <p className="text-lg font-semibold text-primary mb-3">Final recap includes</p>
-          <div className="space-y-2">
-            {[
-              'Results by service',
-              'Best-performing angles and formats',
-              'Recommendations for the next release',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                <p className="text-lg text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
       </div>
 
       <p className="text-lg text-muted-foreground mt-5 italic">
-        What not to expect: one viral video to carry the whole release, or results without iteration.
+        What not to expect: results without testing and iteration.
       </p>
     </div>
   </div>
