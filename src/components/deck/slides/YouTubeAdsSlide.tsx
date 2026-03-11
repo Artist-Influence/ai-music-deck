@@ -66,9 +66,10 @@ const YouTubeAdsSlide = () => (
             watch time and subscriber conversion. Engagement ratios are monitored and
             protected throughout the campaign.
           </p>
+          <div className="pt-4 border-t border-white/[0.06] mt-4">
+            <p className="text-2xl text-primary font-medium">Timeframe: 1–3 weeks</p>
+          </div>
         </GlassPanel>
-
-        <p className="text-2xl text-primary font-medium">Timeframe: 1–3 weeks</p>
       </div>
 
       {/* Right — Two Stacked Case Studies */}

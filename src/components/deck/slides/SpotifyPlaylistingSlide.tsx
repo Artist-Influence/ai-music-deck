@@ -95,9 +95,10 @@ const SpotifyPlaylistingSlide = () => (
             When Spotify sees real listener engagement, it pushes your track into
             Discover Weekly, Release Radar, and Radio. Stream goals guaranteed.
           </p>
+          <div className="pt-4 border-t border-white/[0.06] mt-4">
+            <p className="text-2xl text-primary font-medium">Timeframe: 12 weeks</p>
+          </div>
         </GlassPanel>
-
-        <p className="text-2xl text-primary font-medium mt-2">Timeframe: 12 weeks</p>
       </div>
 
       {/* Right — 3 Case Studies */}
