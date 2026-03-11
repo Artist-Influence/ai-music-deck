@@ -69,7 +69,7 @@ const HubDiagram = () => {
         <circle cx="105" cy="400" r="48" fill="hsl(180, 70%, 48%)" opacity="0.1" stroke="hsl(180, 70%, 48%)" strokeWidth="0.8" />
         <g ref={el => { textRefs.current[2] = el; }}>
           <text x="105" y="396" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="15" fontWeight="500">Communities</text>
-          <text x="105" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14" opacity="0.6">& Culture</text>
+          <text x="105" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14">& Culture</text>
         </g>
 
         {/* Streaming node */}
