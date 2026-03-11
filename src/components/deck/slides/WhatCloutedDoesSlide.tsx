@@ -40,10 +40,9 @@ const HubDiagram = () => {
   }, []);
 
   return (
-    <svg viewBox="0 0 500 500" className="w-[560px] h-[560px]">
+    <svg viewBox="0 0 500 500" className="w-[460px] h-[460px]">
       <g ref={orbitRef}>
         {/* Rings */}
-        <circle cx="250" cy="250" r="200" stroke="hsl(195, 90%, 60%)" strokeWidth="1" fill="none" opacity="0.2" />
         <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.6" fill="none" opacity="0.15" />
 
         {/* Connection lines */}
@@ -91,7 +90,7 @@ const WhatCloutedDoesSlide = () => (
     <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px]">
       <div className="flex-1 max-w-[700px]">
         <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
-          Coordinated distribution so your music and artists build momentum like a system, not a gamble.
+          Coordinated distribution so your music builds momentum — not a gamble.
         </h1>
         <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
         <div className="space-y-3">
