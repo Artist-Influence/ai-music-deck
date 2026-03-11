@@ -32,7 +32,7 @@ const FanpageVisualizer = () => {
 
   return (
     <div className="w-full h-full flex items-center justify-center">
-      <svg viewBox="0 0 500 170" className="w-full h-full max-w-[520px] max-h-[180px]">
+      <svg viewBox="0 0 500 170" className="w-full h-full" preserveAspectRatio="none">
         <defs>
           <clipPath id="fpClip">
             <rect x="10" y="0" width="480" height="170" rx="6" />
