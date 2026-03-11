@@ -62,7 +62,7 @@ const HubDiagram = () => {
         <circle cx="250" cy="70" r="48" fill="hsl(195, 90%, 60%)" opacity="0.1" stroke="hsl(195, 90%, 60%)" strokeWidth="0.8" />
         <g ref={el => { textRefs.current[1] = el; }}>
           <text x="250" y="66" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="16" fontWeight="500">Short-form</text>
-          <text x="250" y="84" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14" opacity="0.6">Content</text>
+          <text x="250" y="84" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14">Content</text>
         </g>
 
         {/* Communities node */}
