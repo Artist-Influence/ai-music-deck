@@ -89,8 +89,8 @@ const WhatCloutedDoesSlide = () => (
 
     <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px]">
       <div className="flex-1 max-w-[700px]">
-        <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
-          Coordinated distribution so your music builds momentum — not a gamble.
+        <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight whitespace-nowrap">
+          Coordinated distribution as a system, not a gamble.
         </h1>
         <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
         <div className="space-y-3">
