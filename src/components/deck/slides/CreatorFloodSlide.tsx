@@ -79,7 +79,7 @@ const CreatorFloodSlide = () => (
           <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
             <img
               src={richBrianImg}
-              alt="Rich Brian — Jumpy TikTok sound page, 33K+ videos"
+              alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos"
               className="w-full h-full object-cover object-right-top"
             />
           </div>
