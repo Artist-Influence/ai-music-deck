@@ -40,7 +40,7 @@ const HubDiagram = () => {
   }, []);
 
   return (
-    <svg viewBox="0 0 500 500" className="w-[460px] h-[460px]">
+    <svg viewBox="0 0 500 500" className="w-[380px] h-[380px]">
       <g ref={orbitRef}>
         {/* Rings */}
         <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.6" fill="none" opacity="0.15" />
