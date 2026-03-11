@@ -51,7 +51,7 @@ const HowWeWorkSlide = () => (
                 <Icon className="w-8 h-8 text-primary mx-auto mb-3 relative z-10" />
                 <p className="text-primary text-base font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
                 <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}</p>
-                <p className="text-lg text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
+                <p className="text-[21px] text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
               </GlassPanel>
               {i < steps.length - 1 && (
                 <div
