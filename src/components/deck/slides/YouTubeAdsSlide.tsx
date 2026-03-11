@@ -71,10 +71,11 @@ const YouTubeAdsSlide = () => (
 
         <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col justify-center">
           <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            Paid YouTube campaigns built for subscribers and long-form engagement.
-            We optimize daily with transparent weekly reporting and clean data exports.
-          </p>
+          <div className="space-y-2.5">
+            {whatItIsItems.map((item, i) => (
+              <BulletPoint key={i}>{item}</BulletPoint>
+            ))}
+          </div>
         </GlassPanel>
 
         <GlassPanel variant="subtle" className="p-8 flex-1 flex flex-col justify-center">
