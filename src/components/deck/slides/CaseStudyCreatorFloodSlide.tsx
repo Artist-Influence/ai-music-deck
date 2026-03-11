@@ -56,7 +56,7 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-sm text-muted-foreground mb-3">{richBrian.track}</p>
           <p className="text-base text-muted-foreground mb-3">{richBrian.overview}</p>
           <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
-            <img src={richBrianImg} alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover object-top" />
+            <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover object-top" />
           </div>
           <div className="grid grid-cols-2 gap-2 mt-auto">
             {richBrian.metrics.map((m) => (
