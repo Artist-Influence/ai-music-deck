@@ -9,12 +9,12 @@ const cases = [
     track: 'Spicy Margarita',
     thumb: spicyMargaritaThumb,
     metrics: [
-      { val: '11M', label: 'Views' },
-      { val: '6.5M', label: 'Unique Viewers' },
-      { val: '1.1M+ hrs', label: 'Watch Time' },
-      { val: '76.4%', label: 'Avg % Viewed' },
-      { val: '207K', label: 'Likes' },
-      { val: '7.9K', label: 'Comments' },
+      { val: '11M', label: 'Views', primary: true },
+      { val: '6.5M', label: 'Unique Viewers', primary: true },
+      { val: '1.1M+ hrs', label: 'Watch Time', primary: false },
+      { val: '76.4%', label: 'Avg % Viewed', primary: false },
+      { val: '207K', label: 'Likes', primary: false },
+      { val: '7.9K', label: 'Comments', primary: false },
     ],
   },
   {
@@ -22,35 +22,36 @@ const cases = [
     track: 'Sunsets & Cigarettes',
     thumb: markTuanThumb,
     metrics: [
-      { val: '10M', label: 'Views' },
-      { val: '5.5M', label: 'Unique Viewers' },
-      { val: '1.4M hrs', label: 'Watch Time' },
-      { val: '81.2%', label: 'Avg % Viewed' },
-      { val: '135K', label: 'Likes' },
-      { val: '6.3K', label: 'Comments' },
+      { val: '10M', label: 'Views', primary: true },
+      { val: '5.5M', label: 'Unique Viewers', primary: true },
+      { val: '1.4M hrs', label: 'Watch Time', primary: false },
+      { val: '81.2%', label: 'Avg % Viewed', primary: false },
+      { val: '135K', label: 'Likes', primary: false },
+      { val: '6.3K', label: 'Comments', primary: false },
     ],
   },
 ];
 
 const YouTubeAdsSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-8 flex items-center justify-center">
-    <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.05] blur-[140px]" />
+  <div className="w-full h-full bg-background relative overflow-hidden p-6 flex items-start justify-center pt-[60px]">
+    <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.04] blur-[140px]" />
+    <div className="absolute bottom-[5%] left-[10%] w-[600px] h-[600px] rounded-full bg-primary/[0.02] blur-[180px]" />
 
-    <div className="relative z-10 flex gap-8 w-full max-w-[1600px] mx-auto items-center">
+    <div className="relative z-10 flex gap-12 w-full max-w-[1720px] mx-auto items-start">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 max-w-[540px] flex flex-col gap-2">
+      <div className="flex-1 min-w-0 max-w-[620px] flex flex-col gap-4">
         <div>
-          <div className="flex items-center gap-3 mb-2">
+          <div className="flex items-center gap-3 mb-3">
             <Youtube size={28} className="text-primary" />
-            <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+            <p className="text-base text-primary font-medium tracking-wider uppercase">Service</p>
           </div>
-          <h1 className="text-5xl font-bold text-foreground mb-2 leading-tight">YouTube Advertising</h1>
-          <p className="text-xl text-muted-foreground mb-3 max-w-[700px]">
+          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">YouTube Advertising</h1>
+          <p className="text-2xl text-muted-foreground mb-6 max-w-[520px]">
             International targeting + optimization to maximize reach while protecting engagement ratios.
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-4">
+        <GlassPanel variant="bright" className="p-6">
           <p className="text-2xl font-semibold text-foreground mb-2">What it is:</p>
           <p className="text-xl text-muted-foreground leading-relaxed">
             Paid YouTube campaigns built for subscribers and long-form engagement.
@@ -58,7 +59,7 @@ const YouTubeAdsSlide = () => (
           </p>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-4">
+        <GlassPanel variant="bright" className="p-6">
           <p className="text-2xl font-semibold text-foreground mb-2">How it works:</p>
           <p className="text-xl text-muted-foreground leading-relaxed">
             We target international audiences aligned with your genre, optimizing for
@@ -67,19 +68,22 @@ const YouTubeAdsSlide = () => (
           </p>
         </GlassPanel>
 
-        <p className="text-xl text-primary font-medium">Timeframe: 1–3 weeks</p>
+        <p className="text-xl text-primary font-medium mt-2">Timeframe: 1–3 weeks</p>
       </div>
 
       {/* Right — Two Stacked Case Studies */}
-       <div className="w-[560px] shrink-0 flex flex-col gap-2">
+      <div className="w-[580px] shrink-0 flex flex-col gap-4">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-4 flex flex-col flex-1 justify-center">
-            <div className="w-[460px] mx-auto">
-              <p className="text-xs text-primary font-mono mb-0.5 tracking-widest">CASE STUDY</p>
-              <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
-              <p className="text-lg text-muted-foreground mb-1">{c.track}</p>
+          <div
+            key={c.artist}
+            className="rounded-2xl border border-white/[0.1] backdrop-blur-xl p-5 bg-white/[0.03] shadow-[0_4px_24px_rgba(0,0,0,0.3)] flex flex-col flex-1 justify-center"
+          >
+            <div className="w-[500px] mx-auto">
+              <p className="text-[11px] text-primary font-mono mb-1 tracking-widest">CASE STUDY</p>
+              <p className="text-xl font-bold text-foreground leading-tight mb-0.5">{c.artist}</p>
+              <p className="text-lg text-muted-foreground mb-2">{c.track}</p>
 
-              <div className="h-[160px] w-full rounded-lg border border-white/[0.08] overflow-hidden mb-1 bg-black/30">
+              <div className="h-[180px] w-full rounded-xl border border-white/[0.08] overflow-hidden mb-3 bg-black/30">
                 <img
                   src={c.thumb}
                   alt={`${c.artist} — ${c.track}`}
@@ -87,16 +91,25 @@ const YouTubeAdsSlide = () => (
                 />
               </div>
 
-              <div className="grid grid-cols-2 gap-1">
+              <div className="grid grid-cols-2 gap-1.5">
                 {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-lg py-2 px-2 text-center">
-                    <p className="text-lg font-bold text-foreground">{m.val}</p>
-                    <p className="text-xs text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  <div
+                    key={m.label}
+                    className={`rounded-xl py-2.5 px-3 text-center ${
+                      m.primary
+                        ? 'bg-white/[0.06] border-t border-primary/20'
+                        : 'bg-white/[0.03]'
+                    }`}
+                  >
+                    <p className={m.primary ? 'text-xl font-bold text-foreground' : 'text-lg font-semibold text-foreground/80'}>
+                      {m.val}
+                    </p>
+                    <p className="text-[10px] text-muted-foreground/60 uppercase tracking-wider">{m.label}</p>
                   </div>
                 ))}
               </div>
             </div>
-          </GlassPanel>
+          </div>
         ))}
       </div>
     </div>
