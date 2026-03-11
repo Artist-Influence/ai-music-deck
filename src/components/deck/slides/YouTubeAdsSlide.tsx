@@ -32,6 +32,24 @@ const cases = [
   },
 ];
 
+const BulletPoint = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-start gap-2.5">
+    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+    <p className="text-2xl text-muted-foreground">{children}</p>
+  </div>
+);
+
+const whatItIsItems = [
+  'Paid YouTube campaigns built for subscribers and long-form engagement',
+  'We optimize daily with transparent weekly reporting and clean data exports',
+];
+
+const howItWorksItems = [
+  'We target international audiences aligned with your genre',
+  'Optimizing for watch time and subscriber conversion',
+  'Engagement ratios are monitored and protected throughout the campaign',
+];
+
 const YouTubeAdsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.08] blur-[140px] animate-float" />
