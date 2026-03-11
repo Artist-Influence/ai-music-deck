@@ -12,7 +12,7 @@ const CaseStudySlide = () => (
     <div className="relative z-10 w-full max-w-[1400px] mx-auto">
       <div className="max-w-[1200px] mx-auto">
         <h1 className="text-6xl font-bold text-foreground mb-4">Proof, not promises.</h1>
-        <p className="text-xl text-muted-foreground mb-12">Case study — Fan Page Growth</p>
+        <p className="text-xl text-muted-foreground mb-12">Case study: Fan Page Growth</p>
       </div>
 
       <div className="grid grid-cols-2 gap-8 max-w-[1200px] mx-auto">

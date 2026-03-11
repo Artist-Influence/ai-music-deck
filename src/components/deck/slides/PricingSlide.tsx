@@ -17,7 +17,7 @@ const PricingSlide = () => (
 
     <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-7xl font-bold text-foreground mb-4">A-la-carte pricing</h1>
-      <p className="text-2xl text-muted-foreground mb-12">Every package is built around your goals. Pick individual services, or let us design a custom bundle — your cocktail recipe for growth.</p>
+      <p className="text-2xl text-muted-foreground mb-12">Every package is built around your goals. Pick individual services, or let us design a custom bundle: your cocktail recipe for growth.</p>
 
       <GlassPanel className="p-0 overflow-hidden">
         <table className="w-full">
@@ -44,7 +44,7 @@ const PricingSlide = () => (
         <a href="https://clouted-pricing.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block text-xl font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
           View full pricing sheet →
         </a>
-        <p className="text-xl text-foreground">We'll build the final package — tailored to your release schedule, audience, and goals. White-glove service, zero guesswork.</p>
+        <p className="text-xl text-foreground">We'll build the final package, tailored to your release schedule, audience, and goals. White-glove service, zero guesswork.</p>
       </div>
     </div>
   </div>

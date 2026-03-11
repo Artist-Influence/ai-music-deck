@@ -36,7 +36,7 @@ const CreatorFloodSlide = () => (
               'Builds massive volume and algorithmic lift through real accounts, not bots',
               'Sheer quantity of real usage signals tells TikTok the sound is trending organically',
               'Macro-influencers mixed in for added reach',
-              'Over-indexing videos tracked — when a clip takes off, Spark Ads pointed to Spotify convert momentum into streams',
+              'Over-indexing videos tracked: when a clip takes off, Spark Ads pointed to Spotify convert momentum into streams',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
@@ -52,7 +52,7 @@ const CreatorFloodSlide = () => (
             {[
               'When you want brute visibility fast',
               "When you have a track that's already converting and needs fuel on the fire",
-              'When the goal is pure volume — maximum algorithm discovery signals at scale',
+              'When the goal is pure volume: maximum algorithm discovery signals at scale',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
@@ -79,7 +79,7 @@ const CreatorFloodSlide = () => (
           <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
             <img
               src={richBrianImg}
-              alt="Rich Brian — Jumpy TikTok sound page, 33K+ videos"
+              alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos"
               className="w-full h-full object-cover object-right-top"
             />
           </div>

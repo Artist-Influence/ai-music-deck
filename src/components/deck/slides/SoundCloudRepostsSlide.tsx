@@ -69,8 +69,9 @@ const SoundCloudRepostsSlide = () => (
             <div className="space-y-2.5">
               {[
                 'Tracks distributed through a verified network of SoundCloud accounts with real followers',
-                'Each repost is tracked and reported — full transparency on where your music lands',
+                'Each repost is tracked and reported with full transparency on where your music lands',
                 'Genre-aligned placement, not spray-and-pray',
+                'We manage 50M+ followers worth of artists across the network',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
@@ -95,7 +96,7 @@ const SoundCloudRepostsSlide = () => (
               ))}
             </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
-              <p className="text-2xl text-primary font-medium">Total group reach: 25M+ followers · Timeframe: 2–8 weeks</p>
+              <p className="text-2xl text-primary font-medium">Total group reach: 25M+ followers · Timeframe: 2 to 8 weeks</p>
             </div>
           </GlassPanel>
         </div>

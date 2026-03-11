@@ -7,10 +7,10 @@ import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
 import mlIg from '@/assets/major-lazer-ig-trending.jpeg';
 
 const majorLazerScreenshots = [
-  { src: mlShorts, alt: 'YouTube Shorts — #11 Canada Daily Top Songs' },
-  { src: mlFacebook, alt: 'Facebook — For You audio listing' },
-  { src: mlTiktok, alt: 'TikTok — Popular tab, 1739 videos' },
-  { src: mlIg, alt: 'Instagram — #4 Trending, 15K reels' },
+  { src: mlShorts, alt: 'YouTube Shorts, #11 Canada Daily Top Songs' },
+  { src: mlFacebook, alt: 'Facebook, For You audio listing' },
+  { src: mlTiktok, alt: 'TikTok, Popular tab, 1739 videos' },
+  { src: mlIg, alt: 'Instagram, #4 Trending, 15K reels' },
 ];
 
 const richBrian = {
@@ -56,7 +56,7 @@ const CaseStudyCreatorFloodSlide = () => (
           <p className="text-sm text-muted-foreground mb-3">{richBrian.track}</p>
           <p className="text-base text-muted-foreground mb-3">{richBrian.overview}</p>
           <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
-            <img src={richBrianImg} alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover object-top" />
+            <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 29.3K videos" className="w-full h-full object-cover object-top" />
           </div>
           <div className="grid grid-cols-2 gap-2 mt-auto">
             {richBrian.metrics.map((m) => (
@@ -77,7 +77,7 @@ const CaseStudyCreatorFloodSlide = () => (
           <div className="grid grid-cols-2 gap-2 mb-3 flex-1 min-h-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
-              <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-cover" />
+              <img src={mlShorts} alt="YouTube Shorts, #11 Canada Daily Top Songs" className="w-full h-full object-cover" />
             </div>
             {/* Right: 3 horizontal images stacked, matching left height */}
             <div className="flex flex-col justify-between h-full">

@@ -87,7 +87,7 @@ const InstagramSeedingSlide = () => (
               ))}
             </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
-              <p className="text-2xl text-primary font-medium">Timeframe: 1–3 weeks</p>
+              <p className="text-2xl text-primary font-medium">Timeframe: 1 to 3 weeks</p>
             </div>
           </GlassPanel>
         </div>

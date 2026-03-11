@@ -106,7 +106,7 @@ const FanpagesSlide = () => (
                   <div className="mb-4">
                     <p className="text-2xl text-primary font-mono tracking-widest mb-1">FANPAGES</p>
                     <p className="text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
-                    <p className="text-2xl text-muted-foreground leading-relaxed">{c.project} — {c.goal}</p>
+                    <p className="text-2xl text-muted-foreground leading-relaxed">{c.project}: {c.goal}</p>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
                     {c.metrics.map((m) => (
