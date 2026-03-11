@@ -100,7 +100,7 @@ const HowWeWorkSlide = () => (
         </GlassPanel>
       </div>
 
-      <p className="text-lg text-muted-foreground mt-5 italic">
+      <p className="text-[21px] text-muted-foreground mt-5 italic">
         What not to expect: results without testing and iteration.
       </p>
     </div>

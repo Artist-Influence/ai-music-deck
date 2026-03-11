@@ -101,7 +101,7 @@ const WhatCloutedDoesSlide = () => (
           ].map(([label, desc], i) => (
             <GlassPanel key={i} variant="subtle" className="p-5 flex items-start gap-4">
               <span className="text-primary font-semibold text-lg shrink-0 w-32">{label}</span>
-              <p className="text-lg text-muted-foreground">{desc}</p>
+              <p className="text-[21px] text-muted-foreground">{desc}</p>
             </GlassPanel>
           ))}
         </div>
