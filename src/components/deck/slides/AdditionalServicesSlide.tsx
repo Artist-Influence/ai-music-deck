@@ -53,6 +53,25 @@ const cases = [
   },
 ];
 
+const whatItIsItems = [
+  'Paid social campaigns across Meta (Facebook + Instagram) and TikTok',
+  "Content that's already performing organically gets amplified with targeted paid distribution",
+  'Focused on converting real outcomes, not just impressions',
+];
+
+const howItWorksItems = [
+  'Optimized daily with weekly reporting and clean data exports',
+  'Targeting by genre, geography, and behavior',
+  'Focused on streams, ticket sales, merch, and fanbase growth',
+];
+
+const BulletPoint = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-start gap-2.5">
+    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+    <p className="text-2xl text-muted-foreground">{children}</p>
+  </div>
+);
+
 const AdditionalServicesSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] right-[20%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
@@ -75,15 +94,8 @@ const AdditionalServicesSlide = () => (
           <GlassPanel variant="bright" className="p-8">
             <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
             <div className="space-y-2.5">
-              {[
-                'Paid social campaigns across Meta (Facebook + Instagram) and TikTok',
-                "Content that's already performing organically gets amplified with targeted paid distribution",
-                'Focused on converting real outcomes, not just impressions',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{item}</p>
-                </div>
+              {whatItIsItems.map((item, i) => (
+                <BulletPoint key={i}>{item}</BulletPoint>
               ))}
             </div>
           </GlassPanel>
@@ -91,15 +103,8 @@ const AdditionalServicesSlide = () => (
           <GlassPanel variant="bright" className="p-8 flex-1">
             <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
             <div className="space-y-2.5">
-              {[
-                'Optimized daily with weekly reporting and clean data exports',
-                'Targeting by genre, geography, and behavior',
-                'Focused on streams, ticket sales, merch, and fanbase growth',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{item}</p>
-                </div>
+              {howItWorksItems.map((item, i) => (
+                <BulletPoint key={i}>{item}</BulletPoint>
               ))}
             </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
