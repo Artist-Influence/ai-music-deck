@@ -16,7 +16,7 @@ const PricingSlide = () => (
     <div className="absolute bottom-[10%] left-[15%] w-[400px] h-[400px] rounded-full bg-primary/[0.05] blur-[120px]" />
 
     <div className="relative z-10 w-full max-w-[1400px]">
-      <h1 className="text-7xl font-bold text-foreground mb-4">A-la-carte pricing</h1>
+      <h1 className="text-7xl font-bold text-foreground mb-4">Customized & A La Carte Pricing</h1>
       <p className="text-2xl text-muted-foreground mb-12">Every package is built around your goals. Pick individual services, or let us design a custom bundle: your cocktail recipe for growth.</p>
 
       <GlassPanel className="p-0 overflow-hidden">
