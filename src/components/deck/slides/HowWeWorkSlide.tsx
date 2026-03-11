@@ -70,10 +70,8 @@ const HowWeWorkSlide = () => (
           <div className="space-y-2">
             {[
               "What launched, what's live, what's next",
-              'Top creatives and patterns worth doubling down on',
-              'Platform metrics that matter (not vanity noise)',
-              'Results by service with best-performing angles',
-              'Recommendations for the next release',
+              'Top creatives, patterns worth doubling down on, and recommendations for the next release',
+              'Platform metrics that matter and results by service with best-performing angles',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />

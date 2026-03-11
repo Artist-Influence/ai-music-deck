@@ -96,9 +96,9 @@ const FanpagesSlide = () => (
         <div className="flex-1 flex flex-col justify-between gap-2">
           {caseStudies.map((c) => (
             <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1">
-              <div className="flex gap-5 h-full">
-                <div className="w-[160px] shrink-0">
-                  <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1]">
+              <div className="flex gap-5 h-full items-center">
+                <div className="w-[160px] shrink-0 flex items-center">
+                  <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1] w-full">
                     <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
