@@ -75,7 +75,7 @@ const ReportingExpectationsSlide = () => (
             ))}
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-6 text-left flex-1 flex flex-col">
+          <GlassPanel variant="subtle" className="p-6 text-left flex flex-col">
             <p className="text-xl font-semibold text-muted-foreground mb-4">What you should not expect</p>
             {dontExpect.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
