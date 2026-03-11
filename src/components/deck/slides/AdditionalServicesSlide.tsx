@@ -28,6 +28,7 @@ const cases = [
     track: 'Brand Awareness Campaign',
     description: '24-hour brand awareness campaign focused purely on views.',
     thumb: gordoImg,
+    imgPosition: 'object-top',
     icon: TikTokIcon,
     metrics: [
       { val: '1.4M', label: 'Impressions' },
