@@ -1,21 +1,11 @@
 import { TrendingUp } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
-import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
-import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
 import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
-import mlIg from '@/assets/major-lazer-ig-trending.jpeg';
-
-const screenshots = [
-  { src: mlShorts, alt: 'YouTube Shorts — #11 Canada Daily Top Songs' },
-  { src: mlFacebook, alt: 'Facebook — For You audio listing' },
-  { src: mlTiktok, alt: 'TikTok — Popular tab, 1739 videos' },
-  { src: mlIg, alt: 'Instagram — #4 Trending, 15K reels' },
-];
 
 const metrics = [
   { val: '5,000+', label: 'YT Creates' },
   { val: '14,900+', label: 'IG Reels Creates' },
-  { val: '2,000+', label: 'TikTok Creates' },
+  { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
   { val: 'US / CA', label: 'Trending Regions' },
 ];
 
@@ -24,7 +14,7 @@ const Top50TrendingSlide = () => (
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.08] blur-[140px] animate-float" />
     <div className="absolute bottom-[10%] left-[10%] w-[400px] h-[400px] rounded-full bg-accent/[0.06] blur-[120px] animate-float-slow" />
 
-    <div className="relative z-10 w-full max-w-[1600px] flex gap-10">
+    <div className="relative z-10 w-full max-w-[1600px] flex gap-10 items-stretch">
       {/* Left — Service Info */}
       <div className="flex-1 flex flex-col gap-4">
         <div>
@@ -61,37 +51,37 @@ const Top50TrendingSlide = () => (
               </div>
             ))}
           </div>
-          <div className="pt-4 border-t border-white/[0.06] mt-4">
+          <div className="pt-3 border-t border-white/[0.06] mt-3">
             <p className="text-2xl text-primary font-medium">Timeframe: 2 to 3 weeks</p>
           </div>
         </GlassPanel>
       </div>
 
       {/* Right — Case Study */}
-      <div className="flex-1 flex flex-col items-center justify-center">
-        <GlassPanel variant="bright" className="p-8 flex flex-col">
+      <div className="flex-1 flex flex-col justify-center">
+        <GlassPanel variant="bright" className="p-5 flex flex-col">
           <p className="text-base text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
-          <p className="text-3xl font-bold text-foreground">Major Lazer</p>
-          <p className="text-2xl text-muted-foreground mb-3">MINI SKIRT</p>
-          <p className="text-2xl text-muted-foreground mb-4">
+          <p className="text-2xl font-bold text-foreground">Major Lazer</p>
+          <p className="text-xl text-muted-foreground mb-2">MINI SKIRT</p>
+          <p className="text-xl text-muted-foreground mb-4">
             Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
           </p>
 
-          <div className="grid grid-cols-2 gap-2 mb-4 max-h-[340px] overflow-hidden">
-            {screenshots.map((s, i) => (
-              <div key={i} className="rounded-lg border border-white/[0.08] overflow-hidden">
-                <img src={s.src} alt={s.alt} className={`w-full h-full object-cover ${i === 0 ? 'object-[center_60%]' : ''}`} />
-              </div>
-            ))}
-          </div>
+          <div className="flex gap-4 flex-1">
+            {/* Left: KPIs stacked */}
+            <div className="flex flex-col gap-3 w-44 shrink-0">
+              {metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center border border-white/[0.06]">
+                  <p className="text-lg font-bold text-foreground">{m.val}</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                </div>
+              ))}
+            </div>
 
-          <div className="grid grid-cols-2 gap-3">
-            {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
-              </div>
-            ))}
+            {/* Right: TikTok screenshot */}
+            <div className="flex-1 rounded-xl overflow-hidden border border-white/[0.08] bg-black/20">
+              <img src={mlTiktok} alt="TikTok — Popular tab, 1739 videos" className="w-full h-full object-contain" />
+            </div>
           </div>
         </GlassPanel>
       </div>
