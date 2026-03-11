@@ -77,7 +77,7 @@ const HowWeWorkSlide = () => (
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                <p className="text-lg text-muted-foreground">{item}</p>
+                <p className="text-[21px] text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
