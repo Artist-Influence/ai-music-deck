@@ -77,7 +77,7 @@ const CaseStudyCreatorFloodSlide = () => (
           <div className="grid grid-cols-2 gap-2 mb-3 flex-1 min-h-0">
             {/* Left: vertical image */}
             <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
-              <img src={mlShorts} alt="YouTube Shorts — #11 Canada Daily Top Songs" className="w-full h-full object-cover" />
+              <img src={mlShorts} alt="YouTube Shorts, #11 Canada Daily Top Songs" className="w-full h-full object-cover" />
             </div>
             {/* Right: 3 horizontal images stacked, matching left height */}
             <div className="flex flex-col justify-between h-full">
