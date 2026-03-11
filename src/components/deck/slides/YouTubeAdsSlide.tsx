@@ -72,30 +72,32 @@ const YouTubeAdsSlide = () => (
       </div>
 
       {/* Right — Two Stacked Case Studies */}
+      {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 flex flex-col items-center justify-center gap-4">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1 flex flex-row gap-6">
-            <div className="shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
-              <img
-                src={c.thumb}
-                alt={`${c.artist} — ${c.track}`}
-                className="h-full w-auto object-cover rounded-xl"
-              />
+          <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1 flex flex-col">
+            <div className="flex flex-row gap-5 mb-3">
+              <div className="shrink-0 rounded-xl overflow-hidden border border-white/[0.08] max-h-[140px]">
+                <img
+                  src={c.thumb}
+                  alt={`${c.artist} — ${c.track}`}
+                  className="h-full w-auto object-cover rounded-xl"
+                />
+              </div>
+              <div className="flex-1 flex flex-col justify-center">
+                <p className="text-base text-primary font-mono mb-1 tracking-widest uppercase">Case Study</p>
+                <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-lg text-muted-foreground">{c.track}</p>
+              </div>
             </div>
 
-            <div className="flex-1 flex flex-col justify-center">
-              <p className="text-base text-primary font-mono mb-1 tracking-widest uppercase">Case Study</p>
-              <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-              <p className="text-lg text-muted-foreground mb-3">{c.track}</p>
-
-              <div className="grid grid-cols-2 gap-2">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
-                    <p className="text-lg font-bold text-foreground">{m.val}</p>
-                    <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
-                  </div>
-                ))}
-              </div>
+            <div className="grid grid-cols-3 gap-2">
+              {c.metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
+                  <p className="text-lg font-bold text-foreground">{m.val}</p>
+                  <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
             </div>
           </GlassPanel>
         ))}
