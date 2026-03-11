@@ -84,16 +84,21 @@ const HubDiagram = () => {
 };
 
 const WhatCloutedDoesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden p-16 flex flex-col">
     <div className="absolute top-[15%] left-[40%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[150px] animate-float" />
 
-    <div className="relative z-10 flex gap-16 items-center w-full max-w-[1600px]">
-      <div className="flex-1 max-w-[700px]">
-        <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight">
+    <div className="relative z-10 flex flex-col h-full w-full max-w-[1600px] mx-auto">
+      {/* Full-width title */}
+      <div className="mb-6">
+        <h1 className="text-4xl font-bold text-foreground leading-tight whitespace-nowrap">
           Coordinated distribution so your music builds momentum — not a gamble.
         </h1>
-        <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
-        <div className="space-y-3">
+        <p className="text-lg text-primary font-medium mt-4 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
+      </div>
+
+      {/* Content row */}
+      <div className="flex flex-1 gap-12 items-end">
+        <div className="flex-1 space-y-3 pb-4">
           {[
             ['Volume', 'Flood social platforms with high-velocity short-form content'],
             ['Curation', 'Target real communities with reach within your niche'],
@@ -105,10 +110,10 @@ const WhatCloutedDoesSlide = () => (
             </GlassPanel>
           ))}
         </div>
-      </div>
 
-      <div className="flex-1 flex items-center justify-center">
-        <HubDiagram />
+        <div className="flex items-end justify-center self-end">
+          <HubDiagram />
+        </div>
       </div>
     </div>
   </div>
