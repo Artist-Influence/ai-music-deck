@@ -99,8 +99,8 @@ const WhatCloutedDoesSlide = () => (
             ['Curation', 'Target real communities with reach within your niche'],
             ['Amplification', 'Amplify winners with paid spend once the creative proves itself'],
           ].map(([label, desc], i) => (
-            <GlassPanel key={i} variant="subtle" className="p-5 flex items-center gap-4">
-              <span className="text-primary font-semibold text-[21px] shrink-0 w-32">{label}</span>
+            <GlassPanel key={i} variant="subtle" className="p-6 flex items-center gap-6">
+              <span className="text-primary font-semibold text-[21px] shrink-0 w-40">{label}</span>
               <p className="text-[21px] text-muted-foreground">{desc}</p>
             </GlassPanel>
           ))}

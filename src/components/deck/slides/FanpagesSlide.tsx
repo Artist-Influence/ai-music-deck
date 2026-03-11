@@ -53,7 +53,7 @@ const FanpagesSlide = () => (
             <p className="text-2xl text-muted-foreground leading-relaxed mb-4">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
             </p>
-            <div className="w-full h-32 opacity-60"><FanpageVisualizer /></div>
+            <div className="w-full h-40 mt-4"><FanpageVisualizer /></div>
           </GlassPanel>
 
           <GlassPanel className="p-6 flex-1">
