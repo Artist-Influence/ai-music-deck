@@ -70,8 +70,8 @@ const HowWeWorkSlide = () => (
           <p className="text-lg font-semibold text-primary mb-3">Weekly updates include</p>
           <div className="space-y-2">
             {[
-              'What launched, what's live, what's next',
-              'Top creatives and patterns we're seeing',
+              "What launched, what's live, what's next",
+              "Top creatives and patterns we're seeing",
               'Platform metrics that matter (not vanity noise)',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">

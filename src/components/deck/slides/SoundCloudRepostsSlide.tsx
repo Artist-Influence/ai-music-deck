@@ -84,7 +84,7 @@ const SoundCloudRepostsSlide = () => (
             <p className="text-2xl font-semibold text-primary mb-3">Why it works</p>
             <div className="space-y-2.5">
               {[
-                'SoundCloud's algorithm rewards early engagement signals',
+                "SoundCloud's algorithm rewards early engagement signals",
                 'Reposts from established accounts drive organic plays, likes, and follows that compound',
                 'Still the discovery engine for underground and electronic music',
               ].map((item, i) => (

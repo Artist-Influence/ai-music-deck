@@ -77,8 +77,8 @@ const AdditionalServicesSlide = () => (
             <div className="space-y-2.5">
               {[
                 'Paid social campaigns across Meta (Facebook + Instagram) and TikTok',
-                'Content that's already performing organically gets amplified with targeted paid distribution',
-                'Focused on converting real outcomes — not just impressions',
+              "Content that's already performing organically gets amplified with targeted paid distribution",
+              'Focused on converting real outcomes — not just impressions',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
