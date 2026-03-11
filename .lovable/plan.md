@@ -1,39 +1,20 @@
 
-# Grammar Fixes Across Slides
 
-Three small text edits across three files:
+## Fix Uniform Case Study Cards on Slide 14
 
-## Changes
+**Problem:** The Gordo card appears larger than Zeds Dead because the description text differs in length (1 line vs 2 lines), pushing content around. The `flex-1` + `justify-center` approach lets each card's internal content dictate its visual weight differently.
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+**Fix in `src/components/deck/slides/AdditionalServicesSlide.tsx`:**
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+1. **Remove `flex-1` from GlassPanel** — instead of letting flex distribute space unevenly based on content, give both cards equal explicit structure
+2. **Fix thumbnail size** — both already use `w-[150px] h-[150px]`, so these are fine
+3. **Fix description line** — give it a fixed height (`h-[52px]`) so both cards allocate the same space regardless of text length
+4. **Standardize KPI boxes** — keep the current `min-h-[90px]` and `px-3 py-4` but also add a fixed height `h-[90px]` to enforce exact uniformity
+5. **Use `flex-1` on the parent column and `flex-1` equally on both cards** — the issue is that `justify-center` with varying content heights creates different visual padding. Instead, remove `justify-center` and use consistent fixed spacing
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+**Concrete changes (lines 99-127):**
+- Keep `flex-1` on each GlassPanel but remove `justify-center` — let content flow naturally from top
+- Set description `<p>` to `min-h-[48px]` to normalize the space between 1-line and 2-line descriptions  
+- Change KPI boxes from `min-h-[90px]` to `h-[90px]` for exact sizing
+- Keep all padding at `p-5` for both cards
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
-
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
-
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
-
-### Final Plan
-
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
-
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
-
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
-
-## Technical Details
-
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
-
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
-
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
