@@ -1,39 +1,68 @@
 
-# Grammar Fixes Across Slides
 
-Three small text edits across three files:
+## Multi-Slide Update Plan
 
-## Changes
+### Slide 7 — FanpagesSlide.tsx
+1. Add `FanpageVisualizer` component inside the "What it is" GlassPanel, below the text
+2. Rename sections to match Slide 6: "What this is great for" → **"Pros"**, "What you can expect" → **"How it works"**
+3. Rewrite supporting copy under Pros and How it works as concise bullet points matching Slide 6's style
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+### Slide 8 — CreatorFloodSlide.tsx
+1. Rename "Why it works" → **"Pros"** and convert the paragraph into bullet points
+2. Make both GlassPanels use the same `variant` (default, matching Slide 6's info panels)
+3. Update Rich Brian total creates: `29,900+` → `33,000+` (also update the `Total Creates` metric)
+4. Change "gasoline" → **"fuel"** in "When to use"
+5. Rewrite last "When to use" bullet to be clearer, incorporating the word "volume"
+6. Change `10,000+` label or description reference from "10k creators" context to **"minimum posts"** language (update the sub-description text)
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+### Slide 9 — Top50TrendingSlide.tsx
+1. Ensure KPI box text is center-aligned (add `flex flex-col items-center justify-center` to KPI boxes)
+2. Replace content types in case study description with platform names (e.g., "across YouTube Shorts, Instagram Reels, and Facebook Reels")
+3. Change "How it's done (honest version)" → **"How it's done (transparently)"**
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+### Slide 11 — SpotifyPlaylistingSlide.tsx
+1. Convert "What it is" and "Why it works" paragraph text into bullet points
+2. Change section title color from `text-foreground` to **`text-primary`** (blue)
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+### Slide 12 — SoundCloudRepostsSlide.tsx
+1. Same treatment: blue section titles (`text-primary`)
+2. Convert paragraph copy into bullet points
+3. Add a "Total group reach" metric or line
 
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+### Slide 13 — InstagramSeedingSlide.tsx
+1. Blue section titles (`text-primary`)
+2. Convert paragraph copy into bullet points
 
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+### Slide 14 — AdditionalServicesSlide.tsx
+1. Convert paragraph copy into bullet points
+2. Change section title color to `text-primary`
 
-### Final Plan
+### Slide 15 — Remove ReportingExpectationsSlide
+1. Remove `ReportingExpectationsSlide` from `slides/index.tsx`
+2. Move non-redundant reporting info (weekly updates, final recap) into **Slide 5 (HowWeWorkSlide.tsx)** — add a compact section below the 4-step process
+3. Add a one-line "What not to expect" section at the bottom of Slide 5
 
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+### Slide 16 — PricingSlide.tsx
+1. Add language about customized bundles and cocktail-recipe approach
+2. Rewrite subtitle/supporting copy to emphasize white-glove, tailored packaging based on client goals
 
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+### Slide 17 — NextStepsSlide.tsx
+1. Make the title fit on one line (add `whitespace-nowrap` or shorten text slightly)
 
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+---
 
-## Technical Details
+### Technical Details
 
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+**Files modified (11):**
+- `src/components/deck/slides/FanpagesSlide.tsx` — add visualizer import, restructure sections
+- `src/components/deck/slides/CreatorFloodSlide.tsx` — rename sections, update metrics/copy
+- `src/components/deck/slides/Top50TrendingSlide.tsx` — KPI alignment, copy tweaks
+- `src/components/deck/slides/SpotifyPlaylistingSlide.tsx` — bullet points, blue titles
+- `src/components/deck/slides/SoundCloudRepostsSlide.tsx` — bullet points, blue titles, add reach
+- `src/components/deck/slides/InstagramSeedingSlide.tsx` — bullet points, blue titles
+- `src/components/deck/slides/AdditionalServicesSlide.tsx` — bullet points, blue titles
+- `src/components/deck/slides/HowWeWorkSlide.tsx` — add reporting + expectations content
+- `src/components/deck/slides/PricingSlide.tsx` — white-glove bundle language
+- `src/components/deck/slides/NextStepsSlide.tsx` — single-line title
+- `src/components/deck/slides/index.tsx` — remove ReportingExpectationsSlide import and entry
 
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
-
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
