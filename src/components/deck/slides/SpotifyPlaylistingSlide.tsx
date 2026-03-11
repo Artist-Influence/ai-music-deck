@@ -73,7 +73,7 @@ const SpotifyPlaylistingSlide = () => (
             <SpotifyIcon />
             <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
           </div>
-          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">Spotify Playlisting<br />(Organic)</h1>
+          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">Spotify Playlisting</h1>
           <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
             Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup.
           </p>
