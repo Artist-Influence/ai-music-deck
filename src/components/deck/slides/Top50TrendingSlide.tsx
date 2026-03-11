@@ -7,6 +7,7 @@ const metrics = [
   { val: '14,900+', label: 'IG Reels Creates' },
   { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
   { val: 'US / CA', label: 'Trending Regions' },
+  { val: 'US, CA, UK, KR', label: 'YT Shorts Audio Trending' },
 ];
 
 const Top50TrendingSlide = () => (
