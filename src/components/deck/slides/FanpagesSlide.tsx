@@ -32,33 +32,33 @@ const caseStudies = [
 ];
 
 const FanpagesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex flex-col items-center justify-start">
+  <div className="w-full h-full bg-background relative overflow-hidden px-12 py-8 flex flex-col items-center justify-start">
     <div className="absolute bottom-[10%] right-[15%] w-[450px] h-[450px] rounded-full bg-accent/[0.05] blur-[130px] animate-float-slow" />
 
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
-      <div className="flex items-center gap-3 mb-3">
+      <div className="flex items-center gap-3 mb-2">
         <Users size={28} className="text-primary" />
         <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
       </div>
-      <h1 className="text-6xl font-bold text-foreground mb-4">Fanpages</h1>
-      <p className="text-2xl text-muted-foreground mb-6 max-w-[800px]">
+      <h1 className="text-6xl font-bold text-foreground mb-2">Fanpages</h1>
+      <p className="text-2xl text-muted-foreground mb-4 max-w-[800px]">
         We operate and scale multiple theme pages that consistently target and unify your fan base around your project.
       </p>
 
-      <div className="flex gap-10">
+      <div className="flex gap-8">
         {/* Left — service info */}
-        <div className="flex-1 min-w-0 flex flex-col justify-between gap-3">
-          <GlassPanel className="p-6 flex-1">
-            <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed mb-4">
+        <div className="flex-1 min-w-0 flex flex-col justify-between gap-2">
+          <GlassPanel className="p-5 flex-1">
+            <p className="text-2xl font-semibold text-primary mb-2">What it is</p>
+            <p className="text-2xl text-muted-foreground leading-relaxed mb-2">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
             </p>
-            <div className="w-full h-28 mt-4"><FanpageVisualizer /></div>
+            <div className="w-full h-16 mt-2"><FanpageVisualizer /></div>
           </GlassPanel>
 
-          <GlassPanel className="p-6 flex-1">
-            <p className="text-2xl font-semibold text-primary mb-3">Pros</p>
-            <div className="space-y-2.5">
+          <GlassPanel className="p-5 flex-1">
+            <p className="text-2xl font-semibold text-primary mb-2">Pros</p>
+            <div className="space-y-1.5">
               {[
                 'Building repeat exposure without relying on one-off influencer posts',
                 'Creating "always-on" visibility while a song ramps',
@@ -72,9 +72,9 @@ const FanpagesSlide = () => (
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-6 flex-1">
-            <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
-            <div className="space-y-2.5 mb-3">
+          <GlassPanel className="p-5 flex-1">
+            <p className="text-2xl font-semibold text-primary mb-2">How it works</p>
+            <div className="space-y-1.5 mb-2">
               {[
                 'Consistent posting cadence across all active pages',
                 'Multiple content angles and formats tested per cycle',
@@ -86,33 +86,33 @@ const FanpagesSlide = () => (
                 </div>
               ))}
             </div>
-            <div className="pt-4 border-t border-white/[0.06]">
+            <div className="pt-3 border-t border-white/[0.06]">
               <p className="text-2xl text-primary font-medium">Timeframe: Best results from 4 to 8+ weeks</p>
             </div>
           </GlassPanel>
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 flex flex-col justify-between gap-3">
+        <div className="flex-1 flex flex-col justify-between gap-2">
           {caseStudies.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-6 flex-1">
-              <div className="flex gap-6 h-full">
-                <div className="w-[180px] shrink-0">
+            <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1">
+              <div className="flex gap-5 h-full">
+                <div className="w-[160px] shrink-0">
                   <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1]">
                     <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
                 <div className="flex-1 flex flex-col justify-between min-w-0">
-                  <div className="mb-4">
+                  <div className="mb-3">
                     <p className="text-2xl text-primary font-mono tracking-widest mb-1">FANPAGES</p>
                     <p className="text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-2xl text-muted-foreground leading-relaxed">{c.project}: {c.goal}</p>
                   </div>
-                  <div className="grid grid-cols-2 gap-4">
+                  <div className="grid grid-cols-2 gap-3">
                     {c.metrics.map((m) => (
-                      <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
+                      <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
                         <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                        <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                        <p className="text-base text-muted-foreground uppercase tracking-wider">{m.label}</p>
                       </div>
                     ))}
                   </div>
