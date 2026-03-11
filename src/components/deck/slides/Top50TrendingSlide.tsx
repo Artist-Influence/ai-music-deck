@@ -1,6 +1,6 @@
 import { TrendingUp } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
-import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
+import mlShorts from '@/assets/major-lazer-canada-shorts-2.jpeg';
 
 const metrics = [
   { val: '5,000+', label: 'YT Creates' },
