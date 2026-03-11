@@ -40,7 +40,7 @@ const HowWeWorkSlide = () => (
 
     <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-7xl font-bold text-foreground mb-4">Our End-to-End Process</h1>
-      <p className="text-xl text-muted-foreground mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
+      <p className="text-[23px] text-muted-foreground mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
       <div className="flex items-center gap-0 mb-10">
         {steps.map((step, i) => {
@@ -51,7 +51,7 @@ const HowWeWorkSlide = () => (
                 <Icon className="w-8 h-8 text-primary mx-auto mb-3 relative z-10" />
                 <p className="text-primary text-base font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
                 <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}</p>
-                <p className="text-lg text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
+                <p className="text-[21px] text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
               </GlassPanel>
               {i < steps.length - 1 && (
                 <div
@@ -77,7 +77,7 @@ const HowWeWorkSlide = () => (
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                <p className="text-lg text-muted-foreground">{item}</p>
+                <p className="text-[21px] text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
@@ -93,14 +93,14 @@ const HowWeWorkSlide = () => (
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
-                <p className="text-lg text-muted-foreground">{item}</p>
+                <p className="text-[21px] text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
         </GlassPanel>
       </div>
 
-      <p className="text-lg text-muted-foreground mt-5 italic">
+      <p className="text-[21px] text-muted-foreground mt-5 italic">
         What not to expect: results without testing and iteration.
       </p>
     </div>
