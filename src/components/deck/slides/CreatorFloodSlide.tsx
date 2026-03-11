@@ -13,7 +13,7 @@ const CreatorFloodSlide = () => (
     <div className="absolute top-[5%] left-[20%] w-[600px] h-[600px] rounded-full bg-primary/[0.08] blur-[160px] animate-float" />
     <div className="absolute bottom-[5%] right-[10%] w-[400px] h-[400px] rounded-full bg-accent/[0.06] blur-[120px] animate-float-slow" />
 
-    <div className="relative z-10 w-full max-w-[1600px] flex gap-10">
+    <div className="relative z-10 w-full max-w-[1600px] flex gap-10 items-stretch">
       {/* Left — Service Info */}
       <div className="flex-1 flex flex-col gap-4">
         <div>
@@ -50,7 +50,7 @@ const CreatorFloodSlide = () => (
               </div>
             ))}
           </div>
-          <div className="pt-4 border-t border-white/[0.06] mt-4">
+          <div className="pt-3 border-t border-white/[0.06] mt-3">
             <p className="text-2xl text-primary font-medium">Timeframe: 3 to 4 weeks</p>
           </div>
         </GlassPanel>
@@ -58,15 +58,15 @@ const CreatorFloodSlide = () => (
 
       {/* Right — Case Study */}
       <div className="flex-1 flex flex-col justify-center">
-        <GlassPanel variant="bright" className="p-6 flex flex-col h-full">
-          <p className="text-lg text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
-          <p className="text-3xl font-bold text-foreground">Rich Brian</p>
-          <p className="text-2xl text-muted-foreground mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
-          <p className="text-2xl text-muted-foreground mb-4">
+        <GlassPanel variant="bright" className="p-5 flex flex-col">
+          <p className="text-base text-primary font-mono mb-1 tracking-widest uppercase">Case Study</p>
+          <p className="text-2xl font-bold text-foreground">Rich Brian</p>
+          <p className="text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
+          <p className="text-xl text-muted-foreground mb-3">
             Large-scale creator activation to rapidly increase audio usage and establish algorithmic momentum.
           </p>
 
-          <div className="flex-1 min-h-0 mb-4 rounded-lg border border-white/[0.08] overflow-hidden">
+          <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
             <img
               src={richBrianImg}
               alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos"
@@ -74,11 +74,11 @@ const CreatorFloodSlide = () => (
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-4">
+          <div className="grid grid-cols-3 gap-3">
             {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
-                <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                <p className="text-lg font-bold text-foreground">{m.val}</p>
+                <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>
