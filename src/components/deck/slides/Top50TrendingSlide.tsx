@@ -79,7 +79,7 @@ const Top50TrendingSlide = () => (
           <div className="grid grid-cols-2 gap-2 mb-4 max-h-[340px] overflow-hidden">
             {screenshots.map((s, i) => (
               <div key={i} className="rounded-lg border border-white/[0.08] overflow-hidden">
-                <img src={s.src} alt={s.alt} className="w-full h-full object-cover" />
+                <img src={s.src} alt={s.alt} className={`w-full h-full object-cover ${i === 0 ? 'object-[center_60%]' : ''}`} />
               </div>
             ))}
           </div>
