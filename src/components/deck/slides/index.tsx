@@ -13,8 +13,7 @@ import SpotifyPlaylistingSlide from './SpotifyPlaylistingSlide';
 import SoundCloudRepostsSlide from './SoundCloudRepostsSlide';
 import InstagramSeedingSlide from './InstagramSeedingSlide';
 import AdditionalServicesSlide from './AdditionalServicesSlide';
-import ReportingSlide from './ReportingSlide';
-import ExpectationsSlide from './ExpectationsSlide';
+import ReportingExpectationsSlide from './ReportingExpectationsSlide';
 import PricingSlide from './PricingSlide';
 import NextStepsSlide from './NextStepsSlide';
 
@@ -33,8 +32,7 @@ export const slides: FC[] = [
   SoundCloudRepostsSlide,
   InstagramSeedingSlide,
   AdditionalServicesSlide,
-  ReportingSlide,
-  ExpectationsSlide,
+  ReportingExpectationsSlide,
   PricingSlide,
   NextStepsSlide,
 ];
