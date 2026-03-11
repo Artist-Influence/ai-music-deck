@@ -30,7 +30,7 @@ const ReportingExpectationsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] left-[40%] w-[500px] h-[400px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
-    <div className="relative z-10 w-full max-w-[1600px] grid grid-cols-2 gap-8 items-start py-4">
+    <div className="relative z-10 w-full max-w-[1600px] grid grid-cols-2 gap-8 items-stretch py-4">
       {/* Left — Reporting */}
       <div className="flex flex-col">
         <h2 className="text-4xl font-bold text-foreground mb-1">You'll never wonder what's happening.</h2>
