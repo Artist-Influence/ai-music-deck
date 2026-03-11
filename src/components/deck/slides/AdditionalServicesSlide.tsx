@@ -28,6 +28,7 @@ const cases = [
     track: 'Brand Awareness Campaign',
     description: '24-hour brand awareness campaign focused purely on views.',
     thumb: gordoImg,
+    imgPosition: 'object-top',
     icon: TikTokIcon,
     metrics: [
       { val: '1.4M', label: 'Impressions' },
@@ -102,7 +103,7 @@ const AdditionalServicesSlide = () => (
                 <img
                   src={c.thumb}
                   alt={`${c.artist}`}
-                  className="w-full h-full object-cover rounded-xl"
+                  className={`w-full h-full object-cover rounded-xl ${c.imgPosition || 'object-center'}`}
                 />
               </div>
               <div className="flex-1 flex flex-col justify-center">
