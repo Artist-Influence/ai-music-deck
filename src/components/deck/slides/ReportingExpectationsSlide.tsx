@@ -37,7 +37,7 @@ const ReportingExpectationsSlide = () => (
         <p className="text-xl text-muted-foreground mb-6">Reporting and transparency</p>
 
         <div className="flex flex-col gap-4 flex-1">
-          <GlassPanel variant="bright" className="p-6 text-left">
+          <GlassPanel variant="bright" className="p-6 text-left flex-1 flex flex-col justify-center">
             <p className="text-xl font-semibold text-primary mb-4">Weekly updates include</p>
             {weeklyItems.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
