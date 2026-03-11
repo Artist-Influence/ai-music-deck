@@ -76,7 +76,7 @@ const HubDiagram = () => {
         <circle cx="395" cy="400" r="48" fill="hsl(195, 90%, 60%)" opacity="0.1" stroke="hsl(195, 90%, 60%)" strokeWidth="0.8" />
         <g ref={el => { textRefs.current[3] = el; }}>
           <text x="395" y="396" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="16" fontWeight="500">Streaming</text>
-          <text x="395" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14" opacity="0.6">Platforms</text>
+          <text x="395" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14">Platforms</text>
         </g>
       </g>
     </svg>
