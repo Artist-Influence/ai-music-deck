@@ -74,26 +74,28 @@ const YouTubeAdsSlide = () => (
       {/* Right — Two Stacked Case Studies */}
       <div className="flex-1 flex flex-col items-center justify-center gap-4">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-8 flex-1 flex flex-col">
-            <p className="text-base text-primary font-mono mb-2 tracking-widest uppercase">Case Study</p>
-            <p className="text-3xl font-bold text-foreground">{c.artist}</p>
-            <p className="text-2xl text-muted-foreground mb-3">{c.track}</p>
-
-            <div className="w-full rounded-xl border border-white/[0.08] overflow-hidden mb-4 bg-black/30">
+          <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1 flex flex-row gap-6">
+            <div className="w-[280px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08] bg-black/30 flex items-center justify-center">
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
-                className="w-full aspect-video object-contain"
+                className="h-full w-full object-contain"
               />
             </div>
 
-            <div className="grid grid-cols-2 gap-3">
-              {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">
-                  <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
-                </div>
-              ))}
+            <div className="flex-1 flex flex-col justify-center">
+              <p className="text-base text-primary font-mono mb-1 tracking-widest uppercase">Case Study</p>
+              <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+              <p className="text-lg text-muted-foreground mb-3">{c.track}</p>
+
+              <div className="grid grid-cols-2 gap-2">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
+                    <p className="text-lg font-bold text-foreground">{m.val}</p>
+                    <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  </div>
+                ))}
+              </div>
             </div>
           </GlassPanel>
         ))}
