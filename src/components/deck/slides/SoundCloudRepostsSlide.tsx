@@ -81,10 +81,11 @@ const SoundCloudRepostsSlide = () => (
               that compound over time. It's still the discovery engine for underground and
               electronic music.
             </p>
+            <div className="pt-4 border-t border-white/[0.06] mt-4">
+              <p className="text-2xl text-primary font-medium">Timeframe: 2–8 weeks</p>
+            </div>
           </GlassPanel>
         </div>
-
-        <p className="text-2xl text-primary font-medium mt-2">Timeframe: 2–8 weeks</p>
       </div>
 
       {/* Right — 3 Case Studies */}
