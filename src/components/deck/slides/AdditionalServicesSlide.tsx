@@ -114,7 +114,7 @@ const AdditionalServicesSlide = () => (
               </div>
             </div>
 
-            <p className="text-lg text-muted-foreground italic mb-3">{c.description}</p>
+            <p className="text-lg text-muted-foreground italic mb-3 min-h-[48px]">{c.description}</p>
 
             <div className="grid grid-cols-4 gap-3">
               {c.metrics.map((m) => (
