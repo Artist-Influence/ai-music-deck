@@ -6,7 +6,7 @@ const metrics = [
   { val: '5,000+', label: 'YT Creates' },
   { val: '14,900+', label: 'IG Reels Creates' },
   { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
-  { val: 'US / CA', label: 'Trending Regions' },
+  { val: '3,000+', label: 'FB Reels Creates' },
   { val: 'US, CA, UK, KR', label: 'YT Shorts Audio Trending' },
   { val: 'US / CA', label: 'IG Reels Audio Trending' },
 ];
