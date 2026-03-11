@@ -103,7 +103,7 @@ const AdditionalServicesSlide = () => (
                 <img
                   src={c.thumb}
                   alt={`${c.artist}`}
-                  className="w-full h-full object-cover rounded-xl"
+                  className={`w-full h-full object-cover rounded-xl ${c.imgPosition || 'object-center'}`}
                 />
               </div>
               <div className="flex-1 flex flex-col justify-center">
