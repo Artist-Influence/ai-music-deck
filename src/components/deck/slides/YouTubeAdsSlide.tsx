@@ -73,7 +73,7 @@ const YouTubeAdsSlide = () => (
 
       {/* Right — Two Stacked Case Studies */}
       {/* Right — Two Stacked Case Studies */}
-      <div className="flex-1 flex flex-col items-center justify-center gap-4">
+      <div className="flex-1 flex flex-col justify-center gap-4">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1 flex flex-col">
             <div className="flex flex-row gap-5 mb-3">
