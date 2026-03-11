@@ -1,31 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Combine Slides 15 (Reporting) and 16 (Expectations) into One Slide
+Three small text edits across three files:
 
-**Layout:** Two-column split. Left column = Reporting content, Right column = Expectations content. Each column has its own smaller title at the top, with the GlassPanels stacked vertically beneath.
+## Changes
 
-### New file: `src/components/deck/slides/ReportingExpectationsSlide.tsx`
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-- **Left column (Reporting):**
-  - Title: "You'll never wonder what's happening." (~text-4xl)
-  - Subtitle: "Reporting and transparency" (~text-xl)
-  - Two stacked GlassPanels: "Weekly updates include" (5 items) and "Final recap includes" (3 items)
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-- **Right column (Expectations):**
-  - Title: "We move fast, but we don't do chaos." (~text-4xl)
-  - Subtitle: brief line (~text-xl)
-  - Two stacked GlassPanels: "We need from you" (3 items) and "What you should not expect" (3 items)
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-- Scale down text inside panels: item text from `text-3xl` to ~`text-lg`, panel headers from `text-3xl` to ~`text-xl`, panel padding from `p-14` to ~`p-6`
-- Use `gap-4` between stacked panels and `gap-8` between columns
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-### Update `src/components/deck/slides/index.tsx`
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-- Remove `ReportingSlide` and `ExpectationsSlide` imports
-- Replace both entries in the array with single `ReportingExpectationsSlide`
-- Deck goes from 18 to 17 slides
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
-### Files to change
-1. **Create** `src/components/deck/slides/ReportingExpectationsSlide.tsx` — combined slide
-2. **Edit** `src/components/deck/slides/index.tsx` — swap two slides for one
+### Final Plan
 
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
