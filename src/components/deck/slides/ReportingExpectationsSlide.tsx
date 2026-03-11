@@ -4,8 +4,6 @@ const weeklyItems = [
   'What launched, what\'s live, what\'s next',
   'Top creatives and patterns we\'re seeing',
   'Platform metrics that matter (not vanity noise)',
-  'Budget pacing where relevant',
-  'Recommended adjustments',
 ];
 
 const finalItems = [
