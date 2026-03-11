@@ -7,6 +7,7 @@ const metrics = [
   { val: '14,900+', label: 'IG Reels Creates' },
   { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
   { val: 'US / CA', label: 'Trending Regions' },
+  { val: 'US, CA, UK, KR', label: 'YT Shorts Audio Trending' },
 ];
 
 const Top50TrendingSlide = () => (
@@ -80,7 +81,7 @@ const Top50TrendingSlide = () => (
 
             {/* Right: YouTube Shorts screenshot — half width */}
             <div className="flex-1 rounded-xl overflow-hidden border border-white/[0.08] bg-black/20">
-              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-cover object-bottom" />
+              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-cover object-[center_95%]" />
             </div>
           </div>
         </GlassPanel>

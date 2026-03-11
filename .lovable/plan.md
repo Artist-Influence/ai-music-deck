@@ -1,24 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Plan: Crop screenshot harder and add trending regions KPI box
+Three small text edits across three files:
 
-### Changes in `src/components/deck/slides/Top50TrendingSlide.tsx`
+## Changes
 
-1. **Crop the screenshot more aggressively** — Change `object-bottom` to `object-[center_95%]` so only the very bottom of the image shows, cutting off the green empty space above the "Shorts" text.
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-2. **Replace the "Trending Regions" metric** with a more specific one — Update the last metric from `{ val: 'US / CA', label: 'Trending Regions' }` to something like `{ val: 'US / CA', label: 'Trending Regions' }` and add a 5th KPI box:
-   - `{ val: '🇺🇸 🇨🇦 🇬🇧 🇰🇷', label: 'YT Shorts Trending Regions' }` — or text-based: `{ val: 'US, CA, UK, KR', label: 'YT Shorts Audio Trending' }`
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-   This replaces the generic "Trending Regions" entry with the specific countries where the audio trended on YT Shorts.
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-### Summary of metric array after changes:
-```ts
-const metrics = [
-  { val: '5,000+', label: 'YT Creates' },
-  { val: '14,900+', label: 'IG Reels Creates' },
-  { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
-  { val: 'US / CA', label: 'Trending Regions' },
-  { val: 'US, CA, UK, KR', label: 'YT Shorts Audio Trending' },
-];
-```
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
