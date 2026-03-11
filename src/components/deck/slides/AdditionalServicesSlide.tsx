@@ -88,11 +88,10 @@ const AdditionalServicesSlide = () => (
               We target by genre, geography, and behavior — focused on
               streams, ticket sales, merch, and fanbase growth.
             </p>
+            <div className="pt-4 border-t border-white/[0.06] mt-4">
+              <p className="text-2xl text-primary font-medium">Timeframe: 2–3 weeks</p>
+            </div>
           </GlassPanel>
-          <div className="pt-4 border-t border-white/[0.06] mt-4">
-            <p className="text-2xl text-primary font-medium">Timeframe: 2–3 weeks</p>
-          </div>
-        </GlassPanel>
         </div>
       </div>
 
