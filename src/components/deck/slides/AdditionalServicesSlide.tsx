@@ -98,7 +98,7 @@ const AdditionalServicesSlide = () => (
         {cases.map((c, idx) => (
           <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col">
             <div className="flex flex-row gap-5 mb-3">
-              <div className="w-[240px] h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
+              <div className="w-[150px] h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
                 <img
                   src={c.thumb}
                   alt={`${c.artist}`}
