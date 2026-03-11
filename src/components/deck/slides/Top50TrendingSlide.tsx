@@ -71,9 +71,9 @@ const Top50TrendingSlide = () => (
 
             <div className="flex gap-6 flex-1">
             {/* Left: KPIs stacked — half width */}
-            <div className="flex-1 flex flex-col justify-between gap-4">
+            <div className="flex-1 flex flex-col justify-start gap-4">
               {metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-xl p-5 text-center border border-white/[0.06]">
+                <div key={m.label} className="flex-1 bg-white/[0.04] rounded-xl p-5 text-center border border-white/[0.06]">
                   <p className="text-xl font-bold text-foreground">{m.val}</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
                 </div>
