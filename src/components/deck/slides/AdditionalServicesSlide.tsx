@@ -128,7 +128,10 @@ const AdditionalServicesSlide = () => (
               </div>
             </div>
 
-            <p className="text-lg text-muted-foreground italic mb-3 min-h-[48px]">{c.description}</p>
+            <div className="flex items-start gap-2 mb-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+              <p className="text-lg text-muted-foreground">{c.description}</p>
+            </div>
 
             <div className="flex-1 flex items-center">
               <div className="grid grid-cols-4 gap-3 w-full">
