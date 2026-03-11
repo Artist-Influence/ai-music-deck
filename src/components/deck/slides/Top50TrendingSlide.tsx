@@ -81,7 +81,7 @@ const Top50TrendingSlide = () => (
 
             {/* Right: YouTube Shorts screenshot — half width */}
             <div className="flex-1 rounded-xl overflow-hidden border border-white/[0.08] bg-black/20">
-              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-cover object-bottom" />
+              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-cover object-[center_95%]" />
             </div>
           </div>
         </GlassPanel>
