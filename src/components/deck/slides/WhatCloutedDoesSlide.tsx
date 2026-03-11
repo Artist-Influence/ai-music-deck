@@ -92,7 +92,7 @@ const WhatCloutedDoesSlide = () => (
         <h1 className="text-5xl font-bold text-foreground mb-8 leading-tight whitespace-nowrap">
           Coordinated distribution as a system, not a gamble.
         </h1>
-        <p className="text-lg text-primary font-medium mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
+        <p className="text-[21px] text-primary font-medium mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
         <div className="space-y-3">
           {[
             ['Volume', 'Flood social platforms with high-velocity short-form content'],
