@@ -79,12 +79,11 @@ const ClippingSlide = () => (
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-7">
+          <GlassPanel className="p-7 min-h-[160px]">
             <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
             <div className="space-y-2.5">
               {[
                 'Campaigns launch in 24 hours',
-                'Runs 7 to 14 days',
                 'Every post attributes the official sound and follows brief',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
