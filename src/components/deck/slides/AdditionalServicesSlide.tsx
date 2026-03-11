@@ -98,7 +98,7 @@ const AdditionalServicesSlide = () => (
       {/* Right — 2 Case Studies */}
       <div className="flex-1 min-w-0 flex flex-col gap-3">
         {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
+          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col">
             <div className="flex flex-row gap-5 mb-3">
               <div className="w-[150px] h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
                 <img
