@@ -75,11 +75,11 @@ const YouTubeAdsSlide = () => (
       <div className="flex-1 flex flex-col items-center justify-center gap-4">
         {cases.map((c) => (
           <GlassPanel key={c.artist} variant="bright" className="p-5 flex-1 flex flex-row gap-6">
-            <div className="w-[280px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08] bg-black/30 flex items-center justify-center">
+            <div className="shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
               <img
                 src={c.thumb}
                 alt={`${c.artist} — ${c.track}`}
-                className="h-full w-full object-contain"
+                className="h-full w-auto object-cover rounded-xl"
               />
             </div>
 
