@@ -1,39 +1,33 @@
 
-# Grammar Fixes Across Slides
+Goal: make Slide 7 fit fully within the 1920x1080 canvas so the bottom row and header are no longer clipped.
 
-Three small text edits across three files:
+What I’ll change
+1. Compress the overall vertical footprint of `src/components/deck/slides/FanpagesSlide.tsx`
+   - Reduce outer slide padding slightly (`p-12` down a bit).
+   - Tighten header spacing (`mb-4`, `mb-6`, etc.) so the title block consumes less height.
+   - Reduce the main two-column gap a little.
 
-## Changes
+2. Make the “What it is” visualizer thinner
+   - Reduce the visualizer wrapper height again from `h-28` to a slimmer value so it still spans full width but uses less vertical space.
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+3. Tighten the left-column panels
+   - Reduce the vertical gap between the three left-side `GlassPanel`s.
+   - Slightly reduce panel padding where needed so “How it works” and the timeframe line fit without clipping.
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+4. Tighten the right-column case studies
+   - Slightly reduce case study panel padding and internal spacing.
+   - If needed, slightly reduce the clip thumbnail width and metrics grid gap so the Skrillex card fits fully.
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+Why this approach
+- The screenshot shows this is no longer just a visualizer-height issue; the whole slide stack is too tall.
+- The safest fix is a small, coordinated reduction across spacing/padding rather than shrinking text or changing content structure.
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+Files to update
+- `src/components/deck/slides/FanpagesSlide.tsx`
+- Likely no changes needed in `src/components/deck/FanpageVisualizer.tsx` unless the wrapper height alone is insufficient.
 
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
-
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
-
-### Final Plan
-
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
-
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
-
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
-
-## Technical Details
-
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
-
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
-
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
+Expected result
+- Top heading fully visible
+- “How it works” panel and timeframe fully visible
+- Skrillex case study fully visible
+- Visualizer remains edge-to-edge inside “What it is,” but thinner vertically
