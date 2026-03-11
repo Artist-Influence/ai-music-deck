@@ -30,14 +30,14 @@ const ReportingExpectationsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] left-[40%] w-[500px] h-[400px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
-    <div className="relative z-10 w-full max-w-[1600px] grid grid-cols-2 gap-8 items-start py-4">
+    <div className="relative z-10 w-full max-w-[1600px] grid grid-cols-2 gap-8 items-stretch py-4">
       {/* Left — Reporting */}
       <div className="flex flex-col">
         <h2 className="text-4xl font-bold text-foreground mb-1">You'll never wonder what's happening.</h2>
         <p className="text-xl text-muted-foreground mb-6">Reporting and transparency</p>
 
-        <div className="flex flex-col gap-4">
-          <GlassPanel variant="bright" className="p-6 text-left flex flex-col">
+        <div className="flex flex-col gap-4 flex-1">
+          <GlassPanel variant="bright" className="p-6 text-left flex flex-col flex-1">
             <p className="text-xl font-semibold text-primary mb-4">Weekly updates include</p>
             {weeklyItems.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
@@ -47,7 +47,7 @@ const ReportingExpectationsSlide = () => (
             ))}
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-6 text-left flex flex-col">
+          <GlassPanel variant="subtle" className="p-6 text-left flex flex-col flex-1">
             <p className="text-xl font-semibold text-muted-foreground mb-4">Final recap includes</p>
             {finalItems.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
@@ -64,8 +64,8 @@ const ReportingExpectationsSlide = () => (
         <h2 className="text-4xl font-bold text-foreground mb-1">We move fast, but we don't do chaos.</h2>
         <p className="text-xl text-muted-foreground mb-6">Aligning on basics upfront</p>
 
-        <div className="flex flex-col gap-4">
-          <GlassPanel variant="bright" className="p-6 text-left flex flex-col">
+        <div className="flex flex-col gap-4 flex-1">
+          <GlassPanel variant="bright" className="p-6 text-left flex flex-col flex-1">
             <p className="text-xl font-semibold text-primary mb-4">We need from you</p>
             {weNeed.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
@@ -75,7 +75,7 @@ const ReportingExpectationsSlide = () => (
             ))}
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-6 text-left flex flex-col">
+          <GlassPanel variant="subtle" className="p-6 text-left flex flex-col flex-1">
             <p className="text-xl font-semibold text-muted-foreground mb-4">What you should not expect</p>
             {dontExpect.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
