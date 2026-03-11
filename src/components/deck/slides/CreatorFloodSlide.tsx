@@ -36,7 +36,7 @@ const CreatorFloodSlide = () => (
               'Builds massive volume and algorithmic lift through real accounts, not bots',
               'Sheer quantity of real usage signals tells TikTok the sound is trending organically',
               'Macro-influencers mixed in for added reach',
-              'Over-indexing videos tracked — when a clip takes off, Spark Ads pointed to Spotify convert momentum into streams',
+              'Over-indexing videos tracked: when a clip takes off, Spark Ads pointed to Spotify convert momentum into streams',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
