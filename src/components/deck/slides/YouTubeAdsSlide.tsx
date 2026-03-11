@@ -32,6 +32,24 @@ const cases = [
   },
 ];
 
+const BulletPoint = ({ children }: { children: React.ReactNode }) => (
+  <div className="flex items-start gap-2.5">
+    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+    <p className="text-2xl text-muted-foreground">{children}</p>
+  </div>
+);
+
+const whatItIsItems = [
+  'Paid YouTube campaigns built for subscribers and long-form engagement',
+  'We optimize daily with transparent weekly reporting and clean data exports',
+];
+
+const howItWorksItems = [
+  'We target international audiences aligned with your genre',
+  'Optimizing for watch time and subscriber conversion',
+  'Engagement ratios are monitored and protected throughout the campaign',
+];
+
 const YouTubeAdsSlide = () => (
   <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
     <div className="absolute top-[10%] right-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.08] blur-[140px] animate-float" />
@@ -53,19 +71,20 @@ const YouTubeAdsSlide = () => (
 
         <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col justify-center">
           <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            Paid YouTube campaigns built for subscribers and long-form engagement.
-            We optimize daily with transparent weekly reporting and clean data exports.
-          </p>
+          <div className="space-y-2.5">
+            {whatItIsItems.map((item, i) => (
+              <BulletPoint key={i}>{item}</BulletPoint>
+            ))}
+          </div>
         </GlassPanel>
 
         <GlassPanel variant="subtle" className="p-8 flex-1 flex flex-col justify-center">
           <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            We target international audiences aligned with your genre, optimizing for
-            watch time and subscriber conversion. Engagement ratios are monitored and
-            protected throughout the campaign.
-          </p>
+          <div className="space-y-2.5">
+            {howItWorksItems.map((item, i) => (
+              <BulletPoint key={i}>{item}</BulletPoint>
+            ))}
+          </div>
           <div className="pt-4 border-t border-white/[0.06] mt-4">
             <p className="text-2xl text-primary font-medium">Timeframe: 1 to 3 weeks</p>
           </div>
