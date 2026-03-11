@@ -64,8 +64,8 @@ const ReportingExpectationsSlide = () => (
         <h2 className="text-4xl font-bold text-foreground mb-1">We move fast, but we don't do chaos.</h2>
         <p className="text-xl text-muted-foreground mb-6">Aligning on basics upfront</p>
 
-        <div className="flex flex-col gap-4 flex-1">
-          <GlassPanel variant="bright" className="p-6 text-left flex-1 flex flex-col">
+        <div className="flex flex-col gap-4">
+          <GlassPanel variant="bright" className="p-6 text-left flex flex-col">
             <p className="text-xl font-semibold text-primary mb-4">We need from you</p>
             {weNeed.map((item, i) => (
               <div key={i} className="flex items-center gap-3 py-2 border-b border-white/[0.06] last:border-0">
