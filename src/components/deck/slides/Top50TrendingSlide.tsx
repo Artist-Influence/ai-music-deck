@@ -1,6 +1,6 @@
 import { TrendingUp } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
-import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
+import mlShorts from '@/assets/major-lazer-canada-shorts-2.jpeg';
 
 const metrics = [
   { val: '5,000+', label: 'YT Creates' },
@@ -67,20 +67,20 @@ const Top50TrendingSlide = () => (
             Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
           </p>
 
-          <div className="flex gap-4 flex-1">
-            {/* Left: KPIs stacked */}
-            <div className="flex flex-col gap-3 w-44 shrink-0">
+            <div className="flex gap-6 flex-1">
+            {/* Left: KPIs stacked — half width */}
+            <div className="flex-1 flex flex-col gap-4">
               {metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center border border-white/[0.06]">
-                  <p className="text-lg font-bold text-foreground">{m.val}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded-xl p-5 text-center border border-white/[0.06]">
+                  <p className="text-xl font-bold text-foreground">{m.val}</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
                 </div>
               ))}
             </div>
 
-            {/* Right: TikTok screenshot */}
+            {/* Right: YouTube Shorts screenshot — half width */}
             <div className="flex-1 rounded-xl overflow-hidden border border-white/[0.08] bg-black/20">
-              <img src={mlTiktok} alt="TikTok — Popular tab, 1739 videos" className="w-full h-full object-contain" />
+              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-contain" />
             </div>
           </div>
         </GlassPanel>
