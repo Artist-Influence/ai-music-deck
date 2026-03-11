@@ -99,7 +99,7 @@ const HowWeWorkSlide = () => (
       </div>
 
       <p className="text-[21px] text-muted-foreground mt-5 italic">
-        What not to expect: results without testing and iteration.
+        What not to expect: unrealistic, always-viral results. This is an amplifier, not a multiplier — results require testing and iteration.
       </p>
     </div>
   </div>
