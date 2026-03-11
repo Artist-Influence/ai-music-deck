@@ -57,21 +57,35 @@ const InstagramSeedingSlide = () => (
 
         <div className="flex flex-col gap-4 flex-1">
           <GlassPanel variant="bright" className="p-8">
-            <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
-              We seed your audio and video content across a curated network of Instagram
-              theme pages — EDM community pages and meme accounts that drive real
-              engagement within your target audience.
-            </p>
+            <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
+            <div className="space-y-2.5">
+              {[
+                'Audio and video content seeded across a curated network of Instagram theme pages',
+                'EDM community pages and meme accounts that drive real engagement',
+                'Targeted to your specific audience within the genre',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
           </GlassPanel>
 
           <GlassPanel variant="bright" className="p-8 flex-1">
-            <p className="text-2xl font-semibold text-foreground mb-3">Why it works:</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
-              Theme pages and meme accounts have built-in audiences that actively engage.
-              Seeding here drives saves, shares, and audio uses at a fraction of the cost
-              of paid ads — built for relevance and cost efficiency.
-            </p>
+            <p className="text-2xl font-semibold text-primary mb-3">Why it works</p>
+            <div className="space-y-2.5">
+              {[
+                'Theme pages and meme accounts have built-in audiences that actively engage',
+                'Drives saves, shares, and audio uses at a fraction of the cost of paid ads',
+                'Built for relevance and cost efficiency',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
               <p className="text-2xl text-primary font-medium">Timeframe: 1–3 weeks</p>
             </div>
@@ -96,7 +110,7 @@ const InstagramSeedingSlide = () => (
 
             <div className="grid grid-cols-3 gap-2">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 flex flex-col items-center justify-center text-center">
                   <p className="text-2xl font-bold text-foreground">{m.val}</p>
                   <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>

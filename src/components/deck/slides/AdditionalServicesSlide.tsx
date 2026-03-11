@@ -73,21 +73,35 @@ const AdditionalServicesSlide = () => (
 
         <div className="flex flex-col gap-4 flex-1">
           <GlassPanel variant="bright" className="p-8">
-            <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
-              Paid social campaigns across Meta (Facebook + Instagram) and TikTok.
-              We take content that's already performing organically and amplify it
-              with targeted paid distribution to convert real outcomes.
-            </p>
+            <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
+            <div className="space-y-2.5">
+              {[
+                'Paid social campaigns across Meta (Facebook + Instagram) and TikTok',
+              "Content that's already performing organically gets amplified with targeted paid distribution",
+              'Focused on converting real outcomes — not just impressions',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
           </GlassPanel>
 
           <GlassPanel variant="bright" className="p-8 flex-1">
-            <p className="text-2xl font-semibold text-foreground mb-3">How it works:</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
-              Optimized daily with weekly reporting and clean data exports.
-              We target by genre, geography, and behavior — focused on
-              streams, ticket sales, merch, and fanbase growth.
-            </p>
+            <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
+            <div className="space-y-2.5">
+              {[
+                'Optimized daily with weekly reporting and clean data exports',
+                'Targeting by genre, geography, and behavior',
+                'Focused on streams, ticket sales, merch, and fanbase growth',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
               <p className="text-2xl text-primary font-medium">Timeframe: 2–3 weeks</p>
             </div>

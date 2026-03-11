@@ -3,9 +3,9 @@ import GlassPanel from '../GlassPanel';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
 const metrics = [
-  { val: '10,000+', label: 'Initial Posts' },
+  { val: '10,000+', label: 'Minimum Posts' },
   { val: '23,000+', label: 'Posts Driven' },
-  { val: '29,900+', label: 'Total Creates' },
+  { val: '33,000+', label: 'Total Creates' },
 ];
 
 const CreatorFloodSlide = () => (
@@ -25,24 +25,34 @@ const CreatorFloodSlide = () => (
             TikTok Creator Flood
           </h1>
           <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
-            Mass-posting your track across 10,000+ real TikTok UGC videos, primarily from international nano-creators, with some macro creators mixed in when it makes sense.
+            Mass-posting your track across 10,000+ minimum posts from real TikTok UGC videos, primarily from international nano-creators, with some macro creators mixed in when it makes sense.
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col">
-          <p className="text-2xl font-semibold text-foreground mb-3">Why it works</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            It builds massive volume and algorithmic lift through real accounts, not bots. The sheer quantity of real usage signals tells TikTok the sound is trending organically. We also mix in macro-influencers for added reach, and actively track over-indexing videos — when a clip takes off, we recommend running Spark Ads pointed to Spotify to convert that momentum into streaming numbers.
-          </p>
+        <GlassPanel className="p-8 flex-1 flex flex-col">
+          <p className="text-2xl font-semibold text-primary mb-3">Pros</p>
+          <div className="space-y-2.5">
+            {[
+              'Builds massive volume and algorithmic lift through real accounts, not bots',
+              'Sheer quantity of real usage signals tells TikTok the sound is trending organically',
+              'Macro-influencers mixed in for added reach',
+              'Over-indexing videos tracked — when a clip takes off, Spark Ads pointed to Spotify convert momentum into streams',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                <p className="text-2xl text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
         </GlassPanel>
 
-        <GlassPanel variant="subtle" className="p-8 flex-1 flex flex-col">
-          <p className="text-2xl font-semibold text-foreground mb-3">When to use</p>
+        <GlassPanel className="p-8 flex-1 flex flex-col">
+          <p className="text-2xl font-semibold text-primary mb-3">When to use</p>
           <div className="space-y-2.5">
             {[
               'When you want brute visibility fast',
-              "When you have a track that's already converting and needs gasoline",
-              'When the goal is algorithm discovery signals at scale',
+              "When you have a track that's already converting and needs fuel on the fire",
+              'When the goal is pure volume — maximum algorithm discovery signals at scale',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
@@ -69,7 +79,7 @@ const CreatorFloodSlide = () => (
           <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden">
             <img
               src={richBrianImg}
-              alt="Rich Brian — Jumpy TikTok sound page, 29.3K videos"
+              alt="Rich Brian — Jumpy TikTok sound page, 33K+ videos"
               className="w-full h-full object-cover object-right-top"
             />
           </div>

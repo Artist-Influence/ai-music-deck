@@ -80,21 +80,35 @@ const SpotifyPlaylistingSlide = () => (
         </div>
 
         <GlassPanel variant="bright" className="p-8">
-          <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            We place your tracks on curated playlists run by real tastemakers in your genre.
-            These aren't pay-for-play lists — they're community-driven playlists with
-            active listeners who save and share.
-          </p>
+          <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
+          <div className="space-y-2.5">
+            {[
+              'Placements on curated playlists run by real tastemakers in your genre',
+              'Community-driven playlists with active listeners who save and share',
+              'Not pay-for-play — organic, genre-aligned discovery',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                <p className="text-2xl text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
         </GlassPanel>
 
         <GlassPanel variant="bright" className="p-8 flex-1">
-          <p className="text-2xl font-semibold text-foreground mb-3">Why it works:</p>
-          <p className="text-2xl text-muted-foreground leading-relaxed">
-            Organic playlist streams generate saves, follows, and algorithmic signals.
-            When Spotify sees real listener engagement, it pushes your track into
-            Discover Weekly, Release Radar, and Radio. Stream goals guaranteed.
-          </p>
+          <p className="text-2xl font-semibold text-primary mb-3">Why it works</p>
+          <div className="space-y-2.5">
+            {[
+              'Organic streams generate saves, follows, and algorithmic signals',
+              'Spotify pushes tracks into Discover Weekly, Release Radar, and Radio',
+              'Stream goals guaranteed',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                <p className="text-2xl text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
           <div className="pt-4 border-t border-white/[0.06] mt-4">
             <p className="text-2xl text-primary font-medium">Timeframe: 12 weeks</p>
           </div>

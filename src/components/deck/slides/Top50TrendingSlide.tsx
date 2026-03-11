@@ -3,12 +3,12 @@ import GlassPanel from '../GlassPanel';
 import mlShorts from '@/assets/major-lazer-canada-shorts-2.jpeg';
 
 const metrics = [
-  { val: '5,000+', label: 'YT Creates' },
-  { val: '14,900+', label: 'IG Reels Creates' },
+  { val: '5,000+', label: 'YouTube Shorts Creates' },
+  { val: '14,900+', label: 'Instagram Reels Creates' },
   { val: '2,000+', label: 'TikTok Creates — Popular Tab' },
-  { val: '3,000+', label: 'FB Reels Creates' },
-  { val: 'US, CA, UK, KR', label: 'YT Shorts Audio Trending' },
-  { val: 'US / CA', label: 'IG Reels Audio Trending' },
+  { val: '3,000+', label: 'Facebook Reels Creates' },
+  { val: 'US, CA, UK, KR', label: 'YouTube Shorts Audio Trending' },
+  { val: 'US / CA', label: 'Instagram Reels Audio Trending' },
 ];
 
 const Top50TrendingSlide = () => (
@@ -33,7 +33,7 @@ const Top50TrendingSlide = () => (
         </div>
 
         <GlassPanel variant="bright" className="p-8 flex-1 flex flex-col justify-center">
-          <p className="text-2xl font-semibold text-foreground mb-3">How it's done (honest version)</p>
+          <p className="text-2xl font-semibold text-foreground mb-3">How it's done (transparently)</p>
           <p className="text-2xl text-muted-foreground leading-relaxed">
             A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.
           </p>
@@ -66,14 +66,14 @@ const Top50TrendingSlide = () => (
           <p className="text-2xl font-bold text-foreground">Major Lazer</p>
           <p className="text-xl text-muted-foreground mb-2">MINI SKIRT</p>
           <p className="text-xl text-muted-foreground mb-4">
-            Pushed official audio into trending environments across Shorts, Reels, and Facebook for rapid visibility.
+            Pushed official audio into trending environments across YouTube Shorts, Instagram Reels, and Facebook Reels for rapid visibility.
           </p>
 
             <div className="flex gap-6 flex-1">
             {/* Left: KPIs stacked — half width */}
             <div className="flex-1 flex flex-col justify-start gap-4">
               {metrics.map((m) => (
-                <div key={m.label} className="flex-1 bg-white/[0.04] rounded-xl p-5 text-center border border-white/[0.06]">
+                <div key={m.label} className="flex-1 bg-white/[0.04] rounded-xl p-5 border border-white/[0.06] flex flex-col items-center justify-center text-center">
                   <p className="text-xl font-bold text-foreground">{m.val}</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
                 </div>
