@@ -1,5 +1,6 @@
 import { Users } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
+import FanpageVisualizer from '../FanpageVisualizer';
 import subtronicsClip1 from '@/assets/subtronics-clip1.jpg';
 import skrillexClip1 from '@/assets/skrillex-clip1.png';
 
@@ -49,13 +50,14 @@ const FanpagesSlide = () => (
         <div className="flex-1 min-w-0 flex flex-col justify-between gap-3">
           <GlassPanel className="p-6 flex-1">
             <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
+            <p className="text-2xl text-muted-foreground leading-relaxed mb-4">
               A structured content and distribution layer through genre and edit-style pages that already know how to get reach.
             </p>
+            <FanpageVisualizer className="w-full h-32 opacity-60" />
           </GlassPanel>
 
           <GlassPanel className="p-6 flex-1">
-            <p className="text-2xl font-semibold text-primary mb-3">What this is great for</p>
+            <p className="text-2xl font-semibold text-primary mb-3">Pros</p>
             <div className="space-y-2.5">
               {[
                 'Building repeat exposure without relying on one-off influencer posts',
@@ -71,11 +73,11 @@ const FanpagesSlide = () => (
           </GlassPanel>
 
           <GlassPanel className="p-6 flex-1">
-            <p className="text-2xl font-semibold text-primary mb-3">What you can expect</p>
+            <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
             <div className="space-y-2.5 mb-3">
               {[
-                'Consistent posting cadence',
-                'Multiple content angles and formats',
+                'Consistent posting cadence across all active pages',
+                'Multiple content angles and formats tested per cycle',
                 'Iteration based on what the audience responds to',
               ].map((item, i) => (
                 <div key={i} className="flex items-start gap-2.5">
@@ -95,21 +97,17 @@ const FanpagesSlide = () => (
           {caseStudies.map((c) => (
             <GlassPanel key={c.artist} variant="bright" className="p-6 flex-1">
               <div className="flex gap-6 h-full">
-                {/* Hero thumbnail */}
                 <div className="w-[180px] shrink-0">
                   <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1]">
                     <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
-
-                {/* Info + metrics */}
                 <div className="flex-1 flex flex-col justify-between min-w-0">
                   <div className="mb-4">
                     <p className="text-2xl text-primary font-mono tracking-widest mb-1">FANPAGES</p>
                     <p className="text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-2xl text-muted-foreground leading-relaxed">{c.project} — {c.goal}</p>
                   </div>
-
                   <div className="grid grid-cols-2 gap-4">
                     {c.metrics.map((m) => (
                       <div key={m.label} className="bg-white/[0.04] rounded-lg p-4 text-center">

@@ -65,24 +65,37 @@ const SoundCloudRepostsSlide = () => (
 
         <div className="flex flex-col gap-4 flex-1">
           <GlassPanel variant="bright" className="p-8">
-            <p className="text-2xl font-semibold text-foreground mb-3">What it is:</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
-              We distribute your tracks through a verified network of SoundCloud accounts
-              with real followers in your genre. Each repost is tracked and reported so
-              you see exactly where your music lands.
-            </p>
+            <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
+            <div className="space-y-2.5">
+              {[
+                'Tracks distributed through a verified network of SoundCloud accounts with real followers',
+                'Each repost is tracked and reported — full transparency on where your music lands',
+                'Genre-aligned placement, not spray-and-pray',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
           </GlassPanel>
 
           <GlassPanel variant="bright" className="p-8 flex-1">
-            <p className="text-2xl font-semibold text-foreground mb-3">Why it works:</p>
-            <p className="text-2xl text-muted-foreground leading-relaxed">
-              SoundCloud's algorithm rewards early engagement signals. Reposts from
-              established accounts in your scene drive organic plays, likes, and follows
-              that compound over time. It's still the discovery engine for underground and
-              electronic music.
-            </p>
+            <p className="text-2xl font-semibold text-primary mb-3">Why it works</p>
+            <div className="space-y-2.5">
+              {[
+                'SoundCloud's algorithm rewards early engagement signals',
+                'Reposts from established accounts drive organic plays, likes, and follows that compound',
+                'Still the discovery engine for underground and electronic music',
+              ].map((item, i) => (
+                <div key={i} className="flex items-start gap-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{item}</p>
+                </div>
+              ))}
+            </div>
             <div className="pt-4 border-t border-white/[0.06] mt-4">
-              <p className="text-2xl text-primary font-medium">Timeframe: 2–8 weeks</p>
+              <p className="text-2xl text-primary font-medium">Total group reach: 25M+ followers · Timeframe: 2–8 weeks</p>
             </div>
           </GlassPanel>
         </div>

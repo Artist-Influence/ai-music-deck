@@ -40,9 +40,9 @@ const HowWeWorkSlide = () => (
 
     <div className="relative z-10 w-full max-w-[1400px]">
       <h1 className="text-7xl font-bold text-foreground mb-4">Our End-to-End Process</h1>
-      <p className="text-xl text-muted-foreground mb-20">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
+      <p className="text-xl text-muted-foreground mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
-      <div className="flex items-center gap-0">
+      <div className="flex items-center gap-0 mb-10">
         {steps.map((step, i) => {
           const Icon = step.icon;
           return (
@@ -63,6 +63,61 @@ const HowWeWorkSlide = () => (
           );
         })}
       </div>
+
+      {/* Reporting & Expectations */}
+      <div className="grid grid-cols-3 gap-6">
+        <GlassPanel variant="subtle" className="p-5">
+          <p className="text-lg font-semibold text-primary mb-3">Weekly updates include</p>
+          <div className="space-y-2">
+            {[
+              'What launched, what's live, what's next',
+              'Top creatives and patterns we're seeing',
+              'Platform metrics that matter (not vanity noise)',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                <p className="text-lg text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
+
+        <GlassPanel variant="subtle" className="p-5">
+          <p className="text-lg font-semibold text-primary mb-3">We need from you</p>
+          <div className="space-y-2">
+            {[
+              'Audio links, clean metadata, and posting handles',
+              'Any brand safety rules or hard "no" topics',
+              'A clear primary goal per campaign',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                <p className="text-lg text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
+
+        <GlassPanel variant="subtle" className="p-5">
+          <p className="text-lg font-semibold text-primary mb-3">Final recap includes</p>
+          <div className="space-y-2">
+            {[
+              'Results by service',
+              'Best-performing angles and formats',
+              'Recommendations for the next release',
+            ].map((item, i) => (
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-2.5" />
+                <p className="text-lg text-muted-foreground">{item}</p>
+              </div>
+            ))}
+          </div>
+        </GlassPanel>
+      </div>
+
+      <p className="text-lg text-muted-foreground mt-5 italic">
+        What not to expect: one viral video to carry the whole release, or results without iteration.
+      </p>
     </div>
   </div>
 );
