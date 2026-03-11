@@ -20,7 +20,7 @@ const caseStudies = [
   {
     artist: 'Skrillex',
     project: 'FUS Album',
-    goal: 'Consistent visibility around the FUS album and Ultra set.',
+    goal: 'Consistent visibility around the album and Ultra set.',
     clip: skrillexClip1,
     metrics: [
       { val: '2.1M+', label: 'Views' },
