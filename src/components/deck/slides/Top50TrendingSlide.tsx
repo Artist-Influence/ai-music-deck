@@ -69,7 +69,7 @@ const Top50TrendingSlide = () => (
 
             <div className="flex gap-6 flex-1">
             {/* Left: KPIs stacked — half width */}
-            <div className="flex-1 flex flex-col gap-4">
+            <div className="flex-1 flex flex-col justify-between gap-4">
               {metrics.map((m) => (
                 <div key={m.label} className="bg-white/[0.04] rounded-xl p-5 text-center border border-white/[0.06]">
                   <p className="text-xl font-bold text-foreground">{m.val}</p>
@@ -80,7 +80,7 @@ const Top50TrendingSlide = () => (
 
             {/* Right: YouTube Shorts screenshot — half width */}
             <div className="flex-1 rounded-xl overflow-hidden border border-white/[0.08] bg-black/20">
-              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-contain" />
+              <img src={mlShorts} alt="YouTube Shorts — Canada Trending" className="w-full h-full object-cover object-[center_80%]" />
             </div>
           </div>
         </GlassPanel>
