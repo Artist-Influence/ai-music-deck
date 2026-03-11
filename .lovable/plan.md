@@ -1,28 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Plan: Add Real Case Studies to Meta & TikTok Ads Slide
+Three small text edits across three files:
 
-### Overview
-Replace the placeholder case study data with real campaigns (Gordo for TikTok, Zeds Dead for Meta) and add the uploaded images as thumbnails.
+## Changes
 
-### Changes
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-**1. Copy uploaded images to `src/assets/`**
-- `user-uploads://image-4.png` → `src/assets/gordo-meta-tiktok.png` (Gordo photo)
-- `user-uploads://image-3.png` → `src/assets/zeds-dead-logo.png` (Zeds Dead logo)
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-**2. Update `src/components/deck/slides/AdditionalServicesSlide.tsx`**
-- Import the two new images
-- Replace the thumbnail area: instead of showing the platform icon, show the actual artist image (240x150px, matching YouTube Ads slide format)
-- Update TikTok case data:
-  - Artist: "Gordo (@gordoszn)"
-  - Campaign description: "24-hour brand awareness campaign focused on views"
-  - Metrics: Impressions (1.4M), CPM ($0.31), 6-sec Views (500.7K), 6-sec View Rate (34.7%)
-- Update Meta case data:
-  - Artist: "Zeds Dead"
-  - Campaign: "NA Tour — 6 campaigns, 1 per city"
-  - Description: "Multi-layered campaign collecting SMS signups via Laylo. 100+ creatives across 6 simultaneous city-targeted campaigns."
-  - Metrics: Impressions (1.3M), Laylo Signups (6,754), CPR ($1.40), Link Clicks (25.4K)
-- Make KPI grid use `flex-1 auto-rows-fr` to fill card height (matching YouTube Ads slide)
-- Add a small description line below the artist/track text for campaign context
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
