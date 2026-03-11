@@ -107,7 +107,7 @@ const WhatCloutedDoesSlide = () => (
         </div>
       </div>
 
-      <div className="flex-1 flex items-center justify-center">
+      <div className="flex-1 flex items-center justify-center mt-[20%]">
         <HubDiagram />
       </div>
     </div>
