@@ -52,7 +52,7 @@ const CreatorFloodSlide = () => (
             {[
               'When you want brute visibility fast',
               "When you have a track that's already converting and needs fuel on the fire",
-              'When the goal is pure volume — maximum algorithm discovery signals at scale',
+              'When the goal is pure volume: maximum algorithm discovery signals at scale',
             ].map((item, i) => (
               <div key={i} className="flex items-start gap-2.5">
                 <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
