@@ -31,6 +31,6 @@ export const slides: FC[] = [
   SoundCloudRepostsSlide,
   InstagramSeedingSlide,
   AdditionalServicesSlide,
-  
+  PricingSlide,
   NextStepsSlide,
 ];
