@@ -7,10 +7,10 @@ import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
 import mlIg from '@/assets/major-lazer-ig-trending.jpeg';
 
 const majorLazerScreenshots = [
-  { src: mlShorts, alt: 'YouTube Shorts — #11 Canada Daily Top Songs' },
-  { src: mlFacebook, alt: 'Facebook — For You audio listing' },
-  { src: mlTiktok, alt: 'TikTok — Popular tab, 1739 videos' },
-  { src: mlIg, alt: 'Instagram — #4 Trending, 15K reels' },
+  { src: mlShorts, alt: 'YouTube Shorts, #11 Canada Daily Top Songs' },
+  { src: mlFacebook, alt: 'Facebook, For You audio listing' },
+  { src: mlTiktok, alt: 'TikTok, Popular tab, 1739 videos' },
+  { src: mlIg, alt: 'Instagram, #4 Trending, 15K reels' },
 ];
 
 const richBrian = {
