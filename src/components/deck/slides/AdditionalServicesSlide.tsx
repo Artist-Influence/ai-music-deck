@@ -118,7 +118,7 @@ const AdditionalServicesSlide = () => (
 
             <div className="grid grid-cols-4 gap-3">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg px-3 py-4 min-h-[90px] text-center flex flex-col items-center justify-center">
+                <div key={m.label} className="bg-white/[0.04] rounded-lg px-3 py-4 h-[90px] text-center flex flex-col items-center justify-center">
                   <p className="text-2xl font-bold text-foreground">{m.val}</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
                 </div>
