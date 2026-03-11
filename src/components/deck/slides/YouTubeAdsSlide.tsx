@@ -91,9 +91,9 @@ const YouTubeAdsSlide = () => (
               </div>
             </div>
 
-            <div className="grid grid-cols-3 gap-2">
+            <div className="grid grid-cols-3 gap-2 flex-1 auto-rows-fr">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center flex flex-col items-center justify-center">
                   <p className="text-lg font-bold text-foreground">{m.val}</p>
                   <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
