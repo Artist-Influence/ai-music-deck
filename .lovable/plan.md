@@ -1,40 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-## Plan: Reformat Slide 10 to match Slide 9's style
+Three small text edits across three files:
 
-Slide 9 (Top 50 Trending) uses a clean two-column layout with `p-12`, `items-center justify-center`, `max-w-[1600px]`, `gap-10`, and wraps the right side in a single `GlassPanel variant="bright"` with `p-8`. The left column uses `flex-1` with no max-width constraint.
+## Changes
 
-Slide 10 currently has custom styling (`p-6`, `pt-[60px]`, `items-start`, `max-w-[1720px]`, custom card borders instead of GlassPanel, fixed `w-[580px]` right column, `h-[180px]` thumbnails with `object-cover` cropping).
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-### Changes to `src/components/deck/slides/YouTubeAdsSlide.tsx`
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-**Layout — match Slide 9 exactly:**
-- Outer container: `p-6 items-start pt-[60px]` → `p-12 items-center justify-center`
-- Inner flex: `gap-12 max-w-[1720px] items-start` → `gap-10 max-w-[1600px]` (no explicit items-start)
-- Left column: remove `max-w-[620px]`, use `flex-1 flex flex-col gap-4` like Slide 9
-- Right column: remove `w-[580px] shrink-0`, use `flex-1 flex flex-col items-center justify-center`
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-**Left column — match Slide 9 typography:**
-- Service label: `text-base` → `text-lg`, `mb-3` → `mb-4`
-- Title: keep `text-6xl` (matches Slide 9)
-- Subtitle: keep `text-2xl`, widen max-width to `max-w-[700px]`, keep `mb-6`
-- Cards: use `GlassPanel variant="bright" className="p-8"` (matching Slide 9's cards)
-- Card body text: `text-xl` → `text-2xl` (matching Slide 9)
-- Timeframe: `text-xl` → `text-2xl`, remove `mt-2`
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-**Right column — two stacked GlassPanel case studies:**
-- Wrap each case study in `GlassPanel variant="bright" className="p-8 flex-1"` instead of custom div styling
-- Remove the inner `w-[500px] mx-auto` lock — let content fill naturally
-- Case study label: `text-[11px]` → `text-base`, keep `font-mono tracking-widest uppercase`
-- Artist: `text-xl` → `text-3xl`
-- Track: `text-lg` → `text-2xl`
-- **Thumbnails**: change from `h-[180px] object-cover` to `aspect-video w-full object-contain` with `bg-black/30` background so the full image shows without cropping
-- KPI grid: `grid-cols-2 gap-1.5` → `grid-cols-2 gap-3` (matching Slide 9's metric grid)
-- KPI cards: replace tiered styling with uniform `bg-white/[0.04] rounded-lg p-4 text-center`
-- Metric values: uniform `text-2xl font-bold text-foreground`
-- Metric labels: uniform `text-lg text-muted-foreground uppercase tracking-wider`
-- Remove `primary` flag from metrics data (no longer needed)
-- Gap between the two case study panels: `gap-4` → `gap-4` (keep, provides breathing room between stacked cards)
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
-**Background:** Remove second glow orb, match Slide 9's style with one primary glow at `bg-primary/[0.08]`
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
 
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
