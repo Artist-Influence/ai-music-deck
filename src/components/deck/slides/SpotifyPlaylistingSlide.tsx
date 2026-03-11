@@ -136,7 +136,7 @@ const SpotifyPlaylistingSlide = () => (
                   href={pl.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-1.5 text-sm text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
+                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-sm text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
                 >
                   <ExternalLink className="w-3 h-3" />
                   {pl.label}
