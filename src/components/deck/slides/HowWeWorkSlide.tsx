@@ -49,12 +49,6 @@ const HowWeWorkSlide = () => (
                 <p className="text-2xl font-semibold text-foreground mb-3 relative z-10">{step.title}</p>
                 <p className="text-[21px] text-muted-foreground leading-relaxed relative z-10">{step.desc}</p>
               </GlassPanel>
-              {i < steps.length - 1 && (
-                <div
-                  className="w-12 h-[2px] shrink-0 bg-gradient-to-r from-primary/40 to-primary/20"
-                  style={{ animation: `connector-pulse 3s ease-in-out ${i * 0.7 + 0.35}s infinite` }}
-                />
-              )}
             </div>
           );
         })}
