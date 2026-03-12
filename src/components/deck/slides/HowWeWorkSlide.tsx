@@ -42,11 +42,11 @@ const HowWeWorkSlide = () => (
       <h1 className="text-7xl font-bold text-foreground mb-4">Our End-to-End Process</h1>
       <p className="text-[23px] text-muted-foreground mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
-      <div className="flex items-center gap-0 mb-10">
+      <div className="flex items-stretch gap-0 mb-10">
         {steps.map((step, i) => {
           const Icon = step.icon;
           return (
-            <div key={i} className="flex items-center flex-1">
+            <div key={i} className="flex items-stretch flex-1">
               <GlassPanel variant="bright" className={`flex-1 p-6 text-center step-card step-card-${i}`}>
                 <Icon className="w-8 h-8 text-primary mx-auto mb-3 relative z-10" />
                 <p className="text-primary text-base font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
