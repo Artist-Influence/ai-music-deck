@@ -31,10 +31,6 @@ const HowWeWorkSlide = () => (
           animation: glow-sweep 3s ease-in-out ${i * 0.7}s infinite;
         }
       `).join('')}
-      @keyframes connector-pulse {
-        0%, 100% { opacity: 0.2; }
-        50% { opacity: 0.8; }
-      }
     `}</style>
     <div className="absolute top-[20%] left-[30%] w-[600px] h-[400px] rounded-full bg-primary/[0.05] blur-[150px] animate-float-slow" />
 
