@@ -46,7 +46,7 @@ const HowWeWorkSlide = () => (
         {steps.map((step, i) => {
           const Icon = step.icon;
           return (
-            <div key={i} className="flex items-center flex-1">
+            <div key={i} className="flex items-stretch flex-1">
               <GlassPanel variant="bright" className={`flex-1 p-6 text-center step-card step-card-${i}`}>
                 <Icon className="w-8 h-8 text-primary mx-auto mb-3 relative z-10" />
                 <p className="text-primary text-base font-mono mb-2 tracking-widest relative z-10">{step.num}</p>
