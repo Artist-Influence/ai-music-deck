@@ -42,7 +42,7 @@ const HowWeWorkSlide = () => (
       <h1 className="text-7xl font-bold text-foreground mb-4">Our End-to-End Process</h1>
       <p className="text-[23px] text-muted-foreground mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
-      <div className="flex items-center gap-0 mb-10">
+      <div className="flex items-stretch gap-0 mb-10">
         {steps.map((step, i) => {
           const Icon = step.icon;
           return (
