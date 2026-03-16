@@ -51,7 +51,7 @@ const InstagramSeedingSlide = () => (
           </div>
           <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">Instagram Seeding</h1>
           <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
-            Genre-aligned page placements across EDM pages and meme accounts with tracking via live dashboard.
+            Genre-aligned page placements across genre/theme pages and meme accounts with tracking via live dashboard.
           </p>
         </div>
 
