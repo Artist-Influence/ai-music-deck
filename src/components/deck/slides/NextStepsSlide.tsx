@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import aiLogo from '@/assets/artist-influence-logo.png';
+import aiLogo from '@/assets/ai-logo-last-slide.png';
 import NetworkVisual from '../NetworkVisual';
 
 const steps = [
