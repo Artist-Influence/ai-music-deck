@@ -57,9 +57,9 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
         <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] rounded-full bg-accent/8 blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-4 text-center">
-        <img src={aiLogo} alt="Artist Influence" className="w-72 mx-auto mb-1" />
-        <p className="text-muted-foreground text-sm mb-3">The growth system for modern music</p>
+      <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 px-4 pt-2 pb-4 text-center">
+        <img src={aiLogo} alt="Artist Influence" className="w-72 mx-auto" />
+        <p className="text-muted-foreground text-sm mb-3 -mt-1">The growth system for modern music</p>
 
         <div className="mb-6">
           <h2 className="text-lg font-semibold text-foreground mb-1">View our Deck</h2>
