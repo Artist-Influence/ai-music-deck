@@ -5,7 +5,7 @@ import TheProblemSlide from './TheProblemSlide';
 import WhatWeDoSlide from './WhatWeDoSlide';
 import HowWeWorkSlide from './HowWeWorkSlide';
 import ClippingSlide from './ClippingSlide';
-import FanpagesSlide from './FanpagesSlide';
+
 import CreatorFloodSlide from './CreatorFloodSlide';
 import Top50TrendingSlide from './Top50TrendingSlide';
 import YouTubeAdsSlide from './YouTubeAdsSlide';
