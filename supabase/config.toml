@@ -1,7 +1,1 @@
-project_id = "geweiekcekvauahxuimf"
-
-[functions.weekly-lead-digest]
-verify_jwt = false
-
-[functions.send-email]
-verify_jwt = false
+project_id = "qlxtjvejeurqjkpmfatj"
