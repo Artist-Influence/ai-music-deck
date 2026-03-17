@@ -53,7 +53,8 @@ const NextStepsSlide = () => (
       <GlassPanel variant="subtle" className="mb-12 p-8 max-w-[700px] mx-auto">
         <p className="text-[21px] text-foreground font-medium mb-1">Contact Us</p>
         <p className="text-[19px] text-muted-foreground/80 mb-2">Artist Influence</p>
-        <p className="text-[21px] text-muted-foreground mb-1">hello@artistinfluence.com</p>
+        <p className="text-[21px] text-muted-foreground mb-1">jared@artistinfluence.com</p>
+        <p className="text-[21px] text-muted-foreground mb-1">jack@artistinfluence.com</p>
         <p className="text-[21px] text-muted-foreground mb-3">www.artistinfluence.com</p>
         <p className="text-[21px] text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
