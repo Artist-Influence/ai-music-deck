@@ -57,18 +57,13 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
         <div className="absolute bottom-1/4 right-1/3 w-[400px] h-[400px] rounded-full bg-accent/8 blur-[100px] animate-float" style={{ animationDelay: '2s' }} />
       </div>
 
-      <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-10 text-center">
-        <div className="mb-8">
-          <img src={aiLogo} alt="Artist Influence" className="w-40 mx-auto mb-2" />
-          <p className="text-muted-foreground text-sm">The growth system for modern music</p>
-        </div>
+      <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-8 text-center">
+        <img src={aiLogo} alt="Artist Influence" className="w-56 mx-auto mb-6" />
 
-        <div className="mb-8">
-          <h2 className="text-lg font-semibold text-foreground mb-2">View our Deck</h2>
-          <p className="text-muted-foreground text-sm">Enter your email to access our growth system deck.</p>
-        </div>
+        <h2 className="text-lg font-semibold text-foreground mb-1">View our Deck</h2>
+        <p className="text-muted-foreground text-sm mb-6">Enter your email to access our growth system deck.</p>
 
-        <form onSubmit={handleSubmit} className="space-y-4">
+        <form onSubmit={handleSubmit} className="space-y-3">
           <div>
             <input
               type="email"
@@ -89,7 +84,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
           </button>
         </form>
 
-        <p className="text-muted-foreground/50 text-[10px] mt-6">Confidential — for intended recipients only</p>
+        <p className="text-muted-foreground/50 text-[10px] mt-4">Confidential — for intended recipients only</p>
       </GlassPanel>
     </div>
   );
