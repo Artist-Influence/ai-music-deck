@@ -64,7 +64,9 @@ const HubDiagram = () => {
       <text x={nodes[0].cx} y={nodes[0].cy + 18} textAnchor="middle" fill="hsl(var(--primary))" fontSize="22" fontWeight="700">Song</text>
 
       {/* Subtle orbit ring */}
-      <circle cx={nodes[0].cx} cy={nodes[0].cy} r="180" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.1" strokeDasharray="4 6" />
+      <circle cx={nodes[0].cx} cy={nodes[0].cy} r="180" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.1" strokeDasharray="4 6">
+        <animateTransform attributeName="transform" type="rotate" from={`0 ${nodes[0].cx} ${nodes[0].cy}`} to={`360 ${nodes[0].cx} ${nodes[0].cy}`} dur="60s" repeatCount="indefinite" />
+      </circle>
 
       {/* Floating pulse dots on connections */}
       {connections.map(([a, b], i) => {
