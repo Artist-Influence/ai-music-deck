@@ -59,8 +59,8 @@ const NextStepsSlide = () => (
         <p className="text-[21px] text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
 
-      <img src={aiLogo} alt="Artist Influence" className="w-56 mx-auto mb-4" />
-      <p className="text-2xl text-muted-foreground">The growth system for modern music</p>
+      <img src={aiLogo} alt="Artist Influence" className="w-64 mx-auto mb-3" />
+      <p className="text-lg text-muted-foreground/50 tracking-widest uppercase">The growth system for modern music</p>
     </div>
   </div>
 );
