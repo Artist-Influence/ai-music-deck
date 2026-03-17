@@ -23,7 +23,7 @@ export const slides: FC[] = [
   WhatWeDoSlide,
   HowWeWorkSlide,
   ClippingSlide,
-  FanpagesSlide,
+  
   CreatorFloodSlide,
   Top50TrendingSlide,
   YouTubeAdsSlide,
