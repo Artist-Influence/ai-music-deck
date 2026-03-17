@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import aiLogo from '@/assets/artist-influence-logo.png';
+import aiLogo from '@/assets/ai-logo-last-slide.png';
 import NetworkVisual from '../NetworkVisual';
 
 const steps = [
@@ -37,8 +37,8 @@ const NextStepsSlide = () => (
     <NetworkVisual className="opacity-[0.06]" nodeCount={30} seed={5} />
 
     <div className="relative z-10 max-w-[1400px]">
-      <h1 className="text-6xl font-bold text-foreground mb-4 whitespace-nowrap">If this makes sense, here's how we start.</h1>
-      <p className="text-2xl text-muted-foreground mb-16">No friction.</p>
+      <h1 className="text-7xl font-extrabold text-foreground mb-2 tracking-tight">Ready to start?</h1>
+      <p className="text-xl text-muted-foreground/60 mb-14 tracking-wide">Four steps. No friction. Let's go.</p>
 
       <div className="flex gap-6 mb-16">
         {steps.map((s, i) => (
@@ -59,8 +59,8 @@ const NextStepsSlide = () => (
         <p className="text-[21px] text-primary italic">"We can turn around a recommended plan within 24 hours."</p>
       </GlassPanel>
 
-      <img src={aiLogo} alt="Artist Influence" className="w-56 mx-auto mb-4" />
-      <p className="text-2xl text-muted-foreground">The growth system for modern music</p>
+      <img src={aiLogo} alt="Artist Influence" className="w-64 mx-auto mb-3" />
+      <p className="text-lg text-muted-foreground/50 tracking-widest uppercase">The growth system for modern music</p>
     </div>
   </div>
 );
