@@ -35,9 +35,6 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
           html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Artist Influence deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
         },
       }).catch(() => {});
-      supabase.functions.invoke('notify-slack', {
-        body: { email: result.data, deck_type: 'music' },
-      }).catch(() => {});
       localStorage.setItem('ai_deck_email', result.data);
       onAccess();
     } catch {
