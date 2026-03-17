@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import aiLogo from '@/assets/artist-influence-logo.png';
+import aiLogo from '@/assets/ai-logo-cropped.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
