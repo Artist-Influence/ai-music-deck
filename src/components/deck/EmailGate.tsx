@@ -59,7 +59,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
 
       <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-10 text-center">
         <div className="mb-8">
-          <img src={cloutedLogo} alt="CLOUTED" className="w-40 mx-auto mb-2" />
+          <img src={aiLogo} alt="Artist Influence" className="w-40 mx-auto mb-2" />
           <p className="text-muted-foreground text-sm">The growth system for modern music</p>
         </div>
 

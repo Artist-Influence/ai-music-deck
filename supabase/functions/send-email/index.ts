@@ -38,7 +38,7 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        from: "Clouted Deck <onboarding@resend.dev>",
+        from: "Artist Influence Deck <onboarding@resend.dev>",
         to: [to],
         subject,
         html,

@@ -41,7 +41,7 @@ const PricingSlide = () => (
       </GlassPanel>
 
       <div className="mt-8 flex flex-col gap-2">
-        <a href="https://clouted-pricing.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block text-xl font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
+        <a href="#" target="_blank" rel="noopener noreferrer" className="inline-block text-xl font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
           View full pricing sheet →
         </a>
         <p className="text-xl text-foreground">We'll build the final package, tailored to your release schedule, audience, and goals. White-glove service, zero guesswork.</p>

@@ -61,7 +61,7 @@ const ExportPdfButton = () => {
       }
 
       document.body.removeChild(container);
-      doc.save('CLOUTED-Deck.pdf');
+      doc.save('Artist-Influence-Deck.pdf');
       dismiss();
       toast({ title: 'Export complete', description: 'PDF downloaded successfully.' });
     } catch (err) {

@@ -3,10 +3,10 @@ import DeckViewer from '@/components/deck/DeckViewer';
 import EmailGate from '@/components/deck/EmailGate';
 
 const Index = () => {
-  const [hasAccess, setHasAccess] = useState(() => !!localStorage.getItem('clouted_deck_email'));
+  const [hasAccess, setHasAccess] = useState(() => !!localStorage.getItem('ai_deck_email'));
 
   useEffect(() => {
-    document.title = 'Clouted — The Growth System for Modern Music';
+    document.title = 'Artist Influence — The Growth System for Modern Music';
   }, []);
 
   if (!hasAccess) {
