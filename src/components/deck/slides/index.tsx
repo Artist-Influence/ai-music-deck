@@ -2,7 +2,7 @@ import { FC } from 'react';
 import CoverSlide from './CoverSlide';
 import TheShiftSlide from './TheShiftSlide';
 import TheProblemSlide from './TheProblemSlide';
-import WhatCloutedDoesSlide from './WhatCloutedDoesSlide';
+import WhatWeDoSlide from './WhatWeDoSlide';
 import HowWeWorkSlide from './HowWeWorkSlide';
 import ClippingSlide from './ClippingSlide';
 import FanpagesSlide from './FanpagesSlide';
@@ -20,7 +20,7 @@ export const slides: FC[] = [
   CoverSlide,
   TheShiftSlide,
   TheProblemSlide,
-  WhatCloutedDoesSlide,
+  WhatWeDoSlide,
   HowWeWorkSlide,
   ClippingSlide,
   FanpagesSlide,

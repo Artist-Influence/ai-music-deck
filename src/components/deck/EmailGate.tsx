@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import cloutedLogo from '@/assets/CLOUTED-white.png';
+import aiLogo from '@/assets/artist-influence-logo.png';
 import { z } from 'zod';
 import GlassPanel from './GlassPanel';
 import { supabase } from '@/integrations/supabase/client';
@@ -30,19 +30,19 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
       await supabase.from('deck_leads').insert({ email: result.data });
       supabase.functions.invoke('send-email', {
         body: {
-          to: 'jared@clouted.com',
+          to: 'hello@artistinfluence.com',
           subject: `New Deck Lead (Music): ${result.data}`,
-          html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Clouted Music deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
+          html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Artist Influence deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
         },
       }).catch(() => {});
       supabase.functions.invoke('notify-slack', {
         body: { email: result.data, deck_type: 'music' },
       }).catch(() => {});
-      localStorage.setItem('clouted_deck_email', result.data);
+      localStorage.setItem('ai_deck_email', result.data);
       onAccess();
     } catch {
       // Still grant access even if DB insert fails
-      localStorage.setItem('clouted_deck_email', result.data);
+      localStorage.setItem('ai_deck_email', result.data);
       onAccess();
     } finally {
       setLoading(false);
@@ -59,7 +59,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
 
       <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-10 text-center">
         <div className="mb-8">
-          <img src={cloutedLogo} alt="CLOUTED" className="w-40 mx-auto mb-2" />
+          <img src={aiLogo} alt="Artist Influence" className="w-40 mx-auto mb-2" />
           <p className="text-muted-foreground text-sm">The growth system for modern music</p>
         </div>
 
