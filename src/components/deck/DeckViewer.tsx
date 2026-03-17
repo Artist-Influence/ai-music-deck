@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import cloutedLogo from '@/assets/CLOUTED-white.png';
+import aiLogo from '@/assets/artist-influence-logo.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
