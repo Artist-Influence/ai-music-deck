@@ -17,7 +17,7 @@ const CoverSlide = () => (
     </svg>
 
     <div className="relative z-10 text-center">
-      <div className="w-[800px] mx-auto mb-6 overflow-hidden" style={{ marginBottom: '-4rem' }}>
+      <div className="w-[800px] mx-auto overflow-hidden" style={{ marginBottom: '-2rem' }}>
         <img src={aiLogo} alt="Artist Influence" className="w-full" style={{ marginBottom: '-25%' }} />
       </div>
       <p className="text-5xl font-light text-primary mb-6 tracking-wide">The growth system for modern music and artists</p>
