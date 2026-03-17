@@ -14,7 +14,7 @@ const variantStyles = {
 };
 
 const GlassPanel = ({ children, className, variant = 'default' }: GlassPanelProps) => (
-  <div className={cn('rounded-2xl border backdrop-blur-xl p-8', variantStyles[variant], className)}>
+  <div className={cn('rounded-2xl border backdrop-blur-xl', variantStyles[variant], className)}>
     {children}
   </div>
 );
