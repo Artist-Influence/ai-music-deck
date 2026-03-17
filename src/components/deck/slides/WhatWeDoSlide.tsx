@@ -1,84 +1,83 @@
-import { useEffect, useRef } from 'react';
 import GlassPanel from '../GlassPanel';
 
 const HubDiagram = () => {
-  const orbitRef = useRef<SVGGElement>(null);
-  const textRefs = useRef<(SVGGElement | null)[]>([]);
-
   const nodes = [
-    { cx: 250, cy: 250 },  // center
-    { cx: 250, cy: 70 },   // short-form
-    { cx: 105, cy: 400 },  // communities
-    { cx: 395, cy: 400 },  // streaming
+    { label: ['Your', 'Song'], cx: 300, cy: 260, r: 72, primary: true },
+    { label: ['Short-form', 'Content'], cx: 460, cy: 100, r: 44, primary: false },
+    { label: ['Communities', '& Culture'], cx: 120, cy: 200, r: 44, primary: false },
+    { label: ['Streaming', 'Platforms'], cx: 380, cy: 440, r: 44, primary: false },
   ];
 
-  useEffect(() => {
-    let raf: number;
-    const start = performance.now();
-    const duration = 60000; // 60s per revolution
-
-    const tick = (now: number) => {
-      const elapsed = now - start;
-      const angle = (elapsed / duration) * 360 % 360;
-
-      if (orbitRef.current) {
-        orbitRef.current.setAttribute('transform', `rotate(${angle}, 250, 250)`);
-      }
-
-      textRefs.current.forEach((el, i) => {
-        if (el) {
-          const n = nodes[i];
-          el.setAttribute('transform', `rotate(${-angle}, ${n.cx}, ${n.cy})`);
-        }
-      });
-
-      raf = requestAnimationFrame(tick);
-    };
-
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, []);
+  const connections = [
+    [0, 1], [0, 2], [0, 3],
+  ];
 
   return (
-    <svg viewBox="0 0 500 500" className="w-[460px] h-[460px]">
-      <g ref={orbitRef}>
-        {/* Rings */}
-        <circle cx="250" cy="250" r="140" stroke="hsl(195, 90%, 60%)" strokeWidth="0.6" fill="none" opacity="0.15" />
+    <svg viewBox="0 0 560 540" className="w-[480px] h-[480px]">
+      <defs>
+        <radialGradient id="centerGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.25" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+        </radialGradient>
+        <radialGradient id="nodeGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0.12" />
+          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
+        </radialGradient>
+        <filter id="softGlow">
+          <feGaussianBlur stdDeviation="6" result="blur" />
+          <feMerge><feMergeNode in="blur" /><feMergeNode in="SourceGraphic" /></feMerge>
+        </filter>
+      </defs>
 
-        {/* Connection lines */}
-        <line x1="250" y1="200" x2="250" y2="90" stroke="hsl(195, 90%, 60%)" strokeWidth="1.5" opacity="0.35" />
-        <line x1="210" y1="285" x2="120" y2="380" stroke="hsl(180, 70%, 48%)" strokeWidth="1.5" opacity="0.35" />
-        <line x1="290" y1="285" x2="380" y2="380" stroke="hsl(195, 90%, 60%)" strokeWidth="1.5" opacity="0.35" />
+      {/* Ambient glow behind center */}
+      <circle cx={nodes[0].cx} cy={nodes[0].cy} r="140" fill="url(#centerGlow)" />
 
-        {/* Center node */}
-        <circle cx="250" cy="250" r="65" fill="hsl(195, 90%, 60%)" opacity="0.15" />
-        <circle cx="250" cy="250" r="65" stroke="hsl(195, 90%, 60%)" strokeWidth="1.5" fill="none" opacity="0.4" />
-        <g ref={el => { textRefs.current[0] = el; }}>
-          <text x="250" y="244" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="20" fontWeight="600">Your</text>
-          <text x="250" y="268" textAnchor="middle" fill="hsl(195, 90%, 60%)" fontSize="20" fontWeight="600">Song</text>
+      {/* Connection lines */}
+      {connections.map(([a, b], i) => (
+        <line key={i}
+          x1={nodes[a].cx} y1={nodes[a].cy}
+          x2={nodes[b].cx} y2={nodes[b].cy}
+          stroke="hsl(var(--primary))" strokeWidth="1" opacity="0.25"
+        />
+      ))}
+
+      {/* Outer nodes */}
+      {nodes.slice(1).map((n, i) => (
+        <g key={i}>
+          <circle cx={n.cx} cy={n.cy} r={n.r + 8} fill="url(#nodeGlow)" />
+          <circle cx={n.cx} cy={n.cy} r={n.r}
+            fill="hsl(var(--primary))" fillOpacity="0.06"
+            stroke="hsl(var(--primary))" strokeWidth="0.8" strokeOpacity="0.3"
+          />
+          <text x={n.cx} y={n.cy - 6} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="15" fontWeight="500" opacity="0.9">{n.label[0]}</text>
+          <text x={n.cx} y={n.cy + 14} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="13" fontWeight="400" opacity="0.65">{n.label[1]}</text>
         </g>
+      ))}
 
-        {/* Short-form node */}
-        <circle cx="250" cy="70" r="48" fill="hsl(195, 90%, 60%)" opacity="0.1" stroke="hsl(195, 90%, 60%)" strokeWidth="0.8" />
-        <g ref={el => { textRefs.current[1] = el; }}>
-          <text x="250" y="66" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="16" fontWeight="500">Short-form</text>
-          <text x="250" y="84" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14">Content</text>
-        </g>
+      {/* Center node */}
+      <circle cx={nodes[0].cx} cy={nodes[0].cy} r={nodes[0].r}
+        fill="hsl(var(--primary))" fillOpacity="0.12"
+        stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.5"
+        filter="url(#softGlow)"
+      />
+      <text x={nodes[0].cx} y={nodes[0].cy - 8} textAnchor="middle" fill="hsl(var(--primary))" fontSize="22" fontWeight="700">Your</text>
+      <text x={nodes[0].cx} y={nodes[0].cy + 18} textAnchor="middle" fill="hsl(var(--primary))" fontSize="22" fontWeight="700">Song</text>
 
-        {/* Communities node */}
-        <circle cx="105" cy="400" r="48" fill="hsl(180, 70%, 48%)" opacity="0.1" stroke="hsl(180, 70%, 48%)" strokeWidth="0.8" />
-        <g ref={el => { textRefs.current[2] = el; }}>
-          <text x="105" y="396" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="15" fontWeight="500">Communities</text>
-          <text x="105" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14">& Culture</text>
-        </g>
+      {/* Subtle orbit ring */}
+      <circle cx={nodes[0].cx} cy={nodes[0].cy} r="180" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.1" strokeDasharray="4 6" />
 
-        {/* Streaming node */}
-        <circle cx="395" cy="400" r="48" fill="hsl(195, 90%, 60%)" opacity="0.1" stroke="hsl(195, 90%, 60%)" strokeWidth="0.8" />
-        <g ref={el => { textRefs.current[3] = el; }}>
-          <text x="395" y="396" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="16" fontWeight="500">Streaming</text>
-          <text x="395" y="414" textAnchor="middle" fill="hsl(210, 40%, 96%)" fontSize="14">Platforms</text>
-        </g>
-      </g>
+      {/* Floating pulse dots on connections */}
+      {connections.map(([a, b], i) => {
+        const dx = nodes[b].cx - nodes[a].cx;
+        const dy = nodes[b].cy - nodes[a].cy;
+        return (
+          <circle key={`pulse-${i}`} r="3" fill="hsl(var(--primary))" filter="url(#softGlow)">
+            <animate attributeName="cx" values={`${nodes[a].cx};${nodes[b].cx};${nodes[a].cx}`} dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
+            <animate attributeName="cy" values={`${nodes[a].cy};${nodes[b].cy};${nodes[a].cy}`} dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
+            <animate attributeName="opacity" values="0;0.7;0" dur={`${3 + i * 0.5}s`} repeatCount="indefinite" />
+          </circle>
+        );
+      })}
     </svg>
   );
 };
