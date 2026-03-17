@@ -38,11 +38,11 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
       supabase.functions.invoke('notify-slack', {
         body: { email: result.data, deck_type: 'music' },
       }).catch(() => {});
-      localStorage.setItem('clouted_deck_email', result.data);
+      localStorage.setItem('ai_deck_email', result.data);
       onAccess();
     } catch {
       // Still grant access even if DB insert fails
-      localStorage.setItem('clouted_deck_email', result.data);
+      localStorage.setItem('ai_deck_email', result.data);
       onAccess();
     } finally {
       setLoading(false);
