@@ -46,7 +46,7 @@ Deno.serve(async (req) => {
 
     const html = `
       <div style="font-family:sans-serif;max-width:600px;margin:0 auto">
-        <h2 style="color:#0ea5e9">Clouted Deck — New Leads</h2>
+        <h2 style="color:#0ea5e9">Artist Influence Deck — New Leads</h2>
         <p>${leads.length} new lead${leads.length > 1 ? "s" : ""} this week:</p>
         <table style="width:100%;border-collapse:collapse">
           <thead><tr><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Email</th><th style="text-align:left;padding:8px 12px;border-bottom:2px solid #0ea5e9">Date</th></tr></thead>
