@@ -63,7 +63,7 @@ Deno.serve(async (req) => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        to: "jared@clouted.com",
+        to: "hello@artistinfluence.com",
         subject: `Artist Influence Deck — ${leads.length} New Lead${leads.length > 1 ? "s" : ""}`,
         html,
       }),

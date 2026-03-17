@@ -30,7 +30,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
       await supabase.from('deck_leads').insert({ email: result.data });
       supabase.functions.invoke('send-email', {
         body: {
-          to: 'jared@clouted.com',
+          to: 'hello@artistinfluence.com',
           subject: `New Deck Lead (Music): ${result.data}`,
           html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Artist Influence deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
         },

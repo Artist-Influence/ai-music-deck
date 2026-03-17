@@ -20,7 +20,7 @@ export const slides: FC[] = [
   CoverSlide,
   TheShiftSlide,
   TheProblemSlide,
-  WhatCloutedDoesSlide,
+  WhatWeDoSlide,
   HowWeWorkSlide,
   ClippingSlide,
   FanpagesSlide,
