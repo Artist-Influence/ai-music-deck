@@ -2,9 +2,9 @@ import GlassPanel from '../GlassPanel';
 import { UserX, Clock, DollarSign } from 'lucide-react';
 
 const problems = [
-  { num: 1, icon: UserX, text: "Poor campaign quality from those who don't understand the music industry" },
+  { num: 1, icon: UserX, text: "Poor campaign quality from non-music marketers" },
   { num: 2, icon: Clock, text: 'Reporting is late, confusing, or missing' },
-  { num: 3, icon: DollarSign, text: 'You spend money without real measurable results that actually move the needle' },
+  { num: 3, icon: DollarSign, text: 'You spend money without measurable results' },
 ];
 
 const TheProblemSlide = () => (

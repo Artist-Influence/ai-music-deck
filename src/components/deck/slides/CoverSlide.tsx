@@ -2,7 +2,7 @@ import aiLogo from '@/assets/artist-influence-logo.png';
 import NetworkVisual from '../NetworkVisual';
 
 const CoverSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden flex flex-col items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden flex flex-col items-center justify-center pb-[10%]">
     {/* Glow orbs */}
     <div className="absolute top-[5%] right-[10%] w-[600px] h-[600px] rounded-full bg-primary/20 blur-[150px] animate-float" />
     <div className="absolute bottom-[10%] left-[5%] w-[500px] h-[500px] rounded-full bg-accent/[0.12] blur-[120px] animate-float-slow" />
