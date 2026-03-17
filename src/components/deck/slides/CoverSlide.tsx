@@ -17,7 +17,7 @@ const CoverSlide = () => (
     </svg>
 
     <div className="relative z-10 text-center">
-      <img src={aiLogo} alt="Artist Influence" className="w-[480px] mx-auto mb-6" />
+      <img src={aiLogo} alt="Artist Influence" className="w-[640px] mx-auto mb-6" />
       <p className="text-5xl font-light text-primary mb-6 tracking-wide">The growth system for modern music and artists</p>
       <p className="text-3xl text-foreground">Driving momentum across short-form, streaming, and culture.</p>
     </div>
