@@ -17,11 +17,9 @@ const TheShiftSlide = () => (
     <div className="relative z-10 flex gap-12 items-start w-full max-w-[1600px] mx-auto">
       <div className="flex-1 max-w-[800px]">
         <h1 className="text-7xl font-bold text-foreground mb-10 leading-tight whitespace-nowrap">Music discovery has changed.</h1>
-        <GlassPanel className="mb-12">
-          <p className="text-2xl text-foreground leading-relaxed">
-            People don't "find" songs anymore. Songs find people.
-          </p>
-        </GlassPanel>
+        <p className="text-3xl text-muted-foreground font-medium leading-relaxed mb-12">
+          People don't "find" songs anymore. Songs find people.
+        </p>
 
         <p className="text-lg text-primary font-medium mb-6 tracking-wider uppercase">What wins today</p>
         <div className="grid grid-cols-2 gap-4">
