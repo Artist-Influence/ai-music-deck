@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
-import cloutedLogo from '@/assets/CLOUTED-white.png';
+import aiLogo from '@/assets/artist-influence-logo.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
@@ -98,7 +98,7 @@ const DeckViewer = () => {
                   <PanelLeft className="w-4 h-4" />
                 </button>
               )}
-              <img src={cloutedLogo} alt="CLOUTED" className="h-5" />
+              <div className="h-5 overflow-hidden"><img src={aiLogo} alt="Artist Influence" className="h-8 -mt-[3px]" /></div>
             </div>
             <div className="flex items-center gap-1">
               <ExportPdfButton />
