@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import cloutedLogo from '@/assets/CLOUTED-white.png';
+import aiLogo from '@/assets/artist-influence-logo.png';
 import { z } from 'zod';
 import GlassPanel from './GlassPanel';
 import { supabase } from '@/integrations/supabase/client';
