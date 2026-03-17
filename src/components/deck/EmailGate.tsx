@@ -58,10 +58,15 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
       </div>
 
       <GlassPanel variant="bright" className="relative z-10 w-full max-w-md mx-4 p-8 text-center">
-        <img src={aiLogo} alt="Artist Influence" className="w-56 mx-auto mb-6" />
+        <div className="mb-6">
+          <img src={aiLogo} alt="Artist Influence" className="w-56 mx-auto mb-1" />
+          <p className="text-muted-foreground text-sm">The growth system for modern music</p>
+        </div>
 
-        <h2 className="text-lg font-semibold text-foreground mb-1">View our Deck</h2>
-        <p className="text-muted-foreground text-sm mb-6">Enter your email to access our growth system deck.</p>
+        <div className="mb-6">
+          <h2 className="text-lg font-semibold text-foreground mb-1">View our Deck</h2>
+          <p className="text-muted-foreground text-sm">Enter your email to access our growth system deck.</p>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
