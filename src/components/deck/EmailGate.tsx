@@ -62,7 +62,11 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
           <img src={aiLogo} alt="Artist Influence" className="w-56 mx-auto mb-1" />
           <p className="text-muted-foreground text-sm">The growth system for modern music</p>
         </div>
-        <p className="text-muted-foreground text-sm mb-6">Enter your email to access our growth system deck.</p>
+
+        <div className="mb-6">
+          <h2 className="text-lg font-semibold text-foreground mb-1">View our Deck</h2>
+          <p className="text-muted-foreground text-sm">Enter your email to access our growth system deck.</p>
+        </div>
 
         <form onSubmit={handleSubmit} className="space-y-3">
           <div>
