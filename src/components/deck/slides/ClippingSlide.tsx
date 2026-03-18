@@ -47,7 +47,7 @@ const cases = [
 ];
 
 const ClippingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-16 flex flex-col justify-start md:justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-16 flex flex-col justify-start md:justify-center">
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
       <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
         <Scissors size={20} className="text-primary md:w-7 md:h-7" />
