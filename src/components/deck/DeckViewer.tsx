@@ -13,7 +13,6 @@ const DeckViewer = () => {
   const [sidebar, setSidebar] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
   const [grid, setGrid] = useState(false);
-  const touchStartX = useRef<number | null>(null);
 
   const next = useCallback(() => setCurrent(c => Math.min(c + 1, slides.length - 1)), []);
   const prev = useCallback(() => setCurrent(c => Math.max(c - 1, 0)), []);
@@ -31,18 +30,14 @@ const DeckViewer = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, [next, prev]);
 
-  // Swipe navigation
-  const handleTouchStart = useCallback((e: React.TouchEvent) => {
-    touchStartX.current = e.touches[0].clientX;
-  }, []);
-
-  const handleTouchEnd = useCallback((e: React.TouchEvent) => {
-    if (touchStartX.current === null) return;
-    const deltaX = e.changedTouches[0].clientX - touchStartX.current;
-    if (deltaX > 50) prev();
-    else if (deltaX < -50) next();
-    touchStartX.current = null;
-  }, [next, prev]);
+  // Edge-tap navigation for mobile
+  const handleEdgeTap = useCallback((e: React.MouseEvent) => {
+    if (!isMobile) return;
+    const x = e.clientX;
+    const w = window.innerWidth;
+    if (x < w * 0.15) prev();
+    else if (x > w * 0.85) next();
+  }, [isMobile, next, prev]);
 
   useEffect(() => {
     if (isMobile) setSidebar(false);
@@ -82,9 +77,35 @@ const DeckViewer = () => {
     );
   }
 
+  // Mobile: full-bleed layout with overlay nav
+  if (isMobile) {
+    return (
+      <div className="h-dvh flex flex-col bg-background overflow-hidden relative" onClick={handleEdgeTap}>
+        <div className="flex-1 min-h-0">
+          <div key={current} className="w-full h-full animate-fade-in">
+            <ScaledSlide isMobile><Slide /></ScaledSlide>
+          </div>
+        </div>
+
+        {/* Overlay nav bar */}
+        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-6 h-12 bg-background/70 backdrop-blur-md z-50">
+          <button onClick={(e) => { e.stopPropagation(); prev(); }} disabled={current === 0}
+            className="p-3 rounded hover:bg-secondary transition disabled:opacity-20">
+            <ChevronLeft className="w-6 h-6 text-foreground" />
+          </button>
+          <span className="text-xs text-muted-foreground font-mono min-w-[60px] text-center">{current + 1} / {slides.length}</span>
+          <button onClick={(e) => { e.stopPropagation(); next(); }} disabled={current === slides.length - 1}
+            className="p-3 rounded hover:bg-secondary transition disabled:opacity-20">
+            <ChevronRight className="w-6 h-6 text-foreground" />
+          </button>
+        </div>
+      </div>
+    );
+  }
+
   return (
     <div className="h-dvh flex bg-background overflow-hidden">
-      {sidebar && !fullscreen && !isMobile && (
+      {sidebar && !fullscreen && (
         <div className="w-48 border-r border-border flex flex-col bg-card/50 backdrop-blur-sm shrink-0">
           <div className="p-3 border-b border-border flex items-center justify-between">
             <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-[0.15em]">Slides</span>
@@ -104,57 +125,45 @@ const DeckViewer = () => {
         </div>
       )}
 
-      <div
-        className="flex-1 flex flex-col min-w-0"
-        onTouchStart={handleTouchStart}
-        onTouchEnd={handleTouchEnd}
-      >
+      <div className="flex-1 flex flex-col min-w-0">
         {!fullscreen && (
-          <div className={cn(
-            'flex items-center justify-between px-4 border-b border-border shrink-0',
-            isMobile ? 'h-10' : 'h-12'
-          )}>
+          <div className="flex items-center justify-between px-4 h-12 border-b border-border shrink-0">
             <div className="flex items-center gap-3">
-              {!sidebar && !isMobile && (
+              {!sidebar && (
                 <button onClick={() => setSidebar(true)} className="text-muted-foreground hover:text-foreground transition">
                   <PanelLeft className="w-4 h-4" />
                 </button>
               )}
-              <img src={aiLogo} alt="Artist Influence" className={cn(isMobile ? 'h-4' : 'h-5')} />
+              <img src={aiLogo} alt="Artist Influence" className="h-5" />
             </div>
-            {!isMobile && (
-              <div className="flex items-center gap-1">
-                <ExportPdfButton />
-                <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
-                  <LayoutGrid className="w-4 h-4 text-muted-foreground" />
-                </button>
-                <button onClick={toggleFs} className="p-2 rounded-lg hover:bg-secondary transition" title="Fullscreen (F)">
-                  {fullscreen ? <Minimize className="w-4 h-4 text-muted-foreground" /> : <Maximize className="w-4 h-4 text-muted-foreground" />}
-                </button>
-              </div>
-            )}
+            <div className="flex items-center gap-1">
+              <ExportPdfButton />
+              <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
+                <LayoutGrid className="w-4 h-4 text-muted-foreground" />
+              </button>
+              <button onClick={toggleFs} className="p-2 rounded-lg hover:bg-secondary transition" title="Fullscreen (F)">
+                {fullscreen ? <Minimize className="w-4 h-4 text-muted-foreground" /> : <Maximize className="w-4 h-4 text-muted-foreground" />}
+              </button>
+            </div>
           </div>
         )}
 
         <div className="flex-1 relative min-h-0">
           <div key={current} className="w-full h-full animate-fade-in">
-            <ScaledSlide isMobile={isMobile}><Slide /></ScaledSlide>
+            <ScaledSlide><Slide /></ScaledSlide>
           </div>
         </div>
 
         <div className={cn(
-          'flex items-center justify-center gap-4 shrink-0',
-          isMobile ? 'h-14' : 'h-12',
+          'flex items-center justify-center gap-4 h-12 shrink-0',
           fullscreen && 'absolute bottom-6 left-1/2 -translate-x-1/2 h-auto bg-background/60 backdrop-blur-md rounded-full px-6 py-2 z-50'
         )}>
-          <button onClick={prev} disabled={current === 0}
-            className={cn('rounded hover:bg-secondary transition disabled:opacity-20', isMobile ? 'p-3' : 'p-1.5')}>
-            <ChevronLeft className={cn(isMobile ? 'w-6 h-6' : 'w-4 h-4', 'text-foreground')} />
+          <button onClick={prev} disabled={current === 0} className="p-1.5 rounded hover:bg-secondary transition disabled:opacity-20">
+            <ChevronLeft className="w-4 h-4 text-foreground" />
           </button>
           <span className="text-xs text-muted-foreground font-mono min-w-[60px] text-center">{current + 1} / {slides.length}</span>
-          <button onClick={next} disabled={current === slides.length - 1}
-            className={cn('rounded hover:bg-secondary transition disabled:opacity-20', isMobile ? 'p-3' : 'p-1.5')}>
-            <ChevronRight className={cn(isMobile ? 'w-6 h-6' : 'w-4 h-4', 'text-foreground')} />
+          <button onClick={next} disabled={current === slides.length - 1} className="p-1.5 rounded hover:bg-secondary transition disabled:opacity-20">
+            <ChevronRight className="w-4 h-4 text-foreground" />
           </button>
         </div>
       </div>

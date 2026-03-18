@@ -16,7 +16,8 @@ const ScaledSlide = ({ children, className, isMobile = false }: ScaledSlideProps
     if (!el) return;
     const update = () => {
       if (isMobile) {
-        setScale(el.clientWidth / 1920);
+        // Height-fit: scale to fill available height, allow horizontal scroll
+        setScale(el.clientHeight / 1080);
       } else {
         setScale(Math.min(el.clientWidth / 1920, el.clientHeight / 1080));
       }
@@ -32,7 +33,7 @@ const ScaledSlide = ({ children, className, isMobile = false }: ScaledSlideProps
       ref={containerRef}
       className={cn(
         'relative w-full h-full',
-        isMobile ? 'overflow-y-auto overflow-x-hidden touch-pan-y' : 'overflow-hidden',
+        isMobile ? 'overflow-x-auto overflow-y-hidden touch-pan-x' : 'overflow-hidden',
         className
       )}
     >
@@ -57,7 +58,7 @@ const ScaledSlide = ({ children, className, isMobile = false }: ScaledSlideProps
       >
         {children}
       </div>
-      {isMobile && <div style={{ height: 1080 * scale }} />}
+      {isMobile && <div style={{ width: 1920 * scale, height: 1 }} className="shrink-0" />}
     </div>
   );
 };
