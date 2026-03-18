@@ -77,28 +77,15 @@ const DeckViewer = () => {
     );
   }
 
-  // Mobile: full-bleed layout with overlay nav
+  // Mobile: vertical snap-scroll through all slides
   if (isMobile) {
     return (
-      <div className="h-dvh flex flex-col bg-background overflow-hidden relative" onClick={handleEdgeTap}>
-        <div className="flex-1 min-h-0">
-          <div key={current} className="w-full h-full animate-fade-in">
-            <ScaledSlide isMobile><Slide /></ScaledSlide>
+      <div className="h-dvh overflow-y-auto snap-y snap-mandatory bg-background">
+        {slides.map((S, i) => (
+          <div key={i} className="h-dvh w-full snap-start">
+            <ScaledSlide isMobile><S /></ScaledSlide>
           </div>
-        </div>
-
-        {/* Overlay nav bar */}
-        <div className="absolute bottom-0 left-0 right-0 flex items-center justify-center gap-6 h-12 bg-background/70 backdrop-blur-md z-50">
-          <button onClick={(e) => { e.stopPropagation(); prev(); }} disabled={current === 0}
-            className="p-3 rounded hover:bg-secondary transition disabled:opacity-20">
-            <ChevronLeft className="w-6 h-6 text-foreground" />
-          </button>
-          <span className="text-xs text-muted-foreground font-mono min-w-[60px] text-center">{current + 1} / {slides.length}</span>
-          <button onClick={(e) => { e.stopPropagation(); next(); }} disabled={current === slides.length - 1}
-            className="p-3 rounded hover:bg-secondary transition disabled:opacity-20">
-            <ChevronRight className="w-6 h-6 text-foreground" />
-          </button>
-        </div>
+        ))}
       </div>
     );
   }

@@ -9,7 +9,7 @@ const metrics = [
 ];
 
 const CreatorFloodSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-12 flex items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-12 flex flex-col justify-start md:justify-center">
     <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
       {/* Left — Service Info */}
       <div className="flex-1 flex flex-col gap-3 md:gap-4">
@@ -70,7 +70,7 @@ const CreatorFloodSlide = () => (
           <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
           <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-          <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden max-h-[200px] md:max-h-none">
+          <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden max-h-[120px] md:max-h-none">
             <img
               src={richBrianImg}
               alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos"

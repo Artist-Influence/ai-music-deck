@@ -1,44 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-# Mobile: Vertical Scroll Deck + Slide Fixes
+Three small text edits across three files:
 
-## Big Change: Navigation Model
-Instead of showing one slide at a time with bottom arrows, render **all slides in a vertical scroll container** with CSS scroll-snap. Each slide snaps to fill one screen. Remove the bottom nav bar on mobile entirely.
+## Changes
 
-### DeckViewer.tsx (mobile section)
-- Replace single-slide view + overlay nav with a vertical scroll container
-- Each slide rendered in a `h-dvh` div with `snap-start`
-- Container: `overflow-y-auto snap-y snap-mandatory`
-- Remove bottom nav bar, edge-tap handlers on mobile
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-### Slide-specific fixes
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-| Slide | Issue | Fix |
-|-------|-------|-----|
-| 1 (Cover) | Logo too low | Add `md:pb-[10%]` — only apply bottom padding on desktop, move content up on mobile |
-| 5 (HowWeWork) | Title cut off | Reduce mobile padding, make step cards more compact |
-| 6 (Clipping) | Top/bottom cut off, KPI boxes too big | Make metrics `grid-cols-5` on mobile (all on one line), reduce padding |
-| 7 (CreatorFlood) | Screenshot too tall | Reduce `max-h` of screenshot on mobile, crop tighter |
-| 8 (Top50Trending) | Top/bottom cut off | Reduce padding and text sizes |
-| 9 (YouTubeAds) | Same as 8 | Reduce padding, smaller thumbnails and metric boxes |
-| 10 (SpotifyPlaylisting) | Top cut off | Reduce padding, tighter spacing |
-| 11 (SoundCloudReposts) | Bottom cut off | Same pattern — reduce spacing |
-| 12 (InstagramSeeding) | Top/bottom cut off | Same pattern |
-| 13 (AdditionalServices) | Top/bottom cut off | Same pattern |
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-### Core pattern for slides 5-13
-The issue is these slides use `p-5` + `flex items-center justify-center` on mobile which centers content but it overflows the viewport height. Fix: change mobile to `py-3 px-4` and use `justify-start` on mobile so content flows from the top and fits within `h-dvh`.
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-### Files to edit
-- `DeckViewer.tsx` — vertical snap-scroll on mobile, remove nav bar
-- `CoverSlide.tsx` — move logo up
-- `HowWeWorkSlide.tsx` — compact mobile layout
-- `ClippingSlide.tsx` — inline KPI metrics
-- `CreatorFloodSlide.tsx` — smaller screenshot
-- `Top50TrendingSlide.tsx` — tighter spacing
-- `YouTubeAdsSlide.tsx` — tighter spacing
-- `SpotifyPlaylistingSlide.tsx` — tighter spacing
-- `SoundCloudRepostsSlide.tsx` — tighter spacing
-- `InstagramSeedingSlide.tsx` — tighter spacing
-- `AdditionalServicesSlide.tsx` — tighter spacing
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`

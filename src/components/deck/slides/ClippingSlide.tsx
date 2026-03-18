@@ -47,7 +47,7 @@ const cases = [
 ];
 
 const ClippingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-16 flex flex-col items-center justify-center">
+  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-16 flex flex-col justify-start md:justify-center">
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
       <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
         <Scissors size={20} className="text-primary md:w-7 md:h-7" />
@@ -114,7 +114,7 @@ const ClippingSlide = () => (
                   <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-3 md:grid-cols-5 gap-1.5 md:gap-2 mt-2 md:mt-3">
+              <div className="grid grid-cols-5 gap-1 md:gap-2 mt-2 md:mt-3">
                 {c.metrics.map((m) => (
                   <div key={m.label} className="bg-white/[0.04] rounded-lg p-1.5 md:p-2 text-center">
                     <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
