@@ -75,7 +75,7 @@ const AdditionalServicesSlide = () => (
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-4 md:p-8">
+        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
           <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">What it is</p>
           <div className="space-y-1.5 md:space-y-2.5">
             <BulletPoint>Paid social campaigns across Meta (Facebook + Instagram) and TikTok</BulletPoint>
