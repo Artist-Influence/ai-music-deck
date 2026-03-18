@@ -84,7 +84,7 @@ const AdditionalServicesSlide = () => (
           </div>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
+        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
           <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">How it works</p>
           <div className="space-y-1.5 md:space-y-2.5">
             <BulletPoint>Optimized daily with weekly reporting and clean data exports</BulletPoint>

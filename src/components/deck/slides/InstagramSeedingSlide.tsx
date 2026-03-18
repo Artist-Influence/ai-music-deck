@@ -88,7 +88,7 @@ const InstagramSeedingSlide = () => (
           </div>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:block">
+        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
           <p className="text-2xl font-semibold text-primary mb-3">Why it works</p>
           <div className="space-y-2.5">
             {[

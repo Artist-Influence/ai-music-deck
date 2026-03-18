@@ -77,7 +77,7 @@ const ClippingSlide = () => (
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-4 md:p-7">
+          <GlassPanel className="p-4 md:p-7 flex-1">
             <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">Why We Are Different</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[

@@ -33,7 +33,7 @@ const HowWeWorkSlide = () => (
       `).join('')}
     `}</style>
 
-    <div className="relative z-10 w-full max-w-[1400px]">
+    <div className="relative z-10 w-full max-w-[1400px] mx-auto">
       <h1 className="text-xl md:text-7xl font-bold text-foreground mb-1 md:mb-4">Our End-to-End Process</h1>
       <p className="text-xs md:text-[23px] text-muted-foreground mb-3 md:mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
