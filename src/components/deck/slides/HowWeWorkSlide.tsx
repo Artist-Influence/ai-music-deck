@@ -53,7 +53,7 @@ const HowWeWorkSlide = () => (
         })}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
         <GlassPanel variant="subtle" className="p-4 md:p-6">
           <p className="text-sm md:text-lg font-semibold text-primary mb-2 md:mb-3">Reporting includes</p>
           <div className="space-y-1.5 md:space-y-2">
