@@ -98,12 +98,12 @@ const AdditionalServicesSlide = () => (
       </div>
 
       {/* Right — 2 Case Studies */}
-      <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
+      <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-3">
         {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex-1 flex flex-col">
-            <div className="flex flex-row gap-3 md:gap-5 mb-2 md:mb-3">
-              <div className="w-[80px] h-[80px] md:w-[150px] md:h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
-                <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-xl ${c.imgPosition || 'object-center'}`} />
+          <GlassPanel key={idx} variant="bright" className="p-2 md:p-5 flex flex-col">
+            <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
+              <div className="w-[60px] h-[60px] md:w-[150px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
+                <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
               </div>
               <div className="flex-1 flex flex-col justify-center">
                 <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{c.platform}</p>
