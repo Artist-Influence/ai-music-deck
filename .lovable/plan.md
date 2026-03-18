@@ -1,39 +1,39 @@
 
-# Grammar Fixes Across Slides
 
-Three small text edits across three files:
+# Fix: Platform slides look too small on mobile with wasted blank space
 
-## Changes
+## Problem
+The aggressive compaction made the content too small — tiny text, tiny artwork, tiny metrics — leaving ~40% of the screen as empty dark space. The slides need to scale up to fill the mobile viewport properly.
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+## Fix approach
+Increase mobile sizing across all three slides to use the available vertical space. Bigger artwork, bigger text, bigger metric tiles, more breathing room. The content should naturally fill the viewport height without overflowing.
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+### Specific changes per slide
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+**All three slides (SP/SC/IG) share the same pattern fix:**
+- Root wrapper: change `py-2 px-3` to `py-6 px-5` for more comfortable padding
+- Title: `text-xl` to `text-2xl`
+- Subtitle: keep `text-xs` but add a bit more bottom margin
+- Summary panel: increase text from `text-[10px]` to `text-xs`, increase padding from `p-3` to `p-4`
+- Case study cards: increase padding from `p-1.5` to `p-3`
+- Artwork: `w-8 h-8` to `w-12 h-12`
+- Artist name: `text-[11px]` to `text-sm`
+- Track name: `text-[9px]` to `text-xs`
+- Tag label (SEEDING/PLAYLISTING/REPOSTS): `text-[8px]` to `text-[10px]`
+- Metric values: `text-[9px]` to `text-sm`
+- Metric labels: `text-[6px]` to `text-[8px]`
+- Metric tile padding: `p-0.5` to `p-1.5`
+- Gaps between cards: `gap-1` to `gap-2`
+- Gaps between sections: `gap-2` to `gap-3`
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+**Spotify-specific:**
+- Playlist link buttons: increase from `text-[8px]` to `text-[10px]`, padding from `px-1 py-0.5` to `px-2 py-1`
 
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+### Files
+- `src/components/deck/slides/SpotifyPlaylistingSlide.tsx`
+- `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
+- `src/components/deck/slides/InstagramSeedingSlide.tsx`
 
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+### Result
+Content fills the mobile viewport naturally with readable text and properly-sized artwork, no wasted blank space.
 
-### Final Plan
-
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
-
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
-
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
-
-## Technical Details
-
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
-
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
-
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
