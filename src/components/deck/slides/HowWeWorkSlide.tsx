@@ -34,10 +34,10 @@ const HowWeWorkSlide = () => (
     `}</style>
 
     <div className="relative z-10 w-full max-w-[1400px]">
-      <h1 className="text-2xl md:text-7xl font-bold text-foreground mb-2 md:mb-4">Our End-to-End Process</h1>
-      <p className="text-sm md:text-[23px] text-muted-foreground mb-6 md:mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
+      <h1 className="text-xl md:text-7xl font-bold text-foreground mb-1 md:mb-4">Our End-to-End Process</h1>
+      <p className="text-xs md:text-[23px] text-muted-foreground mb-3 md:mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
-      <div className="grid grid-cols-2 md:flex md:items-stretch gap-3 md:gap-4 mb-6 md:mb-10">
+      <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 md:gap-4 mb-3 md:mb-10">
         {steps.map((step, i) => {
           const Icon = step.icon;
           return (
