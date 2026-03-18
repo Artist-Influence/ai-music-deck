@@ -47,96 +47,78 @@ const cases = [
 ];
 
 const ClippingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-16 flex flex-col items-center justify-center">
-    <div className="absolute top-[5%] right-[10%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float" />
-
+  <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-16 flex flex-col items-center justify-center">
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
-      <div className="flex items-center gap-3 mb-3">
-        <Scissors size={28} className="text-primary" />
-        <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+      <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+        <Scissors size={20} className="text-primary md:w-7 md:h-7" />
+        <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">Service</p>
       </div>
-      <h1 className="text-6xl font-bold text-foreground mb-4">Clipping Distribution</h1>
-      <p className="text-2xl text-muted-foreground mb-8 max-w-[900px]">
+      <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">Clipping Distribution</h1>
+      <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-8 max-w-[900px]">
         A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and Youtube.
       </p>
 
-      <div className="flex gap-8">
+      <div className="flex flex-col md:flex-row gap-4 md:gap-8">
         {/* Left — service info */}
-        <div className="flex-1 flex flex-col gap-4">
-          <GlassPanel className="p-7">
-            <p className="text-2xl font-semibold text-primary mb-3">Pros</p>
-            <div className="space-y-2.5">
+        <div className="flex-1 flex flex-col gap-3 md:gap-4">
+          <GlassPanel className="p-4 md:p-7">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">Pros</p>
+            <div className="space-y-1.5 md:space-y-2.5">
               {[
                 'Target viral trends with a strategic campaign brief',
                 'Fast velocity and clear reporting',
                 'UGC reuse rights for paid and owned channels',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                  <p className="text-xs md:text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-7 min-h-[160px]">
-            <p className="text-2xl font-semibold text-primary mb-3">How it works</p>
-            <div className="space-y-2.5">
-              {[
-                'Campaigns launch in 24 hours',
-                'Every post attributes the official sound and follows brief',
-              ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{item}</p>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-
-          <GlassPanel className="p-7">
-            <p className="text-2xl font-semibold text-primary mb-3">Why We Are Different</p>
-            <div className="space-y-2.5">
+          <GlassPanel className="p-4 md:p-7">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">Why We Are Different</p>
+            <div className="space-y-1.5 md:space-y-2.5">
               {[
                 'Strategy driven by music industry professionals',
                 'Automatic content moderation for compliance',
                 'Bot detection: payment only for genuine views',
                 'White glove service with professional reporting',
               ].map((item, i) => (
-                <div key={i} className="flex items-start gap-2.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{item}</p>
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                  <p className="text-xs md:text-2xl text-muted-foreground">{item}</p>
                 </div>
               ))}
             </div>
-            <div className="pt-4 border-t border-white/[0.06] mt-4">
-              <p className="text-2xl text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
+            <div className="pt-3 border-t border-white/[0.06] mt-3">
+              <p className="text-xs md:text-2xl text-primary font-medium">Timeframe: 2 to 4 weeks end-to-end</p>
             </div>
           </GlassPanel>
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 flex flex-col justify-between">
+        <div className="flex-1 flex flex-col gap-3">
           {cases.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-4">
-              <div className="flex gap-4">
+            <GlassPanel key={c.artist} variant="bright" className="p-3 md:p-4">
+              <div className="flex gap-3 md:gap-4">
                 <img
                   src={c.img}
                   alt={`${c.artist} - ${c.track}`}
-                  className="w-20 h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
+                  className="w-14 h-14 md:w-20 md:h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-lg text-primary font-mono tracking-widest mb-1">CLIPPING</p>
-                  <p className="text-xl font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-lg text-muted-foreground mb-1">{c.track}</p>
-                  <p className="text-lg text-muted-foreground leading-relaxed">{c.overview}</p>
+                  <p className="text-xs md:text-lg text-primary font-mono tracking-widest mb-0.5">CLIPPING</p>
+                  <p className="text-sm md:text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-5 gap-2 mt-3">
+              <div className="grid grid-cols-3 md:grid-cols-5 gap-1.5 md:gap-2 mt-2 md:mt-3">
                 {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 text-center">
-                    <p className="text-lg font-bold text-foreground">{m.val}</p>
-                    <p className="text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-1.5 md:p-2 text-center">
+                    <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
+                    <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
                   </div>
                 ))}
               </div>

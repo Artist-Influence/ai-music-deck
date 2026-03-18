@@ -12,15 +12,11 @@ const ScaledSlide = ({ children, className, isMobile = false }: ScaledSlideProps
   const [scale, setScale] = useState(0.5);
 
   useEffect(() => {
+    if (isMobile) return; // No scaling needed on mobile
     const el = containerRef.current;
     if (!el) return;
     const update = () => {
-      if (isMobile) {
-        // Height-fit: scale to fill available height, allow horizontal scroll
-        setScale(el.clientHeight / 1080);
-      } else {
-        setScale(Math.min(el.clientWidth / 1920, el.clientHeight / 1080));
-      }
+      setScale(Math.min(el.clientWidth / 1920, el.clientHeight / 1080));
     };
     update();
     const ro = new ResizeObserver(update);
@@ -28,37 +24,34 @@ const ScaledSlide = ({ children, className, isMobile = false }: ScaledSlideProps
     return () => ro.disconnect();
   }, [isMobile]);
 
+  // Mobile: render as a normal responsive page
+  if (isMobile) {
+    return (
+      <div className={cn('w-full h-full overflow-y-auto', className)}>
+        {children}
+      </div>
+    );
+  }
+
   return (
     <div
       ref={containerRef}
-      className={cn(
-        'relative w-full h-full',
-        isMobile ? 'overflow-x-auto overflow-y-hidden touch-pan-x' : 'overflow-hidden',
-        className
-      )}
+      className={cn('relative w-full h-full overflow-hidden', className)}
     >
       <div
         className="slide-content"
         style={{
           width: 1920,
           height: 1080,
-          ...(isMobile
-            ? {
-                transform: `scale(${scale})`,
-                transformOrigin: 'top left',
-              }
-            : {
-                position: 'absolute',
-                left: '50%',
-                top: '50%',
-                transform: `translate(-50%, -50%) scale(${scale})`,
-                transformOrigin: 'center center',
-              }),
+          position: 'absolute',
+          left: '50%',
+          top: '50%',
+          transform: `translate(-50%, -50%) scale(${scale})`,
+          transformOrigin: 'center center',
         }}
       >
         {children}
       </div>
-      {isMobile && <div style={{ width: 1920 * scale, height: 1 }} className="shrink-0" />}
     </div>
   );
 };

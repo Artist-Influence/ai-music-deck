@@ -62,97 +62,86 @@ const cases = [
 ];
 
 const SpotifyPlaylistingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex items-center justify-center">
-    <div className="absolute bottom-[10%] left-[15%] w-[500px] h-[500px] rounded-full bg-primary/[0.06] blur-[140px] animate-float-slow" />
-
-    <div className="relative z-10 flex gap-10 items-stretch w-full max-w-[1600px] mx-auto">
+  <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-12 flex items-center justify-center">
+    <div className="relative z-10 flex flex-col md:flex-row gap-4 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 flex flex-col gap-4">
+      <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
         <div>
-          <div className="flex items-center gap-3 mb-4">
-            <SpotifyIcon />
-            <p className="text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+          <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
+            <SpotifyIcon size={20} />
+            <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">Service</p>
           </div>
-          <h1 className="text-6xl font-bold text-foreground mb-4 leading-tight">Spotify Playlisting</h1>
-          <p className="text-2xl text-muted-foreground mb-6 max-w-[700px]">
+          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">Spotify Playlisting</h1>
+          <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-[700px]">
             Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup.
           </p>
         </div>
 
-        <GlassPanel variant="bright" className="p-8">
-          <p className="text-2xl font-semibold text-primary mb-3">What it is</p>
-          <div className="space-y-2.5">
+        <GlassPanel variant="bright" className="p-4 md:p-8">
+          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">What it is</p>
+          <div className="space-y-1.5 md:space-y-2.5">
             {[
               'Placements on curated playlists run by real tastemakers in your genre',
               'Community-driven playlists with active listeners who save and share',
               'No bots; organic, genre-aligned playlists',
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                <p className="text-2xl text-muted-foreground">{item}</p>
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                <p className="text-xs md:text-2xl text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
         </GlassPanel>
 
-        <GlassPanel variant="bright" className="p-8 flex-1">
-          <p className="text-2xl font-semibold text-primary mb-3">Why it works</p>
-          <div className="space-y-2.5">
+        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
+          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">Why it works</p>
+          <div className="space-y-1.5 md:space-y-2.5">
             {[
               'Organic streams generate saves, follows, and algorithmic signals',
               'Spotify pushes tracks into Discover Weekly, Release Radar, and Radio',
               'Stream goals guaranteed',
             ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2.5">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                <p className="text-2xl text-muted-foreground">{item}</p>
+              <div key={i} className="flex items-start gap-2">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                <p className="text-xs md:text-2xl text-muted-foreground">{item}</p>
               </div>
             ))}
           </div>
-          <div className="pt-4 border-t border-white/[0.06] mt-4">
-            <p className="text-2xl text-primary font-medium">Timeframe: 12 weeks</p>
+          <div className="pt-3 border-t border-white/[0.06] mt-3">
+            <p className="text-xs md:text-2xl text-primary font-medium">Timeframe: 12 weeks</p>
           </div>
         </GlassPanel>
       </div>
 
       {/* Right — 3 Case Studies */}
-      <div className="flex-1 min-w-0 flex flex-col gap-3">
+      <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
         {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-5 flex-1 flex flex-col justify-center">
-            <div className="flex gap-4 mb-3">
-              <div className="w-20 h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0 bg-black/30 flex items-center justify-center">
-                {c.artwork ? (
-                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
-                ) : (
-                  <p className="text-xs text-muted-foreground/40 italic">Artwork</p>
-                )}
+          <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex-1 flex flex-col justify-center">
+            <div className="flex gap-3 md:gap-4 mb-2 md:mb-3">
+              <div className="w-12 h-12 md:w-20 md:h-20 rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
+                <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 min-w-0">
-                <p className="text-lg text-primary font-mono tracking-widest mb-1">PLAYLISTING</p>
-                <p className="text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-                <p className="text-lg text-muted-foreground">{c.track}</p>
+                <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
+                <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+                <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
               </div>
             </div>
 
-            <div className="grid grid-cols-4 gap-2 mb-3">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-2 mb-2 md:mb-3">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-3 text-center">
-                  <p className="text-2xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-1.5 md:p-3 text-center">
+                  <p className="text-xs md:text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
               ))}
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-1.5 md:gap-2">
               {c.playlists.map((pl) => (
-                <a
-                  key={pl.label}
-                  href={pl.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-1.5 text-sm text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
-                >
-                  <ExternalLink className="w-3 h-3" />
+                <a key={pl.label} href={pl.url} target="_blank" rel="noopener noreferrer"
+                  className="flex-1 inline-flex items-center justify-center gap-1 text-[10px] md:text-sm text-primary border border-primary/20 rounded-lg px-2 py-1 md:px-3 md:py-1.5 hover:bg-primary/10 transition-colors">
+                  <ExternalLink className="w-2.5 h-2.5 md:w-3 md:h-3" />
                   {pl.label}
                 </a>
               ))}
