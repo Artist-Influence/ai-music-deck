@@ -1,39 +1,42 @@
 
-# Grammar Fixes Across Slides
 
-Three small text edits across three files:
+# Mobile-Friendly Deck Overhaul
+
+## Problem
+The screenshots show the core issue clearly: on a 390px-wide mobile screen, the 1920x1080 canvas scales to ~0.203x, making all text microscopic (70px headings become 14px, 21px body text becomes 4px). The current width-fit scaling approach doesn't work because the aspect ratio mismatch leaves massive dead space and unreadable content.
+
+## Strategy: Height-fit scaling with horizontal scroll
+
+Instead of fitting to width (which makes everything tiny), fit to the **available height** on mobile. This produces a much larger scale factor:
+
+```text
+Width-fit:  scale = 390 / 1920 = 0.203  → 70px text renders at 14px (bad)
+Height-fit: scale = 750 / 1080 = 0.694  → 70px text renders at 49px (great)
+                                        → 21px text renders at 15px (readable)
+```
+
+The slide will be wider than the screen (1920 * 0.694 = 1333px), so users swipe/scroll horizontally to see the full slide. This is how PDF viewers work on mobile and is a familiar UX pattern.
 
 ## Changes
 
-### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
-The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
+### 1. ScaledSlide.tsx — Height-fit on mobile
+- On mobile: `scale = containerHeight / 1080` (fit to height instead of width)
+- Container: `overflow-x: auto, overflow-y: hidden` (horizontal scroll, not vertical)
+- Remove the vertical spacer div; add a horizontal spacer instead (`width: 1920 * scale`)
+- `transformOrigin: 'top left'`
 
-**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
+### 2. DeckViewer.tsx — Full-bleed mobile layout
+- On mobile, remove the top header bar entirely — the logo wastes precious vertical space
+- Make the bottom nav bar an overlay (absolute positioned, semi-transparent) instead of taking layout space
+- This maximizes the available height for the slide, giving the best possible scale factor
+- Keep swipe navigation for switching slides (detect horizontal swipes at the edges or use vertical swipe to change slides since horizontal scroll is now used for panning)
 
-**Decision:** Update all four step descriptions to start with "— " for visual consistency.
+**Swipe conflict resolution**: Since horizontal scroll is used for panning within a slide, change slide navigation to use **edge taps** instead — tap the left 15% of screen for previous, right 15% for next. The bottom nav arrows remain as backup.
 
-### 2. Slide 9 — AdditionalServicesSlide.tsx
-Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
+### 3. Files to edit
 
-**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
+| File | Changes |
+|------|---------|
+| `ScaledSlide.tsx` | Height-fit scaling on mobile, horizontal overflow, horizontal spacer |
+| `DeckViewer.tsx` | Remove header on mobile, overlay nav bar, replace swipe with edge-tap navigation |
 
-Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
-
-### Final Plan
-
-1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
-
-2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
-
-3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
-
-## Technical Details
-
-### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
-- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
-
-### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
-- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
-
-### File: `src/components/deck/slides/CoverSlide.tsx`
-- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
