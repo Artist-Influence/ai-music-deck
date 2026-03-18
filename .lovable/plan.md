@@ -1,32 +1,39 @@
 
+# Grammar Fixes Across Slides
 
-# Desktop layout fixes: centering and equal-height columns
+Three small text edits across three files:
 
-## Issues
-1. **Slide 5 (HowWeWorkSlide)**: Content block has `max-w-[1400px]` but no `mx-auto`, so it sits left-aligned.
-2. **Slides 6, 10, 11, 12, 13**: The left column (title + info panels) and right column (case studies) don't match in height. The panels need to stretch to fill available vertical space so both columns are visually balanced.
+## Changes
 
-## Fixes
+### 1. Slide 5 — HowWeWorkSlide.tsx (line 7)
+The step titles and descriptions run together visually. Add a colon after each title by updating the `desc` field for step 04 (and optionally all steps for consistency). Since the title and description are rendered as separate elements, the real issue is just visual separation in the card. Looking at the rendering (lines ~46-48), the title and desc are in separate `<p>` tags, so they don't actually run on. However, if the user sees them running together, we can add punctuation to the desc or after the title.
 
-### Slide 5 — HowWeWorkSlide
-- Add `mx-auto` to the inner `max-w-[1400px]` wrapper to center all content.
+**Fix:** No structural change needed since title and desc render separately. But to address the user's concern, we'll add an em dash at the start of each description for clarity, or add a colon after the title in rendering. Simplest: prepend the desc with "— " for step 04 (or all steps for consistency).
 
-### Slide 6 — ClippingSlide
-- The title/subtitle sit above the two-column flex, which is fine. The left column's two `GlassPanel` components need to stretch to fill the right column's height.
-- Add `flex-1` to both left-side GlassPanels so they grow equally to match the 3 stacked case study cards on the right.
-- Ensure the left column wrapper has `flex-col` with proper stretch.
+**Decision:** Update all four step descriptions to start with "— " for visual consistency.
 
-### Slides 10–13 (Spotify, SoundCloud, Instagram, Meta/TikTok)
-- These already have `items-stretch` on the flex row, but the left-side panels don't fill the space.
-- Add `flex-1` to both desktop GlassPanels in the left column (the "What it is" and "Why it works" / "How it works" panels).
-- For AdditionalServicesSlide, same treatment on "What it is" and "How it works" panels.
-- This makes the left column's total height match the right column's stacked case studies.
+### 2. Slide 9 — AdditionalServicesSlide.tsx
+Same issue — the service name and description render as separate elements (`<p>` tags), so they shouldn't run together. But if the layout makes them appear connected, we can add an em dash or colon prefix to descriptions.
 
-## Files
-- `src/components/deck/slides/HowWeWorkSlide.tsx` — add `mx-auto`
-- `src/components/deck/slides/ClippingSlide.tsx` — add `flex-1` to both GlassPanels
-- `src/components/deck/slides/SpotifyPlaylistingSlide.tsx` — add `flex-1` to both desktop panels
-- `src/components/deck/slides/SoundCloudRepostsSlide.tsx` — same
-- `src/components/deck/slides/InstagramSeedingSlide.tsx` — same
-- `src/components/deck/slides/AdditionalServicesSlide.tsx` — same
+**Decision:** Since these are already in separate styled `<p>` tags with different font sizes and a margin, this is likely a visual/layout concern. Will leave as-is unless the heading and desc truly merge. The user flagged it, so we'll prepend descriptions with "— " for the same treatment.
 
+Actually, let me reconsider. The user is very specific about these fixes. Let me just do exactly what they asked:
+
+### Final Plan
+
+1. **Slide 5 (HowWeWorkSlide.tsx):** The title "Report" and desc are separate `<p>` elements, but they read as run-on. Simple fix: add " —" suffix to the title rendering, or adjust the desc. Cleanest: modify the rendering to add a colon after the title.
+
+2. **Slide 9 (AdditionalServicesSlide.tsx):** Same approach — add punctuation between name and desc in the rendering.
+
+3. **Cover Slide (CoverSlide.tsx, line 19):** Fix the quotation marks. Current: `not "ideas."` — the period is inside the closing quote but the opening smart quote doesn't have a matching close. Fix to: `not "ideas."`
+
+## Technical Details
+
+### File: `src/components/deck/slides/HowWeWorkSlide.tsx`
+- Line ~46: Update the title rendering from `{step.title}` to `{step.title}:` (add colon after title)
+
+### File: `src/components/deck/slides/AdditionalServicesSlide.tsx`  
+- Line rendering service name: Update from `{s.name}` to `{s.name}:` or add separator in the card layout
+
+### File: `src/components/deck/slides/CoverSlide.tsx`
+- Line 19: Change `not "ideas."` to `not "ideas."` — ensure proper closing quotation mark. The current code has `not &quot;ideas.&quot;` which renders with straight quotes. The user wants a proper closing quote. Fix to: `not "ideas."`
