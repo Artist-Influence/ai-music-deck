@@ -99,26 +99,26 @@ const ClippingSlide = () => (
         </div>
 
         {/* Right — case studies */}
-        <div className="flex-1 flex flex-col gap-3">
+        <div className="flex-1 flex flex-col gap-2 md:gap-3">
           {cases.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-3 md:p-4">
-              <div className="flex gap-3 md:gap-4">
+            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-4">
+              <div className="flex gap-2 md:gap-4">
                 <img
                   src={c.img}
                   alt={`${c.artist} - ${c.track}`}
-                  className="w-14 h-14 md:w-20 md:h-20 rounded-xl object-cover border border-white/[0.08] shrink-0"
+                  className="w-10 h-10 md:w-20 md:h-20 rounded-lg md:rounded-xl object-cover border border-white/[0.08] shrink-0"
                 />
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs md:text-lg text-primary font-mono tracking-widest mb-0.5">CLIPPING</p>
-                  <p className="text-sm md:text-xl font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                  <p className="text-[9px] md:text-lg text-primary font-mono tracking-widest mb-0.5">CLIPPING</p>
+                  <p className="text-xs md:text-xl font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-[10px] md:text-lg text-muted-foreground">{c.track}</p>
                 </div>
               </div>
-              <div className="grid grid-cols-5 gap-1 md:gap-2 mt-2 md:mt-3">
+              <div className="grid grid-cols-5 gap-0.5 md:gap-2 mt-1.5 md:mt-3">
                 {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-lg p-1.5 md:p-2 text-center">
-                    <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
-                    <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  <div key={m.label} className="bg-white/[0.04] rounded p-1 md:p-2 text-center">
+                    <p className="text-[10px] md:text-lg font-bold text-foreground">{m.val}</p>
+                    <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
                   </div>
                 ))}
               </div>

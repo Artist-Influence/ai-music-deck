@@ -112,16 +112,16 @@ const AdditionalServicesSlide = () => (
               </div>
             </div>
 
-            <div className="flex items-start gap-2 mb-2 md:mb-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
-              <p className="text-xs md:text-lg text-muted-foreground">{c.description}</p>
+            <div className="flex items-start gap-2 mb-1 md:mb-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
+              <p className="text-[10px] md:text-lg text-muted-foreground">{c.description}</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
+            <div className="grid grid-cols-4 gap-0.5 md:gap-3">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg px-2 py-2 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
-                  <p className="text-xs md:text-2xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
+                  <p className="text-[10px] md:text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
                 </div>
               ))}
             </div>

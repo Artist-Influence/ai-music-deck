@@ -78,11 +78,11 @@ const CreatorFloodSlide = () => (
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-2 md:gap-3">
+          <div className="grid grid-cols-3 gap-1 md:gap-3">
             {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 md:p-3 text-center">
-                <p className="text-sm md:text-lg font-bold text-foreground">{m.val}</p>
-                <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
+                <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>

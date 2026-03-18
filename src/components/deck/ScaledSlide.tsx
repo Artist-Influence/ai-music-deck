@@ -27,7 +27,7 @@ const ScaledSlide = ({ children, className, isMobile = false }: ScaledSlideProps
   // Mobile: render as a normal responsive page
   if (isMobile) {
     return (
-      <div className={cn('w-full h-full overflow-y-auto', className)}>
+      <div className={cn('w-full min-h-dvh', className)}>
         {children}
       </div>
     );

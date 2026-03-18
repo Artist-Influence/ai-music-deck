@@ -87,7 +87,7 @@ const HowWeWorkSlide = () => (
         </GlassPanel>
       </div>
 
-      <p className="text-xs md:text-[21px] text-muted-foreground mt-4 md:mt-5 italic">
+      <p className="text-[10px] md:text-[21px] text-muted-foreground mt-2 md:mt-5 italic">
         What not to expect: unrealistic, always-viral results. This is an amplifier, not a multiplier — results require testing and iteration.
       </p>
     </div>
