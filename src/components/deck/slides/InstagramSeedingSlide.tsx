@@ -38,7 +38,7 @@ const cases = [
 ];
 
 const InstagramSeedingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-12 flex flex-col justify-start md:justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
     <div className="relative z-10 flex flex-col md:flex-row gap-4 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
       <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
