@@ -96,7 +96,7 @@ const SpotifyPlaylistingSlide = () => (
         </GlassPanel>
 
         {/* Desktop: full panels */}
-        <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:block">
+        <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
           <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">What it is</p>
           <div className="space-y-1.5 md:space-y-2.5">
             {[
