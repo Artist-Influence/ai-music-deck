@@ -80,9 +80,9 @@ const DeckViewer = () => {
   // Mobile: vertical snap-scroll through all slides
   if (isMobile) {
     return (
-      <div className="h-dvh overflow-y-auto snap-y snap-mandatory bg-background">
+      <div className="min-h-dvh overflow-y-auto bg-background">
         {slides.map((S, i) => (
-          <div key={i} className="h-dvh w-full snap-start">
+          <div key={i} className="min-h-dvh w-full">
             <ScaledSlide isMobile><S /></ScaledSlide>
           </div>
         ))}

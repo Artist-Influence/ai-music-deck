@@ -60,7 +60,7 @@ const BulletPoint = ({ children }: { children: React.ReactNode }) => (
 );
 
 const AdditionalServicesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-12 flex flex-col justify-start md:justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
     <div className="relative z-10 flex flex-col md:flex-row gap-4 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
       {/* Left — Service Info */}
       <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
@@ -98,12 +98,12 @@ const AdditionalServicesSlide = () => (
       </div>
 
       {/* Right — 2 Case Studies */}
-      <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
+      <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-3">
         {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex-1 flex flex-col">
-            <div className="flex flex-row gap-3 md:gap-5 mb-2 md:mb-3">
-              <div className="w-[80px] h-[80px] md:w-[150px] md:h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
-                <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-xl ${c.imgPosition || 'object-center'}`} />
+          <GlassPanel key={idx} variant="bright" className="p-2 md:p-5 flex flex-col">
+            <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
+              <div className="w-[60px] h-[60px] md:w-[150px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
+                <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
               </div>
               <div className="flex-1 flex flex-col justify-center">
                 <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{c.platform}</p>
@@ -112,16 +112,16 @@ const AdditionalServicesSlide = () => (
               </div>
             </div>
 
-            <div className="flex items-start gap-2 mb-2 md:mb-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
-              <p className="text-xs md:text-lg text-muted-foreground">{c.description}</p>
+            <div className="flex items-start gap-2 mb-1 md:mb-3">
+              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
+              <p className="text-[10px] md:text-lg text-muted-foreground">{c.description}</p>
             </div>
 
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-1.5 md:gap-3">
+            <div className="grid grid-cols-4 gap-0.5 md:gap-3">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg px-2 py-2 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
-                  <p className="text-xs md:text-2xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
+                  <p className="text-[10px] md:text-2xl font-bold text-foreground">{m.val}</p>
+                  <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
                 </div>
               ))}
             </div>

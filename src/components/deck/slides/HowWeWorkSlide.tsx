@@ -9,7 +9,7 @@ const steps = [
 ];
 
 const HowWeWorkSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-24 flex flex-col justify-start md:justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-24 flex flex-col justify-start md:justify-center">
     <style>{`
       @keyframes glow-sweep {
         0% { opacity: 0; left: -100%; }
@@ -34,10 +34,10 @@ const HowWeWorkSlide = () => (
     `}</style>
 
     <div className="relative z-10 w-full max-w-[1400px]">
-      <h1 className="text-2xl md:text-7xl font-bold text-foreground mb-2 md:mb-4">Our End-to-End Process</h1>
-      <p className="text-sm md:text-[23px] text-muted-foreground mb-6 md:mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
+      <h1 className="text-xl md:text-7xl font-bold text-foreground mb-1 md:mb-4">Our End-to-End Process</h1>
+      <p className="text-xs md:text-[23px] text-muted-foreground mb-3 md:mb-12">An industry expert will craft a customized campaign plan tailored to your specific needs</p>
 
-      <div className="grid grid-cols-2 md:flex md:items-stretch gap-3 md:gap-4 mb-6 md:mb-10">
+      <div className="grid grid-cols-2 md:flex md:items-stretch gap-2 md:gap-4 mb-3 md:mb-10">
         {steps.map((step, i) => {
           const Icon = step.icon;
           return (
@@ -53,7 +53,7 @@ const HowWeWorkSlide = () => (
         })}
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-2 md:gap-6">
         <GlassPanel variant="subtle" className="p-4 md:p-6">
           <p className="text-sm md:text-lg font-semibold text-primary mb-2 md:mb-3">Reporting includes</p>
           <div className="space-y-1.5 md:space-y-2">
@@ -87,7 +87,7 @@ const HowWeWorkSlide = () => (
         </GlassPanel>
       </div>
 
-      <p className="text-xs md:text-[21px] text-muted-foreground mt-4 md:mt-5 italic">
+      <p className="text-[10px] md:text-[21px] text-muted-foreground mt-2 md:mt-5 italic">
         What not to expect: unrealistic, always-viral results. This is an amplifier, not a multiplier — results require testing and iteration.
       </p>
     </div>

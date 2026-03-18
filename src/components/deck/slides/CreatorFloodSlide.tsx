@@ -9,7 +9,7 @@ const metrics = [
 ];
 
 const CreatorFloodSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-12 flex flex-col justify-start md:justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
     <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
       {/* Left — Service Info */}
       <div className="flex-1 flex flex-col gap-3 md:gap-4">
@@ -70,19 +70,19 @@ const CreatorFloodSlide = () => (
           <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
           <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-          <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden max-h-[120px] md:max-h-none">
+          <div className="flex-1 min-h-0 mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none">
             <img
               src={richBrianImg}
               alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos"
-              className="w-full h-full object-cover object-right-top"
+              className="w-full h-full object-cover object-left-top"
             />
           </div>
 
-          <div className="grid grid-cols-3 gap-2 md:gap-3">
+          <div className="grid grid-cols-3 gap-1 md:gap-3">
             {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded-lg p-2 md:p-3 text-center">
-                <p className="text-sm md:text-lg font-bold text-foreground">{m.val}</p>
-                <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+              <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
+                <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
               </div>
             ))}
           </div>
