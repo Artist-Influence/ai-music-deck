@@ -9,7 +9,7 @@ const steps = [
 ];
 
 const HowWeWorkSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden py-3 px-4 md:p-24 flex flex-col justify-start md:justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-24 flex flex-col justify-start md:justify-center">
     <style>{`
       @keyframes glow-sweep {
         0% { opacity: 0; left: -100%; }
