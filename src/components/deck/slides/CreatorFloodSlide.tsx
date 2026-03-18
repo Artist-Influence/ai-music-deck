@@ -70,11 +70,11 @@ const CreatorFloodSlide = () => (
           <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
           <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-          <div className="flex-1 min-h-0 mb-3 rounded-lg border border-white/[0.08] overflow-hidden max-h-[120px] md:max-h-none">
+          <div className="flex-1 min-h-0 mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none">
             <img
               src={richBrianImg}
               alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos"
-              className="w-full h-full object-cover object-right-top"
+              className="w-full h-full object-cover object-left-top"
             />
           </div>
 
