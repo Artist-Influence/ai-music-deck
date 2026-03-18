@@ -77,12 +77,12 @@ const YouTubeAdsSlide = () => (
       </div>
 
       {/* Right — Two Stacked Case Studies */}
-      <div className="flex-1 flex flex-col justify-center gap-3 md:gap-4">
+      <div className="flex-1 flex flex-col justify-center gap-2 md:gap-4">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-4 md:p-5 flex-1 flex flex-col">
-            <div className="flex flex-row gap-3 md:gap-5 mb-2 md:mb-3">
-              <div className="w-[100px] h-[70px] md:w-[240px] md:h-[150px] shrink-0 rounded-xl overflow-hidden border border-white/[0.08]">
-                <img src={c.thumb} alt={`${c.artist}, ${c.track}`} className="w-full h-full object-cover rounded-xl" />
+          <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex-1 flex flex-col">
+            <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
+              <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
+                <img src={c.thumb} alt={`${c.artist}, ${c.track}`} className="w-full h-full object-cover rounded-lg md:rounded-xl" />
               </div>
               <div className="flex-1 flex flex-col justify-center">
                 <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">Case Study</p>
