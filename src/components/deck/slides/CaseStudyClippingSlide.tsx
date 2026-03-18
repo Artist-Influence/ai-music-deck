@@ -53,47 +53,38 @@ const cases = [
 ];
 
 const CaseStudyClippingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-24 flex flex-col items-center justify-center">
-    <div className="absolute top-[10%] left-[25%] w-[400px] h-[400px] rounded-full bg-primary/[0.06] blur-[130px] animate-float" />
-
+  <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
     <div className="relative z-10 w-full max-w-[1400px] text-center">
-      <h1 className="text-6xl font-bold text-foreground mb-4">Clip. Distribute. Repeat.</h1>
-      <p className="text-xl text-muted-foreground mb-12">Clipping Campaign Results</p>
+      <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">Clip. Distribute. Repeat.</h1>
+      <p className="text-sm md:text-xl text-muted-foreground mb-6 md:mb-12">Clipping Campaign Results</p>
 
-      <div className="grid grid-cols-3 gap-6 max-w-[1200px] mx-auto">
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-6 max-w-[1200px] mx-auto">
         {cases.map((c) => (
-          <GlassPanel key={c.artist} variant="bright" className="p-6 flex flex-col">
-            {/* Cover art */}
-            <div className="aspect-square rounded-xl overflow-hidden border border-white/[0.08] flex items-center justify-center mb-4">
+          <GlassPanel key={c.artist} variant="bright" className="p-4 md:p-6 flex flex-col">
+            <div className="aspect-square rounded-xl overflow-hidden border border-white/[0.08] mb-3 md:mb-4">
               <img src={c.coverArt} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
             </div>
 
-            <p className="text-base text-primary font-mono mb-3 tracking-widest">CLIPPING</p>
-            <p className="text-lg font-bold text-foreground leading-tight">{c.artist}</p>
-            <p className="text-sm text-muted-foreground mb-3">{c.track}</p>
-            <p className="text-sm text-muted-foreground mb-5 leading-relaxed">{c.overview}</p>
+            <p className="text-[10px] md:text-base text-primary font-mono mb-1 md:mb-3 tracking-widest">CLIPPING</p>
+            <p className="text-sm md:text-lg font-bold text-foreground leading-tight">{c.artist}</p>
+            <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">{c.track}</p>
+            <p className="text-xs md:text-sm text-muted-foreground mb-3 md:mb-5 leading-relaxed">{c.overview}</p>
 
-            <div className="grid grid-cols-2 gap-2 mb-4">
+            <div className="grid grid-cols-2 gap-1.5 md:gap-2 mb-3 md:mb-4">
               {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded-lg p-2.5 text-center">
-                  <p className="text-base font-bold text-foreground">{m.val}</p>
-                  <p className="text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                <div key={m.label} className="bg-white/[0.04] rounded-lg p-1.5 md:p-2.5 text-center">
+                  <p className="text-xs md:text-base font-bold text-foreground">{m.val}</p>
+                  <p className="text-[8px] md:text-[9px] text-muted-foreground uppercase tracking-wider">{m.label}</p>
                 </div>
               ))}
             </div>
 
-            {/* Clip links */}
             {c.clips.length > 0 && (
-              <div className="flex gap-2 mt-auto">
+              <div className="flex gap-1.5 md:gap-2 mt-auto">
                 {c.clips.map((clip) => (
-                  <a
-                    key={clip.url}
-                    href={clip.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1.5 text-xs text-primary border border-primary/20 rounded-lg px-3 py-1.5 hover:bg-primary/10 transition-colors"
-                  >
-                    <ExternalLink className="w-3 h-3" />
+                  <a key={clip.url} href={clip.url} target="_blank" rel="noopener noreferrer"
+                    className="inline-flex items-center gap-1 text-[10px] md:text-xs text-primary border border-primary/20 rounded-lg px-2 py-1 md:px-3 md:py-1.5 hover:bg-primary/10 transition-colors">
+                    <ExternalLink className="w-2.5 h-2.5 md:w-3 md:h-3" />
                     {clip.label}
                   </a>
                 ))}
