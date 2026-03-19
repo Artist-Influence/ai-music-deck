@@ -1,1 +1,4 @@
 project_id = "qlxtjvejeurqjkpmfatj"
+
+[functions.translate-deck]
+verify_jwt = false
