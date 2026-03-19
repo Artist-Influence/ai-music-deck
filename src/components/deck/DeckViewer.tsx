@@ -1,4 +1,5 @@
 import { useState, useEffect, useCallback } from 'react';
+
 import aiLogo from '@/assets/ai-logo-lockup.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
