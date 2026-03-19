@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import { useTranslation } from '@/i18n/LanguageContext';
 import gordoImg from '@/assets/gordo-meta-tiktok.png';
 import zedsDeadImg from '@/assets/zeds-dead-logo.png';
 
@@ -23,32 +24,14 @@ const MetaTikTokIcon = () => (
 
 const cases = [
   {
-    platform: 'TIKTOK ADS',
-    artist: 'Gordo (@gordoszn)',
-    track: 'Brand Awareness Campaign',
-    description: '24-hour brand awareness campaign focused purely on views.',
-    thumb: gordoImg,
-    imgPosition: 'object-top',
-    metrics: [
-      { val: '1.4M', label: 'Impressions' },
-      { val: '$0.31', label: 'CPM' },
-      { val: '500.7K', label: '6-Sec Views' },
-      { val: '34.7%', label: 'View Rate' },
-    ],
+    platform: 'TIKTOK ADS', artist: 'Gordo (@gordoszn)', track: 'Brand Awareness Campaign',
+    descKey: 'metaTiktok.case1Desc', thumb: gordoImg, imgPosition: 'object-top',
+    metrics: [{ val: '1.4M', label: 'Impressions' }, { val: '$0.31', label: 'CPM' }, { val: '500.7K', label: '6-Sec Views' }, { val: '34.7%', label: 'View Rate' }],
   },
   {
-    platform: 'META ADS',
-    artist: 'Zeds Dead',
-    track: 'NA Tour, 6 campaigns, 1 per city',
-    description: 'Multi-layered campaign collecting SMS signups via Laylo. 100+ creatives across 6 simultaneous city-targeted campaigns.',
-    thumb: zedsDeadImg,
-    imgPosition: 'object-center',
-    metrics: [
-      { val: '1.3M', label: 'Impressions' },
-      { val: '6,754', label: 'Laylo Signups' },
-      { val: '$1.40', label: 'CPR' },
-      { val: '25.4K', label: 'Link Clicks' },
-    ],
+    platform: 'META ADS', artist: 'Zeds Dead', track: 'NA Tour, 6 campaigns, 1 per city',
+    descKey: 'metaTiktok.case2Desc', thumb: zedsDeadImg, imgPosition: 'object-center',
+    metrics: [{ val: '1.3M', label: 'Impressions' }, { val: '6,754', label: 'Laylo Signups' }, { val: '$1.40', label: 'CPR' }, { val: '25.4K', label: 'Link Clicks' }],
   },
 ];
 
@@ -59,77 +42,77 @@ const BulletPoint = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const AdditionalServicesSlide = () => (
-  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
-    <div className="relative z-10 flex flex-col md:flex-row gap-4 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
-      {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
-        <div>
-          <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-            <MetaTikTokIcon />
-            <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">Service</p>
-          </div>
-          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">Meta & TikTok Ads</h1>
-          <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-[700px]">
-            We turn proven native posts into ads to convert streams, sales, touring, and more.
-          </p>
-        </div>
+const AdditionalServicesSlide = () => {
+  const { t } = useTranslation();
 
-        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
-          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">What it is</p>
-          <div className="space-y-1.5 md:space-y-2.5">
-            <BulletPoint>Paid social campaigns across Meta (Facebook + Instagram) and TikTok</BulletPoint>
-            <BulletPoint>Content that's already performing organically gets amplified with targeted paid distribution</BulletPoint>
-            <BulletPoint>Focused on converting real outcomes, not just impressions</BulletPoint>
-          </div>
-        </GlassPanel>
-
-        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
-          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">How it works</p>
-          <div className="space-y-1.5 md:space-y-2.5">
-            <BulletPoint>Optimized daily with weekly reporting and clean data exports</BulletPoint>
-            <BulletPoint>Targeting by genre, geography, and behavior</BulletPoint>
-            <BulletPoint>Focused on streams, ticket sales, merch, and fanbase growth</BulletPoint>
-          </div>
-          <div className="pt-3 border-t border-white/[0.06] mt-3">
-            <p className="text-xs md:text-2xl text-primary font-medium">Timeframe: 2 to 3 weeks</p>
-          </div>
-        </GlassPanel>
-      </div>
-
-      {/* Right — 2 Case Studies */}
-      <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-3">
-        {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-2 md:p-5 flex flex-col">
-            <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
-              <div className="w-[60px] h-[60px] md:w-[150px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
-                <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
-              </div>
-              <div className="flex-1 flex flex-col justify-center">
-                <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{c.platform}</p>
-                <p className="text-sm md:text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
-                <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
-              </div>
+  return (
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
+      <div className="relative z-10 flex flex-col md:flex-row gap-4 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
+        <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
+          <div>
+            <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
+              <MetaTikTokIcon />
+              <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
             </div>
+            <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">{t('metaTiktok.title')}</h1>
+            <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-[700px]">{t('metaTiktok.subtitle')}</p>
+          </div>
 
-            <div className="flex items-start gap-2 mb-1 md:mb-3">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
-              <p className="text-[10px] md:text-lg text-muted-foreground">{c.description}</p>
-            </div>
-
-            <div className="grid grid-cols-4 gap-0.5 md:gap-3">
-              {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
-                  <p className="text-[10px] md:text-2xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
-                </div>
+          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('metaTiktok.whatTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2].map((i) => (
+                <BulletPoint key={i}>{t(`metaTiktok.what.${i}`)}</BulletPoint>
               ))}
             </div>
           </GlassPanel>
-        ))}
+
+          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('metaTiktok.howTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2].map((i) => (
+                <BulletPoint key={i}>{t(`metaTiktok.how.${i}`)}</BulletPoint>
+              ))}
+            </div>
+            <div className="pt-3 border-t border-white/[0.06] mt-3">
+              <p className="text-xs md:text-2xl text-primary font-medium">{t('metaTiktok.timeframe')}</p>
+            </div>
+          </GlassPanel>
+        </div>
+
+        <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-3">
+          {cases.map((c, idx) => (
+            <GlassPanel key={idx} variant="bright" className="p-2 md:p-5 flex flex-col">
+              <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
+                <div className="w-[60px] h-[60px] md:w-[150px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
+                  <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
+                </div>
+                <div className="flex-1 flex flex-col justify-center">
+                  <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{c.platform}</p>
+                  <p className="text-sm md:text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-2 mb-1 md:mb-3">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
+                <p className="text-[10px] md:text-lg text-muted-foreground">{t(c.descKey)}</p>
+              </div>
+
+              <div className="grid grid-cols-4 gap-0.5 md:gap-3">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
+                    <p className="text-[10px] md:text-2xl font-bold text-foreground">{m.val}</p>
+                    <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default AdditionalServicesSlide;

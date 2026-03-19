@@ -1,5 +1,6 @@
 import { Zap } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
+import { useTranslation } from '@/i18n/LanguageContext';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
 const metrics = [
@@ -8,88 +9,73 @@ const metrics = [
   { val: '33,000+', label: 'Total Creates' },
 ];
 
-const CreatorFloodSlide = () => (
-  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
-    <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
-      {/* Left — Service Info */}
-      <div className="flex-1 flex flex-col gap-3 md:gap-4">
-        <div>
-          <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-            <Zap size={20} className="text-primary md:w-7 md:h-7" />
-            <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">Service</p>
+const CreatorFloodSlide = () => {
+  const { t } = useTranslation();
+
+  return (
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
+      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
+        <div className="flex-1 flex flex-col gap-3 md:gap-4">
+          <div>
+            <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
+              <Zap size={20} className="text-primary md:w-7 md:h-7" />
+              <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
+            </div>
+            <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">{t('creatorFlood.title')}</h1>
+            <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-[700px]">{t('creatorFlood.subtitle')}</p>
           </div>
-          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">
-            TikTok Creator Flood
-          </h1>
-          <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-[700px]">
-            Mass-posting your track across 10,000+ minimum posts from real TikTok UGC videos.
-          </p>
+
+          <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('creatorFlood.prosTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2, 3].map((i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                  <p className="text-xs md:text-2xl text-muted-foreground">{t(`creatorFlood.pros.${i}`)}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+
+          <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('creatorFlood.whenTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                  <p className="text-xs md:text-2xl text-muted-foreground">{t(`creatorFlood.when.${i}`)}</p>
+                </div>
+              ))}
+            </div>
+            <div className="pt-2 md:pt-3 border-t border-white/[0.06] mt-2 md:mt-3">
+              <p className="text-xs md:text-2xl text-primary font-medium">{t('creatorFlood.timeframe')}</p>
+            </div>
+          </GlassPanel>
         </div>
 
-        <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col">
-          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">Pros</p>
-          <div className="space-y-1.5 md:space-y-2.5">
-            {[
-              'Builds massive volume and algorithmic lift through real accounts, not bots',
-              'Sheer quantity of real usage signals tells TikTok the sound is trending organically',
-              'Macro-influencers mixed in for added reach',
-              'Over-indexing videos tracked: when a clip takes off, Spark Ads pointed to Spotify convert momentum into streams',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
-                <p className="text-xs md:text-2xl text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
+        <div className="flex-1 flex flex-col justify-center">
+          <GlassPanel variant="bright" className="p-4 md:p-5 flex flex-col">
+            <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">{t('creatorFlood.caseStudy')}</p>
+            <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
+            <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-        <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col">
-          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">When to use</p>
-          <div className="space-y-1.5 md:space-y-2.5">
-            {[
-              'When you want brute visibility fast',
-              "When you have a track that's already converting and needs fuel on the fire",
-              'When the goal is pure volume: maximum algorithm discovery signals at scale',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
-                <p className="text-xs md:text-2xl text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-          <div className="pt-2 md:pt-3 border-t border-white/[0.06] mt-2 md:mt-3">
-            <p className="text-xs md:text-2xl text-primary font-medium">Timeframe: 3 to 4 weeks</p>
-          </div>
-        </GlassPanel>
-      </div>
+            <div className="flex-1 min-h-0 mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none">
+              <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos" className="w-full h-full object-cover object-left-top" />
+            </div>
 
-      {/* Right — Case Study */}
-      <div className="flex-1 flex flex-col justify-center">
-        <GlassPanel variant="bright" className="p-4 md:p-5 flex flex-col">
-          <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">Case Study</p>
-          <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
-          <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
-
-          <div className="flex-1 min-h-0 mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none">
-            <img
-              src={richBrianImg}
-              alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos"
-              className="w-full h-full object-cover object-left-top"
-            />
-          </div>
-
-          <div className="grid grid-cols-3 gap-1 md:gap-3">
-            {metrics.map((m) => (
-              <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
-                <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
-                <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
+            <div className="grid grid-cols-3 gap-1 md:gap-3">
+              {metrics.map((m) => (
+                <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                  <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
+                  <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default CreatorFloodSlide;

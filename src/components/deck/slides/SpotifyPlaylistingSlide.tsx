@@ -1,5 +1,6 @@
 import GlassPanel from '../GlassPanel';
 import { ExternalLink } from 'lucide-react';
+import { useTranslation } from '@/i18n/LanguageContext';
 import ero808Img from '@/assets/ero808-genie.jpg';
 import dackJanielsImg from '@/assets/dack-janiels-shock-therapy.jpg';
 import allAmericanRejectsImg from '@/assets/all-american-rejects-get-this.jpg';
@@ -12,15 +13,8 @@ const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
 
 const cases = [
   {
-    artist: 'ero808',
-    track: 'Genie',
-    artwork: ero808Img,
-    metrics: [
-      { val: '1.55M', label: 'Streams' },
-      { val: '66.7K', label: 'Playlist Adds' },
-      { val: '50.1K', label: 'Saves' },
-      { val: '802K', label: 'Algo Streams' },
-    ],
+    artist: 'ero808', track: 'Genie', artwork: ero808Img,
+    metrics: [{ val: '1.55M', label: 'Streams' }, { val: '66.7K', label: 'Playlist Adds' }, { val: '50.1K', label: 'Saves' }, { val: '802K', label: 'Algo Streams' }],
     playlists: [
       { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/5quud9tyyGwkmk2vgLK1Vd' },
       { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/3MnaeVYyif6bTqO2PO8wVU' },
@@ -28,15 +22,8 @@ const cases = [
     ],
   },
   {
-    artist: 'Dack Janiels',
-    track: 'Shock Therapy',
-    artwork: dackJanielsImg,
-    metrics: [
-      { val: '185.7K', label: 'Streams' },
-      { val: '9.6K', label: 'Playlist Adds' },
-      { val: '8K', label: 'Saves' },
-      { val: '42K', label: 'Algo Streams' },
-    ],
+    artist: 'Dack Janiels', track: 'Shock Therapy', artwork: dackJanielsImg,
+    metrics: [{ val: '185.7K', label: 'Streams' }, { val: '9.6K', label: 'Playlist Adds' }, { val: '8K', label: 'Saves' }, { val: '42K', label: 'Algo Streams' }],
     playlists: [
       { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/4YZNKPS9bM3xv1UF4WZil0' },
       { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/2hQNYVaZJIIyKT2Ix1F744' },
@@ -44,15 +31,8 @@ const cases = [
     ],
   },
   {
-    artist: 'The All-American Rejects',
-    track: 'Get This',
-    artwork: allAmericanRejectsImg,
-    metrics: [
-      { val: '3.4M', label: 'Streams' },
-      { val: '112.5K', label: 'Playlist Adds' },
-      { val: '266K', label: 'Saves' },
-      { val: '457K', label: 'Algo Streams' },
-    ],
+    artist: 'The All-American Rejects', track: 'Get This', artwork: allAmericanRejectsImg,
+    metrics: [{ val: '3.4M', label: 'Streams' }, { val: '112.5K', label: 'Playlist Adds' }, { val: '266K', label: 'Saves' }, { val: '457K', label: 'Algo Streams' }],
     playlists: [
       { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/26MY3qVKQFBSqNMBshJZs8' },
       { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/76iQv4c5qSM4AgvXph4rJu' },
@@ -61,116 +41,100 @@ const cases = [
   },
 ];
 
-const SpotifyPlaylistingSlide = () => (
-  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
-    <div className="relative z-10 flex flex-col md:flex-row gap-3 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
-      {/* Left — Service Info */}
-      <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
-        <div>
-          <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
-            <SpotifyIcon size={18} />
-            <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">Service</p>
-          </div>
-          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">Spotify Playlisting</h1>
-          <p className="text-xs md:text-2xl text-muted-foreground mb-3 md:mb-6 max-w-[700px]">
-            Third-party, genre-aligned organic playlist placements designed for discovery and algorithmic pickup.
-          </p>
-        </div>
+const SpotifyPlaylistingSlide = () => {
+  const { t } = useTranslation();
 
-        {/* Mobile: single condensed summary */}
-        <GlassPanel variant="bright" className="p-4 md:hidden">
-          <div className="space-y-1.5">
-            <div className="flex items-start gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
-              <p className="text-xs text-muted-foreground">Curated playlists run by real tastemakers — no bots, genre-aligned</p>
+  return (
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
+      <div className="relative z-10 flex flex-col md:flex-row gap-3 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
+        <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
+          <div>
+            <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
+              <SpotifyIcon size={18} />
+              <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
             </div>
-            <div className="flex items-start gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
-              <p className="text-xs text-muted-foreground">Organic streams generate saves, follows & algorithmic signals</p>
-            </div>
-            <div className="flex items-start gap-1.5">
-              <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
-              <p className="text-xs text-muted-foreground">Stream goals guaranteed · Timeframe: 12 weeks</p>
-            </div>
+            <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">{t('spotify.title')}</h1>
+            <p className="text-xs md:text-2xl text-muted-foreground mb-3 md:mb-6 max-w-[700px]">{t('spotify.subtitle')}</p>
           </div>
-        </GlassPanel>
 
-        {/* Desktop: full panels */}
-        <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
-          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">What it is</p>
-          <div className="space-y-1.5 md:space-y-2.5">
-            {[
-              'Placements on curated playlists run by real tastemakers in your genre',
-              'Community-driven playlists with active listeners who save and share',
-              'No bots; organic, genre-aligned playlists',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                <p className="text-2xl text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-        </GlassPanel>
-
-        <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
-          <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">Why it works</p>
-          <div className="space-y-1.5 md:space-y-2.5">
-            {[
-              'Organic streams generate saves, follows, and algorithmic signals',
-              'Spotify pushes tracks into Discover Weekly, Release Radar, and Radio',
-              'Stream goals guaranteed',
-            ].map((item, i) => (
-              <div key={i} className="flex items-start gap-2">
-                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                <p className="text-2xl text-muted-foreground">{item}</p>
-              </div>
-            ))}
-          </div>
-          <div className="pt-3 border-t border-white/[0.06] mt-3">
-            <p className="text-2xl text-primary font-medium">Timeframe: 12 weeks</p>
-          </div>
-        </GlassPanel>
-      </div>
-
-      {/* Right — 3 Case Studies */}
-      <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
-        {cases.map((c, idx) => (
-          <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col">
-            <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
-              <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
-                <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
-              </div>
-              <div className="flex-1 min-w-0">
-                <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
-                <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-                <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
-              </div>
-            </div>
-
-            <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-3">
-              {c.metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
-                  <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
-                  <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+          <GlassPanel variant="bright" className="p-4 md:hidden">
+            <div className="space-y-1.5">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex items-start gap-1.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
+                  <p className="text-xs text-muted-foreground">{t(`spotify.mobileSummary.${i}`)}</p>
                 </div>
               ))}
             </div>
+          </GlassPanel>
 
-            <div className="flex gap-1 md:gap-2">
-              {c.playlists.map((pl) => (
-                <a key={pl.label} href={pl.url} target="_blank" rel="noopener noreferrer"
-                  className="flex-1 inline-flex items-center justify-center gap-0.5 text-[10px] md:text-sm text-primary border border-primary/20 rounded px-2 py-1 md:px-3 md:py-1.5 hover:bg-primary/10 transition-colors">
-                  <ExternalLink className="w-2.5 h-2.5 md:w-3 md:h-3" />
-                  <span className="md:hidden">{pl.shortLabel}</span>
-                  <span className="hidden md:inline">{pl.label}</span>
-                </a>
+          <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{t(`spotify.what.${i}`)}</p>
+                </div>
               ))}
             </div>
           </GlassPanel>
-        ))}
+
+          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
+            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whyTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                  <p className="text-2xl text-muted-foreground">{t(`spotify.why.${i}`)}</p>
+                </div>
+              ))}
+            </div>
+            <div className="pt-3 border-t border-white/[0.06] mt-3">
+              <p className="text-2xl text-primary font-medium">{t('spotify.timeframe')}</p>
+            </div>
+          </GlassPanel>
+        </div>
+
+        <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
+          {cases.map((c, idx) => (
+            <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col">
+              <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
+                <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
+                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
+                </div>
+                <div className="flex-1 min-w-0">
+                  <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
+                  <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+                  <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                </div>
+              </div>
+
+              <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-3">
+                {c.metrics.map((m) => (
+                  <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                    <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
+                    <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  </div>
+                ))}
+              </div>
+
+              <div className="flex gap-1 md:gap-2">
+                {c.playlists.map((pl) => (
+                  <a key={pl.label} href={pl.url} target="_blank" rel="noopener noreferrer"
+                    className="flex-1 inline-flex items-center justify-center gap-0.5 text-[10px] md:text-sm text-primary border border-primary/20 rounded px-2 py-1 md:px-3 md:py-1.5 hover:bg-primary/10 transition-colors">
+                    <ExternalLink className="w-2.5 h-2.5 md:w-3 md:h-3" />
+                    <span className="md:hidden">{pl.shortLabel}</span>
+                    <span className="hidden md:inline">{pl.label}</span>
+                  </a>
+                ))}
+              </div>
+            </GlassPanel>
+          ))}
+        </div>
       </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default SpotifyPlaylistingSlide;

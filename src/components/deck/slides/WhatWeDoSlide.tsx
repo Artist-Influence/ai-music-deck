@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import { useTranslation } from '@/i18n/LanguageContext';
 
 const HubDiagram = () => {
   const nodes = [
@@ -8,9 +9,7 @@ const HubDiagram = () => {
     { label: ['Streaming', 'Platforms'], cx: 380, cy: 440, r: 44, primary: false },
   ];
 
-  const connections = [
-    [0, 1], [0, 2], [0, 3],
-  ];
+  const connections = [[0, 1], [0, 2], [0, 3]];
 
   return (
     <svg viewBox="0 0 560 540" className="w-[480px] h-[480px]">
@@ -58,35 +57,35 @@ const HubDiagram = () => {
   );
 };
 
-const WhatCloutedDoesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex items-center justify-center">
-    <div className="absolute top-[15%] left-[40%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] rounded-full bg-primary/[0.06] blur-[150px] animate-float" />
+const WhatCloutedDoesSlide = () => {
+  const { t } = useTranslation();
 
-    <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 items-start w-full max-w-[1600px]">
-      <div className="flex-1 max-w-[700px]">
-        <h1 className="text-xl md:text-5xl font-bold text-foreground mb-4 md:mb-8 leading-tight md:whitespace-nowrap">
-          Coordinated distribution as a system, not a gamble.
-        </h1>
-        <p className="text-sm md:text-[21px] text-primary font-medium mb-4 md:mb-8 tracking-wider uppercase">Three pillars that work the algorithm for you</p>
-        <div className="space-y-2 md:space-y-3">
-          {[
-            ['Volume', 'Flood social platforms with high-velocity short-form content'],
-            ['Curation', 'Target real communities with reach within your niche'],
-            ['Amplification', 'Amplify winners with paid spend once the creative proves itself'],
-          ].map(([label, desc], i) => (
-            <GlassPanel key={i} variant="subtle" className="p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
-              <span className="text-primary font-semibold text-sm md:text-[21px] shrink-0 md:w-40">{label}</span>
-              <p className="text-sm md:text-[21px] text-muted-foreground">{desc}</p>
-            </GlassPanel>
-          ))}
+  return (
+    <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex items-center justify-center">
+      <div className="absolute top-[15%] left-[40%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] rounded-full bg-primary/[0.06] blur-[150px] animate-float" />
+
+      <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 items-start w-full max-w-[1600px]">
+        <div className="flex-1 max-w-[700px]">
+          <h1 className="text-xl md:text-5xl font-bold text-foreground mb-4 md:mb-8 leading-tight md:whitespace-nowrap">
+            {t('whatWeDo.title')}
+          </h1>
+          <p className="text-sm md:text-[21px] text-primary font-medium mb-4 md:mb-8 tracking-wider uppercase">{t('whatWeDo.section')}</p>
+          <div className="space-y-2 md:space-y-3">
+            {[0, 1, 2].map((i) => (
+              <GlassPanel key={i} variant="subtle" className="p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+                <span className="text-primary font-semibold text-sm md:text-[21px] shrink-0 md:w-40">{t(`whatWeDo.pillar.${i}.label`)}</span>
+                <p className="text-sm md:text-[21px] text-muted-foreground">{t(`whatWeDo.pillar.${i}.desc`)}</p>
+              </GlassPanel>
+            ))}
+          </div>
+        </div>
+
+        <div className="hidden md:flex flex-1 items-start justify-center mt-[120px]">
+          <HubDiagram />
         </div>
       </div>
-
-      <div className="hidden md:flex flex-1 items-start justify-center mt-[120px]">
-        <HubDiagram />
-      </div>
     </div>
-  </div>
-);
+  );
+};
 
 export default WhatCloutedDoesSlide;
