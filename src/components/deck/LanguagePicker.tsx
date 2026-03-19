@@ -1,11 +1,11 @@
 import { useState, useRef, useEffect } from 'react';
-import { Globe, Loader2 } from 'lucide-react';
+import { Globe } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import { locales } from '@/i18n/locales';
 import { cn } from '@/lib/utils';
 
 const LanguagePicker = ({ className }: { className?: string }) => {
-  const { locale, setLocale, isTranslating } = useTranslation();
+  const { locale, setLocale } = useTranslation();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -26,11 +26,7 @@ const LanguagePicker = ({ className }: { className?: string }) => {
         className="flex items-center gap-1.5 px-2 py-1.5 rounded-lg hover:bg-secondary transition text-sm"
         title="Change language"
       >
-        {isTranslating ? (
-          <Loader2 className="w-4 h-4 text-primary animate-spin" />
-        ) : (
-          <Globe className="w-4 h-4 text-muted-foreground" />
-        )}
+        <Globe className="w-4 h-4 text-muted-foreground" />
         <span className="text-xs text-muted-foreground font-medium">{current.flag}</span>
       </button>
 

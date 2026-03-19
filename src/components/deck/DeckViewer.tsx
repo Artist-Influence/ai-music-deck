@@ -11,7 +11,7 @@ import LanguagePicker from './LanguagePicker';
 
 const DeckViewer = () => {
   const isMobile = useIsMobile();
-  const { t, isTranslating } = useTranslation();
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
   const [sidebar, setSidebar] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
@@ -84,7 +84,7 @@ const DeckViewer = () => {
         {/* Mobile language picker */}
         <div className="sticky top-0 z-50 flex justify-end p-2 bg-background/80 backdrop-blur-sm">
           <LanguagePicker />
-          {isTranslating && <span className="text-xs text-primary ml-2 self-center">{t('ui.translating')}</span>}
+          
         </div>
         {slides.map((S, i) => (
           <div key={i} className="min-h-dvh w-full">
@@ -129,7 +129,7 @@ const DeckViewer = () => {
               <img src={aiLogo} alt="Artist Influence" className="h-5" />
             </div>
             <div className="flex items-center gap-1">
-              {isTranslating && <span className="text-xs text-primary mr-2">{t('ui.translating')}</span>}
+              
               <LanguagePicker />
               <ExportPdfButton />
               <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
