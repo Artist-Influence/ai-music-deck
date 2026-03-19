@@ -129,7 +129,7 @@ const DeckViewer = () => {
               <img src={aiLogo} alt="Artist Influence" className="h-5" />
             </div>
             <div className="flex items-center gap-1">
-              {isTranslating && <span className="text-xs text-primary mr-2">{t('ui.translating')}</span>}
+              
               <LanguagePicker />
               <ExportPdfButton />
               <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
