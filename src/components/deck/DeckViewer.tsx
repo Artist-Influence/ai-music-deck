@@ -1,14 +1,17 @@
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import aiLogo from '@/assets/ai-logo-lockup.png';
 import { ChevronLeft, ChevronRight, Maximize, Minimize, LayoutGrid, PanelLeftClose, PanelLeft } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/use-mobile';
+import { useTranslation } from '@/i18n/LanguageContext';
 import ScaledSlide from './ScaledSlide';
 import { slides } from './slides';
 import ExportPdfButton from './ExportPdfButton';
+import LanguagePicker from './LanguagePicker';
 
 const DeckViewer = () => {
   const isMobile = useIsMobile();
+  const { t, isTranslating } = useTranslation();
   const [current, setCurrent] = useState(0);
   const [sidebar, setSidebar] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
@@ -17,7 +20,6 @@ const DeckViewer = () => {
   const next = useCallback(() => setCurrent(c => Math.min(c + 1, slides.length - 1)), []);
   const prev = useCallback(() => setCurrent(c => Math.max(c - 1, 0)), []);
 
-  // Keyboard navigation
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'ArrowRight' || e.key === 'ArrowDown' || e.key === ' ') { e.preventDefault(); next(); }
@@ -30,7 +32,6 @@ const DeckViewer = () => {
     return () => window.removeEventListener('keydown', onKey);
   }, [next, prev]);
 
-  // Edge-tap navigation for mobile
   const handleEdgeTap = useCallback((e: React.MouseEvent) => {
     if (!isMobile) return;
     const x = e.clientX;
@@ -60,8 +61,8 @@ const DeckViewer = () => {
     return (
       <div className="h-dvh bg-background p-8 overflow-auto">
         <div className="flex items-center justify-between mb-8">
-          <h2 className="text-foreground text-xl font-semibold">All Slides</h2>
-          <button onClick={() => setGrid(false)} className="text-sm text-muted-foreground hover:text-foreground transition">Close</button>
+          <h2 className="text-foreground text-xl font-semibold">{t('ui.allSlides')}</h2>
+          <button onClick={() => setGrid(false)} className="text-sm text-muted-foreground hover:text-foreground transition">{t('ui.close')}</button>
         </div>
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
           {slides.map((S, i) => (
@@ -77,10 +78,14 @@ const DeckViewer = () => {
     );
   }
 
-  // Mobile: vertical snap-scroll through all slides
   if (isMobile) {
     return (
       <div className="min-h-dvh overflow-y-auto bg-background">
+        {/* Mobile language picker */}
+        <div className="sticky top-0 z-50 flex justify-end p-2 bg-background/80 backdrop-blur-sm">
+          <LanguagePicker />
+          {isTranslating && <span className="text-xs text-primary ml-2 self-center">{t('ui.translating')}</span>}
+        </div>
         {slides.map((S, i) => (
           <div key={i} className="min-h-dvh w-full">
             <ScaledSlide isMobile><S /></ScaledSlide>
@@ -95,7 +100,7 @@ const DeckViewer = () => {
       {sidebar && !fullscreen && (
         <div className="w-48 border-r border-border flex flex-col bg-card/50 backdrop-blur-sm shrink-0">
           <div className="p-3 border-b border-border flex items-center justify-between">
-            <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-[0.15em]">Slides</span>
+            <span className="text-[10px] text-muted-foreground font-medium uppercase tracking-[0.15em]">{t('ui.slides')}</span>
             <button onClick={() => setSidebar(false)} className="text-muted-foreground hover:text-foreground transition">
               <PanelLeftClose className="w-3.5 h-3.5" />
             </button>
@@ -124,6 +129,8 @@ const DeckViewer = () => {
               <img src={aiLogo} alt="Artist Influence" className="h-5" />
             </div>
             <div className="flex items-center gap-1">
+              {isTranslating && <span className="text-xs text-primary mr-2">{t('ui.translating')}</span>}
+              <LanguagePicker />
               <ExportPdfButton />
               <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
                 <LayoutGrid className="w-4 h-4 text-muted-foreground" />
