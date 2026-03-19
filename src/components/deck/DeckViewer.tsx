@@ -84,7 +84,7 @@ const DeckViewer = () => {
         {/* Mobile language picker */}
         <div className="sticky top-0 z-50 flex justify-end p-2 bg-background/80 backdrop-blur-sm">
           <LanguagePicker />
-          {isTranslating && <span className="text-xs text-primary ml-2 self-center">{t('ui.translating')}</span>}
+          
         </div>
         {slides.map((S, i) => (
           <div key={i} className="min-h-dvh w-full">
