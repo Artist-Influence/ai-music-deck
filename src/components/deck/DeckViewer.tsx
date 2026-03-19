@@ -11,7 +11,7 @@ import LanguagePicker from './LanguagePicker';
 
 const DeckViewer = () => {
   const isMobile = useIsMobile();
-  const { t, isTranslating } = useTranslation();
+  const { t } = useTranslation();
   const [current, setCurrent] = useState(0);
   const [sidebar, setSidebar] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
