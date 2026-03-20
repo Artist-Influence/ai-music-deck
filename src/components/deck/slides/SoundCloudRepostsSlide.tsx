@@ -80,9 +80,9 @@ const SoundCloudRepostsSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-5">
+        <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-0 justify-between">
           {cases.map((c, idx) => (
-            <GlassPanel key={idx} variant="bright" className="p-3 md:p-6 flex flex-col flex-1">
+            <GlassPanel key={idx} variant="bright" className="p-3 md:p-6 flex flex-col">
               <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
                 <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
                   <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
@@ -94,7 +94,7 @@ const SoundCloudRepostsSlide = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-4 gap-1 md:gap-2 mt-auto">
+              <div className="grid grid-cols-4 gap-1 md:gap-2">
                 {c.metrics.map((m) => (
                   <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
                     <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
