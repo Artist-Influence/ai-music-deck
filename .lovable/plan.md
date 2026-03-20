@@ -1,15 +1,20 @@
 
 
-# Improve SoundCloud Case Study Card Spacing
+# Fix SoundCloud Case Study Card Internal Spacing
 
 ## Problem
-The three case study cards on the right are too tightly packed (only `gap-3` on desktop) and the internal padding feels cramped, making the layout look cluttered.
+Inside each case study card, `mt-auto` on the metrics grid pushes it away from the artist info, creating ugly empty space within each card. The user wants the artist info and KPI grid tightly coupled, with more space **between** the three cards instead.
 
-## Fix — two changes in `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
+## Fix — `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
 
-1. **Increase gap between cards** (line 83): Change `gap-2 md:gap-3` → `gap-2 md:gap-5` for more breathing room between the three cards.
+1. **Remove `mt-auto`** from the metrics grid (line 97) — this eliminates the internal gap between artist info and KPIs
+2. **Remove `flex-1`** from each `GlassPanel` card (line 85) — cards size to their content instead of stretching
+3. **Change the right column** to `justify-between` (line 83) — spreads the three naturally-sized cards evenly across the full column height, creating equal spacing between them
 
-2. **Increase internal card padding** (line 85): Change `p-3 md:p-5` → `p-3 md:p-6` so content inside each card has more space.
+### Changes:
+- Line 83: `gap-2 md:gap-5` → `gap-2 md:gap-0 justify-between`
+- Line 85: `p-3 md:p-6 flex flex-col flex-1` → `p-3 md:p-6 flex flex-col`
+- Line 97: `mt-auto` removed from metrics grid
 
-Both changes are desktop-only (`md:` prefix), keeping mobile compact.
+This keeps cards compact internally while distributing them evenly across the column height.
 
