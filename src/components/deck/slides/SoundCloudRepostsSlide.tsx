@@ -13,15 +13,15 @@ const SoundCloudIcon = ({ size = 28 }: { size?: number }) => (
 const cases = [
   {
     artist: 'SIDEPIECE', track: 'Cash Out', artwork: sidepieceImg,
-    metrics: [{ val: '563K', label: 'Plays' }, { val: '18.1K', label: 'Likes' }, { val: '407', label: 'Reposts' }, { val: '166', label: 'Comments' }],
+    metrics: [{ val: '563K', labelKey: 'kpi.plays' }, { val: '18.1K', labelKey: 'kpi.likes' }, { val: '407', labelKey: 'kpi.reposts' }, { val: '166', labelKey: 'kpi.comments' }],
   },
   {
     artist: 'John Summit & Gorgon City', track: 'Is Everybody Having Fun?', artwork: johnSummitImg,
-    metrics: [{ val: '537K', label: 'Plays' }, { val: '15.3K', label: 'Likes' }, { val: '420', label: 'Reposts' }, { val: '187', label: 'Comments' }],
+    metrics: [{ val: '537K', labelKey: 'kpi.plays' }, { val: '15.3K', labelKey: 'kpi.likes' }, { val: '420', labelKey: 'kpi.reposts' }, { val: '187', labelKey: 'kpi.comments' }],
   },
   {
     artist: 'Sonny Fodera', track: 'All This Time', artwork: sonnyFoderaImg,
-    metrics: [{ val: '667K', label: 'Plays' }, { val: '12.6K', label: 'Likes' }, { val: '239', label: 'Reposts' }, { val: '76', label: 'Comments' }],
+    metrics: [{ val: '667K', labelKey: 'kpi.plays' }, { val: '12.6K', labelKey: 'kpi.likes' }, { val: '239', labelKey: 'kpi.reposts' }, { val: '76', labelKey: 'kpi.comments' }],
   },
 ];
 
