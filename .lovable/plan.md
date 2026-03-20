@@ -1,30 +1,24 @@
 
 
-# Align Spotify Playlisting Case Study Cards to Left Panel Height
+# Fix Cover Slide Mobile Layout
 
 ## Problem
-Same as slides 11-13 — the header sits inside the left column, making the right column's three case study cards span the full slide height instead of aligning with just the two text panels.
+On mobile, the CoverSlide renders inside a `min-h-dvh` wrapper (from ScaledSlide's mobile mode), but the slide's root div uses `h-full` which doesn't resolve to viewport height in this context. The content clusters at the top with a large empty area below.
 
-## Fix — `src/components/deck/slides/SpotifyPlaylistingSlide.tsx`
+## Fix — `src/components/deck/slides/CoverSlide.tsx`
 
-1. **Pull the header out** — move the title/subtitle `<div>` (lines 51-58) and mobile summary panel (lines 60-69) above the two-column row so they span full width.
+Change the root container from `h-full` to `h-full min-h-dvh` so on mobile it fills the screen, allowing `justify-center` to properly center the logo, tagline, and subtitle vertically.
 
-2. **Wrap the two GlassPanels + case study cards** in a shared flex row beneath the header, using `items-stretch` so the right column height matches the left panels.
+### Single edit (line 8):
+```
+// Before
+<div className="w-full h-full bg-background relative overflow-hidden flex flex-col items-center justify-center pb-0 md:pb-[10%]">
 
-3. **Remove `flex-1`** from each case study `GlassPanel` card (line 101) and add `justify-between` to the right column so cards distribute within the panel height.
-
-### Structure change:
-```text
-Before:                              After:
-┌──────────────────────────┐         ┌──────────────────────────┐
-│ [Header+panels] | [cards]│         │ Header (full width)      │
-│                 |        │         │ [2 panels]  | [3 cards]  │
-└──────────────────────────┘         └──────────────────────────┘
+// After
+<div className="w-full h-full min-h-dvh bg-background relative overflow-hidden flex flex-col items-center justify-center pb-0 md:pb-[10%]">
 ```
 
-### Edits in SpotifyPlaylistingSlide.tsx:
-- Change outer container from `flex-row` to `flex-col` with a nested flex-row for the panels+cards
-- Move header div and mobile summary above the two-column row
-- Right column: `gap-2 md:gap-3 justify-between`
-- Cards: remove `flex-1`
+This ensures:
+- On desktop (inside 1920x1080 scaled canvas), `h-full` fills the canvas — no change
+- On mobile (inside `min-h-dvh` wrapper), `min-h-dvh` ensures the slide fills the viewport so content centers properly
 
