@@ -1,29 +1,20 @@
 
 
-# Shorten Reporting Bullet Text in Slide 5
+# Shorten Reporting Bullets 2 & 3 Further
 
 ## Problem
-The "Reporting includes" bullet points in the How We Work slide wrap to multiple lines, creating cramped spacing. Bullets 1 and 2 are too long.
+Even after the previous shortening, bullets 2 and 3 still wrap to two lines in the reporting box on Slide 5.
 
 ## Fix
-Shorten the three `howWeWork.reporting.*` values in **all locale files** to fit on one line each while preserving meaning:
+Shorten further across all 9 locale files:
 
 | Key | Current | New |
 |-----|---------|-----|
-| `howWeWork.reporting.0` | "What launched, what's live, what's next" | "What launched, what's live, what's next" *(no change — already short)* |
-| `howWeWork.reporting.1` | "Top creatives, patterns worth doubling down on, and recommendations for the next release" | "Top creatives, winning patterns, and next-release recommendations" |
-| `howWeWork.reporting.2` | "Platform metrics that matter and results by service with best-performing angles" | "Key platform metrics, results by service, and best-performing angles" |
+| `howWeWork.reporting.1` | "Top creatives, winning patterns, and next-release recommendations" | "Top creatives, winning patterns, next-release recs" |
+| `howWeWork.reporting.2` | "Key platform metrics, results by service, and best-performing angles" | "Platform metrics, results by service, top angles" |
 
-Apply equivalent shortening across all 9 locale files (en, es, pt, ko, ja, zh, nl, de, fr).
+Apply equivalent shortening in es, pt, ko, ja, zh, nl, de, fr.
 
 ## Files
-- `src/i18n/en.ts` — lines 49-50
-- `src/i18n/es.ts` — equivalent keys
-- `src/i18n/pt.ts` — equivalent keys
-- `src/i18n/ko.ts` — equivalent keys
-- `src/i18n/ja.ts` — equivalent keys
-- `src/i18n/zh.ts` — equivalent keys
-- `src/i18n/nl.ts` — equivalent keys
-- `src/i18n/de.ts` — equivalent keys
-- `src/i18n/fr.ts` — equivalent keys
+All 9 files in `src/i18n/` — only the `howWeWork.reporting.1` and `howWeWork.reporting.2` values change.
 
