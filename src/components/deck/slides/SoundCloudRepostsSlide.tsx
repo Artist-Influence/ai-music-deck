@@ -82,7 +82,7 @@ const SoundCloudRepostsSlide = () => {
 
         <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
           {cases.map((c, idx) => (
-            <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col">
+            <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col flex-1">
               <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
                 <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
                   <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
