@@ -8,15 +8,15 @@ import yeatCover from '@/assets/yeat-bnyx-im-yeat.jpg';
 const casesData = [
   {
     artist: 'Aries', track: 'In The Flesh', img: ariesCover, overviewKey: 'clipping.case1Overview',
-    metrics: [{ val: '$0.50', label: 'CPM' }, { val: '1.1M+', label: 'Views' }, { val: '13.65%', label: 'Engagement' }, { val: '133K+', label: 'Likes' }, { val: '164', label: 'Videos' }],
+    metrics: [{ val: '$0.50', labelKey: 'kpi.cpm' }, { val: '1.1M+', labelKey: 'kpi.views' }, { val: '13.65%', labelKey: 'kpi.engagement' }, { val: '133K+', labelKey: 'kpi.likes' }, { val: '164', labelKey: 'kpi.videos' }],
   },
   {
     artist: 'Gorgon City', track: 'Mitsubishi', img: gorgonCityCover, overviewKey: 'clipping.case2Overview',
-    metrics: [{ val: '$0.60', label: 'CPM' }, { val: '3.08M+', label: 'Views' }, { val: '3.64%', label: 'Engagement' }, { val: '102K+', label: 'Likes' }, { val: '232', label: 'Videos' }],
+    metrics: [{ val: '$0.60', labelKey: 'kpi.cpm' }, { val: '3.08M+', labelKey: 'kpi.views' }, { val: '3.64%', labelKey: 'kpi.engagement' }, { val: '102K+', labelKey: 'kpi.likes' }, { val: '232', labelKey: 'kpi.videos' }],
   },
   {
     artist: 'Yeat, BNYX', track: "I'M YEAT", img: yeatCover, overviewKey: 'clipping.case3Overview',
-    metrics: [{ val: '$0.43', label: 'CPM' }, { val: '9.97M+', label: 'Views' }, { val: '12.25%', label: 'Engagement' }, { val: '1.17M+', label: 'Likes' }, { val: '64', label: 'Posts' }],
+    metrics: [{ val: '$0.43', labelKey: 'kpi.cpm' }, { val: '9.97M+', labelKey: 'kpi.views' }, { val: '12.25%', labelKey: 'kpi.engagement' }, { val: '1.17M+', labelKey: 'kpi.likes' }, { val: '64', labelKey: 'kpi.posts' }],
   },
 ];
 
@@ -70,16 +70,16 @@ const ClippingSlide = () => {
                   <img src={c.img} alt={`${c.artist} - ${c.track}`}
                     className="w-10 h-10 md:w-20 md:h-20 rounded-lg md:rounded-xl object-cover border border-white/[0.08] shrink-0" />
                   <div className="flex-1 min-w-0">
-                    <p className="text-[9px] md:text-lg text-primary font-mono tracking-widest mb-0.5">CLIPPING</p>
+                    <p className="text-[9px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('clipping.tagLabel')}</p>
                     <p className="text-xs md:text-xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-[10px] md:text-lg text-muted-foreground">{c.track}</p>
                   </div>
                 </div>
                 <div className="grid grid-cols-5 gap-0.5 md:gap-2 mt-1.5 md:mt-3">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1 md:p-2 text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:p-2 text-center">
                       <p className="text-[10px] md:text-lg font-bold text-foreground">{m.val}</p>
-                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>

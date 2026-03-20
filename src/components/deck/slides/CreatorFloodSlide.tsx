@@ -3,10 +3,10 @@ import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
-const metrics = [
-  { val: '10,000+', label: 'Minimum Posts' },
-  { val: '23,000+', label: 'Posts Driven' },
-  { val: '33,000+', label: 'Total Creates' },
+const metricsData = [
+  { val: '10,000+', labelKey: 'kpi.minimumPosts' },
+  { val: '23,000+', labelKey: 'kpi.postsDriven' },
+  { val: '33,000+', labelKey: 'kpi.totalCreates' },
 ];
 
 const CreatorFloodSlide = () => {
@@ -64,10 +64,10 @@ const CreatorFloodSlide = () => {
             </div>
 
             <div className="grid grid-cols-3 gap-1 md:gap-3">
-              {metrics.map((m) => (
-                <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+              {metricsData.map((m) => (
+                <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
                   <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
-                  <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                  <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                 </div>
               ))}
             </div>

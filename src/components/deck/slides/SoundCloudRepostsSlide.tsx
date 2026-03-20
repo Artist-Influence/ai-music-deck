@@ -13,15 +13,15 @@ const SoundCloudIcon = ({ size = 28 }: { size?: number }) => (
 const cases = [
   {
     artist: 'SIDEPIECE', track: 'Cash Out', artwork: sidepieceImg,
-    metrics: [{ val: '563K', label: 'Plays' }, { val: '18.1K', label: 'Likes' }, { val: '407', label: 'Reposts' }, { val: '166', label: 'Comments' }],
+    metrics: [{ val: '563K', labelKey: 'kpi.plays' }, { val: '18.1K', labelKey: 'kpi.likes' }, { val: '407', labelKey: 'kpi.reposts' }, { val: '166', labelKey: 'kpi.comments' }],
   },
   {
     artist: 'John Summit & Gorgon City', track: 'Is Everybody Having Fun?', artwork: johnSummitImg,
-    metrics: [{ val: '537K', label: 'Plays' }, { val: '15.3K', label: 'Likes' }, { val: '420', label: 'Reposts' }, { val: '187', label: 'Comments' }],
+    metrics: [{ val: '537K', labelKey: 'kpi.plays' }, { val: '15.3K', labelKey: 'kpi.likes' }, { val: '420', labelKey: 'kpi.reposts' }, { val: '187', labelKey: 'kpi.comments' }],
   },
   {
     artist: 'Sonny Fodera', track: 'All This Time', artwork: sonnyFoderaImg,
-    metrics: [{ val: '667K', label: 'Plays' }, { val: '12.6K', label: 'Likes' }, { val: '239', label: 'Reposts' }, { val: '76', label: 'Comments' }],
+    metrics: [{ val: '667K', labelKey: 'kpi.plays' }, { val: '12.6K', labelKey: 'kpi.likes' }, { val: '239', labelKey: 'kpi.reposts' }, { val: '76', labelKey: 'kpi.comments' }],
   },
 ];
 
@@ -92,7 +92,7 @@ const SoundCloudRepostsSlide = () => {
                     <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">REPOSTS</p>
+                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('soundcloud.tagLabel')}</p>
                     <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
                   </div>
@@ -100,9 +100,9 @@ const SoundCloudRepostsSlide = () => {
 
                 <div className="grid grid-cols-4 gap-1 md:gap-2">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
                       <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
-                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>

@@ -14,7 +14,7 @@ const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
 const cases = [
   {
     artist: 'ero808', track: 'Genie', artwork: ero808Img,
-    metrics: [{ val: '1.55M', label: 'Streams' }, { val: '66.7K', label: 'Playlist Adds' }, { val: '50.1K', label: 'Saves' }, { val: '802K', label: 'Algo Streams' }],
+    metrics: [{ val: '1.55M', labelKey: 'kpi.streams' }, { val: '66.7K', labelKey: 'kpi.playlistAdds' }, { val: '50.1K', labelKey: 'kpi.saves' }, { val: '802K', labelKey: 'kpi.algoStreams' }],
     playlists: [
       { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/5quud9tyyGwkmk2vgLK1Vd' },
       { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/3MnaeVYyif6bTqO2PO8wVU' },
@@ -23,7 +23,7 @@ const cases = [
   },
   {
     artist: 'Dack Janiels', track: 'Shock Therapy', artwork: dackJanielsImg,
-    metrics: [{ val: '185.7K', label: 'Streams' }, { val: '9.6K', label: 'Playlist Adds' }, { val: '8K', label: 'Saves' }, { val: '42K', label: 'Algo Streams' }],
+    metrics: [{ val: '185.7K', labelKey: 'kpi.streams' }, { val: '9.6K', labelKey: 'kpi.playlistAdds' }, { val: '8K', labelKey: 'kpi.saves' }, { val: '42K', labelKey: 'kpi.algoStreams' }],
     playlists: [
       { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/4YZNKPS9bM3xv1UF4WZil0' },
       { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/2hQNYVaZJIIyKT2Ix1F744' },
@@ -32,7 +32,7 @@ const cases = [
   },
   {
     artist: 'The All-American Rejects', track: 'Get This', artwork: allAmericanRejectsImg,
-    metrics: [{ val: '3.4M', label: 'Streams' }, { val: '112.5K', label: 'Playlist Adds' }, { val: '266K', label: 'Saves' }, { val: '457K', label: 'Algo Streams' }],
+    metrics: [{ val: '3.4M', labelKey: 'kpi.streams' }, { val: '112.5K', labelKey: 'kpi.playlistAdds' }, { val: '266K', labelKey: 'kpi.saves' }, { val: '457K', labelKey: 'kpi.algoStreams' }],
     playlists: [
       { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/26MY3qVKQFBSqNMBshJZs8' },
       { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/76iQv4c5qSM4AgvXph4rJu' },
@@ -108,7 +108,7 @@ const SpotifyPlaylistingSlide = () => {
                     <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
+                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('spotify.tagLabel')}</p>
                     <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
                   </div>
@@ -116,9 +116,9 @@ const SpotifyPlaylistingSlide = () => {
 
                 <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-3">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
                       <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
-                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>

@@ -26,12 +26,12 @@ const cases = [
   {
     platform: 'TIKTOK ADS', artist: 'Gordo (@gordoszn)', track: 'Brand Awareness Campaign',
     descKey: 'metaTiktok.case1Desc', thumb: gordoImg, imgPosition: 'object-top',
-    metrics: [{ val: '1.4M', label: 'Impressions' }, { val: '$0.31', label: 'CPM' }, { val: '500.7K', label: '6-Sec Views' }, { val: '34.7%', label: 'View Rate' }],
+    metrics: [{ val: '1.4M', labelKey: 'kpi.impressions' }, { val: '$0.31', labelKey: 'kpi.cpm' }, { val: '500.7K', labelKey: 'kpi.sixSecViews' }, { val: '34.7%', labelKey: 'kpi.viewRate' }],
   },
   {
     platform: 'META ADS', artist: 'Zeds Dead', track: 'NA Tour, 6 campaigns, 1 per city',
     descKey: 'metaTiktok.case2Desc', thumb: zedsDeadImg, imgPosition: 'object-center',
-    metrics: [{ val: '1.3M', label: 'Impressions' }, { val: '6,754', label: 'Laylo Signups' }, { val: '$1.40', label: 'CPR' }, { val: '25.4K', label: 'Link Clicks' }],
+    metrics: [{ val: '1.3M', labelKey: 'kpi.impressions' }, { val: '6,754', labelKey: 'kpi.layloSignups' }, { val: '$1.40', labelKey: 'kpi.cpr' }, { val: '25.4K', labelKey: 'kpi.linkClicks' }],
   },
 ];
 
@@ -104,9 +104,9 @@ const AdditionalServicesSlide = () => {
 
                 <div className="grid grid-cols-4 gap-0.5 md:gap-3">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
                       <p className="text-[10px] md:text-2xl font-bold text-foreground">{m.val}</p>
-                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>
