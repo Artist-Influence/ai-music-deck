@@ -8,17 +8,17 @@ const cases = [
   {
     artist: 'Jason Derulo & Michael Bublé', track: 'Spicy Margarita', thumb: spicyMargaritaThumb,
     metrics: [
-      { val: '11M', label: 'Views' }, { val: '6.5M', label: 'Unique Viewers' },
-      { val: '1.1M+ hrs', label: 'Watch Time' }, { val: '76.4%', label: 'Avg % Viewed' },
-      { val: '207K', label: 'Likes' }, { val: '7.9K', label: 'Comments' },
+      { val: '11M', labelKey: 'kpi.views' }, { val: '6.5M', labelKey: 'kpi.uniqueViewers' },
+      { val: '1.1M+ hrs', labelKey: 'kpi.watchTime' }, { val: '76.4%', labelKey: 'kpi.avgViewed' },
+      { val: '207K', labelKey: 'kpi.likes' }, { val: '7.9K', labelKey: 'kpi.comments' },
     ],
   },
   {
     artist: 'Mark Tuan', track: 'Sunsets & Cigarettes', thumb: markTuanThumb,
     metrics: [
-      { val: '10M', label: 'Views' }, { val: '5.5M', label: 'Unique Viewers' },
-      { val: '1.4M hrs', label: 'Watch Time' }, { val: '81.2%', label: 'Avg % Viewed' },
-      { val: '135K', label: 'Likes' }, { val: '6.3K', label: 'Comments' },
+      { val: '10M', labelKey: 'kpi.views' }, { val: '5.5M', labelKey: 'kpi.uniqueViewers' },
+      { val: '1.4M hrs', labelKey: 'kpi.watchTime' }, { val: '81.2%', labelKey: 'kpi.avgViewed' },
+      { val: '135K', labelKey: 'kpi.likes' }, { val: '6.3K', labelKey: 'kpi.comments' },
     ],
   },
 ];
