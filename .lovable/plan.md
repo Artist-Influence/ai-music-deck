@@ -1,20 +1,37 @@
 
 
-# Fix SoundCloud Case Study Card Internal Spacing
+# Align Case Study Cards to Left Column Height
 
 ## Problem
-Inside each case study card, `mt-auto` on the metrics grid pushes it away from the artist info, creating ugly empty space within each card. The user wants the artist info and KPI grid tightly coupled, with more space **between** the three cards instead.
+The right column with three case study cards currently uses `justify-between` which spaces them across the full slide height. The user wants the cards to align vertically with just the two text boxes on the left (the "Wat het is" and "Waarom het werkt" panels), not the full column including the header.
 
-## Fix — `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
+## Approach
+The left column has: header (title/subtitle) + two GlassPanels. The right column should only align with the two GlassPanels area. To achieve this, restructure the layout so the right column sits beside just the two text boxes, not the header.
 
-1. **Remove `mt-auto`** from the metrics grid (line 97) — this eliminates the internal gap between artist info and KPIs
-2. **Remove `flex-1`** from each `GlassPanel` card (line 85) — cards size to their content instead of stretching
-3. **Change the right column** to `justify-between` (line 83) — spreads the three naturally-sized cards evenly across the full column height, creating equal spacing between them
+## Changes — `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
 
-### Changes:
-- Line 83: `gap-2 md:gap-5` → `gap-2 md:gap-0 justify-between`
-- Line 85: `p-3 md:p-6 flex flex-col flex-1` → `p-3 md:p-6 flex flex-col`
-- Line 97: `mt-auto` removed from metrics grid
+1. **Pull the header out** of the left column and place it above the two-column layout, so both columns start at the same vertical position (below the header).
 
-This keeps cards compact internally while distributing them evenly across the column height.
+2. **Right column**: keep `justify-between` but now it only spans the height of the two text boxes, so the three cards distribute within that smaller space — fitting snugly.
+
+3. **Remove the gap-0** on the right column — use a small gap as fallback: `gap-2 md:gap-3 justify-between`.
+
+### Structure change:
+```text
+Before:
+┌─────────────────────────────────┐
+│ [Header + 2 panels] | [3 cards] │  ← cards span full height
+└─────────────────────────────────┘
+
+After:
+┌─────────────────────────────────┐
+│ Header (title + subtitle)        │
+│ [2 panels]      | [3 cards]      │  ← cards span only panel height
+└─────────────────────────────────┘
+```
+
+### Specific edits:
+- Move the header `<div>` (lines 35-42) and mobile summary panel (lines 44-53) out of the left flex column, placing them before the two-column row
+- Wrap the two GlassPanels (left) and three case study cards (right) in a new flex row
+- Right column gets `gap-2 md:gap-3 justify-between` so cards spread within the constrained height
 
