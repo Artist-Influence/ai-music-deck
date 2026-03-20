@@ -30,80 +30,85 @@ const SoundCloudRepostsSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
-      <div className="relative z-10 flex flex-col md:flex-row gap-3 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
-        <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
-          <div>
-            <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
-              <SoundCloudIcon size={18} />
-              <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
-            </div>
-            <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">{t('soundcloud.title')}</h1>
-            <p className="text-xs md:text-2xl text-muted-foreground mb-3 md:mb-6 max-w-[700px]">{t('soundcloud.subtitle')}</p>
+      <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
+        {/* Header — full width above the two-column row */}
+        <div>
+          <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
+            <SoundCloudIcon size={18} />
+            <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
           </div>
-
-          <GlassPanel variant="bright" className="p-4 md:hidden">
-            <div className="space-y-1.5">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex items-start gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
-                  <p className="text-xs text-muted-foreground">{t(`soundcloud.mobileSummary.${i}`)}</p>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-
-          <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
-            <p className="text-2xl font-semibold text-primary mb-3">{t('soundcloud.whatTitle')}</p>
-            <div className="space-y-2.5">
-              {[0, 1, 2, 3].map((i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{t(`soundcloud.what.${i}`)}</p>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-
-          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
-            <p className="text-2xl font-semibold text-primary mb-3">{t('soundcloud.whyTitle')}</p>
-            <div className="space-y-2.5">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{t(`soundcloud.why.${i}`)}</p>
-                </div>
-              ))}
-            </div>
-            <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-2xl text-primary font-medium">{t('soundcloud.timeframe')}</p>
-            </div>
-          </GlassPanel>
+          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">{t('soundcloud.title')}</h1>
+          <p className="text-xs md:text-2xl text-muted-foreground mb-0 max-w-[700px]">{t('soundcloud.subtitle')}</p>
         </div>
 
-        <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-0 justify-between">
-          {cases.map((c, idx) => (
-            <GlassPanel key={idx} variant="bright" className="p-3 md:p-6 flex flex-col">
-              <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
-                <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
-                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">REPOSTS</p>
-                  <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
-                </div>
+        {/* Mobile summary */}
+        <GlassPanel variant="bright" className="p-4 md:hidden">
+          <div className="space-y-1.5">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="flex items-start gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
+                <p className="text-xs text-muted-foreground">{t(`soundcloud.mobileSummary.${i}`)}</p>
               </div>
+            ))}
+          </div>
+        </GlassPanel>
 
-              <div className="grid grid-cols-4 gap-1 md:gap-2">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
-                    <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
-                    <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+        {/* Two-column row: left panels + right case study cards */}
+        <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch flex-1">
+          <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
+            <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
+              <p className="text-2xl font-semibold text-primary mb-3">{t('soundcloud.whatTitle')}</p>
+              <div className="space-y-2.5">
+                {[0, 1, 2, 3].map((i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                    <p className="text-2xl text-muted-foreground">{t(`soundcloud.what.${i}`)}</p>
                   </div>
                 ))}
               </div>
             </GlassPanel>
-          ))}
+
+            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
+              <p className="text-2xl font-semibold text-primary mb-3">{t('soundcloud.whyTitle')}</p>
+              <div className="space-y-2.5">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                    <p className="text-2xl text-muted-foreground">{t(`soundcloud.why.${i}`)}</p>
+                  </div>
+                ))}
+              </div>
+              <div className="pt-3 border-t border-white/[0.06] mt-3">
+                <p className="text-2xl text-primary font-medium">{t('soundcloud.timeframe')}</p>
+              </div>
+            </GlassPanel>
+          </div>
+
+          <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3 justify-between">
+            {cases.map((c, idx) => (
+              <GlassPanel key={idx} variant="bright" className="p-3 md:p-6 flex flex-col">
+                <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
+                  <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
+                    <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">REPOSTS</p>
+                    <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+                    <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-4 gap-1 md:gap-2">
+                  {c.metrics.map((m) => (
+                    <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                      <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
+                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                    </div>
+                  ))}
+                </div>
+              </GlassPanel>
+            ))}
+          </div>
         </div>
       </div>
     </div>
