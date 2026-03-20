@@ -108,7 +108,7 @@ const SpotifyPlaylistingSlide = () => {
                     <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
-                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
+                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('spotify.tagLabel')}</p>
                     <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
                   </div>
