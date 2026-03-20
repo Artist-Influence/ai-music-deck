@@ -8,15 +8,15 @@ import yeatCover from '@/assets/yeat-bnyx-im-yeat.jpg';
 const casesData = [
   {
     artist: 'Aries', track: 'In The Flesh', img: ariesCover, overviewKey: 'clipping.case1Overview',
-    metrics: [{ val: '$0.50', label: 'CPM' }, { val: '1.1M+', label: 'Views' }, { val: '13.65%', label: 'Engagement' }, { val: '133K+', label: 'Likes' }, { val: '164', label: 'Videos' }],
+    metrics: [{ val: '$0.50', labelKey: 'kpi.cpm' }, { val: '1.1M+', labelKey: 'kpi.views' }, { val: '13.65%', labelKey: 'kpi.engagement' }, { val: '133K+', labelKey: 'kpi.likes' }, { val: '164', labelKey: 'kpi.videos' }],
   },
   {
     artist: 'Gorgon City', track: 'Mitsubishi', img: gorgonCityCover, overviewKey: 'clipping.case2Overview',
-    metrics: [{ val: '$0.60', label: 'CPM' }, { val: '3.08M+', label: 'Views' }, { val: '3.64%', label: 'Engagement' }, { val: '102K+', label: 'Likes' }, { val: '232', label: 'Videos' }],
+    metrics: [{ val: '$0.60', labelKey: 'kpi.cpm' }, { val: '3.08M+', labelKey: 'kpi.views' }, { val: '3.64%', labelKey: 'kpi.engagement' }, { val: '102K+', labelKey: 'kpi.likes' }, { val: '232', labelKey: 'kpi.videos' }],
   },
   {
     artist: 'Yeat, BNYX', track: "I'M YEAT", img: yeatCover, overviewKey: 'clipping.case3Overview',
-    metrics: [{ val: '$0.43', label: 'CPM' }, { val: '9.97M+', label: 'Views' }, { val: '12.25%', label: 'Engagement' }, { val: '1.17M+', label: 'Likes' }, { val: '64', label: 'Posts' }],
+    metrics: [{ val: '$0.43', labelKey: 'kpi.cpm' }, { val: '9.97M+', labelKey: 'kpi.views' }, { val: '12.25%', labelKey: 'kpi.engagement' }, { val: '1.17M+', labelKey: 'kpi.likes' }, { val: '64', labelKey: 'kpi.posts' }],
   },
 ];
 
