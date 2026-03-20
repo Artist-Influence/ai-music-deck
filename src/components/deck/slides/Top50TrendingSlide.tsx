@@ -1,4 +1,5 @@
 import { TrendingUp } from 'lucide-react';
+
 import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import mlShorts from '@/assets/major-lazer-canada-shorts-2.jpeg';

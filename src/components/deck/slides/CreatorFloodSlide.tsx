@@ -1,4 +1,5 @@
 import { Zap } from 'lucide-react';
+
 import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
