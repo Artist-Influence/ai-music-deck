@@ -1,23 +1,15 @@
 
 
-# Fix SoundCloud Case Study Card Spacing
+# Improve SoundCloud Case Study Card Spacing
 
 ## Problem
-The `flex-1` on each card stretches them evenly, but the content (artist info + metrics grid) only fills the top portion, leaving dead space at the bottom of each card.
+The three case study cards on the right are too tightly packed (only `gap-3` on desktop) and the internal padding feels cramped, making the layout look cluttered.
 
-## Fix
-Move the metrics grid to the bottom of each card by adding `mt-auto` to the metrics `div`. This pushes the stats grid down to fill the extra space naturally, making the cards look intentionally designed rather than having awkward empty space below the metrics.
+## Fix — two changes in `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
 
-**File**: `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
+1. **Increase gap between cards** (line 83): Change `gap-2 md:gap-3` → `gap-2 md:gap-5` for more breathing room between the three cards.
 
-**Change** (line 97): Add `mt-auto` to the metrics grid container:
-```tsx
-// From:
-<div className="grid grid-cols-4 gap-1 md:gap-2">
+2. **Increase internal card padding** (line 85): Change `p-3 md:p-5` → `p-3 md:p-6` so content inside each card has more space.
 
-// To:
-<div className="grid grid-cols-4 gap-1 md:gap-2 mt-auto">
-```
-
-Single class addition, one file.
+Both changes are desktop-only (`md:` prefix), keeping mobile compact.
 
