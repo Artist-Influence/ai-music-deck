@@ -100,9 +100,9 @@ const SoundCloudRepostsSlide = () => {
 
                 <div className="grid grid-cols-4 gap-1 md:gap-2">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
                       <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
-                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>

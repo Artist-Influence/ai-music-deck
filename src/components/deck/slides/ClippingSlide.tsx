@@ -77,9 +77,9 @@ const ClippingSlide = () => {
                 </div>
                 <div className="grid grid-cols-5 gap-0.5 md:gap-2 mt-1.5 md:mt-3">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1 md:p-2 text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:p-2 text-center">
                       <p className="text-[10px] md:text-lg font-bold text-foreground">{m.val}</p>
-                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>

@@ -59,10 +59,10 @@ const Top50TrendingSlide = () => {
 
             <div className="flex flex-col md:flex-row gap-4 md:gap-6 flex-1">
               <div className="flex-1 grid grid-cols-2 md:grid-cols-1 md:flex md:flex-col justify-start gap-2 md:gap-4">
-                {metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded-xl p-3 md:p-5 border border-white/[0.06] flex flex-col items-center justify-center text-center">
+                {metricsData.map((m) => (
+                  <div key={m.labelKey} className="bg-white/[0.04] rounded-xl p-3 md:p-5 border border-white/[0.06] flex flex-col items-center justify-center text-center">
                     <p className="text-sm md:text-xl font-bold text-foreground">{m.val}</p>
-                    <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                    <p className="text-[9px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
                   </div>
                 ))}
               </div>

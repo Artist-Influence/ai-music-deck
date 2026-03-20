@@ -104,9 +104,9 @@ const AdditionalServicesSlide = () => {
 
                 <div className="grid grid-cols-4 gap-0.5 md:gap-3">
                   {c.metrics.map((m) => (
-                    <div key={m.label} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
                       <p className="text-[10px] md:text-2xl font-bold text-foreground">{m.val}</p>
-                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{m.label}</p>
+                      <p className="text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>
