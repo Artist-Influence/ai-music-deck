@@ -3,13 +3,13 @@ import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import mlShorts from '@/assets/major-lazer-canada-shorts-2.jpeg';
 
-const metrics = [
-  { val: '5,000+', label: 'YouTube Shorts Creates' },
-  { val: '14,900+', label: 'Instagram Reels Creates' },
-  { val: '2,000+', label: 'TikTok Creates, Popular Tab' },
-  { val: '3,000+', label: 'Facebook Reels Creates' },
-  { val: 'US, CA, UK, KR', label: 'YouTube Shorts Audio Trending' },
-  { val: 'US / CA', label: 'Instagram Reels Audio Trending' },
+const metricsData = [
+  { val: '5,000+', labelKey: 'kpi.ytShortsCreates' },
+  { val: '14,900+', labelKey: 'kpi.igReelsCreatesLong' },
+  { val: '2,000+', labelKey: 'kpi.tiktokCreatesPopular' },
+  { val: '3,000+', labelKey: 'kpi.fbReelsCreates' },
+  { val: 'US, CA, UK, KR', labelKey: 'kpi.ytShortsAudioTrending' },
+  { val: 'US / CA', labelKey: 'kpi.igReelsAudioTrending' },
 ];
 
 const Top50TrendingSlide = () => {
