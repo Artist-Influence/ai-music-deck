@@ -26,12 +26,12 @@ const cases = [
   {
     platform: 'TIKTOK ADS', artist: 'Gordo (@gordoszn)', track: 'Brand Awareness Campaign',
     descKey: 'metaTiktok.case1Desc', thumb: gordoImg, imgPosition: 'object-top',
-    metrics: [{ val: '1.4M', label: 'Impressions' }, { val: '$0.31', label: 'CPM' }, { val: '500.7K', label: '6-Sec Views' }, { val: '34.7%', label: 'View Rate' }],
+    metrics: [{ val: '1.4M', labelKey: 'kpi.impressions' }, { val: '$0.31', labelKey: 'kpi.cpm' }, { val: '500.7K', labelKey: 'kpi.sixSecViews' }, { val: '34.7%', labelKey: 'kpi.viewRate' }],
   },
   {
     platform: 'META ADS', artist: 'Zeds Dead', track: 'NA Tour, 6 campaigns, 1 per city',
     descKey: 'metaTiktok.case2Desc', thumb: zedsDeadImg, imgPosition: 'object-center',
-    metrics: [{ val: '1.3M', label: 'Impressions' }, { val: '6,754', label: 'Laylo Signups' }, { val: '$1.40', label: 'CPR' }, { val: '25.4K', label: 'Link Clicks' }],
+    metrics: [{ val: '1.3M', labelKey: 'kpi.impressions' }, { val: '6,754', labelKey: 'kpi.layloSignups' }, { val: '$1.40', labelKey: 'kpi.cpr' }, { val: '25.4K', labelKey: 'kpi.linkClicks' }],
   },
 ];
 
