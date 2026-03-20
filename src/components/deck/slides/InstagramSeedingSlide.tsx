@@ -8,15 +8,15 @@ import francisMercierImg from '@/assets/francis-mercier-sauti-artwork.jpg';
 const cases = [
   {
     artist: 'Gordo', track: "Gordo's Dilemma", artwork: gordoImg,
-    metrics: [{ val: '5.4M', label: 'Views' }, { val: '136.7K', label: 'Likes' }, { val: '$0.13', label: 'CPM' }],
+    metrics: [{ val: '5.4M', labelKey: 'kpi.views' }, { val: '136.7K', labelKey: 'kpi.likes' }, { val: '$0.13', labelKey: 'kpi.cpm' }],
   },
   {
     artist: 'Mau P', track: 'The Less I Know The Better', artwork: mauPImg,
-    metrics: [{ val: '3.9M', label: 'Views' }, { val: '138.7K', label: 'Likes' }, { val: '$0.71', label: 'CPM' }],
+    metrics: [{ val: '3.9M', labelKey: 'kpi.views' }, { val: '138.7K', labelKey: 'kpi.likes' }, { val: '$0.71', labelKey: 'kpi.cpm' }],
   },
   {
     artist: 'Francis Mercier', track: 'Sauti', artwork: francisMercierImg,
-    metrics: [{ val: '16.8M', label: 'Views' }, { val: '1.18M', label: 'Likes' }, { val: '$0.042', label: 'CPM' }],
+    metrics: [{ val: '16.8M', labelKey: 'kpi.views' }, { val: '1.18M', labelKey: 'kpi.likes' }, { val: '$0.042', labelKey: 'kpi.cpm' }],
   },
 ];
 
