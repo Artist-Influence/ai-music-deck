@@ -3,10 +3,10 @@ import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
-const metrics = [
-  { val: '10,000+', label: 'Minimum Posts' },
-  { val: '23,000+', label: 'Posts Driven' },
-  { val: '33,000+', label: 'Total Creates' },
+const metricsData = [
+  { val: '10,000+', labelKey: 'kpi.minimumPosts' },
+  { val: '23,000+', labelKey: 'kpi.postsDriven' },
+  { val: '33,000+', labelKey: 'kpi.totalCreates' },
 ];
 
 const CreatorFloodSlide = () => {
