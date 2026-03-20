@@ -1,19 +1,19 @@
 
 
-# Replace Chinese (zh) Translation Copy
+# Remove Emails from Next Steps Contact Box
 
-## What Changes
-Replace all values in `src/i18n/zh.ts` with the user-provided copy. This is a full file rewrite of the Chinese locale.
+## Change
+In `NextStepsSlide.tsx`, remove lines 60-61 (the two email addresses) and adjust spacing so the company name flows directly into the website URL with consistent margins.
 
-## Key Differences from Current Copy
-- More polished, natural Chinese throughout
-- Fixes the `metaTeta.how.2` typo → `metaTiktok.how.2`
-- Minor wording refinements across all slides (e.g., "切片分发" instead of "剪辑分发", "植入" instead of "播种" for Instagram seeding)
-- EmailGate strings are NOT in the i18n system (hardcoded in component) — noted but not in scope unless we also internationalize the gate
+## Edit (lines 57-63)
+```tsx
+<GlassPanel variant="subtle" className="mb-6 md:mb-12 p-4 md:p-8 max-w-[700px] mx-auto">
+  <p className="text-sm md:text-[21px] text-foreground font-medium mb-1 md:mb-2">{t('nextSteps.contactTitle')}</p>
+  <p className="text-xs md:text-[19px] text-muted-foreground/80 mb-1 md:mb-2">{t('nextSteps.companyName')}</p>
+  <p className="text-xs md:text-[21px] text-muted-foreground mb-2 md:mb-3">www.artistinfluence.com</p>
+  <p className="text-xs md:text-[21px] text-primary italic">{t('nextSteps.quote')}</p>
+</GlassPanel>
+```
 
-## Single File Edit
-**`src/i18n/zh.ts`** — Full replacement of all ~293 lines with the user's provided translations mapped to the existing key structure. No new keys needed; all keys map 1:1.
-
-## Note on EmailGate
-The login screen copy the user provided doesn't have corresponding i18n keys — the EmailGate component has hardcoded English strings. This plan only covers the zh.ts locale file. Internationalizing the EmailGate would be a separate task.
+Single file, 2 lines removed, spacing tightened.
 
