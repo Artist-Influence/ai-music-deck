@@ -46,91 +46,96 @@ const SpotifyPlaylistingSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
-      <div className="relative z-10 flex flex-col md:flex-row gap-3 md:gap-10 items-stretch w-full max-w-[1600px] mx-auto">
-        <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
-          <div>
-            <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
-              <SpotifyIcon size={18} />
-              <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
-            </div>
-            <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">{t('spotify.title')}</h1>
-            <p className="text-xs md:text-2xl text-muted-foreground mb-3 md:mb-6 max-w-[700px]">{t('spotify.subtitle')}</p>
+      <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
+        {/* Header — full width above the two-column row */}
+        <div>
+          <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
+            <SpotifyIcon size={18} />
+            <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
           </div>
-
-          <GlassPanel variant="bright" className="p-4 md:hidden">
-            <div className="space-y-1.5">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex items-start gap-1.5">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
-                  <p className="text-xs text-muted-foreground">{t(`spotify.mobileSummary.${i}`)}</p>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-
-          <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
-            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
-            <div className="space-y-1.5 md:space-y-2.5">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{t(`spotify.what.${i}`)}</p>
-                </div>
-              ))}
-            </div>
-          </GlassPanel>
-
-          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
-            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whyTitle')}</p>
-            <div className="space-y-1.5 md:space-y-2.5">
-              {[0, 1, 2].map((i) => (
-                <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
-                  <p className="text-2xl text-muted-foreground">{t(`spotify.why.${i}`)}</p>
-                </div>
-              ))}
-            </div>
-            <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-2xl text-primary font-medium">{t('spotify.timeframe')}</p>
-            </div>
-          </GlassPanel>
+          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">{t('spotify.title')}</h1>
+          <p className="text-xs md:text-2xl text-muted-foreground mb-3 md:mb-0 max-w-[700px]">{t('spotify.subtitle')}</p>
         </div>
 
-        <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3">
-          {cases.map((c, idx) => (
-            <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col flex-1">
-              <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
-                <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
-                  <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
-                </div>
-                <div className="flex-1 min-w-0">
-                  <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
-                  <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
-                </div>
+        {/* Mobile summary */}
+        <GlassPanel variant="bright" className="p-4 md:hidden">
+          <div className="space-y-1.5">
+            {[0, 1, 2].map((i) => (
+              <div key={i} className="flex items-start gap-1.5">
+                <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5" />
+                <p className="text-xs text-muted-foreground">{t(`spotify.mobileSummary.${i}`)}</p>
               </div>
+            ))}
+          </div>
+        </GlassPanel>
 
-              <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-3">
-                {c.metrics.map((m) => (
-                  <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
-                    <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
-                    <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+        {/* Two-column row: left panels + right case study cards */}
+        <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch flex-1">
+          <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
+            <GlassPanel variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
+              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
+              <div className="space-y-1.5 md:space-y-2.5">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                    <p className="text-2xl text-muted-foreground">{t(`spotify.what.${i}`)}</p>
                   </div>
                 ))}
               </div>
+            </GlassPanel>
 
-              <div className="flex gap-1 md:gap-2">
-                {c.playlists.map((pl) => (
-                  <a key={pl.label} href={pl.url} target="_blank" rel="noopener noreferrer"
-                    className="flex-1 inline-flex items-center justify-center gap-0.5 text-[10px] md:text-sm text-primary border border-primary/20 rounded px-2 py-1 md:px-3 md:py-1.5 hover:bg-primary/10 transition-colors">
-                    <ExternalLink className="w-2.5 h-2.5 md:w-3 md:h-3" />
-                    <span className="md:hidden">{pl.shortLabel}</span>
-                    <span className="hidden md:inline">{pl.label}</span>
-                  </a>
+            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 hidden md:flex md:flex-col">
+              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whyTitle')}</p>
+              <div className="space-y-1.5 md:space-y-2.5">
+                {[0, 1, 2].map((i) => (
+                  <div key={i} className="flex items-start gap-2">
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-3" />
+                    <p className="text-2xl text-muted-foreground">{t(`spotify.why.${i}`)}</p>
+                  </div>
                 ))}
               </div>
+              <div className="pt-3 border-t border-white/[0.06] mt-3">
+                <p className="text-2xl text-primary font-medium">{t('spotify.timeframe')}</p>
+              </div>
             </GlassPanel>
-          ))}
+          </div>
+
+          <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3 justify-between">
+            {cases.map((c, idx) => (
+              <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col">
+                <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
+                  <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
+                    <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
+                  </div>
+                  <div className="flex-1 min-w-0">
+                    <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">PLAYLISTING</p>
+                    <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
+                    <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-3">
+                  {c.metrics.map((m) => (
+                    <div key={m.label} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
+                      <p className="text-sm md:text-2xl font-bold text-foreground">{m.val}</p>
+                      <p className="text-[8px] md:text-lg text-muted-foreground uppercase tracking-wider">{m.label}</p>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex gap-1 md:gap-2">
+                  {c.playlists.map((pl) => (
+                    <a key={pl.label} href={pl.url} target="_blank" rel="noopener noreferrer"
+                      className="flex-1 inline-flex items-center justify-center gap-0.5 text-[10px] md:text-sm text-primary border border-primary/20 rounded px-2 py-1 md:px-3 md:py-1.5 hover:bg-primary/10 transition-colors">
+                      <ExternalLink className="w-2.5 h-2.5 md:w-3 md:h-3" />
+                      <span className="md:hidden">{pl.shortLabel}</span>
+                      <span className="hidden md:inline">{pl.label}</span>
+                    </a>
+                  ))}
+                </div>
+              </GlassPanel>
+            ))}
+          </div>
         </div>
       </div>
     </div>
