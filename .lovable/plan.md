@@ -1,30 +1,23 @@
 
-# Fix Slide 11 (SoundCloud Reposts) — Left/Right Column Height Alignment
+
+# Fix SoundCloud Case Study Card Spacing
 
 ## Problem
-Slide 11 has the same layout issue as Slide 10: the left column stretches with `flex-1`, but the three case study cards on the right are still using natural height, so the bottom edges don’t align.
+The `flex-1` on each card stretches them evenly, but the content (artist info + metrics grid) only fills the top portion, leaving dead space at the bottom of each card.
 
 ## Fix
-Update the case study `GlassPanel` cards in `src/components/deck/slides/SoundCloudRepostsSlide.tsx` to also use `flex-1`, so the three cards stretch evenly and the full right column matches the left column’s total height.
+Move the metrics grid to the bottom of each card by adding `mt-auto` to the metrics `div`. This pushes the stats grid down to fill the extra space naturally, making the cards look intentionally designed rather than having awkward empty space below the metrics.
 
-## File
-`src/components/deck/slides/SoundCloudRepostsSlide.tsx`
+**File**: `src/components/deck/slides/SoundCloudRepostsSlide.tsx`
 
-## Exact change
-Change the case-study card wrapper from:
+**Change** (line 97): Add `mt-auto` to the metrics grid container:
 ```tsx
-<GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col">
+// From:
+<div className="grid grid-cols-4 gap-1 md:gap-2">
+
+// To:
+<div className="grid grid-cols-4 gap-1 md:gap-2 mt-auto">
 ```
 
-to:
-```tsx
-<GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col flex-1">
-```
+Single class addition, one file.
 
-## Expected result
-- The right column fills the same vertical space as the left column
-- The top of the title block and the bottom of the final panel/card line up visually
-- Behavior stays unchanged on mobile because the stacked mobile layout is separate
-
-## Technical note
-This matches the same layout pattern already used on Slide 10 and follows the deck’s multi-column stretch strategy: both informational panels and case-study cards should use flex growth so each side shares the same overall height.
