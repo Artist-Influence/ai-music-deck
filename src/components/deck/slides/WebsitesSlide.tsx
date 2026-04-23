@@ -3,12 +3,12 @@ import { Globe, Zap, Layers } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import pierceImg from '@/assets/site-pierce.png';
 import levityImg from '@/assets/site-levity.png';
-import rsunImg from '@/assets/site-rsun.png';
+import kompanyImg from '@/assets/site-kompany.png';
 
 const cardConfig = [
   { icon: Globe, image: pierceImg, alt: 'Pierce — artist site' },
-  { icon: Layers, image: levityImg, alt: 'Levity — artist site' },
-  { icon: Zap, image: rsunImg, alt: 'RSUN — artist site' },
+  { icon: Layers, image: kompanyImg, alt: 'Kompany — artist site' },
+  { icon: Zap, image: levityImg, alt: 'Levity — artist site' },
 ];
 
 const WebsitesSlide = () => {
