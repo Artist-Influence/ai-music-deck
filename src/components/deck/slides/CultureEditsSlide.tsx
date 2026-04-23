@@ -6,7 +6,7 @@ import { useTranslation } from '@/i18n/LanguageContext';
 const tileLabels = ['SPORTS', 'ANIME', 'LYRIC', 'MEME', 'FILM', 'QUOTES', 'GAMING', 'FASHION', 'CARS', 'NIGHTLIFE', 'STREETWEAR', 'MOTIVATION'];
 
 const clips: { src: string; label: string }[] = [
-  { src: '/culture-edits/clip-1.mp4', label: 'SPORTS' },
+  { src: '/culture-edits/clip-1.mp4', label: 'EDITS' },
   { src: '/culture-edits/clip-2.mp4', label: 'ANIME' },
 ];
 
