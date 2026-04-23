@@ -15,4 +15,7 @@ export const locales: LocaleMeta[] = [
   { code: 'nl', label: 'Nederlands', flag: '🇳🇱', style: 'Dutch' },
   { code: 'de', label: 'Deutsch', flag: '🇩🇪', style: 'German' },
   { code: 'fr', label: 'Français', flag: '🇫🇷', style: 'French' },
+  { code: 'ar', label: 'العربية', flag: '🇸🇦', style: 'Arabic (RTL)' },
 ];
+
+export const rtlLocales = new Set(['ar']);
