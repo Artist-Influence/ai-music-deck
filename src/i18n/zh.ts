@@ -14,11 +14,6 @@ const zh: Record<string, string> = {
   'shift.win.3': '放大正确信号的智能推广',
 
   // ── TheProblemSlide ──
-  'problem.title': '问题：音乐营销大部分是手动操作。',
-  'problem.section': '为何这是个问题：',
-  'problem.item.0': '非音乐营销人员导致的活动质量低下',
-  'problem.item.1': '报告滞后、混乱或缺失',
-  'problem.item.2': '投入资金却无法获得可衡量的成果',
 
   // ── WhatWeDoSlide ──
   'whatWeDo.title': '协调式分发，一套系统，而非一场赌博。',
@@ -31,25 +26,6 @@ const zh: Record<string, string> = {
   'whatWeDo.pillar.2.desc': '创意得到验证后，投入付费广告放大获胜内容',
 
   // ── HowWeWorkSlide ──
-  'howWeWork.title': '我们的端到端流程',
-  'howWeWork.subtitle': '行业专家将为您量身定制营销活动方案，以满足您的特定需求',
-  'howWeWork.step.0.title': '方案',
-  'howWeWork.step.0.desc': '我们会提供方案，就目标、受众、素材和准则达成一致。',
-  'howWeWork.step.1.title': '启动',
-  'howWeWork.step.1.desc': '我们以严谨的执行力和明确的时间表启动所选服务。',
-  'howWeWork.step.2.title': '优化',
-  'howWeWork.step.2.desc': '我们分析有效策略，剔除无效部分，持续推动成果增长。',
-  'howWeWork.step.3.title': '报告',
-  'howWeWork.step.3.desc': '每周更新、最终总结报告，以及可供下次活动复用的经验。',
-  'howWeWork.reportingTitle': '报告内容包括',
-  'howWeWork.reporting.0': '已启动、进行中、下一步计划',
-  'howWeWork.reporting.1': '最佳创意、成功模式、下次发行建议',
-  'howWeWork.reporting.2': '平台指标、服务成果、最佳角度',
-  'howWeWork.needTitle': '我们需要您提供',
-  'howWeWork.need.0': '音频链接、干净的元数据和发布账号',
-  'howWeWork.need.1': '品牌安全规则或任何绝对禁止的话题',
-  'howWeWork.need.2': '每个活动的明确首要目标',
-  'howWeWork.disclaimer': '不应期待不切实际的、总能爆红的结果。这是一个放大器，而非倍增器——成果需要测试和迭代。',
 
   // ── ClippingSlide ──
   'common.service': '服务',
@@ -221,8 +197,8 @@ const zh: Record<string, string> = {
   'nextSteps.step.3.desc': '根据所选服务，24 到 72 小时内',
   'nextSteps.contactTitle': '联系方式',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.quote': '"我们可以在 24 小时内为您提供一份推荐方案。"',
-  'nextSteps.tagline': '现代音乐的增长系统',
+  'nextSteps.contactRedLine': '我们可以在24小时内提供推荐的付费方案。',
+  'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
 
   // ── DeckViewer UI ──
   'ui.slides': '幻灯片',
