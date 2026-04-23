@@ -153,7 +153,7 @@ const zh: Record<string, string> = {
 
   // ── PricingSlide ──
   'pricing.title': '定制化与菜单式定价',
-  'pricing.subtitle': '每个方案都围绕您的目标构建。您可以选择单项服务，或者让我们为您设计一个定制组合包。',
+  'pricing.subtitle': '每个套餐都围绕您的发行计划、受众和目标量身打造。您可以选择单项服务，或让我们为您设计定制化组合。',
   'pricing.headerService': '服务',
   'pricing.headerUnit': '计价单位',
   'pricing.headerNote': '备注',
