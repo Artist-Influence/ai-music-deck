@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import { Disc3 } from 'lucide-react';
+import { Disc3, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
 const IdIdSlide = () => {
@@ -23,7 +23,18 @@ const IdIdSlide = () => {
         </div>
 
         <h1 className="text-3xl md:text-7xl font-bold text-foreground mb-2 md:mb-3 leading-tight">{t('idid.title')}</h1>
-        <p className="text-base md:text-3xl text-primary/90 font-light mb-3 md:mb-5">{t('idid.tagline')}</p>
+        <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3 md:mb-5">
+          <p className="text-base md:text-3xl text-primary/90 font-light">{t('idid.tagline')}</p>
+          <a
+            href="https://id-id.artistinfluence.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 text-xs md:text-base text-primary/80 hover:text-primary transition-colors"
+          >
+            <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
+            <span className="underline decoration-primary/30 hover:decoration-primary">id-id.artistinfluence.com</span>
+          </a>
+        </div>
         <p className="text-sm md:text-2xl text-muted-foreground mb-6 md:mb-12 max-w-[1100px] leading-relaxed">{t('idid.subtitle')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
