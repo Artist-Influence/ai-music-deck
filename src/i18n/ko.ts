@@ -113,7 +113,7 @@ const ko: Record<string, string> = {
   'instagram.mobileSummary.1': '유료 광고 비용의 일부로 저장, 공유 및 오디오 사용을 유도합니다.',
   'instagram.mobileSummary.2': '관련성 및 비용 효율성을 위해 구축됨 · 기간: 1~3주',
   'metaTiktok.title': 'Meta & TikTok 광고',
-  'metaTiktok.subtitle': '입증된 네이티브 게시물을 광고로 전환하여 스트림, 판매, 투어 등을 유도합니다.',
+  'metaTiktok.subtitle': '검증된 네이티브 게시물을 스트리밍, 판매, 투어 등 다양한 성과로 전환하는 광고로 만듭니다.',
   'metaTiktok.whatTitle': '무엇인가요?',
   'metaTiktok.what.0': 'Meta(Facebook + Instagram) 및 TikTok을 통한 유료 소셜 캠페인',
   'metaTiktok.what.1': '이미 유기적으로 좋은 성과를 내는 콘텐츠는 타겟팅된 유료 배포를 통해 증폭됩니다.',
