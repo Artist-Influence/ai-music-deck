@@ -58,7 +58,7 @@ const NextStepsSlide = () => {
           <p className="text-sm md:text-[21px] text-foreground font-medium mb-1 md:mb-2">{t('nextSteps.contactTitle')}</p>
           <p className="text-xs md:text-[19px] text-muted-foreground/80 mb-1 md:mb-2">{t('nextSteps.companyName')}</p>
           <p className="text-xs md:text-[21px] text-muted-foreground mb-2 md:mb-3">www.artistinfluence.com</p>
-          <p className="text-xs md:text-[21px] text-primary italic">{t('nextSteps.quote')}</p>
+          <p className="text-xs md:text-[20px] text-primary font-medium mt-2 md:mt-3">{t('nextSteps.contactRedLine')}</p>
         </GlassPanel>
 
         <img src={aiLogo} alt="Artist Influence" className="w-32 md:w-64 mx-auto mb-2 md:mb-3" />
