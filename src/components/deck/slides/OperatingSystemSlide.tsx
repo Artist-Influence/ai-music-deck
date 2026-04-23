@@ -45,7 +45,7 @@ const OperatingSystemSlide = () => {
                     </div>
                     <div className="flex-1 min-w-0">
                       <p className="text-sm md:text-2xl font-semibold text-foreground mb-1 md:mb-2">{p.label}</p>
-                      <p className="text-xs md:text-lg text-muted-foreground leading-relaxed">{p.desc}</p>
+                      <p className="text-xs md:text-base text-muted-foreground leading-relaxed md:whitespace-nowrap">{p.desc}</p>
                     </div>
                   </div>
                 </GlassPanel>
