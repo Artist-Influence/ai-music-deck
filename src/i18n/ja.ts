@@ -126,7 +126,7 @@ const ja: Record<string, string> = {
   'instagram.subtitle': 'ライブダッシュボードによる追跡機能付きで、ジャンル/テーマページやミームアカウントを介したジャンルに沿ったページ配置。',
   'instagram.whatTitle': '概要',
   'instagram.what.0': 'キュレーションされたInstagramのテーマページネットワーク全体にオーディオおよびビデオコンテンツをシード',
-  'instagram.what.1': '本物のエンゲージメントを促進するEDMコミュニティページとミームアカウント',
+  'instagram.what.1': '本物のエンゲージメントを促進するコミュニティページとミームアカウント',
   'instagram.what.2': 'ジャンル内の特定のオーディエンスをターゲットにする',
   'instagram.whyTitle': '機能する理由',
   'instagram.why.0': 'テーマページとミームアカウントには、積極的にエンゲージする組み込みオーディエンスがいる',

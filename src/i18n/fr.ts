@@ -126,7 +126,7 @@ const fr: Record<string, string> = {
   'instagram.subtitle': 'Placements de pages alignés sur le genre à travers des pages thématiques et des comptes de mèmes avec suivi via un tableau de bord en direct.',
   'instagram.whatTitle': 'Ce que c\'est',
   'instagram.what.0': 'Contenu audio et vidéo semé sur un réseau sélectionné de pages thématiques Instagram',
-  'instagram.what.1': 'Pages communautaires EDM et comptes de mèmes qui génèrent un engagement réel',
+  'instagram.what.1': 'Pages communautaires et comptes de mèmes qui génèrent un engagement réel',
   'instagram.what.2': 'Ciblé sur votre public spécifique au sein du genre',
   'instagram.whyTitle': 'Pourquoi ça marche',
   'instagram.why.0': 'Les pages thématiques et les comptes de mèmes ont des audiences intégrées qui s\'engagent activement',
