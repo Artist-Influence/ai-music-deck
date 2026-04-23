@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import { Globe, Zap, Layers } from 'lucide-react';
+import { Globe, Zap, Layers, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import pierceImg from '@/assets/site-pierce.png';
 import levityImg from '@/assets/site-levity.png';
@@ -9,6 +9,14 @@ const cardConfig = [
   { icon: Globe, image: pierceImg, alt: 'Pierce — artist site' },
   { icon: Layers, image: kompanyImg, alt: 'Kompany — artist site' },
   { icon: Zap, image: levityImg, alt: 'Levity — artist site' },
+];
+
+const siteLinks = [
+  { name: 'Kompany', url: 'https://kompanymusic.com' },
+  { name: 'Levity', url: 'https://levityofficial.com' },
+  { name: 'Kluster Flux', url: 'https://klusterflux.com' },
+  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com' },
+  { name: 'Luhv', url: 'https://luhv.la' },
 ];
 
 const WebsitesSlide = () => {
