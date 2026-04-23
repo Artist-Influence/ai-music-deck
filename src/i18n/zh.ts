@@ -105,7 +105,7 @@ const zh: Record<string, string> = {
 
   // ── SoundCloudRepostsSlide ──
   'soundcloud.title': 'SoundCloud 转发',
-  'soundcloud.subtitle': '跨曲风社群的已验证转发网络，提供透明的跟踪和真实的互动意图。',
+  'soundcloud.subtitle': '经认证的跨流派社区转发分发，具备透明追踪与真实互动意图。',
   'soundcloud.whatTitle': '定义',
   'soundcloud.what.0': '通过一个由拥有真实粉丝的 SoundCloud 账号组成的已验证网络分发歌曲',
   'soundcloud.what.1': '每次转发都会被跟踪和报告，完全透明',
