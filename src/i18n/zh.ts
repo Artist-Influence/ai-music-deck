@@ -62,9 +62,9 @@ const zh: Record<string, string> = {
   'creatorFlood.caseOverview': '大规模创作者激活，快速增加音频使用量。',
 
   // ── Top50TrendingSlide ──
-  'trending.title': '前 50 趋势榜',
-  'trending.titleLine2': '与热门标签页',
-  'trending.subtitle': '我们保证您的歌曲出现在 YouTube Shorts、Instagram Reels 和 Facebook Reels 的前 50 趋势榜上。',
+  'trending.title': '热门趋势与人气榜前 50 名',
+  'trending.titleLine2': '',
+  'trending.subtitle': '我们助力歌曲进入 YouTube Shorts、Instagram Reels、Facebook Reels 和 TikTok 等平台的热门榜单及趋势环境。',
   'trending.howTitle': '透明化运作方式',
   'trending.howDesc': '结合 AI 生成的海量内容与真实 UGC，优先保证数量以推动热度，直至歌曲上榜。',
   'trending.whenTitle': '适用场景',
