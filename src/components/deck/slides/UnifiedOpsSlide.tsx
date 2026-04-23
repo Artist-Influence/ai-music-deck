@@ -70,9 +70,11 @@ const UnifiedOpsSlide = () => {
           </div>
         </div>
 
-        <p className="text-[11px] md:text-base text-muted-foreground italic text-center">
-          {t('unifiedOps.footer')}
-        </p>
+        <div className="rounded-xl border border-primary/35 bg-primary/[0.06] p-3 md:p-5 text-center">
+          <p className="text-xs md:text-lg text-foreground font-medium leading-relaxed">
+            {t('unifiedOps.footer')}
+          </p>
+        </div>
       </div>
     </div>
   );
