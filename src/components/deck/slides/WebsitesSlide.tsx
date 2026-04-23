@@ -6,17 +6,32 @@ import levityImg from '@/assets/site-levity.png';
 import kompanyImg from '@/assets/site-kompany.png';
 
 const cardConfig = [
-  { icon: Globe, image: pierceImg, alt: 'Pierce — artist site' },
-  { icon: Layers, image: kompanyImg, alt: 'Kompany — artist site' },
-  { icon: Zap, image: levityImg, alt: 'Levity — artist site' },
+  {
+    icon: Globe,
+    image: pierceImg,
+    alt: 'Pierce — artist site',
+    liveUrl: 'https://id-id.artistinfluence.com',
+    liveLabel: 'id-id.artistinfluence.com',
+  },
+  {
+    icon: Layers,
+    image: kompanyImg,
+    alt: 'Kompany — artist site',
+    liveUrl: 'https://kompanymusic.com',
+    liveLabel: 'kompanymusic.com',
+  },
+  {
+    icon: Zap,
+    image: levityImg,
+    alt: 'Levity — artist site',
+    liveUrl: 'https://levityofficial.com',
+    liveLabel: 'levityofficial.com',
+  },
 ];
 
-const siteLinks = [
-  { name: 'Kompany', url: 'https://kompanymusic.com' },
-  { name: 'Levity', url: 'https://levityofficial.com' },
-  { name: 'Kluster Flux', url: 'https://klusterflux.com' },
-  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com' },
-  { name: 'Luhv', url: 'https://luhv.la' },
+const extraLinks = [
+  { name: 'Kluster Flux', url: 'https://klusterflux.com', label: 'klusterflux.com' },
+  { name: 'Luhv', url: 'https://luhv.la', label: 'luhv.la' },
 ];
 
 const WebsitesSlide = () => {
@@ -25,6 +40,8 @@ const WebsitesSlide = () => {
     icon: c.icon,
     image: c.image,
     alt: c.alt,
+    liveUrl: c.liveUrl,
+    liveLabel: c.liveLabel,
     title: t(`websites.card.${i}.title`),
     desc: t(`websites.card.${i}.desc`),
   }));
@@ -49,13 +66,33 @@ const WebsitesSlide = () => {
               <GlassPanel key={i} variant="bright" className="p-4 md:p-5 flex flex-col">
                 <div className="aspect-[16/10] mb-3 md:mb-4 rounded-lg overflow-hidden bg-background/40 border border-primary/15">
                   <img src={c.image} alt={c.alt} className="w-full h-full object-cover object-top" />
+                </div>
+                <div className="flex items-center gap-2 mb-1.5 md:mb-2">
+                  <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                  <p className="text-sm md:text-xl font-semibold text-foreground">{c.title}</p>
+                </div>
+                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{c.desc}</p>
+                <a
+                  href={c.liveUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-2 md:mt-3 inline-flex items-center gap-1.5 text-[11px] md:text-sm text-primary/85 hover:text-primary transition-colors self-start"
+                >
+                  <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5" />
+                  <span className="underline decoration-primary/30 hover:decoration-primary">
+                    {c.liveLabel}
+                  </span>
+                </a>
+              </GlassPanel>
+            );
+          })}
         </div>
 
-        <div className="flex flex-wrap items-center gap-2 md:gap-2.5 mb-3 md:mb-5">
+        <div className="flex flex-wrap items-center gap-2 md:gap-2.5 mb-3 md:mb-4">
           <span className="text-[11px] md:text-sm text-muted-foreground uppercase tracking-wider mr-1">
-            {t('websites.liveLabel')}
+            {t('websites.moreLabel')}
           </span>
-          {siteLinks.map((s) => (
+          {extraLinks.map((s) => (
             <a
               key={s.url}
               href={s.url}
@@ -65,21 +102,19 @@ const WebsitesSlide = () => {
             >
               <span className="font-medium">{s.name}</span>
               <span className="text-muted-foreground/70 group-hover:text-primary/80">·</span>
-              <span className="text-muted-foreground/90 group-hover:text-primary/80">
-                {s.url.replace(/^https?:\/\//, '')}
-              </span>
+              <span className="text-muted-foreground/90 group-hover:text-primary/80">{s.label}</span>
               <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5 opacity-60 group-hover:opacity-100" />
             </a>
           ))}
         </div>
-                <div className="flex items-center gap-2 mb-1.5 md:mb-2">
-                  <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-                  <p className="text-sm md:text-xl font-semibold text-foreground">{c.title}</p>
-                </div>
-                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{c.desc}</p>
-              </GlassPanel>
-            );
-          })}
+
+        <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 mb-3 md:mb-5 rounded-full border border-primary/25 bg-primary/[0.06]">
+          <Zap className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary shrink-0" />
+          <p className="text-[11px] md:text-sm text-foreground/90">
+            <span className="text-primary font-semibold">{t('websites.automationLabel')}</span>
+            {' — '}
+            {t('websites.automation')}
+          </p>
         </div>
 
         <GlassPanel variant="subtle" className="p-3 md:p-5">
