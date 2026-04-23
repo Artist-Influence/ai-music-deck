@@ -9,9 +9,10 @@ import nl from './nl';
 import de from './de';
 import fr from './fr';
 import ar from './ar';
+import hi from './hi';
 import { rtlLocales } from './locales';
 
-const allTranslations: Record<string, Record<string, string>> = { en, es, pt, ko, ja, zh, nl, de, fr, ar };
+const allTranslations: Record<string, Record<string, string>> = { en, es, pt, ko, ja, zh, nl, de, fr, ar, hi };
 
 interface LanguageContextValue {
   locale: string;
