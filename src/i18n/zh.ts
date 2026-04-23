@@ -122,7 +122,7 @@ const zh: Record<string, string> = {
 
   // ── InstagramSeedingSlide ──
   'instagram.title': 'Instagram 植入',
-  'instagram.subtitle': '通过实时仪表板跟踪，将内容投放到曲风/主题页面和模因账号中。',
+  'instagram.subtitle': '在主题页面和梗账号上进行符合音乐流派的页面投放，并通过实时仪表盘进行追踪。',
   'instagram.whatTitle': '定义',
   'instagram.what.0': '音频和视频内容被投放到一个经过筛选的 Instagram 主题页面网络中',
   'instagram.what.1': '社群页面和能驱动真实互动的模因账号',
