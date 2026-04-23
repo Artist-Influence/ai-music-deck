@@ -56,8 +56,6 @@ const CultureEditsSlide = () => {
         ))}
       </div>
 
-      <div className="absolute bottom-[5%] right-[10%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full bg-primary/[0.08] blur-[140px]" />
-
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <Film className="w-4 h-4 md:w-7 md:h-7 text-primary" />
