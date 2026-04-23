@@ -1,0 +1,92 @@
+import GlassPanel from '../GlassPanel';
+import DashboardMockTile from '../DashboardMockTiles';
+import { Inbox, Activity, FileBarChart, Brain, Sparkles } from 'lucide-react';
+import { useTranslation } from '@/i18n/LanguageContext';
+
+const moduleConfig = [
+  { icon: Inbox, mock: 'pills' as const },
+  { icon: Activity, mock: 'sparkline' as const },
+  { icon: FileBarChart, mock: 'rows' as const },
+  { icon: Brain, mock: 'bars' as const },
+];
+
+const UnifiedOpsSlide = () => {
+  const { t } = useTranslation();
+  const modules = moduleConfig.map((m, i) => ({
+    icon: m.icon,
+    mock: m.mock,
+    label: t(`unifiedOps.module.${i}.label`),
+    desc: t(`unifiedOps.module.${i}.desc`),
+  }));
+
+  return (
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-20 flex flex-col justify-start md:justify-center">
+      <div className="absolute top-[5%] right-[10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-primary/[0.06] blur-[140px]" />
+
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto">
+        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+          <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+          <p className="text-[10px] md:text-sm text-primary font-medium tracking-wider uppercase">{t('unifiedOps.kicker')}</p>
+        </div>
+
+        <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-3 md:mb-5 leading-tight">
+          {t('unifiedOps.title')}
+        </h1>
+        <p className="text-sm md:text-2xl text-muted-foreground mb-5 md:mb-10 max-w-[1200px] leading-relaxed">
+          {t('unifiedOps.subtitle')}
+        </p>
+
+        {/* 4 module cards */}
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-3 md:gap-4 mb-4 md:mb-8">
+          {modules.map((m, i) => {
+            const Icon = m.icon;
+            return (
+              <GlassPanel key={i} variant="bright" className="p-4 md:p-5 relative overflow-hidden">
+                {/* Background mock dashboard tile */}
+                <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
+                  <DashboardMockTile variant={m.mock} />
+                </div>
+                {/* Subtle dark overlay so text stays readable */}
+                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/70 pointer-events-none" />
+
+                <div className="relative z-10">
+                  <div className="flex items-center gap-2 mb-2 md:mb-3">
+                    <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                    <p className="text-[10px] md:text-xs text-primary font-mono tracking-widest uppercase">
+                      0{i + 1}
+                    </p>
+                  </div>
+                  <p className="text-sm md:text-xl font-semibold text-foreground mb-1.5 md:mb-2">{m.label}</p>
+                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
+                </div>
+              </GlassPanel>
+            );
+          })}
+        </div>
+
+        {/* Self-learning callout */}
+        <div className="rounded-2xl border border-primary/40 bg-primary/[0.07] p-4 md:p-6 mb-3 md:mb-5">
+          <div className="flex items-start gap-3 md:gap-4">
+            <div className="shrink-0 w-8 h-8 md:w-10 md:h-10 rounded-lg flex items-center justify-center bg-primary/20 border border-primary/40">
+              <Brain className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+            </div>
+            <div className="flex-1">
+              <p className="text-xs md:text-base font-semibold text-primary mb-1 tracking-wider uppercase">
+                {t('unifiedOps.calloutTitle')}
+              </p>
+              <p className="text-xs md:text-lg text-foreground/90 leading-relaxed">
+                {t('unifiedOps.calloutBody')}
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <p className="text-[11px] md:text-base text-muted-foreground italic text-center">
+          {t('unifiedOps.footer')}
+        </p>
+      </div>
+    </div>
+  );
+};
+
+export default UnifiedOpsSlide;
