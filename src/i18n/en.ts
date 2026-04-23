@@ -9,7 +9,7 @@ const en: Record<string, string> = {
 
   // ── TheShiftSlide ──
   'shift.title': 'Music discovery has changed.',
-  'shift.subtitle': "People don't \"find\" songs anymore. Songs find people.",
+  'shift.subtitle': "People don't discover songs the old way anymore. Songs now spread through repeated exposure, community validation, algorithmic momentum, and paid amplification layered on top of what is already working.",
   'shift.section': 'What wins today',
   'shift.win.0': 'Volume of real short-form creation',
   'shift.win.1': 'Consistent exposure across audiences',
@@ -19,9 +19,9 @@ const en: Record<string, string> = {
   // ── TheProblemSlide ──
   'problem.title': 'Problem: Music marketing is mostly manual.',
   'problem.section': 'Why this is an issue:',
-  'problem.item.0': 'Poor campaign quality from non-music marketers',
-  'problem.item.1': 'Reporting is late, confusing, or missing',
-  'problem.item.2': 'You spend money without measurable results',
+  'problem.item.0': 'Most music marketing is still fragmented across disconnected vendors and platforms',
+  'problem.item.1': 'Reporting is delayed, inconsistent, or too manual to act on quickly',
+  'problem.item.2': 'Teams spend money without a unified system for feedback, optimization, or learning',
 
   // ── WhatWeDoSlide ──
   'whatWeDo.title': 'Coordinated distribution as a system, not a gamble.',
@@ -53,6 +53,7 @@ const en: Record<string, string> = {
   'howWeWork.need.1': 'Any brand safety rules or hard "no" topics',
   'howWeWork.need.2': 'A clear primary goal per campaign',
   'howWeWork.disclaimer': 'What not to expect: unrealistic, always-viral results. This is an amplifier, not a multiplier — results require testing and iteration.',
+  'howWeWork.feedbackLine': 'Every launch, optimization cycle, and report feeds back into our internal system so future campaigns can improve.',
 
   // ── ClippingSlide ──
   'common.service': 'Service',
