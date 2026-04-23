@@ -1,20 +1,18 @@
 import GlassPanel from '../GlassPanel';
-import DashboardMockTile from '../DashboardMockTiles';
 import { Inbox, Activity, FileBarChart, Brain, Sparkles } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
 const moduleConfig = [
-  { icon: Inbox, mock: 'pills' as const },
-  { icon: Activity, mock: 'sparkline' as const },
-  { icon: FileBarChart, mock: 'rows' as const },
-  { icon: Brain, mock: 'bars' as const },
+  { icon: Inbox },
+  { icon: Activity },
+  { icon: FileBarChart },
+  { icon: Brain },
 ];
 
 const UnifiedOpsSlide = () => {
   const { t } = useTranslation();
   const modules = moduleConfig.map((m, i) => ({
     icon: m.icon,
-    mock: m.mock,
     label: t(`unifiedOps.module.${i}.label`),
     desc: t(`unifiedOps.module.${i}.desc`),
   }));
@@ -41,24 +39,15 @@ const UnifiedOpsSlide = () => {
           {modules.map((m, i) => {
             const Icon = m.icon;
             return (
-              <GlassPanel key={i} variant="bright" className="p-4 md:p-5 relative overflow-hidden">
-                {/* Background mock dashboard tile */}
-                <div className="absolute inset-0 opacity-[0.18] pointer-events-none">
-                  <DashboardMockTile variant={m.mock} />
+              <GlassPanel key={i} variant="bright" className="p-4 md:p-5">
+                <div className="flex items-center gap-2 mb-2 md:mb-3">
+                  <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                  <p className="text-[10px] md:text-xs text-primary font-mono tracking-widest uppercase">
+                    0{i + 1}
+                  </p>
                 </div>
-                {/* Subtle dark overlay so text stays readable */}
-                <div className="absolute inset-0 bg-gradient-to-b from-background/40 via-background/10 to-background/70 pointer-events-none" />
-
-                <div className="relative z-10">
-                  <div className="flex items-center gap-2 mb-2 md:mb-3">
-                    <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-                    <p className="text-[10px] md:text-xs text-primary font-mono tracking-widest uppercase">
-                      0{i + 1}
-                    </p>
-                  </div>
-                  <p className="text-sm md:text-xl font-semibold text-foreground mb-1.5 md:mb-2">{m.label}</p>
-                  <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
-                </div>
+                <p className="text-sm md:text-xl font-semibold text-foreground mb-1.5 md:mb-2">{m.label}</p>
+                <p className="text-xs md:text-sm text-muted-foreground leading-relaxed">{m.desc}</p>
               </GlassPanel>
             );
           })}
