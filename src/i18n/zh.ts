@@ -186,7 +186,7 @@ const zh: Record<string, string> = {
 
   // ── NextStepsSlide ──
   'nextSteps.title': '准备好开始了吗？',
-  'nextSteps.subtitle': '四个步骤。零摩擦。即刻启程。',
+  'nextSteps.subtitle': '四个步骤。零阻力。开始吧。',
   'nextSteps.step.0.title': '快速启动电话会议',
   'nextSteps.step.0.desc': '20 分钟',
   'nextSteps.step.1.title': '确认范围',
@@ -197,8 +197,8 @@ const zh: Record<string, string> = {
   'nextSteps.step.3.desc': '根据所选服务，24 到 72 小时内',
   'nextSteps.contactTitle': '联系方式',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.contactRedLine': '我们可以在24小时内提供推荐的付费方案。',
-  'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
+  'nextSteps.contactRedLine': '我们可在 24 小时内完成推荐付费方案的交付。',
+  'nextSteps.tagline': '技术驱动 · 文化本土化 · 即刻落地',
 
   // ── DeckViewer UI ──
   'ui.slides': '幻灯片',
