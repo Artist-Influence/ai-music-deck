@@ -27,6 +27,20 @@ const ExportPdfButton = ({ setExportSlideIndex, totalSlides }: ExportPdfButtonPr
     const bgVar = getComputedStyle(document.documentElement).getPropertyValue('--background').trim();
     const backgroundColor = bgVar ? `hsl(${bgVar})` : '#000000';
 
+    // Freeze all CSS animations/transitions during capture so html2canvas can serialize a stable frame
+    const pauseStyle = document.createElement('style');
+    pauseStyle.id = 'pdf-export-pause-animations';
+    pauseStyle.textContent = `
+      .exporting-pdf *, .exporting-pdf *::before, .exporting-pdf *::after {
+        animation-play-state: paused !important;
+        animation-delay: -1s !important;
+        animation-duration: 0s !important;
+        transition: none !important;
+      }
+    `;
+    document.head.appendChild(pauseStyle);
+    document.documentElement.classList.add('exporting-pdf');
+
     try {
       const doc = new jsPDF({ orientation: 'landscape', unit: 'px', format: [1920, 1080] });
 
@@ -41,11 +55,11 @@ const ExportPdfButton = ({ setExportSlideIndex, totalSlides }: ExportPdfButtonPr
         // Mount this slide into the offscreen portal
         setExportSlideIndex(i);
 
-        // Wait for React render + animations + fonts
+        // Wait for React render + fonts (animations are paused via CSS)
         await nextFrame();
         await nextFrame();
         try { await (document as any).fonts?.ready; } catch {}
-        await delay(800);
+        await delay(250);
 
         const slideEl = document.getElementById('export-capture') as HTMLElement | null;
         if (!slideEl) {
@@ -75,7 +89,7 @@ const ExportPdfButton = ({ setExportSlideIndex, totalSlides }: ExportPdfButtonPr
             logging: false,
           });
 
-          const imgData = canvas.toDataURL('image/jpeg', 0.92);
+          const imgData = canvas.toDataURL('image/jpeg', 0.85);
           if (i > 0) doc.addPage([1920, 1080], 'landscape');
           doc.addImage(imgData, 'JPEG', 0, 0, 1920, 1080);
         } catch (err) {
@@ -91,6 +105,8 @@ const ExportPdfButton = ({ setExportSlideIndex, totalSlides }: ExportPdfButtonPr
       dismiss();
       toast({ title: 'Export failed', description: 'Something went wrong.', variant: 'destructive' });
     } finally {
+      document.documentElement.classList.remove('exporting-pdf');
+      document.getElementById('pdf-export-pause-animations')?.remove();
       setExportSlideIndex(null);
       setExporting(false);
     }
