@@ -10,26 +10,23 @@ const cardConfig = [
     icon: Globe,
     image: pierceImg,
     alt: 'Pierce — artist site',
-    liveUrl: 'https://id-id.artistinfluence.com',
-    liveLabel: 'id-id.artistinfluence.com',
   },
   {
     icon: Layers,
     image: kompanyImg,
     alt: 'Kompany — artist site',
-    liveUrl: 'https://kompanymusic.com',
-    liveLabel: 'kompanymusic.com',
   },
   {
     icon: Zap,
     image: levityImg,
     alt: 'Levity — artist site',
-    liveUrl: 'https://levityofficial.com',
-    liveLabel: 'levityofficial.com',
   },
 ];
 
 const extraLinks = [
+  { name: 'Kompany', url: 'https://kompanymusic.com', label: 'kompanymusic.com' },
+  { name: 'Levity', url: 'https://levityofficial.com', label: 'levityofficial.com' },
+  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com', label: 'id-id.artistinfluence.com' },
   { name: 'Kluster Flux', url: 'https://klusterflux.com', label: 'klusterflux.com' },
   { name: 'Luhv', url: 'https://luhv.la', label: 'luhv.la' },
 ];
@@ -40,8 +37,6 @@ const WebsitesSlide = () => {
     icon: c.icon,
     image: c.image,
     alt: c.alt,
-    liveUrl: c.liveUrl,
-    liveLabel: c.liveLabel,
     title: t(`websites.card.${i}.title`),
     desc: t(`websites.card.${i}.desc`),
   }));
@@ -72,17 +67,6 @@ const WebsitesSlide = () => {
                   <p className="text-sm md:text-xl font-semibold text-foreground">{c.title}</p>
                 </div>
                 <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{c.desc}</p>
-                <a
-                  href={c.liveUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="mt-2 md:mt-3 inline-flex items-center gap-1.5 text-[11px] md:text-sm text-primary/85 hover:text-primary transition-colors self-start"
-                >
-                  <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5" />
-                  <span className="underline decoration-primary/30 hover:decoration-primary">
-                    {c.liveLabel}
-                  </span>
-                </a>
               </GlassPanel>
             );
           })}

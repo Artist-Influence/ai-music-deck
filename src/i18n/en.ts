@@ -408,7 +408,7 @@ const en: Record<string, string> = {
   'websites.card.1.desc': 'Laylo, ticketing, DSP routing, gated assets, merch, analytics, and campaign-specific landing pages.',
   'websites.card.2.title': 'Design + Speed',
   'websites.card.2.desc': 'Fast-turn, premium builds that look custom and cinematic without bloated timeframes.',
-  'websites.moreLabel': 'More live builds:',
+  'websites.moreLabel': 'Live builds:',
   'websites.automationLabel': 'Auto-syncing',
   'websites.automation': 'new releases and tour dates update themselves. No manual edits.',
   'websites.whyLabel': 'Why it matters:',
