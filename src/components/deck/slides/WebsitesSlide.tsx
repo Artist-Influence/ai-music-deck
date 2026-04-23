@@ -49,7 +49,29 @@ const WebsitesSlide = () => {
               <GlassPanel key={i} variant="bright" className="p-4 md:p-5 flex flex-col">
                 <div className="aspect-[16/10] mb-3 md:mb-4 rounded-lg overflow-hidden bg-background/40 border border-primary/15">
                   <img src={c.image} alt={c.alt} className="w-full h-full object-cover object-top" />
-                </div>
+        </div>
+
+        <div className="flex flex-wrap items-center gap-2 md:gap-2.5 mb-3 md:mb-5">
+          <span className="text-[11px] md:text-sm text-muted-foreground uppercase tracking-wider mr-1">
+            {t('websites.liveLabel')}
+          </span>
+          {siteLinks.map((s) => (
+            <a
+              key={s.url}
+              href={s.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group inline-flex items-center gap-1.5 px-2.5 md:px-3 py-1 md:py-1.5 rounded-full border border-primary/20 bg-background/40 text-[11px] md:text-sm text-foreground/80 hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-colors"
+            >
+              <span className="font-medium">{s.name}</span>
+              <span className="text-muted-foreground/70 group-hover:text-primary/80">·</span>
+              <span className="text-muted-foreground/90 group-hover:text-primary/80">
+                {s.url.replace(/^https?:\/\//, '')}
+              </span>
+              <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5 opacity-60 group-hover:opacity-100" />
+            </a>
+          ))}
+        </div>
                 <div className="flex items-center gap-2 mb-1.5 md:mb-2">
                   <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
                   <p className="text-sm md:text-xl font-semibold text-foreground">{c.title}</p>
