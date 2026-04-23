@@ -1,29 +1,29 @@
 const zh: Record<string, string> = {
   // ── CoverSlide ──
-  'cover.tagline': '现代音乐与艺人的增长系统',
-  'cover.subtitle': '在短视频、流媒体和文化领域驱动发展势头。',
-  'cover.confidential': '保密 · 2026',
+  'cover.tagline': '现代音乐与艺术家的增长系统',
+  'cover.subtitle': '在短视频、流媒体和文化领域推动发展势头。',
+  'cover.confidential': '机密 · 2026',
 
   // ── TheShiftSlide ──
-  'shift.title': '音乐发现的方式已经改变。',
-  'shift.subtitle': '人们不再"找到"歌曲。现在是歌曲找到人。',
-  'shift.section': '如今致胜的关键',
-  'shift.win.0': '大量的短视频创作',
+  'shift.title': '音乐发现方式已然改变。',
+  'shift.subtitle': '人们不再像过去那样发现歌曲。如今，歌曲的传播依赖于反复曝光、社区认可、算法驱动的势头，以及在现有成功基础上叠加的付费推广。',
+  'shift.section': '当今制胜之道',
+  'shift.win.0': '海量的真实短视频创作',
   'shift.win.1': '跨受众群体的持续曝光',
-  'shift.win.2': '社群验证（页面、策展人、创作者）',
-  'shift.win.3': '放大正确信号的智能推广',
+  'shift.win.2': '社区认可（页面、策展人、创作者）',
+  'shift.win.3': '智能推广，放大正确信号',
 
   // ── TheProblemSlide ──
 
   // ── WhatWeDoSlide ──
-  'whatWeDo.title': '协调式分发，一套系统，而非一场赌博。',
-  'whatWeDo.section': '为您优化算法的三大支柱',
-  'whatWeDo.pillar.0.label': '数量',
-  'whatWeDo.pillar.0.desc': '用高频率的短视频内容覆盖社交平台',
-  'whatWeDo.pillar.1.label': '策展',
-  'whatWeDo.pillar.1.desc': '针对您细分领域内的真实社群进行触达',
-  'whatWeDo.pillar.2.label': '放大',
-  'whatWeDo.pillar.2.desc': '创意得到验证后，投入付费广告放大获胜内容',
+  'whatWeDo.title': '协调分发是一个系统，而非赌博。',
+  'whatWeDo.section': '三大支柱，让算法为您效力',
+  'whatWeDo.pillar.0.label': '规模',
+  'whatWeDo.pillar.0.desc': '用高速短视频内容淹没社交平台',
+  'whatWeDo.pillar.1.label': '精选',
+  'whatWeDo.pillar.1.desc': '锁定您细分领域内具有影响力的真实社区',
+  'whatWeDo.pillar.2.label': '推广',
+  'whatWeDo.pillar.2.desc': '一旦创意内容证明其价值，便通过付费推广放大热门内容',
 
   // ── HowWeWorkSlide ──
 
