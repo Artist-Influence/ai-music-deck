@@ -1,37 +1,19 @@
 
 
-# Swap Websites slide thumbnails — add Kompany screenshot, reshuffle order
+# Replace right-card screenshot on Websites slide with new Levity LISTEN page
 
 ## What changes
-On slide 18 (Websites & Digital Infrastructure), the **middle card** gets the new Kompany screenshot. The Levity screenshot that's currently in the middle moves to the **right card**, and the RSUN screenshot that's on the right is dropped.
-
-New card order (left → right):
-1. **Pierce** (unchanged)
-2. **Kompany** (new — replaces Levity in middle)
-3. **Levity** (moved from middle to right — replaces RSUN)
+On slide 18, the **right card** (currently showing the old Levity homepage) gets swapped to the new Levity LISTEN page screenshot — same artist, more visually striking page (LISTEN headline, Pop Off album art, recent releases grid).
 
 ## Asset setup
-- Copy `user-uploads://image.png` → `src/assets/site-kompany.png`
-- The existing `src/assets/site-rsun.png` becomes unused but stays in the repo (no cleanup needed; not imported anywhere).
-
-## Component change — `src/components/deck/slides/WebsitesSlide.tsx`
-- Remove the `rsunImg` import.
-- Add `import kompanyImg from '@/assets/site-kompany.png';`
-- Update `cardConfig` to:
-  ```tsx
-  const cardConfig = [
-    { icon: Globe, image: pierceImg, alt: 'Pierce — artist site' },
-    { icon: Layers, image: kompanyImg, alt: 'Kompany — artist site' },
-    { icon: Zap, image: levityImg, alt: 'Levity — artist site' },
-  ];
-  ```
-- Existing `<img className="w-full h-full object-cover object-top" />` already handles the dark Kompany screenshot perfectly — the tour list section sits below the hero so `object-top` will show the "KOMPANY" logo + nav at the top of the thumbnail.
+- Copy `user-uploads://Screenshot_2026-04-23_at_1.14.07_AM.png` → `src/assets/site-levity.png` (overwrites existing file).
+- Since the import path stays the same, no code changes are needed in `WebsitesSlide.tsx` — the existing `levityImg` import will pick up the new file automatically.
 
 ## Files changed
-- `src/assets/site-kompany.png` — new (copied from upload)
-- `src/components/deck/slides/WebsitesSlide.tsx` — swap image imports + reorder `cardConfig`
+- `src/assets/site-levity.png` — overwritten with new screenshot
 
 ## Out of scope
-- Card titles / descriptions / icons — i18n copy keys (`websites.card.0/1/2.title`/`desc`) stay the same. If you want the middle/right copy to specifically reference Kompany/Levity later, that's a separate i18n edit.
-- Deleting the now-unused `site-rsun.png` file.
+- Card title/description copy (still references Levity, which is accurate).
+- Touching the Pierce (left) or Kompany (middle) cards.
+- Changing `object-cover object-top` framing — the new screenshot's "LISTEN" headline + Pop Off artwork sit near the top of the page, so `object-top` will frame it nicely inside the 16:10 thumbnail.
 
