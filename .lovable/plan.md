@@ -1,99 +1,98 @@
 
 
-# Refresh German locale to match the user's provided deck copy
+# Refresh Portuguese locale to match the user's provided deck copy
 
 ## Scope
 
-Update `src/i18n/de.ts` so every string the deck renders in German matches the user's provided copy block (slides 1 → 18). All other locale files and components stay untouched.
+Update `src/i18n/pt.ts` so every string the deck renders in Portuguese matches the user's provided copy block (slides 1 → 18). All other locale files and components stay untouched.
 
 ## Why this is needed
 
-The German file currently lacks the same 5 namespaces that were added when the deck was condensed to 18 slides:
+The Portuguese file currently lacks the same 5 namespaces used on slides 2, 3, 9, 15, and 16:
 
-- `opSystem.*` (Slide 2 — Operating System)
-- `unifiedOps.*` (Slide 3 — Unified Ops)
-- `cultureEdits.*` (Slide 9 — Culture Edits)
-- `websites.*` (Slide 15 — Websites & Digital Infrastructure)
+- `opSystem.*` (Slide 2 — Sistema Operacional)
+- `unifiedOps.*` (Slide 3 — Operações Unificadas)
+- `cultureEdits.*` (Slide 9 — Edições Culturais)
+- `websites.*` (Slide 15 — Sites e Infraestrutura Digital)
 - `idid.*` (Slide 16 — ID.ID)
 
-Without these keys, German falls back to raw key strings on those 5 slides. Several existing German values also need a refresh to match the approved copy (e.g. `clipping.subtitle` says "20.000 Clipper" but the new copy says "über 2.000", and the Creator Flood, pricing, and contact strings need slight wording updates).
+Without these keys, Portuguese falls back to raw key strings on those 5 slides. Several existing values also need a small refresh (e.g. `clipping.subtitle` says "20.000 clippers" → should read "mais de 2.000 criadores", and `nextSteps.tagline` is still in English).
 
-## Changes — single file: `src/i18n/de.ts`
+## Changes — single file: `src/i18n/pt.ts`
 
-### A. Update existing values to the new German copy
+### A. Update existing values to the new Portuguese copy
 
-| Key | New German value |
+| Key | New Portuguese value |
 |---|---|
-| `cover.subtitle` | Wir sorgen für Dynamik in den Bereichen Kurzvideos, Streaming und Kultur. |
-| `shift.subtitle` | Menschen entdecken Songs nicht mehr auf die alte Art und Weise. Songs verbreiten sich heute durch wiederholte Präsenz, Validierung durch die Community, algorithmische Dynamik und bezahlte Verstärkung, die auf das aufbaut, was bereits funktioniert. |
-| `shift.section` | Was heute erfolgreich ist |
-| `clipping.subtitle` | Ein Vertriebsnetzwerk, das von über 2.000 Clippern angetrieben wird, die auf TikTok, Instagram und YouTube Inhalte erstellen. |
-| `creatorFlood.subtitle` | Massenverbreitung deines Tracks über mindestens 10.000 echte TikTok-UGC-Videos. |
-| `trending.subtitle` | Wir helfen dabei, Titel in sichtbare Charts und Trendbereiche auf YouTube Shorts, Instagram Reels, Facebook Reels und TikTok zu bringen. |
-| `youtube.subtitle` | Internationale Ausrichtung und Optimierung zur Maximierung der Reichweite bei gleichzeitiger Sicherung der Interaktionsraten. |
-| `spotify.subtitle` | Organische Playlist-Platzierungen durch Dritte, abgestimmt auf das Genre, konzipiert für die Entdeckung und algorithmische Erfassung. |
-| `soundcloud.subtitle` | Verifizierte Verbreitung von Reposts in Genre-Communities mit transparenter Nachverfolgung und echter Interaktionsabsicht. |
-| `instagram.subtitle` | Genre-spezifische Platzierungen auf Themenseiten und Meme-Accounts mit Nachverfolgung über ein Live-Dashboard. |
-| `metaTiktok.subtitle` | Wir verwandeln bewährte native Beiträge in Anzeigen, die Streams, Verkäufe, Tourneen und mehr generieren. |
-| `pricing.subtitle` | Jedes Paket ist auf Ihren Veröffentlichungsplan, Ihr Publikum und Ihre Ziele zugeschnitten. Wählen Sie einzelne Dienstleistungen aus oder lassen Sie uns ein maßgeschneidertes Paket zusammenstellen. |
-| `pricing.footer` | Wir stellen das endgültige Paket auf Basis Ihres Veröffentlichungsplans, Ihrer Zielgruppe und Ihrer Ziele zusammen. |
-| `nextSteps.subtitle` | Vier Schritte. Reibungslos. Los geht's. |
-| `nextSteps.contactRedLine` | Wir können empfohlene kostenpflichtige Pakete innerhalb von 24 Stunden umsetzen. |
-| `nextSteps.tagline` | Softwaregestützt · Kulturverankert · Umsetzungsbereit |
+| `cover.subtitle` | Impulsionando o crescimento em formatos curtos, streaming e cultura. |
+| `shift.subtitle` | As pessoas não descobrem músicas mais da maneira antiga. As músicas agora se espalham por meio de exposição repetida, validação da comunidade, impulso algorítmico e amplificação paga, sobrepostos ao que já está funcionando. |
+| `clipping.subtitle` | Uma rede de distribuição impulsionada por mais de 2.000 criadores de conteúdo no TikTok, Instagram e YouTube. |
+| `creatorFlood.subtitle` | Divulgação em massa da sua faixa em mais de 10.000 publicações, no mínimo, a partir de vídeos reais de UGC do TikTok. |
+| `trending.subtitle` | Ajudamos a impulsionar faixas para ambientes de paradas e tendências visíveis no YouTube Shorts, Instagram Reels, Facebook Reels e TikTok. |
+| `youtube.subtitle` | Segmentação e otimização internacional para maximizar o alcance enquanto protege as taxas de engajamento. |
+| `spotify.subtitle` | Posicionamentos em playlists orgânicas de terceiros, alinhadas ao gênero, projetadas para descoberta e seleção algorítmica. |
+| `soundcloud.subtitle` | Distribuição verificada de repostagens em comunidades de gêneros musicais, com acompanhamento transparente e intenção real de engajamento. |
+| `instagram.subtitle` | Posicionamentos de páginas alinhados ao gênero em páginas temáticas e contas de memes com acompanhamento via painel de controle em tempo real. |
+| `metaTiktok.subtitle` | Transformamos publicações nativas comprovadas em anúncios que geram streams, vendas, turnês e muito mais. |
+| `pricing.subtitle` | Cada pacote é construído em torno de seu cronograma de lançamento, público e objetivos. Escolha serviços individuais ou deixe-nos criar um pacote personalizado. |
+| `pricing.footer` | Criamos o pacote final com base no seu cronograma de lançamento, público e objetivos. |
+| `nextSteps.subtitle` | Quatro etapas. Sem complicações. Vamos lá. |
+| `nextSteps.contactRedLine` | Podemos entregar os planos pagos recomendados em até 24 horas. |
+| `nextSteps.tagline` | Baseado em software · Nativo da cultura · Pronto para execução |
 
-(All other existing German strings — pros/diff bullets, KPI labels, case study copy, pricing table rows — already align with the user's brief and stay as-is. Numeric metrics in case studies are preserved.)
+(All other existing Portuguese strings — pros/diff bullets, KPI labels, case study copy, pricing table rows — already align with the brief and stay as-is. Numeric metrics in case studies are preserved.)
 
-### B. Add the 5 missing namespaces (German translations of the user-provided copy)
+### B. Add the 5 missing namespaces (Portuguese translations of the user-provided copy)
 
 **`opSystem.*`** (Slide 2)
-- `tagline` → "Softwaregestützt · Kulturorientiert · Umsetzungsbereit"
-- `title` → "Wir entwickeln das Betriebssystem für das Wachstum moderner Musik."
-- `subtitle` → full German subtitle from the brief
-- `pillar.0.label / desc` → "Software-Infrastruktur" / "Berichterstattung, Kampagnen-Tracking, Workflows, Echtzeit-Attribution, Dashboards."
-- `pillar.1.label / desc` → "Verteilungs-Engine" / "Playlisting, Clipping, Reposts, Seeding, bezahlte Medien, kulturelle Durchdringung."
-- `pillar.2.label / desc` → "Ausführungsschicht" / "Strategie, Launch-Management, Optimierung, kreative Beiträge, menschliche Aufsicht."
-- `loop.inputs / engine / reporting / learnings` → "Eingaben" / "Engine" / "Berichterstattung" / "Erkenntnisse"
+- `tagline` → "Baseado em software · Nativo da cultura · Pronto para execução"
+- `title` → "Estamos construindo o sistema operacional para o crescimento da música moderna."
+- `subtitle` → translated subtitle from the brief
+- `pillar.0.label / desc` → "Infraestrutura de software" / "Relatórios, acompanhamento de campanhas, fluxos de trabalho, atribuição em tempo real, painéis."
+- `pillar.1.label / desc` → "Mecanismo de distribuição" / "Playlists, clipping, repostagens, seeding, mídia paga, penetração cultural."
+- `pillar.2.label / desc` → "Camada de execução" / "Estratégia, gerenciamento de lançamento, otimização, contribuição criativa, supervisão humana."
+- `loop.inputs / engine / reporting / learnings` → "Entradas" / "Mecanismo" / "Relatórios" / "Aprendizados"
 - `takeaway` → translated takeaway from the brief
 
 **`unifiedOps.*`** (Slide 3)
-- `kicker` → "Das Produkt"
-- `title` → "Unified Ops ist der Kern."
+- `kicker` → "O produto"
+- `title` → "Operações Unificadas são o núcleo."
 - `subtitle` → translated subtitle from the brief
-- 4 modules (label + desc) translated as "Aufnahme & Start", "Live-Tracking", "Reporting-Ebene", "Lern-Ebene"
-- `calloutTitle` → "Selbstlernendes System"
+- 4 modules (label + desc) translated as "Recepção e Lançamento", "Acompanhamento em tempo real", "Camada de relatórios", "Camada de aprendizado"
+- `calloutTitle` → "Sistema de autoaprendizagem"
 - `calloutBody` → translated as in the brief
-- `footer` → "So gelangen wir von der manuellen Abwicklung zu einer sich verstärkenden Kampagnenintelligenz."
+- `footer` → "É assim que passamos da execução manual para a inteligência de campanha composta."
 
 **`cultureEdits.*`** (Slide 9)
-- `title` → "Culture Edits"
-- `subtitle`, `whatTitle` ("Was es ist"), 3 `what.*` bullets, `whyTitle` ("Warum es funktioniert"), 3 `why.*` bullets, `bestForLabel` ("Am besten geeignet für:"), `bestFor` translated copy
+- `title` → "Edições Culturais"
+- `subtitle`, `whatTitle` ("O que é"), 3 `what.*` bullets, `whyTitle` ("Por que funciona"), 3 `why.*` bullets, `bestForLabel` ("Ideal para:"), `bestFor` translated copy
 
 **`websites.*`** (Slide 15)
-- `title` → "Websites & digitale Infrastruktur"
+- `title` → "Sites e Infraestrutura Digital"
 - `subtitle` → translated copy
-- 3 cards (`card.0/1/2.title + desc`) translated: "Künstler-Websites" / "Conversion-Infrastruktur" / "Design + Geschwindigkeit"
-- `moreLabel` → "Live-Designs:"
-- `automationLabel` → "Automatische Synchronisierung:"
-- `automation` → "neue Veröffentlichungen und Tourdaten aktualisieren sich selbst. Keine manuellen Bearbeitungen."
-- `whyLabel` → "Warum es wichtig ist:"
+- 3 cards (`card.0/1/2.title + desc`) translated: "Sites de Artistas" / "Infraestrutura de conversão" / "Design + Velocidade"
+- `moreLabel` → "Construções ao vivo:"
+- `automationLabel` → "Sincronização automática:"
+- `automation` → "novos lançamentos e datas de turnê são atualizados automaticamente. Sem edições manuais."
+- `whyLabel` → "Por que isso importa:"
 - `why` → translated copy
 
 **`idid.*`** (Slide 16)
-- `kicker` → "Pilot-Service"
-- `pilotChip` → "PILOT"
+- `kicker` → "Serviço piloto"
+- `pilotChip` → "PILOTO"
 - `title` → "ID.ID"
-- `tagline` → "Ein Pilot-Service für die Entdeckung von Musik durch DJs."
+- `tagline` → "Um serviço piloto para a descoberta musical impulsionada por DJs."
 - `subtitle` → translated copy
 - 3 `what.*` bullets, 3 `why.*` bullets, `bottomNote` translated as per brief
 
 ## Out of scope
 
 - No component edits — all 5 namespaces already render via existing `t()` calls.
-- No changes to other locale files (en, es, fr, ja, ko, nl, pt, zh).
+- No changes to other locale files (en, es, de, fr, ja, ko, nl, zh).
 - No KPI label changes, no pricing table row changes, no case study metric changes.
 - No new visuals, layout, or component logic.
 
 ## Verification
 
-After the edit, switching the deck's language picker to German renders every slide (1 → 18) with full German copy, with no raw key strings appearing on slides 2, 3, 9, 15, or 16.
+After the edit, switching the deck's language picker to Portuguese renders every slide (1 → 18) with full Portuguese copy, with no raw key strings appearing on slides 2, 3, 9, 15, or 16.
 
