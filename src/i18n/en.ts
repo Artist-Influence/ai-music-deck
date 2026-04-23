@@ -343,19 +343,6 @@ const en: Record<string, string> = {
   'unifiedOps.calloutBody': 'Unified Ops is being built to identify patterns across campaigns and improve future launches using real internal performance data, not guesswork.',
   'unifiedOps.footer': 'This is how we move from manual fulfillment to compounding campaign intelligence.',
 
-  // ── WhyThisMattersSlide (NEW) ──
-  'whyMatters.kicker': 'Why this matters',
-  'whyMatters.title': 'Better systems create better outcomes.',
-  'whyMatters.subtitle': 'For artists, labels, and managers, this means less fragmentation, faster decision-making, and more measurable growth.',
-  'whyMatters.col.0.title': 'For clients',
-  'whyMatters.col.0.body': 'One place to understand what is running, what is working, and what should happen next.',
-  'whyMatters.col.1.title': 'For campaigns',
-  'whyMatters.col.1.body': 'Faster optimization, tighter feedback loops, and less wasted spend across channels.',
-  'whyMatters.col.2.title': 'For the future',
-  'whyMatters.col.2.body': 'A foundation for smarter reporting, better attribution, and scalable music growth infrastructure.',
-  'whyMatters.bottom1': 'We are not just running campaigns.',
-  'whyMatters.bottom2': 'We are building the system that makes campaigns more intelligent.',
-
   // ── CultureEditsSlide (NEW) ──
   'cultureEdits.title': 'Culture Edits',
   'cultureEdits.subtitle': 'We place songs inside existing high-attention edit ecosystems on TikTok: sports, film, anime, quote pages, lyric pages, and internet culture pages, to drive relevance beyond traditional music marketing.',
@@ -401,12 +388,6 @@ const en: Record<string, string> = {
   'idid.why.2': 'Represents how Artist Influence is thinking beyond traditional agency services into new music infrastructure',
   'idid.bottomNote': 'ID.ID is part of our broader thesis: the future of music growth will belong to companies that connect software, culture, and distribution into one system.',
 
-  // ── InfrastructureStatementSlide (NEW) ──
-  'infraStatement.kicker': 'The thesis',
-  'infraStatement.titleLine1': 'Not just campaigns.',
-  'infraStatement.titleLine2': 'Infrastructure.',
-  'infraStatement.subtitle': 'Artist Influence is building the systems layer for modern music growth across software, services, reporting, and cultural distribution.',
-  'infraStatement.tagline': 'Software-backed · Culture-native · Execution-ready',
 };
 
 export default en;
