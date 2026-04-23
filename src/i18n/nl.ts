@@ -138,7 +138,7 @@ const nl: Record<string, string> = {
   'instagram.what.1': "Community-pagina\'s en meme-accounts die echte engagement stimuleren",
   'instagram.what.2': 'Gericht op uw specifieke doelgroep binnen het genre',
   'instagram.whyTitle': 'Waarom het werkt',
-  'instagram.why.0': "Themapagina\'s en meme-accounts hebben ingebouwde doelgroepen die actief betrokken zijn',",
+  'instagram.why.0': "Themapagina\'s en meme-accounts hebben ingebouwde doelgroepen die actief betrokken zijn",
   'instagram.why.1': 'Stimuleert saves, shares en audiogebruik voor een fractie van de kosten van betaalde advertenties',
   'instagram.why.2': 'Gebouwd voor relevantie en kosteneffectiviteit',
   'instagram.timeframe': 'Tijdsbestek: 1 tot 3 weken',
