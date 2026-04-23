@@ -1,4 +1,4 @@
-import { createContext, useContext, useState, useCallback, type ReactNode } from 'react';
+import { createContext, useContext, useState, useCallback, useEffect, type ReactNode } from 'react';
 import en from './en';
 import es from './es';
 import pt from './pt';
@@ -8,8 +8,10 @@ import zh from './zh';
 import nl from './nl';
 import de from './de';
 import fr from './fr';
+import ar from './ar';
+import { rtlLocales } from './locales';
 
-const allTranslations: Record<string, Record<string, string>> = { en, es, pt, ko, ja, zh, nl, de, fr };
+const allTranslations: Record<string, Record<string, string>> = { en, es, pt, ko, ja, zh, nl, de, fr, ar };
 
 interface LanguageContextValue {
   locale: string;
@@ -32,6 +34,12 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     setLocaleState(code);
     try { localStorage.setItem('deck_locale', code); } catch { /* */ }
   }, []);
+
+  useEffect(() => {
+    const isRtl = rtlLocales.has(locale);
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr';
+    document.documentElement.lang = locale;
+  }, [locale]);
 
   const t = useCallback((key: string): string => {
     return allTranslations[locale]?.[key] ?? en[key] ?? key;
