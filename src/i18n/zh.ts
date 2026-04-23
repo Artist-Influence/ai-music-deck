@@ -1,36 +1,36 @@
 const zh: Record<string, string> = {
   // ── CoverSlide ──
-  'cover.tagline': '现代音乐与艺人的增长系统',
-  'cover.subtitle': '在短视频、流媒体和文化领域驱动发展势头。',
-  'cover.confidential': '保密 · 2026',
+  'cover.tagline': '现代音乐与艺术家的增长系统',
+  'cover.subtitle': '在短视频、流媒体和文化领域推动发展势头。',
+  'cover.confidential': '机密 · 2026',
 
   // ── TheShiftSlide ──
-  'shift.title': '音乐发现的方式已经改变。',
-  'shift.subtitle': '人们不再"找到"歌曲。现在是歌曲找到人。',
-  'shift.section': '如今致胜的关键',
-  'shift.win.0': '大量的短视频创作',
+  'shift.title': '音乐发现方式已然改变。',
+  'shift.subtitle': '人们不再像过去那样发现歌曲。如今，歌曲的传播依赖于反复曝光、社区认可、算法驱动的势头，以及在现有成功基础上叠加的付费推广。',
+  'shift.section': '当今制胜之道',
+  'shift.win.0': '海量的真实短视频创作',
   'shift.win.1': '跨受众群体的持续曝光',
-  'shift.win.2': '社群验证（页面、策展人、创作者）',
-  'shift.win.3': '放大正确信号的智能推广',
+  'shift.win.2': '社区认可（页面、策展人、创作者）',
+  'shift.win.3': '智能推广，放大正确信号',
 
   // ── TheProblemSlide ──
 
   // ── WhatWeDoSlide ──
-  'whatWeDo.title': '协调式分发，一套系统，而非一场赌博。',
-  'whatWeDo.section': '为您优化算法的三大支柱',
-  'whatWeDo.pillar.0.label': '数量',
-  'whatWeDo.pillar.0.desc': '用高频率的短视频内容覆盖社交平台',
-  'whatWeDo.pillar.1.label': '策展',
-  'whatWeDo.pillar.1.desc': '针对您细分领域内的真实社群进行触达',
-  'whatWeDo.pillar.2.label': '放大',
-  'whatWeDo.pillar.2.desc': '创意得到验证后，投入付费广告放大获胜内容',
+  'whatWeDo.title': '协调分发是一个系统，而非赌博。',
+  'whatWeDo.section': '三大支柱，让算法为您效力',
+  'whatWeDo.pillar.0.label': '规模',
+  'whatWeDo.pillar.0.desc': '用高速短视频内容淹没社交平台',
+  'whatWeDo.pillar.1.label': '精选',
+  'whatWeDo.pillar.1.desc': '锁定您细分领域内具有影响力的真实社区',
+  'whatWeDo.pillar.2.label': '推广',
+  'whatWeDo.pillar.2.desc': '一旦创意内容证明其价值，便通过付费推广放大热门内容',
 
   // ── HowWeWorkSlide ──
 
   // ── ClippingSlide ──
   'common.service': '服务',
-  'clipping.title': '切片分发',
-  'clipping.subtitle': '一个由超过 20,000 名在 TikTok、Instagram 和 YouTube 上创作的切片创作者组成的分发网络。',
+  'clipping.title': '剪辑分发',
+  'clipping.subtitle': '由 2,000 多名活跃于 TikTok、Instagram 和 YouTube 的剪辑师驱动的分发网络。',
   'clipping.prosTitle': '优势',
   'clipping.pros.0': '通过战略性活动简报，瞄准病毒式传播趋势',
   'clipping.pros.1': '快速响应和清晰的报告',
@@ -47,7 +47,7 @@ const zh: Record<string, string> = {
 
   // ── CreatorFloodSlide ──
   'creatorFlood.title': 'TikTok 创作者洪流',
-  'creatorFlood.subtitle': '通过至少 10,000 个来自真实 TikTok 用户生成内容（UGC）视频的帖子大规模发布您的歌曲。',
+  'creatorFlood.subtitle': '通过真实 TikTok 用户生成内容（UGC）视频，将您的曲目大规模发布至至少 10,000 条帖子中。',
   'creatorFlood.prosTitle': '优势',
   'creatorFlood.pros.0': '通过真实账号（非机器人）建立巨大的数量和算法提升',
   'creatorFlood.pros.1': '大量真实使用信号向 TikTok 表明该音频正在有机地流行起来',
@@ -62,9 +62,9 @@ const zh: Record<string, string> = {
   'creatorFlood.caseOverview': '大规模创作者激活，快速增加音频使用量。',
 
   // ── Top50TrendingSlide ──
-  'trending.title': '前 50 趋势榜',
-  'trending.titleLine2': '与热门标签页',
-  'trending.subtitle': '我们保证您的歌曲出现在 YouTube Shorts、Instagram Reels 和 Facebook Reels 的前 50 趋势榜上。',
+  'trending.title': '热门趋势与人气榜前 50 名',
+  'trending.titleLine2': '',
+  'trending.subtitle': '我们助力歌曲进入 YouTube Shorts、Instagram Reels、Facebook Reels 和 TikTok 等平台的热门榜单及趋势环境。',
   'trending.howTitle': '透明化运作方式',
   'trending.howDesc': '结合 AI 生成的海量内容与真实 UGC，优先保证数量以推动热度，直至歌曲上榜。',
   'trending.whenTitle': '适用场景',
@@ -76,7 +76,7 @@ const zh: Record<string, string> = {
 
   // ── YouTubeAdsSlide ──
   'youtube.title': 'YouTube 广告',
-  'youtube.subtitle': '国际定位与优化，在最大化触达的同时保护互动率。',
+  'youtube.subtitle': '通过国际定向和优化，在保障互动率的同时最大化覆盖范围。',
   'youtube.whatTitle': '定义',
   'youtube.what.0': '为吸引订阅者和促进长视频互动而构建的付费 YouTube 营销活动。',
   'youtube.what.1': '我们每日进行优化，并提供透明的每周报告和清晰的数据导出。',
@@ -89,7 +89,7 @@ const zh: Record<string, string> = {
 
   // ── SpotifyPlaylistingSlide ──
   'spotify.title': 'Spotify 歌单推广',
-  'spotify.subtitle': '由第三方运营、符合曲风流派的自然歌单投放，旨在促进歌曲被发现和算法推荐。',
+  'spotify.subtitle': '第三方、符合音乐流派的自然歌单收录，旨在提升内容发现率并被算法推荐。',
   'spotify.whatTitle': '定义',
   'spotify.what.0': '投放到由您曲风领域内真正品味引领者管理的精选歌单中',
   'spotify.what.1': '拥有活跃听众（他们会收藏和分享）的社群驱动型歌单',
@@ -105,7 +105,7 @@ const zh: Record<string, string> = {
 
   // ── SoundCloudRepostsSlide ──
   'soundcloud.title': 'SoundCloud 转发',
-  'soundcloud.subtitle': '跨曲风社群的已验证转发网络，提供透明的跟踪和真实的互动意图。',
+  'soundcloud.subtitle': '经认证的跨流派社区转发分发，具备透明追踪与真实互动意图。',
   'soundcloud.whatTitle': '定义',
   'soundcloud.what.0': '通过一个由拥有真实粉丝的 SoundCloud 账号组成的已验证网络分发歌曲',
   'soundcloud.what.1': '每次转发都会被跟踪和报告，完全透明',
@@ -122,7 +122,7 @@ const zh: Record<string, string> = {
 
   // ── InstagramSeedingSlide ──
   'instagram.title': 'Instagram 植入',
-  'instagram.subtitle': '通过实时仪表板跟踪，将内容投放到曲风/主题页面和模因账号中。',
+  'instagram.subtitle': '在主题页面和梗账号上进行符合音乐流派的页面投放，并通过实时仪表盘进行追踪。',
   'instagram.whatTitle': '定义',
   'instagram.what.0': '音频和视频内容被投放到一个经过筛选的 Instagram 主题页面网络中',
   'instagram.what.1': '社群页面和能驱动真实互动的模因账号',
@@ -138,7 +138,7 @@ const zh: Record<string, string> = {
 
   // ── AdditionalServicesSlide (Meta & TikTok Ads) ──
   'metaTiktok.title': 'Meta 与 TikTok 广告',
-  'metaTiktok.subtitle': '我们将已验证过的原生帖子转化为广告，以转化流媒体播放量、销量、巡演门票等。',
+  'metaTiktok.subtitle': '我们将经过验证的原生帖子转化为广告，从而促进流媒体播放、销售、巡演等转化。',
   'metaTiktok.whatTitle': '定义',
   'metaTiktok.what.0': '在 Meta（Facebook + Instagram）和 TikTok 上开展的付费社交营销活动',
   'metaTiktok.what.1': '已在有机渠道表现良好的内容，通过精准的付费分发进行放大',
@@ -153,7 +153,7 @@ const zh: Record<string, string> = {
 
   // ── PricingSlide ──
   'pricing.title': '定制化与菜单式定价',
-  'pricing.subtitle': '每个方案都围绕您的目标构建。您可以选择单项服务，或者让我们为您设计一个定制组合包。',
+  'pricing.subtitle': '每个套餐都围绕您的发行计划、受众和目标量身打造。您可以选择单项服务，或让我们为您设计定制化组合。',
   'pricing.headerService': '服务',
   'pricing.headerUnit': '计价单位',
   'pricing.headerNote': '备注',
@@ -182,11 +182,11 @@ const zh: Record<string, string> = {
   'pricing.service.7.unit': '每次活动',
   'pricing.service.7.note': 'IG 账号网络',
   'pricing.viewPricing': '查看完整定价表 →',
-  'pricing.footer': '我们将为您构建最终方案，完美贴合您的发行计划、受众和目标。',
+  'pricing.footer': '我们将根据您的发布计划、受众和目标制定最终方案。',
 
   // ── NextStepsSlide ──
   'nextSteps.title': '准备好开始了吗？',
-  'nextSteps.subtitle': '四个步骤。零摩擦。即刻启程。',
+  'nextSteps.subtitle': '四个步骤。零阻力。开始吧。',
   'nextSteps.step.0.title': '快速启动电话会议',
   'nextSteps.step.0.desc': '20 分钟',
   'nextSteps.step.1.title': '确认范围',
@@ -197,8 +197,8 @@ const zh: Record<string, string> = {
   'nextSteps.step.3.desc': '根据所选服务，24 到 72 小时内',
   'nextSteps.contactTitle': '联系方式',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.contactRedLine': '我们可以在24小时内提供推荐的付费方案。',
-  'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
+  'nextSteps.contactRedLine': '我们可在 24 小时内完成推荐付费方案的交付。',
+  'nextSteps.tagline': '技术驱动 · 文化本土化 · 即刻落地',
 
   // ── DeckViewer UI ──
   'ui.slides': '幻灯片',
@@ -311,6 +311,83 @@ const zh: Record<string, string> = {
   'spotify.tagLabel': '歌单推广',
   'soundcloud.tagLabel': '转发',
   'instagram.tagLabel': '植入',
+
+  // ── OperatingSystemSlide ──
+  'opSystem.tagline': '软件驱动 · 文化原生 · 即刻执行',
+  'opSystem.title': '我们正在构建现代音乐增长的操作系统。',
+  'opSystem.subtitle': 'Artist Influence 正从一家高绩效营销机构转型为音乐科技公司，其执行层将软件、报告基础设施、活动智能和内容分发服务整合于同一系统之下。',
+  'opSystem.pillar.0.label': '软件基础设施',
+  'opSystem.pillar.0.desc': '报告、活动追踪、工作流、实时归因、仪表盘。',
+  'opSystem.pillar.1.label': '分发引擎',
+  'opSystem.pillar.1.desc': '歌单收录、片段剪辑、转发、种子推广、付费媒体、文化渗透。',
+  'opSystem.pillar.2.label': '执行层',
+  'opSystem.pillar.2.desc': '策略、上线管理、优化、创意输入、人工监督。',
+  'opSystem.loop.inputs': '输入',
+  'opSystem.loop.engine': '引擎',
+  'opSystem.loop.reporting': '报告',
+  'opSystem.loop.learnings': '洞察',
+  'opSystem.takeaway': '大多数音乐营销仍分散在电子表格、供应商、截图和延迟更新中。我们将这些整合为一个协调统一的系统。',
+
+  // ── UnifiedOpsSlide ──
+  'unifiedOps.kicker': '产品',
+  'unifiedOps.title': '统一运营是核心。',
+  'unifiedOps.subtitle': '我们的内部软件将跨服务的活动接单、执行、报告、优化和经验总结有机连接。每个活动都会随着时间的推移变得更加智能。',
+  'unifiedOps.module.0.label': '接单与启动',
+  'unifiedOps.module.0.desc': '活动设置、目标、素材、元数据、时间线及渠道选择一站式管理。',
+  'unifiedOps.module.1.label': '实时追踪',
+  'unifiedOps.module.1.desc': '服务表现、进度、支出效率、创作者活动、帖子追踪及活动健康度。',
+  'unifiedOps.module.2.label': '报告层',
+  'unifiedOps.module.2.desc': '跨平台的实时可见性，涵盖内部运营与客户数据，支持导出、仪表盘及总结报告。',
+  'unifiedOps.module.3.label': '学习层',
+  'unifiedOps.module.3.desc': '跨活动表现信号：哪些创意效果最佳、哪些受众转化率高、哪些分发模式真正推动了销量。',
+  'unifiedOps.calloutTitle': '自学习系统',
+  'unifiedOps.calloutBody': '统一运营系统正在构建中，旨在通过真实的内部表现数据（而非凭空猜测）识别跨活动模式，并优化未来的活动发布。',
+  'unifiedOps.footer': '这就是我们如何从手动执行转向活动智能的复利增长。',
+
+  // ── CultureEditsSlide ──
+  'cultureEdits.title': '文化剪辑',
+  'cultureEdits.subtitle': '我们将歌曲置入 TikTok 上现有的高关注度剪辑生态系统中：体育、电影、动漫、名言页面、歌词页面及网络文化页面，以超越传统音乐营销的局限，提升相关性。',
+  'cultureEdits.whatTitle': '服务简介',
+  'cultureEdits.what.0': '在经过精心策划的剪辑页面中投放音乐，这些页面自带受众行为特征',
+  'cultureEdits.what.1': '专为需要文化背景而非单纯流量的歌曲打造',
+  'cultureEdits.what.2': '特别适合具有强烈情感、态度、视觉识别或经典歌词片段的歌曲',
+  'cultureEdits.whyTitle': '为何有效',
+  'cultureEdits.why.0': '在信息流中呈现自然，而非生硬的推广',
+  'cultureEdits.why.1': '将音乐引入已经大规模消费短视频剪辑的社区',
+  'cultureEdits.why.2': '创造可后续通过付费媒体、剪辑内容或创作者活动进行放大的信号',
+  'cultureEdits.bestForLabel': '最适合：',
+  'cultureEdits.bestFor': '具有鲜明视觉风格、情感冲击力、生活方式活力、体育跨界元素，或具备迷因/剪辑潜力的作品。',
+
+  // ── WebsitesSlide ──
+  'websites.title': '网站与数字基础设施',
+  'websites.subtitle': '我们还构建高转化率的艺人及品牌网站，将关注转化为行动。',
+  'websites.card.0.title': '艺人网站',
+  'websites.card.0.desc': '专为作品发布、作品目录、巡演、EPK、可视化播放器、嵌入式内容、粉丝互动及品牌叙事打造的定制网站。',
+  'websites.card.1.title': '转化基础设施',
+  'websites.card.1.desc': 'Laylo、票务系统、DSP 路由、受限访问资源、周边商品、数据分析及活动专属落地页。',
+  'websites.card.2.title': '设计 + 速度',
+  'websites.card.2.desc': '快速交付的高品质网站，兼具定制化与电影级视觉效果，且无需冗长工期。',
+  'websites.moreLabel': '已上线案例：',
+  'websites.automationLabel': '自动同步：',
+  'websites.automation': '新专辑和巡演日期自动更新。无需手动编辑。',
+  'websites.whyLabel': '核心价值：',
+  'websites.why': '许多音乐营销投入资金吸引关注，却将流量导向效果薄弱的落地页。我们构建的数字层能有效捕获并转化这些流量。',
+
+  // ── IdIdSlide ──
+  'idid.kicker': '试点服务',
+  'idid.pilotChip': 'PILOT',
+  'idid.title': 'ID.ID',
+  'idid.tagline': '一项由 DJ 驱动的音乐发现试点服务。',
+  'idid.subtitle': '我们还正在构建并试行 ID.ID：一个现场音乐激活概念，旨在帮助唱片通过 DJ 文化传播时拥有更完善的结构、更高的可见度以及播放证明。',
+  'idid.whatTitle': '功能说明',
+  'idid.what.0': '一项专注于帮助曲目在 DJ 网络和现场环境中传播的试点服务',
+  'idid.what.1': '基于以下洞察构建：俱乐部播放、DJ 支持和场景采用依然重要，但通常不透明且难以追踪',
+  'idid.what.2': '旨在提升唱片从私下支持到形成公众势头的传播可见度',
+  'idid.whyTitle': '为何重要',
+  'idid.why.0': '将数字增长与现实世界的 DJ 生态系统行为相连接',
+  'idid.why.1': '为更具可衡量性的现场场景发现开辟道路',
+  'idid.why.2': '体现了 Artist Influence 如何超越传统经纪服务，构建新的音乐基础设施',
+  'idid.bottomNote': 'ID.ID 是我们更广泛理论的一部分：音乐增长的未来将属于那些将软件、文化和分销整合为一个系统的公司。',
 };
 
 export default zh;
