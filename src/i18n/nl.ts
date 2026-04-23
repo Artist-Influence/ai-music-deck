@@ -126,7 +126,7 @@ const nl: Record<string, string> = {
   'instagram.subtitle': 'Genre-afgestemde paginaplaatsingen op genre-/themapagina\'s en meme-accounts met tracking via live dashboard.',
   'instagram.whatTitle': 'Wat het is',
   'instagram.what.0': 'Audio- en video-content verspreid via een samengesteld netwerk van Instagram-themapagina\'s',
-  'instagram.what.1': 'EDM community-pagina\'s en meme-accounts die echte engagement stimuleren',
+  'instagram.what.1': 'Community-pagina\'s en meme-accounts die echte engagement stimuleren',
   'instagram.what.2': 'Gericht op uw specifieke doelgroep binnen het genre',
   'instagram.whyTitle': 'Waarom het werkt',
   'instagram.why.0': 'Themapagina\'s en meme-accounts hebben ingebouwde doelgroepen die actief betrokken zijn',

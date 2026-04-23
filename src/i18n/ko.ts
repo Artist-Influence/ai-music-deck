@@ -126,7 +126,7 @@ const ko: Record<string, string> = {
   'instagram.subtitle': '장르/테마 페이지 및 밈 계정을 통한 장르별 페이지 배치, 실시간 대시보드를 통한 추적.',
   'instagram.whatTitle': '무엇인가요?',
   'instagram.what.0': '큐레이팅된 인스타그램 테마 페이지 네트워크를 통해 시딩되는 오디오 및 비디오 콘텐츠',
-  'instagram.what.1': '실제 참여를 유도하는 EDM 커뮤니티 페이지 및 밈 계정',
+  'instagram.what.1': '실제 참여를 유도하는 커뮤니티 페이지 및 밈 계정',
   'instagram.what.2': '장르 내 특정 잠재 고객에게 타겟팅됨',
   'instagram.whyTitle': '작동 원리',
   'instagram.why.0': '테마 페이지와 밈 계정은 활발하게 참여하는 내장된 잠재 고객을 보유하고 있습니다.',

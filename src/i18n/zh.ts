@@ -149,7 +149,7 @@ const zh: Record<string, string> = {
   'instagram.subtitle': '通过实时仪表板跟踪，将内容投放到曲风/主题页面和模因账号中。',
   'instagram.whatTitle': '定义',
   'instagram.what.0': '音频和视频内容被投放到一个经过筛选的 Instagram 主题页面网络中',
-  'instagram.what.1': '电子舞曲（EDM）社群页面和能驱动真实互动的模因账号',
+  'instagram.what.1': '社群页面和能驱动真实互动的模因账号',
   'instagram.what.2': '精准定位您曲风领域内的特定受众',
   'instagram.whyTitle': '为何有效',
   'instagram.why.0': '主题页面和模因账号拥有已建立好的、会积极互动的受众群体',

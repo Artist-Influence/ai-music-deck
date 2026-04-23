@@ -126,7 +126,7 @@ const es: Record<string, string> = {
   'instagram.subtitle': 'Colocaciones de páginas alineadas con el género en páginas temáticas y de memes con seguimiento a través de un panel en vivo.',
   'instagram.whatTitle': 'Qué es',
   'instagram.what.0': 'Contenido de audio y video sembrado a través de una red curada de páginas temáticas de Instagram',
-  'instagram.what.1': 'Páginas de la comunidad EDM y cuentas de memes que generan un compromiso real',
+  'instagram.what.1': 'Páginas de la comunidad y cuentas de memes que generan un compromiso real',
   'instagram.what.2': 'Dirigido a tu audiencia específica dentro del género',
   'instagram.whyTitle': 'Por qué funciona',
   'instagram.why.0': 'Las páginas temáticas y las cuentas de memes tienen audiencias integradas que interactúan activamente',

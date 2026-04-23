@@ -153,7 +153,7 @@ const en: Record<string, string> = {
   'instagram.subtitle': 'Genre-aligned page placements across genre/theme pages and meme accounts with tracking via live dashboard.',
   'instagram.whatTitle': 'What it is',
   'instagram.what.0': 'Audio and video content seeded across a curated network of Instagram theme pages',
-  'instagram.what.1': 'EDM community pages and meme accounts that drive real engagement',
+  'instagram.what.1': 'Community pages and meme accounts that drive real engagement',
   'instagram.what.2': 'Targeted to your specific audience within the genre',
   'instagram.whyTitle': 'Why it works',
   'instagram.why.0': 'Theme pages and meme accounts have built-in audiences that actively engage',

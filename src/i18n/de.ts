@@ -126,7 +126,7 @@ const de: Record<string, string> = {
   'instagram.subtitle': 'Genre-bezogene Seitenplatzierungen auf Genre-/Themen-Seiten und Meme-Accounts mit Tracking über ein Live-Dashboard.',
   'instagram.whatTitle': 'Was es ist',
   'instagram.what.0': 'Audio- und Videoinhalte, die in einem kuratierten Netzwerk von Instagram-Themenseiten verbreitet werden',
-  'instagram.what.1': 'EDM-Community-Seiten und Meme-Accounts, die echtes Engagement fördern',
+  'instagram.what.1': 'Community-Seiten und Meme-Accounts, die echtes Engagement fördern',
   'instagram.what.2': 'Gezielt auf Ihre spezielle Zielgruppe innerhalb des Genres abgestimmt',
   'instagram.whyTitle': 'Warum es funktioniert',
   'instagram.why.0': 'Themenseiten und Memeseiten haben integrierte Zielgruppen, die aktiv interagieren.',
