@@ -408,6 +408,7 @@ const en: Record<string, string> = {
   'websites.card.1.desc': 'Laylo, ticketing, DSP routing, gated assets, merch, analytics, and campaign-specific landing pages.',
   'websites.card.2.title': 'Design + Speed',
   'websites.card.2.desc': 'Fast-turn, premium builds that look custom and cinematic without bloated timeframes.',
+  'websites.liveLabel': 'Live sites:',
   'websites.whyLabel': 'Why it matters:',
   'websites.why': 'A lot of music marketing spends money to generate attention, then sends that attention to weak destinations. We build the digital layer that captures and converts it properly.',
 
