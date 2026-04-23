@@ -126,7 +126,7 @@ const ko: Record<string, string> = {
   'metaTiktok.case1Desc': '조회수에만 중점을 둔 24시간 브랜드 인지도 캠페인.',
   'metaTiktok.case2Desc': 'Laylo를 통해 SMS 가입을 수집하는 다단계 캠페인. 6개의 동시 도시 타겟 캠페인에 걸쳐 100개 이상의 크리에이티브.',
   'pricing.title': '맞춤형 & 개별 가격',
-  'pricing.subtitle': '모든 패키지는 당신의 목표를 중심으로 구성됩니다. 개별 서비스를 선택하거나, 맞춤형 번들 디자인을 저희에게 맡기세요.',
+  'pricing.subtitle': '모든 패키지는 귀하의 발매 일정, 청중, 목표를 중심으로 구성됩니다. 개별 서비스를 선택하거나, 저희가 맞춤형 번들을 설계해 드리겠습니다.',
   'pricing.headerService': '서비스',
   'pricing.headerUnit': '단위',
   'pricing.headerNote': '참고',
