@@ -138,7 +138,7 @@ const zh: Record<string, string> = {
 
   // ── AdditionalServicesSlide (Meta & TikTok Ads) ──
   'metaTiktok.title': 'Meta 与 TikTok 广告',
-  'metaTiktok.subtitle': '我们将已验证过的原生帖子转化为广告，以转化流媒体播放量、销量、巡演门票等。',
+  'metaTiktok.subtitle': '我们将经过验证的原生帖子转化为广告，从而促进流媒体播放、销售、巡演等转化。',
   'metaTiktok.whatTitle': '定义',
   'metaTiktok.what.0': '在 Meta（Facebook + Instagram）和 TikTok 上开展的付费社交营销活动',
   'metaTiktok.what.1': '已在有机渠道表现良好的内容，通过精准的付费分发进行放大',
