@@ -59,7 +59,7 @@ const ko: Record<string, string> = {
   'trending.timeframe': '기간: 2~3주',
   'trending.caseStudy': '사례 연구',
   'youtube.title': 'YouTube 광고',
-  'youtube.subtitle': '참여율을 보호하면서 도달 범위를 극대화하기 위한 국제 타겟팅 + 최적화.',
+  'youtube.subtitle': '참여율을 유지하면서 도달 범위를 극대화하기 위한 글로벌 타겟팅 및 최적화.',
   'youtube.whatTitle': '무엇인가요?',
   'youtube.what.0': '구독자 및 장기 참여를 위해 제작된 유료 YouTube 캠페인',
   'youtube.what.1': '투명한 주간 보고 및 깨끗한 데이터 내보내기로 매일 최적화합니다.',
