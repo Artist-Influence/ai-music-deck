@@ -99,7 +99,7 @@ const ko: Record<string, string> = {
   'soundcloud.mobileSummary.1': '초기 참여 신호는 유기적 재생, 좋아요 및 팔로우로 복합적으로 작용합니다.',
   'soundcloud.mobileSummary.2': '2,500만 명 이상의 팔로워 도달 · 기간: 2~8주',
   'instagram.title': '인스타그램 시딩',
-  'instagram.subtitle': '장르/테마 페이지 및 밈 계정을 통한 장르별 페이지 배치, 실시간 대시보드를 통한 추적.',
+  'instagram.subtitle': '테마 페이지 및 밈 계정에 장르에 맞춰 콘텐츠를 배치하고, 실시간 대시보드를 통해 추적합니다.',
   'instagram.whatTitle': '무엇인가요?',
   'instagram.what.0': '큐레이팅된 인스타그램 테마 페이지 네트워크를 통해 시딩되는 오디오 및 비디오 콘텐츠',
   'instagram.what.1': '실제 참여를 유도하는 커뮤니티 페이지 및 밈 계정',
