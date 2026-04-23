@@ -16,13 +16,6 @@ const en: Record<string, string> = {
   'shift.win.2': 'Community validation (pages, curators, creators)',
   'shift.win.3': 'Smart amplification that boosts the right signals',
 
-  // ── TheProblemSlide ──
-  'problem.title': 'Problem: Music marketing is mostly manual.',
-  'problem.section': 'Why this is an issue:',
-  'problem.item.0': 'Most music marketing is still fragmented across disconnected vendors and platforms',
-  'problem.item.1': 'Reporting is delayed, inconsistent, or too manual to act on quickly',
-  'problem.item.2': 'Teams spend money without a unified system for feedback, optimization, or learning',
-
   // ── WhatWeDoSlide ──
   'whatWeDo.title': 'Coordinated distribution as a system, not a gamble.',
   'whatWeDo.section': 'Three pillars that work the algorithm for you',
@@ -33,32 +26,10 @@ const en: Record<string, string> = {
   'whatWeDo.pillar.2.label': 'Amplification',
   'whatWeDo.pillar.2.desc': 'Amplify winners with paid spend once the creative proves itself',
 
-  // ── HowWeWorkSlide ──
-  'howWeWork.title': 'Our End-to-End Process',
-  'howWeWork.subtitle': 'An industry expert will craft a customized campaign plan tailored to your specific needs',
-  'howWeWork.step.0.title': 'Proposal',
-  'howWeWork.step.0.desc': 'We send over a proposal to align on goals, audience, assets, and guardrails.',
-  'howWeWork.step.1.title': 'Launch',
-  'howWeWork.step.1.desc': 'We activate the chosen services with tight execution and clear timelines.',
-  'howWeWork.step.2.title': 'Optimize',
-  'howWeWork.step.2.desc': "We analyze what's working, cut what isn't, and keep results growing.",
-  'howWeWork.step.3.title': 'Report',
-  'howWeWork.step.3.desc': 'Weekly updates, final recap, and reusable learnings for the next campaign.',
-  'howWeWork.reportingTitle': 'Reporting includes',
-  'howWeWork.reporting.0': "What launched, what's live, what's next",
-  'howWeWork.reporting.1': 'Top creatives, winning patterns, next-release recs',
-  'howWeWork.reporting.2': 'Platform metrics, results by service, top angles',
-  'howWeWork.needTitle': 'We need from you',
-  'howWeWork.need.0': 'Audio links, clean metadata, and posting handles',
-  'howWeWork.need.1': 'Any brand safety rules or hard "no" topics',
-  'howWeWork.need.2': 'A clear primary goal per campaign',
-  'howWeWork.disclaimer': 'What not to expect: unrealistic, always-viral results. This is an amplifier, not a multiplier — results require testing and iteration.',
-  'howWeWork.feedbackLine': 'Every launch, optimization cycle, and report feeds back into our internal system so future campaigns can improve.',
-
   // ── ClippingSlide ──
   'common.service': 'Service',
   'clipping.title': 'Clipping Distribution',
-  'clipping.subtitle': 'A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and Youtube.',
+  'clipping.subtitle': 'A distribution network powered by 2,000+ clippers creating across TikTok, Instagram, and YouTube.',
   'clipping.prosTitle': 'Pros',
   'clipping.pros.0': 'Target viral trends with a strategic campaign brief',
   'clipping.pros.1': 'Fast velocity and clear reporting',
@@ -92,7 +63,7 @@ const en: Record<string, string> = {
   // ── Top50TrendingSlide ──
   'trending.title': 'Top 50 Trending',
   'trending.titleLine2': '& Popular Tab',
-  'trending.subtitle': 'We guarantee your track appears on Top 50 trending charts across YouTube Shorts, Instagram Reels, and Facebook Reels.',
+  'trending.subtitle': 'We help push records into visible chart and trending environments across YouTube Shorts, Instagram Reels, Facebook Reels, and TikTok.',
   'trending.howTitle': "How it's done (transparently)",
   'trending.howDesc': 'A hybrid of AI-generated quantity content plus real UGC, with quantity prioritized over quality to push traction until the track charts.',
   'trending.whenTitle': 'When to use',
@@ -104,7 +75,7 @@ const en: Record<string, string> = {
 
   // ── YouTubeAdsSlide ──
   'youtube.title': 'YouTube Advertising',
-  'youtube.subtitle': 'International targeting + optimization to maximize reach while protecting engagement ratios.',
+  'youtube.subtitle': 'International targeting and optimization to maximize reach while protecting engagement ratios.',
   'youtube.whatTitle': 'What it is',
   'youtube.what.0': 'Paid YouTube campaigns built for subscribers and long-form engagement',
   'youtube.what.1': 'We optimize daily with transparent weekly reporting and clean data exports',
@@ -133,7 +104,7 @@ const en: Record<string, string> = {
 
   // ── SoundCloudRepostsSlide ──
   'soundcloud.title': 'SoundCloud Reposts',
-  'soundcloud.subtitle': 'Verified repost network across genre communities with transparent tracking and real engagement intent.',
+  'soundcloud.subtitle': 'Verified repost distribution across genre communities with transparent tracking and real engagement intent.',
   'soundcloud.whatTitle': 'What it is',
   'soundcloud.what.0': 'Tracks distributed through a verified network of SoundCloud accounts with real followers',
   'soundcloud.what.1': 'Each repost is tracked and reported with full transparency',
@@ -150,7 +121,7 @@ const en: Record<string, string> = {
 
   // ── InstagramSeedingSlide ──
   'instagram.title': 'Instagram Seeding',
-  'instagram.subtitle': 'Genre-aligned page placements across genre/theme pages and meme accounts with tracking via live dashboard.',
+  'instagram.subtitle': 'Genre-aligned page placements across theme pages and meme accounts with tracking via live dashboard.',
   'instagram.whatTitle': 'What it is',
   'instagram.what.0': 'Audio and video content seeded across a curated network of Instagram theme pages',
   'instagram.what.1': 'Community pages and meme accounts that drive real engagement',
@@ -166,7 +137,7 @@ const en: Record<string, string> = {
 
   // ── AdditionalServicesSlide (Meta & TikTok Ads) ──
   'metaTiktok.title': 'Meta & TikTok Ads',
-  'metaTiktok.subtitle': 'We turn proven native posts into ads to convert streams, sales, touring, and more.',
+  'metaTiktok.subtitle': 'We turn proven native posts into ads that convert streams, sales, touring, and more.',
   'metaTiktok.whatTitle': 'What it is',
   'metaTiktok.what.0': 'Paid social campaigns across Meta (Facebook + Instagram) and TikTok',
   'metaTiktok.what.1': "Content that's already performing organically gets amplified with targeted paid distribution",
@@ -181,7 +152,7 @@ const en: Record<string, string> = {
 
   // ── PricingSlide ──
   'pricing.title': 'Customized & A La Carte Pricing',
-  'pricing.subtitle': 'Every package is built around your goals. Pick individual services, or let us design a custom bundle.',
+  'pricing.subtitle': 'Every package is built around your release schedule, audience, and goals. Pick individual services, or let us design a custom bundle.',
   'pricing.headerService': 'Service',
   'pricing.headerUnit': 'Unit',
   'pricing.headerNote': 'Note',
@@ -210,7 +181,7 @@ const en: Record<string, string> = {
   'pricing.service.7.unit': 'Per campaign',
   'pricing.service.7.note': 'IG account network',
   'pricing.viewPricing': 'View full pricing sheet →',
-  'pricing.footer': "We'll build the final package, tailored to your release schedule, audience, and goals.",
+  'pricing.footer': 'We build the final package around your release schedule, audience, and goals.',
 
   // ── NextStepsSlide ──
   'nextSteps.title': 'Ready to start?',
@@ -225,8 +196,8 @@ const en: Record<string, string> = {
   'nextSteps.step.3.desc': 'Within 24 to 72 hours depending on services',
   'nextSteps.contactTitle': 'Contact Us',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.quote': '"We can turn around a recommended plan within 24 hours."',
-  'nextSteps.tagline': 'The growth system for modern music',
+  'nextSteps.contactRedLine': 'We can turn around recommended paid plans within 24 hours.',
+  'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
 
   // ── DeckViewer UI ──
   'ui.slides': 'Slides',
