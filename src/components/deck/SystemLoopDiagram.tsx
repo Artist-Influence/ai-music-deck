@@ -19,10 +19,10 @@ const defaultLabels = {
 
 const SystemLoopDiagram = ({ className, labels = defaultLabels }: SystemLoopDiagramProps) => {
   const nodes = [
-    { x: 200, y: 60, label: labels.inputs },
-    { x: 340, y: 200, label: labels.engine, primary: true },
-    { x: 200, y: 340, label: labels.reporting },
-    { x: 60, y: 200, label: labels.learnings },
+    { x: 200, y: 50, label: labels.inputs },
+    { x: 350, y: 200, label: labels.engine, primary: true },
+    { x: 200, y: 350, label: labels.reporting },
+    { x: 50, y: 200, label: labels.learnings },
   ];
 
   return (
@@ -42,7 +42,7 @@ const SystemLoopDiagram = ({ className, labels = defaultLabels }: SystemLoopDiag
       </defs>
 
       {/* Outer ring */}
-      <circle cx="200" cy="200" r="170" fill="none" stroke="url(#loopRing)" strokeWidth="0.6" strokeDasharray="3 4" opacity="0.4" />
+      <circle cx="200" cy="200" r="158" fill="none" stroke="url(#loopRing)" strokeWidth="0.6" strokeDasharray="3 4" opacity="0.4" />
 
       {/* Connecting arcs */}
       {nodes.map((n, i) => {
@@ -80,19 +80,19 @@ const SystemLoopDiagram = ({ className, labels = defaultLabels }: SystemLoopDiag
       {/* Nodes */}
       {nodes.map((n, i) => (
         <g key={`node-${i}`}>
-          <circle cx={n.x} cy={n.y} r={n.primary ? 32 : 26}
+          <circle cx={n.x} cy={n.y} r={n.primary ? 44 : 40}
             fill="hsl(var(--background))"
             stroke="hsl(var(--primary))"
             strokeWidth={n.primary ? 1.4 : 0.9}
             strokeOpacity={n.primary ? 0.7 : 0.4}
             filter="url(#loopGlow)" />
-          <circle cx={n.x} cy={n.y} r={n.primary ? 32 : 26}
+          <circle cx={n.x} cy={n.y} r={n.primary ? 44 : 40}
             fill="hsl(var(--primary))"
             fillOpacity={n.primary ? 0.12 : 0.06} />
           <text x={n.x} y={n.y + 4} textAnchor="middle"
-            fontSize="10" fontWeight="600"
-            fill="hsl(var(--foreground))" fillOpacity="0.85">
-            {n.label.length > 14 ? n.label.slice(0, 12) + '…' : n.label}
+            fontSize="12" fontWeight="700"
+            fill="hsl(var(--foreground))" fillOpacity="0.92">
+            {n.label}
           </text>
         </g>
       ))}
