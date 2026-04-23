@@ -182,7 +182,7 @@ const zh: Record<string, string> = {
   'pricing.service.7.unit': '每次活动',
   'pricing.service.7.note': 'IG 账号网络',
   'pricing.viewPricing': '查看完整定价表 →',
-  'pricing.footer': '我们将为您构建最终方案，完美贴合您的发行计划、受众和目标。',
+  'pricing.footer': '我们将根据您的发布计划、受众和目标制定最终方案。',
 
   // ── NextStepsSlide ──
   'nextSteps.title': '准备好开始了吗？',
