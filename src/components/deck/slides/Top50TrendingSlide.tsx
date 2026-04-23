@@ -69,7 +69,7 @@ const Top50TrendingSlide = () => {
               </div>
 
               <div className="hidden md:flex flex-1 items-center">
-                <img src={mlShorts} alt="YouTube Shorts, Canada Trending" className="w-full rounded-lg" />
+                <img src={mlShorts} alt="YouTube Shorts, Canada Trending" loading="eager" decoding="sync" className="w-full rounded-lg" />
               </div>
             </div>
           </GlassPanel>
