@@ -29,8 +29,8 @@ const zh: Record<string, string> = {
 
   // ── ClippingSlide ──
   'common.service': '服务',
-  'clipping.title': '切片分发',
-  'clipping.subtitle': '一个由超过 20,000 名在 TikTok、Instagram 和 YouTube 上创作的切片创作者组成的分发网络。',
+  'clipping.title': '剪辑分发',
+  'clipping.subtitle': '由 2,000 多名活跃于 TikTok、Instagram 和 YouTube 的剪辑师驱动的分发网络。',
   'clipping.prosTitle': '优势',
   'clipping.pros.0': '通过战略性活动简报，瞄准病毒式传播趋势',
   'clipping.pros.1': '快速响应和清晰的报告',
