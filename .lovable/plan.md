@@ -1,73 +1,41 @@
 
 
-# Reposition the Deck as a Music Tech Company
+# Fix Slide 2, 3, and 11 polish issues
 
-## What you'll see
-The deck transforms from a services overview into a **product + infrastructure narrative** with an execution layer underneath. Six new slides are added (and two existing ones lightly rewritten) so the story arc becomes:
+## Slide 2 — Operating System (`SystemLoopDiagram.tsx` + `en.ts`)
+- Shorten the engine label from "Campaign Engine" to **"Engine"** (key `opSystem.loop.engine`) so it fits inside the bubble without truncation.
+- Make all 4 bubbles bigger so labels breathe:
+  - Primary node radius: `32 → 44`
+  - Secondary nodes radius: `26 → 40`
+  - Bump label `fontSize` from `10 → 12`, increase font weight visibility
+  - Remove the `slice(0, 12) + '…'` truncation now that bubbles are larger
+  - Slightly nudge node positions outward so larger bubbles don't overlap the central engine pulse (move the 4 outer nodes from inset 60 to inset 40, e.g. inputs `y: 60 → 50`, engine `x: 340 → 350`, reporting `y: 340 → 350`, learnings `x: 60 → 50`); reduce outer ring `r` to keep visual balance.
+- Shorten the Software Infrastructure pillar description to a single line: **"Unified ops, reporting, campaign tracking, workflows, attribution, dashboards."** (key `opSystem.pillar.0.desc`)
 
-```text
-Cover
-  → Operating System (vision)         NEW
-  → Unified Ops (the product)         NEW
-  → Why This Matters (impact)         NEW
-  → Music Discovery Has Changed       (revised)
-  → The Problem                       (revised)
-  → What We Do (3 pillars)
-  → How We Work (+ Unified Ops loop line)
-  → Clipping
-  → Creator Flood
-  → Top 50 Trending
-  → Culture Edits                     NEW
-  → YouTube Ads
-  → Spotify Playlisting
-  → SoundCloud Reposts
-  → Instagram Seeding
-  → Meta & TikTok Ads
-  → Websites & Digital Infrastructure NEW
-  → ID.ID (pilot / vision)            NEW
-  → Pricing
-  → Not Just Campaigns. Infrastructure. NEW
-  → Next Steps
-```
+## Slide 3 — Unified Ops (`UnifiedOpsSlide.tsx`)
+- Remove the background `<DashboardMockTile>` from each of the 4 module cards (Intake & Launch, Live Tracking, Reporting Layer, Learning Layer).
+- Remove the dark gradient overlay that was only there to keep text readable above the mock.
+- Cards become clean `GlassPanel variant="bright"` with just the icon, number, label, and description — matching the deck's standard service-card aesthetic.
+- The `DashboardMockTiles` component itself stays in the codebase (no other slides use it; safe to leave for now).
 
-Final deck: **22 slides** (was 15).
+## Slide 11 — Top 50 Trending (`Top50TrendingSlide.tsx`)
+The right-side case study panel currently squeezes 6 metric tiles in a tight column next to a too-wide image, making spacing look cramped/uneven.
+- Rebalance the right-column inner layout:
+  - Change `flex-1 / flex-1` split to give the image more breathing room: metrics column `flex-[0.9]`, image column `flex-1`.
+  - Increase gap between metrics and image: `md:gap-6 → md:gap-8`.
+  - Add consistent vertical rhythm to metric tiles: `gap-2 md:gap-4 → md:gap-3`, set tile padding to `md:p-4` (currently `md:p-5` — too tall, causing the column to overflow visually).
+  - Center the image vertically and constrain its max width so it sits cleanly: wrap `<img>` with `max-w-[420px] mx-auto`, add `object-contain`.
+  - Increase outer panel padding `md:p-5 → md:p-7` for breathing room around the whole case study block.
+  - Tighten the title/subtitle margin so the grid + image row gets more vertical space (`mb-2 md:mb-4 → md:mb-3`).
 
-## New slide designs (all match existing dark + crimson glow system)
-
-**1. Operating System** — Two-column layout. Left: 3 pillar cards (Software Infrastructure, Distribution Engine, Execution Layer) using `GlassPanel variant="bright"` with crimson icon chips. Right: an animated SVG **system loop diagram** (Inputs → Campaign Engine → Reporting/Attribution → Learnings → loop back) with pulsing connectors in primary red. Bottom: full-width takeaway in subtle glass strip. Tagline chip: *"Software-backed. Culture-native. Execution-ready."*
-
-**2. Unified Ops** — Product-feeling slide. 4 horizontal module cards (Intake & Launch, Live Tracking, Reporting Layer, Learning Layer) each with a small **mock dashboard widget** in the background (sparkline, status pills, mini table rows) rendered in SVG at low opacity. Highlighted callout box for "Self-learning system." Footer line in muted text.
-
-**3. Why This Matters** — Clean 3-column layout (For clients / For campaigns / For the future). Each column is a tall `GlassPanel` with a single crimson accent line at top. Bottom strip with the closing two-line statement, primary-tinted.
-
-**4. Culture Edits** — Service slide template (matches Clipping/Spotify pattern). Left column "What it is", right column "Why it works", bottom "Best for" strip. Background: subtle 4×3 collage grid of dark mock edit-tile rectangles with category labels (sports, anime, lyric, meme) at low opacity — no real images, all SVG/CSS.
-
-**5. Websites & Digital Infrastructure** — 3-card layout (Artist Websites / Conversion Infrastructure / Design + Speed). Each card includes a small **wireframe mockup SVG** (desktop frame, mobile frame, browser chrome). Bottom "Why it matters" strip in subtle glass.
-
-**6. ID.ID** — Forward-looking, slightly different feel. Two-column. Left: "What it is" card. Right: "Why it matters" card. Centered crimson glow accent behind the title. Bottom note in italic muted text. Small "PILOT" chip in the corner.
-
-**7. Not Just Campaigns. Infrastructure.** — Statement slide. Centered headline at large scale, subhead below. Subtle network background. Acts as a closing pivot before CTA.
-
-## Existing slide updates
-
-- **TheShiftSlide** copy revised (subtitle becomes the "repeated exposure, community validation, algorithmic momentum…" line).
-- **TheProblemSlide** three pain points rewritten to the fragmentation/reporting/feedback-loop framing.
-- **HowWeWorkSlide** adds one line near the bottom: *"Every launch, optimization cycle, and report feeds back into our internal system so future campaigns can improve."*
-
-## Technical approach
-
-- New components: `OperatingSystemSlide.tsx`, `UnifiedOpsSlide.tsx`, `WhyThisMattersSlide.tsx`, `CultureEditsSlide.tsx`, `WebsitesSlide.tsx`, `IdIdSlide.tsx`, `InfrastructureStatementSlide.tsx` in `src/components/deck/slides/`.
-- Two new tiny SVG components: `SystemLoopDiagram.tsx` (for Operating System slide) and `DashboardMockTiles.tsx` (reusable mock widgets for Unified Ops). Both pure SVG, no dependencies, follow the same animation language as the existing `HubDiagram` / phone visual.
-- All copy added to `src/i18n/en.ts` under new namespaces (`opSystem.*`, `unifiedOps.*`, `whyMatters.*`, `cultureEdits.*`, `websites.*`, `idid.*`, `infraStatement.*`) plus the revised `shift.subtitle`, `problem.item.*`, and a new `howWeWork.feedbackLine`.
-- The other 8 locale files (`es, pt, ko, ja, zh, nl, de, fr`) get the same new keys with **English values as fallback** so nothing breaks immediately. The existing fallback in `LanguageContext` (line 37) already handles missing keys, so this is safe — but populating them keeps the structure consistent.
-- `slides/index.tsx` updated with the new ordered array (22 slides).
-- All new slides use existing `GlassPanel`, `NetworkVisual`, primary tokens — no new design tokens, no new dependencies.
-- Mobile: each new slide follows the existing pattern (`min-h-dvh`, vertical stack, scaled-down typography) per the Mobile Responsiveness memory.
-- PDF export already auto-handles new slides since it iterates `slides.length`.
+## Files changed
+- `src/components/deck/SystemLoopDiagram.tsx` — bigger nodes, larger font, no truncation, repositioned nodes.
+- `src/i18n/en.ts` — `opSystem.loop.engine` → "Engine"; `opSystem.pillar.0.desc` shortened to one line.
+- `src/components/deck/slides/UnifiedOpsSlide.tsx` — remove mock background tiles + gradient overlay from module cards.
+- `src/components/deck/slides/Top50TrendingSlide.tsx` — rebalance metric/image columns, padding, gaps, image sizing.
 
 ## Out of scope
-- Translating the new copy into the 8 non-English locales (English fallback handles display; translation is a follow-up task if needed).
-- Building real working dashboard product UI — Unified Ops mocks are visual only.
-- Reworking the existing service slide visualizers.
-- Changing pricing / contact slides.
+- Other locale files (English fallback handles them; "Engine" is short enough to translate naturally later).
+- Redesigning the case study layout beyond spacing fixes.
+- Touching the `DashboardMockTiles.tsx` component itself.
 
