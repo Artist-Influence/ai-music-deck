@@ -1,89 +1,114 @@
 
 
-# Add clickable website references to Slide 18 (Websites & Digital Infrastructure)
+# Fix Websites slide: distribute live links per-card, add automation line, update subtitle
 
-## What you'll see
-Below the three thumbnail cards (and above the "Why" panel), a new horizontal row of **five small clickable site links** appears, styled as subtle pill chips. Each chip shows the artist name and the domain, and opens the live site in a new tab.
+## Three issues fixed
 
-Visual:
+1. **Duplication bug** — the "Live sites:" chip row was accidentally nested **inside** `cards.map()` (between the thumbnail and the title), so it rendered 3× (once per card). Move it out.
+2. **Subtitle copy** — "music brand" → "brand".
+3. **Add automation line** — short callout that sites can auto-update with new releases / tour dates (no manual work).
+
+## New layout for live links
+
+Instead of one shared row of 5 chips, **attach each link to the card it represents**, and put the two artists without thumbnails (Kluster Flux, Luhv) into a small "More live builds:" line under the cards. This kills the duplication, ties links to their visuals, and looks tighter.
+
+Per-card link chip (rendered once inside each card, below the description, using a new `liveUrl` + `liveLabel` field on `cardConfig`):
 
 ```text
-[ Kompany · kompanymusic.com ]  [ Levity · levityofficial.com ]  [ Kluster Flux · klusterflux.com ]  [ ID.ID · id-id.artistinfluence.com ]  [ Luhv · luhv.la ]
+┌──────────────── Pierce thumbnail ────────────────┐
+│  [icon] Artist Websites                         │
+│  Custom sites for releases, catalogs…           │
+│  ↗ id-id.artistinfluence.com                     │
+└──────────────────────────────────────────────────┘
 ```
 
-- Chip style: rounded-full, subtle border (`border-primary/20`), `bg-background/40`, small ExternalLink icon, hover lifts to `border-primary/50` + `text-primary`.
-- Wraps to multiple rows on mobile; single row on desktop.
-- Sits in a labeled strip: "Live sites:" prefix in muted text, then the chips.
+Card → link mapping:
+- **Card 0 (Pierce thumbnail / Artist Websites)** → `id-id.artistinfluence.com` (ID.ID — Pierce is part of the ID.ID umbrella visual)
+- **Card 1 (Kompany thumbnail / Conversion Infrastructure)** → `kompanymusic.com`
+- **Card 2 (Levity thumbnail / Design + Speed)** → `levityofficial.com`
 
-## Why this placement
-- The three thumbnail cards already showcase Pierce, Kompany, Levity visually — adding domain text inside each card would clutter the screenshots.
-- A dedicated "Live sites" row makes it obvious these are real, browsable references and includes the two artists (Kluster Flux, ID.ID, Luhv) we don't have thumbnails for.
-- Slots cleanly between the cards grid and the "Why" panel without disrupting the existing 1920×1080 layout — just one extra compact row (~40px).
+Below the cards row, a single compact line for the remaining two:
+```text
+More live builds:  ↗ klusterflux.com   ↗ luhv.la
+```
 
-## Implementation
+## Automation callout
 
-**File: `src/components/deck/slides/WebsitesSlide.tsx`**
+Add a small inline pill above the "Why it matters" panel:
 
-1. Add `ExternalLink` to the lucide-react import.
-2. Define a `siteLinks` array (component-level constant — these are proper nouns / URLs, no i18n needed):
+```text
+⚡ Auto-syncing — new releases and tour dates update themselves. No manual edits.
+```
+
+Style: subtle border, primary-tinted icon, single line on desktop, wraps on mobile. Uses the existing `Zap` icon (already imported).
+
+## Implementation — `src/components/deck/slides/WebsitesSlide.tsx`
+
+1. **Restructure `cardConfig`** — add `liveUrl` + `liveLabel` per entry:
    ```tsx
-   const siteLinks = [
-     { name: 'Kompany',     url: 'https://kompanymusic.com' },
-     { name: 'Levity',      url: 'https://levityofficial.com' },
-     { name: 'Kluster Flux',url: 'https://klusterflux.com' },
-     { name: 'ID.ID',       url: 'https://id-id.artistinfluence.com' },
-     { name: 'Luhv',        url: 'https://luhv.la' },
+   const cardConfig = [
+     { icon: Globe, image: pierceImg, alt: 'Pierce — artist site',
+       liveUrl: 'https://id-id.artistinfluence.com', liveLabel: 'id-id.artistinfluence.com' },
+     { icon: Layers, image: kompanyImg, alt: 'Kompany — artist site',
+       liveUrl: 'https://kompanymusic.com', liveLabel: 'kompanymusic.com' },
+     { icon: Zap, image: levityImg, alt: 'Levity — artist site',
+       liveUrl: 'https://levityofficial.com', liveLabel: 'levityofficial.com' },
+   ];
+   const extraLinks = [
+     { name: 'Kluster Flux', url: 'https://klusterflux.com', label: 'klusterflux.com' },
+     { name: 'Luhv',         url: 'https://luhv.la',         label: 'luhv.la' },
    ];
    ```
-3. Insert a new block between the cards `grid` and the "Why" `GlassPanel`:
+
+2. **Delete the misplaced chip block** currently sitting inside `cards.map()` (lines 54–74 of current file).
+
+3. **Inside each card**, after the description, render a single link:
    ```tsx
-   <div className="flex flex-wrap items-center gap-2 md:gap-2.5 mb-3 md:mb-5">
-     <span className="text-[11px] md:text-sm text-muted-foreground uppercase tracking-wider mr-1">
-       {t('websites.liveLabel')}
+   <a href={c.liveUrl} target="_blank" rel="noopener noreferrer"
+      className="mt-2 md:mt-3 inline-flex items-center gap-1.5 text-[11px] md:text-sm
+                 text-primary/85 hover:text-primary transition-colors">
+     <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5" />
+     <span className="underline decoration-primary/30 hover:decoration-primary">
+       {c.liveLabel}
      </span>
-     {siteLinks.map((s) => (
-       <a
-         key={s.url}
-         href={s.url}
-         target="_blank"
-         rel="noopener noreferrer"
-         className="group inline-flex items-center gap-1.5 px-2.5 md:px-3 py-1 md:py-1.5 rounded-full
-                    border border-primary/20 bg-background/40
-                    text-[11px] md:text-sm text-foreground/80
-                    hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-colors"
-       >
-         <span className="font-medium">{s.name}</span>
-         <span className="text-muted-foreground/70 group-hover:text-primary/80">·</span>
-         <span className="text-muted-foreground/90 group-hover:text-primary/80">
-           {s.url.replace(/^https?:\/\//, '')}
-         </span>
-         <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5 opacity-60 group-hover:opacity-100" />
-       </a>
-     ))}
+   </a>
+   ```
+
+4. **Below the cards grid**, before the automation pill, add the "More live builds" row using `extraLinks` (same chip style as before, but only 2 chips).
+
+5. **Add automation pill** between the cards/extra-links block and the "Why" panel:
+   ```tsx
+   <div className="inline-flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-2 mb-3 md:mb-5
+                   rounded-full border border-primary/25 bg-primary/[0.06]">
+     <Zap className="w-3.5 h-3.5 md:w-4 md:h-4 text-primary" />
+     <p className="text-[11px] md:text-sm text-foreground/90">
+       <span className="text-primary font-semibold">{t('websites.automationLabel')}</span>
+       {' — '}{t('websites.automation')}
+     </p>
    </div>
    ```
 
-**i18n: add one key per locale** (`src/i18n/{en,de,es,fr,ja,ko,nl,pt,zh}.ts`)
-- `websites.liveLabel`:
-  - en: `'Live sites:'`
-  - de: `'Live-Seiten:'`
-  - es: `'Sitios en vivo:'`
-  - fr: `'Sites en ligne :'`
-  - ja: `'稼働中のサイト：'`
-  - ko: `'운영 중인 사이트:'`
-  - nl: `'Live sites:'`
-  - pt: `'Sites no ar:'`
-  - zh: `'上线网站：'`
+## i18n changes — `src/i18n/{en,de,es,fr,ja,ko,nl,pt,zh}.ts`
 
-Artist names and URLs stay in English (proper nouns / domains).
+- **Update** `websites.subtitle`:
+  - en: `'We also build high-conversion artist and brand websites that turn attention into action.'`
+  - Translate the phrase change ("music brand" → "brand") in all 9 locales.
+- **Add** `websites.moreLabel`:
+  - en: `'More live builds:'`
+- **Add** `websites.automationLabel`:
+  - en: `'Auto-syncing'`
+- **Add** `websites.automation`:
+  - en: `'new releases and tour dates update themselves. No manual edits.'`
+- **Remove** `websites.liveLabel` (no longer used; the per-card link is self-explanatory and the bottom row uses `moreLabel`).
+
+All 9 locale files (`en, de, es, fr, ja, ko, nl, pt, zh`) get the same 3 new keys + updated subtitle + removed `liveLabel`.
 
 ## Files changed
-- `src/components/deck/slides/WebsitesSlide.tsx` — add ExternalLink import, `siteLinks` constant, new chip row between grid and Why panel
-- `src/i18n/{en,de,es,fr,ja,ko,nl,pt,zh}.ts` — add `websites.liveLabel` key (9 locales)
+- `src/components/deck/slides/WebsitesSlide.tsx` — restructure cardConfig, delete duplicated chip block, add per-card link, add `extraLinks` row, add automation pill
+- `src/i18n/en.ts` + 8 other locales — update `websites.subtitle`, add `moreLabel` / `automationLabel` / `automation`, remove `liveLabel`
 
 ## Out of scope
-- Adding thumbnails for Kluster Flux, ID.ID, Luhv (kept as text-only chips — only 3 thumbnail slots exist by design).
-- Reordering or restyling the existing three thumbnail cards.
-- Adding click-through on the thumbnail cards themselves (chips below already cover the linking need; can be a follow-up if you want each card clickable too).
-- PDF export — links render as plain text in static PDF capture, which is acceptable.
+- Actually wiring CMS / Spotify / Bandsintown feeds — automation pill is a positioning statement; current builds use Laylo/embeds/manual deploys. We're claiming the capability, which is accurate for Lovable + standard headless setups.
+- Re-cropping or replacing any thumbnails.
+- Reordering cards.
 
