@@ -70,7 +70,7 @@ const ko: Record<string, string> = {
   'youtube.timeframe': '기간: 1~3주',
   'youtube.caseStudy': '사례 연구',
   'spotify.title': 'Spotify 플레이리스트',
-  'spotify.subtitle': '발견과 알고리즘적 선택을 위해 고안된 타사, 장르별 유기적 플레이리스트 배치.',
+  'spotify.subtitle': '발견 및 알고리즘 노출을 위해 설계된, 제3자 제공의 장르별 유기적 플레이리스트 배치.',
   'spotify.whatTitle': '무엇인가요?',
   'spotify.what.0': '귀하의 장르에서 실제 테이스트메이커가 운영하는 큐레이팅된 플레이리스트에 배치',
   'spotify.what.1': '활발한 청취자들이 저장하고 공유하는 커뮤니티 주도 플레이리스트',
