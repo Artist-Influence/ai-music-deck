@@ -1,61 +1,83 @@
 
 
-# Add Hindi translation to the deck
+# Refresh French locale to match user's provided deck copy
 
 ## Scope
 
-Add Hindi (हिन्दी) as a selectable language in the dropdown, with full translations for all 18 slides matching the user's provided copy.
+Update `src/i18n/fr.ts` so every string the deck renders in French matches the user's new 18-slide copy, and add the 3 missing namespaces (`cultureEdits.*`, `websites.*`, `idid.*`) so slides 9, 15, and 16 stop falling back to raw key strings.
 
-## Changes — 3 files
+French is already a selectable option in the dropdown — no changes to `locales.ts` or `LanguageContext.tsx` needed.
 
-### 1. Create `src/i18n/hi.ts` (new file)
+## Why this is needed
 
-Full Hindi translation dictionary mirroring the exact key structure used in `src/i18n/ar.ts` (the most recent locale, which has all 18 slides covered). Every key value will be populated from the user's provided Hindi copy block, including:
+The current `fr.ts` (304 lines vs `ar.ts` 381 lines) was left partially refreshed in an earlier cancelled session. It is missing:
 
-- `cover.*` — Cover slide (tagline, subtitle, confidential)
-- `opSystem.*` — Slide 2 (tagline, title, subtitle, 3 pillars, loop labels, takeaway)
-- `unifiedOps.*` — Slide 3 (kicker, title, subtitle, 4 modules, callout, footer)
-- `shift.*` — Slide 4 (title, subtitle, section, 4 wins)
-- `whatWeDo.*` — Slide 5 (title, section, 3 pillars)
-- `clipping.*` — Slide 6 (title, subtitle, pros, diff bullets, timeframe, 3 case studies)
-- `creatorFlood.*` — Slide 7 (title, subtitle, pros, when-to-use, case study)
-- `trending.*` — Slide 8 (title, subtitle, how-it-works, when-to-use, case study)
-- `cultureEdits.*` — Slide 9 (title, subtitle, what, why, bestFor)
-- `youtube.*` — Slide 10 (title, subtitle, what, how, case study)
-- `spotify.*` — Slide 11 (title, subtitle, what, why, case study)
-- `soundcloud.*` — Slide 12 (title, subtitle, what, why, footer)
-- `instagram.*` — Slide 13 (title, subtitle, what, why, case study)
-- `metaTiktok.*` — Slide 14 (title, subtitle, what, how, 2 case studies)
-- `websites.*` — Slide 15 (title, subtitle, 3 cards, more, automation, why)
-- `idid.*` — Slide 16 (kicker, pilotChip, title, tagline, subtitle, what, why, bottomNote)
-- `pricing.*` — Slide 17 (title, subtitle, 8 service rows, headers, viewPricing, footer)
-- `nextSteps.*` — Slide 18 (title, subtitle, 4 steps, contact, tagline)
+- `cultureEdits.*` — Slide 9 (Culture Edits)
+- `websites.*` — Slide 15 (Sites web et infrastructure numérique)
+- `idid.*` — Slide 16 (ID.ID)
 
-Hindi is LTR, so no `dir` switching is needed.
+Without these keys, French falls back to raw key strings on those 3 slides. Several existing values also need refreshing to match the user's new wording (e.g. `unifiedOps.calloutBody`, `whatWeDo.pillar.*` descriptions, `pricing.subtitle`, `nextSteps.*`).
 
-### 2. Update `src/i18n/locales.ts`
+## Changes — single file: `src/i18n/fr.ts`
 
-Append one entry to the `locales` array:
+### A. Refresh existing values to match the new French copy
 
-```ts
-{ code: 'hi', label: 'हिन्दी', flag: '🇮🇳', style: 'Hindi (Devanagari)' },
-```
+Update wording on these keys to match the user's brief exactly:
 
-`rtlLocales` is unchanged (Hindi is LTR).
+- `unifiedOps.calloutBody` — "Unified Ops est conçu pour identifier des modèles à travers les campagnes et améliorer les futurs lancements en utilisant de véritables données de performance internes, et non des conjectures."
+- `unifiedOps.footer` — "C'est ainsi que nous passons de l'exécution manuelle à l'intelligence de campagne combinée."
+- `shift.win.0` — "Volume de création de contenu court authentique"
+- `shift.win.1` — "Exposition constante auprès de tous les publics"
+- `shift.win.3` — "Amplification intelligente qui renforce les bons signaux"
+- `whatWeDo.pillar.0.desc` — "Inonder les plateformes sociales de contenu court à haut débit"
+- `whatWeDo.pillar.2.desc` — "Amplifiez les contenus performants grâce à des dépenses publicitaires une fois que la création a fait ses preuves"
+- `pricing.title` / `pricing.subtitle` / `pricing.footer` — refreshed wording per brief
+- `nextSteps.subtitle` — "Quatre étapes. Sans friction. C'est parti."
+- `nextSteps.step.*` titles + descs — refreshed per brief
+- `nextSteps.contactRedLine` — "Nous pouvons traiter les forfaits payants recommandés en moins de 24 heures."
+- `nextSteps.tagline` — "Soutenu par un logiciel · Ancré dans la culture · Prêt à l'action"
 
-### 3. Update `src/i18n/LanguageContext.tsx`
+(All other existing strings — pros/diff bullets, KPI labels, case study copy, pricing table rows — already align with the brief and stay as-is. Numeric metrics in case studies are preserved.)
 
-- Add `import hi from './hi';`
-- Add `hi` to the `allTranslations` map.
+### B. Add the 3 missing namespaces
+
+**`cultureEdits.*`** (Slide 9)
+- `title` → "Culture Edits"
+- `subtitle` → translated subtitle from brief
+- `whatTitle` → "Qu'est-ce que c'est"
+- 3 `what.*` bullets translated
+- `whyTitle` → "Pourquoi ça marche"
+- 3 `why.*` bullets translated
+- `bestForLabel` → "Idéal pour :"
+- `bestFor` → translated copy
+
+**`websites.*`** (Slide 15)
+- `title` → "Sites web et infrastructure numérique"
+- `subtitle` → translated copy
+- 3 cards (`card.0/1/2.title + desc`) translated: "Sites web d'artistes" / "Infrastructure de conversion" / "Design + Rapidité"
+- `moreLabel` → "Réalisations en ligne :"
+- `automationLabel` → "Synchronisation automatique :"
+- `automation` → "Les nouvelles sorties et les dates de tournée se mettent à jour automatiquement. Aucune modification manuelle."
+- `whyLabel` → "Pourquoi c'est important :"
+- `why` → translated copy from brief
+
+**`idid.*`** (Slide 16)
+- `kicker` → "Service pilote"
+- `pilotChip` → "PILOT"
+- `title` → "ID.ID"
+- `tagline` → "Un service pilote pour la découverte musicale guidée par les DJ."
+- `subtitle` → translated copy
+- 3 `what.*` bullets, 3 `why.*` bullets, `bottomNote` translated per brief
 
 ## Out of scope
 
-- No component edits — every key is already wired to existing `t()` calls.
+- No component edits — all 3 namespaces already render via existing `t()` calls.
+- No changes to `locales.ts` or `LanguageContext.tsx` (French already wired up).
 - No changes to other locale files.
-- No layout, KPI label, pricing table row, or case study metric changes.
-- No RTL handling (Hindi is LTR).
+- No KPI label changes, no pricing table row changes, no case study metric changes.
+- No new visuals, layout, or component logic.
 
 ## Verification
 
-After the edit, the language picker shows हिन्दी 🇮🇳 as a 11th option, and selecting it renders every slide (1 → 18) in Hindi with no raw key fallbacks.
+After the edit, switching the deck's language picker to Français renders every slide (1 → 18) with full French copy matching the user's brief, with no raw key strings appearing on slides 9, 15, or 16.
 
