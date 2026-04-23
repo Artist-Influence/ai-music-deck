@@ -34,7 +34,7 @@ const ko: Record<string, string> = {
   'clipping.case2Overview': '장르별 클리퍼를 통한 자동차 문화 및 레이브 영상.',
   'clipping.case3Overview': '0.50달러 미만의 CPM으로 엄청난 참여를 유도하는 고속 배포.',
   'creatorFlood.title': 'TikTok 크리에이터 플러드',
-  'creatorFlood.subtitle': '실제 TikTok UGC 비디오에서 최소 10,000개 이상의 게시물을 통해 귀하의 트랙을 대량 게시합니다.',
+  'creatorFlood.subtitle': '실제 TikTok UGC 동영상 10,000개 이상에 트랙을 대량 게시합니다.',
   'creatorFlood.prosTitle': '장점',
   'creatorFlood.pros.0': '봇이 아닌 실제 계정을 통해 대량의 볼륨과 알고리즘적 상승 효과를 구축합니다.',
   'creatorFlood.pros.1': '수많은 실제 사용 신호가 TikTok에 사운드가 유기적으로 유행하고 있음을 알립니다.',
