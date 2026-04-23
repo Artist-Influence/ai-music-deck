@@ -5,27 +5,25 @@ import html2canvas from 'html2canvas-pro';
 import jsPDF from 'jspdf';
 
 interface ExportPdfButtonProps {
-  current: number;
-  setCurrent: (i: number) => void;
+  setExportSlideIndex: (i: number | null) => void;
   totalSlides: number;
 }
 
 const delay = (ms: number) => new Promise(r => setTimeout(r, ms));
 const nextFrame = () => new Promise(r => requestAnimationFrame(() => r(null)));
 
-const ExportPdfButton = ({ current, setCurrent, totalSlides }: ExportPdfButtonProps) => {
+const ExportPdfButton = ({ setExportSlideIndex, totalSlides }: ExportPdfButtonProps) => {
   const [exporting, setExporting] = useState(false);
 
   const exportPdf = async () => {
     setExporting(true);
-    const originalIndex = current;
     const { dismiss } = toast({
       title: 'Exporting PDF...',
       description: `Capturing slide 1 of ${totalSlides}`,
       duration: 600000,
     });
 
-    // Resolve --background to a concrete color for capture backing
+    // Resolve --background to a concrete color
     const bgVar = getComputedStyle(document.documentElement).getPropertyValue('--background').trim();
     const backgroundColor = bgVar ? `hsl(${bgVar})` : '#000000';
 
@@ -40,18 +38,18 @@ const ExportPdfButton = ({ current, setCurrent, totalSlides }: ExportPdfButtonPr
           duration: 600000,
         });
 
-        // Navigate to the slide
-        setCurrent(i);
+        // Mount this slide into the offscreen portal
+        setExportSlideIndex(i);
 
         // Wait for React render + animations + fonts
         await nextFrame();
         await nextFrame();
         try { await (document as any).fonts?.ready; } catch {}
-        await delay(700);
+        await delay(800);
 
-        const slideEl = document.querySelector('.slide-content') as HTMLElement | null;
+        const slideEl = document.getElementById('export-capture') as HTMLElement | null;
         if (!slideEl) {
-          console.warn(`Slide ${i + 1}: .slide-content not found`);
+          console.warn(`Slide ${i + 1}: #export-capture not found`);
           continue;
         }
 
@@ -62,10 +60,6 @@ const ExportPdfButton = ({ current, setCurrent, totalSlides }: ExportPdfButtonPr
             (img.complete ? Promise.resolve() : img.decode().catch(() => {}))
           )
         );
-
-        // Temporarily neutralize the scale transform for crisp 1920x1080 capture
-        const originalTransform = slideEl.style.transform;
-        slideEl.style.transform = 'translate(-50%, -50%) scale(1)';
 
         await nextFrame();
 
@@ -86,8 +80,6 @@ const ExportPdfButton = ({ current, setCurrent, totalSlides }: ExportPdfButtonPr
           doc.addImage(imgData, 'JPEG', 0, 0, 1920, 1080);
         } catch (err) {
           console.error(`Slide ${i + 1} capture failed:`, err);
-        } finally {
-          slideEl.style.transform = originalTransform;
         }
       }
 
@@ -99,7 +91,7 @@ const ExportPdfButton = ({ current, setCurrent, totalSlides }: ExportPdfButtonPr
       dismiss();
       toast({ title: 'Export failed', description: 'Something went wrong.', variant: 'destructive' });
     } finally {
-      setCurrent(originalIndex);
+      setExportSlideIndex(null);
       setExporting(false);
     }
   };

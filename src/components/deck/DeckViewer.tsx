@@ -17,6 +17,7 @@ const DeckViewer = () => {
   const [sidebar, setSidebar] = useState(true);
   const [fullscreen, setFullscreen] = useState(false);
   const [grid, setGrid] = useState(false);
+  const [exportSlideIndex, setExportSlideIndex] = useState<number | null>(null);
 
   const next = useCallback(() => setCurrent(c => Math.min(c + 1, slides.length - 1)), []);
   const prev = useCallback(() => setCurrent(c => Math.max(c - 1, 0)), []);
@@ -132,7 +133,7 @@ const DeckViewer = () => {
             <div className="flex items-center gap-1">
               
               <LanguagePicker />
-              <ExportPdfButton current={current} setCurrent={setCurrent} totalSlides={slides.length} />
+              <ExportPdfButton setExportSlideIndex={setExportSlideIndex} totalSlides={slides.length} />
               <button onClick={() => setGrid(true)} className="p-2 rounded-lg hover:bg-secondary transition" title="Grid view (G)">
                 <LayoutGrid className="w-4 h-4 text-muted-foreground" />
               </button>
