@@ -1,46 +1,73 @@
 
-Fix the PDF exporter so it cannot hang on slide 8 and runs faster end-to-end.
 
-1. Harden the export loop in `src/components/deck/ExportPdfButton.tsx`
-- Replace the unbounded per-slide capture with a guarded pipeline:
-  - mount slide in the offscreen portal
-  - wait for React paint + fonts
-  - wait for slide images with a bounded timeout
-  - run `html2canvas-pro` with a bounded timeout
-- Wrap both image prep and canvas capture in `Promise.race(...)` timeouts so one bad slide can never freeze the whole export.
-- Add a single automatic retry for a failed/timed-out slide by remounting that export slide once.
-- If the retry still fails, continue to the next slide and report skipped slide numbers in the completion toast instead of locking the export forever.
+# Reposition the Deck as a Music Tech Company
 
-2. Remove unnecessary fixed waiting
-- Drop the blanket per-slide delay and switch to condition-based waiting:
-  - 2x `requestAnimationFrame`
-  - `document.fonts.ready`
-  - bounded image readiness check
-- Keep the animation-freeze stylesheet during export so animated slides stay stable, but stop paying extra idle time on simple slides.
+## What you'll see
+The deck transforms from a services overview into a **product + infrastructure narrative** with an execution layer underneath. Six new slides are added (and two existing ones lightly rewritten) so the story arc becomes:
 
-3. Tune `html2canvas-pro` for failure recovery
-- Add explicit capture guards such as `imageTimeout` and cleanup-friendly options so the hidden html2canvas iframe/container is torn down quickly after each attempt.
-- Keep the existing 1920×1080 offscreen capture target and JPEG PDF assembly, but make the capture step fail fast instead of hanging indefinitely.
+```text
+Cover
+  → Operating System (vision)         NEW
+  → Unified Ops (the product)         NEW
+  → Why This Matters (impact)         NEW
+  → Music Discovery Has Changed       (revised)
+  → The Problem                       (revised)
+  → What We Do (3 pillars)
+  → How We Work (+ Unified Ops loop line)
+  → Clipping
+  → Creator Flood
+  → Top 50 Trending
+  → Culture Edits                     NEW
+  → YouTube Ads
+  → Spotify Playlisting
+  → SoundCloud Reposts
+  → Instagram Seeding
+  → Meta & TikTok Ads
+  → Websites & Digital Infrastructure NEW
+  → ID.ID (pilot / vision)            NEW
+  → Pricing
+  → Not Just Campaigns. Infrastructure. NEW
+  → Next Steps
+```
 
-4. Optimize slide 8’s heavy image path
-- Update `src/components/deck/slides/Top50TrendingSlide.tsx` so its screenshot image is export-friendly:
-  - force eager loading / deterministic decoding
-  - add explicit sizing behavior so the browser has less work during export
-- Apply the same image-loading pattern to the other screenshot-heavy slides that use large imported assets, so slide 8 is fixed and future stalls on later slides are avoided.
+Final deck: **22 slides** (was 15).
 
-5. Improve export UX
-- Keep progress visible, but change messaging to reflect retries/skips, e.g.:
-  - “Capturing slide 8 of 15”
-  - “Retrying slide 8…”
-  - “Export complete — 1 slide skipped”
-- Preserve cleanup in all cases: remove export CSS class, remove injected style tag, unmount offscreen slide, reset button state.
+## New slide designs (all match existing dark + crimson glow system)
 
-Files to change
-- `src/components/deck/ExportPdfButton.tsx` — add per-slide timeout/retry/skip logic, remove fixed delay, tighten capture options, improve progress/final messaging
-- `src/components/deck/slides/Top50TrendingSlide.tsx` — make the screenshot image load/decoding more deterministic for export
-- Other screenshot-heavy slide files that use large imported images (`CreatorFloodSlide.tsx`, `CaseStudyCreatorFloodSlide.tsx`, `AdditionalServicesSlide.tsx`, and similar case-study slides) — apply the same eager/decode-safe image pattern
+**1. Operating System** — Two-column layout. Left: 3 pillar cards (Software Infrastructure, Distribution Engine, Execution Layer) using `GlassPanel variant="bright"` with crimson icon chips. Right: an animated SVG **system loop diagram** (Inputs → Campaign Engine → Reporting/Attribution → Learnings → loop back) with pulsing connectors in primary red. Bottom: full-width takeaway in subtle glass strip. Tagline chip: *"Software-backed. Culture-native. Execution-ready."*
 
-Technical details
-- Root issue: the exporter currently has no timeout around slide capture, so when `html2canvas-pro` or a large image stalls on slide 8, the whole PDF job blocks forever.
-- The session evidence already shows export advancing to “Capturing slide 8 of 15” and then stopping, which matches a stuck per-slide capture rather than navigation or portal mounting.
-- The fix is to make each slide capture bounded and recoverable, not just “wait less”.
+**2. Unified Ops** — Product-feeling slide. 4 horizontal module cards (Intake & Launch, Live Tracking, Reporting Layer, Learning Layer) each with a small **mock dashboard widget** in the background (sparkline, status pills, mini table rows) rendered in SVG at low opacity. Highlighted callout box for "Self-learning system." Footer line in muted text.
+
+**3. Why This Matters** — Clean 3-column layout (For clients / For campaigns / For the future). Each column is a tall `GlassPanel` with a single crimson accent line at top. Bottom strip with the closing two-line statement, primary-tinted.
+
+**4. Culture Edits** — Service slide template (matches Clipping/Spotify pattern). Left column "What it is", right column "Why it works", bottom "Best for" strip. Background: subtle 4×3 collage grid of dark mock edit-tile rectangles with category labels (sports, anime, lyric, meme) at low opacity — no real images, all SVG/CSS.
+
+**5. Websites & Digital Infrastructure** — 3-card layout (Artist Websites / Conversion Infrastructure / Design + Speed). Each card includes a small **wireframe mockup SVG** (desktop frame, mobile frame, browser chrome). Bottom "Why it matters" strip in subtle glass.
+
+**6. ID.ID** — Forward-looking, slightly different feel. Two-column. Left: "What it is" card. Right: "Why it matters" card. Centered crimson glow accent behind the title. Bottom note in italic muted text. Small "PILOT" chip in the corner.
+
+**7. Not Just Campaigns. Infrastructure.** — Statement slide. Centered headline at large scale, subhead below. Subtle network background. Acts as a closing pivot before CTA.
+
+## Existing slide updates
+
+- **TheShiftSlide** copy revised (subtitle becomes the "repeated exposure, community validation, algorithmic momentum…" line).
+- **TheProblemSlide** three pain points rewritten to the fragmentation/reporting/feedback-loop framing.
+- **HowWeWorkSlide** adds one line near the bottom: *"Every launch, optimization cycle, and report feeds back into our internal system so future campaigns can improve."*
+
+## Technical approach
+
+- New components: `OperatingSystemSlide.tsx`, `UnifiedOpsSlide.tsx`, `WhyThisMattersSlide.tsx`, `CultureEditsSlide.tsx`, `WebsitesSlide.tsx`, `IdIdSlide.tsx`, `InfrastructureStatementSlide.tsx` in `src/components/deck/slides/`.
+- Two new tiny SVG components: `SystemLoopDiagram.tsx` (for Operating System slide) and `DashboardMockTiles.tsx` (reusable mock widgets for Unified Ops). Both pure SVG, no dependencies, follow the same animation language as the existing `HubDiagram` / phone visual.
+- All copy added to `src/i18n/en.ts` under new namespaces (`opSystem.*`, `unifiedOps.*`, `whyMatters.*`, `cultureEdits.*`, `websites.*`, `idid.*`, `infraStatement.*`) plus the revised `shift.subtitle`, `problem.item.*`, and a new `howWeWork.feedbackLine`.
+- The other 8 locale files (`es, pt, ko, ja, zh, nl, de, fr`) get the same new keys with **English values as fallback** so nothing breaks immediately. The existing fallback in `LanguageContext` (line 37) already handles missing keys, so this is safe — but populating them keeps the structure consistent.
+- `slides/index.tsx` updated with the new ordered array (22 slides).
+- All new slides use existing `GlassPanel`, `NetworkVisual`, primary tokens — no new design tokens, no new dependencies.
+- Mobile: each new slide follows the existing pattern (`min-h-dvh`, vertical stack, scaled-down typography) per the Mobile Responsiveness memory.
+- PDF export already auto-handles new slides since it iterates `slides.length`.
+
+## Out of scope
+- Translating the new copy into the 8 non-English locales (English fallback handles display; translation is a follow-up task if needed).
+- Building real working dashboard product UI — Unified Ops mocks are visual only.
+- Reworking the existing service slide visualizers.
+- Changing pricing / contact slides.
+
