@@ -50,7 +50,7 @@ const CaseStudyPlatformSlide = () => {
 
               {c.screenshot && (
                 <div className="flex-1 min-h-0 rounded-lg border border-white/[0.08] overflow-hidden mb-2 md:mb-3 bg-black/30 max-h-[120px] md:max-h-none">
-                  <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} className={`w-full h-full ${c.imgClass}`} />
+                  <img src={c.screenshot} alt={`${c.artist} — ${c.track}`} loading="eager" decoding="sync" className={`w-full h-full ${c.imgClass}`} />
                 </div>
               )}
 

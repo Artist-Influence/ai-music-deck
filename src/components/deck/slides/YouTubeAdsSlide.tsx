@@ -72,7 +72,7 @@ const YouTubeAdsSlide = () => {
             <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex-1 flex flex-col">
               <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
                 <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
-                  <img src={c.thumb} alt={`${c.artist}, ${c.track}`} className="w-full h-full object-cover rounded-lg md:rounded-xl" />
+                  <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
                 </div>
                 <div className="flex-1 flex flex-col justify-center">
                   <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{t('youtube.caseStudy')}</p>

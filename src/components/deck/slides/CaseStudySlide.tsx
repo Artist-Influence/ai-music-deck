@@ -43,7 +43,7 @@ const CaseStudySlide = () => {
               <div className="grid grid-cols-3 gap-2 md:gap-3">
                 {clipImages.map((img, i) => (
                   <div key={i} className="aspect-[9/16] rounded-xl bg-white/[0.06] border border-white/[0.08] overflow-hidden">
-                    <img src={img} alt={`Subtronics clip ${i + 1}`} className="w-full h-full object-cover" />
+                    <img src={img} alt={`Subtronics clip ${i + 1}`} loading="eager" decoding="sync" className="w-full h-full object-cover" />
                   </div>
                 ))}
               </div>

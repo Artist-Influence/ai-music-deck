@@ -97,7 +97,7 @@ const FanpagesSlide = () => (
               <div className="flex gap-3 md:gap-5 h-full items-center">
                 <div className="w-[80px] md:w-[160px] shrink-0 flex items-center">
                   <div className="aspect-[9/16] rounded-xl overflow-hidden border-2 border-white/[0.1] w-full">
-                    <img src={c.clip} alt={`${c.artist} clip`} className="w-full h-full object-cover object-top" />
+                    <img src={c.clip} alt={`${c.artist} clip`} loading="eager" decoding="sync" className="w-full h-full object-cover object-top" />
                   </div>
                 </div>
                 <div className="flex-1 flex flex-col justify-between min-w-0">
