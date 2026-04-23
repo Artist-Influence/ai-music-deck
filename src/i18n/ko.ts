@@ -19,7 +19,7 @@ const ko: Record<string, string> = {
   'whatWeDo.pillar.2.desc': '크리에이티브가 입증되면 유료 지출로 성공작을 증폭하세요.',
   'common.service': '서비스',
   'clipping.title': '클리핑 배포',
-  'clipping.subtitle': 'TikTok, Instagram, YouTube 전반에 걸쳐 콘텐츠를 생성하는 20,000명 이상의 클리퍼에 의해 구동되는 배포 네트워크.',
+  'clipping.subtitle': 'TikTok, Instagram, YouTube에서 콘텐츠를 제작하는 2,000명 이상의 크리에이터가 운영하는 배포 네트워크.',
   'clipping.prosTitle': '장점',
   'clipping.pros.0': '전략적 캠페인 브리프로 바이럴 트렌드 타겟팅',
   'clipping.pros.1': '빠른 속도와 명확한 보고',
