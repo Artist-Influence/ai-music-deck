@@ -29,7 +29,7 @@ const en: Record<string, string> = {
   // ── ClippingSlide ──
   'common.service': 'Service',
   'clipping.title': 'Clipping Distribution',
-  'clipping.subtitle': 'A distribution network powered by 2,000+ clippers creating across TikTok, Instagram, and YouTube.',
+  'clipping.subtitle': 'A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and YouTube.',
   'clipping.prosTitle': 'Pros',
   'clipping.pros.0': 'Target viral trends with a strategic campaign brief',
   'clipping.pros.1': 'Fast velocity and clear reporting',
@@ -114,7 +114,7 @@ const en: Record<string, string> = {
   'soundcloud.why.0': "SoundCloud's algorithm rewards early engagement signals",
   'soundcloud.why.1': 'Reposts from established accounts drive organic plays, likes, and follows that compound',
   'soundcloud.why.2': 'Still the discovery engine for underground and electronic music',
-  'soundcloud.timeframe': 'Total group reach: 25M+ followers · Timeframe: 2 to 8 weeks',
+  'soundcloud.timeframe': 'Timeframe: 2 to 8 weeks',
   'soundcloud.mobileSummary.0': 'Verified network of SoundCloud accounts with real followers — genre-aligned, fully tracked',
   'soundcloud.mobileSummary.1': 'Early engagement signals compound into organic plays, likes & follows',
   'soundcloud.mobileSummary.2': '25M+ follower reach · Timeframe: 2–8 weeks',
@@ -146,7 +146,7 @@ const en: Record<string, string> = {
   'metaTiktok.how.0': 'Optimized daily with weekly reporting and clean data exports',
   'metaTiktok.how.1': 'Targeting by genre, geography, and behavior',
   'metaTiktok.how.2': 'Focused on streams, ticket sales, merch, and fanbase growth',
-  'metaTiktok.timeframe': 'Timeframe: 2 to 3 weeks',
+  'metaTiktok.timeframe': 'Timeframe: dependent on each campaign',
   'metaTiktok.case1Desc': '24-hour brand awareness campaign focused purely on views.',
   'metaTiktok.case2Desc': 'Multi-layered campaign collecting SMS signups via Laylo. 100+ creatives across 6 simultaneous city-targeted campaigns.',
 
@@ -196,7 +196,7 @@ const en: Record<string, string> = {
   'nextSteps.step.3.desc': 'Within 24 to 72 hours depending on services',
   'nextSteps.contactTitle': 'Contact Us',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.contactRedLine': 'We can turn around recommended paid plans within 24 hours.',
+  'nextSteps.contactRedLine': '',
   'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
 
   // ── DeckViewer UI ──
