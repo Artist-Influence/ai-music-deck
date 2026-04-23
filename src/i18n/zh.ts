@@ -89,7 +89,7 @@ const zh: Record<string, string> = {
 
   // ── SpotifyPlaylistingSlide ──
   'spotify.title': 'Spotify 歌单推广',
-  'spotify.subtitle': '由第三方运营、符合曲风流派的自然歌单投放，旨在促进歌曲被发现和算法推荐。',
+  'spotify.subtitle': '第三方、符合音乐流派的自然歌单收录，旨在提升内容发现率并被算法推荐。',
   'spotify.whatTitle': '定义',
   'spotify.what.0': '投放到由您曲风领域内真正品味引领者管理的精选歌单中',
   'spotify.what.1': '拥有活跃听众（他们会收藏和分享）的社群驱动型歌单',
