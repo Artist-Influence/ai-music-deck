@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import GlassPanel from '../GlassPanel';
-import { Film, Play } from 'lucide-react';
+import { Film } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
 const tileLabels = ['SPORTS', 'ANIME', 'LYRIC', 'MEME', 'FILM', 'QUOTES', 'GAMING', 'FASHION', 'CARS', 'NIGHTLIFE', 'STREETWEAR', 'MOTIVATION'];
 
-const clips: { src: string; label: string }[] = [
-  { src: '/culture-edits/clip-1.mp4', label: 'EDITS' },
-  { src: '/culture-edits/clip-2.mp4', label: 'ANIME' },
+const clips: { src: string }[] = [
+  { src: '/culture-edits/clip-1.mp4' },
+  { src: '/culture-edits/clip-2.mp4' },
 ];
 
-const PhoneClip = ({ src, label }: { src: string; label: string }) => {
+const PhoneClip = ({ src }: { src: string }) => {
   const [failed, setFailed] = useState(false);
   const showVideo = !!src && !failed;
 
@@ -38,16 +38,6 @@ const PhoneClip = ({ src, label }: { src: string; label: string }) => {
           <p className="text-[10px] md:text-xs text-muted-foreground tracking-wider uppercase">Add clip</p>
         </div>
       )}
-
-      {/* Bottom overlay */}
-      <div className="absolute inset-x-0 bottom-0 z-10 p-2 md:p-3 bg-gradient-to-t from-black/80 via-black/40 to-transparent flex items-end justify-between gap-2">
-        <span className="px-1.5 py-0.5 md:px-2 md:py-1 rounded-md bg-primary/20 border border-primary/40 text-[9px] md:text-[11px] font-bold tracking-wider text-primary uppercase">
-          {label}
-        </span>
-        <div className="w-5 h-5 md:w-7 md:h-7 rounded-full bg-white/15 backdrop-blur-sm flex items-center justify-center">
-          <Play className="w-2.5 h-2.5 md:w-3.5 md:h-3.5 text-white fill-white" />
-        </div>
-      </div>
     </div>
   );
 };
@@ -112,7 +102,7 @@ const CultureEditsSlide = () => {
             <div className="absolute inset-0 -m-8 rounded-full bg-primary/[0.10] blur-[80px] pointer-events-none" />
             <div className="relative flex gap-3 md:gap-5 items-center">
               {clips.map((clip, i) => (
-                <PhoneClip key={i} src={clip.src} label={clip.label} />
+                <PhoneClip key={i} src={clip.src} />
               ))}
             </div>
           </div>
