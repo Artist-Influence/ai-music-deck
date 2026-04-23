@@ -47,7 +47,7 @@ const zh: Record<string, string> = {
 
   // ── CreatorFloodSlide ──
   'creatorFlood.title': 'TikTok 创作者洪流',
-  'creatorFlood.subtitle': '通过至少 10,000 个来自真实 TikTok 用户生成内容（UGC）视频的帖子大规模发布您的歌曲。',
+  'creatorFlood.subtitle': '通过真实 TikTok 用户生成内容（UGC）视频，将您的曲目大规模发布至至少 10,000 条帖子中。',
   'creatorFlood.prosTitle': '优势',
   'creatorFlood.pros.0': '通过真实账号（非机器人）建立巨大的数量和算法提升',
   'creatorFlood.pros.1': '大量真实使用信号向 TikTok 表明该音频正在有机地流行起来',
