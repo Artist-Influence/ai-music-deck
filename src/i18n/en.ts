@@ -9,7 +9,7 @@ const en: Record<string, string> = {
 
   // ── TheShiftSlide ──
   'shift.title': 'Music discovery has changed.',
-  'shift.subtitle': "People don't \"find\" songs anymore. Songs find people.",
+  'shift.subtitle': "People don't discover songs the old way anymore. Songs now spread through repeated exposure, community validation, algorithmic momentum, and paid amplification layered on top of what is already working.",
   'shift.section': 'What wins today',
   'shift.win.0': 'Volume of real short-form creation',
   'shift.win.1': 'Consistent exposure across audiences',
@@ -19,9 +19,9 @@ const en: Record<string, string> = {
   // ── TheProblemSlide ──
   'problem.title': 'Problem: Music marketing is mostly manual.',
   'problem.section': 'Why this is an issue:',
-  'problem.item.0': 'Poor campaign quality from non-music marketers',
-  'problem.item.1': 'Reporting is late, confusing, or missing',
-  'problem.item.2': 'You spend money without measurable results',
+  'problem.item.0': 'Most music marketing is still fragmented across disconnected vendors and platforms',
+  'problem.item.1': 'Reporting is delayed, inconsistent, or too manual to act on quickly',
+  'problem.item.2': 'Teams spend money without a unified system for feedback, optimization, or learning',
 
   // ── WhatWeDoSlide ──
   'whatWeDo.title': 'Coordinated distribution as a system, not a gamble.',
@@ -53,6 +53,7 @@ const en: Record<string, string> = {
   'howWeWork.need.1': 'Any brand safety rules or hard "no" topics',
   'howWeWork.need.2': 'A clear primary goal per campaign',
   'howWeWork.disclaimer': 'What not to expect: unrealistic, always-viral results. This is an amplifier, not a multiplier — results require testing and iteration.',
+  'howWeWork.feedbackLine': 'Every launch, optimization cycle, and report feeds back into our internal system so future campaigns can improve.',
 
   // ── ClippingSlide ──
   'common.service': 'Service',
@@ -338,6 +339,101 @@ const en: Record<string, string> = {
   'spotify.tagLabel': 'PLAYLISTING',
   'soundcloud.tagLabel': 'REPOSTS',
   'instagram.tagLabel': 'SEEDING',
+
+  // ── OperatingSystemSlide (NEW) ──
+  'opSystem.tagline': 'Software-backed · Culture-native · Execution-ready',
+  'opSystem.title': "We're building the operating system for modern music growth.",
+  'opSystem.subtitle': 'Artist Influence is evolving from a high-performance marketing agency into a music tech company with an execution layer combining software, reporting infrastructure, campaign intelligence, and content distribution services under one system.',
+  'opSystem.pillar.0.label': 'Software Infrastructure',
+  'opSystem.pillar.0.desc': 'Unified Ops, reporting, campaign tracking, internal workflows, attribution, dashboards.',
+  'opSystem.pillar.1.label': 'Distribution Engine',
+  'opSystem.pillar.1.desc': 'Playlisting, clipping, reposts, seeding, paid media, culture penetration.',
+  'opSystem.pillar.2.label': 'Execution Layer',
+  'opSystem.pillar.2.desc': 'Strategy, launch management, optimization, creative input, human oversight.',
+  'opSystem.loop.inputs': 'Inputs',
+  'opSystem.loop.engine': 'Campaign Engine',
+  'opSystem.loop.reporting': 'Reporting',
+  'opSystem.loop.learnings': 'Learnings',
+  'opSystem.takeaway': 'Most music marketing is still fragmented across spreadsheets, vendors, screenshots, and delayed updates. We are consolidating it into one coordinated system.',
+
+  // ── UnifiedOpsSlide (NEW) ──
+  'unifiedOps.kicker': 'The Product',
+  'unifiedOps.title': 'Unified Ops is the core.',
+  'unifiedOps.subtitle': 'Our internal software connects campaign intake, fulfillment, reporting, optimization, and learnings across services. Every campaign gets smarter over time.',
+  'unifiedOps.module.0.label': 'Intake & Launch',
+  'unifiedOps.module.0.desc': 'Campaign setup, goals, assets, metadata, timelines, and channel selection in one place.',
+  'unifiedOps.module.1.label': 'Live Tracking',
+  'unifiedOps.module.1.desc': 'Service performance, pacing, spend efficiency, creator activity, post tracking, and campaign health.',
+  'unifiedOps.module.2.label': 'Reporting Layer',
+  'unifiedOps.module.2.desc': 'Real-time visibility for internal ops and clients across platforms, exports, dashboards, and recaps.',
+  'unifiedOps.module.3.label': 'Learning Layer',
+  'unifiedOps.module.3.desc': 'Cross-campaign performance signals: what creative wins, what audiences convert, what distribution patterns actually move records.',
+  'unifiedOps.calloutTitle': 'Self-learning system',
+  'unifiedOps.calloutBody': 'Unified Ops is being built to identify patterns across campaigns and improve future launches using real internal performance data, not guesswork.',
+  'unifiedOps.footer': 'This is how we move from manual fulfillment to compounding campaign intelligence.',
+
+  // ── WhyThisMattersSlide (NEW) ──
+  'whyMatters.kicker': 'Why this matters',
+  'whyMatters.title': 'Better systems create better outcomes.',
+  'whyMatters.subtitle': 'For artists, labels, and managers, this means less fragmentation, faster decision-making, and more measurable growth.',
+  'whyMatters.col.0.title': 'For clients',
+  'whyMatters.col.0.body': 'One place to understand what is running, what is working, and what should happen next.',
+  'whyMatters.col.1.title': 'For campaigns',
+  'whyMatters.col.1.body': 'Faster optimization, tighter feedback loops, and less wasted spend across channels.',
+  'whyMatters.col.2.title': 'For the future',
+  'whyMatters.col.2.body': 'A foundation for smarter reporting, better attribution, and scalable music growth infrastructure.',
+  'whyMatters.bottom1': 'We are not just running campaigns.',
+  'whyMatters.bottom2': 'We are building the system that makes campaigns more intelligent.',
+
+  // ── CultureEditsSlide (NEW) ──
+  'cultureEdits.title': 'Culture Edits',
+  'cultureEdits.subtitle': 'We place songs inside existing high-attention edit ecosystems on TikTok: sports, film, anime, quote pages, lyric pages, and internet culture pages, to drive relevance beyond traditional music marketing.',
+  'cultureEdits.whatTitle': 'What it is',
+  'cultureEdits.what.0': 'Music placements across curated edit pages with built-in audience behavior',
+  'cultureEdits.what.1': 'Built for songs that need cultural context, not just raw volume',
+  'cultureEdits.what.2': 'Works especially well when a record has a strong emotion, attitude, visual identity, or lyric moment',
+  'cultureEdits.whyTitle': 'Why it works',
+  'cultureEdits.why.0': 'Feels native to the feed instead of overtly promotional',
+  'cultureEdits.why.1': 'Bridges music into communities that already consume short-form edits at scale',
+  'cultureEdits.why.2': 'Creates signals that can later be amplified through paid media, clipping, or creator campaigns',
+  'cultureEdits.bestForLabel': 'Best for:',
+  'cultureEdits.bestFor': 'Records with strong visual identity, emotional punch, lifestyle energy, sports crossover, or meme/edit potential.',
+
+  // ── WebsitesSlide (NEW) ──
+  'websites.title': 'Websites & Digital Infrastructure',
+  'websites.subtitle': 'We also build high-conversion artist and music brand websites that turn attention into action.',
+  'websites.card.0.title': 'Artist Websites',
+  'websites.card.0.desc': 'Custom sites for releases, catalogs, tours, EPKs, visualizers, embeds, fan capture, and brand storytelling.',
+  'websites.card.1.title': 'Conversion Infrastructure',
+  'websites.card.1.desc': 'Laylo, ticketing, DSP routing, gated assets, merch, analytics, and campaign-specific landing pages.',
+  'websites.card.2.title': 'Design + Speed',
+  'websites.card.2.desc': 'Fast-turn, premium builds that look custom and cinematic without bloated timeframes.',
+  'websites.whyLabel': 'Why it matters:',
+  'websites.why': 'A lot of music marketing spends money to generate attention, then sends that attention to weak destinations. We build the digital layer that captures and converts it properly.',
+
+  // ── IdIdSlide (NEW) ──
+  'idid.kicker': 'Pilot Service',
+  'idid.pilotChip': 'PILOT',
+  'idid.title': 'ID.ID',
+  'idid.tagline': 'A pilot service for DJ-driven music discovery.',
+  'idid.subtitle': 'We are also building and piloting ID.ID: a live music activation concept designed to help records travel through DJ culture with more structure, visibility, and proof of play.',
+  'idid.whatTitle': 'What it is',
+  'idid.what.0': 'A pilot service focused on helping tracks move through DJ networks and live environments',
+  'idid.what.1': 'Built around the insight that club play, DJ support, and scene adoption still matter, but are usually opaque and hard to track',
+  'idid.what.2': 'Designed to create more visibility around how records travel from private support to public momentum',
+  'idid.whyTitle': 'Why it matters',
+  'idid.why.0': 'Connects digital growth with real-world DJ ecosystem behavior',
+  'idid.why.1': 'Opens a path toward more measurable live-context discovery',
+  'idid.why.2': 'Represents how Artist Influence is thinking beyond traditional agency services into new music infrastructure',
+  'idid.bottomNote': 'ID.ID is part of our broader thesis: the future of music growth will belong to companies that connect software, culture, and distribution into one system.',
+
+  // ── InfrastructureStatementSlide (NEW) ──
+  'infraStatement.kicker': 'The thesis',
+  'infraStatement.titleLine1': 'Not just campaigns.',
+  'infraStatement.titleLine2': 'Infrastructure.',
+  'infraStatement.subtitle': 'Artist Influence is building the systems layer for modern music growth across software, services, reporting, and cultural distribution.',
+  'infraStatement.tagline': 'Software-backed · Culture-native · Execution-ready',
 };
 
 export default en;
+

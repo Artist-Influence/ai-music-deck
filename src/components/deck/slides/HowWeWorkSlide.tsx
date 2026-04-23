@@ -87,6 +87,9 @@ const HowWeWorkSlide = () => {
         <p className="text-[10px] md:text-[21px] text-muted-foreground mt-2 md:mt-5 italic">
           {t('howWeWork.disclaimer')}
         </p>
+        <p className="text-[10px] md:text-[18px] text-primary/80 mt-1.5 md:mt-3">
+          {t('howWeWork.feedbackLine')}
+        </p>
       </div>
     </div>
   );
