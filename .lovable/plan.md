@@ -1,50 +1,44 @@
 
 
-# Fix PDF Export — Capture Live Slides as Screenshots
+# Fix PDF Export — Render Each Slide Offscreen at Full 1920×1080
 
-## Problem
-The current export renders each slide into a detached DOM node via `createRoot`, but:
-- It doesn't include the app's React providers (LanguageProvider, TooltipProvider, QueryClient), so translations and context-dependent visuals break
-- `html2canvas` can't render modern CSS used heavily here (oklch colors, backdrop-filter, complex gradients, SVG animations, custom fonts)
-- Result: blank-ish pages with no visualizers, no proper text, no styling
+## Why It's Broken
+The current export grabs `.slide-content` from the live viewer, but:
+- The viewer's container has `overflow: hidden` and is sized to the user's viewport (often <1080px tall). At `scale(1)`, most of the 1920×1080 slide is clipped away, so html2canvas captures a chopped, wrong region.
+- `<div key={current}>` in `DeckViewer` remounts the slide on every navigation, racing with the 700ms wait and html2canvas's reading of the DOM.
+- Result: every PDF page ends up looking like the same partial view of slide 1.
 
-## Solution
-Switch to capturing the **live, already-rendered** slide from the actual viewer DOM, one slide at a time, then assemble into a PDF. The viewer already mounts each slide with all providers and full styling.
+## Fix
+Stop trying to capture from the live viewer. Instead, mount each slide into a dedicated **offscreen 1920×1080 portal** that has all the same React providers, then capture it cleanly.
 
 ### Approach
-Replace `ExportPdfButton.tsx` to:
-1. Accept `setCurrent` and `current` from `DeckViewer` so it can drive navigation
-2. For each slide index `i`:
-   - Call `setCurrent(i)` and wait ~600ms for render + animations + image loads
-   - Find the live `.slide-content` element (the unscaled 1920×1080 layer inside `ScaledSlide`)
-   - Temporarily reset its transform to `scale(1)` and make it visible at 1920×1080 (off-screen positioning so user doesn't see flicker)
-   - Capture with `html2canvas` using `foreignObjectRendering: true` and a backing color matching `--background`
-   - Restore the original transform
-3. Assemble JPEG frames into a landscape jsPDF at 1920×1080
-4. Restore original slide index when done
-
-### Fallbacks for html2canvas limitations
-- Use `html2canvas-pro` (drop-in replacement that supports `oklch`, modern color functions, and `backdrop-filter`) instead of `html2canvas`
-- Set explicit `backgroundColor` (resolved from computed `--background`) so transparent areas don't render black
-- Pre-scroll slide into view and wait for `document.fonts.ready` plus `requestAnimationFrame` x2 before capture
-- For each slide, also `await` all `<img>` `decode()` calls inside it
+1. **Add an export portal to `DeckViewer`**: a fixed-position `<div>` sized exactly 1920×1080, positioned far off-screen (`left: -10000px`), with no clipping. Toggled via state `exportSlideIndex: number | null`. When non-null, render `<ScaledSlide isMobile={false} forceFullSize><Slides[exportSlideIndex] /></ScaledSlide>` inside it.
+2. **Add `forceFullSize` prop to `ScaledSlide`**: when true, skip the scale calculation and render at native 1920×1080 with no `transform` and no `overflow:hidden`.
+3. **Rewrite `ExportPdfButton`** to drive the portal:
+   - For each slide `i`: set `exportSlideIndex = i`, await fonts ready + 2 RAFs + 800ms + all images decoded.
+   - Find the portal's slide-content element (use a stable id like `#export-capture`), capture with `html2canvas-pro` at exactly 1920×1080 with the resolved `--background` color.
+   - Add to jsPDF page.
+   - When done: set `exportSlideIndex = null` and restore viewer.
+4. **Don't touch the visible viewer state** during export — the user keeps seeing whatever slide they were on; only the offscreen portal cycles.
 
 ### File Changes
-- **`src/components/deck/ExportPdfButton.tsx`** — rewrite to accept `{ current, setCurrent, totalSlides }` props, drive navigation, capture live DOM, restore state
-- **`src/components/deck/DeckViewer.tsx`** — pass `current`, `setCurrent`, `slides.length` into `<ExportPdfButton />`; also temporarily hide sidebar/toolbar isn't needed since we capture only the inner slide element
-- **`package.json`** — add `html2canvas-pro` dependency (replaces or supplements `html2canvas`)
+- **`src/components/deck/DeckViewer.tsx`** — add `exportSlideIndex` state + offscreen portal div; pass `setExportSlideIndex` (instead of `setCurrent`) to `ExportPdfButton`.
+- **`src/components/deck/ScaledSlide.tsx`** — add optional `forceFullSize` prop that renders children at fixed 1920×1080 with no scaling/clipping, wrapped in a div with id `export-capture`.
+- **`src/components/deck/ExportPdfButton.tsx`** — rewrite signature to `{ setExportSlideIndex, totalSlides }`; loop through slides driving the portal; capture `#export-capture`; assemble PDF.
 
-### UX during export
-- Disable navigation, show progress toast "Capturing slide X of Y"
-- After completion, restore the user's original slide
-- If a single slide capture fails, log it and continue (don't abort the whole PDF)
+### Why This Works
+- The offscreen portal is sized exactly 1920×1080 with no parent clipping, so html2canvas-pro renders the entire slide regardless of the user's viewport.
+- All React providers (LanguageProvider, TooltipProvider, etc.) are inherited because the portal lives inside `DeckViewer`'s tree.
+- No fight with `key={current}`, fade-in animations, or viewport scaling — those only apply to the visible viewer.
+- Each slide is freshly mounted in the portal, so visualizers run their animations from frame 0; the 800ms wait gives them time to settle.
+
+### UX
+- Progress toast "Capturing slide X of Y" stays the same.
+- User sees no flicker in the visible viewer — the portal is offscreen.
+- On error in one slide, log and continue with the next.
 
 ## Out of Scope
-- Server-side rendering via Puppeteer (would require an edge function and auth) — not needed; client capture of live DOM is sufficient
-- Per-slide PNG export — single combined PDF only
-
-## Technical Notes
-- The viewer scales slides via `transform: scale(...)`. We capture the inner unscaled `.slide-content` div directly at native 1920×1080, so output is crisp regardless of viewport size
-- Mobile users won't see the export button (it's already in the desktop toolbar only)
-- Capture happens in the visible DOM, so all CSS, fonts, animations, and i18n work exactly as the user sees them
+- Server-side rendering / Puppeteer.
+- Per-slide PNG export.
+- Animating the visible viewer during export.
 
