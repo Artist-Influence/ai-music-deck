@@ -163,6 +163,29 @@ const DeckViewer = () => {
           </button>
         </div>
       </div>
+
+      {/* Offscreen export portal — renders one slide at a time at native 1920x1080 for PDF capture */}
+      {exportSlideIndex !== null && (() => {
+        const ExportSlide = slides[exportSlideIndex];
+        return (
+          <div
+            style={{
+              position: 'fixed',
+              left: -100000,
+              top: 0,
+              width: 1920,
+              height: 1080,
+              pointerEvents: 'none',
+              zIndex: -1,
+            }}
+            aria-hidden="true"
+          >
+            <ScaledSlide forceFullSize>
+              <ExportSlide />
+            </ScaledSlide>
+          </div>
+        );
+      })()}
     </div>
   );
 };
