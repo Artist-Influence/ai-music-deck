@@ -84,7 +84,7 @@ const ko: Record<string, string> = {
   'spotify.mobileSummary.1': '유기적 스트림은 저장, 팔로우 및 알고리즘 신호를 생성합니다.',
   'spotify.mobileSummary.2': '스트림 목표 보장 · 기간: 12주',
   'soundcloud.title': 'SoundCloud 리포스트',
-  'soundcloud.subtitle': '투명한 추적과 실제 참여 의도를 가진 장르 커뮤니티 전반의 검증된 리포스트 네트워크.',
+  'soundcloud.subtitle': '투명한 추적 및 진정한 참여 의도를 바탕으로 장르별 커뮤니티에 검증된 리포스트 배포.',
   'soundcloud.whatTitle': '무엇인가요?',
   'soundcloud.what.0': '실제 팔로워를 가진 SoundCloud 계정의 검증된 네트워크를 통해 배포되는 트랙',
   'soundcloud.what.1': '각 리포스트는 완전한 투명성으로 추적 및 보고됩니다.',
