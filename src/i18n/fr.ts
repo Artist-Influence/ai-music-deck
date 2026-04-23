@@ -67,7 +67,7 @@ const fr: Record<string, string> = {
   'clipping.case2Overview': 'Culture automobile et séquences de rave via des clippers natifs du genre.',
   'clipping.case3Overview': 'Distribution à grande vitesse générant un engagement massif à un CPM inférieur à 0,50 $.',
   'creatorFlood.title': 'Déferlement de créateurs TikTok',
-  'creatorFlood.subtitle': 'Publication en masse de votre titre sur au minimum 10 000 posts de vraies vidéos UGC TikTok.',
+  'creatorFlood.subtitle': 'Diffusion massive de votre morceau via au moins 10 000 publications issues de véritables vidéos UGC TikTok.',
   'creatorFlood.prosTitle': 'Avantages',
   'creatorFlood.pros.0': 'Génère un volume massif et un élan algorithmique via de vrais comptes, pas des bots',
   'creatorFlood.pros.1': 'La quantité pure de vrais signaux d\'utilisation indique à TikTok que le son est en tendance de manière organique',
