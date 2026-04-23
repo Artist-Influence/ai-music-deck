@@ -76,7 +76,7 @@ const zh: Record<string, string> = {
 
   // ── YouTubeAdsSlide ──
   'youtube.title': 'YouTube 广告',
-  'youtube.subtitle': '国际定位与优化，在最大化触达的同时保护互动率。',
+  'youtube.subtitle': '通过国际定向和优化，在保障互动率的同时最大化覆盖范围。',
   'youtube.whatTitle': '定义',
   'youtube.what.0': '为吸引订阅者和促进长视频互动而构建的付费 YouTube 营销活动。',
   'youtube.what.1': '我们每日进行优化，并提供透明的每周报告和清晰的数据导出。',
