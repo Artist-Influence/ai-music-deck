@@ -59,7 +59,7 @@ const ar: Record<string, string> = {
 
   // Slide 6 — Clipping
   'clipping.title': 'توزيع المقاطع',
-  'clipping.subtitle': 'شبكة توزيع مدعومة بأكثر من 2000 منشئ محتوى ينشطون عبر TikTok وInstagram وYouTube.',
+  'clipping.subtitle': 'شبكة توزيع مدعومة بأكثر من 20000 منشئ محتوى ينشطون عبر TikTok وInstagram وYouTube.',
   'clipping.prosTitle': 'المزايا',
   'clipping.pros.0': 'استهداف الاتجاهات الفيروسية من خلال موجز حملة استراتيجي',
   'clipping.pros.1': 'سرعة عالية وتقارير واضحة',
@@ -158,7 +158,7 @@ const ar: Record<string, string> = {
   'soundcloud.why.0': 'تكافئ خوارزمية SoundCloud إشارات التفاعل المبكرة',
   'soundcloud.why.1': 'تؤدي إعادة النشر من الحسابات المعروفة إلى زيادة عدد المشاهدات العضوية والإعجابات والمتابعات التي تتراكم',
   'soundcloud.why.2': 'لا تزال محرك اكتشاف الموسيقى الإلكترونية والموسيقى غير المعروفة',
-  'soundcloud.timeframe': 'إجمالي وصول المجموعة: أكثر من 25 مليون متابع · الإطار الزمني: من 2 إلى 8 أسابيع',
+  'soundcloud.timeframe': 'الإطار الزمني: من 2 إلى 8 أسابيع',
   'soundcloud.mobileSummary.0': 'شبكة معتمدة من حسابات SoundCloud ذات متابعين حقيقيين — متوافقة مع النوع، متتبعة بالكامل',
   'soundcloud.mobileSummary.1': 'إشارات التفاعل المبكرة تؤدي إلى مشاهدات وإعجابات ومتابعات عضوية',
   'soundcloud.mobileSummary.2': 'وصول 25 مليون+ متابع · الإطار الزمني: 2–8 أسابيع',
@@ -190,7 +190,7 @@ const ar: Record<string, string> = {
   'metaTiktok.how.0': 'يتم تحسينها يوميًا مع تقارير أسبوعية وتصدير بيانات نظيفة',
   'metaTiktok.how.1': 'الاستهداف حسب النوع والموقع الجغرافي والسلوك',
   'metaTiktok.how.2': 'التركيز على البث ومبيعات التذاكر والمنتجات ونمو قاعدة المعجبين',
-  'metaTiktok.timeframe': 'الإطار الزمني: من 2 إلى 3 أسابيع',
+  'metaTiktok.timeframe': 'الإطار الزمني: يعتمد على كل حملة',
   'metaTiktok.case1Desc': 'حملة وعي بالعلامة التجارية لمدة 24 ساعة تركز بشكل كامل على المشاهدات.',
   'metaTiktok.case2Desc': 'حملة متعددة المستويات لجمع الاشتراكات عبر الرسائل القصيرة (SMS) باستخدام Laylo. أكثر من 100 تصميم إبداعي عبر 6 حملات متزامنة تستهدف مدنًا مختلفة.',
 
@@ -271,7 +271,7 @@ const ar: Record<string, string> = {
   'nextSteps.step.3.desc': 'في غضون 24 إلى 72 ساعة حسب الخدمات',
   'nextSteps.contactTitle': 'اتصل بنا',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.contactRedLine': 'يمكننا تنفيذ الخطط المدفوعة الموصى بها في غضون 24 ساعة.',
+  'nextSteps.contactRedLine': '',
   'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
 
   // UI

@@ -30,7 +30,7 @@ const zh: Record<string, string> = {
   // ── ClippingSlide ──
   'common.service': '服务',
   'clipping.title': '剪辑分发',
-  'clipping.subtitle': '由 2,000 多名活跃于 TikTok、Instagram 和 YouTube 的剪辑师驱动的分发网络。',
+  'clipping.subtitle': '由 20,000 多名活跃于 TikTok、Instagram 和 YouTube 的剪辑师驱动的分发网络。',
   'clipping.prosTitle': '优势',
   'clipping.pros.0': '通过战略性活动简报，瞄准病毒式传播趋势',
   'clipping.pros.1': '快速响应和清晰的报告',
@@ -115,7 +115,7 @@ const zh: Record<string, string> = {
   'soundcloud.why.0': 'SoundCloud 的算法奖励早期的互动信号',
   'soundcloud.why.1': '来自知名账号的转发会推动有机的播放量、喜欢和关注，产生复合效应',
   'soundcloud.why.2': '仍然是地下音乐和电子音乐的发现引擎',
-  'soundcloud.timeframe': '总覆盖人群：超过 2500 万粉丝 · 时间范围：2 到 8 周',
+  'soundcloud.timeframe': '时间范围：2 到 8 周',
   'soundcloud.mobileSummary.0': '由拥有真实粉丝的 SoundCloud 已验证账号网络——符合曲风流派，全程跟踪',
   'soundcloud.mobileSummary.1': '早期互动信号会叠加产生有机播放量、喜欢和关注',
   'soundcloud.mobileSummary.2': '超过 2500 万粉丝覆盖 · 时间范围：2–8 周',
@@ -147,7 +147,7 @@ const zh: Record<string, string> = {
   'metaTiktok.how.0': '每日优化，每周提供报告和清晰的数据导出',
   'metaTiktok.how.1': '按曲风、地理位置和行为进行定位',
   'metaTiktok.how.2': '专注于流媒体播放量、门票销售、周边商品和粉丝增长',
-  'metaTiktok.timeframe': '时间范围：2 到 3 周',
+  'metaTiktok.timeframe': '时间范围：取决于每个活动',
   'metaTiktok.case1Desc': '为期 24 小时的品牌知名度活动，纯粹专注于观看量。',
   'metaTiktok.case2Desc': '通过 Laylo 收集短信注册的多层次活动。在 6 个同步进行的城市定向活动中使用了 100 多种创意素材。',
 
@@ -197,7 +197,7 @@ const zh: Record<string, string> = {
   'nextSteps.step.3.desc': '根据所选服务，24 到 72 小时内',
   'nextSteps.contactTitle': '联系方式',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.contactRedLine': '我们可在 24 小时内完成推荐付费方案的交付。',
+  'nextSteps.contactRedLine': '',
   'nextSteps.tagline': '技术驱动 · 文化本土化 · 即刻落地',
 
   // ── DeckViewer UI ──

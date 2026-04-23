@@ -59,7 +59,7 @@ const hi: Record<string, string> = {
 
   // Slide 6 — Clipping
   'clipping.title': 'क्लिपिंग डिस्ट्रीब्यूशन',
-  'clipping.subtitle': '2,000+ क्लिपर्स द्वारा TikTok, इंस्टाग्राम और YouTube पर बनाई गई सामग्री से संचालित एक वितरण नेटवर्क।',
+  'clipping.subtitle': '20,000+ क्लिपर्स द्वारा TikTok, इंस्टाग्राम और YouTube पर बनाई गई सामग्री से संचालित एक वितरण नेटवर्क।',
   'clipping.prosTitle': 'फायदे',
   'clipping.pros.0': 'एक रणनीतिक अभियान ब्रीफ के साथ वायरल ट्रेंड्स को लक्षित करें',
   'clipping.pros.1': 'तेज़ गति और स्पष्ट रिपोर्टिंग',
@@ -158,7 +158,7 @@ const hi: Record<string, string> = {
   'soundcloud.why.0': 'SoundCloud का एल्गोरिदम शुरुआती एंगेजमेंट संकेतों को पुरस्कृत करता है',
   'soundcloud.why.1': 'स्थापित खातों से रीपोस्ट ऑर्गेनिक प्ले, लाइक और फॉलो को बढ़ाते हैं जो लगातार बढ़ते जाते हैं',
   'soundcloud.why.2': 'अंडरग्राउंड और इलेक्ट्रॉनिक संगीत के लिए अभी भी खोज इंजन',
-  'soundcloud.timeframe': 'कुल समूह पहुंच: 25M+ फॉलोअर्स · समय-सीमा: 2 से 8 सप्ताह',
+  'soundcloud.timeframe': 'समय-सीमा: 2 से 8 सप्ताह',
   'soundcloud.mobileSummary.0': 'असली अनुयायियों वाले SoundCloud खातों का सत्यापित नेटवर्क — शैली-अनुरूप, पूरी तरह ट्रैक किया गया',
   'soundcloud.mobileSummary.1': 'शुरुआती एंगेजमेंट संकेत ऑर्गेनिक प्ले, लाइक और फॉलो उत्पन्न करते हैं',
   'soundcloud.mobileSummary.2': '25M+ फॉलोअर्स तक पहुंच · समय-सीमा: 2–8 सप्ताह',
@@ -190,7 +190,7 @@ const hi: Record<string, string> = {
   'metaTiktok.how.0': 'साप्ताहिक रिपोर्टिंग और स्वच्छ डेटा एक्सपोर्ट के साथ दैनिक रूप से अनुकूलित',
   'metaTiktok.how.1': 'शैली, भूगोल और व्यवहार के अनुसार लक्ष्यीकरण',
   'metaTiktok.how.2': 'स्ट्रीम्स, टिकट बिक्री, मर्च और प्रशंसक आधार की वृद्धि पर ध्यान केंद्रित',
-  'metaTiktok.timeframe': 'समय-सीमा: 2 से 3 सप्ताह',
+  'metaTiktok.timeframe': 'समय-सीमा: प्रत्येक कैंपेन पर निर्भर',
   'metaTiktok.case1Desc': '24-घंटे का ब्रांड जागरूकता अभियान जो पूरी तरह से व्यूज़ पर केंद्रित है।',
   'metaTiktok.case2Desc': 'लेलो के माध्यम से एसएमएस साइनअप एकत्र करने वाला बहु-स्तरीय अभियान। 6 एक साथ चल रहे शहर-लक्षित अभियानों में 100+ क्रिएटिव।',
 
@@ -271,7 +271,7 @@ const hi: Record<string, string> = {
   'nextSteps.step.3.desc': 'सेवाओं के आधार पर 24 से 72 घंटों के भीतर',
   'nextSteps.contactTitle': 'हमसे संपर्क करें',
   'nextSteps.companyName': 'Artist Influence',
-  'nextSteps.contactRedLine': 'हम अनुशंसित सशुल्क योजनाओं को 24 घंटों के भीतर पूरा कर सकते हैं।',
+  'nextSteps.contactRedLine': '',
   'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
 
   // UI
