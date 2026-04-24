@@ -1,5 +1,4 @@
 import GlassPanel from '../GlassPanel';
-import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
@@ -32,7 +31,6 @@ const CaseStudyCreatorFloodSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden px-5 pt-5 pb-3 md:px-8 md:pt-6 md:pb-4 flex flex-col items-center">
-      <PatternVisual />
       <div className="relative z-10 flex flex-col h-full w-full max-w-[1400px]">
         <h1 className="text-xl md:text-4xl font-bold text-foreground mb-1 md:mb-2">{t('csCreatorFlood.title')}</h1>
         <p className="text-sm md:text-lg text-muted-foreground mb-3 md:mb-4">{t('csCreatorFlood.subtitle')}</p>

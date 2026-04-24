@@ -1,5 +1,4 @@
 import GlassPanel from '../GlassPanel';
-import PatternVisual from '../visuals/PatternVisual';
 import { ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import ariesCover from '@/assets/aries-in-the-flesh.jpg';
@@ -44,7 +43,6 @@ const CaseStudyClippingSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
-      <PatternVisual />
       <div className="relative z-10 w-full max-w-[1400px] text-center">
         <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">{t('csClipping.title')}</h1>
         <p className="text-sm md:text-xl text-muted-foreground mb-6 md:mb-12">{t('csClipping.subtitle')}</p>
