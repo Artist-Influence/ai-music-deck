@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import spicyMargaritaImg from '@/assets/jason-derulo-spicy-margarita-views.png';
 import dackJanielsImg from '@/assets/dack-janiels-streams.png';
@@ -36,6 +37,7 @@ const CaseStudyPlatformSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
+      <PatternVisual />
       <div className="relative z-10 w-full max-w-[1400px] text-center">
         <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">{t('csPlatform.title')}</h1>
         <p className="text-sm md:text-xl text-muted-foreground mb-6 md:mb-12">{t('csPlatform.subtitle')}</p>
