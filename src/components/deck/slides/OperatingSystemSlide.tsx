@@ -1,5 +1,6 @@
 import GlassPanel from '../GlassPanel';
 import SystemLoopDiagram from '../SystemLoopDiagram';
+import InfoVisual from '../visuals/InfoVisual';
 import { Code2, Radio, Workflow } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
@@ -15,8 +16,7 @@ const OperatingSystemSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-20 flex flex-col justify-start md:justify-center">
-      <div className="absolute top-[10%] right-[5%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full bg-primary/[0.08] blur-[150px] animate-float" />
-      <div className="absolute bottom-[5%] left-[10%] w-[200px] h-[200px] md:w-[400px] md:h-[400px] rounded-full bg-primary/[0.04] blur-[120px]" />
+      <InfoVisual />
 
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         {/* Tagline chip */}

@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import InfoVisual from '../visuals/InfoVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 
 const HubDiagram = () => {
@@ -62,7 +63,7 @@ const WhatCloutedDoesSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex items-center justify-center">
-      <div className="absolute top-[15%] left-[40%] w-[250px] h-[250px] md:w-[500px] md:h-[500px] rounded-full bg-primary/[0.06] blur-[150px] animate-float" />
+      <InfoVisual />
 
       <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 items-start w-full max-w-[1600px]">
         <div className="flex-1 max-w-[700px]">

@@ -1,5 +1,6 @@
 import GlassPanel from '../GlassPanel';
 import NetworkVisual from '../NetworkVisual';
+import InfoVisual from '../visuals/InfoVisual';
 import { Video, Eye, Users, Megaphone } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
@@ -11,7 +12,7 @@ const TheShiftSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
-      <div className="absolute top-[5%] right-[5%] w-[300px] h-[300px] md:w-[600px] md:h-[600px] rounded-full bg-primary/[0.07] blur-[150px] animate-float" />
+      <InfoVisual />
       <div className="hidden md:block">
         <NetworkVisual className="opacity-10" nodeCount={60} seed={2} />
       </div>
