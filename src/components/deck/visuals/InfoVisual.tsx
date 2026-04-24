@@ -4,70 +4,48 @@ interface InfoVisualProps {
   className?: string;
 }
 
-const ticks = [
-  { y: 220, dur: '7s', delay: '0s' },
-  { y: 540, dur: '9s', delay: '1.5s' },
-  { y: 820, dur: '11s', delay: '3s' },
-];
-
 const InfoVisual = ({ className }: InfoVisualProps) => (
   <div className={cn('pointer-events-none absolute inset-0 overflow-hidden', className)}>
-    {/* Soft corner glows */}
-    <div className="absolute -top-32 -right-24 w-[420px] h-[420px] rounded-full bg-primary/[0.06] blur-[140px]" />
-    <div className="absolute -bottom-32 -left-24 w-[360px] h-[360px] rounded-full bg-primary/[0.04] blur-[120px]" />
+    {/* Symmetric soft glows */}
+    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[900px] h-[900px] rounded-full bg-primary/[0.05] blur-[160px]" />
+    <div className="absolute -top-32 left-1/2 -translate-x-1/2 w-[500px] h-[500px] rounded-full bg-primary/[0.03] blur-[120px]" />
 
-    {/* Blueprint grid + traveling data ticks */}
+    {/* Centered dot grid + concentric rings — fully symmetric, no traveling lines */}
     <svg
       className="absolute inset-0 w-full h-full hidden md:block"
       viewBox="0 0 1920 1080"
       preserveAspectRatio="xMidYMid slice"
     >
       <defs>
-        <pattern id="info-grid" width="64" height="64" patternUnits="userSpaceOnUse">
-          <path
-            d="M 64 0 L 0 0 0 64"
-            fill="none"
-            stroke="hsl(var(--foreground))"
-            strokeOpacity="0.05"
-            strokeWidth="1"
-          />
+        <pattern id="info-dots" width="48" height="48" patternUnits="userSpaceOnUse" x="0" y="0">
+          <circle cx="24" cy="24" r="1" fill="hsl(var(--foreground))" fillOpacity="0.18" />
         </pattern>
-        <radialGradient id="info-grid-mask" cx="50%" cy="50%" r="60%">
+        <radialGradient id="info-dot-mask" cx="50%" cy="50%" r="55%">
           <stop offset="0%" stopColor="white" stopOpacity="1" />
-          <stop offset="70%" stopColor="white" stopOpacity="0.5" />
+          <stop offset="55%" stopColor="white" stopOpacity="0.4" />
           <stop offset="100%" stopColor="white" stopOpacity="0" />
         </radialGradient>
-        <mask id="info-grid-fade">
-          <rect width="1920" height="1080" fill="url(#info-grid-mask)" />
+        <mask id="info-dot-fade">
+          <rect width="1920" height="1080" fill="url(#info-dot-mask)" />
         </mask>
-        <linearGradient id="info-tick" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-          <stop offset="50%" stopColor="hsl(var(--primary))" stopOpacity="0.5" />
-          <stop offset="100%" stopColor="hsl(var(--primary))" stopOpacity="0" />
-        </linearGradient>
       </defs>
 
-      <rect width="1920" height="1080" fill="url(#info-grid)" mask="url(#info-grid-fade)" />
+      <rect width="1920" height="1080" fill="url(#info-dots)" mask="url(#info-dot-fade)" />
 
-      {ticks.map((t, i) => (
-        <rect
-          key={i}
-          x="-220"
-          y={t.y}
-          width="220"
-          height="1.5"
-          fill="url(#info-tick)"
-        >
-          <animate
-            attributeName="x"
-            from="-220"
-            to="1920"
-            dur={t.dur}
-            begin={t.delay}
-            repeatCount="indefinite"
-          />
-        </rect>
-      ))}
+      {/* Concentric rings, centered, slow opacity pulse */}
+      <g transform="translate(960 540)" fill="none" stroke="hsl(var(--primary))" strokeWidth="1">
+        {[260, 420, 600, 800].map((r, i) => (
+          <circle key={r} cx="0" cy="0" r={r} strokeOpacity={0.08 - i * 0.012}>
+            <animate
+              attributeName="stroke-opacity"
+              values={`${0.04 - i * 0.005};${0.1 - i * 0.012};${0.04 - i * 0.005}`}
+              dur="9s"
+              begin={`${i * 0.6}s`}
+              repeatCount="indefinite"
+            />
+          </circle>
+        ))}
+      </g>
     </svg>
   </div>
 );
