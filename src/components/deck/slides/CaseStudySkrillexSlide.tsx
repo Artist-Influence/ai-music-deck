@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import skrillClip1 from '@/assets/skrillex-clip1.png';
 import skrillClip2 from '@/assets/skrillex-clip2.jpeg';
@@ -11,6 +12,7 @@ const CaseStudySkrillexSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
+      <PatternVisual />
       <div className="relative z-10 w-full max-w-[1400px] mx-auto">
         <div className="max-w-[1200px] mx-auto">
           <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">{t('csSkrillex.title')}</h1>
