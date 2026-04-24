@@ -1,7 +1,7 @@
 import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import aiLogo from '@/assets/ai-logo-last-slide.png';
-import NetworkVisual from '../NetworkVisual';
+import CoverVisual from '../visuals/CoverVisual';
 
 const NextStepsSlide = () => {
   const { t } = useTranslation();
@@ -36,9 +36,7 @@ const NextStepsSlide = () => {
           }
         `).join('')}
       `}</style>
-      <div className="hidden md:block">
-        <NetworkVisual className="opacity-[0.06]" nodeCount={30} seed={5} />
-      </div>
+      <CoverVisual className="opacity-90" />
 
       <div className="relative z-10 max-w-[1400px] w-full">
         <h1 className="text-2xl md:text-7xl font-extrabold text-foreground mb-1 md:mb-2 tracking-tight">{t('nextSteps.title')}</h1>
