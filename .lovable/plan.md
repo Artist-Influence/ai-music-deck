@@ -1,59 +1,27 @@
+# Visual upgrade: GlassPanel redesign + standardized slide visualizers
 
+## 1. GlassPanel.tsx redesign
+- Gradient hairline border via masked `::before` (`mask-composite: exclude`) with primary/white/transparent stops.
+- Top inner highlight + soft outer glow box-shadow.
+- Decorative primary-tinted SVG corner bracket (top-right).
+- One-time diagonal shimmer overlay triggered by `IntersectionObserver` at 40% visibility; respects `prefers-reduced-motion`.
+- Variants preserved: `default` / `bright` (stronger primary) / `subtle` (auto-disables shimmer + corner).
+- New optional props: `noShimmer`, `noCorner`. Existing call sites unchanged.
 
-## Update copy across 4 slides in all 11 locales
+## 2. New `src/components/deck/visuals/`
+- **CoverVisual.tsx** — floating blurred orbs, dashed spinning rings, pulse particles. Slides 1 (Cover) and 18 (NextSteps).
+- **InfoVisual.tsx** — radial-masked orthogonal grid + traveling horizontal data-tick segments. Slides 2–5 (OperatingSystem, UnifiedOps, TheShift, WhatWeDo).
+- **ServiceVisual.tsx** — flowing Bézier distribution lines with `animateMotion` packet dots. Service slides.
 
-### Slide 6 — Clipping subtitle: "2,000+" → "20,000+"
+## 3. Slide rollout
+Drop the visualizer in as the first child of each slide root and remove redundant generic ambient blur-blob `div`s. Bespoke visuals (HubDiagram, SystemLoopDiagram, NetworkVisual on cover, TheShift phone trio, ClippingSlide phone glow, ID.ID dashboard) preserved.
 
-Update `clipping.subtitle` in all 11 locale files. Each language uses its own number formatting (e.g. `2,000` / `2.000` / `2 000` / `2000` / `2,000人` / `٢٠٠٠`), so the numeric token is replaced in-place per file:
+Slides updated:
+- Cover & ending: CoverSlide, NextStepsSlide → CoverVisual
+- Info: OperatingSystemSlide, UnifiedOpsSlide, TheShiftSlide, WhatWeDoSlide → InfoVisual
+- Service: ClippingSlide, CreatorFloodSlide, Top50TrendingSlide, CultureEditsSlide, YouTubeAdsSlide, SpotifyPlaylistingSlide, SoundCloudRepostsSlide, InstagramSeedingSlide, AdditionalServicesSlide, ReportingSlide, FanpagesSlide, ExpectationsSlide → ServiceVisual
 
-- `en.ts`: `2,000+` → `20,000+`
-- `pt.ts`: `2.000` → `20.000`
-- `de.ts`: `2.000` → `20.000`
-- `fr.ts`: `2 000` → `20 000`
-- `es.ts`, `nl.ts`, `it.ts`-equivalents → match local thousands separator
-- `ja.ts`: `2,000` → `20,000`
-- `zh.ts`: `2,000` / `2000` → `20,000` / `20000`
-- `ko.ts`: `2,000` → `20,000`
-- `ar.ts`: `2000` → `20000`
-- `hi.ts`: `2,000` → `20,000`
+Untouched: WebsitesSlide, IdIdSlide, PricingSlide, all CaseStudy* slides.
 
-### Slide 12 — Remove "Total group reach: 25M+ followers" from `soundcloud.timeframe`
-
-Keep only the timeframe portion in all 11 files:
-
-- `en.ts`: `'Total group reach: 25M+ followers · Timeframe: 2 to 8 weeks'` → `'Timeframe: 2 to 8 weeks'`
-- Same edit applied to fr/de/es/pt/nl/ja/ko/zh/ar/hi (drop the "total group reach" segment + the `·` separator, preserve each language's existing "Timeframe: 2 to 8 weeks" wording).
-
-### Slide 14 — Replace `metaTiktok.timeframe` value
-
-Change "Timeframe: 2 to 3 weeks" → "Timeframe: dependent on each campaign" in all 11 files, using each language's existing label phrasing (e.g. FR `Durée : dépend de chaque campagne`, DE `Zeitrahmen: abhängig von der jeweiligen Kampagne`, ES `Plazo: depende de cada campaña`, etc.).
-
-### Slide 18 — Remove `nextSteps.contactRedLine`
-
-Set the value to an empty string `''` in all 11 files. Keeping the key (rather than deleting it) avoids any TypeScript dictionary shape mismatch. The slide already renders this line via `t('nextSteps.contactRedLine')` inside a `<p>` — an empty string collapses the visible red line cleanly.
-
-If preferred, the alternative is to delete the `<p>` rendering this key from `NextStepsSlide.tsx`. Empty-string approach is chosen because it requires no component change and leaves the i18n keys uniform.
-
-## Files touched
-
-- `src/i18n/en.ts`
-- `src/i18n/fr.ts`
-- `src/i18n/de.ts`
-- `src/i18n/es.ts`
-- `src/i18n/pt.ts`
-- `src/i18n/nl.ts`
-- `src/i18n/ja.ts`
-- `src/i18n/ko.ts`
-- `src/i18n/zh.ts`
-- `src/i18n/ar.ts`
-- `src/i18n/hi.ts`
-
-No component, layout, or styling changes. No other locale keys touched.
-
-## Verification
-
-- Slide 6 (all langs): clipping subtitle reads "20,000+ clippers" (or locale equivalent).
-- Slide 12 (all langs): SoundCloud footer shows only "Timeframe: 2 to 8 weeks" — no follower count.
-- Slide 14 (all langs): Meta & TikTok footer shows "Timeframe: dependent on each campaign".
-- Slide 18 (all langs): The red 24-hour turnaround line is gone; contact box ends at the website URL.
-
+## 4. Out of scope
+No copy, i18n, layout, design-token, or font changes.
