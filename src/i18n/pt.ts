@@ -163,7 +163,7 @@ const pt: Record<string, string> = {
   'nextSteps.step.1.title': 'Confirmação do escopo',
   'nextSteps.step.1.desc': 'Confirmamos metas, serviços e cronograma',
   'nextSteps.step.2.title': 'Você envia os recursos',
-  'nextSteps.step.2.desc': 'Áudio, metadados, nomes de usuário',
+  'nextSteps.step.2.desc': 'Áudio, data de lançamento, diretrizes, preferências',
   'nextSteps.step.3.title': 'Lançamento',
   'nextSteps.step.3.desc': 'Em 24 a 72 horas, dependendo dos serviços',
   'nextSteps.contactTitle': 'Entre em contato',
