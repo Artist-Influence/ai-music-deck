@@ -266,7 +266,7 @@ const ar: Record<string, string> = {
   'nextSteps.step.1.title': 'تأكيد النطاق',
   'nextSteps.step.1.desc': 'نؤكد الأهداف والخدمات والجدول الزمني',
   'nextSteps.step.2.title': 'ترسل الأصول',
-  'nextSteps.step.2.desc': 'الصوت والبيانات الوصفية والمعرفات',
+  'nextSteps.step.2.desc': 'الصوت، تاريخ الإصدار، الضوابط، التفضيلات',
   'nextSteps.step.3.title': 'الإطلاق',
   'nextSteps.step.3.desc': 'في غضون 24 إلى 72 ساعة حسب الخدمات',
   'nextSteps.contactTitle': 'اتصل بنا',

@@ -163,7 +163,7 @@ const ja: Record<string, string> = {
   'nextSteps.step.1.title': '範囲の確認',
   'nextSteps.step.1.desc': '目標、サービス、タイムラインを確認します',
   'nextSteps.step.2.title': 'アセットの送付',
-  'nextSteps.step.2.desc': 'オーディオ、メタデータ、ハンドル',
+  'nextSteps.step.2.desc': 'オーディオ、リリース日、ガイドライン、希望条件',
   'nextSteps.step.3.title': '開始',
   'nextSteps.step.3.desc': 'サービスに応じて24〜72時間以内',
   'nextSteps.contactTitle': 'お問い合わせ',

@@ -242,7 +242,7 @@ const fr: Record<string, string> = {
   'nextSteps.step.1.title': 'Confirmation de la portée',
   'nextSteps.step.1.desc': 'Nous confirmons les objectifs, les services et le calendrier',
   'nextSteps.step.2.title': 'Vous envoyez les ressources',
-  'nextSteps.step.2.desc': 'Fichiers audio, métadonnées, identifiants',
+  'nextSteps.step.2.desc': 'Audio, date de sortie, garde-fous, préférences',
   'nextSteps.step.3.title': 'Lancement',
   'nextSteps.step.3.desc': 'Dans les 24 à 72 heures selon les services',
   'nextSteps.contactTitle': 'Contactez-nous',

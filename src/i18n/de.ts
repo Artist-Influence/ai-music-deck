@@ -163,7 +163,7 @@ const de: Record<string, string> = {
   'nextSteps.step.1.title': 'Umfang bestätigen',
   'nextSteps.step.1.desc': 'Wir bestätigen Ziele, Leistungen und Zeitplan',
   'nextSteps.step.2.title': 'Sie senden Assets',
-  'nextSteps.step.2.desc': 'Audio, Metadaten, Handles',
+  'nextSteps.step.2.desc': 'Audio, Veröffentlichungsdatum, Leitplanken, Präferenzen',
   'nextSteps.step.3.title': 'Starten',
   'nextSteps.step.3.desc': 'Innerhalb von 24 bis 72 Stunden, je nach Service',
   'nextSteps.contactTitle': 'Kontaktieren Sie uns',
