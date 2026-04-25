@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import PatternVisual from '../visuals/PatternVisual';
 import { Disc3, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
@@ -7,6 +8,7 @@ const IdIdSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-20 flex flex-col justify-start md:justify-center">
+      <PatternVisual />
       {/* Centered glow behind title */}
       <div className="absolute top-[20%] left-1/2 -translate-x-1/2 w-[400px] h-[400px] md:w-[700px] md:h-[700px] rounded-full bg-primary/[0.1] blur-[160px] animate-float" />
 

@@ -1,7 +1,7 @@
 import { Zap } from 'lucide-react';
 
 import GlassPanel from '../GlassPanel';
-import ServiceVisual from '../visuals/ServiceVisual';
+import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
 
@@ -16,7 +16,7 @@ const CreatorFloodSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
-      <ServiceVisual seed={2} />
+      <PatternVisual />
       <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
         <div className="flex-1 flex flex-col gap-3 md:gap-4">
           <div>

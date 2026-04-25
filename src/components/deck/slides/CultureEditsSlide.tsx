@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import GlassPanel from '../GlassPanel';
-import ServiceVisual from '../visuals/ServiceVisual';
+import PatternVisual from '../visuals/PatternVisual';
 import { Film } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
@@ -48,7 +48,7 @@ const CultureEditsSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-16 flex flex-col justify-start md:justify-center">
-      <ServiceVisual seed={4} className="opacity-80"/>
+      <PatternVisual />
       {/* Background collage grid (decorative) */}
       <div className="hidden md:grid absolute inset-0 grid-cols-4 grid-rows-3 gap-4 p-16 opacity-[0.04] pointer-events-none">
         {tileLabels.map((label, i) => (

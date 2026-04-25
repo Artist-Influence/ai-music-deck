@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import PatternVisual from '../visuals/PatternVisual';
 import { Globe, Zap, Layers, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import pierceImg from '@/assets/site-pierce.png';
@@ -43,6 +44,7 @@ const WebsitesSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-16 flex flex-col justify-start md:justify-center">
+      <PatternVisual />
       <div className="absolute top-[5%] right-[10%] w-[300px] h-[300px] md:w-[500px] md:h-[500px] rounded-full bg-primary/[0.06] blur-[140px]" />
 
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
