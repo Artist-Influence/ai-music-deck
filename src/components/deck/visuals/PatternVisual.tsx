@@ -13,15 +13,20 @@ interface PatternVisualProps {
  * radial mask for legibility.
  */
 const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) => {
-  const rotation = variant === 'mirrored' ? -10 : variant === 'corner' ? 14 : 10;
+  const rotation = variant === 'mirrored' ? -6 : variant === 'corner' ? 8 : 6;
 
-  // Tile geometry — half-drop staggered lattice
-  const tileW = 180;
-  const tileH = 220;
-  const markW = 70;
-  const markH = 86;
-  const cx = (tileW - markW) / 2;
-  const cy = (tileH - markH) / 2;
+  // Tile geometry — Goyard half-drop. Two marks per tile, both fully contained.
+  const tileW = 220;
+  const tileH = 260;
+  const markW = 64;
+  const markH = 78;
+  // Mark A: upper-left quadrant center
+  const ax = tileW * 0.25 - markW / 2;
+  const ay = tileH * 0.25 - markH / 2;
+  // Mark B: lower-right quadrant center (half-drop offset)
+  const bx = tileW * 0.75 - markW / 2;
+  const by = tileH * 0.75 - markH / 2;
+  const shadowOffset = 0.7;
 
   return (
     <div className={cn('pointer-events-none absolute inset-0 overflow-hidden', className)}>
