@@ -65,72 +65,52 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
               patternUnits="userSpaceOnUse"
               patternTransform={`rotate(${rotation})`}
             >
-              {/* Row A — primary mark */}
-              {/* red offset hairline (foil under-shadow) */}
+              {/* Mark A — upper-left quadrant */}
               <image
                 href={logomark}
-                x={cx + 0.8}
-                y={cy + 0.8}
+                x={ax + shadowOffset}
+                y={ay + shadowOffset}
                 width={markW}
                 height={markH}
-                opacity="0.32"
+                opacity="0.30"
                 style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(5800%) hue-rotate(348deg) brightness(95%) contrast(105%)' }}
               />
-              {/* white mark */}
               <image
                 href={logomark}
-                x={cx}
-                y={cy}
+                x={ax}
+                y={ay}
                 width={markW}
                 height={markH}
                 opacity="0.16"
               />
 
-              {/* Row B — half-drop staggered (offset by half tile) */}
+              {/* Mark B — lower-right quadrant (half-drop) */}
               <image
                 href={logomark}
-                x={cx + tileW / 2 + 0.8}
-                y={cy - tileH / 2 + 0.8}
+                x={bx + shadowOffset}
+                y={by + shadowOffset}
                 width={markW}
                 height={markH}
-                opacity="0.28"
+                opacity="0.30"
                 style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(5800%) hue-rotate(348deg) brightness(95%) contrast(105%)' }}
               />
               <image
                 href={logomark}
-                x={cx + tileW / 2}
-                y={cy - tileH / 2}
+                x={bx}
+                y={by}
                 width={markW}
                 height={markH}
-                opacity="0.14"
-              />
-              <image
-                href={logomark}
-                x={cx + tileW / 2 + 0.8}
-                y={cy + tileH / 2 + 0.8}
-                width={markW}
-                height={markH}
-                opacity="0.28"
-                style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(5800%) hue-rotate(348deg) brightness(95%) contrast(105%)' }}
-              />
-              <image
-                href={logomark}
-                x={cx + tileW / 2}
-                y={cy + tileH / 2}
-                width={markW}
-                height={markH}
-                opacity="0.14"
+                opacity="0.16"
               />
 
-              {/* Diamond accents in primary tint at lattice intersections */}
+              {/* Diamond accents at tile mid-edges */}
               <g
                 stroke="hsl(var(--primary))"
-                strokeOpacity="0.28"
+                strokeOpacity="0.24"
                 strokeWidth="1"
                 fill="none"
               >
-                <path d={`M 0 ${tileH / 2} L 8 ${tileH / 2 - 8} L 16 ${tileH / 2} L 8 ${tileH / 2 + 8} Z`} />
-                <path d={`M ${tileW} ${tileH / 2} L ${tileW - 8} ${tileH / 2 - 8} L ${tileW - 16} ${tileH / 2} L ${tileW - 8} ${tileH / 2 + 8} Z`} />
+                <path d={`M ${tileW / 2 - 6} ${tileH / 2} L ${tileW / 2} ${tileH / 2 - 6} L ${tileW / 2 + 6} ${tileH / 2} L ${tileW / 2} ${tileH / 2 + 6} Z`} />
               </g>
 
               {/* Hollow inner diamonds for refinement */}
