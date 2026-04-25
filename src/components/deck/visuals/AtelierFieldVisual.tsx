@@ -116,7 +116,7 @@ const AtelierFieldVisual = ({ className, variant = 'default' }: AtelierFieldVisu
 
       {/* Mobile-only subtle hatch (no SVG animations) */}
       <div
-        className="absolute inset-0 md:hidden opacity-30"
+        className="absolute inset-0 md:hidden opacity-45"
         style={{
           backgroundImage:
             'repeating-linear-gradient(135deg, hsl(var(--foreground)/0.04) 0 1px, transparent 1px 40px), repeating-linear-gradient(45deg, hsl(var(--foreground)/0.03) 0 1px, transparent 1px 40px)',
@@ -124,6 +124,8 @@ const AtelierFieldVisual = ({ className, variant = 'default' }: AtelierFieldVisu
           WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
         }}
       />
+
+      <div className="absolute inset-x-0 -bottom-[10%] md:hidden h-[48%] bg-primary/[0.06] blur-[120px]" />
 
       {/* Champagne shimmer wash — broad, soft luxury highlight */}
       <div className="absolute inset-0 overflow-hidden">
@@ -143,7 +145,7 @@ const AtelierFieldVisual = ({ className, variant = 'default' }: AtelierFieldVisu
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 105% 100% at 50% 50%, hsl(var(--background)/0.30) 0%, transparent 55%, hsl(var(--background)/0.45) 100%)',
+            'radial-gradient(ellipse 105% 100% at 50% 50%, hsl(var(--background)/0.26) 0%, transparent 58%, hsl(var(--background)/0.18) 100%)',
         }}
       />
     </div>

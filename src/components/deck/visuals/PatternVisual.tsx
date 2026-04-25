@@ -153,23 +153,79 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
         />
       </div>
 
-      {/* Mobile-only subtle hatch fallback */}
+      {/* Mobile monogram fallback — static + lighter for performance */}
       <div
-        className="absolute inset-0 md:hidden opacity-30"
+        className="absolute inset-0 md:hidden"
+        style={{
+          maskImage:
+            'radial-gradient(ellipse 100% 88% at 50% 50%, black 0%, rgba(0,0,0,0.8) 42%, rgba(0,0,0,0.4) 74%, rgba(0,0,0,0.16) 100%)',
+          WebkitMaskImage:
+            'radial-gradient(ellipse 100% 88% at 50% 50%, black 0%, rgba(0,0,0,0.8) 42%, rgba(0,0,0,0.4) 74%, rgba(0,0,0,0.16) 100%)',
+        }}
+      >
+        <svg
+          className="absolute inset-0 w-[calc(100%+120px)] h-[calc(100%+120px)] -left-[60px] -top-[60px] opacity-50"
+          viewBox="0 0 2160 1320"
+          preserveAspectRatio="xMidYMid slice"
+        >
+          <defs>
+            <pattern
+              id="ai-monogram-tile-mobile"
+              width={tileW}
+              height={tileH}
+              patternUnits="userSpaceOnUse"
+              patternTransform={`rotate(${rotation})`}
+            >
+              <image
+                href={logomark}
+                x={ax + shadowOffset}
+                y={ay + shadowOffset}
+                width={markW}
+                height={markH}
+                opacity="0.16"
+                style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(5800%) hue-rotate(348deg) brightness(95%) contrast(105%)' }}
+              />
+              <image href={logomark} x={ax} y={ay} width={markW} height={markH} opacity="0.08" />
+              <image
+                href={logomark}
+                x={bx + shadowOffset}
+                y={by + shadowOffset}
+                width={markW}
+                height={markH}
+                opacity="0.16"
+                style={{ filter: 'brightness(0) saturate(100%) invert(20%) sepia(95%) saturate(5800%) hue-rotate(348deg) brightness(95%) contrast(105%)' }}
+              />
+              <image href={logomark} x={bx} y={by} width={markW} height={markH} opacity="0.08" />
+              <path
+                d={`M ${tileW / 2 - 6} ${tileH / 2} L ${tileW / 2} ${tileH / 2 - 6} L ${tileW / 2 + 6} ${tileH / 2} L ${tileW / 2} ${tileH / 2 + 6} Z`}
+                stroke="hsl(var(--primary))"
+                strokeOpacity="0.12"
+                strokeWidth="1"
+                fill="none"
+              />
+              <circle cx={tileW / 2} cy={tileH / 2} r="1.4" fill="hsl(var(--primary))" fillOpacity="0.18" />
+            </pattern>
+          </defs>
+          <rect width="2160" height="1320" fill="url(#ai-monogram-tile-mobile)" />
+        </svg>
+      </div>
+
+      <div
+        className="absolute inset-0 md:hidden opacity-35"
         style={{
           backgroundImage:
             'repeating-linear-gradient(135deg, hsl(var(--foreground)/0.04) 0 1px, transparent 1px 40px), repeating-linear-gradient(45deg, hsl(var(--foreground)/0.03) 0 1px, transparent 1px 40px)',
-          maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
-          WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
         }}
       />
+
+      <div className="absolute inset-x-0 -bottom-[10%] md:hidden h-[48%] bg-primary/[0.06] blur-[120px]" />
 
       {/* Vignette + inward legibility shield to lift text off the pattern */}
       <div
         className="absolute inset-0"
         style={{
           background:
-            'radial-gradient(ellipse 105% 100% at 50% 50%, hsl(var(--background)/0.30) 0%, transparent 60%, hsl(var(--background)/0.45) 100%)',
+            'radial-gradient(ellipse 105% 100% at 50% 50%, hsl(var(--background)/0.26) 0%, transparent 62%, hsl(var(--background)/0.18) 100%)',
         }}
       />
     </div>
