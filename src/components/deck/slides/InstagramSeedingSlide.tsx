@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import ServiceVisual from '../visuals/ServiceVisual';
+import PatternVisual from '../visuals/PatternVisual';
 import { Instagram } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import gordoImg from '@/assets/gordo-gordos-dilemma.jpg';
@@ -26,7 +26,7 @@ const InstagramSeedingSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
-      <ServiceVisual seed={8} />
+      <PatternVisual />
       <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
         {/* Header — full width above the two-column row */}
         <div>
