@@ -39,8 +39,8 @@ const NextStepsSlide = () => {
       <CoverVisual className="opacity-90" />
 
       <div className="relative z-10 max-w-[1400px] w-full">
-        <h1 className="text-2xl md:text-7xl font-extrabold text-foreground mb-1 md:mb-2 tracking-tight">{t('nextSteps.title')}</h1>
-        <p className="text-sm md:text-xl text-muted-foreground/60 mb-6 md:mb-14 tracking-wide">{t('nextSteps.subtitle')}</p>
+        <h1 className="text-2xl md:text-7xl font-extrabold text-white mb-1 md:mb-2 tracking-tight">{t('nextSteps.title')}</h1>
+        <p className="text-sm md:text-xl text-white/70 mb-6 md:mb-14 tracking-wide">{t('nextSteps.subtitle')}</p>
 
         <div className="grid grid-cols-2 md:flex gap-3 md:gap-6 mb-8 md:mb-16">
           {steps.map((s, i) => (
@@ -60,7 +60,7 @@ const NextStepsSlide = () => {
         </GlassPanel>
 
         <img src={aiLogo} alt="Artist Influence" className="w-32 md:w-64 mx-auto mb-2 md:mb-3" />
-        <p className="text-xs md:text-lg text-muted-foreground/50 tracking-widest uppercase">{t('nextSteps.tagline')}</p>
+        <p className="text-xs md:text-lg text-white/65 tracking-widest uppercase">{t('nextSteps.tagline')}</p>
       </div>
     </div>
   );
