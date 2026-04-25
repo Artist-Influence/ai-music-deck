@@ -266,7 +266,7 @@ const hi: Record<string, string> = {
   'nextSteps.step.1.title': 'दायरे की पुष्टि',
   'nextSteps.step.1.desc': 'हम लक्ष्यों, सेवाओं और समयरेखा की पुष्टि करते हैं',
   'nextSteps.step.2.title': 'आप एसेट्स भेजते हैं',
-  'nextSteps.step.2.desc': 'ऑडियो, मेटाडेटा, हैंडल',
+  'nextSteps.step.2.desc': 'ऑडियो, रिलीज़ की तारीख, दिशानिर्देश, प्राथमिकताएँ',
   'nextSteps.step.3.title': 'लॉन्च',
   'nextSteps.step.3.desc': 'सेवाओं के आधार पर 24 से 72 घंटों के भीतर',
   'nextSteps.contactTitle': 'हमसे संपर्क करें',
