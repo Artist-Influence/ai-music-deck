@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import PatternVisual from '../visuals/PatternVisual';
 import { Disc3, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
