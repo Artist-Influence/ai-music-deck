@@ -90,7 +90,7 @@ const AtelierFieldVisual = ({ className, variant = 'default' }: AtelierFieldVisu
 
         {/* Anchor monogram (watermark) */}
         {anchor && (
-          <g transform={`translate(${anchor.x} ${anchor.y}) rotate(${anchor.rot})`} opacity="0.06">
+          <g transform={`translate(${anchor.x} ${anchor.y}) rotate(${anchor.rot})`} opacity="0.045">
             <image href={logomark} x="0" y="0" width={anchor.w} height={anchor.w * (772 / 632)} />
           </g>
         )}
