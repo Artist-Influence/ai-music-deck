@@ -163,7 +163,7 @@ const ko: Record<string, string> = {
   'nextSteps.step.1.title': '범위 확인',
   'nextSteps.step.1.desc': '목표, 서비스 및 일정을 확인합니다',
   'nextSteps.step.2.title': '자료 전송',
-  'nextSteps.step.2.desc': '오디오, 메타데이터, 핸들',
+  'nextSteps.step.2.desc': '오디오, 발매일, 가이드라인, 선호 사항',
   'nextSteps.step.3.title': '런칭',
   'nextSteps.step.3.desc': '서비스에 따라 24~72시간 이내',
   'nextSteps.contactTitle': '문의하기',
