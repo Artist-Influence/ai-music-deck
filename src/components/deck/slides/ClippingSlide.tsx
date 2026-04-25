@@ -1,6 +1,6 @@
 import { Scissors } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
-import ServiceVisual from '../visuals/ServiceVisual';
+import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import ariesCover from '@/assets/aries-in-the-flesh.jpg';
 import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
@@ -26,7 +26,7 @@ const ClippingSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-16 flex flex-col justify-start md:justify-center">
-      <ServiceVisual seed={1} className="opacity-80" />
+      <PatternVisual />
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <Scissors size={20} className="text-primary md:w-7 md:h-7" />

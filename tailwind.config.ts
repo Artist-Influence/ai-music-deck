@@ -104,6 +104,14 @@ export default {
           "0%, 100%": { transform: "scaleY(0.25)" },
           "50%": { transform: "scaleY(1)" },
         },
+        "pattern-drift": {
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-100px, -100px, 0)" },
+        },
+        "shimmer-sweep": {
+          "0%": { transform: "translateX(0%) rotate(0deg)" },
+          "100%": { transform: "translateX(350%) rotate(0deg)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -116,6 +124,8 @@ export default {
         "aurora-drift-rev": "aurora-drift-rev 28s ease-in-out infinite",
         "conic-spin": "conic-spin 60s linear infinite",
         equalizer: "equalizer 1.2s ease-in-out infinite",
+        "pattern-drift": "pattern-drift 120s linear infinite",
+        "shimmer-sweep": "shimmer-sweep 18s ease-in-out infinite",
       },
     },
   },
