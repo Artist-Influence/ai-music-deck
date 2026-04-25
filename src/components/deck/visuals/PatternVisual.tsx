@@ -34,9 +34,9 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
       <div className="absolute top-[12%] left-[8%] w-[720px] h-[720px] rounded-full bg-primary/[0.07] blur-[180px] animate-aurora-drift" />
       <div className="absolute bottom-[8%] right-[4%] w-[640px] h-[640px] rounded-full bg-primary/[0.05] blur-[160px] animate-aurora-drift-rev" />
 
-      {/* Drifting monogram lattice — softened with blur for readability */}
+      {/* Drifting monogram lattice — softened with blur for readability. Hidden on mobile for perf. */}
       <div
-        className="absolute inset-0 animate-pattern-drift"
+        className="absolute inset-0 animate-pattern-drift hidden md:block"
         style={{
           maskImage:
             'radial-gradient(ellipse 95% 85% at 50% 50%, black 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.2) 100%)',
