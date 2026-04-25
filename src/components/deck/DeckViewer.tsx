@@ -178,4 +178,66 @@ const DeckViewer = () => {
   );
 };
 
+interface MobilePagerProps {
+  current: number;
+  setCurrent: (i: number) => void;
+}
+
+const MobilePager = ({ current, setCurrent }: MobilePagerProps) => {
+  const [emblaRef, emblaApi] = useEmblaCarousel({
+    loop: false,
+    align: 'start',
+    skipSnaps: false,
+    containScroll: 'trimSnaps',
+  });
+  const [snap, setSnap] = useState(current);
+
+  useEffect(() => {
+    if (!emblaApi) return;
+    const onSelect = () => setSnap(emblaApi.selectedScrollSnap());
+    emblaApi.on('select', onSelect);
+    emblaApi.on('reInit', onSelect);
+    onSelect();
+    return () => {
+      emblaApi.off('select', onSelect);
+      emblaApi.off('reInit', onSelect);
+    };
+  }, [emblaApi]);
+
+  useEffect(() => {
+    setCurrent(snap);
+  }, [snap, setCurrent]);
+
+  useEffect(() => {
+    if (emblaApi && current !== emblaApi.selectedScrollSnap()) {
+      emblaApi.scrollTo(current, true);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [emblaApi]);
+
+  return (
+    <div className="fixed inset-0 bg-background overflow-hidden">
+      <div className="absolute top-3 right-3 z-50">
+        <LanguagePicker />
+      </div>
+
+      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border/40 pointer-events-none">
+        <span className="text-xs font-mono text-muted-foreground">
+          {snap + 1} / {slides.length}
+        </span>
+      </div>
+
+      <div ref={emblaRef} className="h-dvh w-full overflow-hidden">
+        <div className="flex h-full touch-pan-y">
+          {slides.map((S, i) => (
+            <div key={i} className="flex-[0_0_100%] min-w-0 h-dvh overflow-y-auto overscroll-contain">
+              <ScaledSlide isMobile><S /></ScaledSlide>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  );
+};
+
 export default DeckViewer;
