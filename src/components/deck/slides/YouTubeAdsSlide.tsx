@@ -38,7 +38,7 @@ const YouTubeAdsSlide = () => {
               <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
             </div>
             <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">{t('youtube.title')}</h1>
-            <p className="text-sm md:text-2xl text-muted-foreground mb-4 md:mb-6 max-w-[700px]">{t('youtube.subtitle')}</p>
+            <p className="text-sm md:text-2xl text-foreground/80 mb-4 md:mb-6 max-w-[700px] [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('youtube.subtitle')}</p>
           </div>
 
           <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
