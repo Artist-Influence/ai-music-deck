@@ -15,17 +15,11 @@ interface AtelierFieldVisualProps {
  * particles, no broadcast arcs) — calm and editorial.
  */
 const AtelierFieldVisual = ({ className, variant = 'default' }: AtelierFieldVisualProps) => {
-  // Anchor monogram placement per variant.
-  const anchor =
-    variant === 'mirrored'
-      ? { x: 80, y: 580, w: 360, rot: -8 }
-      : variant === 'corner'
-        ? { x: 80, y: 80, w: 280, rot: 6 }
-        : variant === 'centered'
-          ? null
-          : { x: 1380, y: 80, w: 380, rot: -8 };
+  // Anchor monogram — locked to top-right whitespace across all variants for consistency.
+  // `centered` variant uses a medallion instead (Pricing slide).
+  const anchor = variant === 'centered' ? null : { x: 1640, y: 60, w: 240, rot: -8 };
 
-  // Lattice skew per variant
+  // Lattice skew — varies subtly per variant for rhythm without moving the anchor.
   const skew = variant === 'mirrored' ? 8 : variant === 'corner' ? 4 : variant === 'centered' ? 0 : -8;
 
   return (
