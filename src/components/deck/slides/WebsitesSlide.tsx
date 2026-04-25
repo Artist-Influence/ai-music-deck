@@ -1,4 +1,5 @@
 import GlassPanel from '../GlassPanel';
+import PatternVisual from '../visuals/PatternVisual';
 import { Globe, Zap, Layers, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import pierceImg from '@/assets/site-pierce.png';
