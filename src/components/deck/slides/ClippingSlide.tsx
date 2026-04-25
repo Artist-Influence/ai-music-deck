@@ -32,7 +32,7 @@ const ClippingSlide = () => {
           <Scissors size={20} className="text-primary md:w-7 md:h-7" />
           <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
         </div>
-        <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">{t('clipping.title')}</h1>
+        <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4">{t('clipping.title')}</h1>
         <p className="text-sm md:text-2xl text-foreground/80 mb-4 md:mb-8 max-w-[900px] [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('clipping.subtitle')}</p>
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8">

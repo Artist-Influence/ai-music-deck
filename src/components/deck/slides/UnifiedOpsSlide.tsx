@@ -25,13 +25,13 @@ const UnifiedOpsSlide = () => {
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <Sparkles className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-          <p className="text-[10px] md:text-sm text-primary font-medium tracking-wider uppercase">{t('unifiedOps.kicker')}</p>
+          <p className="text-[10px] md:text-sm text-primary text-on-visual-accent font-medium tracking-wider uppercase">{t('unifiedOps.kicker')}</p>
         </div>
 
-        <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-3 md:mb-5 leading-tight">
+        <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-3 md:mb-5 leading-tight">
           {t('unifiedOps.title')}
         </h1>
-        <p className="text-sm md:text-2xl text-muted-foreground mb-5 md:mb-10 max-w-[1200px] leading-relaxed">
+        <p className="text-sm md:text-2xl text-on-visual-soft mb-5 md:mb-10 max-w-[1200px] leading-relaxed">
           {t('unifiedOps.subtitle')}
         </p>
 

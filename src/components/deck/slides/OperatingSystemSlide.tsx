@@ -25,10 +25,10 @@ const OperatingSystemSlide = () => {
           <p className="text-[10px] md:text-sm text-primary font-medium tracking-wider uppercase">{t('opSystem.tagline')}</p>
         </div>
 
-        <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-3 md:mb-5 leading-tight max-w-[1200px]">
+        <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-3 md:mb-5 leading-tight max-w-[1200px]">
           {t('opSystem.title')}
         </h1>
-        <p className="text-sm md:text-2xl text-muted-foreground mb-6 md:mb-10 max-w-[1100px] leading-relaxed">
+        <p className="text-sm md:text-2xl text-on-visual-soft mb-6 md:mb-10 max-w-[1100px] leading-relaxed">
           {t('opSystem.subtitle')}
         </p>
 

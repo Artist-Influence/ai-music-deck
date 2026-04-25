@@ -67,10 +67,10 @@ const WhatCloutedDoesSlide = () => {
 
       <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 items-start w-full max-w-[1600px]">
         <div className="flex-1 max-w-[700px]">
-          <h1 className="text-xl md:text-5xl font-bold text-foreground mb-4 md:mb-8 leading-tight md:whitespace-nowrap">
+          <h1 className="text-xl md:text-5xl font-bold text-on-visual mb-4 md:mb-8 leading-tight md:whitespace-nowrap">
             {t('whatWeDo.title')}
           </h1>
-          <p className="text-sm md:text-[21px] text-primary font-medium mb-4 md:mb-8 tracking-wider uppercase">{t('whatWeDo.section')}</p>
+          <p className="text-sm md:text-[21px] text-primary text-on-visual-accent font-medium mb-4 md:mb-8 tracking-wider uppercase">{t('whatWeDo.section')}</p>
           <div className="space-y-2 md:space-y-3">
             {[0, 1, 2].map((i) => (
               <GlassPanel key={i} variant="subtle" className="p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
