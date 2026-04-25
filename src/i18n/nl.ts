@@ -242,7 +242,7 @@ const nl: Record<string, string> = {
   'nextSteps.step.1.title': 'Bevestig Omvang',
   'nextSteps.step.1.desc': 'Wij bevestigen doelen, services en tijdlijn',
   'nextSteps.step.2.title': 'U Stuurt Assets',
-  'nextSteps.step.2.desc': 'Audio, metadata, handles',
+  'nextSteps.step.2.desc': 'Audio, releasedatum, richtlijnen, voorkeuren',
   'nextSteps.step.3.title': 'Lancering',
   'nextSteps.step.3.desc': 'Binnen 24 tot 72 uur, afhankelijk van de services',
   'nextSteps.contactTitle': 'Neem contact met ons op',
