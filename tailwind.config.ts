@@ -87,6 +87,23 @@ export default {
           "0%, 100%": { opacity: "0.4" },
           "50%": { opacity: "0.8" },
         },
+        "aurora-drift": {
+          "0%, 100%": { transform: "translate3d(0,0,0) rotate(0deg) scale(1)" },
+          "33%": { transform: "translate3d(4%, -3%, 0) rotate(120deg) scale(1.1)" },
+          "66%": { transform: "translate3d(-3%, 2%, 0) rotate(240deg) scale(0.95)" },
+        },
+        "aurora-drift-rev": {
+          "0%, 100%": { transform: "translate3d(0,0,0) rotate(0deg) scale(1)" },
+          "50%": { transform: "translate3d(-5%, 4%, 0) rotate(-180deg) scale(1.15)" },
+        },
+        "conic-spin": {
+          "0%": { transform: "rotate(0deg)" },
+          "100%": { transform: "rotate(360deg)" },
+        },
+        equalizer: {
+          "0%, 100%": { transform: "scaleY(0.25)" },
+          "50%": { transform: "scaleY(1)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
@@ -95,6 +112,10 @@ export default {
         float: "float 20s ease-in-out infinite",
         "float-slow": "float-slow 25s ease-in-out infinite",
         "glow-pulse": "glow-pulse 4s ease-in-out infinite",
+        "aurora-drift": "aurora-drift 22s ease-in-out infinite",
+        "aurora-drift-rev": "aurora-drift-rev 28s ease-in-out infinite",
+        "conic-spin": "conic-spin 60s linear infinite",
+        equalizer: "equalizer 1.2s ease-in-out infinite",
       },
     },
   },
