@@ -24,7 +24,7 @@ const IdIdSlide = () => {
           <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('idid.kicker')}</p>
         </div>
 
-        <h1 className="text-3xl md:text-7xl font-bold text-foreground mb-2 md:mb-3 leading-tight">{t('idid.title')}</h1>
+        <h1 className="text-3xl md:text-7xl font-bold text-on-visual mb-2 md:mb-3 leading-tight">{t('idid.title')}</h1>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3 md:mb-5">
           <p className="text-base md:text-3xl text-primary/90 font-light">{t('idid.tagline')}</p>
           <a

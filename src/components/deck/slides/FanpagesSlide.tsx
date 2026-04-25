@@ -38,7 +38,7 @@ const FanpagesSlide = () => (
         <Users size={20} className="text-primary md:w-7 md:h-7" />
         <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">Service</p>
       </div>
-      <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-2">Fanpages</h1>
+      <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-1 md:mb-2">Fanpages</h1>
       <p className="text-sm md:text-2xl text-muted-foreground mb-3 md:mb-4 max-w-[800px]">
         We operate and scale multiple theme pages that consistently target and unify your fan base around your project.
       </p>

@@ -37,7 +37,7 @@ const YouTubeAdsSlide = () => {
               <Youtube size={20} className="text-primary md:w-7 md:h-7" />
               <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
             </div>
-            <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4 leading-tight">{t('youtube.title')}</h1>
+            <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4 leading-tight">{t('youtube.title')}</h1>
             <p className="text-sm md:text-2xl text-foreground/80 mb-4 md:mb-6 max-w-[700px] [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('youtube.subtitle')}</p>
           </div>
 

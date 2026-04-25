@@ -64,7 +64,7 @@ const CultureEditsSlide = () => {
           <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
         </div>
 
-        <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">{t('cultureEdits.title')}</h1>
+        <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4">{t('cultureEdits.title')}</h1>
         <p className="text-sm md:text-2xl text-foreground/80 mb-5 md:mb-8 max-w-[1100px] leading-relaxed [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('cultureEdits.subtitle')}</p>
 
         {/* Two-column hero: copy left, phones right */}
