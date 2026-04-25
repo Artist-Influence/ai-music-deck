@@ -48,10 +48,10 @@ const PricingSlide = () => {
         </GlassPanel>
 
         <div className="mt-4 md:mt-8 flex flex-col gap-2">
-          <a href="https://smfnasjfkaksdannc.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block text-sm md:text-xl font-semibold text-primary hover:text-primary/80 transition-colors underline underline-offset-4">
+          <a href="https://smfnasjfkaksdannc.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block text-sm md:text-xl font-semibold text-primary text-on-visual-accent hover:text-primary/80 transition-colors underline underline-offset-4">
             {t('pricing.viewPricing')}
           </a>
-          <p className="text-xs md:text-xl text-foreground">{t('pricing.footer')}</p>
+          <p className="text-xs md:text-xl text-on-visual">{t('pricing.footer')}</p>
         </div>
       </div>
     </div>
