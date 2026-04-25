@@ -82,20 +82,7 @@ const DeckViewer = () => {
   }
 
   if (isMobile) {
-    return (
-      <div className="min-h-dvh overflow-y-auto bg-background">
-        {/* Mobile language picker */}
-        <div className="sticky top-0 z-50 flex justify-end p-2 bg-background/80 backdrop-blur-sm">
-          <LanguagePicker />
-          
-        </div>
-        {slides.map((S, i) => (
-          <div key={i} className="min-h-dvh w-full">
-            <ScaledSlide isMobile><S /></ScaledSlide>
-          </div>
-        ))}
-      </div>
-    );
+    return <MobilePager current={current} setCurrent={setCurrent} />;
   }
 
   return (
