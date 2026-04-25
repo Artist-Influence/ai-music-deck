@@ -192,7 +192,7 @@ const zh: Record<string, string> = {
   'nextSteps.step.1.title': '确认范围',
   'nextSteps.step.1.desc': '我们确认目标、服务和时间表',
   'nextSteps.step.2.title': '您发送素材',
-  'nextSteps.step.2.desc': '音频、元数据、账号',
+  'nextSteps.step.2.desc': '音频、发行日期、合规要求、偏好设置',
   'nextSteps.step.3.title': '启动',
   'nextSteps.step.3.desc': '根据所选服务，24 到 72 小时内',
   'nextSteps.contactTitle': '联系方式',
