@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import InfoVisual from '../visuals/InfoVisual';
+import SignalFieldVisual from '../visuals/SignalFieldVisual';
 import { Inbox, Activity, FileBarChart, Brain, Sparkles } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
@@ -20,7 +20,7 @@ const UnifiedOpsSlide = () => {
 
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-20 flex flex-col justify-start md:justify-center">
-      <InfoVisual />
+      <SignalFieldVisual variant="mirrored" />
 
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
