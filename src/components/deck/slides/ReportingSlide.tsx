@@ -15,7 +15,7 @@ const finalItems = [
 ];
 
 const ReportingSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden p-12 flex flex-col items-center justify-center">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-hidden p-12 flex flex-col items-center justify-center">
     <div className="absolute top-[10%] left-[50%] w-[500px] h-[400px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
     <div className="relative z-10 w-full max-w-[1400px] text-center">

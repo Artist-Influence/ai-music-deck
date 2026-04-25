@@ -30,7 +30,7 @@ const CaseStudyCreatorFloodSlide = () => {
   ];
 
   return (
-    <div className="w-full h-full bg-background relative overflow-hidden px-5 pt-5 pb-3 md:px-8 md:pt-6 md:pb-4 flex flex-col items-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-hidden px-5 pt-5 pb-3 md:px-8 md:pt-6 md:pb-4 flex flex-col items-center">
       <div className="relative z-10 flex flex-col h-full w-full max-w-[1400px]">
         <h1 className="text-xl md:text-4xl font-bold text-on-visual mb-1 md:mb-2">{t('csCreatorFlood.title')}</h1>
         <p className="text-sm md:text-lg text-on-visual-soft mb-3 md:mb-4">{t('csCreatorFlood.subtitle')}</p>
