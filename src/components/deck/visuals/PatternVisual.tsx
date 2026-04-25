@@ -154,14 +154,15 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
         </svg>
       </div>
 
-      {/* Champagne shimmer sweep — slow, restrained luxury highlight */}
+      {/* Champagne shimmer wash — broad, soft luxury highlight (no visible band) */}
       <div className="absolute inset-0 overflow-hidden">
         <div
-          className="absolute -inset-y-1/2 -left-1/2 w-[55%] h-[200%] animate-shimmer-sweep"
+          className="absolute -inset-y-1/2 -left-1/2 w-[140%] h-[200%] animate-shimmer-sweep"
           style={{
             background:
-              'linear-gradient(115deg, transparent 0%, transparent 38%, hsl(38 60% 75% / 0.10) 48%, hsl(45 55% 85% / 0.18) 52%, hsl(38 60% 75% / 0.08) 58%, transparent 70%, transparent 100%)',
-            mixBlendMode: 'screen',
+              'linear-gradient(105deg, transparent 0%, transparent 25%, hsl(40 55% 80% / 0.05) 50%, transparent 75%, transparent 100%)',
+            mixBlendMode: 'soft-light',
+            filter: 'blur(60px)',
           }}
         />
       </div>
