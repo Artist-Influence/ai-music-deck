@@ -25,10 +25,12 @@ const ScaledSlide = ({ children, className, isMobile = false, forceFullSize = fa
     return () => ro.disconnect();
   }, [isMobile, forceFullSize]);
 
-  // Mobile: render as a normal responsive page
+  // Mobile: render as a normal responsive page that fills its container.
+  // Parent (mobile pager) provides h-dvh + vertical scroll, so we just need
+  // to make sure the slide background covers the full panel.
   if (isMobile) {
     return (
-      <div className={cn('w-full min-h-dvh', className)}>
+      <div className={cn('w-full min-h-full bg-background', className)}>
         {children}
       </div>
     );

@@ -32,7 +32,7 @@ const caseStudies = [
 ];
 
 const FanpagesSlide = () => (
-  <div className="w-full h-full bg-background relative overflow-hidden px-5 py-5 md:px-12 md:py-8 flex flex-col items-center justify-start">
+  <div className="w-full min-h-dvh md:h-full bg-background relative overflow-hidden px-5 py-5 md:px-12 md:py-8 flex flex-col items-center justify-start">
     <div className="relative z-10 w-full max-w-[1600px] mx-auto">
       <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-2">
         <Users size={20} className="text-primary md:w-7 md:h-7" />

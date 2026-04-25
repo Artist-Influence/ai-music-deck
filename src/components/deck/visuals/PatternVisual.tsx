@@ -34,9 +34,9 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
       <div className="absolute top-[12%] left-[8%] w-[720px] h-[720px] rounded-full bg-primary/[0.07] blur-[180px] animate-aurora-drift" />
       <div className="absolute bottom-[8%] right-[4%] w-[640px] h-[640px] rounded-full bg-primary/[0.05] blur-[160px] animate-aurora-drift-rev" />
 
-      {/* Drifting monogram lattice — softened with blur for readability */}
+      {/* Drifting monogram lattice — softened with blur for readability. Hidden on mobile for perf. */}
       <div
-        className="absolute inset-0 animate-pattern-drift"
+        className="absolute inset-0 animate-pattern-drift hidden md:block"
         style={{
           maskImage:
             'radial-gradient(ellipse 95% 85% at 50% 50%, black 0%, rgba(0,0,0,0.85) 35%, rgba(0,0,0,0.5) 70%, rgba(0,0,0,0.2) 100%)',
@@ -140,8 +140,8 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
         </svg>
       </div>
 
-      {/* Champagne shimmer wash — broad, soft luxury highlight (no visible band) */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Champagne shimmer wash — desktop only for perf */}
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
         <div
           className="absolute -inset-y-1/2 -left-1/2 w-[140%] h-[200%] animate-shimmer-sweep"
           style={{
@@ -152,6 +152,17 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
           }}
         />
       </div>
+
+      {/* Mobile-only subtle hatch fallback */}
+      <div
+        className="absolute inset-0 md:hidden opacity-30"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(135deg, hsl(var(--foreground)/0.04) 0 1px, transparent 1px 40px), repeating-linear-gradient(45deg, hsl(var(--foreground)/0.03) 0 1px, transparent 1px 40px)',
+          maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
+        }}
+      />
 
       {/* Vignette + inward legibility shield to lift text off the pattern */}
       <div

@@ -13,7 +13,7 @@ const NextStepsSlide = () => {
   }));
 
   return (
-    <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-12 flex flex-col items-center justify-center text-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-hidden p-5 md:p-12 flex flex-col items-center justify-center text-center">
       <style>{`
         @keyframes next-glow-sweep {
           0% { opacity: 0; left: -100%; }
