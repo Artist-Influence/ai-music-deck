@@ -56,7 +56,7 @@ const SpotifyPlaylistingSlide = () => {
             <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
           </div>
           <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-1 md:mb-4 leading-tight">{t('spotify.title')}</h1>
-          <p className="text-xs md:text-2xl text-muted-foreground mb-3 md:mb-0 max-w-[700px]">{t('spotify.subtitle')}</p>
+          <p className="text-xs md:text-2xl text-foreground/80 mb-3 md:mb-0 max-w-[700px] [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('spotify.subtitle')}</p>
         </div>
 
         {/* Mobile summary */}
