@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import SignalFieldVisual from '../visuals/SignalFieldVisual';
+import AtelierFieldVisual from '../visuals/AtelierFieldVisual';
 import { Video, Eye, Users, Megaphone } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
@@ -11,7 +11,7 @@ const TheShiftSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
-      <SignalFieldVisual variant="mirrored" />
+      <AtelierFieldVisual variant="mirrored" />
 
       <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-12 items-start w-full max-w-[1600px] mx-auto">
         <div className="flex-1 max-w-[800px]">

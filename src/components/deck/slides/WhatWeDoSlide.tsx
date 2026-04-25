@@ -1,5 +1,5 @@
 import GlassPanel from '../GlassPanel';
-import SignalFieldVisual from '../visuals/SignalFieldVisual';
+import AtelierFieldVisual from '../visuals/AtelierFieldVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 
 const HubDiagram = () => {
@@ -63,7 +63,7 @@ const WhatCloutedDoesSlide = () => {
 
   return (
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex items-center justify-center">
-      <SignalFieldVisual variant="corner" />
+      <AtelierFieldVisual variant="corner" />
 
       <div className="relative z-10 flex flex-col md:flex-row gap-6 md:gap-16 items-start w-full max-w-[1600px]">
         <div className="flex-1 max-w-[700px]">
