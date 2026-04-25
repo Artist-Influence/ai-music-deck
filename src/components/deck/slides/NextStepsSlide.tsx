@@ -60,7 +60,7 @@ const NextStepsSlide = () => {
         </GlassPanel>
 
         <img src={aiLogo} alt="Artist Influence" className="w-32 md:w-64 mx-auto mb-2 md:mb-3" />
-        <p className="text-xs md:text-lg text-muted-foreground/50 tracking-widest uppercase">{t('nextSteps.tagline')}</p>
+        <p className="text-xs md:text-lg text-white/65 tracking-widest uppercase">{t('nextSteps.tagline')}</p>
       </div>
     </div>
   );
