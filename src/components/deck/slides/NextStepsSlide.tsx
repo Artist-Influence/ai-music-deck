@@ -54,8 +54,8 @@ const NextStepsSlide = () => {
 
         <GlassPanel variant="subtle" className="mb-6 md:mb-12 p-4 md:p-8 max-w-[700px] mx-auto">
           <p className="text-sm md:text-[21px] text-foreground font-medium mb-1 md:mb-2">{t('nextSteps.contactTitle')}</p>
-          <p className="text-xs md:text-[19px] text-muted-foreground/80 mb-1 md:mb-2">{t('nextSteps.companyName')}</p>
-          <p className="text-xs md:text-[21px] text-muted-foreground mb-2 md:mb-3">www.artistinfluence.com</p>
+          <p className="text-xs md:text-[19px] text-white/80 mb-1 md:mb-2">{t('nextSteps.companyName')}</p>
+          <p className="text-xs md:text-[21px] text-white/85 mb-2 md:mb-3">www.artistinfluence.com</p>
           <p className="text-xs md:text-[20px] text-primary font-medium mt-2 md:mt-3">{t('nextSteps.contactRedLine')}</p>
         </GlassPanel>
 

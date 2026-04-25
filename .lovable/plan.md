@@ -1,92 +1,51 @@
+## Goal
+Every line of copy that sits **outside** a `GlassPanel` (i.e. directly on the visualizer/background) must read as white with the existing `text-on-visual` glow. Copy **inside** cards stays as-is so card hierarchy (primary headers, muted body) is preserved.
 
-# Plan — Luxury info-slide backdrop + monogram readability audit
+## Audit — non-card text currently rendering in grey/off-white
 
-Two coordinated workstreams. Both ship together so the deck reads as one cohesive luxury system.
+### 1. Service slides (PatternVisual backdrop)
+Hero subtitles currently use `text-foreground/80` — switch to `text-on-visual-soft` (true white + glow):
+- `ClippingSlide.tsx` L36 — subtitle
+- `CreatorFloodSlide.tsx` L29 — subtitle
+- `Top50TrendingSlide.tsx` L33 — subtitle
+- `YouTubeAdsSlide.tsx` L41 — subtitle
+- `SpotifyPlaylistingSlide.tsx` L59 — subtitle
+- `InstagramSeedingSlide.tsx` L38 — subtitle
+- `SoundCloudRepostsSlide.tsx` L43 — subtitle
+- `AdditionalServicesSlide.tsx` L60 — subtitle
+- `WebsitesSlide.tsx` L57 — subtitle
+- `CultureEditsSlide.tsx` L68 — subtitle
+- `IdIdSlide.tsx` L52 — subtitle, L53 italic bottom note
+- `IdIdSlide.tsx` L38 tagline (`text-primary/90` on backdrop) → keep red but add `text-on-visual-accent`
 
----
+### 2. Case study slides (no backdrop visualizer, dark background)
+H1 + subtitle sit directly on background — promote to white:
+- `CaseStudySlide.tsx` L16 H1 (`text-foreground` → `text-on-visual`), L17 subtitle (`text-muted-foreground` → `text-on-visual-soft`)
+- `CaseStudySkrillexSlide.tsx` L16/L17 — same swap
+- `CaseStudyClippingSlide.tsx` L47/L48 — same swap
+- `CaseStudyPlatformSlide.tsx` L40/L41 — same swap
+- `CaseStudyCreatorFloodSlide.tsx` L35 H1, L36 subtitle — same swap
 
-## Part 1 — New `AtelierFieldVisual` for info slides
+### 3. Info-style slides without GlassPanel backdrop
+- `ReportingSlide.tsx` L22 H1 (`text-foreground` → `text-on-visual`), L23 subtitle (`text-muted-foreground` → `text-on-visual-soft`)
+- `ExpectationsSlide.tsx` L20 H1, L21 subtitle — same swap
+- `UGCHacksSlide.tsx` L7 H1 (`text-foreground` → `text-on-visual`), L10 subtitle (`text-muted-foreground` → `text-on-visual-soft`)
 
-**Replaces** `SignalFieldVisual` (the broadcast arcs + traveling pulse-dot thing — that's the "vibe coded" look) on:
-- Slide 2 — `WhatWeDoSlide`
-- Slide 3 — `TheShiftSlide`
-- Slide 4 — `OperatingSystemSlide`
-- Slide 5 — `UnifiedOpsSlide`
-- Slide 17 — `PricingSlide`
+### 4. NextStepsSlide
+Already mostly white; one stray:
+- L57 `text-muted-foreground/80` company name → `text-white/80`
+- L58 `text-muted-foreground` URL → `text-white/85`
+(L42/43/63 already white.)
 
-### Design language — "Atelier Field"
-A static, editorial backdrop that lives in the same family as `PatternVisual` (monogram) but for non-service slides. Same restraint, same champagne+red palette, but a different motif so the deck has rhythm instead of one visual on every slide.
+### 5. CoverSlide
+- L24 confidential footer (`text-muted-foreground/40`) — leave as-is (intentional faded watermark, sits on CoverVisual which is dark/empty there). **No change.**
 
-**Layers (back-to-front):**
-1. **Aurora wash** — two slow-drifting primary-tinted blobs, very subtle (matches `PatternVisual` warmth).
-2. **Editorial guillochage** — fine, slightly skewed, hairline cross-hatch in `hsl(var(--foreground)/0.04)` with a SVG `<pattern>`. Think Hermès/Cartier engraved-metal, not tech grid. No animations on the lines themselves.
-3. **Diamond lattice nodes** — tiny diamond marks at lattice intersections in champagne (`hsl(40 55% 80% / 0.10)`). Echoes the diamond accents in `PatternVisual` so the two visuals feel like siblings.
-4. **Single anchor monogram** — one large, very faint (`opacity 0.06`), rotated `~-8deg` "AI" logomark anchored in a corner per `variant`. Acts as a watermark, not a pattern. Connects the info slides back to the monogram language.
-5. **Champagne shimmer wash** — same broad, blurred, `soft-light` sweep as `PatternVisual` (we already proved this looks luxe).
-6. **Canvas grain** — subtle SVG `feTurbulence` overlay at ~6% opacity.
-7. **Vignette + center legibility shield** — radial dim toward edges + a soft inward radial that protects the headline area.
+## What stays grey (intentional — inside cards)
+All `text-muted-foreground` inside `<GlassPanel>` blocks (bullet bodies, track names, KPI labels, "What it is" body copy, Reporting/Expectations right-hand "subtle" panels). These provide hierarchy against the primary/foreground headings inside cards.
 
-**Variants** (so 5 slides don't look identical):
-- `default` — anchor monogram top-right, lattice skew `-8deg`
-- `mirrored` — anchor monogram bottom-left, lattice skew `+8deg`
-- `corner` — anchor monogram top-left smaller + faint diamond cluster bottom-right
-- `centered` — no anchor monogram, centered diamond medallion (for `PricingSlide`)
+## Implementation
+Single-line `text-*` swaps using `code--line_replace`. No new utilities needed — `text-on-visual` and `text-on-visual-soft` (defined in `src/index.css`) already provide white + drop-shadow glow.
 
-**No traveling particles. No broadcast arcs. No pulsing dots.** That's exactly what reads as "vibe coded."
+**Files touched (≈20):** all 5 case-study slides, ReportingSlide, ExpectationsSlide, UGCHacksSlide, NextStepsSlide, IdIdSlide, ClippingSlide, CreatorFloodSlide, Top50TrendingSlide, YouTubeAdsSlide, SpotifyPlaylistingSlide, InstagramSeedingSlide, SoundCloudRepostsSlide, AdditionalServicesSlide, WebsitesSlide, CultureEditsSlide.
 
-### File
-- **Create** `src/components/deck/visuals/AtelierFieldVisual.tsx` with the same prop API as `SignalFieldVisual` (`{ className?, variant? }`) so the swap is a one-line change per slide.
-
-### Wiring
-- Update imports + JSX in the 5 slides above:
-  - `WhatWeDoSlide.tsx` → `<AtelierFieldVisual variant="corner" />`
-  - `TheShiftSlide.tsx` → `<AtelierFieldVisual variant="mirrored" />`
-  - `OperatingSystemSlide.tsx` → `<AtelierFieldVisual variant="default" />`
-  - `UnifiedOpsSlide.tsx` → `<AtelierFieldVisual variant="mirrored" />`
-  - `PricingSlide.tsx` → `<AtelierFieldVisual variant="centered" />`
-- **Keep** `SignalFieldVisual.tsx` in the repo for now (no deletion) in case we want to compare; can prune in a follow-up.
-
----
-
-## Part 2 — Readability audit on monogram service slides
-
-### Root cause
-On slides 6–16, the headline (`h1`) and subtitle (`text-muted-foreground`) sit **directly on top of `PatternVisual`** with no glass panel. The monogram is currently strong enough that those zones are hard to read — especially the `muted-foreground` subtitles.
-
-### Fixes (in priority order)
-
-**A. Tone down `PatternVisual` itself (single-file change, hits all 11 slides):**
-- Drop monogram opacity: foil shadow `0.30 → 0.18`, white mark `0.16 → 0.10`.
-- Diamond accent stroke `0.24 → 0.14`; anchor dots `0.10 → 0.06`.
-- Add a soft 1.5px `blur` to the monogram lattice group (`filter: blur(1.5px)`) so marks read as woven texture instead of crisp icons competing with copy.
-- Strengthen the legibility vignette: change the inner stop of the closing radial gradient from `transparent 45%` to `hsl(var(--background)/0.35) 0%` → `transparent 60%` — gives a soft inward dim that lifts text without looking like a spotlight.
-
-**B. Per-slide text contrast bumps (only where text sits outside a panel):**
-- Hero `h1` — already `text-foreground`, fine, but add `drop-shadow-[0_2px_12px_hsl(var(--background)/0.6)]` for separation.
-- Hero subtitle — change `text-muted-foreground` → `text-foreground/80` and add same drop-shadow. This is the biggest readability win.
-- "Service" / kicker chips with `text-primary` — wrap the text in a tiny pill (`px-2 py-0.5 rounded-full bg-background/40 backdrop-blur-sm`) so the red sits on a clean ground.
-
-Slides touched for per-slide bumps:
-`CreatorFloodSlide`, `Top50TrendingSlide`, `CultureEditsSlide`, `YouTubeAdsSlide`, `SpotifyPlaylistingSlide`, `SoundCloudRepostsSlide`, `InstagramSeedingSlide`, `AdditionalServicesSlide`, `WebsitesSlide`, `IdIdSlide`, `ClippingSlide`.
-
-**C. `IdIdSlide` extras** — the bottom italic note (`text-muted-foreground italic`) sits unprotected too: bump to `text-foreground/75` and add the drop-shadow.
-
-### What I will NOT change
-- Glass panels (`GlassPanel`) already provide their own contrast; copy inside them stays as-is.
-- Mobile viewport — fixes are class-level so they apply across breakpoints; no layout changes.
-- `PatternVisual` tile geometry — we just fixed the half-drop clipping, leaving it alone.
-
----
-
-## Memory updates
-- Add memory `mem://style/atelier-field-visual` describing the new component, layers, and which slides use which variant.
-- Update `mem://style/visual-consistency` with the new readability rules: hero subtitle on monogram backgrounds = `text-foreground/80` + drop-shadow.
-
----
-
-## Files touched
-**New:** `src/components/deck/visuals/AtelierFieldVisual.tsx`
-**Modified:** `src/components/deck/visuals/PatternVisual.tsx`, the 5 info slides, the 11 service/monogram slides listed above.
-**Memory:** 1 new file, 1 update, index refresh.
-
-Approve and I'll build it.
+Approve and I'll ship the swaps.

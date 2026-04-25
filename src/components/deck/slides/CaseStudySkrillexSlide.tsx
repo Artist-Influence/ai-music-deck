@@ -13,8 +13,8 @@ const CaseStudySkrillexSlide = () => {
     <div className="w-full h-full bg-background relative overflow-hidden p-5 md:p-24 flex flex-col items-center justify-center">
       <div className="relative z-10 w-full max-w-[1400px] mx-auto">
         <div className="max-w-[1200px] mx-auto">
-          <h1 className="text-2xl md:text-6xl font-bold text-foreground mb-2 md:mb-4">{t('csSkrillex.title')}</h1>
-          <p className="text-sm md:text-xl text-muted-foreground mb-6 md:mb-12">{t('csSkrillex.subtitle')}</p>
+          <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4">{t('csSkrillex.title')}</h1>
+          <p className="text-sm md:text-xl text-on-visual-soft mb-6 md:mb-12">{t('csSkrillex.subtitle')}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8 max-w-[1200px] mx-auto">

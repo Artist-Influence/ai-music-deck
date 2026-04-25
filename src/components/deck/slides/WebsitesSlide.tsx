@@ -54,7 +54,7 @@ const WebsitesSlide = () => {
         </div>
 
         <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4">{t('websites.title')}</h1>
-        <p className="text-sm md:text-2xl text-foreground/80 mb-5 md:mb-8 max-w-[1100px] leading-relaxed [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('websites.subtitle')}</p>
+        <p className="text-sm md:text-2xl text-on-visual-soft mb-5 md:mb-8 max-w-[1100px] leading-relaxed">{t('websites.subtitle')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-5 mb-3 md:mb-5">
           {cards.map((c, i) => {

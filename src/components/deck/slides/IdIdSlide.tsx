@@ -37,7 +37,7 @@ const IdIdSlide = () => {
             <span className="underline decoration-primary/30 hover:decoration-primary">id-id.artistinfluence.com</span>
           </a>
         </div>
-        <p className="text-sm md:text-2xl text-foreground/80 mb-6 md:mb-12 max-w-[1100px] leading-relaxed [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('idid.subtitle')}</p>
+        <p className="text-sm md:text-2xl text-on-visual-soft mb-6 md:mb-12 max-w-[1100px] leading-relaxed">{t('idid.subtitle')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
           <GlassPanel variant="bright" className="p-5 md:p-7">
@@ -65,7 +65,7 @@ const IdIdSlide = () => {
           </GlassPanel>
         </div>
 
-        <p className="text-xs md:text-lg text-foreground/75 italic text-center max-w-[1100px] mx-auto leading-relaxed [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">
+        <p className="text-xs md:text-lg text-on-visual-soft italic text-center max-w-[1100px] mx-auto leading-relaxed">
           {t('idid.bottomNote')}
         </p>
       </div>

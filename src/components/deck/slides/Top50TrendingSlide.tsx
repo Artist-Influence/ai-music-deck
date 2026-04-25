@@ -30,7 +30,7 @@ const Top50TrendingSlide = () => {
             <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4 leading-tight">
               {t('trending.title')}<br className="hidden md:block" />{t('trending.titleLine2')}
             </h1>
-            <p className="text-sm md:text-2xl text-foreground/80 mb-4 md:mb-6 max-w-[700px] [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('trending.subtitle')}</p>
+            <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-6 max-w-[700px]">{t('trending.subtitle')}</p>
           </div>
 
           <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
