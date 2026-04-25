@@ -140,8 +140,8 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
         </svg>
       </div>
 
-      {/* Champagne shimmer wash — broad, soft luxury highlight (no visible band) */}
-      <div className="absolute inset-0 overflow-hidden">
+      {/* Champagne shimmer wash — desktop only for perf */}
+      <div className="absolute inset-0 overflow-hidden hidden md:block">
         <div
           className="absolute -inset-y-1/2 -left-1/2 w-[140%] h-[200%] animate-shimmer-sweep"
           style={{
@@ -152,6 +152,17 @@ const PatternVisual = ({ className, variant = 'default' }: PatternVisualProps) =
           }}
         />
       </div>
+
+      {/* Mobile-only subtle hatch fallback */}
+      <div
+        className="absolute inset-0 md:hidden opacity-30"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(135deg, hsl(var(--foreground)/0.04) 0 1px, transparent 1px 40px), repeating-linear-gradient(45deg, hsl(var(--foreground)/0.03) 0 1px, transparent 1px 40px)',
+          maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
+        }}
+      />
 
       {/* Vignette + inward legibility shield to lift text off the pattern */}
       <div
