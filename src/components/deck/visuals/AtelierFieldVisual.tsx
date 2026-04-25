@@ -1,0 +1,159 @@
+import { cn } from '@/lib/utils';
+import logomark from '@/assets/ai-logomark-white.png';
+
+interface AtelierFieldVisualProps {
+  className?: string;
+  variant?: 'default' | 'mirrored' | 'corner' | 'centered';
+}
+
+/**
+ * AtelierFieldVisual — luxury editorial backdrop for info-heavy slides.
+ *
+ * Sister visual to PatternVisual (the monogram). Same restraint, same
+ * champagne+red palette, but a single anchor monogram + guillochage cross-hatch
+ * + diamond lattice nodes instead of a tiled monogram. Static (no traveling
+ * particles, no broadcast arcs) — calm and editorial.
+ */
+const AtelierFieldVisual = ({ className, variant = 'default' }: AtelierFieldVisualProps) => {
+  // Anchor monogram placement per variant.
+  const anchor =
+    variant === 'mirrored'
+      ? { x: 80, y: 580, w: 360, rot: -8 }
+      : variant === 'corner'
+        ? { x: 80, y: 80, w: 280, rot: 6 }
+        : variant === 'centered'
+          ? null
+          : { x: 1380, y: 80, w: 380, rot: -8 };
+
+  // Lattice skew per variant
+  const skew = variant === 'mirrored' ? 8 : variant === 'corner' ? 4 : variant === 'centered' ? 0 : -8;
+
+  return (
+    <div className={cn('pointer-events-none absolute inset-0 overflow-hidden', className)}>
+      {/* Aurora wash blobs — same warmth as PatternVisual */}
+      <div className="absolute top-[12%] left-[8%] w-[720px] h-[720px] rounded-full bg-primary/[0.06] blur-[180px] animate-aurora-drift" />
+      <div className="absolute bottom-[8%] right-[4%] w-[640px] h-[640px] rounded-full bg-primary/[0.045] blur-[160px] animate-aurora-drift-rev" />
+
+      <svg
+        className="absolute inset-0 w-full h-full hidden md:block"
+        viewBox="0 0 1920 1080"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          {/* Editorial guillochage — fine cross-hatch, Hermès engraved-metal */}
+          <pattern
+            id="atelier-hatch"
+            width="56"
+            height="56"
+            patternUnits="userSpaceOnUse"
+            patternTransform={`skewX(${skew})`}
+          >
+            <path d="M 56 0 L 0 0 0 56" fill="none" stroke="hsl(var(--foreground))" strokeOpacity="0.04" strokeWidth="0.6" />
+            <path d="M 0 0 L 56 56" stroke="hsl(var(--foreground))" strokeOpacity="0.025" strokeWidth="0.4" />
+          </pattern>
+
+          {/* Diamond lattice nodes — champagne accents */}
+          <pattern
+            id="atelier-diamonds"
+            width="168"
+            height="168"
+            patternUnits="userSpaceOnUse"
+            patternTransform={`rotate(${skew})`}
+          >
+            <path
+              d="M 84 78 L 90 84 L 84 90 L 78 84 Z"
+              stroke="hsl(40 55% 80%)"
+              strokeOpacity="0.18"
+              strokeWidth="0.7"
+              fill="none"
+            />
+            <circle cx="84" cy="84" r="0.9" fill="hsl(var(--primary))" fillOpacity="0.30" />
+          </pattern>
+
+          {/* Edge-fade mask */}
+          <radialGradient id="atelier-mask-grad" cx="50%" cy="50%" r="68%">
+            <stop offset="0%" stopColor="white" stopOpacity="0.15" />
+            <stop offset="55%" stopColor="white" stopOpacity="0.6" />
+            <stop offset="100%" stopColor="white" stopOpacity="0.85" />
+          </radialGradient>
+          <mask id="atelier-edge-mask">
+            <rect width="1920" height="1080" fill="url(#atelier-mask-grad)" />
+          </mask>
+
+          {/* Canvas grain */}
+          <filter id="atelier-grain" x="0" y="0" width="100%" height="100%">
+            <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="11" />
+            <feColorMatrix values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  0 0 0 0.05 0" />
+            <feComposite in2="SourceGraphic" operator="in" />
+          </filter>
+        </defs>
+
+        {/* Guillochage layer */}
+        <rect width="1920" height="1080" fill="url(#atelier-hatch)" mask="url(#atelier-edge-mask)" />
+
+        {/* Diamond lattice layer */}
+        <rect width="1920" height="1080" fill="url(#atelier-diamonds)" mask="url(#atelier-edge-mask)" />
+
+        {/* Anchor monogram (watermark) */}
+        {anchor && (
+          <g transform={`translate(${anchor.x} ${anchor.y}) rotate(${anchor.rot})`} opacity="0.06">
+            <image href={logomark} x="0" y="0" width={anchor.w} height={anchor.w * (772 / 632)} />
+          </g>
+        )}
+
+        {/* Centered medallion (PricingSlide) */}
+        {variant === 'centered' && (
+          <g transform="translate(960 540)" opacity="0.5">
+            <circle r="280" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.10" strokeWidth="1" strokeDasharray="3 6" />
+            <circle r="320" fill="none" stroke="hsl(var(--foreground))" strokeOpacity="0.06" strokeWidth="0.5" />
+            <circle r="360" fill="none" stroke="hsl(var(--primary))" strokeOpacity="0.06" strokeWidth="0.5" strokeDasharray="1 4" />
+            {/* Compass diamonds at 4 cardinal points */}
+            {[0, 90, 180, 270].map((deg) => (
+              <g key={deg} transform={`rotate(${deg}) translate(0 -300)`}>
+                <path d="M -6 0 L 0 -6 L 6 0 L 0 6 Z" stroke="hsl(40 55% 80%)" strokeOpacity="0.35" strokeWidth="0.8" fill="none" />
+              </g>
+            ))}
+          </g>
+        )}
+
+        {/* Grain overlay */}
+        <rect width="1920" height="1080" fill="hsl(var(--foreground))" filter="url(#atelier-grain)" opacity="0.4" />
+      </svg>
+
+      {/* Mobile-only subtle hatch (no SVG animations) */}
+      <div
+        className="absolute inset-0 md:hidden opacity-30"
+        style={{
+          backgroundImage:
+            'repeating-linear-gradient(135deg, hsl(var(--foreground)/0.04) 0 1px, transparent 1px 40px), repeating-linear-gradient(45deg, hsl(var(--foreground)/0.03) 0 1px, transparent 1px 40px)',
+          maskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
+          WebkitMaskImage: 'radial-gradient(ellipse at center, transparent 30%, black 80%)',
+        }}
+      />
+
+      {/* Champagne shimmer wash — broad, soft luxury highlight */}
+      <div className="absolute inset-0 overflow-hidden">
+        <div
+          className="absolute -inset-y-1/2 -left-1/2 w-[140%] h-[200%] animate-shimmer-sweep"
+          style={{
+            background:
+              'linear-gradient(105deg, transparent 0%, transparent 25%, hsl(40 55% 80% / 0.05) 50%, transparent 75%, transparent 100%)',
+            mixBlendMode: 'soft-light',
+            filter: 'blur(60px)',
+          }}
+        />
+      </div>
+
+      {/* Vignette + inward legibility shield */}
+      <div
+        className="absolute inset-0"
+        style={{
+          background:
+            'radial-gradient(ellipse 105% 100% at 50% 50%, hsl(var(--background)/0.30) 0%, transparent 55%, hsl(var(--background)/0.45) 100%)',
+        }}
+      />
+    </div>
+  );
+};
+
+export default AtelierFieldVisual;
