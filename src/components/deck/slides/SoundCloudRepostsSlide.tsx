@@ -40,7 +40,7 @@ const SoundCloudRepostsSlide = () => {
             <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
           </div>
           <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-1 md:mb-4 leading-tight">{t('soundcloud.title')}</h1>
-          <p className="text-xs md:text-2xl text-foreground/80 mb-0 max-w-[700px] [text-shadow:0_1px_12px_hsl(var(--background)/0.7)]">{t('soundcloud.subtitle')}</p>
+          <p className="text-xs md:text-2xl text-on-visual-soft mb-0 max-w-[700px]">{t('soundcloud.subtitle')}</p>
         </div>
 
         {/* Mobile summary */}
