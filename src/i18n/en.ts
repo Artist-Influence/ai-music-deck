@@ -191,7 +191,7 @@ const en: Record<string, string> = {
   'nextSteps.step.1.title': 'Confirm Scope',
   'nextSteps.step.1.desc': 'We confirm goals, services, and timeline',
   'nextSteps.step.2.title': 'You Send Assets',
-  'nextSteps.step.2.desc': 'Audio, metadata, handles',
+  'nextSteps.step.2.desc': 'Audio, drop date, guardrails, preferences',
   'nextSteps.step.3.title': 'Launch',
   'nextSteps.step.3.desc': 'Within 24 to 72 hours depending on services',
   'nextSteps.contactTitle': 'Contact Us',
