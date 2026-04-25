@@ -19,8 +19,8 @@ const ReportingSlide = () => (
     <div className="absolute top-[10%] left-[50%] w-[500px] h-[400px] rounded-full bg-primary/[0.05] blur-[140px]" />
 
     <div className="relative z-10 w-full max-w-[1400px] text-center">
-      <h1 className="text-7xl font-bold text-foreground mb-4">You'll never wonder what's happening.</h1>
-      <p className="text-3xl text-muted-foreground mb-16">Reporting and transparency</p>
+      <h1 className="text-7xl font-bold text-on-visual mb-4">You'll never wonder what's happening.</h1>
+      <p className="text-3xl text-on-visual-soft mb-16">Reporting and transparency</p>
 
       <div className="grid grid-cols-2 gap-8 max-w-[1400px] mx-auto">
         <GlassPanel variant="bright" className="p-14 text-left">

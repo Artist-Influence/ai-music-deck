@@ -17,8 +17,8 @@ const ExpectationsSlide = () => (
     <div className="absolute top-[20%] right-[30%] w-[400px] h-[400px] rounded-full bg-primary/[0.04] blur-[120px]" />
 
     <div className="relative z-10 w-full max-w-[1400px] text-center">
-      <h1 className="text-7xl font-bold text-foreground mb-4">We move fast, but we don't do chaos.</h1>
-      <p className="text-3xl text-muted-foreground mb-16">To keep campaigns clean and effective, we align on a few basics upfront.</p>
+      <h1 className="text-7xl font-bold text-on-visual mb-4">We move fast, but we don't do chaos.</h1>
+      <p className="text-3xl text-on-visual-soft mb-16">To keep campaigns clean and effective, we align on a few basics upfront.</p>
 
       <div className="grid grid-cols-2 gap-8 max-w-[1400px] mx-auto">
         <GlassPanel variant="bright" className="p-14 text-left">
