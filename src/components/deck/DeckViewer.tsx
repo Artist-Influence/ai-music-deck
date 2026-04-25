@@ -191,6 +191,7 @@ const MobilePager = ({ current, setCurrent }: MobilePagerProps) => {
     containScroll: 'trimSnaps',
   });
   const [snap, setSnap] = useState(current);
+  const [showCounter, setShowCounter] = useState(true);
 
   useEffect(() => {
     if (!emblaApi) return;
@@ -209,6 +210,12 @@ const MobilePager = ({ current, setCurrent }: MobilePagerProps) => {
   }, [snap, setCurrent]);
 
   useEffect(() => {
+    setShowCounter(true);
+    const timeout = window.setTimeout(() => setShowCounter(false), 1800);
+    return () => window.clearTimeout(timeout);
+  }, [snap]);
+
+  useEffect(() => {
     if (emblaApi && current !== emblaApi.selectedScrollSnap()) {
       emblaApi.scrollTo(current, true);
     }
@@ -217,20 +224,26 @@ const MobilePager = ({ current, setCurrent }: MobilePagerProps) => {
 
   return (
     <div className="fixed inset-0 bg-background overflow-hidden">
-      <div className="absolute top-3 right-3 z-50">
-        <LanguagePicker />
-      </div>
-
-      <div className="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 px-3 py-1.5 rounded-full bg-background/70 backdrop-blur-md border border-border/40 pointer-events-none">
+      <div
+        className={cn(
+          'absolute left-3 z-50 rounded-full border border-border/40 bg-background/70 px-3 py-1.5 backdrop-blur-md pointer-events-none transition-opacity duration-300',
+          showCounter ? 'opacity-100' : 'opacity-0'
+        )}
+        style={{ top: 'calc(env(safe-area-inset-top) + 0.75rem)' }}
+      >
         <span className="text-xs font-mono text-muted-foreground">
           {snap + 1} / {slides.length}
         </span>
       </div>
 
+      <div className="absolute right-3 z-50" style={{ top: 'calc(env(safe-area-inset-top) + 0.75rem)' }}>
+        <LanguagePicker />
+      </div>
+
       <div ref={emblaRef} className="h-dvh w-full overflow-hidden">
         <div className="flex h-full touch-pan-y">
           {slides.map((S, i) => (
-            <div key={i} className="flex-[0_0_100%] min-w-0 h-dvh overflow-y-auto overscroll-contain">
+            <div key={i} className="flex-[0_0_100%] min-w-0 h-dvh overflow-y-auto overscroll-contain bg-background">
               <ScaledSlide isMobile><S /></ScaledSlide>
             </div>
           ))}
