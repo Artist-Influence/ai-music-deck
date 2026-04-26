@@ -3,7 +3,7 @@ import PatternVisual from '../visuals/PatternVisual';
 import { ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import ero808Img from '@/assets/ero808-genie.jpg';
-import dackJanielsImg from '@/assets/dack-janiels-shock-therapy.jpg';
+import ozzGoldWorryImg from '@/assets/ozz-gold-worry.jpg';
 import allAmericanRejectsImg from '@/assets/all-american-rejects-get-this.jpg';
 
 const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
