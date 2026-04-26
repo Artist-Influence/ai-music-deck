@@ -113,6 +113,9 @@ const SpotifyPlaylistingSlide = () => {
                     <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('spotify.tagLabel')}</p>
                     <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                    {c.artistNote && (
+                      <p className="text-[10px] md:text-sm text-primary/80 italic mt-0.5 leading-tight">({c.artistNote})</p>
+                    )}
                   </div>
                 </div>
 
