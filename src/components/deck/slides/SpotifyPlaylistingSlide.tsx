@@ -23,12 +23,12 @@ const cases = [
     ],
   },
   {
-    artist: 'Dack Janiels', track: 'Shock Therapy', artwork: dackJanielsImg,
-    metrics: [{ val: '185.7K', labelKey: 'kpi.streams' }, { val: '9.6K', labelKey: 'kpi.playlistAdds' }, { val: '8K', labelKey: 'kpi.saves' }, { val: '42K', labelKey: 'kpi.algoStreams' }],
+    artist: 'Ozz Gold', artistNote: '6K → 800K+ monthly listeners in 6 months', track: 'Worry', artwork: ozzGoldWorryImg,
+    metrics: [{ val: '148K', labelKey: 'kpi.streams' }, { val: '9.7K', labelKey: 'kpi.playlistAdds' }, { val: '11.1K', labelKey: 'kpi.saves' }, { val: '725K', labelKey: 'kpi.algoStreams' }],
     playlists: [
-      { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/4YZNKPS9bM3xv1UF4WZil0' },
-      { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/2hQNYVaZJIIyKT2Ix1F744' },
-      { label: 'Playlist 3', shortLabel: 'P3', url: 'https://open.spotify.com/playlist/1Wxvomhs0nygDitcESDWY8' },
+      { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/2xjYnvLKZgxjIXqHXYV0Zs' },
+      { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/5Epnfl9GcJOnCqISHDp8QC' },
+      { label: 'Playlist 3', shortLabel: 'P3', url: 'https://open.spotify.com/playlist/3tRhisNDv5YZXPQltBbJNc' },
     ],
   },
   {
