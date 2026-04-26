@@ -3,7 +3,7 @@ import PatternVisual from '../visuals/PatternVisual';
 import { ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 import ero808Img from '@/assets/ero808-genie.jpg';
-import dackJanielsImg from '@/assets/dack-janiels-shock-therapy.jpg';
+import ozzGoldWorryImg from '@/assets/ozz-gold-worry.jpg';
 import allAmericanRejectsImg from '@/assets/all-american-rejects-get-this.jpg';
 
 const SpotifyIcon = ({ size = 28 }: { size?: number }) => (
@@ -23,12 +23,12 @@ const cases = [
     ],
   },
   {
-    artist: 'Dack Janiels', track: 'Shock Therapy', artwork: dackJanielsImg,
-    metrics: [{ val: '185.7K', labelKey: 'kpi.streams' }, { val: '9.6K', labelKey: 'kpi.playlistAdds' }, { val: '8K', labelKey: 'kpi.saves' }, { val: '42K', labelKey: 'kpi.algoStreams' }],
+    artist: 'Ozz Gold', artistNote: '6K → 800K+ monthly listeners in 6 months', track: 'Worry', artwork: ozzGoldWorryImg,
+    metrics: [{ val: '148K', labelKey: 'kpi.streams' }, { val: '9.7K', labelKey: 'kpi.playlistAdds' }, { val: '11.1K', labelKey: 'kpi.saves' }, { val: '725K', labelKey: 'kpi.algoStreams' }],
     playlists: [
-      { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/4YZNKPS9bM3xv1UF4WZil0' },
-      { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/2hQNYVaZJIIyKT2Ix1F744' },
-      { label: 'Playlist 3', shortLabel: 'P3', url: 'https://open.spotify.com/playlist/1Wxvomhs0nygDitcESDWY8' },
+      { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/2xjYnvLKZgxjIXqHXYV0Zs' },
+      { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/5Epnfl9GcJOnCqISHDp8QC' },
+      { label: 'Playlist 3', shortLabel: 'P3', url: 'https://open.spotify.com/playlist/3tRhisNDv5YZXPQltBbJNc' },
     ],
   },
   {
@@ -113,6 +113,9 @@ const SpotifyPlaylistingSlide = () => {
                     <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('spotify.tagLabel')}</p>
                     <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{c.artist}</p>
                     <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                    {c.artistNote && (
+                      <p className="text-[10px] md:text-sm text-primary/80 italic mt-0.5 leading-tight">({c.artistNote})</p>
+                    )}
                   </div>
                 </div>
 

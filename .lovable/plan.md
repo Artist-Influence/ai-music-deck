@@ -1,51 +1,47 @@
-## Goal
-Every line of copy that sits **outside** a `GlassPanel` (i.e. directly on the visualizer/background) must read as white with the existing `text-on-visual` glow. Copy **inside** cards stays as-is so card hierarchy (primary headers, muted body) is preserved.
+## Scope
+Replace the Dack Janiels — Shock Therapy case study on the **Spotify Playlisting slide** (`src/components/deck/slides/SpotifyPlaylistingSlide.tsx`) with **Ozz Gold — Worry**, including a parenthetical growth note next to the artist/track.
 
-## Audit — non-card text currently rendering in grey/off-white
+> Note: Dack Janiels also appears on `CaseStudyPlatformSlide.tsx` with different metrics. I'll leave that one untouched since the playlist-links/metrics shape provided matches only the Spotify slide. Tell me if you want it removed there too.
 
-### 1. Service slides (PatternVisual backdrop)
-Hero subtitles currently use `text-foreground/80` — switch to `text-on-visual-soft` (true white + glow):
-- `ClippingSlide.tsx` L36 — subtitle
-- `CreatorFloodSlide.tsx` L29 — subtitle
-- `Top50TrendingSlide.tsx` L33 — subtitle
-- `YouTubeAdsSlide.tsx` L41 — subtitle
-- `SpotifyPlaylistingSlide.tsx` L59 — subtitle
-- `InstagramSeedingSlide.tsx` L38 — subtitle
-- `SoundCloudRepostsSlide.tsx` L43 — subtitle
-- `AdditionalServicesSlide.tsx` L60 — subtitle
-- `WebsitesSlide.tsx` L57 — subtitle
-- `CultureEditsSlide.tsx` L68 — subtitle
-- `IdIdSlide.tsx` L52 — subtitle, L53 italic bottom note
-- `IdIdSlide.tsx` L38 tagline (`text-primary/90` on backdrop) → keep red but add `text-on-visual-accent`
+## Changes
 
-### 2. Case study slides (no backdrop visualizer, dark background)
-H1 + subtitle sit directly on background — promote to white:
-- `CaseStudySlide.tsx` L16 H1 (`text-foreground` → `text-on-visual`), L17 subtitle (`text-muted-foreground` → `text-on-visual-soft`)
-- `CaseStudySkrillexSlide.tsx` L16/L17 — same swap
-- `CaseStudyClippingSlide.tsx` L47/L48 — same swap
-- `CaseStudyPlatformSlide.tsx` L40/L41 — same swap
-- `CaseStudyCreatorFloodSlide.tsx` L35 H1, L36 subtitle — same swap
+### 1. Add artwork
+- Copy `user-uploads://Worry_Ozz_Gold_Remix.jpg` → `src/assets/ozz-gold-worry.jpg`
 
-### 3. Info-style slides without GlassPanel backdrop
-- `ReportingSlide.tsx` L22 H1 (`text-foreground` → `text-on-visual`), L23 subtitle (`text-muted-foreground` → `text-on-visual-soft`)
-- `ExpectationsSlide.tsx` L20 H1, L21 subtitle — same swap
-- `UGCHacksSlide.tsx` L7 H1 (`text-foreground` → `text-on-visual`), L10 subtitle (`text-muted-foreground` → `text-on-visual-soft`)
+### 2. Replace the middle case entry in `SpotifyPlaylistingSlide.tsx`
+```ts
+{
+  artist: 'Ozz Gold',
+  artistNote: '6K → 800K+ monthly listeners in 6 months',
+  track: 'Worry',
+  artwork: ozzGoldWorryImg,
+  metrics: [
+    { val: '148K',  labelKey: 'kpi.streams' },
+    { val: '9.7K',  labelKey: 'kpi.playlistAdds' },
+    { val: '11.1K', labelKey: 'kpi.saves' },
+    { val: '725K',  labelKey: 'kpi.algoStreams' },
+  ],
+  playlists: [
+    { label: 'Playlist 1', shortLabel: 'P1', url: 'https://open.spotify.com/playlist/2xjYnvLKZgxjIXqHXYV0Zs' },
+    { label: 'Playlist 2', shortLabel: 'P2', url: 'https://open.spotify.com/playlist/5Epnfl9GcJOnCqISHDp8QC' },
+    { label: 'Playlist 3', shortLabel: 'P3', url: 'https://open.spotify.com/playlist/3tRhisNDv5YZXPQltBbJNc' },
+  ],
+},
+```
 
-### 4. NextStepsSlide
-Already mostly white; one stray:
-- L57 `text-muted-foreground/80` company name → `text-white/80`
-- L58 `text-muted-foreground` URL → `text-white/85`
-(L42/43/63 already white.)
+### 3. Render the growth note in the card header
+Small, italic, primary-tinted line under the track name — only appears when `artistNote` is defined, so the other two cards stay visually unchanged:
+```tsx
+<p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+{c.artistNote && (
+  <p className="text-[10px] md:text-sm text-primary/80 italic mt-0.5 leading-tight">
+    ({c.artistNote})
+  </p>
+)}
+```
 
-### 5. CoverSlide
-- L24 confidential footer (`text-muted-foreground/40`) — leave as-is (intentional faded watermark, sits on CoverVisual which is dark/empty there). **No change.**
+## Files touched
+- `src/assets/ozz-gold-worry.jpg` *(new — copied from upload)*
+- `src/components/deck/slides/SpotifyPlaylistingSlide.tsx` *(swap entry + render artistNote)*
 
-## What stays grey (intentional — inside cards)
-All `text-muted-foreground` inside `<GlassPanel>` blocks (bullet bodies, track names, KPI labels, "What it is" body copy, Reporting/Expectations right-hand "subtle" panels). These provide hierarchy against the primary/foreground headings inside cards.
-
-## Implementation
-Single-line `text-*` swaps using `code--line_replace`. No new utilities needed — `text-on-visual` and `text-on-visual-soft` (defined in `src/index.css`) already provide white + drop-shadow glow.
-
-**Files touched (≈20):** all 5 case-study slides, ReportingSlide, ExpectationsSlide, UGCHacksSlide, NextStepsSlide, IdIdSlide, ClippingSlide, CreatorFloodSlide, Top50TrendingSlide, YouTubeAdsSlide, SpotifyPlaylistingSlide, InstagramSeedingSlide, SoundCloudRepostsSlide, AdditionalServicesSlide, WebsitesSlide, CultureEditsSlide.
-
-Approve and I'll ship the swaps.
+No i18n changes needed (artist/track/note are hardcoded like the other two cases).
