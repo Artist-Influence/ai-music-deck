@@ -100,7 +100,7 @@ const DeckViewer = () => {
               <button key={i} onClick={() => setCurrent(i)}
                 className={cn('w-full aspect-video rounded overflow-hidden border transition-all',
                   i === current ? 'border-primary ring-1 ring-primary/30' : 'border-border/50 hover:border-border')}>
-                <ScaledSlide><S /></ScaledSlide>
+                <ScaledSlide><Suspense fallback={null}><S /></Suspense></ScaledSlide>
               </button>
             ))}
           </div>
@@ -134,7 +134,11 @@ const DeckViewer = () => {
 
         <div className="flex-1 relative min-h-0">
           <div key={current} className="w-full h-full animate-fade-in">
-            <ScaledSlide><Slide /></ScaledSlide>
+            <ScaledSlide>
+              <Suspense fallback={<div className="w-full h-full bg-background" />}>
+                <Slide />
+              </Suspense>
+            </ScaledSlide>
           </div>
         </div>
 
@@ -169,7 +173,9 @@ const DeckViewer = () => {
             aria-hidden="true"
           >
             <ScaledSlide forceFullSize>
-              <ExportSlide />
+              <Suspense fallback={null}>
+                <ExportSlide />
+              </Suspense>
             </ScaledSlide>
           </div>
         );
