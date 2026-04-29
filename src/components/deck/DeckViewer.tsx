@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 import aiLogo from '@/assets/ai-logo-lockup.png';
@@ -72,7 +72,7 @@ const DeckViewer = () => {
             <button key={i} onClick={() => { setCurrent(i); setGrid(false); }}
               className={cn('relative aspect-video rounded-lg overflow-hidden border-2 transition-all hover:scale-[1.02]',
                 i === current ? 'border-primary' : 'border-border hover:border-primary/40')}>
-              <ScaledSlide><S /></ScaledSlide>
+              <ScaledSlide><Suspense fallback={null}><S /></Suspense></ScaledSlide>
               <span className="absolute bottom-1 right-2 text-xs text-muted-foreground font-mono">{i + 1}</span>
             </button>
           ))}
@@ -100,7 +100,7 @@ const DeckViewer = () => {
               <button key={i} onClick={() => setCurrent(i)}
                 className={cn('w-full aspect-video rounded overflow-hidden border transition-all',
                   i === current ? 'border-primary ring-1 ring-primary/30' : 'border-border/50 hover:border-border')}>
-                <ScaledSlide><S /></ScaledSlide>
+                <ScaledSlide><Suspense fallback={null}><S /></Suspense></ScaledSlide>
               </button>
             ))}
           </div>
@@ -134,7 +134,11 @@ const DeckViewer = () => {
 
         <div className="flex-1 relative min-h-0">
           <div key={current} className="w-full h-full animate-fade-in">
-            <ScaledSlide><Slide /></ScaledSlide>
+            <ScaledSlide>
+              <Suspense fallback={<div className="w-full h-full bg-background" />}>
+                <Slide />
+              </Suspense>
+            </ScaledSlide>
           </div>
         </div>
 
@@ -169,7 +173,9 @@ const DeckViewer = () => {
             aria-hidden="true"
           >
             <ScaledSlide forceFullSize>
-              <ExportSlide />
+              <Suspense fallback={null}>
+                <ExportSlide />
+              </Suspense>
             </ScaledSlide>
           </div>
         );
@@ -244,7 +250,7 @@ const MobilePager = ({ current, setCurrent }: MobilePagerProps) => {
         <div className="flex h-full touch-pan-y">
           {slides.map((S, i) => (
             <div key={i} className="flex-[0_0_100%] min-w-0 h-dvh overflow-y-auto overscroll-contain bg-background">
-              <ScaledSlide isMobile><S /></ScaledSlide>
+              <ScaledSlide isMobile><Suspense fallback={<div className="min-h-dvh w-full bg-background" />}><S /></Suspense></ScaledSlide>
             </div>
           ))}
         </div>

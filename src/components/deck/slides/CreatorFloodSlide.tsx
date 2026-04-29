@@ -3,7 +3,7 @@ import { Zap } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
-import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
+import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.webp';
 
 const metricsData = [
   { val: '10,000+', labelKey: 'kpi.minimumPosts' },

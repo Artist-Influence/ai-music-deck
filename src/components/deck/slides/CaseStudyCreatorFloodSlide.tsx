@@ -1,6 +1,6 @@
 import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
-import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
+import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.webp';
 import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
 import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
 import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';
@@ -43,7 +43,7 @@ const CaseStudyCreatorFloodSlide = () => {
             <p className="text-xs md:text-sm text-muted-foreground mb-2 md:mb-3">Jumpy (feat. Ski Mask The Slump God)</p>
             <p className="text-xs md:text-base text-muted-foreground mb-2 md:mb-3">{t('csCreatorFlood.overview.0')}</p>
             <div className="flex-1 min-h-0 mb-2 md:mb-3 rounded-lg border border-white/[0.08] overflow-hidden max-h-[150px] md:max-h-none">
-              <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page" className="w-full h-full object-cover object-top" />
+              <img loading="lazy" decoding="async" src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page" className="w-full h-full object-cover object-top" />
             </div>
             <div className="grid grid-cols-3 gap-1.5 md:gap-2 mt-auto">
               {richBrianMetrics.map((m) => (
@@ -63,12 +63,12 @@ const CaseStudyCreatorFloodSlide = () => {
             <p className="text-xs md:text-base text-muted-foreground mb-2 md:mb-3">{t('csCreatorFlood.overview.1')}</p>
             <div className="grid grid-cols-2 gap-1.5 md:gap-2 mb-2 md:mb-3 flex-1 min-h-0">
               <div className="rounded-lg border border-white/[0.08] overflow-hidden h-full">
-                <img src={mlShorts} alt="YouTube Shorts, Canada Trending" className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={mlShorts} alt="YouTube Shorts, Canada Trending" className="w-full h-full object-cover" />
               </div>
               <div className="flex flex-col justify-between h-full gap-1">
                 {[mlFacebook, mlTiktok, mlIg].map((src, i) => (
                   <div key={i} className="rounded-lg border border-white/[0.08] overflow-hidden">
-                    <img src={src} alt={majorLazerScreenshots[i + 1]?.alt} className="w-full object-contain" />
+                    <img loading="lazy" decoding="async" src={src} alt={majorLazerScreenshots[i + 1]?.alt} className="w-full object-contain" />
                   </div>
                 ))}
               </div>

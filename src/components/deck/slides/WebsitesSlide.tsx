@@ -2,9 +2,9 @@ import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { Globe, Zap, Layers, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
-import pierceImg from '@/assets/site-pierce.png';
-import levityImg from '@/assets/site-levity.png';
-import kompanyImg from '@/assets/site-kompany.png';
+import pierceImg from '@/assets/site-pierce.webp';
+import levityImg from '@/assets/site-levity.webp';
+import kompanyImg from '@/assets/site-kompany.webp';
 
 const cardConfig = [
   {
@@ -62,7 +62,7 @@ const WebsitesSlide = () => {
             return (
               <GlassPanel key={i} variant="bright" className="p-4 md:p-5 flex flex-col">
                 <div className="aspect-[16/10] mb-3 md:mb-4 rounded-lg overflow-hidden bg-background/40 border border-primary/15">
-                  <img src={c.image} alt={c.alt} className="w-full h-full object-cover object-top" />
+                  <img loading="lazy" decoding="async" src={c.image} alt={c.alt} className="w-full h-full object-cover object-top" />
                 </div>
                 <div className="flex items-center gap-2 mb-1.5 md:mb-2">
                   <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />

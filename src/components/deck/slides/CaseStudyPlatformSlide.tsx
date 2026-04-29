@@ -2,7 +2,7 @@ import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
 import spicyMargaritaImg from '@/assets/jason-derulo-spicy-margarita-views.png';
 import dackJanielsImg from '@/assets/dack-janiels-streams.png';
-import francisMercierImg from '@/assets/francis-mercier-sauti.png';
+import francisMercierImg from '@/assets/francis-mercier-sauti.webp';
 
 const CaseStudyPlatformSlide = () => {
   const { t } = useTranslation();

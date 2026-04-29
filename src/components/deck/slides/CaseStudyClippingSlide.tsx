@@ -51,7 +51,7 @@ const CaseStudyClippingSlide = () => {
           {cases.map((c) => (
             <GlassPanel key={c.artist} variant="bright" className="p-4 md:p-6 flex flex-col">
               <div className="aspect-square rounded-xl overflow-hidden border border-white/[0.08] mb-3 md:mb-4">
-                <img src={c.coverArt} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
+                <img loading="lazy" decoding="async" src={c.coverArt} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
               </div>
 
               <p className="text-[10px] md:text-base text-primary font-mono mb-1 md:mb-3 tracking-widest">{t('csClipping.tag')}</p>

@@ -1,7 +1,7 @@
 import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
-import gordoImg from '@/assets/gordo-meta-tiktok.png';
+import gordoImg from '@/assets/gordo-meta-tiktok.webp';
 import zedsDeadImg from '@/assets/zeds-dead-logo.png';
 
 const TikTokIcon = ({ size = 28 }: { size?: number }) => (
@@ -90,7 +90,7 @@ const AdditionalServicesSlide = () => {
               <GlassPanel key={idx} variant="bright" className="p-2 md:p-5 flex flex-col">
                 <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
                   <div className="w-[60px] h-[60px] md:w-[150px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
-                    <img src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
+                    <img loading="lazy" decoding="async" src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
                   </div>
                   <div className="flex-1 flex flex-col justify-center">
                     <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{c.platform}</p>

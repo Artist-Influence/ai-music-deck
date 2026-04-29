@@ -86,7 +86,7 @@ const InstagramSeedingSlide = () => {
               <GlassPanel key={idx} variant="bright" className="p-3 md:p-5 flex flex-col">
                 <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
                   <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
-                    <img src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
+                    <img loading="lazy" decoding="async" src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
                     <p className="text-[10px] md:text-lg text-primary font-mono tracking-widest mb-0.5">{t('instagram.tagLabel')}</p>
