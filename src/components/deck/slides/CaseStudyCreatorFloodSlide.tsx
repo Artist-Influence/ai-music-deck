@@ -1,6 +1,6 @@
 import GlassPanel from '../GlassPanel';
 import { useTranslation } from '@/i18n/LanguageContext';
-import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.png';
+import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.webp';
 import mlShorts from '@/assets/major-lazer-canada-shorts.jpeg';
 import mlFacebook from '@/assets/major-lazer-facebook-trending.jpeg';
 import mlTiktok from '@/assets/major-lazer-tiktok-popular.jpeg';

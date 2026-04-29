@@ -2,9 +2,9 @@ import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { Globe, Zap, Layers, ExternalLink } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
-import pierceImg from '@/assets/site-pierce.png';
-import levityImg from '@/assets/site-levity.png';
-import kompanyImg from '@/assets/site-kompany.png';
+import pierceImg from '@/assets/site-pierce.webp';
+import levityImg from '@/assets/site-levity.webp';
+import kompanyImg from '@/assets/site-kompany.webp';
 
 const cardConfig = [
   {

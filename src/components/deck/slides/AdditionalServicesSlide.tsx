@@ -1,7 +1,7 @@
 import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
-import gordoImg from '@/assets/gordo-meta-tiktok.png';
+import gordoImg from '@/assets/gordo-meta-tiktok.webp';
 import zedsDeadImg from '@/assets/zeds-dead-logo.png';
 
 const TikTokIcon = ({ size = 28 }: { size?: number }) => (
