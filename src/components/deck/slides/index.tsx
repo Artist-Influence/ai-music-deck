@@ -1,24 +1,27 @@
-import { FC } from 'react';
-import CoverSlide from './CoverSlide';
-import OperatingSystemSlide from './OperatingSystemSlide';
-import UnifiedOpsSlide from './UnifiedOpsSlide';
-import TheShiftSlide from './TheShiftSlide';
-import WhatWeDoSlide from './WhatWeDoSlide';
-import ClippingSlide from './ClippingSlide';
-import CreatorFloodSlide from './CreatorFloodSlide';
-import Top50TrendingSlide from './Top50TrendingSlide';
-import CultureEditsSlide from './CultureEditsSlide';
-import YouTubeAdsSlide from './YouTubeAdsSlide';
-import SpotifyPlaylistingSlide from './SpotifyPlaylistingSlide';
-import SoundCloudRepostsSlide from './SoundCloudRepostsSlide';
-import InstagramSeedingSlide from './InstagramSeedingSlide';
-import AdditionalServicesSlide from './AdditionalServicesSlide';
-import WebsitesSlide from './WebsitesSlide';
-import IdIdSlide from './IdIdSlide';
-import PricingSlide from './PricingSlide';
-import NextStepsSlide from './NextStepsSlide';
+import { lazy, type LazyExoticComponent, type ComponentType } from 'react';
 
-export const slides: FC[] = [
+// Code-split each slide so the initial bundle stays small.
+// Each slide + its image imports becomes its own chunk, loaded on demand.
+const CoverSlide = lazy(() => import('./CoverSlide'));
+const OperatingSystemSlide = lazy(() => import('./OperatingSystemSlide'));
+const UnifiedOpsSlide = lazy(() => import('./UnifiedOpsSlide'));
+const TheShiftSlide = lazy(() => import('./TheShiftSlide'));
+const WhatWeDoSlide = lazy(() => import('./WhatWeDoSlide'));
+const ClippingSlide = lazy(() => import('./ClippingSlide'));
+const CreatorFloodSlide = lazy(() => import('./CreatorFloodSlide'));
+const Top50TrendingSlide = lazy(() => import('./Top50TrendingSlide'));
+const CultureEditsSlide = lazy(() => import('./CultureEditsSlide'));
+const YouTubeAdsSlide = lazy(() => import('./YouTubeAdsSlide'));
+const SpotifyPlaylistingSlide = lazy(() => import('./SpotifyPlaylistingSlide'));
+const SoundCloudRepostsSlide = lazy(() => import('./SoundCloudRepostsSlide'));
+const InstagramSeedingSlide = lazy(() => import('./InstagramSeedingSlide'));
+const AdditionalServicesSlide = lazy(() => import('./AdditionalServicesSlide'));
+const WebsitesSlide = lazy(() => import('./WebsitesSlide'));
+const IdIdSlide = lazy(() => import('./IdIdSlide'));
+const PricingSlide = lazy(() => import('./PricingSlide'));
+const NextStepsSlide = lazy(() => import('./NextStepsSlide'));
+
+export const slides: LazyExoticComponent<ComponentType>[] = [
   CoverSlide,
   OperatingSystemSlide,
   UnifiedOpsSlide,
