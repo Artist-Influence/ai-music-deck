@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback } from 'react';
+import { useState, useEffect, useCallback, Suspense } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 import aiLogo from '@/assets/ai-logo-lockup.png';
