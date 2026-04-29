@@ -72,7 +72,7 @@ const DeckViewer = () => {
             <button key={i} onClick={() => { setCurrent(i); setGrid(false); }}
               className={cn('relative aspect-video rounded-lg overflow-hidden border-2 transition-all hover:scale-[1.02]',
                 i === current ? 'border-primary' : 'border-border hover:border-primary/40')}>
-              <ScaledSlide><S /></ScaledSlide>
+              <ScaledSlide><Suspense fallback={null}><S /></Suspense></ScaledSlide>
               <span className="absolute bottom-1 right-2 text-xs text-muted-foreground font-mono">{i + 1}</span>
             </button>
           ))}
