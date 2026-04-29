@@ -9,6 +9,19 @@ interface State {
   error: Error | null;
 }
 
+const isChunkLoadError = (err: unknown): boolean => {
+  if (!err) return false;
+  const e = err as { name?: string; message?: string };
+  const msg = (e.message || '').toLowerCase();
+  return (
+    e.name === 'ChunkLoadError' ||
+    msg.includes('failed to fetch dynamically imported module') ||
+    msg.includes('importing a module script failed') ||
+    msg.includes('error loading dynamically imported module') ||
+    msg.includes("'text/html' is not a valid javascript mime type")
+  );
+};
+
 class ErrorBoundary extends Component<Props, State> {
   state: State = { hasError: false, error: null };
 
@@ -18,11 +31,29 @@ class ErrorBoundary extends Component<Props, State> {
 
   componentDidCatch(error: Error, info: unknown) {
     console.error('App crashed:', error, info);
+
+    // Stale-deploy recovery: if a code-split chunk failed to load (very common
+    // on Safari after a redeploy or with a half-cached service-worker state),
+    // hard-reload exactly once with a cache-busting query param.
+    if (isChunkLoadError(error)) {
+      try {
+        const tried = sessionStorage.getItem('ai_chunk_recovery');
+        if (!tried) {
+          sessionStorage.setItem('ai_chunk_recovery', '1');
+          const url = new URL(window.location.href);
+          url.searchParams.set('v', Date.now().toString());
+          window.location.replace(url.toString());
+        }
+      } catch {
+        window.location.reload();
+      }
+    }
   }
 
   handleReset = () => {
     try {
       localStorage.removeItem('ai_deck_email');
+      sessionStorage.removeItem('ai_chunk_recovery');
     } catch {
       // ignore
     }
@@ -31,6 +62,16 @@ class ErrorBoundary extends Component<Props, State> {
 
   render() {
     if (this.state.hasError) {
+      // For chunk-load errors we've already triggered a reload; show a neutral
+      // loading state instead of an error UI to avoid flashing scary copy.
+      if (isChunkLoadError(this.state.error)) {
+        return (
+          <div className="min-h-dvh flex items-center justify-center bg-background">
+            <div className="text-sm text-muted-foreground">Loading…</div>
+          </div>
+        );
+      }
+
       return (
         <div className="min-h-dvh flex items-center justify-center bg-background p-6">
           <div className="max-w-md w-full text-center space-y-4">
