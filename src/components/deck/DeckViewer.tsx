@@ -250,7 +250,7 @@ const MobilePager = ({ current, setCurrent }: MobilePagerProps) => {
         <div className="flex h-full touch-pan-y">
           {slides.map((S, i) => (
             <div key={i} className="flex-[0_0_100%] min-w-0 h-dvh overflow-y-auto overscroll-contain bg-background">
-              <ScaledSlide isMobile><S /></ScaledSlide>
+              <ScaledSlide isMobile><Suspense fallback={<div className="min-h-dvh w-full bg-background" />}><S /></Suspense></ScaledSlide>
             </div>
           ))}
         </div>
