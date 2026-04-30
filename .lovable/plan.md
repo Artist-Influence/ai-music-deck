@@ -1,30 +1,25 @@
-## Issue
+## Problem
 
-On the Top 50 Trending slide (desktop), the left column stacks three cards: heading block, "How it works", and "When to use". The "When to use" card's bullets and the "Timeframe" line are sized at `md:text-2xl`, which overflows the card vertically — top and bottom content gets clipped (visible in the screenshot).
+On the YouTube Ads slide, the two case study cards (Jason Derulo, Mark Tuan) have awkward vertical empty space inside the metric tiles. The cause:
 
-The "How it works" card directly above uses the same oversized `md:text-2xl` for body copy and is also tight.
+- The metrics grid uses `flex-1 auto-rows-fr`, forcing the 2-row × 3-col grid to stretch and fill all leftover card height. This creates tall metric boxes with values/labels floating in the vertical middle.
+- The card itself is `flex-1` inside a `justify-center` column, so each card already gets generous height, which the metrics grid then absorbs entirely.
+- The header row (thumbnail + artist) is comparatively compact, which exaggerates the imbalance.
 
-## Fix
+## Fix (desktop only — mobile sizing untouched)
 
-File: `src/components/deck/slides/Top50TrendingSlide.tsx`
+In `src/components/deck/slides/YouTubeAdsSlide.tsx`, inside the case study card map:
 
-Reduce desktop body font sizes in the two stacked GlassPanels and tighten internal spacing so each card's content fits its allotted flex height.
+1. **Stop the metrics grid from greedily filling space.** Remove `flex-1 auto-rows-fr` from the metrics grid container so tiles size to their content. Keep `grid grid-cols-3 gap-1 md:gap-2`.
+2. **Let the card size to content** instead of stretching. Remove `flex-1` from the `GlassPanel` for each case card; keep `flex flex-col`. The outer right column already uses `justify-center gap-2 md:gap-4`, so the two cards will sit naturally centered with even spacing instead of being stretched.
+3. **Slightly bump metric tile padding and typography on desktop** so the tiles feel intentional rather than shrunken:
+   - Tile padding: `md:p-2.5` → `md:py-3 md:px-2`
+   - Value text: `md:text-lg` → `md:text-xl`
+   - Label text: `md:text-sm` (unchanged) but add `md:mt-0.5` for breathing room.
+4. **Tighten the gap between header row and metrics:** change `mb-1.5 md:mb-3` on the header row to `mb-1.5 md:mb-4` for a slightly more balanced split.
 
-1. "How it works" card (line ~36-39):
-   - Title: keep `md:text-2xl` (section header)
-   - Body description: `md:text-2xl` → `md:text-lg`
+No changes to mobile classes, no copy changes, no changes to the left column ("What we do" / "How it works") panels.
 
-2. "When to use" card (lines ~41-53):
-   - Title: keep `md:text-2xl`
-   - Bullet text: `md:text-2xl` → `md:text-lg`
-   - Bullet dot vertical offset: `md:mt-3` → `md:mt-2` (re-align to smaller text)
-   - Timeframe line: `md:text-2xl` → `md:text-lg`
-   - Bullet spacing: `md:space-y-2.5` stays; padding `md:p-8` stays
+## Files
 
-Mobile sizes (`text-xs` / `text-sm`) are unchanged — only desktop (`md:`) sizing is adjusted.
-
-No copy changes, no layout/grid changes, no other slides touched.
-
-## Verification
-
-After the edit, visually check the slide at desktop (1920×1080) to confirm both cards' text sits comfortably inside their boxes with no top/bottom clipping.
+- `src/components/deck/slides/YouTubeAdsSlide.tsx` — only the case study card block (lines ~74–94).
