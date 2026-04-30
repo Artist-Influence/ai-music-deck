@@ -1,25 +1,21 @@
-## Problem
+## Goal
 
-On the YouTube Ads slide, the two case study cards (Jason Derulo, Mark Tuan) have awkward vertical empty space inside the metric tiles. The cause:
+Make the two YouTube case study cards (right column) collectively fill the same vertical height as the left column ("What we do" + "How it works" stack) on desktop. Mobile stays unchanged.
 
-- The metrics grid uses `flex-1 auto-rows-fr`, forcing the 2-row × 3-col grid to stretch and fill all leftover card height. This creates tall metric boxes with values/labels floating in the vertical middle.
-- The card itself is `flex-1` inside a `justify-center` column, so each card already gets generous height, which the metrics grid then absorbs entirely.
-- The header row (thumbnail + artist) is comparatively compact, which exaggerates the imbalance.
+## Why it currently looks short
 
-## Fix (desktop only — mobile sizing untouched)
+The right column is `flex-1 flex flex-col justify-center gap-2 md:gap-4`, but its children (the case cards) have no `flex-1`, so they size to content and sit centered with empty space above/below. Meanwhile the left column's two panels both use `flex-1`, so they stretch to fill the full row height.
 
-In `src/components/deck/slides/YouTubeAdsSlide.tsx`, inside the case study card map:
+## Fix
 
-1. **Stop the metrics grid from greedily filling space.** Remove `flex-1 auto-rows-fr` from the metrics grid container so tiles size to their content. Keep `grid grid-cols-3 gap-1 md:gap-2`.
-2. **Let the card size to content** instead of stretching. Remove `flex-1` from the `GlassPanel` for each case card; keep `flex flex-col`. The outer right column already uses `justify-center gap-2 md:gap-4`, so the two cards will sit naturally centered with even spacing instead of being stretched.
-3. **Slightly bump metric tile padding and typography on desktop** so the tiles feel intentional rather than shrunken:
-   - Tile padding: `md:p-2.5` → `md:py-3 md:px-2`
-   - Value text: `md:text-lg` → `md:text-xl`
-   - Label text: `md:text-sm` (unchanged) but add `md:mt-0.5` for breathing room.
-4. **Tighten the gap between header row and metrics:** change `mb-1.5 md:mb-3` on the header row to `mb-1.5 md:mb-4` for a slightly more balanced split.
+In `src/components/deck/slides/YouTubeAdsSlide.tsx`, in the right-column case-study block:
 
-No changes to mobile classes, no copy changes, no changes to the left column ("What we do" / "How it works") panels.
+1. Right column wrapper: change `justify-center` to `md:justify-center` (kept as a no-op fallback) and ensure it remains a full-height flex column. Effectively: `flex-1 flex flex-col gap-2 md:gap-4 md:justify-center`.
+2. Each case `GlassPanel`: add `md:flex-1` so both cards share the column height equally on desktop.
+3. Metrics grid inside each card: add `md:flex-1 md:auto-rows-fr` so the grid expands to absorb the extra height (instead of leaving empty space below the metrics) and the two metric rows split that space evenly.
+
+Result: the two cards stack to exactly match the left column's height, with the metric tiles growing slightly to fill — keeping the balanced look from the previous fix but now anchored to the left column's height.
 
 ## Files
 
-- `src/components/deck/slides/YouTubeAdsSlide.tsx` — only the case study card block (lines ~74–94).
+- `src/components/deck/slides/YouTubeAdsSlide.tsx` — only the right-column block (lines ~72–94).

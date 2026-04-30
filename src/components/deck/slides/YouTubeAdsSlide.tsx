@@ -69,9 +69,9 @@ const YouTubeAdsSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center gap-2 md:gap-4">
+        <div className="flex-1 flex flex-col gap-2 md:gap-4 md:justify-center">
           {cases.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex flex-col">
+            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex flex-col md:flex-1">
               <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
                 <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
                   <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
@@ -83,7 +83,7 @@ const YouTubeAdsSlide = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-1 md:gap-2">
+              <div className="grid grid-cols-3 gap-1 md:gap-2 md:flex-1 md:auto-rows-fr">
                 {c.metrics.map((m) => (
                   <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
                     <p className="text-[10px] md:text-xl font-bold text-foreground">{m.val}</p>
