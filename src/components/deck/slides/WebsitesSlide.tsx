@@ -11,25 +11,33 @@ const cardConfig = [
     icon: Globe,
     image: pierceImg,
     alt: 'Pierce — artist site',
+    name: 'Pierce',
+    url: 'https://piercemusic.com',
+    label: 'piercemusic.com',
   },
   {
     icon: Layers,
     image: kompanyImg,
     alt: 'Kompany — artist site',
+    name: 'Kompany',
+    url: 'https://kompanymusic.com',
+    label: 'kompanymusic.com',
   },
   {
     icon: Zap,
     image: levityImg,
     alt: 'Levity — artist site',
+    name: 'Levity',
+    url: 'https://levityofficial.com',
+    label: 'levityofficial.com',
   },
 ];
 
 const extraLinks = [
-  { name: 'Kompany', url: 'https://kompanymusic.com', label: 'kompanymusic.com' },
-  { name: 'Levity', url: 'https://levityofficial.com', label: 'levityofficial.com' },
   { name: 'ID.ID', url: 'https://id-id.artistinfluence.com', label: 'id-id.artistinfluence.com' },
   { name: 'Kluster Flux', url: 'https://klusterflux.com', label: 'klusterflux.com' },
   { name: 'Luhv', url: 'https://luhv.la', label: 'luhv.la' },
+  { name: 'Filthy Dubs', url: 'https://filthydubs.com', label: 'filthydubs.com' },
 ];
 
 const WebsitesSlide = () => {
