@@ -46,6 +46,9 @@ const WebsitesSlide = () => {
     icon: c.icon,
     image: c.image,
     alt: c.alt,
+    name: c.name,
+    url: c.url,
+    label: c.label,
     title: t(`websites.card.${i}.title`),
     desc: t(`websites.card.${i}.desc`),
   }));
@@ -68,16 +71,37 @@ const WebsitesSlide = () => {
           {cards.map((c, i) => {
             const Icon = c.icon;
             return (
-              <GlassPanel key={i} variant="bright" className="p-4 md:p-5 flex flex-col">
-                <div className="aspect-[16/10] mb-3 md:mb-4 rounded-lg overflow-hidden bg-background/40 border border-primary/15">
-                  <img loading="lazy" decoding="async" src={c.image} alt={c.alt} className="w-full h-full object-cover object-top" />
-                </div>
-                <div className="flex items-center gap-2 mb-1.5 md:mb-2">
-                  <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
-                  <p className="text-sm md:text-xl font-semibold text-foreground">{c.title}</p>
-                </div>
-                <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{c.desc}</p>
-              </GlassPanel>
+              <a
+                key={i}
+                href={c.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label={`${c.name} — ${c.label}`}
+                className="group block focus:outline-none focus-visible:ring-2 focus-visible:ring-primary/60 rounded-2xl"
+              >
+                <GlassPanel
+                  variant="bright"
+                  noCorner
+                  className="p-4 md:p-5 flex flex-col h-full transition-colors group-hover:bg-primary/[0.10]"
+                >
+                  <div className="aspect-[16/10] mb-3 md:mb-4 rounded-lg overflow-hidden bg-background/40 border border-primary/15 relative">
+                    <img loading="lazy" decoding="async" src={c.image} alt={c.alt} className="w-full h-full object-cover object-top" />
+                    <span className="absolute top-2 right-2 inline-flex items-center justify-center w-7 h-7 md:w-8 md:h-8 rounded-full bg-background/70 backdrop-blur border border-primary/30 text-primary transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5 group-hover:border-primary/70 group-hover:bg-primary/15">
+                      <ExternalLink className="w-3.5 h-3.5 md:w-4 md:h-4" />
+                    </span>
+                  </div>
+                  <div className="flex items-center gap-2 mb-1 md:mb-1.5">
+                    <Icon className="w-4 h-4 md:w-5 md:h-5 text-primary" />
+                    <p className="text-sm md:text-xl font-semibold text-foreground">{c.title}</p>
+                  </div>
+                  <div className="flex items-center gap-1.5 mb-1.5 md:mb-2 text-[11px] md:text-sm">
+                    <span className="font-medium text-foreground/85">{c.name}</span>
+                    <span className="text-muted-foreground/60">·</span>
+                    <span className="text-muted-foreground group-hover:text-primary/90 transition-colors">{c.label}</span>
+                  </div>
+                  <p className="text-xs md:text-base text-muted-foreground leading-relaxed">{c.desc}</p>
+                </GlassPanel>
+              </a>
             );
           })}
         </div>
