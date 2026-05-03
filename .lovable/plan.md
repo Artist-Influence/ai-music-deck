@@ -1,50 +1,48 @@
-# Slide 15 (Websites) — Make site cards clickable + add two new sites
+## Slide 15 (Websites) — Fix "Live builds" chips row
 
-## Changes to `src/components/deck/slides/WebsitesSlide.tsx`
+### Changes to `src/components/deck/slides/WebsitesSlide.tsx`
 
-### 1. Make the 3 main site cards clickable with a clear arrow affordance
+**1. Remove URL labels from the chips** — chips should display only the artist/company name, not the domain. The arrow icon already conveys clickability, and the `href` carries the URL.
 
-Currently the three large cards (Pierce, Kompany, Levity) display the screenshot, title, and description but are **not clickable** — they look like static tiles. Update them to:
+Before:
+```text
+[ Filthy Dubs · filthydubs.com ↗ ]
+```
 
-- Wrap each `GlassPanel` in an `<a target="_blank" rel="noopener noreferrer">` (or render the panel itself as an `<a>` via a wrapper) linking to the artist's site.
-- Add an `ExternalLink` (arrow) icon in the top-right of each card, styled in `text-primary` with a subtle hover state, so it's visually obvious the card is a link.
-- Show the **artist/company name + domain** under the title row (e.g. `piercemusic.com`), styled like the chips in the extra-links row (small, muted, with hover → primary). This way the name of the site is visible on each card.
-- Add hover affordance on the whole card: `hover:border-primary/50`, slight `hover:bg-primary/[0.04]`, and arrow shifts (`group-hover:translate-x-0.5 group-hover:-translate-y-0.5`).
+After:
+```text
+[ Filthy Dubs ↗ ]
+```
 
-URLs to wire up for the 3 main cards:
-- Pierce → `https://piercemusic.com` (label: `piercemusic.com`)
-- Kompany → `https://kompanymusic.com` (label: `kompanymusic.com`)
-- Levity → `https://levityofficial.com` (label: `levityofficial.com`)
+**2. Update the `extraLinks` array** to include all live builds (in addition to existing ID.ID, Kluster Flux, Luhv, Filthy Dubs):
 
-Update `cardConfig` to include `name`, `url`, and `label` fields alongside the existing `icon`, `image`, `alt`.
+- Pierce → `https://piercemusic.com`
+- Kompany → `https://kompanymusic.com`
+- Levity → `https://levityofficial.com`
+- Bauti → `https://bautimusic.com`
 
-### 2. Add the two new sites to the "more" chips row
+Final order in chips row:
+ID.ID, Kluster Flux, Luhv, Filthy Dubs, Pierce, Kompany, Levity, Bauti
 
-Append to the existing `extraLinks` array (which already renders as pill chips with the `ExternalLink` arrow):
+**3. Simplify the chip markup** — remove the `·` separator span and the `{s.label}` span; keep only the name + `ExternalLink` icon. The `label` field can be dropped from the array entries (or left unused; cleaner to drop it for the chips entries).
+
+### Note on featured cards
+
+The 3 main cards (Pierce, Kompany, Levity) keep their existing in-card name + domain label (`Pierce · piercemusic.com`) — that's the detailed featured-card treatment and is unchanged. They will now also appear in the chips row alongside Bauti for a complete "live builds" overview.
+
+### Technical detail
 
 ```ts
-{ name: 'Filthy Dubs', url: 'https://filthydubs.com', label: 'filthydubs.com' },
-{ name: 'Pierce', url: 'https://piercemusic.com', label: 'piercemusic.com' },
+const extraLinks = [
+  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com' },
+  { name: 'Kluster Flux', url: 'https://klusterflux.com' },
+  { name: 'Luhv', url: 'https://luhv.la' },
+  { name: 'Filthy Dubs', url: 'https://filthydubs.com' },
+  { name: 'Pierce', url: 'https://piercemusic.com' },
+  { name: 'Kompany', url: 'https://kompanymusic.com' },
+  { name: 'Levity', url: 'https://levityofficial.com' },
+  { name: 'Bauti', url: 'https://bautimusic.com' },
+];
 ```
 
-Note: Pierce is also one of the 3 featured cards. Including it again in the chips row would be redundant — recommend **only** adding `Filthy Dubs` to the chips row (since Pierce is already prominently featured as a main card with its link). If you'd prefer Pierce to also appear in the chips strip for symmetry, I'll add both.
-
-### Visual result
-
-Each main card will look like:
-
-```text
-+--------------------------------------+
-| [screenshot]                       ↗ |
-|                                      |
-|  ◎  Title                            |
-|     Pierce · piercemusic.com         |
-|     Description text...              |
-+--------------------------------------+
-```
-
-Entire card is a hover-highlighted link; arrow in top-right makes clickability unambiguous.
-
-## Open question
-
-Should Pierce appear in **both** the featured card and the chips row, or only as the featured card (chips row gets just Filthy Dubs)? I'll default to **only Filthy Dubs in chips** unless you say otherwise.
+Chip JSX simplifies to: `<span>{s.name}</span><ExternalLink />`.

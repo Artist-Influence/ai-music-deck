@@ -34,10 +34,14 @@ const cardConfig = [
 ];
 
 const extraLinks = [
-  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com', label: 'id-id.artistinfluence.com' },
-  { name: 'Kluster Flux', url: 'https://klusterflux.com', label: 'klusterflux.com' },
-  { name: 'Luhv', url: 'https://luhv.la', label: 'luhv.la' },
-  { name: 'Filthy Dubs', url: 'https://filthydubs.com', label: 'filthydubs.com' },
+  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com' },
+  { name: 'Kluster Flux', url: 'https://klusterflux.com' },
+  { name: 'Luhv', url: 'https://luhv.la' },
+  { name: 'Filthy Dubs', url: 'https://filthydubs.com' },
+  { name: 'Pierce', url: 'https://piercemusic.com' },
+  { name: 'Kompany', url: 'https://kompanymusic.com' },
+  { name: 'Levity', url: 'https://levityofficial.com' },
+  { name: 'Bauti', url: 'https://bautimusic.com' },
 ];
 
 const WebsitesSlide = () => {
@@ -119,8 +123,6 @@ const WebsitesSlide = () => {
               className="group inline-flex items-center gap-1.5 px-2.5 md:px-3 py-1 md:py-1.5 rounded-full border border-primary/20 bg-background/40 text-[11px] md:text-sm text-foreground/80 hover:border-primary/50 hover:text-primary hover:bg-primary/5 transition-colors"
             >
               <span className="font-medium">{s.name}</span>
-              <span className="text-muted-foreground/70 group-hover:text-primary/80">·</span>
-              <span className="text-muted-foreground/90 group-hover:text-primary/80">{s.label}</span>
               <ExternalLink className="w-3 h-3 md:w-3.5 md:h-3.5 opacity-60 group-hover:opacity-100" />
             </a>
           ))}
