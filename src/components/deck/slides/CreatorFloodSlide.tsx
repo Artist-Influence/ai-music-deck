@@ -57,7 +57,7 @@ const CreatorFloodSlide = () => {
         </div>
 
         <div className="flex-1 flex flex-col md:min-h-[720px]">
-          <GlassPanel variant="bright" className="w-full p-4 md:p-5 md:h-full md:flex md:flex-col">
+          <GlassPanel variant="bright" className="w-full p-4 md:p-5 md:flex-1 md:h-full md:flex md:flex-col">
             <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">{t('creatorFlood.caseStudy')}</p>
             <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
             <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
