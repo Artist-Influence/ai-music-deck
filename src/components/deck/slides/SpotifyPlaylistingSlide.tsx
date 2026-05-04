@@ -46,17 +46,17 @@ const SpotifyPlaylistingSlide = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-10 flex flex-col justify-start md:justify-center">
       <PatternVisual />
       <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
         {/* Header — full width above the two-column row */}
         <div>
-          <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
+          <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-3">
             <SpotifyIcon size={18} />
             <p className="text-xs md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
           </div>
-          <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-1 md:mb-4 leading-tight">{t('spotify.title')}</h1>
-          <p className="text-xs md:text-2xl text-on-visual-soft mb-3 md:mb-0 max-w-[700px]">{t('spotify.subtitle')}</p>
+          <h1 className="text-2xl md:text-5xl font-bold text-on-visual mb-1 md:mb-3 leading-tight">{t('spotify.title')}</h1>
+          <p className="text-xs md:text-xl text-on-visual-soft mb-3 md:mb-0 max-w-[700px]">{t('spotify.subtitle')}</p>
         </div>
 
         {/* Mobile summary */}
