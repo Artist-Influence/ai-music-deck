@@ -94,7 +94,6 @@ const YouTubeAdsSlide = () => {
             </GlassPanel>
           ))}
         </div>
-        </div>
       </div>
     </div>
   );
