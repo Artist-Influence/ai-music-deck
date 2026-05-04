@@ -69,11 +69,10 @@ const YouTubeAdsSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col md:min-h-[720px] md:items-center md:justify-center">
-          <div className="w-full flex flex-col gap-2 md:gap-4">
-            {cases.map((c) => (
-              <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5">
-                <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
+        <div className="flex-1 flex flex-col gap-2 md:gap-4 md:min-h-[720px]">
+          {cases.map((c) => (
+            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 md:flex-1 md:min-h-0">
+              <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
                   <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
                     <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
                   </div>
