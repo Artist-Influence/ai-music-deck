@@ -20,7 +20,7 @@ const Top50TrendingSlide = () => {
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
+      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 md:items-center">
         <div className="flex-1 flex flex-col gap-3 md:gap-4">
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
@@ -54,8 +54,8 @@ const Top50TrendingSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col">
-          <GlassPanel variant="bright" className="p-4 md:p-7 flex flex-col flex-1 justify-center">
+        <div className="flex-1 flex flex-col justify-center">
+          <GlassPanel variant="bright" className="p-4 md:p-7 flex flex-col justify-center">
             <p className="text-xs md:text-base text-primary font-mono mb-1 md:mb-2 tracking-widest uppercase">{t('trending.caseStudy')}</p>
             <p className="text-lg md:text-2xl font-bold text-foreground">Major Lazer</p>
             <p className="text-sm md:text-xl text-muted-foreground mb-2 md:mb-3">MINI SKIRT</p>

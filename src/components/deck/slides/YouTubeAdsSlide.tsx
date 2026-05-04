@@ -30,7 +30,7 @@ const YouTubeAdsSlide = () => {
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10">
+      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 md:items-center">
         <div className="flex-1 flex flex-col gap-3 md:gap-4">
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
@@ -71,7 +71,7 @@ const YouTubeAdsSlide = () => {
 
         <div className="flex-1 flex flex-col gap-2 md:gap-4 md:justify-center">
           {cases.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex flex-col md:flex-1">
+            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex flex-col">
               <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
                 <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
                   <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
@@ -83,7 +83,7 @@ const YouTubeAdsSlide = () => {
                 </div>
               </div>
 
-              <div className="grid grid-cols-3 gap-1 md:gap-2 md:flex-1 md:auto-rows-fr">
+              <div className="grid grid-cols-3 gap-1 md:gap-2">
                 {c.metrics.map((m) => (
                   <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
                     <p className="text-[10px] md:text-xl font-bold text-foreground">{m.val}</p>
