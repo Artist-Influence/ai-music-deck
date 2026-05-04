@@ -20,8 +20,8 @@ const Top50TrendingSlide = () => {
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 md:items-center">
-        <div className="flex-1 flex flex-col gap-3 md:gap-4">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col md:flex-row gap-4 md:gap-10 md:items-stretch">
+        <div className="flex-1 flex flex-col gap-3 md:gap-4 md:min-h-[720px]">
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
               <TrendingUp size={20} className="text-primary md:w-7 md:h-7" />
@@ -54,13 +54,13 @@ const Top50TrendingSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center">
-          <GlassPanel variant="bright" className="p-4 md:p-7 flex flex-col justify-center">
+        <div className="flex-1 flex flex-col md:min-h-[720px] md:items-center md:justify-center">
+          <GlassPanel variant="bright" className="w-full p-4 md:p-7">
             <p className="text-xs md:text-base text-primary font-mono mb-1 md:mb-2 tracking-widest uppercase">{t('trending.caseStudy')}</p>
             <p className="text-lg md:text-2xl font-bold text-foreground">Major Lazer</p>
             <p className="text-sm md:text-xl text-muted-foreground mb-2 md:mb-3">MINI SKIRT</p>
 
-            <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch my-auto">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch">
               <div className="flex-[0.9] grid grid-cols-2 md:grid-cols-1 md:flex md:flex-col gap-2 md:gap-3">
                 {metricsData.map((m) => (
                   <div key={m.labelKey} className="bg-white/[0.04] rounded-xl p-3 md:p-4 border border-white/[0.06] flex flex-col items-center justify-center text-center md:flex-1">
