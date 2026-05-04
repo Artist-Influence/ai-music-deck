@@ -17,7 +17,7 @@ const CreatorFloodSlide = () => {
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
+      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 md:items-center">
         <div className="flex-1 flex flex-col gap-3 md:gap-4">
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">

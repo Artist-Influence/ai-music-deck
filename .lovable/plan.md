@@ -1,48 +1,30 @@
-## Slide 15 (Websites) — Fix "Live builds" chips row
+I’ll fix the centering by removing the stretch/fill behavior that is making the right-side asset blocks sit too high or expand unevenly, then explicitly center each asset group vertically on desktop.
 
-### Changes to `src/components/deck/slides/WebsitesSlide.tsx`
+### What I’ll change
 
-**1. Remove URL labels from the chips** — chips should display only the artist/company name, not the domain. The arrow icon already conveys clickability, and the `href` carries the URL.
+1. **Slide 7 — Creator Flood**
+   - Center the right-side case study asset block vertically against the slide content.
+   - Stop the screenshot/image area from stretching to fill leftover height.
+   - Give the image area a stable desktop height/aspect so the whole case-study card sits centered rather than expanding upward/downward unpredictably.
 
-Before:
-```text
-[ Filthy Dubs · filthydubs.com ↗ ]
-```
+2. **Slide 8 — Top 50 Trending**
+   - Center the Major Lazer case-study panel vertically.
+   - Remove the `flex-1` stretching on the right case-study panel so it sizes to its content.
+   - Keep the metrics/image layout intact, but make the overall asset group sit in the center of the slide column.
 
-After:
-```text
-[ Filthy Dubs ↗ ]
-```
+3. **Slide 10 — YouTube Advertising**
+   - Fix the issue shown in your screenshot by centering the two YouTube case-study cards as one grouped asset block.
+   - Remove the desktop stretch behavior from each case-study card and metrics grid so the cards no longer fill the full column height.
+   - Keep both cards visually balanced, with the pair centered vertically relative to the slide.
 
-**2. Update the `extraLinks` array** to include all live builds (in addition to existing ID.ID, Kluster Flux, Luhv, Filthy Dubs):
+### Technical approach
 
-- Pierce → `https://piercemusic.com`
-- Kompany → `https://kompanymusic.com`
-- Levity → `https://levityofficial.com`
-- Bauti → `https://bautimusic.com`
+- Update the main desktop row alignment from stretch-based behavior to centered behavior where needed.
+- Remove/replace desktop `flex-1` classes from the asset cards that force them to expand.
+- Use explicit desktop centering classes like `md:items-center`, `md:self-center`, and `md:justify-center` on the relevant wrappers.
+- Preserve the mobile stacked layouts and current visual styling.
 
-Final order in chips row:
-ID.ID, Kluster Flux, Luhv, Filthy Dubs, Pierce, Kompany, Levity, Bauti
-
-**3. Simplify the chip markup** — remove the `·` separator span and the `{s.label}` span; keep only the name + `ExternalLink` icon. The `label` field can be dropped from the array entries (or left unused; cleaner to drop it for the chips entries).
-
-### Note on featured cards
-
-The 3 main cards (Pierce, Kompany, Levity) keep their existing in-card name + domain label (`Pierce · piercemusic.com`) — that's the detailed featured-card treatment and is unchanged. They will now also appear in the chips row alongside Bauti for a complete "live builds" overview.
-
-### Technical detail
-
-```ts
-const extraLinks = [
-  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com' },
-  { name: 'Kluster Flux', url: 'https://klusterflux.com' },
-  { name: 'Luhv', url: 'https://luhv.la' },
-  { name: 'Filthy Dubs', url: 'https://filthydubs.com' },
-  { name: 'Pierce', url: 'https://piercemusic.com' },
-  { name: 'Kompany', url: 'https://kompanymusic.com' },
-  { name: 'Levity', url: 'https://levityofficial.com' },
-  { name: 'Bauti', url: 'https://bautimusic.com' },
-];
-```
-
-Chip JSX simplifies to: `<span>{s.name}</span><ExternalLink />`.
+Files to update:
+- `src/components/deck/slides/CreatorFloodSlide.tsx`
+- `src/components/deck/slides/Top50TrendingSlide.tsx`
+- `src/components/deck/slides/YouTubeAdsSlide.tsx`
