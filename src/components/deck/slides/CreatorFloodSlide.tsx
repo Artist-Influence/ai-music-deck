@@ -17,8 +17,8 @@ const CreatorFloodSlide = () => {
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 md:items-center">
-        <div className="flex-1 flex flex-col gap-3 md:gap-4">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col md:flex-row gap-4 md:gap-10 md:items-stretch">
+        <div className="flex-1 flex flex-col gap-3 md:gap-4 md:min-h-[720px]">
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
               <Zap size={20} className="text-primary md:w-7 md:h-7" />
@@ -56,13 +56,13 @@ const CreatorFloodSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col justify-center">
-          <GlassPanel variant="bright" className="p-4 md:p-5 flex flex-col">
+        <div className="flex-1 flex flex-col md:min-h-[720px] md:items-center md:justify-center">
+          <GlassPanel variant="bright" className="w-full p-4 md:p-5">
             <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">{t('creatorFlood.caseStudy')}</p>
             <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
             <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-            <div className="flex-1 min-h-0 mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none">
+            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:h-[430px] md:max-h-none">
               <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos" loading="eager" decoding="sync" className="w-full h-full object-cover object-left-top" />
             </div>
 
