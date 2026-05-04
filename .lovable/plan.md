@@ -1,20 +1,19 @@
-I’ll fix the Creator Flood slide by making the visual asset region explicit instead of relying on natural content height.
+## Fix Slide 10 (YouTube Ads) column height alignment
 
-Plan:
+Slide 10 has the same issue Slide 7 had: the left column (header + "What" + "How" panels) and the right column (two case-study cards: Jason Derulo, Mark Tuan) don't match heights on desktop.
 
-1. Update `src/components/deck/slides/CreatorFloodSlide.tsx` only.
-2. Separate the desktop slide into:
-   - a left header/text area,
-   - a fixed-height desktop asset stage below it,
-   - a right case-study asset stage that starts at the same vertical point and has the same height as the left Pros + When-to-use stack.
-3. Give both sides the same desktop asset height, using responsive desktop-only sizing so mobile remains natural vertical scroll.
-4. Make the two left `GlassPanel`s split that shared height evenly, while the Rich Brian case-study `GlassPanel` fills the full matching height.
-5. Move internal sizing onto direct children inside `GlassPanel` where needed, because `GlassPanel` wraps content in an internal `relative z-[2]` div and outer flex classes do not always affect the visible content.
-6. Keep the slide’s existing 1920×1080 desktop canvas behavior, red/dark styling, PatternVisual background, and mobile layout unchanged.
+### Changes — `src/components/deck/slides/YouTubeAdsSlide.tsx` only
 
-Technical approach:
+1. **Right column wrapper**: Remove `md:items-center md:justify-center` and the inner `flex flex-col gap-2 md:gap-4` div, replacing with a single flex container that stretches to fill the column height (`md:flex-1 md:h-full md:min-h-0`).
 
-- Replace the current two independent `md:min-h-[720px]` columns with a shared desktop structure that has one consistent asset-height contract.
-- On desktop, make the right Rich Brian card use `md:h-full` / `md:min-h-0` within the matching stage.
-- Size the screenshot region inside the Rich Brian card with flex/height rules so it grows to fill the card without pushing the metric row out.
-- Use desktop-only classes (`md:*`) so the mobile version does not inherit fixed heights.
+2. **Right-column case-study cards**: Make the two `GlassPanel`s share the available height equally with `md:flex-1 md:min-h-0`, so combined they match the left column's stack (header + What + How).
+
+3. **Thumbnail sizing**: Replace fixed `md:h-[150px]` thumbnail with a flex-friendly height that adapts (keep mobile fixed sizing). Use `md:h-full` on the thumb wrapper inside a fixed-aspect container, or keep current desktop pixel size since cards now stretch — verify metrics row stays anchored at bottom by adding `md:mt-auto` to the metrics grid.
+
+4. **Card internal layout**: Each case-study `GlassPanel` becomes `flex flex-col` on desktop with the metrics grid pushed to the bottom (`md:mt-auto`), so extra vertical space distributes naturally.
+
+5. **Mobile preserved**: All new sizing uses `md:*` prefix — mobile vertical scroll layout is untouched.
+
+### Why this works
+
+`GlassPanel` already propagates `h-full flex flex-col` to its children (fixed previously for Slide 7). Applying `md:flex-1 md:h-full` to the right-column cards plus `md:mt-auto` on the bottom metrics row makes the right column exactly match the left column's `md:min-h-[720px]` stage.
