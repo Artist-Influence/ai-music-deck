@@ -135,7 +135,7 @@ const GlassPanel = ({
         </svg>
       )}
 
-      <div className="relative z-[2]">{children}</div>
+      <div className="relative z-[2] h-full flex flex-col">{children}</div>
     </div>
   );
 };
