@@ -56,13 +56,13 @@ const CreatorFloodSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col md:min-h-[720px] md:items-center md:justify-center">
-          <GlassPanel variant="bright" className="w-full p-4 md:p-5">
+        <div className="flex-1 flex flex-col md:min-h-[720px]">
+          <GlassPanel variant="bright" className="w-full p-4 md:p-5 md:h-full md:flex md:flex-col">
             <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">{t('creatorFlood.caseStudy')}</p>
             <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
             <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:h-[430px] md:max-h-none">
+            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none md:flex-1 md:min-h-0">
               <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos" loading="eager" decoding="sync" className="w-full h-full object-cover object-left-top" />
             </div>
 
