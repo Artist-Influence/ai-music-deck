@@ -30,8 +30,8 @@ const YouTubeAdsSlide = () => {
   return (
     <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] flex flex-col md:flex-row gap-4 md:gap-10 md:items-center">
-        <div className="flex-1 flex flex-col gap-3 md:gap-4">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col md:flex-row gap-4 md:gap-10 md:items-stretch">
+        <div className="flex-1 flex flex-col gap-3 md:gap-4 md:min-h-[720px]">
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
               <Youtube size={20} className="text-primary md:w-7 md:h-7" />
@@ -69,30 +69,32 @@ const YouTubeAdsSlide = () => {
           </GlassPanel>
         </div>
 
-        <div className="flex-1 flex flex-col gap-2 md:gap-4 md:justify-center">
-          {cases.map((c) => (
-            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 flex flex-col">
-              <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
-                <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
-                  <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
-                </div>
-                <div className="flex-1 flex flex-col justify-center">
-                  <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{t('youtube.caseStudy')}</p>
-                  <p className="text-sm md:text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
-                  <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
-                </div>
-              </div>
-
-              <div className="grid grid-cols-3 gap-1 md:gap-2">
-                {c.metrics.map((m) => (
-                  <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
-                    <p className="text-[10px] md:text-xl font-bold text-foreground">{m.val}</p>
-                    <p className="text-[7px] md:text-sm md:mt-0.5 text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
+        <div className="flex-1 flex flex-col md:min-h-[720px] md:items-center md:justify-center">
+          <div className="w-full flex flex-col gap-2 md:gap-4">
+            {cases.map((c) => (
+              <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5">
+                <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
+                  <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
+                    <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
                   </div>
-                ))}
-              </div>
-            </GlassPanel>
-          ))}
+                  <div className="flex-1 flex flex-col justify-center">
+                    <p className="text-[10px] md:text-base text-primary font-mono mb-0.5 tracking-widest uppercase">{t('youtube.caseStudy')}</p>
+                    <p className="text-sm md:text-3xl font-bold text-foreground leading-tight">{c.artist}</p>
+                    <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
+                  </div>
+                </div>
+
+                <div className="grid grid-cols-3 gap-1 md:gap-2">
+                  {c.metrics.map((m) => (
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
+                      <p className="text-[10px] md:text-xl font-bold text-foreground">{m.val}</p>
+                      <p className="text-[7px] md:text-sm md:mt-0.5 text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
+                    </div>
+                  ))}
+                </div>
+              </GlassPanel>
+            ))}
+          </div>
         </div>
       </div>
     </div>
