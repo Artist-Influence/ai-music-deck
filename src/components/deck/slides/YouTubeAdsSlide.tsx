@@ -83,17 +83,17 @@ const YouTubeAdsSlide = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-3 gap-1 md:gap-2">
-                  {c.metrics.map((m) => (
-                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
-                      <p className="text-[10px] md:text-xl font-bold text-foreground">{m.val}</p>
-                      <p className="text-[7px] md:text-sm md:mt-0.5 text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
-                    </div>
-                  ))}
-                </div>
-              </GlassPanel>
-            ))}
-          </div>
+              <div className="grid grid-cols-3 gap-1 md:gap-2 md:mt-auto">
+                {c.metrics.map((m) => (
+                  <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
+                    <p className="text-[10px] md:text-xl font-bold text-foreground">{m.val}</p>
+                    <p className="text-[7px] md:text-sm md:mt-0.5 text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
+                  </div>
+                ))}
+              </div>
+            </GlassPanel>
+          ))}
+        </div>
         </div>
       </div>
     </div>
