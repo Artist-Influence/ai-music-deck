@@ -28,7 +28,7 @@ const ClientPortalSlide = () => {
           </div>
 
           <GlassPanel variant="bright" className="md:flex-1 p-2 md:p-3">
-            <div className="rounded-lg md:rounded-xl overflow-hidden bg-black aspect-video">
+            <div className="rounded-lg md:rounded-xl overflow-hidden bg-black aspect-[1920/928]">
               <video
                 src="/client-portal.mp4"
                 poster="/client-portal-poster.jpg"
@@ -37,7 +37,7 @@ const ClientPortalSlide = () => {
                 loop
                 playsInline
                 preload="metadata"
-                className="w-full h-full object-cover"
+                className="w-full h-full object-contain"
               />
             </div>
           </GlassPanel>
