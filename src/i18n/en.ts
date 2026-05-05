@@ -29,11 +29,11 @@ const en: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'Platform',
   'clientPortal.title': 'Client Portal',
-  'clientPortal.subtitle': 'One dashboard. Real-time attribution across every service we run for you — live data, no spreadsheets.',
+  'clientPortal.subtitle': 'One dashboard. Real-time attribution across every service we run for you. Live data, no spreadsheets, invoice tracking, campaign requests, and offers.',
   'clientPortal.bullets.0.title': 'Real-time attribution',
   'clientPortal.bullets.0.desc': 'See exactly which placements, creators, and platforms are driving streams and engagement.',
   'clientPortal.bullets.1.title': 'Cross-service visibility',
-  'clientPortal.bullets.1.desc': 'Clipping, playlisting, ads, seeding — every campaign rolled up in one view.',
+  'clientPortal.bullets.1.desc': 'Clipping, playlisting, ads, seeding. Every campaign rolled up in one view.',
   'clientPortal.bullets.2.title': 'Always-on reporting',
   'clientPortal.bullets.2.desc': 'Live data 24/7. No weekly decks, no waiting on a manager for an update.',
 
