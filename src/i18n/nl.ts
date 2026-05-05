@@ -50,6 +50,17 @@ const nl: Record<string, string> = {
   'whatWeDo.pillar.1.desc': 'Richt je op echte communities met bereik binnen je niche',
   'whatWeDo.pillar.2.label': 'Versterking',
   'whatWeDo.pillar.2.desc': 'Versterk winnaars met betaalde uitgaven zodra de creatie zichzelf bewijst',
+
+  // ── ClientPortalSlide ──
+  'clientPortal.eyebrow': 'Platform',
+  'clientPortal.title': 'Klantportaal',
+  'clientPortal.subtitle': 'Eén dashboard. Real-time attributie voor elke service die we voor je draaien — live data, geen spreadsheets.',
+  'clientPortal.bullets.0.title': 'Real-time attributie',
+  'clientPortal.bullets.0.desc': 'Zie precies welke plaatsingen, creators en platforms streams en engagement opleveren.',
+  'clientPortal.bullets.1.title': 'Inzicht over services heen',
+  'clientPortal.bullets.1.desc': 'Clipping, playlisting, ads, seeding — elke campagne in één overzicht.',
+  'clientPortal.bullets.2.title': 'Altijd-aan rapportage',
+  'clientPortal.bullets.2.desc': 'Live data 24/7. Geen wekelijkse decks of wachten op updates.',
   'common.service': 'Dienst',
   'clipping.title': 'Clipping Distributie',
   'clipping.subtitle': 'Een distributienetwerk aangedreven door meer dan 20.000 clippers die content creëren op TikTok, Instagram en YouTube.',

@@ -17,6 +17,17 @@ const es: Record<string, string> = {
   'whatWeDo.pillar.1.desc': 'Dirigirse a comunidades reales con alcance dentro de tu nicho',
   'whatWeDo.pillar.2.label': 'Amplificación',
   'whatWeDo.pillar.2.desc': 'Amplificar los contenidos ganadores con inversión de pago una vez que la creatividad haya demostrado su eficacia',
+
+  // ── ClientPortalSlide ──
+  'clientPortal.eyebrow': 'Plataforma',
+  'clientPortal.title': 'Portal del Cliente',
+  'clientPortal.subtitle': 'Un panel. Atribución en tiempo real para cada servicio que gestionamos para ti — datos en vivo, sin hojas de cálculo.',
+  'clientPortal.bullets.0.title': 'Atribución en tiempo real',
+  'clientPortal.bullets.0.desc': 'Ve exactamente qué ubicaciones, creadores y plataformas generan reproducciones y engagement.',
+  'clientPortal.bullets.1.title': 'Visibilidad entre servicios',
+  'clientPortal.bullets.1.desc': 'Clipping, playlisting, anuncios, siembra — cada campaña reunida en una sola vista.',
+  'clientPortal.bullets.2.title': 'Informes siempre activos',
+  'clientPortal.bullets.2.desc': 'Datos en vivo 24/7. Sin presentaciones semanales ni esperas por actualizaciones.',
   'common.service': 'Servicio',
   'clipping.title': 'Distribución de Clips',
   'clipping.subtitle': 'Una red de distribución impulsada por más de 20.000 creadores que producen contenido en TikTok, Instagram y YouTube.',

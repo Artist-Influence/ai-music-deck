@@ -17,6 +17,17 @@ const de: Record<string, string> = {
   'whatWeDo.pillar.1.desc': 'Zielen Sie auf echte Communities mit Reichweite in Ihrer Nische ab',
   'whatWeDo.pillar.2.label': 'Verstärkung',
   'whatWeDo.pillar.2.desc': 'Verstärken Sie Erfolge mit bezahlten Ausgaben, sobald sich die Kreativität bewährt hat',
+
+  // ── ClientPortalSlide ──
+  'clientPortal.eyebrow': 'Plattform',
+  'clientPortal.title': 'Kundenportal',
+  'clientPortal.subtitle': 'Ein Dashboard. Echtzeit-Attribution für jeden Service, den wir für Sie betreiben — Live-Daten, keine Tabellen.',
+  'clientPortal.bullets.0.title': 'Echtzeit-Attribution',
+  'clientPortal.bullets.0.desc': 'Sehen Sie genau, welche Platzierungen, Creator und Plattformen Streams und Engagement antreiben.',
+  'clientPortal.bullets.1.title': 'Serviceübergreifende Transparenz',
+  'clientPortal.bullets.1.desc': 'Clipping, Playlisting, Ads, Seeding — jede Kampagne in einer Ansicht.',
+  'clientPortal.bullets.2.title': 'Immer aktives Reporting',
+  'clientPortal.bullets.2.desc': 'Live-Daten rund um die Uhr. Keine wöchentlichen Decks, kein Warten auf Updates.',
   'common.service': 'Service',
   'clipping.title': 'Clipping-Verteilung',
   'clipping.subtitle': 'Ein Vertriebsnetzwerk, das von über 20.000 Clippern angetrieben wird, die auf TikTok, Instagram und YouTube Inhalte erstellen.',

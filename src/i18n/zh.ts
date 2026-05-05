@@ -25,6 +25,17 @@ const zh: Record<string, string> = {
   'whatWeDo.pillar.2.label': '推广',
   'whatWeDo.pillar.2.desc': '一旦创意内容证明其价值，便通过付费推广放大热门内容',
 
+  // ── ClientPortalSlide ──
+  'clientPortal.eyebrow': '平台',
+  'clientPortal.title': '客户门户',
+  'clientPortal.subtitle': '一个仪表板。我们为您运行的每项服务都提供实时归因 — 实时数据，无需电子表格。',
+  'clientPortal.bullets.0.title': '实时归因',
+  'clientPortal.bullets.0.desc': '准确了解哪些投放、创作者和平台正在推动播放量与互动。',
+  'clientPortal.bullets.1.title': '跨服务可视化',
+  'clientPortal.bullets.1.desc': 'Clipping、歌单推广、广告、种子投放 — 每个活动汇总于一处。',
+  'clientPortal.bullets.2.title': '全天候报告',
+  'clientPortal.bullets.2.desc': '24/7 实时数据。无需周报，无需等待经理更新。',
+
   // ── HowWeWorkSlide ──
 
   // ── ClippingSlide ──
