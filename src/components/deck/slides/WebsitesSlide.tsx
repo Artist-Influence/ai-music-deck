@@ -12,8 +12,8 @@ const cardConfig = [
     image: pierceImg,
     alt: 'Pierce — artist site',
     name: 'Pierce',
-    url: 'https://piercemusic.com',
-    label: 'piercemusic.com',
+    url: 'https://piercesounds.com/',
+    label: 'piercesounds.com',
   },
   {
     icon: Layers,
@@ -34,11 +34,11 @@ const cardConfig = [
 ];
 
 const extraLinks = [
-  { name: 'ID.ID', url: 'https://id-id.artistinfluence.com' },
+  { name: 'ID.ID', url: 'https://id-id.ai/' },
   { name: 'Kluster Flux', url: 'https://klusterflux.com' },
   { name: 'Luhv', url: 'https://luhv.la' },
   { name: 'Filthy Dubs', url: 'https://filthydubs.com' },
-  { name: 'Pierce', url: 'https://piercemusic.com' },
+  { name: 'Pierce', url: 'https://piercesounds.com/' },
   { name: 'Kompany', url: 'https://kompanymusic.com' },
   { name: 'Levity', url: 'https://levityofficial.com' },
   { name: 'Bauti', url: 'https://bautimusic.com' },

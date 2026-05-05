@@ -58,13 +58,13 @@ const YouTubeAdsSlide = () => {
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="flex items-start gap-2">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
-                  <p className="text-xs md:text-2xl text-muted-foreground">{t(`youtube.how.${i}`)}</p>
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
+                  <p className="text-xs md:text-xl text-muted-foreground">{t(`youtube.how.${i}`)}</p>
                 </div>
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-xs md:text-2xl text-primary font-medium">{t('youtube.timeframe')}</p>
+              <p className="text-xs md:text-xl text-primary font-medium">{t('youtube.timeframe')}</p>
             </div>
           </GlassPanel>
         </div>

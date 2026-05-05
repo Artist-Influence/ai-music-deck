@@ -28,13 +28,13 @@ const IdIdSlide = () => {
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3 md:mb-5">
           <p className="text-base md:text-3xl text-primary/90 font-light">{t('idid.tagline')}</p>
           <a
-            href="https://id-id.artistinfluence.com"
+            href="https://id-id.ai/"
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-1.5 text-xs md:text-base text-primary/80 hover:text-primary transition-colors"
           >
             <ExternalLink className="w-3 h-3 md:w-4 md:h-4" />
-            <span className="underline decoration-primary/30 hover:decoration-primary">id-id.artistinfluence.com</span>
+            <span className="underline decoration-primary/30 hover:decoration-primary">id-id.ai</span>
           </a>
         </div>
         <p className="text-sm md:text-2xl text-on-visual-soft mb-6 md:mb-12 max-w-[1100px] leading-relaxed">{t('idid.subtitle')}</p>
