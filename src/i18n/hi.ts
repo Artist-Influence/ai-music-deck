@@ -137,6 +137,7 @@ const hi: Record<string, string> = {
   'spotify.what.0': 'आपकी शैली के वास्तविक टेस्टमेकर्स द्वारा चलाई जाने वाली क्यूरेटेड प्लेलिस्ट पर प्लेसमेंट',
   'spotify.what.1': 'सक्रिय श्रोताओं के साथ समुदाय-संचालित प्लेलिस्ट जो सेव और शेयर करते हैं',
   'spotify.what.2': 'कोई बॉट नहीं; ऑर्गेनिक, शैली-अनुरूप प्लेलिस्ट',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': 'यह क्यों काम करता है',
   'spotify.why.0': 'ऑर्गेनिक स्ट्रीम्स सेव, फॉलो, और एल्गोरिथम सिग्नल उत्पन्न करते हैं',
   'spotify.why.1': 'स्पॉटिफ़ाई ट्रैक्स को डिस्कवर वीकली, रिलीज़ रडार, और रेडियो में पुश करता है',

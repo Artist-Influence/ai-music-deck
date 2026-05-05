@@ -94,6 +94,7 @@ const zh: Record<string, string> = {
   'spotify.what.0': '投放到由您曲风领域内真正品味引领者管理的精选歌单中',
   'spotify.what.1': '拥有活跃听众（他们会收藏和分享）的社群驱动型歌单',
   'spotify.what.2': '无机器人；自然、符合曲风流派的歌单',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': '为何有效',
   'spotify.why.0': '自然流媒体播放量会产生收藏、关注和算法信号',
   'spotify.why.1': 'Spotify 会将歌曲推送到《发现周刊》、《发行雷达》和电台',

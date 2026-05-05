@@ -75,6 +75,7 @@ const es: Record<string, string> = {
   'spotify.what.0': 'Inclusiones en listas de reproducción seleccionadas y gestionadas por auténticos creadores de tendencias de tu género',
   'spotify.what.1': 'Listas de reproducción impulsadas por la comunidad con oyentes activos que guardan y comparten',
   'spotify.what.2': 'Sin bots; listas de reproducción orgánicas y alineadas con el género',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': 'Por qué funciona',
   'spotify.why.0': 'Las reproducciones orgánicas generan guardados, seguidores y señales algorítmicas',
   'spotify.why.1': 'Spotify incluye las canciones en Discover Weekly, Release Radar y Radio',

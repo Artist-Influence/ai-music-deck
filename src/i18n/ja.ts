@@ -75,6 +75,7 @@ const ja: Record<string, string> = {
   'spotify.what.0': 'あなたのジャンルの本物のテイストメーカーが運営するキュレーションされたプレイリストへの掲載',
   'spotify.what.1': '保存や共有を行うアクティブなリスナーがいるコミュニティ主導型プレイリスト',
   'spotify.what.2': 'ボットなし、オーガニックでジャンルに合ったプレイリスト',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': '機能する理由',
   'spotify.why.0': 'オーガニックなストリームは保存、フォロー、アルゴリズムシグナルを生成します',
   'spotify.why.1': 'SpotifyはトラックをDiscover Weekly、Release Radar、Radioにプッシュします',

@@ -75,6 +75,7 @@ const ko: Record<string, string> = {
   'spotify.what.0': '귀하의 장르에서 실제 테이스트메이커가 운영하는 큐레이팅된 플레이리스트에 배치',
   'spotify.what.1': '활발한 청취자들이 저장하고 공유하는 커뮤니티 주도 플레이리스트',
   'spotify.what.2': '봇 없음; 유기적이고 장르에 맞는 플레이리스트',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': '작동 원리',
   'spotify.why.0': '유기적 스트림은 저장, 팔로우 및 알고리즘 신호를 생성합니다.',
   'spotify.why.1': 'Spotify는 Discover Weekly, Release Radar 및 Radio로 트랙을 푸시합니다.',

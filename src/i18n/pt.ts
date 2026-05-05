@@ -75,6 +75,7 @@ const pt: Record<string, string> = {
   'spotify.what.0': 'Colocações em playlists curadas por verdadeiros formadores de opinião do seu gênero',
   'spotify.what.1': 'Playlists orientadas pela comunidade com ouvintes ativos que salvam e compartilham',
   'spotify.what.2': 'Sem bots; playlists orgânicas e alinhadas ao gênero',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': 'Por que funciona',
   'spotify.why.0': 'Streams orgânicos geram salvamentos, seguidores e sinais algorítmicos',
   'spotify.why.1': 'O Spotify promove faixas no Discover Weekly, Release Radar e Radio',

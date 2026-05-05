@@ -108,6 +108,7 @@ const nl: Record<string, string> = {
   'spotify.what.0': 'Plaatsingen op samengestelde playlists, gerund door echte smaakmakers in uw genre',
   'spotify.what.1': 'Community-gedreven playlists met actieve luisteraars die opslaan en delen',
   'spotify.what.2': 'Geen bots; organische, genre-afgestemde playlists',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': 'Waarom het werkt',
   'spotify.why.0': 'Organische streams genereren saves, volgers en algoritmische signalen',
   'spotify.why.1': 'Spotify pusht nummers naar Discover Weekly, Release Radar en Radio',

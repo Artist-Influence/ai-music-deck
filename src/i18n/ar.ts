@@ -137,6 +137,7 @@ const ar: Record<string, string> = {
   'spotify.what.0': 'مواضع في قوائم تشغيل منسقة يديرها صانعو أذواق حقيقيون في النوع الموسيقي الخاص بك',
   'spotify.what.1': 'قوائم تشغيل مدفوعة بالمجتمع مع مستمعين نشطين يقومون بالحفظ والمشاركة',
   'spotify.what.2': 'لا توجد روبوتات؛ قوائم تشغيل عضوية ومتوافقة مع النوع الموسيقي',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': 'لماذا تنجح',
   'spotify.why.0': 'تولد التدفقات العضوية عمليات حفظ ومتابعة وإشارات خوارزمية',
   'spotify.why.1': 'تقوم Spotify بدفع المقطوعات إلى Discover Weekly و Release Radar و Radio',
