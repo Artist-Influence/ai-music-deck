@@ -21,11 +21,11 @@ const ko: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': '플랫폼',
   'clientPortal.title': '클라이언트 포털',
-  'clientPortal.subtitle': '하나의 대시보드. 우리가 운영하는 모든 서비스에 대한 실시간 어트리뷰션 — 스프레드시트 없는 라이브 데이터.',
+  'clientPortal.subtitle': '하나의 대시보드. 우리가 운영하는 모든 서비스에 대한 실시간 어트리뷰션. 라이브 데이터, 스프레드시트 없음, 청구서 추적, 캠페인 요청, 제안.',
   'clientPortal.bullets.0.title': '실시간 어트리뷰션',
   'clientPortal.bullets.0.desc': '어떤 배치, 크리에이터, 플랫폼이 스트림과 인게이지먼트를 이끌고 있는지 정확히 확인하세요.',
   'clientPortal.bullets.1.title': '서비스 전반의 가시성',
-  'clientPortal.bullets.1.desc': '클리핑, 플레이리스팅, 광고, 시딩 — 모든 캠페인을 한 화면에.',
+  'clientPortal.bullets.1.desc': '클리핑, 플레이리스팅, 광고, 시딩. 모든 캠페인을 한 화면에.',
   'clientPortal.bullets.2.title': '항상 켜져 있는 리포팅',
   'clientPortal.bullets.2.desc': '24시간 라이브 데이터. 주간 덱도, 매니저 업데이트 대기도 없습니다.',
   'common.service': '서비스',

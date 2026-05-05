@@ -54,11 +54,11 @@ const fr: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'Plateforme',
   'clientPortal.title': 'Portail Client',
-  'clientPortal.subtitle': 'Un seul tableau de bord. Attribution en temps réel pour chaque service que nous gérons pour vous — données en direct, sans tableurs.',
+  'clientPortal.subtitle': 'Un seul tableau de bord. Attribution en temps réel pour chaque service que nous gérons pour vous. Données en direct, sans tableurs, suivi des factures, demandes de campagne et offres.',
   'clientPortal.bullets.0.title': 'Attribution en temps réel',
   'clientPortal.bullets.0.desc': 'Voyez exactement quels placements, créateurs et plateformes génèrent streams et engagement.',
   'clientPortal.bullets.1.title': 'Visibilité inter-services',
-  'clientPortal.bullets.1.desc': 'Clipping, playlisting, publicités, seeding — chaque campagne réunie en une seule vue.',
+  'clientPortal.bullets.1.desc': 'Clipping, playlisting, publicités, seeding. Chaque campagne réunie en une seule vue.',
   'clientPortal.bullets.2.title': 'Reporting permanent',
   'clientPortal.bullets.2.desc': 'Données en direct 24/7. Plus de decks hebdomadaires ni d’attente pour un update.',
   'common.service': 'Service',

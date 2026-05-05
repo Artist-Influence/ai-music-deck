@@ -58,11 +58,11 @@ const ar: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'المنصة',
   'clientPortal.title': 'بوابة العميل',
-  'clientPortal.subtitle': 'لوحة تحكم واحدة. إسناد فوري لكل خدمة نديرها لك — بيانات حية، بدون جداول بيانات.',
+  'clientPortal.subtitle': 'لوحة تحكم واحدة. إسناد فوري لكل خدمة نديرها لك. بيانات حية، بدون جداول بيانات، تتبع الفواتير، طلبات الحملات والعروض.',
   'clientPortal.bullets.0.title': 'إسناد فوري',
   'clientPortal.bullets.0.desc': 'اعرف بالضبط أي المواضع والمبدعين والمنصات تقود التشغيلات والتفاعل.',
   'clientPortal.bullets.1.title': 'رؤية شاملة عبر الخدمات',
-  'clientPortal.bullets.1.desc': 'الكليبنغ، قوائم التشغيل، الإعلانات، النشر — كل حملة في عرض واحد.',
+  'clientPortal.bullets.1.desc': 'الكليبنغ، قوائم التشغيل، الإعلانات، النشر. كل حملة في عرض واحد.',
   'clientPortal.bullets.2.title': 'تقارير دائمة التشغيل',
   'clientPortal.bullets.2.desc': 'بيانات حية على مدار الساعة. بدون عروض أسبوعية أو انتظار للتحديثات.',
 
