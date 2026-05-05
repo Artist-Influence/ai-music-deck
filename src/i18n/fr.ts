@@ -108,6 +108,7 @@ const fr: Record<string, string> = {
   'spotify.what.0': 'Placements dans des playlists sélectionnées et gérées par de véritables influenceurs de votre genre',
   'spotify.what.1': 'Playlists animées par la communauté, avec des auditeurs actifs qui enregistrent et partagent',
   'spotify.what.2': 'Pas de bots ; playlists organiques, alignées sur le genre',
+  'spotify.what.3': 'Standard and Tier 1 placements available — Tier 1 (US/EU only) for a slight premium; Standard still pitches Tier 1 but leans LATAM, SEA, and Eastern Europe',
   'spotify.whyTitle': 'Pourquoi ça marche',
   'spotify.why.0': 'Les écoutes organiques génèrent des enregistrements, des abonnements et des signaux algorithmiques',
   'spotify.why.1': 'Spotify propulse les titres dans Discover Weekly, Release Radar et Radio',

@@ -77,7 +77,7 @@ const SpotifyPlaylistingSlide = () => {
             <GlassPanel variant="bright" className="p-4 md:p-6 hidden md:flex md:flex-col flex-1">
               <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
-                {[0, 1, 2].map((i) => (
+                {[0, 1, 2, 3].map((i) => (
                   <div key={i} className="flex items-start gap-2">
                     <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
                     <p className="text-sm md:text-xl text-muted-foreground">{t(`spotify.what.${i}`)}</p>
