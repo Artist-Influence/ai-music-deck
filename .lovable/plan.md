@@ -1,21 +1,29 @@
-# Add Client Portal Slide (new slide 6)
+## Client Portal slide adjustments
 
-## Video processing
-- Copy `user-uploads://Screen_Recording_2026-05-05_at_10.54.26_AM.mov` to `/tmp/`.
-- Use ffmpeg to: trim to 0–48s, apply 1.5x speed (`setpts=PTS/1.5`, no audio needed — slide will be muted), re-encode to web-friendly MP4 (h264, faststart) at ~1080p. Output to `public/client-portal.mp4` (~32s final duration).
-- Also generate a poster frame `public/client-portal-poster.jpg` for instant load.
+### 1. Layout — bullets narrower, video larger
+In `src/components/deck/slides/ClientPortalSlide.tsx`:
+- Change left column from `md:w-[34%]` to `md:w-[26%]` so the video frame takes more space.
+- Make each bullet `GlassPanel` taller to fill the column: add `flex-1` (or `min-h-0 flex-1`) so the three bullets stretch to match the video height. Keep padding `p-4 md:p-6`.
+- The video panel keeps `md:flex-1`.
 
-## New slide component
-Create `src/components/deck/slides/ClientPortalSlide.tsx`:
-- Layout matches other service slides (PatternVisual backdrop, service eyebrow, title, subtitle).
-- Title: "Client Portal" — eyebrow: "Platform".
-- Subtitle/body copy emphasizing: "Real-time attribution across every service — one dashboard, live data."
-- Large rounded video frame (autoplay, muted, loop, playsInline, preload metadata, poster) on the right; supporting text + 3 short bullets on the left (Real-time attribution / Cross-service visibility / Always-on reporting).
-- Mobile: stack video above text, full-width.
+### 2. Crop video black bars (15% each side)
+The `<video>` is inside an `aspect-video` container with `object-cover`. To crop ~15% off each side without letterboxing:
+- Wrap the video so it scales up by ~1.43x horizontally (1 / (1 - 0.30)) and gets clipped by `overflow-hidden` on the container.
+- Implementation: set the `<video>` to `className="w-full h-full object-cover scale-x-[1.43] origin-center"`. The outer `aspect-video` div already has `overflow-hidden`.
 
-## Wiring
-- Register `ClientPortalSlide` in `src/components/deck/slides/index.tsx` between `WhatWeDoSlide` and `ClippingSlide`.
-- Add i18n keys (`clientPortal.eyebrow`, `.title`, `.subtitle`, `.bullets.0..2`) to all 11 locale files (en + 10 translations).
+### 3. Copy updates
+In all 11 i18n files (`en.ts` + 10 locales), update these keys (translate accordingly for non-English; English exact text below):
 
-## Memory
-- Update `mem://features/deck-structure` to insert the new slide as #6 and renumber 6→19.
+- `clientPortal.subtitle`:  
+  `One dashboard. Real-time attribution across every service we run for you. Live data, no spreadsheets, invoice tracking, campaign requests, and offers.`
+- `clientPortal.bullets.0.desc`:  
+  `See exactly which placements, creators, and platforms are driving streams and engagement.`
+- `clientPortal.bullets.1.desc`:  
+  `Clipping, playlisting, ads, seeding. Every campaign rolled up in one view.`
+- `clientPortal.bullets.2.desc`: leave as-is.
+
+Titles (`bullets.0.title`, `bullets.1.title`, `bullets.2.title`) remain unchanged.
+
+### Files touched
+- `src/components/deck/slides/ClientPortalSlide.tsx`
+- `src/i18n/{en,es,fr,de,pt,nl,ar,hi,ja,ko,zh}.ts`
