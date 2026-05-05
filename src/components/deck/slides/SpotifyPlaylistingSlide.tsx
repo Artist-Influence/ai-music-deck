@@ -75,29 +75,29 @@ const SpotifyPlaylistingSlide = () => {
         <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch flex-1">
           <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
             <GlassPanel variant="bright" className="p-4 md:p-6 hidden md:flex md:flex-col flex-1">
-              <p className="text-sm md:text-xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
+              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2].map((i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2" />
-                    <p className="text-sm md:text-lg text-muted-foreground">{t(`spotify.what.${i}`)}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
+                    <p className="text-sm md:text-xl text-muted-foreground">{t(`spotify.what.${i}`)}</p>
                   </div>
                 ))}
               </div>
             </GlassPanel>
 
             <GlassPanel variant="bright" className="p-4 md:p-6 flex-1 hidden md:flex md:flex-col">
-              <p className="text-sm md:text-xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whyTitle')}</p>
+              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('spotify.whyTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2].map((i) => (
                   <div key={i} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2" />
-                    <p className="text-sm md:text-lg text-muted-foreground">{t(`spotify.why.${i}`)}</p>
+                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
+                    <p className="text-sm md:text-xl text-muted-foreground">{t(`spotify.why.${i}`)}</p>
                   </div>
                 ))}
               </div>
               <div className="pt-3 border-t border-white/[0.06] mt-3">
-                <p className="text-sm md:text-lg text-primary font-medium">{t('spotify.timeframe')}</p>
+                <p className="text-sm md:text-xl text-primary font-medium">{t('spotify.timeframe')}</p>
               </div>
             </GlassPanel>
           </div>
