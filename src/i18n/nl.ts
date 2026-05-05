@@ -54,11 +54,11 @@ const nl: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'Platform',
   'clientPortal.title': 'Klantportaal',
-  'clientPortal.subtitle': 'Eén dashboard. Real-time attributie voor elke service die we voor je draaien — live data, geen spreadsheets.',
+  'clientPortal.subtitle': 'Eén dashboard. Real-time attributie voor elke service die we voor je draaien. Live data, geen spreadsheets, factuurtracking, campagne-aanvragen en aanbiedingen.',
   'clientPortal.bullets.0.title': 'Real-time attributie',
   'clientPortal.bullets.0.desc': 'Zie precies welke plaatsingen, creators en platforms streams en engagement opleveren.',
   'clientPortal.bullets.1.title': 'Inzicht over services heen',
-  'clientPortal.bullets.1.desc': 'Clipping, playlisting, ads, seeding — elke campagne in één overzicht.',
+  'clientPortal.bullets.1.desc': 'Clipping, playlisting, ads, seeding. Elke campagne in één overzicht.',
   'clientPortal.bullets.2.title': 'Altijd-aan rapportage',
   'clientPortal.bullets.2.desc': 'Live data 24/7. Geen wekelijkse decks of wachten op updates.',
   'common.service': 'Dienst',
