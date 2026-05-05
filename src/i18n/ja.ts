@@ -21,11 +21,11 @@ const ja: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'プラットフォーム',
   'clientPortal.title': 'クライアントポータル',
-  'clientPortal.subtitle': 'ダッシュボードは一つ。すべてのサービスをリアルタイムでアトリビューション — スプレッドシート不要のライブデータ。',
+  'clientPortal.subtitle': 'ダッシュボードは一つ。私たちが運営するすべてのサービスをリアルタイムでアトリビューション。ライブデータ、スプレッドシート不要、請求追跡、キャンペーン依頼、オファー。',
   'clientPortal.bullets.0.title': 'リアルタイムアトリビューション',
   'clientPortal.bullets.0.desc': 'どのプレースメント、クリエイター、プラットフォームがストリームとエンゲージメントを生んでいるかを明確に把握。',
   'clientPortal.bullets.1.title': 'サービス横断の可視性',
-  'clientPortal.bullets.1.desc': 'クリッピング、プレイリスティング、広告、シーディング — すべてのキャンペーンを一つのビューで。',
+  'clientPortal.bullets.1.desc': 'クリッピング、プレイリスティング、広告、シーディング。すべてのキャンペーンを一つのビューで。',
   'clientPortal.bullets.2.title': '常時稼働レポート',
   'clientPortal.bullets.2.desc': '24時間365日ライブデータ。週次デッキも担当者待ちもなし。',
   'common.service': 'サービス',
