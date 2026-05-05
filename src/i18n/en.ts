@@ -79,7 +79,7 @@ const en: Record<string, string> = {
   'youtube.whatTitle': 'What it is',
   'youtube.what.0': 'Paid YouTube campaigns built for subscribers and long-form engagement',
   'youtube.what.1': 'We optimize daily with transparent weekly reporting and clean data exports',
-  'youtube.howTitle': 'How it works',
+  'youtube.howTitle': 'Why it works',
   'youtube.how.0': 'We target international audiences aligned with your genre',
   'youtube.how.1': 'Optimizing for watch time and subscriber conversion',
   'youtube.how.2': 'Engagement ratios are monitored and protected throughout the campaign',

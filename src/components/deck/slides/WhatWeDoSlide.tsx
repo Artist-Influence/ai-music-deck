@@ -5,9 +5,9 @@ import { useTranslation } from '@/i18n/LanguageContext';
 const HubDiagram = () => {
   const nodes = [
     { label: ['Your', 'Song'], cx: 300, cy: 260, r: 72, primary: true },
-    { label: ['Short-form', 'Content'], cx: 460, cy: 100, r: 44, primary: false },
-    { label: ['Communities', '& Culture'], cx: 120, cy: 200, r: 44, primary: false },
-    { label: ['Streaming', 'Platforms'], cx: 380, cy: 440, r: 44, primary: false },
+    { label: ['Short-form', 'Content'], cx: 470, cy: 92, r: 58, primary: false },
+    { label: ['Communities', '& Culture'], cx: 105, cy: 195, r: 58, primary: false },
+    { label: ['Streaming', 'Platforms'], cx: 390, cy: 450, r: 58, primary: false },
   ];
 
   const connections = [[0, 1], [0, 2], [0, 3]];
@@ -34,8 +34,8 @@ const HubDiagram = () => {
           <circle cx={n.cx} cy={n.cy} r={n.r}
             fill="hsl(var(--primary))" fillOpacity="0.06"
             stroke="hsl(var(--primary))" strokeWidth="0.8" strokeOpacity="0.3" />
-          <text x={n.cx} y={n.cy - 6} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="15" fontWeight="500" opacity="0.9">{n.label[0]}</text>
-          <text x={n.cx} y={n.cy + 14} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="13" fontWeight="400" opacity="0.65">{n.label[1]}</text>
+          <text x={n.cx} y={n.cy - 4} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="16" fontWeight="500" opacity="0.9">{n.label[0]}</text>
+          <text x={n.cx} y={n.cy + 16} textAnchor="middle" fill="hsl(var(--foreground))" fontSize="14" fontWeight="400" opacity="0.65">{n.label[1]}</text>
         </g>
       ))}
       <circle cx={nodes[0].cx} cy={nodes[0].cy} r={nodes[0].r}
@@ -71,9 +71,9 @@ const WhatCloutedDoesSlide = () => {
             {t('whatWeDo.title')}
           </h1>
           <p className="text-sm md:text-[21px] text-primary text-on-visual-accent font-medium mb-4 md:mb-8 tracking-wider uppercase">{t('whatWeDo.section')}</p>
-          <div className="space-y-2 md:space-y-3">
+          <div className="space-y-3 md:space-y-4">
             {[0, 1, 2].map((i) => (
-              <GlassPanel key={i} variant="subtle" className="p-4 md:p-6 flex flex-col md:flex-row items-start md:items-center gap-2 md:gap-6">
+              <GlassPanel key={i} variant="subtle" className="p-5 md:p-7 flex flex-col md:flex-row items-start md:items-center gap-3 md:gap-10">
                 <span className="text-primary font-semibold text-sm md:text-[21px] shrink-0 md:w-40">{t(`whatWeDo.pillar.${i}.label`)}</span>
                 <p className="text-sm md:text-[21px] text-muted-foreground">{t(`whatWeDo.pillar.${i}.desc`)}</p>
               </GlassPanel>

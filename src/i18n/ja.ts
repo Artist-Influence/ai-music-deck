@@ -63,7 +63,7 @@ const ja: Record<string, string> = {
   'youtube.whatTitle': '概要',
   'youtube.what.0': 'チャンネル登録者と長尺動画のエンゲージメントのために作られた有料YouTubeキャンペーン',
   'youtube.what.1': '透明性の高い週次レポートとクリーンなデータエクスポートで毎日最適化します',
-  'youtube.howTitle': '仕組み',
+  'youtube.howTitle': '効果的な理由',
   'youtube.how.0': 'あなたのジャンルに合った国際的なオーディエンスをターゲットにします',
   'youtube.how.1': '視聴時間とチャンネル登録者へのコンバージョンを最適化します',
   'youtube.how.2': 'キャンペーン全体でエンゲージメント率を監視し、保護します',

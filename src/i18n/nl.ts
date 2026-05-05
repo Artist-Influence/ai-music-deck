@@ -96,7 +96,7 @@ const nl: Record<string, string> = {
   'youtube.whatTitle': 'Wat het is',
   'youtube.what.0': 'Betaalde YouTube-campagnes, gebouwd voor abonnees en langdurige engagement',
   'youtube.what.1': 'We optimaliseren dagelijks met transparante wekelijkse rapportage en schone data-exports',
-  'youtube.howTitle': 'Hoe het werkt',
+  'youtube.howTitle': 'Waarom het werkt',
   'youtube.how.0': 'We richten ons op internationale doelgroepen die aansluiten bij uw genre',
   'youtube.how.1': 'Optimalisatie voor kijktijd en abonneegroei',
   'youtube.how.2': "Betrokkenheidsratio\'s worden gedurende de hele campagne gemonitord en beschermd",
