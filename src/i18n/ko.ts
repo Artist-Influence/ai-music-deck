@@ -63,7 +63,7 @@ const ko: Record<string, string> = {
   'youtube.whatTitle': '무엇인가요?',
   'youtube.what.0': '구독자 및 장기 참여를 위해 제작된 유료 YouTube 캠페인',
   'youtube.what.1': '투명한 주간 보고 및 깨끗한 데이터 내보내기로 매일 최적화합니다.',
-  'youtube.howTitle': '작동 방식',
+  'youtube.howTitle': '효과적인 이유',
   'youtube.how.0': '귀하의 장르에 맞는 국제 시청자를 타겟팅합니다.',
   'youtube.how.1': '시청 시간 및 구독자 전환을 위해 최적화합니다.',
   'youtube.how.2': '캠페인 전반에 걸쳐 참여율을 모니터링하고 보호합니다.',

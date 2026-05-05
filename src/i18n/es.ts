@@ -63,7 +63,7 @@ const es: Record<string, string> = {
   'youtube.whatTitle': 'Qué es',
   'youtube.what.0': 'Campañas de pago en YouTube diseñadas para conseguir suscriptores y una interacción de larga duración',
   'youtube.what.1': 'Optimizamos a diario con informes semanales transparentes y exportaciones de datos limpias',
-  'youtube.howTitle': 'Cómo funciona',
+  'youtube.howTitle': 'Por qué funciona',
   'youtube.how.0': 'Nos dirigimos a audiencias internacionales afines a tu género',
   'youtube.how.1': 'Optimización del tiempo de visualización y la conversión de suscriptores',
   'youtube.how.2': 'Los índices de interacción se supervisan y protegen a lo largo de toda la campaña',

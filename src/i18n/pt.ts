@@ -63,7 +63,7 @@ const pt: Record<string, string> = {
   'youtube.whatTitle': 'O que é',
   'youtube.what.0': 'Campanhas pagas no YouTube criadas para assinantes e engajamento de longo prazo',
   'youtube.what.1': 'Otimizamos diariamente com relatórios semanais transparentes e exportações de dados organizadas',
-  'youtube.howTitle': 'Como funciona',
+  'youtube.howTitle': 'Por que funciona',
   'youtube.how.0': 'Segmentamos públicos internacionais alinhados ao seu gênero',
   'youtube.how.1': 'Otimização para tempo de exibição e conversão de inscritos',
   'youtube.how.2': 'As taxas de engajamento são monitoradas e protegidas ao longo da campanha',

@@ -63,7 +63,7 @@ const de: Record<string, string> = {
   'youtube.whatTitle': 'Was es ist',
   'youtube.what.0': 'Bezahlte YouTube-Kampagnen, die auf Abonnenten und langfristiges Engagement ausgelegt sind',
   'youtube.what.1': 'Wir optimieren täglich mit transparenter wöchentlicher Berichterstattung und sauberen Datenexporten',
-  'youtube.howTitle': 'Wie es funktioniert',
+  'youtube.howTitle': 'Warum es funktioniert',
   'youtube.how.0': 'Wir zielen auf internationale Zielgruppen ab, die zu Ihrem Genre passen',
   'youtube.how.1': 'Optimierung für Wiedergabezeit und Abonnentenkonversion',
   'youtube.how.2': 'Engagement-Raten werden während der gesamten Kampagne überwacht und geschützt',

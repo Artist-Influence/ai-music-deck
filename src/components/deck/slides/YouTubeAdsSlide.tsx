@@ -53,7 +53,7 @@ const YouTubeAdsSlide = () => {
             </div>
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
             <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('youtube.howTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2].map((i) => (

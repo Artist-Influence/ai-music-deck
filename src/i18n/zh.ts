@@ -80,7 +80,7 @@ const zh: Record<string, string> = {
   'youtube.whatTitle': '定义',
   'youtube.what.0': '为吸引订阅者和促进长视频互动而构建的付费 YouTube 营销活动。',
   'youtube.what.1': '我们每日进行优化，并提供透明的每周报告和清晰的数据导出。',
-  'youtube.howTitle': '运作方式',
+  'youtube.howTitle': '为何有效',
   'youtube.how.0': '我们瞄准与您曲风相符的国际受众',
   'youtube.how.1': '优化观看时长和订阅者转化率',
   'youtube.how.2': '在整个活动期间监控并保护互动率',
