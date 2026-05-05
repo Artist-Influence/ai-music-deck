@@ -58,11 +58,11 @@ const hi: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'प्लेटफ़ॉर्म',
   'clientPortal.title': 'क्लाइंट पोर्टल',
-  'clientPortal.subtitle': 'एक डैशबोर्ड। हर सेवा के लिए रियल-टाइम एट्रिब्यूशन — लाइव डेटा, कोई स्प्रेडशीट नहीं।',
+  'clientPortal.subtitle': 'एक डैशबोर्ड। हर सेवा के लिए रियल-टाइम एट्रिब्यूशन जो हम आपके लिए चलाते हैं। लाइव डेटा, कोई स्प्रेडशीट नहीं, इनवॉइस ट्रैकिंग, अभियान अनुरोध और ऑफ़र।',
   'clientPortal.bullets.0.title': 'रियल-टाइम एट्रिब्यूशन',
   'clientPortal.bullets.0.desc': 'देखें कि कौन से प्लेसमेंट, क्रिएटर और प्लेटफ़ॉर्म स्ट्रीम और एंगेजमेंट चला रहे हैं।',
   'clientPortal.bullets.1.title': 'क्रॉस-सर्विस विज़िबिलिटी',
-  'clientPortal.bullets.1.desc': 'क्लिपिंग, प्लेलिस्टिंग, विज्ञापन, सीडिंग — हर अभियान एक ही व्यू में।',
+  'clientPortal.bullets.1.desc': 'क्लिपिंग, प्लेलिस्टिंग, विज्ञापन, सीडिंग। हर अभियान एक ही व्यू में।',
   'clientPortal.bullets.2.title': 'हमेशा-चालू रिपोर्टिंग',
   'clientPortal.bullets.2.desc': '24/7 लाइव डेटा। कोई साप्ताहिक डेक नहीं, कोई इंतज़ार नहीं।',
 

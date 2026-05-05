@@ -21,11 +21,11 @@ const pt: Record<string, string> = {
   // ── ClientPortalSlide ──
   'clientPortal.eyebrow': 'Plataforma',
   'clientPortal.title': 'Portal do Cliente',
-  'clientPortal.subtitle': 'Um painel. Atribuição em tempo real para cada serviço que executamos para você — dados ao vivo, sem planilhas.',
+  'clientPortal.subtitle': 'Um painel. Atribuição em tempo real para cada serviço que executamos para você. Dados ao vivo, sem planilhas, controle de faturas, solicitações de campanha e ofertas.',
   'clientPortal.bullets.0.title': 'Atribuição em tempo real',
   'clientPortal.bullets.0.desc': 'Veja exatamente quais colocações, criadores e plataformas estão gerando streams e engajamento.',
   'clientPortal.bullets.1.title': 'Visibilidade entre serviços',
-  'clientPortal.bullets.1.desc': 'Clipping, playlisting, anúncios, seeding — cada campanha reunida em uma só visão.',
+  'clientPortal.bullets.1.desc': 'Clipping, playlisting, anúncios, seeding. Cada campanha reunida em uma só visão.',
   'clientPortal.bullets.2.title': 'Relatórios sempre ativos',
   'clientPortal.bullets.2.desc': 'Dados ao vivo 24/7. Sem decks semanais nem espera por atualizações.',
   'common.service': 'Serviço',
