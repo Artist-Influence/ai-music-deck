@@ -7,6 +7,7 @@ const OperatingSystemSlide = lazy(() => import('./OperatingSystemSlide'));
 const UnifiedOpsSlide = lazy(() => import('./UnifiedOpsSlide'));
 const TheShiftSlide = lazy(() => import('./TheShiftSlide'));
 const WhatWeDoSlide = lazy(() => import('./WhatWeDoSlide'));
+const ClientPortalSlide = lazy(() => import('./ClientPortalSlide'));
 const ClippingSlide = lazy(() => import('./ClippingSlide'));
 const CreatorFloodSlide = lazy(() => import('./CreatorFloodSlide'));
 const Top50TrendingSlide = lazy(() => import('./Top50TrendingSlide'));
@@ -27,6 +28,7 @@ export const slides: LazyExoticComponent<ComponentType>[] = [
   UnifiedOpsSlide,
   TheShiftSlide,
   WhatWeDoSlide,
+  ClientPortalSlide,
   ClippingSlide,
   CreatorFloodSlide,
   Top50TrendingSlide,
