@@ -15,7 +15,7 @@ const Index = () => {
   const [hasAccess, setHasAccess] = useState(readGate);
 
   useEffect(() => {
-    document.title = 'Artist Influence — The Growth System for Modern Music';
+    document.title = 'Artist Influence — The Growth System for Modern Political Campaigns';
   }, []);
 
   return (

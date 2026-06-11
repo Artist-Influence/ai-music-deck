@@ -23,3 +23,7 @@ dist-ssr
 *.sln
 *.sw?
 **\.temp
+
+# local agent config + exported binaries
+.claude/
+Artist-Influence-Politics-Deck.pptx

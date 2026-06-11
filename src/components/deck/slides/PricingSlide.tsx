@@ -5,7 +5,7 @@ import { useTranslation } from '@/i18n/LanguageContext';
 const PricingSlide = () => {
   const { t } = useTranslation();
 
-  const services = Array.from({ length: 8 }, (_, i) => ({
+  const services = Array.from({ length: 5 }, (_, i) => ({
     name: t(`pricing.service.${i}.name`),
     unit: t(`pricing.service.${i}.unit`),
     note: t(`pricing.service.${i}.note`),
@@ -48,9 +48,6 @@ const PricingSlide = () => {
         </GlassPanel>
 
         <div className="mt-4 md:mt-8 flex flex-col gap-2">
-          <a href="https://smfnasjfkaksdannc.lovable.app" target="_blank" rel="noopener noreferrer" className="inline-block text-sm md:text-xl font-semibold text-primary text-on-visual-accent hover:text-primary/80 transition-colors underline underline-offset-4">
-            {t('pricing.viewPricing')}
-          </a>
           <p className="text-xs md:text-xl text-on-visual">{t('pricing.footer')}</p>
         </div>
       </div>

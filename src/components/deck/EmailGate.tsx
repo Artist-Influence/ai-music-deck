@@ -31,8 +31,8 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
       supabase.functions.invoke('send-email', {
         body: {
           to: 'hello@artistinfluence.com',
-          subject: `New Deck Lead (Music): ${result.data}`,
-          html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Artist Influence deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
+          subject: `New Deck Lead (Politics): ${result.data}`,
+          html: `<div style="font-family:sans-serif"><h2 style="color:#0ea5e9">New Deck Viewer</h2><p><strong>${result.data}</strong> just viewed the Artist Influence politics deck.</p><p style="color:#888;font-size:12px">${new Date().toLocaleString()}</p></div>`,
         },
       }).catch(() => {});
       localStorage.setItem('ai_deck_email', result.data);
@@ -58,11 +58,11 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
         <div className="w-72 mx-auto overflow-hidden" style={{ marginTop: '-2rem', marginBottom: '-3.5rem' }}>
           <img src={aiLogo} alt="Artist Influence" className="w-full" />
         </div>
-        <p className="text-muted-foreground text-sm mb-3">The growth system for modern music</p>
+        <p className="text-muted-foreground text-sm mb-3">The growth system for modern political campaigns</p>
 
         <div className="mb-6">
           <h2 className="text-lg font-semibold text-foreground mb-1">View our Deck</h2>
-          <p className="text-muted-foreground text-sm">Enter your email to access our growth system deck.</p>
+          <p className="text-muted-foreground text-sm">Enter your email to access our campaign growth deck.</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-3">
@@ -86,7 +86,7 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
           </button>
         </form>
 
-        <p className="text-muted-foreground/50 text-[10px] mt-4">Confidential — for intended recipients only</p>
+        <p className="text-muted-foreground/50 text-[10px] mt-4">Confidential. For intended recipients only.</p>
       </GlassPanel>
     </div>
   );

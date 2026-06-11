@@ -3,7 +3,8 @@ import { Zap } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
-import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.webp';
+// Placeholder visual until real political campaign assets are supplied.
+import placeholderImg from '@/assets/ai-logomark-white.png';
 
 const metricsData = [
   { val: '10,000+', labelKey: 'kpi.minimumPosts' },
@@ -59,11 +60,11 @@ const CreatorFloodSlide = () => {
         <div className="flex-1 flex flex-col md:min-h-[720px]">
           <GlassPanel variant="bright" className="w-full p-4 md:p-5 md:flex-1 md:h-full md:flex md:flex-col">
             <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">{t('creatorFlood.caseStudy')}</p>
-            <p className="text-lg md:text-2xl font-bold text-foreground">Rich Brian</p>
-            <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
+            <p className="text-lg md:text-2xl font-bold text-foreground">Statewide Senate Race</p>
+            <p className="text-sm md:text-xl text-muted-foreground mb-2">Illustrative — sample figures, not a real campaign</p>
 
-            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none md:flex-1 md:min-h-0">
-              <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos" loading="eager" decoding="sync" className="w-full h-full object-cover object-left-top" />
+            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none md:flex-1 md:min-h-0 bg-white/[0.03] flex items-center justify-center">
+              <img src={placeholderImg} alt="Placeholder — political campaign creative" loading="eager" decoding="sync" className="w-full h-full object-contain p-6 md:p-12 opacity-40" />
             </div>
 
             <div className="grid grid-cols-3 gap-1 md:gap-3">

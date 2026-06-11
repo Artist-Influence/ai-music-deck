@@ -4,10 +4,10 @@ import { useTranslation } from '@/i18n/LanguageContext';
 
 const HubDiagram = () => {
   const nodes = [
-    { label: ['Your', 'Song'], cx: 300, cy: 260, r: 72, primary: true },
+    { label: ['Your', 'Message'], cx: 300, cy: 260, r: 72, primary: true },
     { label: ['Short-form', 'Content'], cx: 470, cy: 92, r: 58, primary: false },
     { label: ['Communities', '& Culture'], cx: 105, cy: 195, r: 58, primary: false },
-    { label: ['Streaming', 'Platforms'], cx: 390, cy: 450, r: 58, primary: false },
+    { label: ['Persuadable', 'Voters'], cx: 390, cy: 450, r: 58, primary: false },
   ];
 
   const connections = [[0, 1], [0, 2], [0, 3]];
@@ -43,7 +43,7 @@ const HubDiagram = () => {
         stroke="hsl(var(--primary))" strokeWidth="1.5" strokeOpacity="0.5"
         filter="url(#softGlow)" />
       <text x={nodes[0].cx} y={nodes[0].cy - 8} textAnchor="middle" fill="hsl(var(--primary))" fontSize="22" fontWeight="700">Your</text>
-      <text x={nodes[0].cx} y={nodes[0].cy + 18} textAnchor="middle" fill="hsl(var(--primary))" fontSize="22" fontWeight="700">Song</text>
+      <text x={nodes[0].cx} y={nodes[0].cy + 18} textAnchor="middle" fill="hsl(var(--primary))" fontSize="20" fontWeight="700">Message</text>
       <circle cx={nodes[0].cx} cy={nodes[0].cy} r="180" fill="none" stroke="hsl(var(--primary))" strokeWidth="0.5" opacity="0.1" strokeDasharray="4 6">
         <animateTransform attributeName="transform" type="rotate" from={`0 ${nodes[0].cx} ${nodes[0].cy}`} to={`360 ${nodes[0].cx} ${nodes[0].cy}`} dur="60s" repeatCount="indefinite" />
       </circle>

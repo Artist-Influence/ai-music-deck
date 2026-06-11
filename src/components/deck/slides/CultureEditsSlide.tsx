@@ -6,9 +6,12 @@ import { useTranslation } from '@/i18n/LanguageContext';
 
 const tileLabels = ['SPORTS', 'ANIME', 'LYRIC', 'MEME', 'FILM', 'QUOTES', 'GAMING', 'FASHION', 'CARS', 'NIGHTLIFE', 'STREETWEAR', 'MOTIVATION'];
 
+// Cleared the music edit clips — drop in political edit clips (debate moments,
+// speeches, contrast spots) and the phones will play them. Empty src shows the
+// "Add clip" placeholder.
 const clips: { src: string }[] = [
-  { src: '/culture-edits/clip-1.mp4' },
-  { src: '/culture-edits/clip-2.mp4' },
+  { src: '' },
+  { src: '' },
 ];
 
 const PhoneClip = ({ src }: { src: string }) => {
