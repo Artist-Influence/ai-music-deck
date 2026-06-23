@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## What this is
 
-A single-page React app that renders an Artist Influence **sales pitch deck** — a sequence of full-screen slides — for the **political campaigns** vertical. It's a Lovable-generated Vite project. There is no traditional "app"; the product *is* the deck. Viewers are gated by an email capture, leads are stored in Supabase, and the deck can be exported to PDF and viewed in 11 languages.
+A single-page React app that renders an Artist Influence **sales pitch deck** (a sequence of full-screen slides) for the **music** vertical. It's a Lovable-generated Vite project. There is no traditional "app"; the product *is* the deck. Viewers are gated by an email capture, leads are stored in Supabase, and the deck can be exported to PDF and viewed in 11 languages. The UI is styled to match the artistinfluence.com brand: dark blue-black canvas, red + oxblood accents, Helvetica Neue headings, Inter body, JetBrains Mono labels, with a global drifting ambient glow, film grain, red cursor dot, and subtle card tilt (all in `src/index.css` + `AmbientGlow`/`CursorDot`).
 
 ## Commands
 
@@ -24,7 +24,7 @@ Package manager: both `bun.lockb` and `package-lock.json` are committed; `npm` i
 
 ### Slide system (the core)
 - `src/pages/Index.tsx` — gates on `localStorage['ai_deck_email']`. No email → `EmailGate`; otherwise → `DeckViewer`. Wrapped in `ErrorBoundary`.
-- `src/components/deck/slides/index.tsx` — **the slide manifest.** Exports `slides: LazyExoticComponent[]`. Every slide is `lazy()`-imported (code-split so each slide + its image imports is its own chunk). **To add, remove, or reorder slides, edit the `slides` array here** — `DeckViewer` renders strictly in array order. Many slide files exist but are commented out (music-deck originals not yet repositioned for politics, plus `CreatorFloodSlide` which is intentionally N/A for politics).
+- `src/components/deck/slides/index.tsx` — **the slide manifest.** Exports `slides: LazyExoticComponent[]`. Every slide is `lazy()`-imported (code-split so each slide + its image imports is its own chunk). **To add, remove, or reorder slides, edit the `slides` array here**; `DeckViewer` renders strictly in array order. The active deck is the 19-slide music vertical. Some extra slide files in the folder (alternate case studies, plus `SurrogateActivationSlide` left over from a politics fork in this repo's history) are intentionally not in the manifest.
 - `src/components/deck/DeckViewer.tsx` — orchestrates everything: keyboard nav (←/→/↑/↓/space, `f` fullscreen, `g` grid, `Esc`), sidebar thumbnails, grid overview, fullscreen, PDF export trigger, and a separate `MobilePager` (embla carousel, swipe + edge-tap) for mobile.
 - `src/components/deck/ScaledSlide.tsx` — **every slide is authored at a fixed 1920×1080 canvas.** Desktop wraps the slide in a `transform: scale()` computed from container size via `ResizeObserver`. Three modes: scaled (default desktop/thumbnails), `isMobile` (renders as a normal responsive scrolling page — slides also carry their own `md:` responsive markup), and `forceFullSize` (native 1920×1080, no scaling — used only by the offscreen PDF export portal).
 

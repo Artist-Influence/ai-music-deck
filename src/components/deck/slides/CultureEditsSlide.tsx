@@ -6,12 +6,9 @@ import { useTranslation } from '@/i18n/LanguageContext';
 
 const tileLabels = ['SPORTS', 'ANIME', 'LYRIC', 'MEME', 'FILM', 'QUOTES', 'GAMING', 'FASHION', 'CARS', 'NIGHTLIFE', 'STREETWEAR', 'MOTIVATION'];
 
-// Cleared the music edit clips — drop in political edit clips (debate moments,
-// speeches, contrast spots) and the phones will play them. Empty src shows the
-// "Add clip" placeholder.
 const clips: { src: string }[] = [
-  { src: '' },
-  { src: '' },
+  { src: '/culture-edits/clip-1.mp4' },
+  { src: '/culture-edits/clip-2.mp4' },
 ];
 
 const PhoneClip = ({ src }: { src: string }) => {
@@ -64,10 +61,10 @@ const CultureEditsSlide = () => {
       <div className="relative z-10 w-full max-w-[1600px] mx-auto">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <Film className="w-4 h-4 md:w-7 md:h-7 text-primary" />
-          <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
+          <p className="t-eyebrow text-sm md:text-lg">{t('common.service')}</p>
         </div>
 
-        <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4">{t('cultureEdits.title')}</h1>
+        <h1 className="t-hero text-2xl md:text-6xl text-on-visual mb-2 md:mb-4">{t('cultureEdits.title')}</h1>
         <p className="text-sm md:text-2xl text-on-visual-soft mb-5 md:mb-8 max-w-[1100px] leading-relaxed">{t('cultureEdits.subtitle')}</p>
 
         {/* Two-column hero: copy left, phones right */}
@@ -75,7 +72,7 @@ const CultureEditsSlide = () => {
           {/* Left: stacked copy panels */}
           <div className="flex-1 flex flex-col gap-3 md:gap-5">
             <GlassPanel className="p-4 md:p-7">
-              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-4">{t('cultureEdits.whatTitle')}</p>
+              <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-4">{t('cultureEdits.whatTitle')}</p>
               <div className="space-y-1.5 md:space-y-3">
                 {[0, 1, 2].map((i) => (
                   <div key={i} className="flex items-start gap-2">
@@ -87,7 +84,7 @@ const CultureEditsSlide = () => {
             </GlassPanel>
 
             <GlassPanel className="p-4 md:p-7">
-              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-4">{t('cultureEdits.whyTitle')}</p>
+              <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-4">{t('cultureEdits.whyTitle')}</p>
               <div className="space-y-1.5 md:space-y-3">
                 {[0, 1, 2].map((i) => (
                   <div key={i} className="flex items-start gap-2">
@@ -113,7 +110,7 @@ const CultureEditsSlide = () => {
 
         <GlassPanel variant="bright" className="p-3 md:p-5">
           <div className="flex flex-col md:flex-row md:items-center gap-1 md:gap-3">
-            <p className="text-xs md:text-lg text-primary font-semibold tracking-wider uppercase shrink-0">{t('cultureEdits.bestForLabel')}</p>
+            <p className="t-eyebrow text-xs md:text-lg shrink-0">{t('cultureEdits.bestForLabel')}</p>
             <p className="text-xs md:text-lg text-foreground/90">{t('cultureEdits.bestFor')}</p>
           </div>
         </GlassPanel>
