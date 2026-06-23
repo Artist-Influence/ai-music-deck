@@ -14,11 +14,11 @@ const CoverSlide = () => {
       </div>
 
       <div className="relative z-10 text-center px-5 md:px-0">
-        <div className="w-[280px] md:w-[800px] mx-auto overflow-hidden" style={{ marginBottom: '-2rem' }}>
+        <div data-reveal className="w-[280px] md:w-[800px] mx-auto overflow-hidden" style={{ marginBottom: '-2rem' }}>
           <img src={aiLogo} alt="Artist Influence" className="w-full" style={{ marginBottom: '-25%' }} />
         </div>
-        <p className="t-hero text-xl md:text-5xl text-white mb-4 md:mb-6">{t('cover.tagline')}</p>
-        <p className="text-base md:text-3xl text-foreground">{t('cover.subtitle')}</p>
+        <p className="t-hero text-2xl md:text-6xl text-white mb-4 md:mb-6">{t('cover.tagline')}</p>
+        <p data-reveal className="text-base md:text-3xl ink-2">{t('cover.subtitle')}</p>
       </div>
 
       <p className="mono absolute bottom-6 md:bottom-16 text-xs md:text-base text-muted-foreground/40 tracking-[0.3em] uppercase">

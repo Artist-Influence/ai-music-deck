@@ -1,4 +1,4 @@
-import { useState, useEffect, useCallback, Suspense } from 'react';
+import { useState, useEffect, useCallback, useRef, Suspense, type ReactNode } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 
 import aiLogo from '@/assets/ai-logo-lockup.png';
@@ -10,6 +10,48 @@ import ScaledSlide from './ScaledSlide';
 import { slides } from './slides';
 import ExportPdfButton from './ExportPdfButton';
 import LanguagePicker from './LanguagePicker';
+
+/**
+ * Wraps the active slide and, on each slide change, cascades its key blocks
+ * (eyebrow, title, cards, [data-reveal]) up into view with a spring stagger.
+ * Hidden-from-first-paint via the .slide-stage CSS so there is no flash; a
+ * MutationObserver catches lazily-resolved (Suspense) content. Reduced-motion
+ * skips straight to visible (CSS override + the early return here).
+ */
+const SlideStage = ({ index, children }: { index: number; children: ReactNode }) => {
+  const ref = useRef<HTMLDivElement>(null);
+  useEffect(() => {
+    const root = ref.current;
+    if (!root) return;
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+    let applied = false;
+    const run = () => {
+      if (applied || !root) return;
+      const targets = Array.from(
+        root.querySelectorAll<HTMLElement>('.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]')
+      );
+      if (!targets.length) return;
+      applied = true;
+      targets.forEach((el, i) => el.style.setProperty('--rd', `${Math.min(i, 9) * 70}ms`));
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => targets.forEach((el) => el.classList.add('reveal-shown')))
+      );
+    };
+    run();
+    const mo = new MutationObserver(run);
+    mo.observe(root, { childList: true, subtree: true });
+    const stop = window.setTimeout(() => mo.disconnect(), 1500);
+    return () => {
+      mo.disconnect();
+      window.clearTimeout(stop);
+    };
+  }, [index]);
+  return (
+    <div ref={ref} className="slide-stage w-full h-full">
+      {children}
+    </div>
+  );
+};
 
 const DeckViewer = () => {
   const isMobile = useIsMobile();
@@ -133,13 +175,20 @@ const DeckViewer = () => {
         )}
 
         <div className="flex-1 relative min-h-0">
-          <div key={current} className="w-full h-full animate-fade-in">
+          {/* Glowing progress rail */}
+          <div className="absolute top-0 inset-x-0 h-px z-40 bg-white/[0.05]">
+            <div
+              className="h-full bg-primary shadow-[0_0_8px_hsl(var(--primary))] transition-[width] duration-500 ease-out"
+              style={{ width: `${((current + 1) / slides.length) * 100}%` }}
+            />
+          </div>
+          <SlideStage key={current} index={current}>
             <ScaledSlide>
-              <Suspense fallback={<div className="w-full h-full bg-background" />}>
+              <Suspense fallback={<div className="w-full h-full" />}>
                 <Slide />
               </Suspense>
             </ScaledSlide>
-          </div>
+          </SlideStage>
         </div>
 
         <div className={cn(

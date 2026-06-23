@@ -395,13 +395,39 @@
 /* Card tilt: a smooth easing while the pointer drives the transform. */
 .tilting { transition: transform 0.12s ease-out !important; }
 
-/* Brand slide-enter reveal (used by .reveal / staggered groups). */
-.reveal { opacity: 0; transform: translateY(22px); }
-.reveal.shown {
+/* ---- Choreographed slide-enter reveal ----
+   SlideStage hides a slide's key blocks from first paint, then cascades them
+   up with the spring curve on each slide change. Scoped to .slide-stage, so
+   grid thumbnails and the PDF-export portal stay fully visible. */
+.slide-stage :is(.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]) {
+  opacity: 0;
+  transform: translateY(28px);
+  will-change: opacity, transform;
+}
+.slide-stage :is(.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]).reveal-shown {
   opacity: 1;
   transform: none;
-  transition: opacity 0.7s var(--ease-spring), transform 0.7s var(--ease-spring);
+  transition: opacity 0.6s var(--ease-spring), transform 0.7s var(--ease-spring);
   transition-delay: var(--rd, 0ms);
+}
+@media (prefers-reduced-motion: reduce) {
+  .slide-stage :is(.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]) {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+
+/* Card hover: tilt (JS) handles the lift; add a red edge-glow + deeper shadow. */
+@media (pointer: fine) {
+  .gp-card {
+    transition: box-shadow 0.4s var(--ease-smooth);
+  }
+  .gp-card:hover {
+    box-shadow:
+      inset 0 1px 0 hsl(var(--foreground) / 0.14),
+      0 28px 64px -14px hsl(225 45% 1% / 0.75),
+      0 0 64px hsl(var(--primary) / 0.22) !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
