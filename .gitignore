@@ -27,3 +27,4 @@ dist-ssr
 # local agent config + exported binaries
 .claude/
 Artist-Influence-Politics-Deck.pptx
+.vercel

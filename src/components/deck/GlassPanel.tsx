@@ -13,10 +13,10 @@ interface GlassPanelProps {
 
 const variantStyles = {
   default:
-    'bg-white/[0.04] shadow-[inset_0_1px_0_hsl(var(--foreground)/0.06),0_8px_32px_hsl(var(--primary)/0.06)]',
+    'bg-white/[0.05] shadow-[inset_0_1px_0_hsl(var(--foreground)/0.09),0_20px_50px_-12px_hsl(225_45%_1%/0.65),0_0_44px_hsl(var(--primary)/0.07)]',
   bright:
-    'bg-primary/[0.08] shadow-[inset_0_1px_0_hsl(var(--foreground)/0.10),0_10px_40px_hsl(var(--primary)/0.12)]',
-  subtle: 'bg-white/[0.02] shadow-[inset_0_1px_0_hsl(var(--foreground)/0.04)]',
+    'bg-primary/[0.09] shadow-[inset_0_1px_0_hsl(var(--foreground)/0.12),0_22px_55px_-12px_hsl(225_45%_1%/0.7),0_0_52px_hsl(var(--primary)/0.16)]',
+  subtle: 'bg-white/[0.03] shadow-[inset_0_1px_0_hsl(var(--foreground)/0.05),0_12px_32px_-12px_hsl(225_45%_1%/0.5)]',
 };
 
 const variantBorder = {

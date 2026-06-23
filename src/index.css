@@ -110,6 +110,19 @@
   font-size: 125%;
 }
 
+/* Cinematic brand backdrop on EVERY authored slide: blue-black + bright
+   oxblood/red radials so the artistinfluence.com glow reads on each slide,
+   not just in the letterbox. Sits behind each slide's own visual + content.
+   This is the single biggest brand lever, applied deck-wide from one rule. */
+.slide-content > div {
+  background-color: hsl(var(--bg));
+  background-image:
+    radial-gradient(ellipse 80% 62% at 50% -14%, hsl(var(--red-deep) / 0.75), transparent 60%),
+    radial-gradient(circle at 100% 0%, hsl(var(--coral) / 0.16), transparent 42%),
+    radial-gradient(ellipse 90% 60% at 6% 112%, hsl(var(--red-deep) / 0.6), transparent 60%),
+    radial-gradient(circle at 50% 50%, hsl(var(--coral) / 0.05), transparent 55%);
+}
+
 @layer components {
   /* ---- Typography: the brand's voice ---- */
 
