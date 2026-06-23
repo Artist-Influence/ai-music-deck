@@ -2,76 +2,97 @@ import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { Youtube } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
+import spicyMargaritaThumb from '@/assets/jason-derulo-spicy-margarita-thumb.jpg';
+import markTuanThumb from '@/assets/mark-tuan-sunsets-cigarettes-thumb.jpg';
 
-const formatCount = 5;
+const cases = [
+  {
+    artist: 'Jason Derulo & Michael Bublé', track: 'Spicy Margarita', thumb: spicyMargaritaThumb,
+    metrics: [
+      { val: '11M', labelKey: 'kpi.views' }, { val: '6.5M', labelKey: 'kpi.uniqueViewers' },
+      { val: '1.1M+ hrs', labelKey: 'kpi.watchTime' }, { val: '76.4%', labelKey: 'kpi.avgViewed' },
+      { val: '207K', labelKey: 'kpi.likes' }, { val: '7.9K', labelKey: 'kpi.comments' },
+    ],
+  },
+  {
+    artist: 'Mark Tuan', track: 'Sunsets & Cigarettes', thumb: markTuanThumb,
+    metrics: [
+      { val: '10M', labelKey: 'kpi.views' }, { val: '5.5M', labelKey: 'kpi.uniqueViewers' },
+      { val: '1.4M hrs', labelKey: 'kpi.watchTime' }, { val: '81.2%', labelKey: 'kpi.avgViewed' },
+      { val: '135K', labelKey: 'kpi.likes' }, { val: '6.3K', labelKey: 'kpi.comments' },
+    ],
+  },
+];
 
 const YouTubeAdsSlide = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-16 flex flex-col justify-start md:justify-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 flex flex-col gap-4 md:gap-6 w-full max-w-[1600px] mx-auto">
-        {/* Header */}
-        <div>
-          <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
-            <Youtube size={20} className="text-primary md:w-7 md:h-7" />
-            <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto flex flex-col md:flex-row gap-4 md:gap-10 md:items-stretch">
+        <div className="flex-1 flex flex-col gap-3 md:gap-4 md:min-h-[720px]">
+          <div>
+            <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
+              <Youtube size={20} className="text-primary md:w-7 md:h-7" />
+              <p className="t-eyebrow text-sm md:text-lg">{t('common.service')}</p>
+            </div>
+            <h1 className="t-hero text-2xl md:text-6xl text-on-visual mb-2 md:mb-4">{t('youtube.title')}</h1>
+            <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-6 max-w-[700px]">{t('youtube.subtitle')}</p>
           </div>
-          <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4 leading-tight">{t('youtube.title')}</h1>
-          <p className="text-sm md:text-2xl text-on-visual-soft mb-0 max-w-[900px]">{t('youtube.subtitle')}</p>
+
+          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+            <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('youtube.whatTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1].map((i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
+                  <p className="text-xs md:text-2xl text-muted-foreground">{t(`youtube.what.${i}`)}</p>
+                </div>
+              ))}
+            </div>
+          </GlassPanel>
+
+          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+            <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('youtube.howTitle')}</p>
+            <div className="space-y-1.5 md:space-y-2.5">
+              {[0, 1, 2].map((i) => (
+                <div key={i} className="flex items-start gap-2">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-2.5" />
+                  <p className="text-xs md:text-xl text-muted-foreground">{t(`youtube.how.${i}`)}</p>
+                </div>
+              ))}
+            </div>
+            <div className="pt-3 border-t border-white/[0.06] mt-3">
+              <p className="text-xs md:text-xl text-primary font-medium">{t('youtube.timeframe')}</p>
+            </div>
+          </GlassPanel>
         </div>
 
-        {/* Two-column row: left panels + right ad formats */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch">
-          <div className="flex-1 min-w-0 flex flex-col gap-4 md:gap-6">
-            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
-              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-4">{t('youtube.whatTitle')}</p>
-              <div className="space-y-1.5 md:space-y-3">
-                {[0, 1, 2].map((i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
-                    <p className="text-xs md:text-2xl text-muted-foreground">{t(`youtube.what.${i}`)}</p>
+        <div className="flex-1 flex flex-col gap-2 md:gap-4 md:min-h-[720px]">
+          {cases.map((c) => (
+            <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-5 md:flex-1 md:min-h-0">
+              <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-4">
+                  <div className="w-[70px] h-[50px] md:w-[240px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
+                    <img src={c.thumb} alt={`${c.artist}, ${c.track}`} loading="eager" decoding="sync" className="w-full h-full object-cover rounded-lg md:rounded-xl" />
                   </div>
-                ))}
-              </div>
-            </GlassPanel>
+                  <div className="flex-1 flex flex-col justify-center">
+                    <p className="t-eyebrow text-[10px] md:text-base mb-0.5">{t('youtube.caseStudy')}</p>
+                    <p className="t-h3 text-sm md:text-3xl text-foreground">{c.artist}</p>
+                    <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
+                  </div>
+                </div>
 
-            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
-              <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-4">{t('youtube.howTitle')}</p>
-              <div className="space-y-1.5 md:space-y-3">
-                {[0, 1, 2].map((i) => (
-                  <div key={i} className="flex items-start gap-2">
-                    <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1.5 md:mt-3" />
-                    <p className="text-xs md:text-2xl text-muted-foreground">{t(`youtube.how.${i}`)}</p>
-                  </div>
-                ))}
-              </div>
-              <div className="pt-3 md:pt-4 border-t border-white/[0.06] mt-3 md:mt-4">
-                <p className="text-xs md:text-2xl text-primary font-medium">{t('youtube.timeframe')}</p>
-              </div>
-            </GlassPanel>
-          </div>
-
-          {/* Right: ad formats */}
-          <div className="flex-1 min-w-0 flex flex-col">
-            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
-              <p className="text-sm md:text-2xl font-semibold text-primary mb-3 md:mb-6">{t('youtube.formatsTitle')}</p>
-              <div className="flex flex-col gap-2.5 md:gap-4 flex-1 justify-between">
-                {Array.from({ length: formatCount }, (_, i) => (
-                  <div key={i} className="flex items-center gap-3 md:gap-5 rounded-xl border border-white/[0.08] bg-white/[0.03] px-3 py-2.5 md:px-5 md:py-4">
-                    <div className="w-10 h-10 md:w-12 md:h-12 rounded-lg md:rounded-xl bg-primary/[0.12] border border-primary/30 flex items-center justify-center shrink-0">
-                      <span className="text-primary font-bold text-sm md:text-lg">{i + 1}</span>
-                    </div>
-                    <div className="min-w-0">
-                      <p className="text-sm md:text-2xl font-bold text-foreground leading-tight">{t(`youtube.format.${i}.name`)}</p>
-                      <p className="text-[11px] md:text-lg text-muted-foreground leading-tight">{t(`youtube.format.${i}.desc`)}</p>
-                    </div>
+              <div className="grid grid-cols-3 gap-1 md:gap-2 md:mt-auto">
+                {c.metrics.map((m) => (
+                  <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:py-3 md:px-2 text-center flex flex-col items-center justify-center">
+                    <p className="stat-num num text-[10px] md:text-xl text-foreground">{m.val}</p>
+                    <p className="mono text-[7px] md:text-sm md:mt-0.5 text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                   </div>
                 ))}
               </div>
             </GlassPanel>
-          </div>
+          ))}
         </div>
       </div>
     </div>

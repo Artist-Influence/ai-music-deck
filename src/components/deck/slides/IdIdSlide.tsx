@@ -21,10 +21,10 @@ const IdIdSlide = () => {
       <div className="relative z-10 w-full max-w-[1500px] mx-auto">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <Disc3 className="w-4 h-4 md:w-7 md:h-7 text-primary animate-[spin_8s_linear_infinite]" />
-          <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('idid.kicker')}</p>
+          <p className="t-eyebrow text-sm md:text-lg">{t('idid.kicker')}</p>
         </div>
 
-        <h1 className="text-3xl md:text-7xl font-bold text-on-visual mb-2 md:mb-3 leading-tight">{t('idid.title')}</h1>
+        <h1 className="t-hero text-3xl md:text-7xl text-on-visual mb-2 md:mb-3">{t('idid.title')}</h1>
         <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 mb-3 md:mb-5">
           <p className="text-base md:text-3xl text-primary/90 font-light">{t('idid.tagline')}</p>
           <a
@@ -41,7 +41,7 @@ const IdIdSlide = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
           <GlassPanel variant="bright" className="p-5 md:p-7">
-            <p className="text-sm md:text-2xl font-semibold text-primary mb-3 md:mb-4">{t('idid.whatTitle')}</p>
+            <p className="t-h3 text-primary text-sm md:text-2xl mb-3 md:mb-4">{t('idid.whatTitle')}</p>
             <div className="space-y-2 md:space-y-3">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="flex items-start gap-2">
@@ -53,7 +53,7 @@ const IdIdSlide = () => {
           </GlassPanel>
 
           <GlassPanel variant="bright" className="p-5 md:p-7">
-            <p className="text-sm md:text-2xl font-semibold text-primary mb-3 md:mb-4">{t('idid.whyTitle')}</p>
+            <p className="t-h3 text-primary text-sm md:text-2xl mb-3 md:mb-4">{t('idid.whyTitle')}</p>
             <div className="space-y-2 md:space-y-3">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="flex items-start gap-2">

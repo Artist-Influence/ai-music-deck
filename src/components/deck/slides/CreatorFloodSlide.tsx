@@ -3,8 +3,7 @@ import { Zap } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
-// Placeholder visual until real political campaign assets are supplied.
-import placeholderImg from '@/assets/ai-logomark-white.png';
+import richBrianImg from '@/assets/rich-brian-jumpy-tiktok.webp';
 
 const metricsData = [
   { val: '10,000+', labelKey: 'kpi.minimumPosts' },
@@ -23,14 +22,14 @@ const CreatorFloodSlide = () => {
           <div>
             <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
               <Zap size={20} className="text-primary md:w-7 md:h-7" />
-              <p className="text-sm md:text-lg text-primary font-medium tracking-wider uppercase">{t('common.service')}</p>
+              <p className="t-eyebrow text-sm md:text-lg">{t('common.service')}</p>
             </div>
-            <h1 className="text-2xl md:text-6xl font-bold text-on-visual mb-2 md:mb-4 leading-tight">{t('creatorFlood.title')}</h1>
+            <h1 className="t-hero text-2xl md:text-6xl text-on-visual mb-2 md:mb-4">{t('creatorFlood.title')}</h1>
             <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-6 max-w-[700px]">{t('creatorFlood.subtitle')}</p>
           </div>
 
           <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col">
-            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('creatorFlood.prosTitle')}</p>
+            <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('creatorFlood.prosTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2, 3].map((i) => (
                 <div key={i} className="flex items-start gap-2">
@@ -42,7 +41,7 @@ const CreatorFloodSlide = () => {
           </GlassPanel>
 
           <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col">
-            <p className="text-sm md:text-2xl font-semibold text-primary mb-2 md:mb-3">{t('creatorFlood.whenTitle')}</p>
+            <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('creatorFlood.whenTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2].map((i) => (
                 <div key={i} className="flex items-start gap-2">
@@ -52,26 +51,26 @@ const CreatorFloodSlide = () => {
               ))}
             </div>
             <div className="pt-2 md:pt-3 border-t border-white/[0.06] mt-2 md:mt-3">
-              <p className="text-xs md:text-2xl text-primary font-medium">{t('creatorFlood.timeframe')}</p>
+              <p className="t-h3 text-xs md:text-2xl text-primary">{t('creatorFlood.timeframe')}</p>
             </div>
           </GlassPanel>
         </div>
 
         <div className="flex-1 flex flex-col md:min-h-[720px]">
           <GlassPanel variant="bright" className="w-full p-4 md:p-5 md:flex-1 md:h-full md:flex md:flex-col">
-            <p className="text-xs md:text-base text-primary font-mono mb-1 tracking-widest uppercase">{t('creatorFlood.caseStudy')}</p>
-            <p className="text-lg md:text-2xl font-bold text-foreground">Statewide Senate Race</p>
-            <p className="text-sm md:text-xl text-muted-foreground mb-2">Illustrative — sample figures, not a real campaign</p>
+            <p className="t-eyebrow text-xs md:text-base text-primary mb-1">{t('creatorFlood.caseStudy')}</p>
+            <p className="t-h3 text-lg md:text-2xl text-foreground">Rich Brian</p>
+            <p className="text-sm md:text-xl text-muted-foreground mb-2">Jumpy (feat. Ski Mask The Slump God)</p>
 
-            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none md:flex-1 md:min-h-0 bg-white/[0.03] flex items-center justify-center">
-              <img src={placeholderImg} alt="Placeholder — political campaign creative" loading="eager" decoding="sync" className="w-full h-full object-contain p-6 md:p-12 opacity-40" />
+            <div className="mb-2 rounded-lg border border-white/[0.08] overflow-hidden max-h-[90px] md:max-h-none md:flex-1 md:min-h-0">
+              <img src={richBrianImg} alt="Rich Brian, Jumpy TikTok sound page, 33K+ videos" loading="eager" decoding="sync" className="w-full h-full object-cover object-left-top" />
             </div>
 
             <div className="grid grid-cols-3 gap-1 md:gap-3">
               {metricsData.map((m) => (
                 <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:p-3 text-center">
-                  <p className="text-xs md:text-lg font-bold text-foreground">{m.val}</p>
-                  <p className="text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
+                  <p className="stat-num num text-xs md:text-lg text-foreground">{m.val}</p>
+                  <p className="mono text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                 </div>
               ))}
             </div>

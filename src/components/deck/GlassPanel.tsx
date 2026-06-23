@@ -7,6 +7,8 @@ interface GlassPanelProps {
   variant?: 'default' | 'bright' | 'subtle';
   noShimmer?: boolean;
   noCorner?: boolean;
+  /** Disable the pointer-driven 3D tilt (e.g. for dense/secondary cards). */
+  noTilt?: boolean;
 }
 
 const variantStyles = {
@@ -32,6 +34,7 @@ const GlassPanel = ({
   variant = 'default',
   noShimmer,
   noCorner,
+  noTilt,
 }: GlassPanelProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -57,6 +60,33 @@ const GlassPanel = ({
     obs.observe(el);
     return () => obs.disconnect();
   }, [showShimmer]);
+
+  // Pointer-driven 3D tilt. Reads screen-space pointer position against the
+  // card rect, so it stays correct even inside the scaled slide canvas.
+  useEffect(() => {
+    if (noTilt || !ref.current) return;
+    const fine = window.matchMedia('(pointer: fine)').matches;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!fine || reduce) return;
+    const el = ref.current;
+    const onMove = (e: MouseEvent) => {
+      const r = el.getBoundingClientRect();
+      const x = (e.clientX - r.left) / r.width - 0.5;
+      const y = (e.clientY - r.top) / r.height - 0.5;
+      el.classList.add('tilting');
+      el.style.transform = `perspective(900px) rotateX(${-y * 4}deg) rotateY(${x * 4}deg) translateY(-2px)`;
+    };
+    const onLeave = () => {
+      el.classList.remove('tilting');
+      el.style.transform = '';
+    };
+    el.addEventListener('mousemove', onMove);
+    el.addEventListener('mouseleave', onLeave);
+    return () => {
+      el.removeEventListener('mousemove', onMove);
+      el.removeEventListener('mouseleave', onLeave);
+    };
+  }, [noTilt]);
 
   return (
     <div
