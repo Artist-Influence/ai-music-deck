@@ -410,20 +410,20 @@
    up with the spring curve on each slide change. Scoped to .slide-stage, so
    grid thumbnails and the PDF-export portal stay fully visible. */
 .slide-stage :is(.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]) {
-  opacity: 0;
-  transform: translateY(28px);
+  /* Auto-playing animation (not a toggled class), so the revealed end-state
+     survives React re-renders. fill-mode: both holds opacity:0 during the
+     per-element delay, then locks opacity:1 after. */
+  animation: stage-reveal 0.65s var(--ease-spring) both;
+  animation-delay: var(--rd, 0ms);
   will-change: opacity, transform;
 }
-.slide-stage :is(.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]).reveal-shown {
-  opacity: 1;
-  transform: none;
-  transition: opacity 0.6s var(--ease-spring), transform 0.7s var(--ease-spring);
-  transition-delay: var(--rd, 0ms);
+@keyframes stage-reveal {
+  from { opacity: 0; transform: translateY(28px); }
+  to { opacity: 1; transform: none; }
 }
 @media (prefers-reduced-motion: reduce) {
   .slide-stage :is(.t-eyebrow, .t-hero, h1, h2, .gp-card, [data-reveal]) {
-    opacity: 1 !important;
-    transform: none !important;
+    animation: none;
   }
 }
 

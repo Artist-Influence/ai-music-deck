@@ -12,11 +12,11 @@ import ExportPdfButton from './ExportPdfButton';
 import LanguagePicker from './LanguagePicker';
 
 /**
- * Wraps the active slide and, on each slide change, cascades its key blocks
- * (eyebrow, title, cards, [data-reveal]) up into view with a spring stagger.
- * Hidden-from-first-paint via the .slide-stage CSS so there is no flash; a
- * MutationObserver catches lazily-resolved (Suspense) content. Reduced-motion
- * skips straight to visible (CSS override + the early return here).
+ * Wraps the active slide. The actual reveal is a CSS animation on the
+ * .slide-stage targets (eyebrow, title, cards, [data-reveal]) so it survives
+ * re-renders; this component only assigns each target a staggered delay
+ * (--rd) in DOM order, re-running via a MutationObserver as lazily-resolved
+ * (Suspense) content mounts. Reduced-motion disables the animation in CSS.
  */
 const SlideStage = ({ index, children }: { index: number; children: ReactNode }) => {
   const ref = useRef<HTMLDivElement>(null);
@@ -32,10 +32,8 @@ const SlideStage = ({ index, children }: { index: number; children: ReactNode })
       );
       if (!targets.length) return;
       applied = true;
+      // Stagger delay only; the CSS `stage-reveal` animation handles the reveal.
       targets.forEach((el, i) => el.style.setProperty('--rd', `${Math.min(i, 9) * 70}ms`));
-      requestAnimationFrame(() =>
-        requestAnimationFrame(() => targets.forEach((el) => el.classList.add('reveal-shown')))
-      );
     };
     run();
     const mo = new MutationObserver(run);

@@ -210,6 +210,10 @@ const en: Record<string, string> = {
   'nextSteps.companyName': 'Artist Influence',
   'nextSteps.contactRedLine': '',
   'nextSteps.tagline': 'Software-backed · Culture-native · Execution-ready',
+  'nextSteps.caseStudiesKicker': 'See the proof',
+  'nextSteps.caseStudiesTitle': 'Explore our case studies',
+  'nextSteps.caseStudiesCta': 'View Case Studies',
+  'nextSteps.caseStudiesPw': 'Password',
 
   // ── DeckViewer UI ──
   'ui.slides': 'Slides',

@@ -52,6 +52,31 @@ const NextStepsSlide = () => {
           ))}
         </div>
 
+        {/* Case studies CTA — clear link to the live case studies + access password */}
+        <GlassPanel variant="bright" className="mb-6 md:mb-10 p-4 md:p-6 max-w-[900px] mx-auto">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-3 md:gap-6">
+            <div className="text-center md:text-left">
+              <p className="t-eyebrow text-[0.6rem] md:text-sm mb-1">{t('nextSteps.caseStudiesKicker')}</p>
+              <p className="t-h3 text-base md:text-2xl">{t('nextSteps.caseStudiesTitle')}</p>
+            </div>
+            <div className="flex flex-col sm:flex-row items-center gap-3 shrink-0">
+              <a
+                href="https://www.artistinfluence.com/case-studies"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-coral text-sm md:text-base whitespace-nowrap"
+              >
+                {t('nextSteps.caseStudiesCta')}
+                <span aria-hidden="true">↗</span>
+              </a>
+              <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/[0.04] px-3 py-2 backdrop-blur-md">
+                <span className="mono text-[0.55rem] md:text-xs uppercase tracking-[0.2em] text-muted-foreground">{t('nextSteps.caseStudiesPw')}</span>
+                <span className="mono text-sm md:text-base font-semibold text-primary">arty</span>
+              </span>
+            </div>
+          </div>
+        </GlassPanel>
+
         <GlassPanel variant="subtle" className="mb-6 md:mb-12 p-4 md:p-8 max-w-[700px] mx-auto">
           <p className="t-h3 text-sm md:text-[21px] text-foreground mb-1 md:mb-2">{t('nextSteps.contactTitle')}</p>
           <p className="text-xs md:text-[19px] text-white/80 mb-1 md:mb-2">{t('nextSteps.companyName')}</p>
