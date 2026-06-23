@@ -114,13 +114,23 @@
    oxblood/red radials so the artistinfluence.com glow reads on each slide,
    not just in the letterbox. Sits behind each slide's own visual + content.
    This is the single biggest brand lever, applied deck-wide from one rule. */
-.slide-content > div {
+.slide-content > div,
+.slide-content-m {
   background-color: hsl(var(--bg));
   background-image:
     radial-gradient(ellipse 80% 62% at 50% -14%, hsl(var(--red-deep) / 0.75), transparent 60%),
     radial-gradient(circle at 100% 0%, hsl(var(--coral) / 0.16), transparent 42%),
     radial-gradient(ellipse 90% 60% at 6% 112%, hsl(var(--red-deep) / 0.6), transparent 60%),
     radial-gradient(circle at 50% 50%, hsl(var(--coral) / 0.05), transparent 55%);
+}
+/* Mobile: glow lives on the wrapper; the slide root goes transparent so the
+   glow stays seamless beneath the top padding that drops content clear of the
+   floating top controls (language picker + slide counter), notch included. */
+.slide-content-m {
+  padding-top: calc(env(safe-area-inset-top, 0px) + 2.5rem);
+}
+.slide-content-m > div {
+  background-color: transparent;
 }
 
 @layer components {
