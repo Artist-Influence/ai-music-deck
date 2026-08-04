@@ -179,7 +179,7 @@ const en: Record<string, string> = {
   'metaTiktok.how.2': 'Focused on streams, ticket sales, merch, and fanbase growth',
   'metaTiktok.timeframe': 'Timeframe: dependent on each campaign',
   'metaTiktok.case1Desc': '24-hour brand awareness campaign focused purely on views.',
-  'metaTiktok.case2Desc': 'Houston warehouse event push driving ticket-link clicks on $889 of spend, at roughly 9x the industry average CTR. Every show since has sold out.',
+  'metaTiktok.case2Desc': 'Houston warehouse event push: 274 tickets sold on $889 of spend, at roughly 9x the industry average CTR. Every show since has sold out.',
   'metaTiktok.case3Desc': 'Meta spend scaled into a Spotify push on $4,823: 912,770 all-time streams at half a cent each, with Instagram up 124,672 followers since tracking began.',
 
   // ── PricingSlide ──
@@ -290,6 +290,8 @@ const en: Record<string, string> = {
   'kpi.spotifyStreams': 'Spotify Streams',
   'kpi.costPerStream': 'Cost / Stream',
   'kpi.igFollowerGrowth': 'IG Followers',
+  'kpi.ticketsSold': 'Tickets Sold',
+  'kpi.costPerTicket': 'Cost / Ticket',
 
   // ── CaseStudySlide (Subtronics) ──
   'csSubtronics.title': 'Proof, not promises.',

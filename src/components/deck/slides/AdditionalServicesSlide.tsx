@@ -3,6 +3,8 @@ import CampaignThumb from '../CampaignThumb';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import gordoImg from '@/assets/gordo-meta-tiktok.webp';
+import mashbitImg from '@/assets/mashbit-portrait.jpg';
+import tPainImg from '@/assets/t-pain-portrait.jpeg';
 
 const TikTokIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -23,7 +25,6 @@ const MetaTikTokIcon = () => (
   </div>
 );
 
-// `artwork` is owed for the two Meta campaigns; CampaignThumb monograms until then.
 const cases = [
   {
     platform: 'TIKTOK ADS', artist: 'Gordo (@gordoszn)', track: 'Brand Awareness Campaign',
@@ -31,18 +32,21 @@ const cases = [
     metrics: [{ val: '1.4M', labelKey: 'kpi.impressions' }, { val: '$0.31', labelKey: 'kpi.cpm' }, { val: '500.7K', labelKey: 'kpi.sixSecViews' }, { val: '34.7%', labelKey: 'kpi.viewRate' }],
   },
   {
-    // $889 spend · 99,263 impressions · 8,741 link clicks
+    // $889 spend · 8,741 link clicks · 274 tickets sold → $889/274 = $3.24 per ticket
     platform: 'META ADS', artist: 'Mashbit', track: 'Houston Takeover, event push',
-    descKey: 'metaTiktok.case2Desc',
-    metrics: [{ val: '99.3K', labelKey: 'kpi.impressions' }, { val: '8,741', labelKey: 'kpi.linkClicks' }, { val: '8.8%', labelKey: 'kpi.ctr' }, { val: '$0.10', labelKey: 'kpi.costPerClick' }],
+    descKey: 'metaTiktok.case2Desc', thumb: mashbitImg,
+    metrics: [{ val: '8,741', labelKey: 'kpi.linkClicks' }, { val: '8.8%', labelKey: 'kpi.ctr' }, { val: '$0.10', labelKey: 'kpi.costPerClick' }, { val: '274', labelKey: 'kpi.ticketsSold' }, { val: '$3.24', labelKey: 'kpi.costPerTicket' }],
   },
   {
     // $4,823 spend · 912,770 all-time streams · Instagram +124,672 since 7/16
     platform: 'META ADS', artist: 'T-Pain', track: 'STFU, Spotify scaling push',
-    descKey: 'metaTiktok.case3Desc',
+    descKey: 'metaTiktok.case3Desc', thumb: tPainImg,
     metrics: [{ val: '912K+', labelKey: 'kpi.spotifyStreams' }, { val: '$0.0053', labelKey: 'kpi.costPerStream' }, { val: '17.6%', labelKey: 'kpi.ctr' }, { val: '+124K', labelKey: 'kpi.igFollowerGrowth' }],
   },
 ];
+
+// Cards carry either 4 or 5 metrics; Tailwind needs the class spelled out statically.
+const metricGridCols: Record<number, string> = { 4: 'grid-cols-4', 5: 'grid-cols-5' };
 
 const BulletPoint = ({ children }: { children: React.ReactNode }) => (
   <div className="flex items-start gap-2">
@@ -112,7 +116,7 @@ const AdditionalServicesSlide = () => {
                   <p className="text-[10px] md:text-base text-muted-foreground leading-snug">{t(c.descKey)}</p>
                 </div>
 
-                <div className="grid grid-cols-4 gap-0.5 md:gap-2 mt-auto">
+                <div className={`grid ${metricGridCols[c.metrics.length] ?? 'grid-cols-4'} gap-0.5 md:gap-2 mt-auto`}>
                   {c.metrics.map((m) => (
                     <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-2 md:py-2 text-center flex flex-col items-center justify-center">
                       <p className="stat-num num text-[10px] md:text-xl text-foreground">{m.val}</p>

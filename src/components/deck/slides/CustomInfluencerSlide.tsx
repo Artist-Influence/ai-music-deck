@@ -3,14 +3,16 @@ import CampaignThumb from '../CampaignThumb';
 import PatternVisual from '../visuals/PatternVisual';
 import { Sparkles } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
+import vicetoneCover from '@/assets/vicetone-nevada.jpeg';
+import tPainStfuCover from '@/assets/t-pain-stfu.jpeg';
 
 // Creator-campaign results. No media spend is attributed to these campaigns,
 // so there is no CPM to quote; reach and top-post pull are the proof instead.
-// `artwork` is still owed; CampaignThumb shows a monogram until then.
 const cases = [
   {
     // 4,838,376 views · 320,790 likes · 35 live posts · 19,415,831 estimated reach
     artist: 'Vicetone', track: 'Nevada (Dubstep Mix)', descKey: 'influencer.case1Desc',
+    artwork: vicetoneCover,
     metrics: [
       { val: '4.84M+', labelKey: 'kpi.views' },
       { val: '320K+', labelKey: 'kpi.likes' },
@@ -21,6 +23,7 @@ const cases = [
   {
     // 2,367,185 views · 112,541 likes · 41 live posts · 18,886,304 estimated reach
     artist: 'T-Pain', track: 'STFU', descKey: 'influencer.case2Desc',
+    artwork: tPainStfuCover,
     metrics: [
       { val: '2.37M+', labelKey: 'kpi.views' },
       { val: '112K+', labelKey: 'kpi.likes' },
@@ -94,7 +97,7 @@ const CustomInfluencerSlide = () => {
             {cases.map((c) => (
               <GlassPanel key={`${c.artist}-${c.track}`} variant="bright" className="p-3 md:p-6 flex flex-col">
                 <div className="flex gap-2.5 md:gap-5 mb-1.5 md:mb-4">
-                  <CampaignThumb artist={c.artist} track={c.track}
+                  <CampaignThumb artist={c.artist} track={c.track} artwork={c.artwork}
                     className="w-12 h-12 md:w-24 md:h-24 rounded-lg md:rounded-xl"
                     textClassName="text-base md:text-4xl" />
                   <div className="flex-1 min-w-0 flex flex-col justify-center">

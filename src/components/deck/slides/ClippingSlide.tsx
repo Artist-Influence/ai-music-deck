@@ -3,23 +3,25 @@ import GlassPanel from '../GlassPanel';
 import CampaignThumb from '../CampaignThumb';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
+import slanderCover from '@/assets/slander-jason-ross-lead-the-way.jpeg';
+import fisherCover from '@/assets/fisher-what-a-life.jpeg';
+import vicetoneCover from '@/assets/vicetone-nevada.jpeg';
 
 // CPM is spend ÷ total views × 1000, computed from the campaign spend noted per case.
-// `artwork` is still owed for all three; CampaignThumb shows a monogram until then.
 const casesData = [
   {
     // $2,000 spend · 39,498,229 views
-    artist: 'SLANDER & Jason Ross', track: 'Lead The Way',
+    artist: 'SLANDER & Jason Ross', track: 'Lead The Way', artwork: slanderCover,
     metrics: [{ val: '$0.05', labelKey: 'kpi.cpm' }, { val: '39.5M+', labelKey: 'kpi.views' }, { val: '3.10%', labelKey: 'kpi.engagement' }, { val: '975K+', labelKey: 'kpi.likes' }, { val: '1,295', labelKey: 'kpi.videos' }],
   },
   {
     // $2,000 spend · 15,619,590 views
-    artist: 'Fisher', track: 'What A Life',
+    artist: 'Fisher', track: 'What A Life', artwork: fisherCover,
     metrics: [{ val: '$0.13', labelKey: 'kpi.cpm' }, { val: '15.6M+', labelKey: 'kpi.views' }, { val: '2.72%', labelKey: 'kpi.engagement' }, { val: '344K+', labelKey: 'kpi.likes' }, { val: '1,271', labelKey: 'kpi.videos' }],
   },
   {
     // $3,000 spend · 46,432,870 views
-    artist: 'Vicetone', track: 'Nevada',
+    artist: 'Vicetone', track: 'Nevada', artwork: vicetoneCover,
     metrics: [{ val: '$0.06', labelKey: 'kpi.cpm' }, { val: '46.4M+', labelKey: 'kpi.views' }, { val: '3.35%', labelKey: 'kpi.engagement' }, { val: '1.23M+', labelKey: 'kpi.likes' }, { val: '1,949', labelKey: 'kpi.videos' }],
   },
 ];
@@ -72,7 +74,7 @@ const ClippingSlide = () => {
             {casesData.map((c) => (
               <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-4">
                 <div className="flex gap-2 md:gap-4">
-                  <CampaignThumb artist={c.artist} track={c.track}
+                  <CampaignThumb artist={c.artist} track={c.track} artwork={c.artwork}
                     className="w-10 h-10 md:w-20 md:h-20 rounded-lg md:rounded-xl"
                     textClassName="text-xs md:text-2xl" />
                   <div className="flex-1 min-w-0">
