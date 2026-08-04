@@ -147,6 +147,23 @@ const en: Record<string, string> = {
   'instagram.mobileSummary.1': 'Drives saves, shares & audio uses at a fraction of paid ad cost',
   'instagram.mobileSummary.2': 'Built for relevance & cost efficiency · Timeframe: 1-3 weeks',
 
+  // ── CustomInfluencerSlide ──
+  'influencer.title': 'Custom Influencer Campaigns',
+  'influencer.subtitle': 'Hand-picked creators briefed around your track, built campaign by campaign rather than off a rate card.',
+  'influencer.tagLabel': 'INFLUENCER',
+  'influencer.whatTitle': 'What it is',
+  'influencer.what.0': 'Creators selected individually for each release, matched to the record and the audience',
+  'influencer.what.1': 'Custom creative briefs so the post fits the creator, not a template',
+  'influencer.what.2': 'Scoped per campaign: from a focused handful of creators to a full roster push',
+  'influencer.whyTitle': 'Why it works',
+  'influencer.why.0': 'A trusted creator recommending the track carries weight a paid impression cannot buy',
+  'influencer.why.1': 'Native posts become the proven creative we then amplify with paid spend',
+  'influencer.why.2': 'Bespoke selection keeps the campaign on-genre and on-brand',
+  'influencer.timeframe': 'Timeframe: 2 to 4 weeks',
+  'influencer.mobileSummary.0': 'Hand-picked creators briefed individually around your track',
+  'influencer.mobileSummary.1': 'Custom creative per creator, scoped campaign by campaign',
+  'influencer.mobileSummary.2': 'Native posts become proven creative for paid amplification · 2-4 weeks',
+
   // ── AdditionalServicesSlide (Meta & TikTok Ads) ──
   'metaTiktok.title': 'Meta & TikTok Ads',
   'metaTiktok.subtitle': 'We turn proven native posts into ads that convert streams, sales, touring, and more.',
