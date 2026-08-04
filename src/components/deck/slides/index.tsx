@@ -38,9 +38,9 @@ export const slides: LazyExoticComponent<ComponentType>[] = [
 
   // Services — the rest
   CreatorFloodSlide,
-  Top50TrendingSlide,
   YouTubeAdsSlide,
   InstagramSeedingSlide,
+  Top50TrendingSlide,
   WebsitesSlide,
   IdIdSlide,
 

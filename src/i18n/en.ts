@@ -163,6 +163,8 @@ const en: Record<string, string> = {
   'influencer.mobileSummary.0': 'Hand-picked creators briefed individually around your track',
   'influencer.mobileSummary.1': 'Custom creative per creator, scoped campaign by campaign',
   'influencer.mobileSummary.2': 'Native posts become proven creative for paid amplification · 2-4 weeks',
+  'influencer.case1Desc': '35 creator posts across TikTok and Instagram, 19.4M estimated reach.',
+  'influencer.case2Desc': '41 creator posts across TikTok and Instagram, 18.9M estimated reach.',
 
   // ── AdditionalServicesSlide (Meta & TikTok Ads) ──
   'metaTiktok.title': 'Meta & TikTok Ads',
@@ -177,7 +179,8 @@ const en: Record<string, string> = {
   'metaTiktok.how.2': 'Focused on streams, ticket sales, merch, and fanbase growth',
   'metaTiktok.timeframe': 'Timeframe: dependent on each campaign',
   'metaTiktok.case1Desc': '24-hour brand awareness campaign focused purely on views.',
-  'metaTiktok.case2Desc': 'Multi-layered campaign collecting SMS signups via Laylo. 100+ creatives across 6 simultaneous city-targeted campaigns.',
+  'metaTiktok.case2Desc': 'Houston warehouse event push driving ticket-link clicks on $889 of spend, at roughly 9x the industry average CTR. Every show since has sold out.',
+  'metaTiktok.case3Desc': 'Meta spend scaled into a Spotify push on $4,823: 912,770 all-time streams at half a cent each, with Instagram up 124,672 followers since tracking began.',
 
   // ── PricingSlide ──
   'pricing.title': 'Customized & A La Carte Pricing',
@@ -282,6 +285,11 @@ const en: Record<string, string> = {
   'kpi.followersOneMo': 'Followers (1 mo)',
   'kpi.cpr': 'CPR',
   'kpi.layloSignups': 'Laylo Signups',
+  'kpi.ctr': 'CTR',
+  'kpi.costPerClick': 'Cost / Click',
+  'kpi.spotifyStreams': 'Spotify Streams',
+  'kpi.costPerStream': 'Cost / Stream',
+  'kpi.igFollowerGrowth': 'IG Followers',
 
   // ── CaseStudySlide (Subtronics) ──
   'csSubtronics.title': 'Proof, not promises.',

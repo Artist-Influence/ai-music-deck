@@ -1,23 +1,26 @@
 import { Scissors } from 'lucide-react';
 import GlassPanel from '../GlassPanel';
+import CampaignThumb from '../CampaignThumb';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
-import ariesCover from '@/assets/aries-in-the-flesh.jpg';
-import gorgonCityCover from '@/assets/gorgon-city-mitsubishi.jpg';
-import yeatCover from '@/assets/yeat-bnyx-im-yeat.jpg';
 
+// CPM is spend ÷ total views × 1000, computed from the campaign spend noted per case.
+// `artwork` is still owed for all three; CampaignThumb shows a monogram until then.
 const casesData = [
   {
-    artist: 'Aries', track: 'In The Flesh', img: ariesCover, overviewKey: 'clipping.case1Overview',
-    metrics: [{ val: '$0.50', labelKey: 'kpi.cpm' }, { val: '1.1M+', labelKey: 'kpi.views' }, { val: '13.65%', labelKey: 'kpi.engagement' }, { val: '133K+', labelKey: 'kpi.likes' }, { val: '164', labelKey: 'kpi.videos' }],
+    // $2,000 spend · 39,498,229 views
+    artist: 'SLANDER & Jason Ross', track: 'Lead The Way',
+    metrics: [{ val: '$0.05', labelKey: 'kpi.cpm' }, { val: '39.5M+', labelKey: 'kpi.views' }, { val: '3.10%', labelKey: 'kpi.engagement' }, { val: '975K+', labelKey: 'kpi.likes' }, { val: '1,295', labelKey: 'kpi.videos' }],
   },
   {
-    artist: 'Gorgon City', track: 'Mitsubishi', img: gorgonCityCover, overviewKey: 'clipping.case2Overview',
-    metrics: [{ val: '$0.60', labelKey: 'kpi.cpm' }, { val: '3.08M+', labelKey: 'kpi.views' }, { val: '3.64%', labelKey: 'kpi.engagement' }, { val: '102K+', labelKey: 'kpi.likes' }, { val: '232', labelKey: 'kpi.videos' }],
+    // $2,000 spend · 15,619,590 views
+    artist: 'Fisher', track: 'What A Life',
+    metrics: [{ val: '$0.13', labelKey: 'kpi.cpm' }, { val: '15.6M+', labelKey: 'kpi.views' }, { val: '2.72%', labelKey: 'kpi.engagement' }, { val: '344K+', labelKey: 'kpi.likes' }, { val: '1,271', labelKey: 'kpi.videos' }],
   },
   {
-    artist: 'Yeat, BNYX', track: "I'M YEAT", img: yeatCover, overviewKey: 'clipping.case3Overview',
-    metrics: [{ val: '$0.43', labelKey: 'kpi.cpm' }, { val: '9.97M+', labelKey: 'kpi.views' }, { val: '12.25%', labelKey: 'kpi.engagement' }, { val: '1.17M+', labelKey: 'kpi.likes' }, { val: '64', labelKey: 'kpi.posts' }],
+    // $3,000 spend · 46,432,870 views
+    artist: 'Vicetone', track: 'Nevada',
+    metrics: [{ val: '$0.06', labelKey: 'kpi.cpm' }, { val: '46.4M+', labelKey: 'kpi.views' }, { val: '3.35%', labelKey: 'kpi.engagement' }, { val: '1.23M+', labelKey: 'kpi.likes' }, { val: '1,949', labelKey: 'kpi.videos' }],
   },
 ];
 
@@ -69,8 +72,9 @@ const ClippingSlide = () => {
             {casesData.map((c) => (
               <GlassPanel key={c.artist} variant="bright" className="p-2 md:p-4">
                 <div className="flex gap-2 md:gap-4">
-                  <img loading="lazy" decoding="async" src={c.img} alt={`${c.artist} - ${c.track}`}
-                    className="w-10 h-10 md:w-20 md:h-20 rounded-lg md:rounded-xl object-cover border border-white/[0.08] shrink-0" />
+                  <CampaignThumb artist={c.artist} track={c.track}
+                    className="w-10 h-10 md:w-20 md:h-20 rounded-lg md:rounded-xl"
+                    textClassName="text-xs md:text-2xl" />
                   <div className="flex-1 min-w-0">
                     <p className="t-eyebrow text-[9px] md:text-lg text-primary mb-0.5">{t('clipping.tagLabel')}</p>
                     <p className="t-h3 text-xs md:text-xl text-foreground">{c.artist}</p>

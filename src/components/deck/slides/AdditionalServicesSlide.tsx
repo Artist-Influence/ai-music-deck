@@ -1,8 +1,8 @@
 import GlassPanel from '../GlassPanel';
+import CampaignThumb from '../CampaignThumb';
 import PatternVisual from '../visuals/PatternVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 import gordoImg from '@/assets/gordo-meta-tiktok.webp';
-import zedsDeadImg from '@/assets/zeds-dead-logo.png';
 
 const TikTokIcon = ({ size = 28 }: { size?: number }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className="text-primary">
@@ -23,6 +23,7 @@ const MetaTikTokIcon = () => (
   </div>
 );
 
+// `artwork` is owed for the two Meta campaigns; CampaignThumb monograms until then.
 const cases = [
   {
     platform: 'TIKTOK ADS', artist: 'Gordo (@gordoszn)', track: 'Brand Awareness Campaign',
@@ -30,9 +31,16 @@ const cases = [
     metrics: [{ val: '1.4M', labelKey: 'kpi.impressions' }, { val: '$0.31', labelKey: 'kpi.cpm' }, { val: '500.7K', labelKey: 'kpi.sixSecViews' }, { val: '34.7%', labelKey: 'kpi.viewRate' }],
   },
   {
-    platform: 'META ADS', artist: 'Zeds Dead', track: 'NA Tour, 6 campaigns, 1 per city',
-    descKey: 'metaTiktok.case2Desc', thumb: zedsDeadImg, imgPosition: 'object-center',
-    metrics: [{ val: '1.3M', labelKey: 'kpi.impressions' }, { val: '6,754', labelKey: 'kpi.layloSignups' }, { val: '$1.40', labelKey: 'kpi.cpr' }, { val: '25.4K', labelKey: 'kpi.linkClicks' }],
+    // $889 spend · 99,263 impressions · 8,741 link clicks
+    platform: 'META ADS', artist: 'Mashbit', track: 'Houston Takeover, event push',
+    descKey: 'metaTiktok.case2Desc',
+    metrics: [{ val: '99.3K', labelKey: 'kpi.impressions' }, { val: '8,741', labelKey: 'kpi.linkClicks' }, { val: '8.8%', labelKey: 'kpi.ctr' }, { val: '$0.10', labelKey: 'kpi.costPerClick' }],
+  },
+  {
+    // $4,823 spend · 912,770 all-time streams · Instagram +124,672 since 7/16
+    platform: 'META ADS', artist: 'T-Pain', track: 'STFU, Spotify scaling push',
+    descKey: 'metaTiktok.case3Desc',
+    metrics: [{ val: '912K+', labelKey: 'kpi.spotifyStreams' }, { val: '$0.0053', labelKey: 'kpi.costPerStream' }, { val: '17.6%', labelKey: 'kpi.ctr' }, { val: '+124K', labelKey: 'kpi.igFollowerGrowth' }],
   },
 ];
 
@@ -85,30 +93,30 @@ const AdditionalServicesSlide = () => {
             </GlassPanel>
           </div>
 
-          <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-3 justify-between">
+          <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-2.5 justify-between">
             {cases.map((c, idx) => (
-              <GlassPanel key={idx} variant="bright" className="p-2 md:p-5 flex flex-col">
-                <div className="flex flex-row gap-2 md:gap-5 mb-1.5 md:mb-3">
-                  <div className="w-[60px] h-[60px] md:w-[150px] md:h-[150px] shrink-0 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08]">
-                    <img loading="lazy" decoding="async" src={c.thumb} alt={c.artist} className={`w-full h-full object-cover rounded-lg md:rounded-xl ${c.imgPosition || 'object-center'}`} />
-                  </div>
+              <GlassPanel key={idx} variant="bright" className="p-2 md:p-4 flex flex-col">
+                <div className="flex flex-row gap-2 md:gap-4 mb-1.5 md:mb-2.5">
+                  <CampaignThumb artist={c.artist} artwork={c.thumb} imgPosition={c.imgPosition}
+                    className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] rounded-lg md:rounded-xl"
+                    textClassName="text-lg md:text-4xl" />
                   <div className="flex-1 flex flex-col justify-center">
                     <p className="t-eyebrow text-[10px] md:text-base text-primary mb-0.5">{c.platform}</p>
-                    <p className="t-h3 text-sm md:text-3xl text-foreground">{c.artist}</p>
-                    <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
+                    <p className="t-h3 text-sm md:text-2xl text-foreground">{c.artist}</p>
+                    <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 mb-1 md:mb-3">
-                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
-                  <p className="text-[10px] md:text-lg text-muted-foreground">{t(c.descKey)}</p>
+                <div className="flex items-start gap-2 mb-1 md:mb-2.5">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2" />
+                  <p className="text-[10px] md:text-base text-muted-foreground leading-snug">{t(c.descKey)}</p>
                 </div>
 
-                <div className="grid grid-cols-4 gap-0.5 md:gap-3">
+                <div className="grid grid-cols-4 gap-0.5 md:gap-2 mt-auto">
                   {c.metrics.map((m) => (
-                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-3 md:py-4 text-center flex flex-col items-center justify-center">
-                      <p className="stat-num num text-[10px] md:text-2xl text-foreground">{m.val}</p>
-                      <p className="mono text-[7px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-2 md:py-2 text-center flex flex-col items-center justify-center">
+                      <p className="stat-num num text-[10px] md:text-xl text-foreground">{m.val}</p>
+                      <p className="mono text-[7px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
                     </div>
                   ))}
                 </div>

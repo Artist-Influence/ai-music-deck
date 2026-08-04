@@ -1,40 +1,34 @@
 import GlassPanel from '../GlassPanel';
+import CampaignThumb from '../CampaignThumb';
 import PatternVisual from '../visuals/PatternVisual';
 import { Sparkles } from 'lucide-react';
 import { useTranslation } from '@/i18n/LanguageContext';
 
-/**
- * Custom Influencer Campaigns.
- *
- * NOTE: the three campaign cards are intentionally metric-free for now.
- * Artist/track come straight from the brief; artwork + performance metrics
- * are still owed. When they land, add `artwork` + `metrics` here and mirror
- * the metrics grid used in InstagramSeedingSlide.tsx.
- */
+// Creator-campaign results. No media spend is attributed to these campaigns,
+// so there is no CPM to quote; reach and top-post pull are the proof instead.
+// `artwork` is still owed; CampaignThumb shows a monogram until then.
 const cases = [
-  { artist: 'Vicetone', track: 'Nevada' },
-  { artist: 'T-Pain', track: 'STFU' },
-  { artist: 'Gryffin', track: 'Spin Me Slowly' },
+  {
+    // 4,838,376 views · 320,790 likes · 35 live posts · 19,415,831 estimated reach
+    artist: 'Vicetone', track: 'Nevada (Dubstep Mix)', descKey: 'influencer.case1Desc',
+    metrics: [
+      { val: '4.84M+', labelKey: 'kpi.views' },
+      { val: '320K+', labelKey: 'kpi.likes' },
+      { val: '7.81%', labelKey: 'kpi.engagement' },
+      { val: '1.3M', labelKey: 'kpi.topPostViews' },
+    ],
+  },
+  {
+    // 2,367,185 views · 112,541 likes · 41 live posts · 18,886,304 estimated reach
+    artist: 'T-Pain', track: 'STFU', descKey: 'influencer.case2Desc',
+    metrics: [
+      { val: '2.37M+', labelKey: 'kpi.views' },
+      { val: '112K+', labelKey: 'kpi.likes' },
+      { val: '5.33%', labelKey: 'kpi.engagement' },
+      { val: '767K', labelKey: 'kpi.topPostViews' },
+    ],
+  },
 ];
-
-/**
- * Two-letter monogram stands in until real cover art is supplied.
- * Multi-word/hyphenated names take one letter per word ("T-Pain" → TP);
- * single words take their first two ("Vicetone" → VI).
- */
-const initialsOf = (artist: string) => {
-  const words = artist.split(/[^A-Za-z0-9]+/).filter(Boolean);
-  const letters = words.length > 1
-    ? words.slice(0, 2).map((w) => w[0]).join('')
-    : (words[0] ?? artist).slice(0, 2);
-  return letters.toUpperCase();
-};
-
-const Monogram = ({ artist }: { artist: string }) => (
-  <div className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl shrink-0 border border-white/[0.08] bg-primary/[0.08] flex items-center justify-center">
-    <span className="t-h3 text-base md:text-3xl text-primary/80">{initialsOf(artist)}</span>
-  </div>
-);
 
 const CustomInfluencerSlide = () => {
   const { t } = useTranslation();
@@ -96,16 +90,32 @@ const CustomInfluencerSlide = () => {
             </GlassPanel>
           </div>
 
-          <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-3 justify-between">
+          <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-4 justify-center">
             {cases.map((c) => (
-              <GlassPanel key={`${c.artist}-${c.track}`} variant="bright" className="p-3 md:p-5 flex flex-col justify-center">
-                <div className="flex gap-2.5 md:gap-4 items-center">
-                  <Monogram artist={c.artist} />
-                  <div className="flex-1 min-w-0">
+              <GlassPanel key={`${c.artist}-${c.track}`} variant="bright" className="p-3 md:p-6 flex flex-col">
+                <div className="flex gap-2.5 md:gap-5 mb-1.5 md:mb-4">
+                  <CampaignThumb artist={c.artist} track={c.track}
+                    className="w-12 h-12 md:w-24 md:h-24 rounded-lg md:rounded-xl"
+                    textClassName="text-base md:text-4xl" />
+                  <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <p className="t-eyebrow text-[10px] md:text-lg text-primary mb-0.5">{t('influencer.tagLabel')}</p>
-                    <p className="t-h3 text-sm md:text-2xl text-foreground">{c.artist}</p>
-                    <p className="text-xs md:text-lg text-muted-foreground">{c.track}</p>
+                    <p className="t-h3 text-sm md:text-3xl text-foreground">{c.artist}</p>
+                    <p className="text-xs md:text-xl text-muted-foreground">{c.track}</p>
                   </div>
+                </div>
+
+                <div className="flex items-start gap-2 mb-1.5 md:mb-4">
+                  <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
+                  <p className="text-[10px] md:text-lg text-muted-foreground">{t(c.descKey)}</p>
+                </div>
+
+                <div className="grid grid-cols-4 gap-1 md:gap-3">
+                  {c.metrics.map((m) => (
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:px-3 md:py-4 flex flex-col items-center justify-center text-center">
+                      <p className="stat-num num text-sm md:text-2xl text-foreground">{m.val}</p>
+                      <p className="mono text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
+                    </div>
+                  ))}
                 </div>
               </GlassPanel>
             ))}
