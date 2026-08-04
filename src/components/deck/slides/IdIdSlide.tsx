@@ -18,7 +18,10 @@ const IdIdSlide = () => {
         <p className="text-[10px] md:text-xs text-primary font-mono tracking-[0.25em]">{t('idid.pilotChip')}</p>
       </div>
 
-      <div className="relative z-10 w-full max-w-[1500px] mx-auto">
+      {/* 3-row grid: header (row 1, bottom-aligned), cards (row 2, centred on the
+          slide), closing note (row 3, top-aligned). See SpotifyPlaylistingSlide. */}
+      <div className="relative z-10 w-full max-w-[1500px] mx-auto md:h-full md:grid md:grid-rows-[1fr_auto_1fr]">
+        <div className="md:self-end md:pb-6">
         <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
           <Disc3 className="w-4 h-4 md:w-7 md:h-7 text-primary animate-[spin_8s_linear_infinite]" />
           <p className="t-eyebrow text-sm md:text-lg">{t('idid.kicker')}</p>
@@ -37,9 +40,10 @@ const IdIdSlide = () => {
             <span className="underline decoration-primary/30 hover:decoration-primary">id-id.ai</span>
           </a>
         </div>
-        <p className="text-sm md:text-2xl text-on-visual-soft mb-6 md:mb-12 max-w-[1100px] leading-relaxed">{t('idid.subtitle')}</p>
+        <p className="text-sm md:text-2xl text-on-visual-soft mb-6 md:mb-0 max-w-[1100px] leading-relaxed">{t('idid.subtitle')}</p>
+        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-0">
           <GlassPanel centerY variant="bright" className="p-5 md:p-7">
             <p className="t-h3 text-primary text-sm md:text-2xl mb-3 md:mb-4">{t('idid.whatTitle')}</p>
             <div className="space-y-2 md:space-y-3">
@@ -65,7 +69,7 @@ const IdIdSlide = () => {
           </GlassPanel>
         </div>
 
-        <p className="text-xs md:text-lg text-on-visual-soft italic text-center max-w-[1100px] mx-auto leading-relaxed">
+        <p className="text-xs md:text-lg text-on-visual-soft italic text-center max-w-[1100px] mx-auto leading-relaxed md:self-start md:pt-8">
           {t('idid.bottomNote')}
         </p>
       </div>

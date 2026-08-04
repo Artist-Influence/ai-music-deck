@@ -7,15 +7,18 @@ const ClientPortalSlide = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-16 flex flex-col justify-start md:justify-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:px-16 md:py-7 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 w-full max-w-[1600px] mx-auto">
-        <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
-          <Monitor size={20} className="text-primary md:w-7 md:h-7" />
-          <p className="t-eyebrow text-sm md:text-lg">{t('clientPortal.eyebrow')}</p>
+      {/* 3-row grid so the card row is centred on the slide (see SpotifyPlaylistingSlide) */}
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto md:h-full md:grid md:grid-rows-[1fr_auto_1fr]">
+        <div className="md:self-end md:pb-7">
+          <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-3">
+            <Monitor size={20} className="text-primary md:w-7 md:h-7" />
+            <p className="t-eyebrow text-sm md:text-lg">{t('clientPortal.eyebrow')}</p>
+          </div>
+          <h1 className="t-hero text-2xl md:text-6xl text-on-visual mb-2 md:mb-4">{t('clientPortal.title')}</h1>
+          <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-0 max-w-[1100px]">{t('clientPortal.subtitle')}</p>
         </div>
-        <h1 className="t-hero text-2xl md:text-6xl text-on-visual mb-2 md:mb-4">{t('clientPortal.title')}</h1>
-        <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-8 max-w-[1100px]">{t('clientPortal.subtitle')}</p>
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch">
           <div className="md:w-[26%] flex flex-col gap-3 md:gap-4">

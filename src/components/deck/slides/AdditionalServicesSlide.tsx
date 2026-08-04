@@ -59,11 +59,11 @@ const AdditionalServicesSlide = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:p-12 flex flex-col justify-start md:justify-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-2 px-3 md:px-12 md:py-7 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
+      <div className="relative z-10 flex flex-col gap-3 w-full max-w-[1600px] mx-auto md:gap-0 md:h-full md:grid md:grid-rows-[1fr_auto_1fr]">
         {/* Header - full width above the two-column row */}
-        <div>
+        <div className="md:self-end md:pb-6">
           <div className="flex items-center gap-2 md:gap-3 mb-2 md:mb-4">
             <MetaTikTokIcon />
             <p className="t-eyebrow text-sm md:text-lg">{t('common.service')}</p>
@@ -73,7 +73,7 @@ const AdditionalServicesSlide = () => {
         </div>
 
         {/* Two-column row: left panels + right case study cards */}
-        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-stretch flex-1">
+        <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-stretch">
           <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
             <GlassPanel centerY variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
               <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('metaTiktok.whatTitle')}</p>
@@ -97,12 +97,12 @@ const AdditionalServicesSlide = () => {
             </GlassPanel>
           </div>
 
-          <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-2.5 justify-between">
+          <div className="flex-1 min-w-0 flex flex-col gap-1.5 md:gap-2 justify-between">
             {cases.map((c, idx) => (
-              <GlassPanel key={idx} variant="bright" className="p-2 md:p-4 flex flex-col">
-                <div className="flex flex-row gap-2 md:gap-4 mb-1.5 md:mb-2.5">
+              <GlassPanel key={idx} variant="bright" className="p-2 md:p-3 flex flex-col">
+                <div className="flex flex-row gap-2 md:gap-4 mb-1.5 md:mb-1.5">
                   <CampaignThumb artist={c.artist} artwork={c.thumb} imgPosition={c.imgPosition}
-                    className="w-[60px] h-[60px] md:w-[100px] md:h-[100px] rounded-lg md:rounded-xl"
+                    className="w-[60px] h-[60px] md:w-[78px] md:h-[78px] rounded-lg md:rounded-xl"
                     textClassName="text-lg md:text-4xl" />
                   <div className="flex-1 flex flex-col justify-center">
                     <p className="t-eyebrow text-[10px] md:text-base text-primary mb-0.5">{c.platform}</p>
@@ -111,14 +111,14 @@ const AdditionalServicesSlide = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 mb-1 md:mb-2.5">
+                <div className="flex items-start gap-2 mb-1 md:mb-1.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2" />
                   <p className="text-[10px] md:text-base text-muted-foreground leading-snug">{t(c.descKey)}</p>
                 </div>
 
                 <div className={`grid ${metricGridCols[c.metrics.length] ?? 'grid-cols-4'} gap-0.5 md:gap-2 mt-auto`}>
                   {c.metrics.map((m) => (
-                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-2 md:py-2 text-center flex flex-col items-center justify-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1 md:px-2 md:py-1 text-center flex flex-col items-center justify-center">
                       <p className="stat-num num text-[10px] md:text-xl text-foreground">{m.val}</p>
                       <p className="mono text-[7px] md:text-xs text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
                     </div>

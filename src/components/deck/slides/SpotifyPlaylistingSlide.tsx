@@ -46,11 +46,19 @@ const SpotifyPlaylistingSlide = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-10 flex flex-col justify-start md:justify-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:px-10 md:py-7 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
+      {/*
+        Desktop uses a 3-row grid: [1fr, auto, 1fr]. The card row is the middle
+        (auto) row, so the equal fr rows above and below centre the cards
+        themselves on the slide, not just the header-plus-cards bounding box.
+        The header lives in row 1, bottom-aligned so it sits just above the
+        cards. minmax(0,1fr) keeps the outer rows exactly equal, so the cards
+        must stay short enough for the header to fit in row 1.
+      */}
+      <div className="relative z-10 flex flex-col gap-3 w-full max-w-[1600px] mx-auto md:gap-0 md:h-full md:grid md:grid-rows-[1fr_auto_1fr]">
         {/* Header - full width above the two-column row */}
-        <div>
+        <div className="md:self-end md:pb-7">
           <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-3">
             <SpotifyIcon size={18} />
             <p className="t-eyebrow text-xs md:text-lg">{t('common.service')}</p>
@@ -72,7 +80,7 @@ const SpotifyPlaylistingSlide = () => {
         </GlassPanel>
 
         {/* Two-column row: left panels + right case study cards */}
-        <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch flex-1">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch">
           <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
             <GlassPanel centerY variant="bright" className="p-4 md:p-6 hidden md:flex md:flex-col flex-1">
               <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
@@ -102,11 +110,11 @@ const SpotifyPlaylistingSlide = () => {
             </GlassPanel>
           </div>
 
-          <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-2.5">
+          <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-2">
             {cases.map((c, idx) => (
-              <GlassPanel key={idx} variant="bright" className="p-3 md:p-4 flex flex-col">
-                <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-3">
-                  <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
+              <GlassPanel key={idx} variant="bright" className="p-3 md:p-3.5 flex flex-col">
+                <div className="flex gap-2.5 md:gap-4 mb-1 md:mb-2">
+                  <div className="w-12 h-12 md:w-14 md:h-14 rounded-lg md:rounded-xl overflow-hidden border border-white/[0.08] shrink-0">
                     <img loading="lazy" decoding="async" src={c.artwork} alt={`${c.artist} - ${c.track}`} className="w-full h-full object-cover" />
                   </div>
                   <div className="flex-1 min-w-0">
@@ -119,9 +127,9 @@ const SpotifyPlaylistingSlide = () => {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-3">
+                <div className="grid grid-cols-4 gap-1 md:gap-2 mb-1 md:mb-2">
                   {c.metrics.map((m) => (
-                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:p-2 text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:px-2 md:py-1.5 text-center">
                       <p className="stat-num num text-sm md:text-xl text-foreground">{m.val}</p>
                       <p className="mono text-[8px] md:text-xs text-muted-foreground uppercase tracking-wider">{t(m.labelKey)}</p>
                     </div>

@@ -37,11 +37,11 @@ const CustomInfluencerSlide = () => {
   const { t } = useTranslation();
 
   return (
-    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:p-12 flex flex-col justify-start md:justify-center">
+    <div className="w-full min-h-dvh md:h-full bg-background relative overflow-x-hidden md:overflow-hidden py-6 px-5 md:px-12 md:py-7 flex flex-col justify-start md:justify-center">
       <PatternVisual />
-      <div className="relative z-10 flex flex-col gap-3 md:gap-4 w-full max-w-[1600px] mx-auto">
+      <div className="relative z-10 flex flex-col gap-3 w-full max-w-[1600px] mx-auto md:gap-0 md:h-full md:grid md:grid-rows-[1fr_auto_1fr]">
         {/* Header */}
-        <div>
+        <div className="md:self-end md:pb-6">
           <div className="flex items-center gap-2 md:gap-3 mb-1 md:mb-4">
             <Sparkles size={18} className="text-primary md:w-7 md:h-7" />
             <p className="t-eyebrow text-xs md:text-lg">{t('common.service')}</p>
@@ -63,7 +63,7 @@ const CustomInfluencerSlide = () => {
         </GlassPanel>
 
         {/* Two-column row: left panels + right campaign cards */}
-        <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch flex-1">
+        <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch">
           <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
             <GlassPanel centerY variant="bright" className="p-4 md:p-8 hidden md:flex md:flex-col flex-1">
               <p className="t-h3 text-2xl text-primary mb-3">{t('influencer.whatTitle')}</p>
@@ -95,10 +95,10 @@ const CustomInfluencerSlide = () => {
 
           <div className="flex-1 min-w-0 flex flex-col gap-2 md:gap-4 justify-center">
             {cases.map((c) => (
-              <GlassPanel key={`${c.artist}-${c.track}`} variant="bright" className="p-3 md:p-6 flex flex-col">
-                <div className="flex gap-2.5 md:gap-5 mb-1.5 md:mb-4">
+              <GlassPanel key={`${c.artist}-${c.track}`} variant="bright" className="p-3 md:p-4 flex flex-col">
+                <div className="flex gap-2.5 md:gap-5 mb-1.5 md:mb-2.5">
                   <CampaignThumb artist={c.artist} track={c.track} artwork={c.artwork}
-                    className="w-12 h-12 md:w-24 md:h-24 rounded-lg md:rounded-xl"
+                    className="w-12 h-12 md:w-20 md:h-20 rounded-lg md:rounded-xl"
                     textClassName="text-base md:text-4xl" />
                   <div className="flex-1 min-w-0 flex flex-col justify-center">
                     <p className="t-eyebrow text-[10px] md:text-lg text-primary mb-0.5">{t('influencer.tagLabel')}</p>
@@ -107,14 +107,14 @@ const CustomInfluencerSlide = () => {
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 mb-1.5 md:mb-4">
+                <div className="flex items-start gap-2 mb-1.5 md:mb-2.5">
                   <div className="w-1.5 h-1.5 rounded-full bg-primary/60 shrink-0 mt-1 md:mt-2.5" />
                   <p className="text-[10px] md:text-lg text-muted-foreground">{t(c.descKey)}</p>
                 </div>
 
                 <div className="grid grid-cols-4 gap-1 md:gap-3">
                   {c.metrics.map((m) => (
-                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:px-3 md:py-4 flex flex-col items-center justify-center text-center">
+                    <div key={m.labelKey} className="bg-white/[0.04] rounded p-1.5 md:px-3 md:py-2 flex flex-col items-center justify-center text-center">
                       <p className="stat-num num text-sm md:text-2xl text-foreground">{m.val}</p>
                       <p className="mono text-[8px] md:text-sm text-muted-foreground uppercase tracking-wider leading-tight">{t(m.labelKey)}</p>
                     </div>
