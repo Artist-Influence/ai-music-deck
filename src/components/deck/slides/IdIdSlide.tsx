@@ -40,7 +40,7 @@ const IdIdSlide = () => {
         <p className="text-sm md:text-2xl text-on-visual-soft mb-6 md:mb-12 max-w-[1100px] leading-relaxed">{t('idid.subtitle')}</p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-6 mb-4 md:mb-8">
-          <GlassPanel variant="bright" className="p-5 md:p-7">
+          <GlassPanel centerY variant="bright" className="p-5 md:p-7">
             <p className="t-h3 text-primary text-sm md:text-2xl mb-3 md:mb-4">{t('idid.whatTitle')}</p>
             <div className="space-y-2 md:space-y-3">
               {[0, 1, 2].map((i) => (
@@ -52,7 +52,7 @@ const IdIdSlide = () => {
             </div>
           </GlassPanel>
 
-          <GlassPanel variant="bright" className="p-5 md:p-7">
+          <GlassPanel centerY variant="bright" className="p-5 md:p-7">
             <p className="t-h3 text-primary text-sm md:text-2xl mb-3 md:mb-4">{t('idid.whyTitle')}</p>
             <div className="space-y-2 md:space-y-3">
               {[0, 1, 2].map((i) => (

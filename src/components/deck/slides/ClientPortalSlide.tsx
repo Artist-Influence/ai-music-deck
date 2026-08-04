@@ -20,7 +20,7 @@ const ClientPortalSlide = () => {
         <div className="flex flex-col md:flex-row gap-4 md:gap-8 items-stretch">
           <div className="md:w-[26%] flex flex-col gap-3 md:gap-4">
             {[0, 1, 2].map((i) => (
-              <GlassPanel key={i} className="p-4 md:p-6 flex-1">
+              <GlassPanel key={i} centerY className="p-4 md:p-6 flex-1">
                 <p className="t-h3 text-sm md:text-2xl text-primary mb-1 md:mb-2">{t(`clientPortal.bullets.${i}.title`)}</p>
                 <p className="text-xs md:text-lg text-muted-foreground leading-snug">{t(`clientPortal.bullets.${i}.desc`)}</p>
               </GlassPanel>

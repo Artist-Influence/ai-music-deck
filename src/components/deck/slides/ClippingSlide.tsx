@@ -55,7 +55,7 @@ const ClippingSlide = () => {
               </div>
             </GlassPanel>
 
-            <GlassPanel className="p-4 md:p-7 flex-1 flex flex-col justify-center">
+            <GlassPanel centerY className="p-4 md:p-7 flex-1 flex flex-col">
               <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('clipping.diffTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2, 3].map((i) => (

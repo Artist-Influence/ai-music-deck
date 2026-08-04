@@ -33,12 +33,12 @@ const Top50TrendingSlide = () => {
             <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-6 max-w-[700px]">{t('trending.subtitle')}</p>
           </div>
 
-          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel centerY variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
             <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('trending.howTitle')}</p>
             <p className="text-xs md:text-lg text-muted-foreground leading-relaxed">{t('trending.howDesc')}</p>
           </GlassPanel>
 
-          <GlassPanel variant="subtle" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel centerY variant="subtle" className="p-4 md:p-8 flex-1 flex flex-col">
             <p className="t-h3 text-sm md:text-2xl text-primary mb-3 md:mb-5">{t('trending.whenTitle')}</p>
             <div className="space-y-2 md:space-y-3.5">
               {[0, 1, 2].map((i) => (

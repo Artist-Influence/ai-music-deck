@@ -74,7 +74,7 @@ const SpotifyPlaylistingSlide = () => {
         {/* Two-column row: left panels + right case study cards */}
         <div className="flex flex-col md:flex-row gap-3 md:gap-10 items-stretch flex-1">
           <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
-            <GlassPanel variant="bright" className="p-4 md:p-6 hidden md:flex md:flex-col md:justify-center flex-1">
+            <GlassPanel centerY variant="bright" className="p-4 md:p-6 hidden md:flex md:flex-col flex-1">
               <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('spotify.whatTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2, 3].map((i) => (
@@ -86,7 +86,7 @@ const SpotifyPlaylistingSlide = () => {
               </div>
             </GlassPanel>
 
-            <GlassPanel variant="bright" className="p-4 md:p-6 flex-1 hidden md:flex md:flex-col md:justify-center">
+            <GlassPanel centerY variant="bright" className="p-4 md:p-6 flex-1 hidden md:flex md:flex-col">
               <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('spotify.whyTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2].map((i) => (

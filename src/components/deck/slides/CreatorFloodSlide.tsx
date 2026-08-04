@@ -28,7 +28,7 @@ const CreatorFloodSlide = () => {
             <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-6 max-w-[700px]">{t('creatorFlood.subtitle')}</p>
           </div>
 
-          <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel centerY className="p-4 md:p-8 flex-1 flex flex-col">
             <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('creatorFlood.prosTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2, 3].map((i) => (
@@ -40,7 +40,7 @@ const CreatorFloodSlide = () => {
             </div>
           </GlassPanel>
 
-          <GlassPanel className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel centerY className="p-4 md:p-8 flex-1 flex flex-col">
             <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('creatorFlood.whenTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2].map((i) => (

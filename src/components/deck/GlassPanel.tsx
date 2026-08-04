@@ -9,6 +9,15 @@ interface GlassPanelProps {
   noCorner?: boolean;
   /** Disable the pointer-driven 3D tilt (e.g. for dense/secondary cards). */
   noTilt?: boolean;
+  /**
+   * Centre the children vertically when the panel is taller than its content
+   * (e.g. a short list in a panel stretched by `flex-1`).
+   *
+   * This must live here rather than on `className`: children are wrapped in an
+   * `h-full flex flex-col` div, so a `justify-*` class on the panel itself has
+   * nothing to distribute and silently does nothing.
+   */
+  centerY?: boolean;
 }
 
 const variantStyles = {
@@ -35,6 +44,7 @@ const GlassPanel = ({
   noShimmer,
   noCorner,
   noTilt,
+  centerY,
 }: GlassPanelProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [inView, setInView] = useState(false);
@@ -165,7 +175,7 @@ const GlassPanel = ({
         </svg>
       )}
 
-      <div className="relative z-[2] h-full flex flex-col">{children}</div>
+      <div className={cn('relative z-[2] h-full flex flex-col', centerY && 'justify-center')}>{children}</div>
     </div>
   );
 };

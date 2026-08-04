@@ -44,7 +44,7 @@ const NextStepsSlide = () => {
 
         <div className="grid grid-cols-2 md:flex gap-3 md:gap-6 mb-8 md:mb-16">
           {steps.map((s, i) => (
-            <GlassPanel key={i} variant="bright" className={`flex-1 p-4 md:p-8 text-left next-step-card next-step-card-${i}`}>
+            <GlassPanel key={i} centerY variant="bright" className={`flex-1 p-4 md:p-8 text-left next-step-card next-step-card-${i}`}>
               <p className="text-primary text-xs md:text-xl font-mono mb-1 md:mb-3 tracking-widest relative z-10">{s.num}</p>
               <p className="t-h3 text-sm md:text-2xl mb-1 md:mb-2 relative z-10">{s.title}</p>
               <p className="text-xs md:text-xl text-muted-foreground relative z-10">{s.desc}</p>

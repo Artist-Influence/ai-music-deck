@@ -41,7 +41,7 @@ const YouTubeAdsSlide = () => {
             <p className="text-sm md:text-2xl text-on-visual-soft mb-4 md:mb-6 max-w-[700px]">{t('youtube.subtitle')}</p>
           </div>
 
-          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel centerY variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
             <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('youtube.whatTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1].map((i) => (
@@ -53,7 +53,7 @@ const YouTubeAdsSlide = () => {
             </div>
           </GlassPanel>
 
-          <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
+          <GlassPanel centerY variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
             <p className="t-h3 text-primary text-sm md:text-2xl mb-2 md:mb-3">{t('youtube.howTitle')}</p>
             <div className="space-y-1.5 md:space-y-2.5">
               {[0, 1, 2].map((i) => (
