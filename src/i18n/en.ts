@@ -40,7 +40,7 @@ const en: Record<string, string> = {
   // ── ClippingSlide ──
   'common.service': 'Service',
   'clipping.title': 'Clipping Distribution',
-  'clipping.subtitle': 'A distribution network powered by 20,000+ clippers creating across TikTok, Instagram, and YouTube.',
+  'clipping.subtitle': 'A distribution network powered by 40,000+ members creating across TikTok, Instagram, and YouTube.',
   'clipping.prosTitle': 'Pros',
   'clipping.pros.0': 'Target viral trends with a strategic campaign brief',
   'clipping.pros.1': 'Fast velocity and clear reporting',
@@ -180,7 +180,7 @@ const en: Record<string, string> = {
   'metaTiktok.timeframe': 'Timeframe: dependent on each campaign',
   'metaTiktok.case1Desc': '24-hour brand awareness campaign focused purely on views.',
   'metaTiktok.case2Desc': 'Houston warehouse event push: 274 tickets sold on $889 of spend, at roughly 9x the industry average CTR. Every show since has sold out.',
-  'metaTiktok.case3Desc': 'Meta spend scaled into a Spotify push on $4,823: 912,770 all-time streams at half a cent each, with Instagram up 124,672 followers since tracking began.',
+  'metaTiktok.case3Desc': 'Spotify push on $4,823 of Meta spend, targeted across the entire US: 912,770 all-time streams at half a cent each, with Instagram up 124,672 followers since tracking began.',
 
   // ── PricingSlide ──
   'pricing.title': 'Customized & A La Carte Pricing',
@@ -212,6 +212,10 @@ const en: Record<string, string> = {
   'pricing.service.7.name': 'Instagram Seeding',
   'pricing.service.7.unit': 'Per campaign',
   'pricing.service.7.note': 'IG account network',
+  // Keep PRICING_SERVICE_COUNT in PricingSlide.tsx in step when adding a row.
+  'pricing.service.8.name': 'Custom Influencer Campaigns',
+  'pricing.service.8.unit': 'Per campaign',
+  'pricing.service.8.note': 'Hand-picked creators',
   'pricing.viewPricing': 'View full pricing sheet →',
   'pricing.footer': 'We build the final package around your release schedule, audience, and goals.',
 

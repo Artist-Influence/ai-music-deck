@@ -49,7 +49,7 @@ const Top50TrendingSlide = () => {
               ))}
             </div>
             <div className="pt-3 md:pt-5 border-t border-white/[0.06] mt-3 md:mt-5">
-              <p className="t-h3 text-xs md:text-lg text-primary">{t('trending.timeframe')}</p>
+              <p className="t-h3 text-xs md:text-2xl text-primary">{t('trending.timeframe')}</p>
             </div>
           </GlassPanel>
         </div>

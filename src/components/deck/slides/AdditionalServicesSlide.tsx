@@ -75,7 +75,7 @@ const AdditionalServicesSlide = () => {
         {/* Two-column row: left panels + right case study cards */}
         <div className="flex flex-col md:flex-row gap-4 md:gap-10 items-stretch flex-1">
           <div className="flex-1 min-w-0 flex flex-col gap-3 md:gap-4">
-            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1">
+            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
               <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('metaTiktok.whatTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2].map((i) => (
@@ -84,7 +84,7 @@ const AdditionalServicesSlide = () => {
               </div>
             </GlassPanel>
 
-            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col">
+            <GlassPanel variant="bright" className="p-4 md:p-8 flex-1 flex flex-col justify-center">
               <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('metaTiktok.howTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2].map((i) => (
@@ -92,7 +92,7 @@ const AdditionalServicesSlide = () => {
                 ))}
               </div>
               <div className="pt-3 border-t border-white/[0.06] mt-3">
-                <p className="t-eyebrow text-xs md:text-2xl text-primary">{t('metaTiktok.timeframe')}</p>
+                <p className="t-h3 text-xs md:text-2xl text-primary">{t('metaTiktok.timeframe')}</p>
               </div>
             </GlassPanel>
           </div>

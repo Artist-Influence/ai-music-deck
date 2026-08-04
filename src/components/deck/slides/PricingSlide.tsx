@@ -2,10 +2,13 @@ import GlassPanel from '../GlassPanel';
 import AtelierFieldVisual from '../visuals/AtelierFieldVisual';
 import { useTranslation } from '@/i18n/LanguageContext';
 
+/** Number of `pricing.service.N.*` key groups in the locale files. Bump when adding a row. */
+const PRICING_SERVICE_COUNT = 9;
+
 const PricingSlide = () => {
   const { t } = useTranslation();
 
-  const services = Array.from({ length: 8 }, (_, i) => ({
+  const services = Array.from({ length: PRICING_SERVICE_COUNT }, (_, i) => ({
     name: t(`pricing.service.${i}.name`),
     unit: t(`pricing.service.${i}.unit`),
     note: t(`pricing.service.${i}.note`),

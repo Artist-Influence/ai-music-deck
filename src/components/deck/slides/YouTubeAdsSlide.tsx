@@ -64,7 +64,7 @@ const YouTubeAdsSlide = () => {
               ))}
             </div>
             <div className="pt-3 border-t border-white/[0.06] mt-3">
-              <p className="text-xs md:text-xl text-primary font-medium">{t('youtube.timeframe')}</p>
+              <p className="t-h3 text-xs md:text-xl text-primary">{t('youtube.timeframe')}</p>
             </div>
           </GlassPanel>
         </div>

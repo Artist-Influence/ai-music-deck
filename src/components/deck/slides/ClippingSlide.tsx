@@ -42,7 +42,8 @@ const ClippingSlide = () => {
 
         <div className="flex flex-col md:flex-row gap-4 md:gap-8">
           <div className="flex-1 flex flex-col gap-3 md:gap-4">
-            <GlassPanel className="p-4 md:p-7 flex-1">
+            {/* Sized to its content; the longer panel below takes the slack. */}
+            <GlassPanel className="p-4 md:p-7">
               <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('clipping.prosTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2].map((i) => (
@@ -54,7 +55,7 @@ const ClippingSlide = () => {
               </div>
             </GlassPanel>
 
-            <GlassPanel className="p-4 md:p-7 flex-1">
+            <GlassPanel className="p-4 md:p-7 flex-1 flex flex-col justify-center">
               <p className="t-h3 text-sm md:text-2xl text-primary mb-2 md:mb-3">{t('clipping.diffTitle')}</p>
               <div className="space-y-1.5 md:space-y-2.5">
                 {[0, 1, 2, 3].map((i) => (
