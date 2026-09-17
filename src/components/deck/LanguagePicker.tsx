@@ -31,7 +31,7 @@ const LanguagePicker = ({ className }: { className?: string }) => {
       </button>
 
       {open && (
-        <div className="absolute right-0 top-full mt-1 z-50 bg-card border border-border rounded-lg shadow-xl py-1 min-w-[180px] max-h-[320px] overflow-auto">
+        <div className="absolute right-0 top-full mt-1 z-50 bg-card border border-border rounded-lg shadow-xl py-1 min-w-[200px] max-h-[70vh] overflow-auto">
           {locales.map(l => (
             <button
               key={l.code}
