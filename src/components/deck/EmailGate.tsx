@@ -88,6 +88,14 @@ const EmailGate = ({ onAccess }: EmailGateProps) => {
         </form>
 
         <p className="mono text-[10px] uppercase tracking-[0.2em] text-muted-foreground/50 mt-5">Confidential. For intended recipients only.</p>
+        <a
+          href="https://www.artistinfluence.com/"
+          target="_blank"
+          rel="noopener"
+          className="mono inline-block text-[10px] uppercase tracking-[0.2em] text-muted-foreground/70 hover:text-primary transition-colors mt-2"
+        >
+          artistinfluence.com <span aria-hidden="true">↗</span>
+        </a>
       </GlassPanel>
     </div>
   );
