@@ -70,7 +70,7 @@ const ar: Record<string, string> = {
 
   // Slide 6 — Clipping
   'clipping.title': 'توزيع المقاطع',
-  'clipping.subtitle': 'شبكة توزيع مدعومة بأكثر من 20000 منشئ محتوى ينشطون عبر TikTok وInstagram وYouTube.',
+  'clipping.subtitle': 'شبكة توزيع مدعومة بأكثر من 60000 منشئ محتوى ينشطون عبر TikTok وInstagram وYouTube.',
   'clipping.prosTitle': 'المزايا',
   'clipping.pros.0': 'استهداف الاتجاهات الفيروسية من خلال موجز حملة استراتيجي',
   'clipping.pros.1': 'سرعة عالية وتقارير واضحة',

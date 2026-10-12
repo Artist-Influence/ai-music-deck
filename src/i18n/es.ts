@@ -30,7 +30,7 @@ const es: Record<string, string> = {
   'clientPortal.bullets.2.desc': 'Datos en vivo 24/7. Sin presentaciones semanales ni esperas por actualizaciones.',
   'common.service': 'Servicio',
   'clipping.title': 'Distribución de Clips',
-  'clipping.subtitle': 'Una red de distribución impulsada por más de 20.000 creadores que producen contenido en TikTok, Instagram y YouTube.',
+  'clipping.subtitle': 'Una red de distribución impulsada por más de 60.000 creadores que producen contenido en TikTok, Instagram y YouTube.',
   'clipping.prosTitle': 'Ventajas',
   'clipping.pros.0': 'Apunta a las tendencias virales con un briefing de campaña estratégico',
   'clipping.pros.1': 'Rapidez y informes claros',

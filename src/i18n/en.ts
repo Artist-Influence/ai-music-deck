@@ -40,7 +40,7 @@ const en: Record<string, string> = {
   // ── ClippingSlide ──
   'common.service': 'Service',
   'clipping.title': 'Clipping Distribution',
-  'clipping.subtitle': 'A distribution network powered by 40,000+ members creating across TikTok, Instagram, and YouTube.',
+  'clipping.subtitle': 'A distribution network powered by 60,000+ members creating across TikTok, Instagram, and YouTube.',
   'clipping.prosTitle': 'Pros',
   'clipping.pros.0': 'Target viral trends with a strategic campaign brief',
   'clipping.pros.1': 'Fast velocity and clear reporting',

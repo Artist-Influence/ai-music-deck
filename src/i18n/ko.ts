@@ -30,7 +30,7 @@ const ko: Record<string, string> = {
   'clientPortal.bullets.2.desc': '24시간 라이브 데이터. 주간 덱도, 매니저 업데이트 대기도 없습니다.',
   'common.service': '서비스',
   'clipping.title': '클리핑 배포',
-  'clipping.subtitle': 'TikTok, Instagram, YouTube에서 콘텐츠를 제작하는 20,000명 이상의 크리에이터가 운영하는 배포 네트워크.',
+  'clipping.subtitle': 'TikTok, Instagram, YouTube에서 콘텐츠를 제작하는 60,000명 이상의 크리에이터가 운영하는 배포 네트워크.',
   'clipping.prosTitle': '장점',
   'clipping.pros.0': '전략적 캠페인 브리프로 바이럴 트렌드 타겟팅',
   'clipping.pros.1': '빠른 속도와 명확한 보고',

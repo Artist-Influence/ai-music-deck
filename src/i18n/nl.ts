@@ -63,7 +63,7 @@ const nl: Record<string, string> = {
   'clientPortal.bullets.2.desc': 'Live data 24/7. Geen wekelijkse decks of wachten op updates.',
   'common.service': 'Dienst',
   'clipping.title': 'Clipping Distributie',
-  'clipping.subtitle': 'Een distributienetwerk aangedreven door meer dan 20.000 clippers die content creëren op TikTok, Instagram en YouTube.',
+  'clipping.subtitle': 'Een distributienetwerk aangedreven door meer dan 60.000 clippers die content creëren op TikTok, Instagram en YouTube.',
   'clipping.prosTitle': 'Voordelen',
   'clipping.pros.0': 'Richt u op virale trends met een strategische campagnelbrief',
   'clipping.pros.1': 'Snelle snelheid en duidelijke rapportage',

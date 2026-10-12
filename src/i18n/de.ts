@@ -30,7 +30,7 @@ const de: Record<string, string> = {
   'clientPortal.bullets.2.desc': 'Live-Daten rund um die Uhr. Keine wöchentlichen Decks, kein Warten auf Updates.',
   'common.service': 'Service',
   'clipping.title': 'Clipping-Verteilung',
-  'clipping.subtitle': 'Ein Vertriebsnetzwerk, das von über 20.000 Clippern angetrieben wird, die auf TikTok, Instagram und YouTube Inhalte erstellen.',
+  'clipping.subtitle': 'Ein Vertriebsnetzwerk, das von über 60.000 Clippern angetrieben wird, die auf TikTok, Instagram und YouTube Inhalte erstellen.',
   'clipping.prosTitle': 'Vorteile',
   'clipping.pros.0': 'Zielen Sie mit einem strategischen Kampagnenbrief auf virale Trends.',
   'clipping.pros.1': 'Schnelle Verbreitung und klare Berichterstattung',

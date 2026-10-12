@@ -70,7 +70,7 @@ const hi: Record<string, string> = {
 
   // Slide 6 — Clipping
   'clipping.title': 'क्लिपिंग डिस्ट्रीब्यूशन',
-  'clipping.subtitle': '20,000+ क्लिपर्स द्वारा TikTok, इंस्टाग्राम और YouTube पर बनाई गई सामग्री से संचालित एक वितरण नेटवर्क।',
+  'clipping.subtitle': '60,000+ क्लिपर्स द्वारा TikTok, इंस्टाग्राम और YouTube पर बनाई गई सामग्री से संचालित एक वितरण नेटवर्क।',
   'clipping.prosTitle': 'फायदे',
   'clipping.pros.0': 'एक रणनीतिक अभियान ब्रीफ के साथ वायरल ट्रेंड्स को लक्षित करें',
   'clipping.pros.1': 'तेज़ गति और स्पष्ट रिपोर्टिंग',

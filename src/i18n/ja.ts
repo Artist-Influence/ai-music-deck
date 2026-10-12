@@ -30,7 +30,7 @@ const ja: Record<string, string> = {
   'clientPortal.bullets.2.desc': '24時間365日ライブデータ。週次デッキも担当者待ちもなし。',
   'common.service': 'サービス',
   'clipping.title': 'クリッピング配信',
-  'clipping.subtitle': 'TikTok、Instagram、YouTubeでコンテンツを制作する20,000人以上のクリッパーが支える配信ネットワーク。',
+  'clipping.subtitle': 'TikTok、Instagram、YouTubeでコンテンツを制作する60,000人以上のクリッパーが支える配信ネットワーク。',
   'clipping.prosTitle': '利点',
   'clipping.pros.0': '戦略的なキャンペーンブリーフでバイラルトレンドをターゲットにする',
   'clipping.pros.1': '高速な速度と明確なレポート',
